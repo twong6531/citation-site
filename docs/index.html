@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Citations — rising transit costs public transportation</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header .query-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 999px;
+      padding: 0.3rem 1rem;
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+    }
+    header .meta { margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: white;
+      padding: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.5rem; font-weight: 700; color: #0f3460; }
+    .stat .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
+    main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    section { margin-bottom: 3rem; }
+    section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f3460;
+      border-left: 4px solid #0f3460;
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .summary-box {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      font-size: 0.97rem;
+    }
+    .summary-box p + p { margin-top: 1rem; }
+    .paper-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      position: relative;
+    }
+    .paper-number {
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
+      width: 2rem; height: 2rem;
+      background: #0f3460;
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700;
+    }
+    .paper-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; padding-right: 2.5rem; }
+    .relevance-reason { font-size: 0.88rem; color: #555; font-style: italic; margin-bottom: 1.25rem; }
+    .citations { display: flex; flex-direction: column; gap: 0.75rem; }
+    .citation-block { background: #f8fafc; border-left: 3px solid #cbd5e0; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; }
+    .citation-label {
+      display: inline-block;
+      background: #0f3460;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
+    }
+    .citation-text { font-size: 0.875rem; color: #333; }
+    .doi-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #0f3460;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .doi-link:hover { text-decoration: underline; }
+    .excluded-section { opacity: 0.8; }
+    .excluded-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .excluded-list li {
+      background: white;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #999;
+      border-top: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Research Citation Agent</h1>
+    <div class="query-badge">rising transit costs public transportation</div>
+    <div class="meta">Generated on June 1, 2026</div>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="num">12</div><div class="label">Papers Found</div></div>
+    <div class="stat"><div class="num">7</div><div class="label">Relevant</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">Filtered Out</div></div>
+  </div>
+
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <div class="summary-box">
+        <p>The collective body of research on rising public transportation costs presents a comprehensive, albeit complex, landscape characterized by significant challenges across both operational and capital expenditure domains. Key themes emerging from these papers include the systemic economic forces driving recurring costs, persistent issues in the accurate estimation and management of major infrastructure projects, and the influence of specific technological and policy choices on overall budgets. Together, these studies highlight that the escalation of transit costs is not attributable to a single factor but rather a confluence of deeply embedded issues within the sector.</p>
+      <p>A prominent argument for rising operational costs is the phenomenon of Baumol’s cost disease, which suggests that service-intensive sectors like public transit experience stagnant labor productivity compared to other industries, while wages continue to rise in line with the broader economy. This leads to an inherent upward pressure on unit labor costs, a critical component of transit agency budgets. Beyond labor, the choice of operational inputs, such as alternative fuels, also significantly impacts day-to-day expenses, with studies comparing the costs associated with options like biodiesel and compressed natural gas versus conventional diesel. Additionally, policy decisions, such as the implementation of transit benefits programs, are explored for their influence on agency revenues and, by extension, cost structures.</p>
+      <p>Regarding capital expenditures, a significant finding is the pervasive problem of cost underestimation in major public works projects. Research indicates a statistically significant trend of initial cost estimates for transportation infrastructure being systematically understated, inevitably leading to project budget overruns. Contributing to these escalating capital costs are often-overlooked &quot;soft costs,&quot; encompassing elements like design, engineering, legal fees, and land acquisition, which can form a substantial portion of a project&#039;s total expense beyond direct construction. The consistent focus across multiple papers on managing capital costs for major federally funded projects underscores the ongoing challenge of accurate planning, budgeting, and execution in large-scale infrastructure development.</p>
+      <p>Overall, the research reveals a consistent pattern of cost pressures across the public transit sector. There is a general agreement that costs are challenging to control and frequently exceed projections, irrespective of whether the focus is on daily operations or long-term infrastructure investment. The papers collectively point to a dual nature of these challenges: on one hand, deeply structural economic factors like Baumol&#039;s cost disease; on the other, practical deficiencies in project planning, estimation, and management. This consistent identification of both systemic and practical issues reinforces the multifaceted nature of the problem over time and across different aspects of transit provision.</p>
+      <p>Collectively, this body of research suggests that rising transit costs are a persistent and multifaceted challenge rooted in both the economic fundamentals of a service industry and the complexities of planning and executing major public works. Addressing these challenges effectively would require a comprehensive approach. This approach would need to simultaneously confront the structural issues of productivity and labor costs, meticulously manage and accurately estimate both direct and indirect capital expenditures, and carefully evaluate the cost implications of operational choices and policy interventions. Only through such a holistic understanding and strategy can the persistent escalation of public transportation costs be effectively mitigated.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Relevant Papers (7)</h2>
+      
+    <article class="paper-card">
+      <div class="paper-number">1</div>
+      <h3 class="paper-title">Estimating Soft Costs for Major Public Transportation Fixed Guideway Projects</h3>
+      <p class="relevance-reason">The paper addresses the estimation of costs for major public transportation projects, which is relevant to understanding the overall cost landscape.</p>
+      <div class="citations">
+        <div class="citation-block">
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Estimating soft costs for major public transportation fixed guideway projects. (2010). https://doi.org/10.17226/14369</p>
+        </div>
+        <div class="citation-block">
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">&quot;Estimating Soft Costs for Major Public Transportation Fixed Guideway Projects.&quot; 2010. https://doi.org/10.17226/14369</p>
+        </div>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.17226/14369" target="_blank" rel="noopener">View Paper →</a>
+    </article>
+
+    <article class="paper-card">
+      <div class="paper-number">2</div>
+      <h3 class="paper-title">Rising Costs of Transit and Baumol’s Cost Disease</h3>
+      <p class="relevance-reason">The title directly addresses &#039;Rising Costs of Transit&#039; and the abstract explicitly discusses cost disease and labor costs in public transit.</p>
+      <div class="citations">
+        <div class="citation-block">
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Morales Sarriera, J., &amp; Salvucci, F. P. (2016). Rising costs of transit and Baumol’s cost disease. *Transportation Research Record: Journal of the Transportation Research Board*, *2541*(1), 1–9. https://doi.org/10.3141/2541-01</p>
+        </div>
+        <div class="citation-block">
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">Morales Sarriera, Javier, and Frederick P. Salvucci. 2016. &quot;Rising Costs of Transit and Baumol’s Cost Disease.&quot; *Transportation Research Record: Journal of the Transportation Research Board* 2541, no. 1: 1–9. https://doi.org/10.3141/2541-01</p>
+        </div>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.3141/2541-01" target="_blank" rel="noopener">View Paper →</a>
+    </article>
+
+    <article class="paper-card">
+      <div class="paper-number">3</div>
+      <h3 class="paper-title">Impacts of Transit Benefits Programs on Transit Agency Ridership, Revenues, and Costs</h3>
+      <p class="relevance-reason">The paper directly examines the impacts on &#039;costs&#039; within &#039;public transportation&#039; agencies.</p>
+      <div class="citations">
+        <div class="citation-block">
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Ecola, L., &amp; Grant, M. (2008). Impacts of transit benefits programs on transit agency ridership, revenues, and costs. *Journal of Public Transportation*, *11*(2), 1–18. https://doi.org/10.5038/2375-0901.11.2.1</p>
+        </div>
+        <div class="citation-block">
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">Ecola, Liisa, and Michael Grant. 2008. &quot;Impacts of Transit Benefits Programs on Transit Agency Ridership, Revenues, and Costs.&quot; *Journal of Public Transportation* 11, no. 2: 1–18. https://doi.org/10.5038/2375-0901.11.2.1</p>
+        </div>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.5038/2375-0901.11.2.1" target="_blank" rel="noopener">View Paper →</a>
+    </article>
+
+    <article class="paper-card">
+      <div class="paper-number">4</div>
+      <h3 class="paper-title">Managing Capital Costs of Major Federally Funded Public Transportation Projects: Research Results Digest</h3>
+      <p class="relevance-reason">The paper focuses on managing &#039;capital costs&#039; for &#039;public transportation projects,&#039; which is relevant to understanding costs in the sector.</p>
+      <div class="citations">
+        <div class="citation-block">
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Managing capital costs of major federally funded public transportation projects: Research results digest. (2006). https://doi.org/10.17226/23227</p>
+        </div>
+        <div class="citation-block">
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">&quot;Managing Capital Costs of Major Federally Funded Public Transportation Projects: Research Results Digest.&quot; 2006. https://doi.org/10.17226/23227</p>
+        </div>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.17226/23227" target="_blank" rel="noopener">View Paper →</a>
+    </article>
+
+    <article class="paper-card">
+      <div class="paper-number">5</div>
+      <h3 class="paper-title">Managing Capital Costs of Major Federally Funded Public Transportation Projects: Contractor&#039;s Final Report</h3>
+      <p class="relevance-reason">The paper addresses &#039;managing capital costs&#039; for &#039;public transportation projects,&#039; which contributes to understanding cost challenges in the domain.</p>
+      <div class="citations">
+        <div class="citation-block">
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Managing capital costs of major federally funded public transportation projects: Contractor&#039;s final report. (2006). https://doi.org/10.17226/23226</p>
+        </div>
+        <div class="citation-block">
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">&quot;Managing Capital Costs of Major Federally Funded Public Transportation Projects: Contractor&#039;s Final Report.&quot; 2006. https://doi.org/10.17226/23226</p>
+        </div>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.17226/23226" target="_blank" rel="noopener">View Paper →</a>
+    </article>
+
+    <article class="paper-card">
+      <div class="paper-number">6</div>
+      <h3 class="paper-title">Public transit and alternative fuels – The costs associated with using biodiesel and CNG in comparison to diesel for U.S. public transit systems</h3>
+      <p class="relevance-reason">The paper analyzes &#039;costs associated with&#039; different fuel types for &#039;U.S. public transit systems,&#039; directly contributing to understanding public transportation costs.</p>
+      <div class="citations">
+        <div class="citation-block">
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Bitzan, J. D., &amp; Ripplinger, D. G. (2016). Public transit and alternative fuels – The costs associated with using biodiesel and CNG in comparison to diesel for U.S. public transit systems. *Transportation Research Part A: Policy and Practice*, *94*, 17–30. https://doi.org/10.1016/j.tra.2016.08.026</p>
+        </div>
+        <div class="citation-block">
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">Bitzan, John D., and David G. Ripplinger. 2016. &quot;Public Transit and Alternative Fuels – The Costs Associated with Using Biodiesel and CNG in Comparison to Diesel for U.S. Public Transit Systems.&quot; *Transportation Research Part A: Policy and Practice* 94: 17–30. https://doi.org/10.1016/j.tra.2016.08.026</p>
+        </div>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.1016/j.tra.2016.08.026" target="_blank" rel="noopener">View Paper →</a>
+    </article>
+
+    <article class="paper-card">
+      <div class="paper-number">7</div>
+      <h3 class="paper-title">Underestimating Costs in Public Works Projects: Error or Lie?</h3>
+      <p class="relevance-reason">The paper directly addresses &#039;cost escalation&#039; in &#039;transportation infrastructure projects,&#039; which is synonymous with rising transit costs.</p>
+      <div class="citations">
+        <div class="citation-block">
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Flyvbjerg, B., Skamris Holm, M. K., &amp; Buhl, S. L. (2013). *Underestimating costs in public works projects: Error or lie?* arXiv preprint. https://doi.org/10.48550/arXiv.1303.6604v1</p>
+        </div>
+        <div class="citation-block">
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">Flyvbjerg, Bent, Mette K. Skamris Holm, and Søren L. Buhl. 2013. &quot;Underestimating Costs in Public Works Projects: Error or Lie?&quot; arXiv preprint. https://doi.org/10.48550/arXiv.1303.6604v1</p>
+        </div>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.48550/arXiv.1303.6604v1" target="_blank" rel="noopener">View Paper →</a>
+    </article>
+    </section>
+
+    <section class="excluded-section">
+      <h2>Filtered Out (5 papers)</h2>
+      <ul class="excluded-list">
+        <li><strong>Twelve Years of Education and Public Outreach with the Fermi Gamma-ray Space Telescope</strong> — This paper is about space science education and outreach, not public transportation costs.</li>
+        <li><strong>6G Enabled Advanced Transportation Systems</strong> — This paper focuses on 6G technology in transportation systems, not on the costs or rising costs of public transportation.</li>
+        <li><strong>Grid-Aware Charging and Operational Optimization for Mixed-Fleet Public Transit</strong> — This paper focuses on operational optimization and charging for mixed-fleet public transit, not directly on the costs or rising costs of public transportation.</li>
+        <li><strong>Exploring the Roles of Large Language Models in Reshaping Transportation Systems: A Survey, Framework, and Roadmap</strong> — This paper discusses the application of Large Language Models in transportation systems, not the costs or rising costs of public transportation.</li>
+        <li><strong>Schedule-based Analysis of Transmission Risk in Public Transportation Systems</strong> — This paper analyzes disease transmission risk in public transportation, not the costs or rising costs.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Built with Research Citation Agent &middot; Powered by Gemini &amp; Crossref/arXiv</footer>
+</body>
+</html>
