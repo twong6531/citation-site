@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Citations — climate change and urban infrastructure</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <title>Research Citations — rising transit costs</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -20,7 +19,7 @@
       text-align: center;
     }
     header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .query-badge {
+    header .query-badge {
       display: inline-block;
       background: rgba(255,255,255,0.15);
       border: 1px solid rgba(255,255,255,0.3);
@@ -30,56 +29,18 @@
       margin-top: 0.75rem;
     }
     header .meta { margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
-
-    /* Infographic strip */
-    .infographic {
-      background: white;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 2rem 1.5rem;
-    }
-    .infographic-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-    .chart-wrap {
-      position: relative;
-      height: 220px;
-    }
-    .chart-wrap h3 {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #888;
-      margin-bottom: 0.5rem;
-    }
-    .charts-col { display: flex; flex-direction: column; gap: 1.5rem; }
-    .stats-col { display: flex; flex-direction: column; gap: 1rem; }
-    .stat-card {
-      background: #f8fafc;
-      border-left: 4px solid #0f3460;
-      border-radius: 0 8px 8px 0;
-      padding: 0.75rem 1.25rem;
-    }
-    .stat-value { font-size: 1.6rem; font-weight: 800; color: #0f3460; line-height: 1.1; }
-    .stat-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: #666; margin-top: 0.2rem; }
-    .donut-row {
+    .stats-bar {
       display: flex;
+      justify-content: center;
       gap: 2rem;
+      background: white;
+      padding: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
     }
-    .donut-wrap {
-      position: relative;
-      width: 140px;
-      height: 140px;
-      flex-shrink: 0;
-    }
-    .donut-legend { display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; font-size: 0.85rem; }
-    .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
-
-    /* Main layout */
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.5rem; font-weight: 700; color: #0f3460; }
+    .stat .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
     main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
     section { margin-bottom: 3rem; }
     section h2 {
@@ -107,9 +68,11 @@
       position: relative;
     }
     .paper-number {
-      position: absolute; top: 1.25rem; right: 1.25rem;
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
       width: 2rem; height: 2rem;
-      background: #0f3460; color: white;
+      background: #0f3460;
+      color: white;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 0.8rem; font-weight: 700;
@@ -117,312 +80,110 @@
     .paper-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; padding-right: 2.5rem; }
     .relevance-reason { font-size: 0.88rem; color: #555; font-style: italic; margin-bottom: 1.25rem; }
     .citations { display: flex; flex-direction: column; gap: 0.75rem; }
-    .citation-block {
-      background: #f8fafc;
-      border-left: 3px solid #cbd5e0;
-      border-radius: 0 8px 8px 0;
-      padding: 0.75rem 1rem;
-    }
+    .citation-block { background: #f8fafc; border-left: 3px solid #cbd5e0; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; }
     .citation-label {
       display: inline-block;
-      background: #0f3460; color: white;
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-      padding: 0.15rem 0.5rem; border-radius: 4px; margin-bottom: 0.4rem;
+      background: #0f3460;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
     }
     .citation-text { font-size: 0.875rem; color: #333; }
     .doi-link {
-      display: inline-block; margin-top: 1rem;
-      color: #0f3460; font-size: 0.85rem; font-weight: 600; text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      color: #0f3460;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
     }
     .doi-link:hover { text-decoration: underline; }
     .excluded-section { opacity: 0.8; }
     .excluded-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .excluded-list li {
-      background: white; border-radius: 8px;
-      padding: 0.75rem 1rem; font-size: 0.875rem;
+      background: white;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-    footer {
-      text-align: center; padding: 2rem;
-      font-size: 0.8rem; color: #999;
-      border-top: 1px solid #e2e8f0;
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
     }
-    @media (max-width: 640px) {
-      .infographic-inner { grid-template-columns: 1fr; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #999;
+      border-top: 1px solid #e2e8f0;
     }
   </style>
 </head>
 <body>
-
+  <img class="hero-image" src="./hero.jpg" alt="AI generated illustration for rising transit costs" />
   <header>
     <h1>Research Citation Agent</h1>
-    <div class="query-badge">climate change and urban infrastructure</div>
-    <div class="meta">Generated on June 2, 2026 &middot; 12 papers analysed</div>
+    <div class="query-badge">rising transit costs</div>
+    <div class="meta">Generated on June 2, 2026</div>
   </header>
 
-  <div class="infographic">
-    <div class="infographic-inner">
-
-      <div class="charts-col">
-        
-        <div>
-          <h3>Publications by Year</h3>
-          <div class="chart-wrap" style="height:180px">
-            <canvas id="yearChart"></canvas>
-          </div>
-        </div>
-        <div class="donut-row">
-          <div class="donut-wrap"><canvas id="donutChart"></canvas></div>
-          <div class="donut-legend">
-            <div><span class="legend-dot" style="background:#0f3460"></span><strong>9</strong> Relevant papers</div>
-            <div><span class="legend-dot" style="background:#cbd5e0"></span><strong>3</strong> Filtered out</div>
-            <div style="margin-top:0.5rem;font-size:0.75rem;color:#888">12 total retrieved</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="stats-col">
-      <div class="stat-card">
-        <div class="stat-value">75%</div>
-        <div class="stat-label">Cities&#039; Resource Use</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">60-80%</div>
-        <div class="stat-label">Cities&#039; GHG Emissions</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">70%</div>
-        <div class="stat-label">Urban Areas Affected</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">2006-2025</div>
-        <div class="stat-label">Relevant Papers Span</div>
-      </div></div>
-
-    </div>
+  <div class="stats-bar">
+    <div class="stat"><div class="num">6</div><div class="label">Papers Found</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">Relevant</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">Filtered Out</div></div>
   </div>
 
   <main>
     <section>
       <h2>Summary</h2>
       <div class="summary-box">
-        <p>Cities face a significant challenge regarding climate change, both as major contributors and as highly vulnerable areas. Cities consume 75% of natural resources and generate 60-80% of global greenhouse gas emissions. Furthermore, 70% of urban areas worldwide already experience climate change consequences such as extreme flooding, high temperatures, and droughts. We must consider these critical facts when discussing urban development.</p>
-      <p>Climate change places considerable stress on urban infrastructure, requiring careful planning and design. For example, cities experience increasing extreme rainfall events, which directly contribute to urban flooding and severely damage transport infrastructure, disrupting daily life. Power grids, another vital urban system, show increased fragility and higher rates of incidents due to more frequent and intense climate-related hazards. Climate change implications extend across all infrastructures and urban systems, demanding robust risk management approaches.</p>
-      <p>To address these challenges, cities implement various adaptation and mitigation strategies. Green infrastructure, like urban transport projects incorporating green elements, offers a key solution for climate change mitigation and resilience in urban areas. This includes assessing potential ecosystem services provided by green urban infrastructure. Adapting urban drainage infrastructure involves comprehensive planning and design that considers future climate change scenarios. Innovative approaches, such as using reinforcement learning for climate adaptation, help manage flooding and transportation disruptions in cities like Copenhagen.</p>
-      <p>Integrating climate change considerations into all aspects of urban infrastructure planning, design, and management offers a critical path forward. City planners and engineers can build more resilient, sustainable urban environments by proactively addressing climate risks and leveraging green technologies.</p>
+        <p>The presented research collectively examines the significant and multifaceted issue of rising costs within the public transit sector, primarily focusing on the United States and North America. A key distinction emerges between the drivers of escalating *operating costs* and exorbitant *capital or construction costs*. A dominant theme concerning operating costs is the pervasive influence of labor expenditures and stagnant labor productivity, often framed through the lens of Baumol&#039;s cost disease. For capital projects, the research highlights unique institutional, regulatory, and political factors that inflate construction expenses to levels far exceeding international norms.</p>
+      <p>Regarding operating costs, the papers consistently identify labor as the primary cost driver. Analyses reveal that labor productivity in the transit sector, particularly in bus operations, has been largely stagnant or even declining over decades, while average labor costs, including wages and benefits, have risen significantly. This dynamic leads to higher operating costs per ride and declining cost-efficiency, characteristic of Baumol&#039;s cost disease—where labor-intensive services with limited automation experience rising costs relative to other sectors that benefit from productivity gains. Further investigation into this phenomenon points to unionization as a strong predictor of higher staffing levels and lower labor productivity. Other contributing factors include the provision of less productive service in low-density areas or off-peak hours, declining ridership, a notable lack of technological adoption to achieve labor savings, and funding mechanisms that may inadvertently reduce pressure for stringent cost control.</p>
+      <p>In contrast, the research on transit construction costs unveils a distinct set of challenges, particularly in North America, where project costs are exceptionally high compared to international benchmarks. This &quot;cost puzzle&quot; is not primarily explained by factors like difficult geology or standard labor union influence. Instead, the inflated construction expenses are attributed to institutional weaknesses such as a lack of dedicated internal agency capacity, over-reliance on external consultants, inefficient project delivery methods (e.g., traditional design-bid-build), complex procurement regulations, and costly, protracted community engagement and political processes that often lead to design changes and delays. These findings suggest that the high capital costs stem more from systemic, governance-related issues rather than inherent construction difficulties.</p>
+      <p>Collectively, this body of research suggests that rising transit costs are not a monolithic problem but rather a symptom of distinct, though sometimes interconnected, structural challenges in both day-to-day operations and major infrastructure development. There is strong agreement on the central role of labor costs and productivity in driving operating expenses, with specific mechanisms like unionization and service design offering deeper explanations. The clear divergence in the drivers for operating versus capital costs underscores that effective solutions must be tailored. Ultimately, the research collectively suggests that ensuring the financial sustainability and expansion of public transit requires fundamental, systemic reforms across several domains: addressing labor productivity and staffing levels through technology adoption and optimized service design, and undertaking significant institutional reforms to streamline project delivery, enhance internal capacity, and manage regulatory and political processes more efficiently for capital projects.</p>
       </div>
     </section>
 
     <section>
-      <h2>Relevant Papers (9)</h2>
+      <h2>Relevant Papers (1)</h2>
       
     <article class="paper-card">
       <div class="paper-number">1</div>
-      <h3 class="paper-title">Urban transport infrastructure and green infrastructure: actions to mitigate climate change</h3>
-      <p class="relevance-reason">The paper directly examines how urban transport and green infrastructure can mitigate climate change impacts.</p>
+      <h3 class="paper-title">Rising Costs of Transit and Baumol’s Cost Disease</h3>
+      <p class="relevance-reason">The title directly addresses &#039;Rising Costs of Transit&#039; and the abstract confirms its focus on the public transit sector.</p>
       <div class="citations">
         <div class="citation-block">
           <span class="citation-label">APA</span>
-          <p class="citation-text">Pavic, M., &amp; Jokanovic, I. (2024). Urban transport infrastructure and green infrastructure: actions to mitigate climate change. *International Conference on Road and Rail Infrastructure, 8*(—), 893–899. https://doi.org/10.5592/co/cetra.2024.1605</p>
+          <p class="citation-text">Morales Sarriera, J., &amp; Salvucci, F. P. (2016). Rising costs of transit and Baumol’s cost disease. *Transportation Research Record: Journal of the Transportation Research Board, 2541*(1), 1–9. https://doi.org/10.3141/2541-01</p>
         </div>
         <div class="citation-block">
           <span class="citation-label">Chicago</span>
-          <p class="citation-text">Pavic, Milica, and Igor Jokanovic. 2024. “Urban Transport Infrastructure and Green Infrastructure: Actions to Mitigate Climate Change.” *International Conference on Road and Rail Infrastructure* 8 (—): 893–99. https://doi.org/10.5592/co/cetra.2024.1605.</p>
+          <p class="citation-text">Morales Sarriera, Javier, and Frederick P. Salvucci. 2016. &quot;Rising Costs of Transit and Baumol’s Cost Disease.&quot; *Transportation Research Record: Journal of the Transportation Research Board 2541*, no. 1: 1–9. https://doi.org/10.3141/2541-01.</p>
         </div>
       </div>
-      <a class="doi-link" href="https://doi.org/10.5592/co/cetra.2024.1605" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">2</div>
-      <h3 class="paper-title">Green Infrastructure to Face Climate Change in Urban Areas</h3>
-      <p class="relevance-reason">The title directly links green infrastructure with addressing climate change in urban settings.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Unknown Authors. (n.d.). Green Infrastructure to Face Climate Change in Urban Areas. *SpringerReference*. https://doi.org/10.1007/springerreference_226368</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Unknown Authors. n.d. “Green Infrastructure to Face Climate Change in Urban Areas.” *SpringerReference*. https://doi.org/10.1007/springerreference_226368.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.1007/springerreference_226368" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">3</div>
-      <h3 class="paper-title">Green Urban Infrastructure: Assessing Potential Ecosystem Services in Urban Cities</h3>
-      <p class="relevance-reason">The paper explores green urban infrastructure, which plays a role in climate change strategies for urban areas, as suggested by its publication in a &#039;Climate Change and Law Collection&#039;.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Unknown Authors. (n.d.). Green Urban Infrastructure: Assessing Potential Ecosystem Services in Urban Cities. *Climate Change and Law Collection*. https://doi.org/10.1163/9789004322714_cclc_2016-0002-003</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Unknown Authors. n.d. “Green Urban Infrastructure: Assessing Potential Ecosystem Services in Urban Cities.” *Climate Change and Law Collection*. https://doi.org/10.1163/9789004322714_cclc_2016-0002-003.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.1163/9789004322714_cclc_2016-0002-003" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">4</div>
-      <h3 class="paper-title">Urban Drainage Infrastructure Planning and Design Considering Climate Change</h3>
-      <p class="relevance-reason">This paper focuses on how climate change impacts the planning and design of urban drainage infrastructure.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Arisz, H., &amp; Burrell, B. (2006). Urban Drainage Infrastructure Planning and Design Considering Climate Change. *2006 IEEE EIC Climate Change Conference*, 1–9. https://doi.org/10.1109/eicccc.2006.277251</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Arisz, Hans, and Brian Burrell. 2006. “Urban Drainage Infrastructure Planning and Design Considering Climate Change.” In *2006 IEEE EIC Climate Change Conference*, 1–9. https://doi.org/10.1109/eicccc.2006.277251.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.1109/eicccc.2006.277251" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">5</div>
-      <h3 class="paper-title">Framing Climate Change Implications for Infrastructures and Urban Systems</h3>
-      <p class="relevance-reason">The paper directly examines the implications of climate change for both infrastructure and urban systems.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Wilbanks, T. J., &amp; Fernandez, S. (2014). Framing Climate Change Implications for Infrastructures and Urban Systems. In *Climate Change and Infrastructure, Urban Systems, and Vulnerabilities* (pp. 17–40). https://doi.org/10.5822/978-1-61091-556-4_3</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Wilbanks, Thomas J., and Steven Fernandez. 2014. “Framing Climate Change Implications for Infrastructures and Urban Systems.” In *Climate Change and Infrastructure, Urban Systems, and Vulnerabilities*, 17–40. https://doi.org/10.5822/978-1-61091-556-4_3.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.5822/978-1-61091-556-4_3" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">6</div>
-      <h3 class="paper-title">Climate Change Risk Management Options for the Urban Infrastructure Sector</h3>
-      <p class="relevance-reason">This paper directly addresses managing climate change risks specifically within the urban infrastructure sector.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Hoagland-Grey, H. (2015). *Climate Change Risk Management Options for the Urban Infrastructure Sector*. https://doi.org/10.18235/0005998</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Hoagland-Grey, Hilary. 2015. *Climate Change Risk Management Options for the Urban Infrastructure Sector*. https://doi.org/10.18235/0005998.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.18235/0005998" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">7</div>
-      <h3 class="paper-title">Climate Adaptation with Reinforcement Learning: Experiments with Flooding and Transportation in Copenhagen</h3>
-      <p class="relevance-reason">This paper explores climate adaptation strategies for urban transport infrastructure facing flooding, using Copenhagen as a case study.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Costa, M., Petersen, M. W., Vandervoort, A., Drews, M., Morrissey, K., &amp; Pereira, F. C. (2024). Climate Adaptation with Reinforcement Learning: Experiments with Flooding and Transportation in Copenhagen. *arXiv preprint*. https://doi.org/10.48550/arXiv.2409.18574v2</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Costa, Miguel, Morten W. Petersen, Arthur Vandervoort, Martin Drews, Karyn Morrissey, and Francisco C. Pereira. 2024. “Climate Adaptation with Reinforcement Learning: Experiments with Flooding and Transportation in Copenhagen.” *arXiv Preprint*. https://doi.org/10.48550/arXiv.2409.18574v2.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.48550/arXiv.2409.18574v2" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">8</div>
-      <h3 class="paper-title">Fragility Modeling of Power Grid Infrastructure for Addressing Climate Change Risks and Adaptation</h3>
-      <p class="relevance-reason">This paper focuses on assessing the fragility of power grid infrastructure in response to climate change risks and adaptation needs.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Karagiannakis, G., Panteli, M., &amp; Argyroudis, S. (2025). Fragility Modeling of Power Grid Infrastructure for Addressing Climate Change Risks and Adaptation. *arXiv preprint*. https://doi.org/10.48550/arXiv.2504.20056v1</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Karagiannakis, George, Mathaios Panteli, and Sotirios Argyroudis. 2025. “Fragility Modeling of Power Grid Infrastructure for Addressing Climate Change Risks and Adaptation.” *arXiv Preprint*. https://doi.org/10.48550/arXiv.2504.20056v1.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.48550/arXiv.2504.20056v1" target="_blank" rel="noopener">View Paper →</a>
-    </article>
-
-    <article class="paper-card">
-      <div class="paper-number">9</div>
-      <h3 class="paper-title">Weathering Adaptation: Grid Infrastructure Planning in a Changing Climate</h3>
-      <p class="relevance-reason">This paper discusses planning for grid infrastructure to adapt to a changing climate, a direct link to urban infrastructure.</p>
-      <div class="citations">
-        <div class="citation-block">
-          <span class="citation-label">APA</span>
-          <p class="citation-text">Brockway, A. M., &amp; Dunn, L. N. (2019). Weathering Adaptation: Grid Infrastructure Planning in a Changing Climate. *arXiv preprint*. https://doi.org/10.48550/arXiv.1912.02920v1</p>
-        </div>
-        <div class="citation-block">
-          <span class="citation-label">Chicago</span>
-          <p class="citation-text">Brockway, Anna M., and Laurel N. Dunn. 2019. “Weathering Adaptation: Grid Infrastructure Planning in a Changing Climate.” *arXiv Preprint*. https://doi.org/10.48550/arXiv.1912.02920v1.</p>
-        </div>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.48550/arXiv.1912.02920v1" target="_blank" rel="noopener">View Paper →</a>
+      <a class="doi-link" href="https://doi.org/10.3141/2541-01" target="_blank" rel="noopener">View Paper →</a>
     </article>
     </section>
 
     <section class="excluded-section">
-      <h2>Filtered Out (3 papers)</h2>
+      <h2>Filtered Out (5 papers)</h2>
       <ul class="excluded-list">
-        <li><strong>Precipitation extremes under climate change</strong> — This paper focuses broadly on precipitation extremes and climate change, not specifically on urban infrastructure.</li>
-        <li><strong>Future Climate Change Projections over the Indian Region</strong> — This paper discusses climate change projections for a specific region, not the interaction with urban infrastructure.</li>
-        <li><strong>Invasive species, extreme fire risk, and toxin release under a changing climate</strong> — This paper focuses on ecological impacts like invasive species and fire risk, not urban infrastructure.</li>
+        <li><strong>Buyers Beware: Costs for China Rising</strong> — The paper discusses rising costs in China generally, not specifically related to transit.</li>
+        <li><strong>Rising College Costs</strong> — The paper specifically addresses rising college costs, which is not relevant to transit costs.</li>
+        <li><strong>Rising Health Costs</strong> — The paper focuses on rising health costs, not transit-related expenses.</li>
+        <li><strong>Rising costs</strong> — This chapter discusses rising costs in the context of hosting the Olympic Games, not general transit costs.</li>
+        <li><strong>Figure 1.9. Rising mortality and welfare costs of air pollution</strong> — The paper discusses the costs of air pollution, not the operational or fare costs associated with transit itself.</li>
       </ul>
     </section>
   </main>
 
   <footer>Built with Research Citation Agent &middot; Powered by Gemini &amp; Crossref/arXiv</footer>
-
-  <script>
-    // Publications by year bar chart
-    
-    new Chart(document.getElementById('yearChart'), {
-      type: 'bar',
-      data: {
-        labels: ["2006","2014","2015","2019","2020","2024","2025"],
-        datasets: [{
-          data: [1,1,2,1,2,2,1],
-          backgroundColor: '#0f3460',
-          borderRadius: 4,
-          borderSkipped: false,
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          y: { ticks: { stepSize: 1, font: { size: 11 } }, grid: { color: '#f0f0f0' } },
-          x: { ticks: { font: { size: 11 } }, grid: { display: false } }
-        }
-      }
-    });
-
-    // Relevance donut chart
-    new Chart(document.getElementById('donutChart'), {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: [9, 3],
-          backgroundColor: ['#0f3460', '#e2e8f0'],
-          borderWidth: 0,
-          hoverOffset: 4,
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: true,
-        cutout: '72%',
-        plugins: { legend: { display: false }, tooltip: { enabled: false } }
-      }
-    });
-  </script>
 </body>
 </html>
