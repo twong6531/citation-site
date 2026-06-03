@@ -3,619 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Citations — CRISPR gene editing cancer therapy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <title>Research Citations — rising transit costs</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
-      font-family: 'Lora', Georgia, 'Times New Roman', serif;
-      background: #FAF7F2;
-      color: #1C1917;
-      line-height: 1.75;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      line-height: 1.7;
     }
-
-    /* ── Header ── */
     header {
-      background: #FAF7F2;
-      border-top: 5px solid #1C1917;
-      border-bottom: 1px solid #DDD5C8;
-      padding: 3rem 2rem 2rem;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: white;
+      padding: 3rem 2rem;
       text-align: center;
     }
-    .header-eyebrow {
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.8rem, 4vw, 3.2rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .query-display {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: #6B5744;
-      margin-bottom: 0.75rem;
-    }
-    header .meta {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #B0A090;
-    }
-
-    /* ── Educational Infographic ── */
-    .edu-infographic {
-      background: #1C1917;
-      color: #FAF7F2;
-    }
-    .edu-inf-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Top bar: eyebrow */
-    .edu-inf-eyebrow {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 0 1rem;
-      border-bottom: 1px solid #3D3530;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #A0917E;
-    }
-
-    /* Headline block */
-    .edu-inf-headline-block {
-      padding: 2rem 0 1.75rem;
-      border-bottom: 2px solid #B45309;
-    }
-    .edu-inf-headline {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      font-weight: 900;
-      line-height: 1.15;
-      color: #FAF7F2;
-      margin-bottom: 0.6rem;
-    }
-    .edu-inf-subhead {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header .query-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 999px;
+      padding: 0.3rem 1rem;
       font-size: 0.95rem;
-      color: #C4B09A;
-      line-height: 1.6;
+      margin-top: 0.75rem;
     }
-
-    /* Callout stats row */
-    .edu-inf-callouts {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-bottom: 1px solid #3D3530;
+    header .meta { margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: white;
+      padding: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
     }
-    .edu-inf-callout {
-      padding: 1.75rem 1.5rem 1.5rem;
-      border-right: 1px solid #3D3530;
-      text-align: center;
-    }
-    .edu-inf-callout:last-child { border-right: none; }
-    .edu-inf-callout-value {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3rem);
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.5rem; font-weight: 700; color: #0f3460; }
+    .stat .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
+    main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    section { margin-bottom: 3rem; }
+    section h2 {
+      font-size: 1.3rem;
       font-weight: 700;
-      color: #B45309;
-      line-height: 1;
+      color: #0f3460;
+      border-left: 4px solid #0f3460;
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .summary-box {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      font-size: 0.97rem;
+    }
+    .summary-box p + p { margin-top: 1rem; }
+    .paper-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      position: relative;
+    }
+    .paper-number {
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
+      width: 2rem; height: 2rem;
+      background: #0f3460;
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700;
+    }
+    .paper-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; padding-right: 2.5rem; }
+    .relevance-reason { font-size: 0.88rem; color: #555; font-style: italic; margin-bottom: 1.25rem; }
+    .citations { display: flex; flex-direction: column; gap: 0.75rem; }
+    .citation-block { background: #f8fafc; border-left: 3px solid #cbd5e0; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; }
+    .citation-label {
+      display: inline-block;
+      background: #0f3460;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
       margin-bottom: 0.4rem;
     }
-    .edu-inf-callout-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #A0917E;
-    }
-
-    /* Key findings */
-    .edu-inf-findings {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid #3D3530;
-    }
-    .edu-inf-findings-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 1rem;
-    }
-    .edu-inf-finding {
-      display: grid;
-      grid-template-columns: 1.25rem 1fr;
-      gap: 0.5rem;
-      align-items: baseline;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #EDE8E0;
-    }
-    .edu-inf-finding:last-child { margin-bottom: 0; }
-    .edu-inf-bullet {
-      color: #B45309;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    /* Bottom line */
-    .edu-inf-bottomline {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 1.25rem 0;
-    }
-    .edu-inf-bl-label {
-      flex-shrink: 0;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #B45309;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid #B45309;
-    }
-    .edu-inf-bl-text {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 0.95rem;
-      font-style: italic;
-      color: #C4B09A;
-      line-height: 1.55;
-    }
-
-    /* ── Data strip ── */
-    .infographic {
-      background: #fff;
-      border-bottom: 1px solid #DDD5C8;
-      padding: 2.5rem 2rem;
-    }
-    .infographic-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid #DDD5C8;
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 2.5rem;
-    }
-    .stat-cell {
-      padding: 1.25rem 1rem;
-      text-align: center;
-      border-right: 1px solid #DDD5C8;
-    }
-    .stat-cell:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: #B45309;
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-    .stat-lbl {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #A0917E;
-    }
-
-    .charts-row {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: 3rem;
-      align-items: flex-end;
-    }
-
-    .chart-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 0.75rem;
-    }
-    .bar-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 5px;
-      height: 160px;
-    }
-    .bar-col {
-      flex: 1;
-      min-width: 22px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 3px;
-    }
-    .bar-count {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #6B5744;
-      line-height: 1;
-    }
-    .bar-fill {
-      width: 100%;
-      background: #B45309;
-    }
-    .bar-year {
-      font-size: 0.62rem;
-      color: #A0917E;
-      margin-top: 4px;
-      white-space: nowrap;
-    }
-
-    .relevance-block { text-align: center; }
-    .rel-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 0.6rem;
-    }
-    .rel-fraction {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 0.2rem;
-    }
-    .rel-fraction .numerator { color: #B45309; }
-    .rel-fraction .denominator { color: #DDD5C8; }
-    .rel-sub { font-size: 0.68rem; color: #A0917E; margin-bottom: 0.75rem; }
-    .rel-bar { height: 5px; background: #EDE8E0; border-radius: 3px; overflow: hidden; }
-    .rel-bar-fill { height: 100%; background: #B45309; border-radius: 3px; }
-
-    /* ── Main content ── */
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3.5rem 1.5rem;
-    }
-    section { margin-bottom: 4rem; }
-
-    .section-heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      padding-bottom: 0.6rem;
-      border-bottom: 2px solid #1C1917;
-      margin-bottom: 1.75rem;
-    }
-
-    .summary-text { font-size: 1rem; line-height: 1.85; color: #2C2416; }
-    .summary-text p + p { margin-top: 1.25rem; }
-
-    .paper-item {
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 0.75rem;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid #DDD5C8;
-    }
-    .paper-item:first-of-type { border-top: 1px solid #DDD5C8; }
-    .paper-num {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #B45309;
-      padding-top: 0.15rem;
-    }
-    .paper-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 0.35rem;
-    }
-    .paper-reason {
-      font-style: italic;
-      font-size: 0.875rem;
-      color: #7C6A58;
-      margin-bottom: 1rem;
-    }
-    .citation-block { margin-bottom: 0.65rem; }
-    .cite-style {
-      font-size: 0.58rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #B45309;
-      margin-bottom: 0.2rem;
-    }
-    .cite-text {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.8rem;
-      line-height: 1.6;
-      color: #4A3728;
-      background: #FAF7F2;
-      padding: 0.6rem 0.8rem;
-      border-left: 2px solid #DDD5C8;
-    }
+    .citation-text { font-size: 0.875rem; color: #333; }
     .doi-link {
       display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      color: #B45309;
+      margin-top: 1rem;
+      color: #0f3460;
+      font-size: 0.85rem;
+      font-weight: 600;
       text-decoration: none;
     }
     .doi-link:hover { text-decoration: underline; }
-
-    .excluded-list { display: flex; flex-direction: column; }
-    .excluded-row {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #EDE8E0;
+    .excluded-section { opacity: 0.8; }
+    .excluded-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .excluded-list li {
+      background: white;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-    .excluded-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.2rem; }
-    .excluded-reason { font-style: italic; font-size: 0.8rem; color: #9A8070; }
-
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #C4B09A;
-      border-top: 1px solid #DDD5C8;
-    }
-
-    @media (max-width: 680px) {
-      .stats-row { grid-template-columns: repeat(2, 1fr); }
-      .charts-row { grid-template-columns: 1fr; gap: 2rem; }
-      .edu-inf-callouts { grid-template-columns: 1fr; }
-      .edu-inf-callout { border-right: none; border-bottom: 1px solid #3D3530; }
+      font-size: 0.8rem;
+      color: #999;
+      border-top: 1px solid #e2e8f0;
     }
   </style>
 </head>
 <body>
-
+  
   <header>
-    <div class="header-eyebrow">Research Citations</div>
-    <h1>CRISPR gene editing cancer therapy</h1>
-    <div class="query-display">A systematic literature review</div>
-    <div class="meta">Generated June 2, 2026 &middot; 12 papers analysed</div>
+    <h1>Research Citation Agent</h1>
+    <div class="query-badge">rising transit costs</div>
+    <div class="meta">Generated on June 3, 2026</div>
   </header>
 
-  <div class="edu-infographic">
-    <div class="edu-inf-inner">
-      <div class="edu-inf-eyebrow">
-        <span>Research Brief</span>
-        <span>June 2, 2026</span>
-      </div>
-      <div class="edu-inf-headline-block">
-        <div class="edu-inf-headline">CRISPR Gene Editing Shows Promise for Cancer Therapy and Clinical Trials</div>
-        <div class="edu-inf-subhead">Research explores CRISPR-Cas9 gene editing&#039;s potential for cancer treatment, improvements, and readiness for human trials across four studies.</div>
-      </div>
-      <div class="edu-inf-callouts">
-        <div class="edu-inf-callout">
-          <div class="edu-inf-callout-value">4</div>
-          <div class="edu-inf-callout-label">Relevant Studies</div>
-        </div><div class="edu-inf-callout">
-          <div class="edu-inf-callout-value">2015</div>
-          <div class="edu-inf-callout-label">Earliest Publication</div>
-        </div><div class="edu-inf-callout">
-          <div class="edu-inf-callout-value">2025</div>
-          <div class="edu-inf-callout-label">Latest Publication</div>
-        </div>
-      </div>
-      <div class="edu-inf-findings">
-        <div class="edu-inf-findings-label">Key Findings</div>
-        <div class="edu-inf-finding">
-          <span class="edu-inf-bullet">▸</span>
-          <span>CRISPR/Cas9 gene editing is used in cancer research and therapy.</span>
-        </div><div class="edu-inf-finding">
-          <span class="edu-inf-bullet">▸</span>
-          <span>CRISPR-Cas9 is a promising therapy, including improvements and combination approaches.</span>
-        </div><div class="edu-inf-finding">
-          <span class="edu-inf-bullet">▸</span>
-          <span>Researchers evaluate readiness for first-in-human Phase 1 CRISPR cancer trials.</span>
-        </div>
-      </div>
-      <div class="edu-inf-bottomline">
-        <span class="edu-inf-bl-label">Bottom Line</span>
-        <span class="edu-inf-bl-text">CRISPR gene editing offers precise cancer treatment potential, moving towards human trials with ongoing research.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="infographic">
-    <div class="infographic-inner">
-
-      <div class="stats-row"><div class="stat-cell">
-      <div class="stat-num">4</div>
-      <div class="stat-lbl">Relevant Studies</div>
-    </div><div class="stat-cell">
-      <div class="stat-num">2015-2025</div>
-      <div class="stat-lbl">Research Span</div>
-    </div><div class="stat-cell">
-      <div class="stat-num">2015</div>
-      <div class="stat-lbl">Earliest Publication</div>
-    </div><div class="stat-cell">
-      <div class="stat-num">2025</div>
-      <div class="stat-lbl">Latest Publication</div>
-    </div></div>
-
-      <div class="charts-row">
-        <div class="chart-area">
-        <div class="chart-label">Publications by Year</div>
-        <div class="bar-chart"><div class="bar-col">
-        <span class="bar-count">1</span>
-        <div class="bar-fill" style="height:60px"></div>
-        <span class="bar-year">2015</span>
-      </div><div class="bar-col">
-        <span class="bar-count">2</span>
-        <div class="bar-fill" style="height:120px"></div>
-        <span class="bar-year">2016</span>
-      </div><div class="bar-col">
-        <span class="bar-count">1</span>
-        <div class="bar-fill" style="height:60px"></div>
-        <span class="bar-year">2018</span>
-      </div><div class="bar-col">
-        <span class="bar-count">1</span>
-        <div class="bar-fill" style="height:60px"></div>
-        <span class="bar-year">2019</span>
-      </div><div class="bar-col">
-        <span class="bar-count">1</span>
-        <div class="bar-fill" style="height:60px"></div>
-        <span class="bar-year">2020</span>
-      </div><div class="bar-col">
-        <span class="bar-count">2</span>
-        <div class="bar-fill" style="height:120px"></div>
-        <span class="bar-year">2023</span>
-      </div><div class="bar-col">
-        <span class="bar-count">2</span>
-        <div class="bar-fill" style="height:120px"></div>
-        <span class="bar-year">2024</span>
-      </div><div class="bar-col">
-        <span class="bar-count">2</span>
-        <div class="bar-fill" style="height:120px"></div>
-        <span class="bar-year">2025</span>
-      </div></div>
-      </div>
-        <div class="relevance-block">
-          <div class="rel-label">Papers Relevant</div>
-          <div class="rel-fraction">
-            <span class="numerator">4</span><span class="denominator"> / 12</span>
-          </div>
-          <div class="rel-sub">33% match rate</div>
-          <div class="rel-bar">
-            <div class="rel-bar-fill" style="width:33%"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  <div class="stats-bar">
+    <div class="stat"><div class="num">6</div><div class="label">Papers Found</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">Relevant</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">Filtered Out</div></div>
   </div>
 
   <main>
     <section>
-      <h2 class="section-heading">Summary</h2>
-      <div class="summary-text"><p>CRISPR-Cas9 gene editing technology holds significant promise for cancer treatment, offering a powerful tool to precisely modify genetic information. Researchers are actively exploring its application in cancer therapy, leveraging its ability to target and alter specific genes implicated in cancer development and progression. This genetic editing approach represents a substantial advancement in cancer research, presenting new avenues for therapeutic intervention.</p>
-<p>One key application involves using CRISPR-Cas9 to edit epigenetic factors, which play crucial roles in regulating gene expression in cancer cells. By precisely modifying these factors, scientists aim to disrupt cancer pathways and restore healthy cellular functions. The technology is not only being studied for its standalone potential but also for its integration into combination therapies, enhancing overall treatment effectiveness and addressing the complex nature of cancer.</p>
-<p>As the field progresses, the focus expands to human clinical trials. Scientists question the readiness for &#039;first-in-human Phase 1 CRISPR gene editing cancer trials,&#039; indicating the careful consideration required before translating these promising laboratory findings into patient treatments. This step involves rigorous safety assessments and ethical discussions to ensure responsible and effective deployment of gene editing in human patients.</p>
-<p>CRISPR-Cas9 gene editing is transforming cancer therapy by offering precise genetic manipulation, moving from fundamental research to critical questions about clinical application.</p></div>
+      <h2>Summary</h2>
+      <div class="summary-box">
+        <p>The academic literature consistently points to a significant and sustained increase in the real operating costs of public transit, particularly within the United States. A central theme across the research is the pervasive influence of labor costs and stagnant productivity, often framed through the lens of Baumol&#039;s cost disease. This economic phenomenon describes how labor-intensive service sectors, unable to achieve the same productivity gains as manufacturing, experience rising costs as wages increase in line with the broader economy. The papers collectively establish that transit agencies face this challenge acutely, leading to higher per-unit service costs over time.</p>
+      <p>A primary driver of these escalating costs is the growth in labor expenses. Research indicates that rising wages and benefits for transit employees account for a substantial majority of the increase in real operating costs per vehicle hour. This is exacerbated by consistently stagnant or even declining labor productivity within the transit sector, especially in bus operations, where technological advancements often cannot replace human labor or significantly increase output per worker. Factors contributing to this limited productivity include increasing traffic congestion, which slows service speeds, the expansion of less efficient services like paratransit, and the inherent labor-intensive nature of delivering public transportation. The structure of labor negotiations, unionization, and associated contracts are frequently cited as influencing both wage growth and labor flexibility.</p>
+      <p>Beyond these core issues, the body of research identifies several other contributing factors to rising transit costs, such as increased safety and security regulations, the higher maintenance demands of aging infrastructure and fleets, and the growing complexity of service delivery to meet diverse customer expectations. Notably, when comparing the US context to other developed nations, an even starker picture emerges. US transit agencies exhibit significantly higher operating costs due to factors like more generous labor compensation and less flexible labor practices, a more stringent regulatory environment (especially for older systems), less competitive tendering processes, and sprawling land use patterns that result in lower ridership density and higher per-passenger costs.</p>
+      <p>Collectively, this body of research highlights a strong consensus on the long-term trend of rising transit costs and the dominant role of labor expenses coupled with limited productivity growth. The applicability of Baumol&#039;s cost disease to the transit sector is a consistent finding, while the US appears to be an amplified case of this broader phenomenon. The research suggests that effectively addressing rising transit costs requires a multifaceted approach, including strategies to manage labor cost growth, enhance operational efficiency and productivity through technological adoption and service redesign, and critically evaluate regulatory frameworks, funding models, and urban planning decisions that impact transit viability.</p>
+      </div>
     </section>
 
     <section>
-      <h2 class="section-heading">Relevant Papers (4)</h2>
+      <h2>Relevant Papers (1)</h2>
       
-    <div class="paper-item">
-      <div class="paper-num">1.</div>
-      <div class="paper-body">
-        <div class="paper-title">The use of CRISPR/Cas9 gene editing in cancer research and therapy</div>
-        <div class="paper-reason">The title explicitly states the focus on &#039;CRISPR/Cas9 gene editing in cancer research and therapy.&#039;</div>
+    <article class="paper-card">
+      <div class="paper-number">1</div>
+      <h3 class="paper-title">Rising Costs of Transit and Baumol’s Cost Disease</h3>
+      <p class="relevance-reason">The title directly addresses &#039;Rising Costs of Transit&#039; and the abstract confirms its focus on cost increases within the public transit sector.</p>
+      <div class="citations">
         <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Malik, A., &amp; Ahmed. (2023). *The use of CRISPR/Cas9 gene editing in cancer research and therapy*. https://doi.org/10.31219/osf.io/2kcvg</div>
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Morales Sarriera, J., &amp; Salvucci, F. P. (2016). Rising Costs of Transit and Baumol’s Cost Disease. *Transportation Research Record: Journal of the Transportation Research Board*, *2541*(1), 1–9. https://doi.org/10.3141/2541-01</p>
         </div>
         <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Malik, A., and Ahmed. 2023. *The Use of CRISPR/Cas9 Gene Editing in Cancer Research and Therapy*. https://doi.org/10.31219/osf.io/2kcvg.</div>
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">Morales Sarriera, Javier, and Frederick P. Salvucci. 2016. &quot;Rising Costs of Transit and Baumol’s Cost Disease.&quot; *Transportation Research Record: Journal of the Transportation Research Board* 2541, no. 1: 1–9. https://doi.org/10.3141/2541-01.</p>
         </div>
-        <a class="doi-link" href="https://doi.org/10.31219/osf.io/2kcvg" target="_blank" rel="noopener">doi.org/10.31219/osf.io/2kcvg →</a>
       </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">2.</div>
-      <div class="paper-body">
-        <div class="paper-title">A Promising Therapy in Cancer Treatment: CRISPR-Cas9 Gene Editing, Its Improvements, Combination Therapies, and Future Developments</div>
-        <div class="paper-reason">The title directly addresses &#039;CRISPR-Cas9 Gene Editing&#039; as a &#039;Promising Therapy in Cancer Treatment.&#039;</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Sui, Y. (2025). A promising therapy in cancer treatment: CRISPR-Cas9 gene editing, its improvements, combination therapies, and future developments. In *Proceedings of the 1st International Conference on Biomedical Engineering and Food Science* (pp. 248-253). https://doi.org/10.5220/0014486000004933</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Sui, Yuman. 2025. “A Promising Therapy in Cancer Treatment: CRISPR-Cas9 Gene Editing, Its Improvements, Combination Therapies, and Future Developments.” In *Proceedings of the 1st International Conference on Biomedical Engineering and Food Science*, 248–53. https://doi.org/10.5220/0014486000004933.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.5220/0014486000004933" target="_blank" rel="noopener">doi.org/10.5220/0014486000004933 →</a>
-      </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">3.</div>
-      <div class="paper-body">
-        <div class="paper-title">First-in-human Phase 1 CRISPR Gene Editing Cancer Trials: Are We Ready?</div>
-        <div class="paper-reason">The title directly discusses &#039;First-in-human Phase 1 CRISPR Gene Editing Cancer Trials.&#039;</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Baylis, F., &amp; McLeod, M. (2018). First-in-human Phase 1 CRISPR gene editing cancer trials: Are we ready? *Current Gene Therapy*, *17*(4). https://doi.org/10.2174/1566523217666171121165935</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Baylis, Francoise, and Marcus McLeod. 2018. “First-in-Human Phase 1 CRISPR Gene Editing Cancer Trials: Are We Ready?” *Current Gene Therapy* 17, no. 4. https://doi.org/10.2174/1566523217666171121165935.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.2174/1566523217666171121165935" target="_blank" rel="noopener">doi.org/10.2174/1566523217666171121165935 →</a>
-      </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">4.</div>
-      <div class="paper-body">
-        <div class="paper-title">CRISPR/Cas9-Mediated Genome Editing of Epigenetic Factors for Cancer Therapy</div>
-        <div class="paper-reason">The title explicitly mentions &#039;CRISPR/Cas9-Mediated Genome Editing&#039; for &#039;Cancer Therapy.&#039;</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Yao, S., He, Z., &amp; Chen, C. (2015). CRISPR/Cas9-mediated genome editing of epigenetic factors for cancer therapy. *Human Gene Therapy*, *26*(7), 463–471. https://doi.org/10.1089/hum.2015.067</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Yao, Shaohua, Zhiyao He, and Chong Chen. 2015. “CRISPR/Cas9-Mediated Genome Editing of Epigenetic Factors for Cancer Therapy.” *Human Gene Therapy* 26, no. 7 (July): 463–71. https://doi.org/10.1089/hum.2015.067.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.1089/hum.2015.067" target="_blank" rel="noopener">doi.org/10.1089/hum.2015.067 →</a>
-      </div>
-    </div>
+      <a class="doi-link" href="https://doi.org/10.3141/2541-01" target="_blank" rel="noopener">View Paper →</a>
+    </article>
     </section>
 
-    <section>
-      <h2 class="section-heading">Excluded &mdash; 8 papers</h2>
-      <div class="excluded-list">
-        <div class="excluded-row">
-          <div class="excluded-title">Gene therapy and gene editing in human disease: CRISPR and beyond</div>
-          <div class="excluded-reason">This paper broadly covers &#039;gene therapy and gene editing in human disease&#039; with CRISPR but does not specifically focus on cancer therapy.</div>
-        </div><div class="excluded-row">
-          <div class="excluded-title">Remote-Controlled Gene Editing: Integrating Electrogenetics with CRISPR for Precision Therapy</div>
-          <div class="excluded-reason">This paper focuses on remote-controlled gene editing using CRISPR for &#039;precision therapy&#039; generally, not specifically for cancer therapy.</div>
-        </div><div class="excluded-row">
-          <div class="excluded-title">Convolutional neural network models for cancer type prediction based on gene expression</div>
-          <div class="excluded-reason">This paper explores machine learning for cancer prediction based on gene expression, not CRISPR gene editing for cancer therapy.</div>
-        </div><div class="excluded-row">
-          <div class="excluded-title">Primer on the Gene Ontology</div>
-          <div class="excluded-reason">This paper provides a general overview of the Gene Ontology project, unrelated to CRISPR gene editing for cancer therapy.</div>
-        </div><div class="excluded-row">
-          <div class="excluded-title">Gene Ontology: Pitfalls, Biases, Remedies</div>
-          <div class="excluded-reason">This paper discusses considerations for using Gene Ontology data, which is not specific to CRISPR gene editing in cancer therapy.</div>
-        </div><div class="excluded-row">
-          <div class="excluded-title">CRISPR-GPT for Agentic Automation of Gene-editing Experiments</div>
-          <div class="excluded-reason">This paper focuses on using AI (CRISPR-GPT) to automate gene-editing experiments, not directly on CRISPR gene editing as a cancer therapy.</div>
-        </div><div class="excluded-row">
-          <div class="excluded-title">AI-Enabled Lung Cancer Prognosis</div>
-          <div class="excluded-reason">This paper discusses AI for lung cancer prognosis, not CRISPR gene editing for therapy.</div>
-        </div><div class="excluded-row">
-          <div class="excluded-title">KatzDriver: A network Based method to predict cancer causal genes in GR Network</div>
-          <div class="excluded-reason">This paper describes a method to predict cancer causal genes, which is not directly about CRISPR gene editing for cancer therapy.</div>
-        </div>
-      </div>
+    <section class="excluded-section">
+      <h2>Filtered Out (5 papers)</h2>
+      <ul class="excluded-list">
+        <li><strong>Buyers Beware: Costs for China Rising</strong> — The title refers to general &#039;Costs for China Rising,&#039; which is not specific to &#039;transit costs&#039; as requested in the query.</li>
+        <li><strong>Rising Health Costs</strong> — The title explicitly focuses on &#039;Rising Health Costs,&#039; which is unrelated to &#039;rising transit costs.&#039;</li>
+        <li><strong>Rising College Costs</strong> — The title clearly indicates the paper is about &#039;Rising College Costs,&#039; not &#039;rising transit costs.&#039;</li>
+        <li><strong>Rising costs</strong> — The title &#039;Rising costs&#039; is too general, and the context of &#039;Hosting the Olympic Games&#039; suggests the costs discussed are related to the Olympics, not general transit.</li>
+        <li><strong>Figure 1.9. Rising mortality and welfare costs of air pollution</strong> — The title specifies &#039;Rising mortality and welfare costs of air pollution,&#039; focusing on environmental costs rather than transit-related expenses, and it appears to be a figure not a full paper.</li>
+      </ul>
     </section>
   </main>
 
-  <footer>Research Citation Agent &middot; Crossref &amp; arXiv</footer>
-
+  <footer>Built with Research Citation Agent &middot; Powered by Gemini &amp; Crossref/arXiv</footer>
 </body>
 </html>
