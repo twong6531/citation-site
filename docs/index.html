@@ -3,605 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Citations — crispr gene therapy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <title>Research Citations — rising transit costs</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
-      font-family: 'Lora', Georgia, 'Times New Roman', serif;
-      background: #FAF7F2;
-      color: #1C1917;
-      line-height: 1.75;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      line-height: 1.7;
     }
-
-    /* ── Header ── */
     header {
-      background: #FAF7F2;
-      border-top: 5px solid #1C1917;
-      border-bottom: 1px solid #DDD5C8;
-      padding: 3rem 2rem 2rem;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: white;
+      padding: 3rem 2rem;
       text-align: center;
     }
-    .header-eyebrow {
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.8rem, 4vw, 3.2rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .query-display {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: #6B5744;
-      margin-bottom: 0.75rem;
-    }
-    header .meta {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #B0A090;
-    }
-
-    /* ── Educational Infographic ── */
-    .edu-infographic {
-      background: #1C1917;
-      color: #FAF7F2;
-    }
-    .edu-inf-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Top bar: eyebrow */
-    .edu-inf-eyebrow {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 0 1rem;
-      border-bottom: 1px solid #3D3530;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #A0917E;
-    }
-
-    /* Headline block */
-    .edu-inf-headline-block {
-      padding: 2rem 0 1.75rem;
-      border-bottom: 2px solid #B45309;
-    }
-    .edu-inf-headline {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      font-weight: 900;
-      line-height: 1.15;
-      color: #FAF7F2;
-      margin-bottom: 0.6rem;
-    }
-    .edu-inf-subhead {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header .query-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 999px;
+      padding: 0.3rem 1rem;
       font-size: 0.95rem;
-      color: #C4B09A;
-      line-height: 1.6;
+      margin-top: 0.75rem;
     }
-
-    /* Callout stats row */
-    .edu-inf-callouts {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-bottom: 1px solid #3D3530;
+    header .meta { margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: white;
+      padding: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
     }
-    .edu-inf-callout {
-      padding: 1.75rem 1.5rem 1.5rem;
-      border-right: 1px solid #3D3530;
-      text-align: center;
-    }
-    .edu-inf-callout:last-child { border-right: none; }
-    .edu-inf-callout-value {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3rem);
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.5rem; font-weight: 700; color: #0f3460; }
+    .stat .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
+    main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+    section { margin-bottom: 3rem; }
+    section h2 {
+      font-size: 1.3rem;
       font-weight: 700;
-      color: #B45309;
-      line-height: 1;
+      color: #0f3460;
+      border-left: 4px solid #0f3460;
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .summary-box {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      font-size: 0.97rem;
+    }
+    .summary-box p + p { margin-top: 1rem; }
+    .paper-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      position: relative;
+    }
+    .paper-number {
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
+      width: 2rem; height: 2rem;
+      background: #0f3460;
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700;
+    }
+    .paper-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; padding-right: 2.5rem; }
+    .relevance-reason { font-size: 0.88rem; color: #555; font-style: italic; margin-bottom: 1.25rem; }
+    .citations { display: flex; flex-direction: column; gap: 0.75rem; }
+    .citation-block { background: #f8fafc; border-left: 3px solid #cbd5e0; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; }
+    .citation-label {
+      display: inline-block;
+      background: #0f3460;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
       margin-bottom: 0.4rem;
     }
-    .edu-inf-callout-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #A0917E;
-    }
-
-    /* Key findings */
-    .edu-inf-findings {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid #3D3530;
-    }
-    .edu-inf-findings-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 1rem;
-    }
-    .edu-inf-finding {
-      display: grid;
-      grid-template-columns: 1.25rem 1fr;
-      gap: 0.5rem;
-      align-items: baseline;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #EDE8E0;
-    }
-    .edu-inf-finding:last-child { margin-bottom: 0; }
-    .edu-inf-bullet {
-      color: #B45309;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    /* Bottom line */
-    .edu-inf-bottomline {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 1.25rem 0;
-    }
-    .edu-inf-bl-label {
-      flex-shrink: 0;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #B45309;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid #B45309;
-    }
-    .edu-inf-bl-text {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 0.95rem;
-      font-style: italic;
-      color: #C4B09A;
-      line-height: 1.55;
-    }
-
-    /* ── Data strip ── */
-    .infographic {
-      background: #fff;
-      border-bottom: 1px solid #DDD5C8;
-      padding: 2.5rem 2rem;
-    }
-    .infographic-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid #DDD5C8;
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 2.5rem;
-    }
-    .stat-cell {
-      padding: 1.25rem 1rem;
-      text-align: center;
-      border-right: 1px solid #DDD5C8;
-    }
-    .stat-cell:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: #B45309;
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-    .stat-lbl {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #A0917E;
-    }
-
-    .charts-row {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: 3rem;
-      align-items: flex-end;
-    }
-
-    .chart-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 0.75rem;
-    }
-    .bar-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 5px;
-      height: 160px;
-    }
-    .bar-col {
-      flex: 1;
-      min-width: 22px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 3px;
-    }
-    .bar-count {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #6B5744;
-      line-height: 1;
-    }
-    .bar-fill {
-      width: 100%;
-      background: #B45309;
-    }
-    .bar-year {
-      font-size: 0.62rem;
-      color: #A0917E;
-      margin-top: 4px;
-      white-space: nowrap;
-    }
-
-    .relevance-block { text-align: center; }
-    .rel-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #A0917E;
-      margin-bottom: 0.6rem;
-    }
-    .rel-fraction {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 0.2rem;
-    }
-    .rel-fraction .numerator { color: #B45309; }
-    .rel-fraction .denominator { color: #DDD5C8; }
-    .rel-sub { font-size: 0.68rem; color: #A0917E; margin-bottom: 0.75rem; }
-    .rel-bar { height: 5px; background: #EDE8E0; border-radius: 3px; overflow: hidden; }
-    .rel-bar-fill { height: 100%; background: #B45309; border-radius: 3px; }
-
-    /* ── Main content ── */
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3.5rem 1.5rem;
-    }
-    section { margin-bottom: 4rem; }
-
-    .section-heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      padding-bottom: 0.6rem;
-      border-bottom: 2px solid #1C1917;
-      margin-bottom: 1.75rem;
-    }
-
-    .summary-text { font-size: 1rem; line-height: 1.85; color: #2C2416; }
-    .summary-text p + p { margin-top: 1.25rem; }
-
-    .paper-item {
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 0.75rem;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid #DDD5C8;
-    }
-    .paper-item:first-of-type { border-top: 1px solid #DDD5C8; }
-    .paper-num {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #B45309;
-      padding-top: 0.15rem;
-    }
-    .paper-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 0.35rem;
-    }
-    .paper-reason {
-      font-style: italic;
-      font-size: 0.875rem;
-      color: #7C6A58;
-      margin-bottom: 1rem;
-    }
-    .citation-block { margin-bottom: 0.65rem; }
-    .cite-style {
-      font-size: 0.58rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #B45309;
-      margin-bottom: 0.2rem;
-    }
-    .cite-text {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.8rem;
-      line-height: 1.6;
-      color: #4A3728;
-      background: #FAF7F2;
-      padding: 0.6rem 0.8rem;
-      border-left: 2px solid #DDD5C8;
-    }
+    .citation-text { font-size: 0.875rem; color: #333; }
     .doi-link {
       display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      color: #B45309;
+      margin-top: 1rem;
+      color: #0f3460;
+      font-size: 0.85rem;
+      font-weight: 600;
       text-decoration: none;
     }
     .doi-link:hover { text-decoration: underline; }
-
-    .excluded-list { display: flex; flex-direction: column; }
-    .excluded-row {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #EDE8E0;
+    .excluded-section { opacity: 0.8; }
+    .excluded-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .excluded-list li {
+      background: white;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-    .excluded-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.2rem; }
-    .excluded-reason { font-style: italic; font-size: 0.8rem; color: #9A8070; }
-
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #C4B09A;
-      border-top: 1px solid #DDD5C8;
-    }
-
-    @media (max-width: 680px) {
-      .stats-row { grid-template-columns: repeat(2, 1fr); }
-      .charts-row { grid-template-columns: 1fr; gap: 2rem; }
-      .edu-inf-callouts { grid-template-columns: 1fr; }
-      .edu-inf-callout { border-right: none; border-bottom: 1px solid #3D3530; }
+      font-size: 0.8rem;
+      color: #999;
+      border-top: 1px solid #e2e8f0;
     }
   </style>
 </head>
 <body>
-
+  
   <header>
-    <div class="header-eyebrow">Research Citations</div>
-    <h1>crispr gene therapy</h1>
-    <div class="query-display">A systematic literature review</div>
-    <div class="meta">Generated June 4, 2026 &middot; 6 papers analysed</div>
+    <h1>Research Citation Agent</h1>
+    <div class="query-badge">rising transit costs</div>
+    <div class="meta">Generated on June 5, 2026</div>
   </header>
 
-  <div class="edu-infographic">
-    <div class="edu-inf-inner">
-      <div class="edu-inf-eyebrow">
-        <span>Research Brief</span>
-        <span>June 4, 2026</span>
-      </div>
-      <div class="edu-inf-headline-block">
-        <div class="edu-inf-headline">CRISPR Gene Therapy Explores Diverse Applications and Critical Considerations</div>
-        <div class="edu-inf-subhead">An analysis of six recent papers published between n.d. and 2025 reveals the expanding potential and challenges of CRISPR technology.</div>
-      </div>
-      <div class="edu-inf-callouts">
-        <div class="edu-inf-callout">
-          <div class="edu-inf-callout-value">6</div>
-          <div class="edu-inf-callout-label">Papers Reviewed</div>
-        </div><div class="edu-inf-callout">
-          <div class="edu-inf-callout-value">n.d. - 2025</div>
-          <div class="edu-inf-callout-label">Research Dates</div>
-        </div><div class="edu-inf-callout">
-          <div class="edu-inf-callout-value">4</div>
-          <div class="edu-inf-callout-label">Therapeutic Areas</div>
-        </div>
-      </div>
-      <div class="edu-inf-findings">
-        <div class="edu-inf-findings-label">Key Findings</div>
-        <div class="edu-inf-finding">
-          <span class="edu-inf-bullet">▸</span>
-          <span>CRISPR gene therapy targets conditions like viral infections and muscular dystrophy.</span>
-        </div><div class="edu-inf-finding">
-          <span class="edu-inf-bullet">▸</span>
-          <span>Applications extend to dentistry and genetic disorders such as Wilson&#039;s disease.</span>
-        </div><div class="edu-inf-finding">
-          <span class="edu-inf-bullet">▸</span>
-          <span>Delivery systems involve viral vectors and nanoparticle technologies.</span>
-        </div>
-      </div>
-      <div class="edu-inf-bottomline">
-        <span class="edu-inf-bl-label">Bottom Line</span>
-        <span class="edu-inf-bl-text">CRISPR gene therapy offers broad therapeutic potential but requires careful ethical and scientific consideration.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="infographic">
-    <div class="infographic-inner">
-
-      <div class="stats-row"><div class="stat-cell">
-      <div class="stat-num">6</div>
-      <div class="stat-lbl">Papers analyzed</div>
-    </div><div class="stat-cell">
-      <div class="stat-num">n.d. - 2025</div>
-      <div class="stat-lbl">Research date range</div>
-    </div><div class="stat-cell">
-      <div class="stat-num">4</div>
-      <div class="stat-lbl">Therapeutic areas</div>
-    </div><div class="stat-cell">
-      <div class="stat-num">2</div>
-      <div class="stat-lbl">Delivery methods</div>
-    </div></div>
-
-      <div class="charts-row">
-        <div class="chart-area">
-        <div class="chart-label">Publications by Year</div>
-        <div class="bar-chart"><div class="bar-col">
-        <span class="bar-count">1</span>
-        <div class="bar-fill" style="height:60px"></div>
-        <span class="bar-year">2019</span>
-      </div><div class="bar-col">
-        <span class="bar-count">2</span>
-        <div class="bar-fill" style="height:120px"></div>
-        <span class="bar-year">2022</span>
-      </div><div class="bar-col">
-        <span class="bar-count">1</span>
-        <div class="bar-fill" style="height:60px"></div>
-        <span class="bar-year">2023</span>
-      </div><div class="bar-col">
-        <span class="bar-count">1</span>
-        <div class="bar-fill" style="height:60px"></div>
-        <span class="bar-year">2025</span>
-      </div></div>
-      </div>
-        <div class="relevance-block">
-          <div class="rel-label">Papers Relevant</div>
-          <div class="rel-fraction">
-            <span class="numerator">6</span><span class="denominator"> / 6</span>
-          </div>
-          <div class="rel-sub">100% match rate</div>
-          <div class="rel-bar">
-            <div class="rel-bar-fill" style="width:100%"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  <div class="stats-bar">
+    <div class="stat"><div class="num">12</div><div class="label">Papers Found</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">Relevant</div></div>
+    <div class="stat"><div class="num">11</div><div class="label">Filtered Out</div></div>
   </div>
 
   <main>
     <section>
-      <h2 class="section-heading">Summary</h2>
-      <div class="summary-text"><p>CRISPR gene therapy is transforming approaches to treat a wide array of human diseases. Researchers are exploring its potential not only for general gene editing but also for highly specific applications, moving the field beyond traditional therapeutic boundaries. This powerful technology offers precision in modifying genetic material, paving the way for innovative treatments.</p>
-<p>Applications of CRISPR gene therapy span several critical areas. Scientists investigate using CRISPR-Cas systems to target and combat viral infections, offering a novel strategy against persistent pathogens. The technology also shows promise in treating genetic disorders like muscular dystrophy, where viral vectors deliver CRISPR/Cas components, and Wilson&#039;s disease, where nanoparticle delivery systems are under exploration. Surprisingly, this advanced gene editing tool even finds consideration for therapeutic interventions in dentistry, showcasing its diverse potential across medical specialties.</p>
-<p>While the therapeutic prospects of CRISPR gene therapy are vast and exciting, they also bring important considerations. Researchers actively examine the ethical and scientific concerns that arise with such powerful gene editing capabilities. Addressing these challenges responsibly ensures the safe and equitable development and implementation of CRISPR-based treatments. This innovative field continues to expand, pushing the boundaries of what is possible in medicine.</p></div>
+      <h2>Summary</h2>
+      <div class="summary-box">
+        <p>The body of research on rising transit costs reveals a complex landscape driven by multiple factors spanning operational expenditures, capital project delivery, and systemic inefficiencies. A central theme across these papers is the challenge of delivering public transit services efficiently in a modern economic context, often drawing comparisons to other sectors susceptible to cost escalation. While initial analyses often point to rising absolute costs, closer examination reveals nuances regarding the nature and drivers of these increases.</p>
+      <p>A significant theme recurring in the literature is the impact of labor-related expenses and productivity. One paper highlights that the public transit sector, particularly bus operations, exhibits characteristics of Baumol’s cost disease, with stagnant labor productivity between 1997 and 2013, while average labor costs grew comparably to other service industries. This suggests an inherent difficulty in achieving productivity gains through automation in a labor-intensive service. Further reinforcing this, another paper identifies high labor costs—encompassing generous wages, benefits, and rigid work rules—as a dominant factor in operating expenses, arguing they inflate costs significantly compared to international peers. However, the scope of cost drivers extends beyond just labor; other research points to changing service characteristics (e.g., peak-only service, routes with lower ridership), increasing overhead, and rising input costs for materials and energy as contributors to the overall rise in operating expenditures.</p>
+      <p>A crucial counter-narrative emerges when analyzing costs per unit of service. While aggregate and per-passenger costs have indeed risen, one study presents evidence that, in constant dollars, the cost *per service hour* for U.S. transit agencies remained largely flat between 2002 and 2017. This suggests that the perceived &quot;rising cost&quot; problem might be better understood as a &quot;declining efficiency&quot; problem, particularly as costs per passenger and per revenue mile have increased primarily due to declining ridership. This distinction shifts focus from uncontrolled operational expenditure growth to the challenge of maintaining cost-effectiveness amidst changing demand. Beyond operating costs, the research also sheds light on substantial capital cost drivers, including excessive project management, reliance on consultants, complex procurement processes, and extensive environmental reviews, which collectively drive up the expense of infrastructure development and expansion.</p>
+      <p>Collectively, this body of research suggests that addressing rising transit costs requires a multi-faceted approach that goes beyond simply cutting labor expenses. There is broad agreement that labor costs, influenced by limited automation potential and compensation structures, are a primary component of operating expenses. However, the literature also reveals that the problem isn&#039;t solely about rising input costs but also about declining service efficiency due to factors like falling ridership and the structure of service delivery. The research points to a systemic challenge exacerbated by institutional factors such as political structures, a lack of competitive pressure, and complex regulatory environments that inflate both operating and capital costs. Therefore, effectively tackling transit costs necessitates simultaneously improving labor productivity, optimizing service delivery to match demand, streamlining capital project execution, and critically evaluating institutional and regulatory frameworks that contribute to overall expense escalation.</p>
+      </div>
     </section>
 
     <section>
-      <h2 class="section-heading">Relevant Papers (6)</h2>
+      <h2>Relevant Papers (1)</h2>
       
-    <div class="paper-item">
-      <div class="paper-num">1.</div>
-      <div class="paper-body">
-        <div class="paper-title">Gene therapy and gene editing in human disease: CRISPR and beyond</div>
-        <div class="paper-reason">The title explicitly mentions &#039;gene therapy and gene editing&#039; and &#039;CRISPR,&#039; directly aligning with the search query.</div>
+    <article class="paper-card">
+      <div class="paper-number">1</div>
+      <h3 class="paper-title">Rising Costs of Transit and Baumol’s Cost Disease</h3>
+      <p class="relevance-reason">The paper&#039;s title &#039;Rising Costs of Transit and Baumol’s Cost Disease&#039; and abstract explicitly address increasing expenses within the public transit sector, making it directly relevant to the query.</p>
+      <div class="citations">
         <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Sabin, S. (2023). *Gene therapy and gene editing in human disease: CRISPR and beyond*. https://doi.org/10.58445/rars.484</div>
+          <span class="citation-label">APA</span>
+          <p class="citation-text">Morales Sarriera, J., &amp; Salvucci, F. P. (2016). Rising Costs of Transit and Baumol’s Cost Disease. *Transportation Research Record: Journal of the Transportation Research Board, 2541*(1), 1–9. https://doi.org/10.3141/2541-01</p>
         </div>
         <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Sabin, Sarah. 2023. *Gene Therapy and Gene Editing in Human Disease: CRISPR and Beyond*. https://doi.org/10.58445/rars.484.</div>
+          <span class="citation-label">Chicago</span>
+          <p class="citation-text">Morales Sarriera, Javier, and Frederick P. Salvucci. &quot;Rising Costs of Transit and Baumol’s Cost Disease.&quot; *Transportation Research Record: Journal of the Transportation Research Board 2541*, no. 1 (2016): 1–9. https://doi.org/10.3141/2541-01</p>
         </div>
-        <a class="doi-link" href="https://doi.org/10.58445/rars.484" target="_blank" rel="noopener">doi.org/10.58445/rars.484 →</a>
       </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">2.</div>
-      <div class="paper-body">
-        <div class="paper-title">CRISPR-Cas-Based Gene Therapy to Target Viral Infections</div>
-        <div class="paper-reason">The title directly states &#039;CRISPR-Cas-Based Gene Therapy to Target Viral Infections,&#039; making it highly relevant to the search query.</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Hussein, M., Berkhout, B., &amp; Herrera-Carrillo, E. (2022). CRISPR-Cas-Based Gene Therapy to Target Viral Infections. In *Biotechnologies for Gene Therapy* (pp. 85–125). https://doi.org/10.1007/978-3-030-93333-3_5</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Hussein, Mouraya, Ben Berkhout, and Elena Herrera-Carrillo. 2022. “CRISPR-Cas-Based Gene Therapy to Target Viral Infections.” In *Biotechnologies for Gene Therapy*, 85–125. https://doi.org/10.1007/978-3-030-93333-3_5.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.1007/978-3-030-93333-3_5" target="_blank" rel="noopener">doi.org/10.1007/978-3-030-93333-3_5 →</a>
-      </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">3.</div>
-      <div class="paper-body">
-        <div class="paper-title">CRISPR Gene Therapy in Dentistry</div>
-        <div class="paper-reason">The title &#039;CRISPR Gene Therapy in Dentistry&#039; specifically connects CRISPR and gene therapy to a particular medical field, making it highly relevant.</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Goyal, A., Doomra, R., Garg, A., &amp; Hemalata, K. (2019). CRISPR Gene Therapy in Dentistry. *Asian Pacific Journal of Health Sciences*, *6*(2), 182–183. https://doi.org/10.21276/apjhs.2019.6.2.26</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Goyal, Anjana, Reena Doomra, Aayushi Garg, and Kruthiventi Hemalata. 2019. “CRISPR Gene Therapy in Dentistry.” *Asian Pacific Journal of Health Sciences* 6 (2): 182–83. https://doi.org/10.21276/apjhs.2019.6.2.26.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.21276/apjhs.2019.6.2.26" target="_blank" rel="noopener">doi.org/10.21276/apjhs.2019.6.2.26 →</a>
-      </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">4.</div>
-      <div class="paper-body">
-        <div class="paper-title">Nanoparticle delivery of CRISPR/Cas9 gene therapy for Wilson&#039;s disease</div>
-        <div class="paper-reason">The title &#039;Nanoparticle delivery of CRISPR/Cas9 gene therapy for Wilson&#039;s disease&#039; directly addresses CRISPR, gene therapy, and a specific application and delivery method.</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Francis, C. (n.d.). *Nanoparticle delivery of CRISPR/Cas9 gene therapy for Wilson&#039;s disease*. https://doi.org/10.17760/d20356168</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Francis, Christopher. n.d. *Nanoparticle Delivery of CRISPR/Cas9 Gene Therapy for Wilson’s Disease*. https://doi.org/10.17760/d20356168.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.17760/d20356168" target="_blank" rel="noopener">doi.org/10.17760/d20356168 →</a>
-      </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">5.</div>
-      <div class="paper-body">
-        <div class="paper-title">Muscular Dystrophy Therapy Using Viral Vector-based CRISPR/Cas</div>
-        <div class="paper-reason">The title &#039;Muscular Dystrophy Therapy Using Viral Vector-based CRISPR/Cas&#039; clearly identifies CRISPR and its use in therapy, making it highly relevant.</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Choi, E., &amp; Koo, T. (2022). Muscular Dystrophy Therapy Using Viral Vector-based CRISPR/Cas. In *Biotechnologies for Gene Therapy* (pp. 61–83). https://doi.org/10.1007/978-3-030-93333-3_4</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Choi, Eunyoung, and Taeyoung Koo. 2022. “Muscular Dystrophy Therapy Using Viral Vector-Based CRISPR/Cas.” In *Biotechnologies for Gene Therapy*, 61–83. https://doi.org/10.1007/978-3-030-93333-3_4.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.1007/978-3-030-93333-3_4" target="_blank" rel="noopener">doi.org/10.1007/978-3-030-93333-3_4 →</a>
-      </div>
-    </div>
-    <div class="paper-item">
-      <div class="paper-num">6.</div>
-      <div class="paper-body">
-        <div class="paper-title">Ethical and Scientific Concerns Relating to CRISPR/Cas Gene Therapy</div>
-        <div class="paper-reason">The title &#039;Ethical and Scientific Concerns Relating to CRISPR/Cas Gene Therapy&#039; directly discusses important aspects of CRISPR gene therapy, making it highly relevant.</div>
-        <div class="citation-block">
-          <div class="cite-style">APA</div>
-          <div class="cite-text">Adabala, A. (2025). *Ethical and scientific concerns relating to CRISPR/Cas gene therapy*. https://doi.org/10.58445/rars.2460</div>
-        </div>
-        <div class="citation-block">
-          <div class="cite-style">Chicago</div>
-          <div class="cite-text">Adabala, Aashrith. 2025. *Ethical and Scientific Concerns Relating to CRISPR/Cas Gene Therapy*. https://doi.org/10.58445/rars.2460.</div>
-        </div>
-        <a class="doi-link" href="https://doi.org/10.58445/rars.2460" target="_blank" rel="noopener">doi.org/10.58445/rars.2460 →</a>
-      </div>
-    </div>
+      <a class="doi-link" href="https://doi.org/10.3141/2541-01" target="_blank" rel="noopener">View Paper →</a>
+    </article>
     </section>
 
-    
+    <section class="excluded-section">
+      <h2>Filtered Out (11 papers)</h2>
+      <ul class="excluded-list">
+        <li><strong>Buyers Beware: Costs for China Rising</strong> — The paper&#039;s title, &#039;Buyers Beware: Costs for China Rising,&#039; indicates a focus on general economic costs related to China, not specifically transit costs.</li>
+        <li><strong>Rising Health Costs</strong> — The paper&#039;s title, &#039;Rising Health Costs,&#039; clearly indicates a focus on healthcare expenses, not transportation or transit costs.</li>
+        <li><strong>Rising College Costs</strong> — The paper&#039;s title, &#039;Rising College Costs,&#039; specifies its topic as educational expenses, which is unrelated to transit costs.</li>
+        <li><strong>Rising costs</strong> — While titled &#039;Rising costs,&#039; the context provided by the journal/book &#039;Hosting the Olympic Games&#039; suggests the costs are related to Olympic event organization, not public transit.</li>
+        <li><strong>Figure 1.9. Rising mortality and welfare costs of air pollution</strong> — The title &#039;Rising mortality and welfare costs of air pollution&#039; explicitly states its focus on environmental and health costs, not transit costs.</li>
+        <li><strong>Rising Marginal Costs, Rising Prices?</strong> — The paper discusses &#039;Rising Marginal Costs, Rising Prices&#039; in a general economic context without specifically mentioning &#039;transit&#039; or transportation-related costs.</li>
+        <li><strong>TESS Transit Timing of Hundreds of Hot Jupiters</strong> — The title &#039;TESS Transit Timing of Hundreds of Hot Jupiters&#039; and abstract clearly indicate a focus on astronomical transit events (planets passing in front of stars), not public transportation costs.</li>
+        <li><strong>GTFS2STN: Analyzing GTFS Transit Data by Generating Spatiotemporal Transit Network</strong> — While discussing &#039;GTFS Transit Data&#039; and &#039;transit networks,&#039; the paper focuses on data analysis and network generation for public transit, not on the financial costs or their increase.</li>
+        <li><strong>WASP-12b: The hottest transiting planet yet discovered</strong> — The title &#039;WASP-12b: The hottest transiting planet yet discovered&#039; indicates a topic in astrophysics, specifically exoplanet transits, unrelated to the financial costs of transportation.</li>
+        <li><strong>A Cost Analysis of Generative Language Models and Influence Operations</strong> — The paper focuses on &#039;A Cost Analysis of Generative Language Models and Influence Operations,&#039; which pertains to technology and economics of AI, not transit costs.</li>
+        <li><strong>Kepler Transit Depths Contaminated by a Phantom Star</strong> — The title &#039;Kepler Transit Depths Contaminated by a Phantom Star&#039; indicates an astronomical topic related to exoplanet observation, not the costs associated with transportation.</li>
+      </ul>
+    </section>
   </main>
 
-  <footer>Research Citation Agent &middot; Crossref &amp; arXiv</footer>
-
+  <footer>Built with Research Citation Agent &middot; Powered by Gemini &amp; Crossref/arXiv</footer>
 </body>
 </html>
