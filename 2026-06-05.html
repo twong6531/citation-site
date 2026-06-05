@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — June 5, 2026</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #18181f;
+    --border: #2a2a35;
+    --text: #e8e8f0;
+    --text-muted: #7a7a90;
+    --accent: #6c63ff;
+    --gap: 1px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav a:hover { color: var(--accent); }
+  .nav a::before { content: "← "; }
+
+  /* HEADER */
+  .header {
+    padding: 48px 24px 32px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  .header-date {
+    margin-top: 14px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .header-count {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+  }
+
+  /* GRID */
+  .grid-wrapper {
+    padding: var(--gap);
+    background: var(--border);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    background: var(--border);
+  }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .grid { grid-template-columns: 1fr; } }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .card-top-border { height: 3px; width: 100%; }
+  .card-inner { padding: 22px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .card-emoji { font-size: 20px; line-height: 1; }
+  .card-category {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--cat-color, #444);
+    padding: 2px 7px;
+  }
+  .card-impact {
+    margin-left: auto;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .card-impact span { color: var(--cat-color, #aaa); font-size: 13px; font-weight: bold; }
+  .card-number { font-size: 9px; color: var(--border); letter-spacing: 0.1em; }
+  .card-headline {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .card-summary {
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  .why-matters {
+    background: var(--surface2);
+    border-left: 2px solid var(--cat-color, #444);
+    padding: 10px 12px;
+    margin-bottom: 14px;
+  }
+  .why-matters-label {
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cat-color, #888);
+    margin-bottom: 5px;
+  }
+  .why-matters p { font-size: 11px; line-height: 1.6; color: var(--text); }
+  .bullets { list-style: none; }
+  .bullets li {
+    font-size: 11px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    padding: 4px 0 4px 16px;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .bullets li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--cat-color, #888);
+    font-size: 9px;
+    top: 5px;
+  }
+
+  /* CATEGORY COLORS */
+  .cat-world   { --cat-color: #ef4444; }
+  .cat-tech    { --cat-color: #f97316; }
+  .cat-ai      { --cat-color: #6c63ff; }
+  .cat-science { --cat-color: #10b981; }
+  .cat-business{ --cat-color: #f59e0b; }
+  .cat-world   .card-top-border { background: #ef4444; }
+  .cat-tech    .card-top-border { background: #f97316; }
+  .cat-ai      .card-top-border { background: #6c63ff; }
+  .cat-science .card-top-border { background: #10b981; }
+  .cat-business .card-top-border { background: #f59e0b; }
+
+  /* FOOTER */
+  .footer {
+    padding: 20px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--surface);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">Back to Archive</a>
+</nav>
+
+<header class="header">
+  <div class="header-label">// AI-Generated News Digest</div>
+  <h1>Daily Briefing</h1>
+  <div class="header-date">June 5, 2026</div>
+  <div class="header-count">6 Stories</div>
+</header>
+
+<div class="grid-wrapper">
+<div class="grid">
+
+  <!-- CARD 1 -->
+  <div class="card cat-tech">
+    <div class="card-top-border"></div>
+    <div class="card-inner">
+      <div class="card-meta">
+        <span class="card-emoji">👁️</span>
+        <span class="card-category">Tech</span>
+        <span class="card-number">#01</span>
+        <span class="card-impact">IMPACT <span>10</span>/10</span>
+      </div>
+      <div class="card-headline">Meta Adds Covert Face-Recognition Code to Millions of Phones</div>
+      <p class="card-summary">Meta has reportedly integrated face-recognition capabilities for its smart glasses into existing phone applications without explicit user notification. This stealthy addition raises significant privacy concerns for millions of users and could lead to major regulatory scrutiny.</p>
+      <div class="why-matters">
+        <div class="why-matters-label">Why It Matters</div>
+        <p>This move by Meta represents a significant privacy breach, potentially enabling covert surveillance and eroding user trust in major tech platforms.</p>
+      </div>
+      <ul class="bullets">
+        <li>Discovered hidden face-recognition features in Meta phone apps</li>
+        <li>Affects millions of smartphone users worldwide</li>
+        <li>Sparks major privacy, ethics, and regulatory debate</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card cat-world">
+    <div class="card-top-border"></div>
+    <div class="card-inner">
+      <div class="card-meta">
+        <span class="card-emoji">🛰️</span>
+        <span class="card-category">World</span>
+        <span class="card-number">#02</span>
+        <span class="card-impact">IMPACT <span>9</span>/10</span>
+      </div>
+      <div class="card-headline">GPS Jamming Source Traced Across Europe</div>
+      <p class="card-summary">Researchers have successfully identified the origin point of a powerful GPS jamming signal that has been disrupting navigation systems across large parts of Europe. This interference poses significant risks to aviation, maritime operations, and critical infrastructure reliant on accurate satellite positioning.</p>
+      <div class="why-matters">
+        <div class="why-matters-label">Why It Matters</div>
+        <p>Widespread GPS jamming can cripple essential services and infrastructure, posing a serious threat to national security and civilian safety across multiple countries.</p>
+      </div>
+      <ul class="bullets">
+        <li>1 powerful interference source pinpointed across European airspace</li>
+        <li>Impacts aviation, maritime, and critical infrastructure sectors</li>
+        <li>Raises urgent concerns for security and navigation safety</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card cat-ai">
+    <div class="card-top-border"></div>
+    <div class="card-inner">
+      <div class="card-meta">
+        <span class="card-emoji">🧠</span>
+        <span class="card-category">AI</span>
+        <span class="card-number">#03</span>
+        <span class="card-impact">IMPACT <span>9</span>/10</span>
+      </div>
+      <div class="card-headline">Apple AI, Siri, iOS 27 WWDC Preview</div>
+      <p class="card-summary">Expectations are high for Apple's upcoming Worldwide Developers Conference, with a strong focus anticipated on major advancements in AI, particularly for Siri and iOS 27. These announcements could reshape Apple's ecosystem and significantly impact the consumer AI landscape.</p>
+      <div class="why-matters">
+        <div class="why-matters-label">Why It Matters</div>
+        <p>Apple's entry into the generative AI space at scale could fundamentally shift market dynamics and consumer expectations for intelligent devices.</p>
+      </div>
+      <ul class="bullets">
+        <li>Anticipate major AI overhauls for Siri at WWDC 2026</li>
+        <li>Deep AI integration expected throughout iOS 27</li>
+        <li>Will define Apple's long-term AI product strategy</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="card cat-science">
+    <div class="card-top-border"></div>
+    <div class="card-inner">
+      <div class="card-meta">
+        <span class="card-emoji">🧬</span>
+        <span class="card-category">Science</span>
+        <span class="card-number">#04</span>
+        <span class="card-impact">IMPACT <span>8</span>/10</span>
+      </div>
+      <div class="card-headline">DNA Synthesis Leap Slashes Genetic Sequence Build Time</div>
+      <p class="card-summary">A groundbreaking biotech innovation has drastically reduced the time required to synthesize complex DNA sequences, accelerating genetic research and development. This breakthrough promises to unlock new possibilities in medicine, agriculture, and biotechnology, making advanced genetic engineering more accessible.</p>
+      <div class="why-matters">
+        <div class="why-matters-label">Why It Matters</div>
+        <p>Faster DNA synthesis is a foundational step for personalized medicine, gene therapy, and agricultural innovation, holding the potential to revolutionize numerous scientific fields.</p>
+      </div>
+      <ul class="bullets">
+        <li>Significantly speeds up DNA sequence creation process</li>
+        <li>Boosts biotech, medical, and agricultural research pipelines</li>
+        <li>Enables rapid iteration in genetic engineering workflows</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CARD 5 -->
+  <div class="card cat-science">
+    <div class="card-top-border"></div>
+    <div class="card-inner">
+      <div class="card-meta">
+        <span class="card-emoji">🌌</span>
+        <span class="card-category">Science</span>
+        <span class="card-number">#05</span>
+        <span class="card-impact">IMPACT <span>8</span>/10</span>
+      </div>
+      <div class="card-headline">Quantum Entanglement Links Spacetime and Gravity</div>
+      <p class="card-summary">New research suggests a profound connection between quantum entanglement and the fabric of spacetime, hinting at a mechanism through which entanglement might also give rise to gravity. This represents a significant theoretical breakthrough bridging quantum mechanics and general relativity.</p>
+      <div class="why-matters">
+        <div class="why-matters-label">Why It Matters</div>
+        <p>This breakthrough could fundamentally alter our understanding of the universe, offering a pathway towards a unified theory of physics linking the quantum and gravitational realms.</p>
+      </div>
+      <ul class="bullets">
+        <li>Connects quantum entanglement directly to spacetime structure</li>
+        <li>Proposes entanglement as the origin of gravitational force</li>
+        <li>Advances the long-sought unified theory of physics</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CARD 6 -->
+  <div class="card cat-business">
+    <div class="card-top-border"></div>
+    <div class="card-inner">
+      <div class="card-meta">
+        <span class="card-emoji">💰</span>
+        <span class="card-category">Business</span>
+        <span class="card-number">#06</span>
+        <span class="card-impact">IMPACT <span>7</span>/10</span>
+      </div>
+      <div class="card-headline">Microsoft AI Chief: Anthropic Models Too Costly</div>
+      <p class="card-summary">Microsoft's AI chief has publicly stated that Anthropic's leading AI models are currently too expensive for broader enterprise adoption, signaling an intensifying pricing war in the AI industry. This highlights significant economic challenges and competitive pressures facing developers and users of cutting-edge AI technologies.</p>
+      <div class="why-matters">
+        <div class="why-matters-label">Why It Matters</div>
+        <p>The cost of advanced AI models will dictate their widespread adoption, influencing innovation, market competition, and the overall trajectory of the AI industry.</p>
+      </div>
+      <ul class="bullets">
+        <li>Reveals prohibitively high cost of premium AI models for enterprise</li>
+        <li>Signals growing pricing war across the AI industry</li>
+        <li>Impacts accessibility and democratization of cutting-edge AI</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer class="footer">
+  Generated by AI &nbsp;&middot;&nbsp; June 5, 2026 &nbsp;&middot;&nbsp; Sources: Hacker News, Google News
+</footer>
+
+</body>
+</html>
