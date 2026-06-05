@@ -17,1051 +17,651 @@
   --font: system-ui, -apple-system, sans-serif;
   --mono: "SF Mono", "Fira Code", monospace;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font);
-  line-height: 1.6;
-  font-size: 15px;
-}
-
+body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.6; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ── Site Header ── */
+/* SITE HEADER */
 .site-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  padding: 0.75rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 32px;
   position: sticky;
   top: 0;
   z-index: 100;
 }
-.site-header .brand { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; }
-.site-header .center-label { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; }
-.site-header .archive-link { font-size: 13px; color: var(--accent); }
+.site-header .brand { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; }
+.site-header .center-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; }
+.site-header .archive-link { font-size: 0.8rem; color: var(--text-muted); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 4px; }
+.site-header .archive-link:hover { color: var(--text); border-color: var(--accent); text-decoration: none; }
 
-/* ── Layout ── */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-/* ── Hero ── */
+/* HERO */
 .hero {
-  padding: 72px 0 48px;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
-.hero .date-line {
-  font-size: 14px;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.hero .count-badge {
-  display: inline-block;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 6px 18px;
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 12px;
-}
+.hero .hero-date { color: var(--accent); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.hero .paper-count { color: var(--text-muted); font-size: 1rem; }
 
-/* ── Section Headers ── */
-section { padding: 56px 0; border-bottom: 1px solid var(--border); }
-section:last-child { border-bottom: none; }
+/* SECTIONS */
+.section { max-width: 1100px; margin: 0 auto 3rem; padding: 0 2rem; }
 .section-label {
-  font-size: 10px;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-.section-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-/* ── Executive Summary ── */
-.exec-summary-box {
+/* EXECUTIVE SUMMARY */
+.exec-summary {
   background: var(--surface);
-  border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  padding: 32px 36px;
+  border-radius: 0 8px 8px 0;
+  padding: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
 }
-.exec-summary-box p { margin-bottom: 16px; line-height: 1.8; color: #c8c8d8; }
-.exec-summary-box p:last-child { margin-bottom: 0; }
 
-/* ── Paper of the Day ── */
-.paper-of-day {
+/* PAPER OF THE DAY */
+.potd-card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--accent2);
-  border-radius: 8px;
-  padding: 32px 36px;
+  border: 1px solid var(--accent2);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
-.paper-of-day .potd-label {
-  font-size: 10px;
+.potd-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+}
+.potd-badge {
+  display: inline-block;
+  background: var(--accent2);
+  color: white;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent2);
-  margin-bottom: 12px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
-.paper-of-day h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-.potd-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 24px;
-}
-.potd-field h4 {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent2);
-  margin-bottom: 8px;
-}
-.potd-field p { color: #c8c8d8; font-size: 14px; line-height: 1.7; }
+.potd-card h2 { font-size: 1.4rem; margin-bottom: 1rem; line-height: 1.3; }
+.potd-overview { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; }
+.potd-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.potd-cell { background: var(--surface2); border-radius: 8px; padding: 1rem; }
+.potd-cell h5 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+.potd-cell p { font-size: 0.9rem; color: var(--text-muted); }
 
-/* ── Themes Grid ── */
-.themes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  margin-top: 8px;
-}
+/* THEMES */
+.themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
 .theme-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 24px;
+  border-radius: 10px;
+  padding: 1.5rem;
 }
-.theme-card .theme-name {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 10px;
-  letter-spacing: 0.02em;
-}
-.theme-card p { font-size: 13px; color: #a8a8c0; line-height: 1.6; }
+.theme-card h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem; }
+.theme-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
-/* ── Contrarian Insights ── */
+/* CONTRARIAN */
 .contrarian-box {
-  background: #0f0f18;
-  border: 1px solid #3a2a55;
-  border-radius: 8px;
-  padding: 28px 32px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
 }
 .contrarian-item {
   display: flex;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 1rem;
   align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
 }
-.contrarian-item:last-child { margin-bottom: 0; }
-.contrarian-num {
-  flex-shrink: 0;
+.contrarian-item:last-child { border-bottom: none; }
+.ci-num {
+  background: var(--accent2);
+  color: white;
   width: 28px;
   height: 28px;
-  background: var(--accent2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: white;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
-.contrarian-item p { color: #c8c8d8; font-size: 14px; line-height: 1.7; }
+.contrarian-item p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* ── Individual Papers ── */
-.papers-list { display: flex; flex-direction: column; gap: 28px; margin-top: 8px; }
-
+/* PAPER CARDS */
 .paper-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  overflow: hidden;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s;
 }
+.paper-card:hover { border-color: var(--accent); }
 .paper-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  padding: 24px 28px 16px;
-  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+  margin-bottom: 0.75rem;
 }
-.paper-header h3 {
-  font-size: 1.05rem;
+.paper-title { font-size: 1.05rem; font-weight: 600; line-height: 1.4; flex: 1; }
+.paper-title a { color: var(--text); }
+.paper-title a:hover { color: var(--accent); }
+.conf-badge {
+  font-size: 0.65rem;
   font-weight: 700;
-  line-height: 1.35;
-  flex: 1;
-}
-.confidence-badge {
-  flex-shrink: 0;
-  padding: 3px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-}
-.conf-high { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
-.conf-medium { background: rgba(234,179,8,0.15); color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
-.conf-low { background: rgba(156,163,175,0.15); color: #9ca3af; border: 1px solid rgba(156,163,175,0.3); }
-
-.paper-meta {
-  padding: 12px 28px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.paper-meta .authors { font-size: 12px; color: var(--text-muted); }
-.paper-meta .source-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  background: rgba(0,137,123,0.1);
-  border: 1px solid rgba(0,137,123,0.25);
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
-  padding: 2px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
-.paper-meta a { font-size: 12px; color: var(--accent); }
-
-.paper-body { padding: 24px 28px; }
-
-.one-sentence {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-.why-it-matters {
-  border-left: 3px solid var(--accent);
-  padding-left: 16px;
-  margin-bottom: 20px;
-}
-.why-it-matters .label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 6px;
-}
-.why-it-matters p { font-size: 13px; color: #a8a8c0; line-height: 1.7; }
-
-.key-insights { margin-bottom: 20px; }
-.key-insights .label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-.key-insights ul { list-style: none; padding: 0; }
-.key-insights li {
-  padding: 6px 0 6px 18px;
-  position: relative;
-  font-size: 13px;
-  color: #b8b8cc;
-  line-height: 1.6;
-  border-bottom: 1px solid rgba(42,42,53,0.5);
-}
-.key-insights li:last-child { border-bottom: none; }
-.key-insights li::before {
-  content: "›";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
+.conf-high { background: #1a3d2b; color: #4ade80; border: 1px solid #2d6b4a; }
+.conf-medium { background: #3d3019; color: #fbbf24; border: 1px solid #6b5320; }
+.conf-low { background: #2a2a35; color: var(--text-muted); border: 1px solid var(--border); }
+.paper-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.authors { font-size: 0.85rem; color: var(--text-muted); }
+.source-badge { font-size: 0.65rem; background: var(--surface2); border: 1px solid var(--border); padding: 0.15rem 0.5rem; border-radius: 4px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.one-sentence { font-size: 1.05rem; color: var(--text); margin-bottom: 1rem; font-style: italic; line-height: 1.5; }
+.why-matters { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem; padding-left: 0.75rem; border-left: 3px solid var(--accent); line-height: 1.6; }
+.why-label { color: var(--accent); font-weight: 600; }
+.key-insights h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; }
+.key-insights ul { list-style: none; }
+.key-insights li { font-size: 0.9rem; color: var(--text-muted); padding: 0.3rem 0 0.3rem 1.25rem; position: relative; }
+.key-insights li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 .mini-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
 }
-@media (max-width: 700px) {
-  .mini-grid { grid-template-columns: repeat(2, 1fr); }
-  .potd-grid { grid-template-columns: 1fr; }
-}
-.mini-cell {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 14px;
-}
-.mini-cell .mini-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-.mini-cell p { font-size: 12px; color: #a0a0b8; line-height: 1.55; }
+.mini-cell { background: var(--surface2); border-radius: 6px; padding: 0.75rem; }
+.mini-cell h5 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem; }
+.mini-cell p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+.practical { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.6; }
+.prior-work { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
-.implications-block, .comparison-block { margin-bottom: 16px; }
-.implications-block .label, .comparison-block .label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-.implications-block p, .comparison-block p { font-size: 13px; color: #a0a0b8; line-height: 1.7; }
-
-/* ── Actionable Takeaways ── */
+/* TAKEAWAYS */
 .takeaways-box {
-  background: rgba(0,137,123,0.07);
-  border: 1px solid rgba(0,137,123,0.25);
-  border-radius: 8px;
-  padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(0,137,123,0.1), rgba(108,71,255,0.1));
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 2rem;
 }
-.takeaways-box ol { padding-left: 20px; }
+.takeaways-box ol { list-style: none; }
 .takeaways-box li {
-  padding: 8px 0;
-  color: #c8c8d8;
-  font-size: 14px;
-  line-height: 1.7;
-  border-bottom: 1px solid rgba(0,137,123,0.1);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.95rem;
 }
 .takeaways-box li:last-child { border-bottom: none; }
-
-/* ── Long-Term Implications ── */
-.implications-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-top: 8px;
+.ta-num {
+  background: var(--accent);
+  color: #000;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
 }
-@media (max-width: 700px) { .implications-two-col { grid-template-columns: 1fr; } }
-.implications-col h4 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent2);
-  margin-bottom: 12px;
-  letter-spacing: 0.04em;
-}
-.implications-col p { font-size: 14px; color: #a8a8c0; line-height: 1.8; }
 
-/* ── Footer ── */
-footer {
-  background: var(--surface);
+/* LONG TERM */
+.lt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.lt-col { background: var(--surface); border-radius: 10px; padding: 1.5rem; font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
+
+/* FOOTER */
+.footer {
   border-top: 1px solid var(--border);
-  padding: 32px;
+  padding: 2rem;
   text-align: center;
-  font-size: 12px;
   color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 4rem;
 }
-footer a { color: var(--accent); }
-footer .footer-inner { max-width: 600px; margin: 0 auto; }
-footer p { margin-bottom: 8px; }
-footer p:last-child { margin-bottom: 0; }
+.footer a { color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .potd-grid { grid-template-columns: 1fr; }
+  .mini-grid { grid-template-columns: 1fr 1fr; }
+  .lt-grid { grid-template-columns: 1fr; }
+  .themes-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-<!-- ── SITE HEADER BAR ── -->
 <header class="site-header">
   <span class="brand">Daily Briefing</span>
   <span class="center-label">Transit Research</span>
-  <a class="archive-link" href="index.html">← Archive</a>
+  <a href="index.html" class="archive-link">← Archive</a>
 </header>
 
-<!-- ── HERO ── -->
 <div class="hero">
-  <div class="container">
-    <div class="date-line">June 5, 2026</div>
-    <h1>Transit Research Briefing</h1>
-    <div class="count-badge">9 papers analyzed today</div>
+  <div class="hero-date">June 5, 2026</div>
+  <h1>Transit Research Briefing</h1>
+  <div class="paper-count">12 papers analyzed today</div>
+</div>
+
+<div class="section">
+  <div class="section-label">Executive Summary</div>
+  <div class="exec-summary">Today's briefing highlights a dynamic and rapidly evolving landscape in urban transit, driven by advancements in AI, a deeper understanding of urban sociology, and a renewed focus on sustainability and resilience. We are witnessing a clear shift away from rigid, static transit models towards more flexible, data-driven, and demand-responsive systems. Innovations range from biologically-inspired swarm intelligence for dynamic routing to sophisticated deep reinforcement learning for micro-mobility rebalancing, all promising significant efficiency gains and improved passenger experiences.
+
+Key themes emerge around optimizing network design to better serve heterogeneous demand, leveraging real-time data for continental-scale journey planning, and integrating renewable energy into electric vehicle infrastructure. Crucially, several papers emphasize the human element and social equity, using mobility data to understand and address deprivation and enhance urban resilience against shocks. This confluence of technological innovation, socio-spatial analysis, and infrastructure sustainability points to a future where transit systems are not only smarter and more efficient but also more equitable and adaptable to evolving urban needs and environmental challenges.</div>
+</div>
+
+<div class="section">
+  <div class="section-label">Paper of the Day</div>
+  <div class="potd-card">
+    <div class="potd-badge">⭐ Featured Paper</div>
+    <h2>A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</h2>
+    <p class="potd-overview">This groundbreaking paper introduces a novel, distributed approach to Demand-Responsive Transit (DRT) that draws inspiration from the efficient foraging behavior of slime molds. Instead of a centralized scheduling system, the proposed framework employs a 'swarm' of buses that cooperatively bid on passenger requests and dynamically route themselves. A key innovation is the concept of 'dynamic transfers,' where passengers might transfer between buses mid-journey to optimize overall network efficiency, all managed through the continual bidding process. The research presents simulated results for various urban densities, demonstrating remarkable improvements in passenger delivery rates and significant reductions in walking times.</p>
+    <div class="potd-grid">
+      <div class="potd-cell">
+        <h5>Why It Stands Out</h5>
+        <p>This paper stands out due to its truly innovative and biologically-inspired approach to a persistent challenge in flexible transit. While DRT has struggled with cost and reliability, this 'swarm intelligence' model offers a radical paradigm shift from centralized control. Its ability to simultaneously increase passenger delivery (up to 101% in semi-rural areas) and drastically cut walking times (over 75%) points to a transformative potential that addresses both operational efficiency and passenger experience.</p>
+      </div>
+      <div class="potd-cell">
+        <h5>What Makes It Novel</h5>
+        <p>The novelty lies in two core aspects: first, the application of a slime-mold-inspired distributed routing algorithm to public transit, a distinct departure from conventional algorithmic approaches. Second, the introduction and effective management of 'dynamic transfers' through a continual cooperative bidding process among vehicles, which allows for unparalleled flexibility and optimization in passenger allocation. This combination is a significant advancement in the field of demand-responsive mobility.</p>
+      </div>
+      <div class="potd-cell">
+        <h5>Real-World Impact</h5>
+        <p>The real-world impact could be profound for transit agencies looking to enhance flexible mobility services, particularly in suburban and rural areas where fixed routes are inefficient. This framework could lead to dramatically lower operational costs for DRT, higher service reliability, and a superior user experience with minimal waiting and walking. It offers a viable pathway for public transit to compete more effectively with ride-sharing services, extend reach to underserved communities, and evolve into a truly adaptive, on-demand public utility.</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- ── EXECUTIVE SUMMARY ── -->
-<section>
-  <div class="container">
-    <div class="section-label">Overview</div>
-    <div class="section-title">Executive Summary</div>
-    <div class="exec-summary-box">
-      <p>The June 5, 2026 transit research landscape reveals a field at an inflection point across three interconnected dimensions: the maturation of autonomous mobility technologies, the emergence of electric vehicle infrastructure equity challenges, and the digitization of traffic management systems. Today's nine papers collectively document the transition from proof-of-concept demonstrations to real-world deployment pressures — where technical excellence alone is insufficient and governance, equity, and human factors become decisive variables.</p>
-      <p>Particularly striking is the convergence of equity concerns and technical optimization. The EV charging market study exposes systematic market failures that disadvantage lower-income communities, while the autonomous driving risk assessment reveals how regulatory fragmentation creates uneven safety outcomes across jurisdictions. Meanwhile, computational advances in traffic simulation and optimal control theory are lowering the cost barrier for smaller municipalities to implement evidence-based transportation management — democratizing tools previously available only to well-funded agencies.</p>
-      <p>Across all papers, a meta-theme emerges: transportation's technological transformation is creating new categories of risk and inequity that existing governance frameworks were not designed to handle. From urban air mobility corridors lacking standardized separation standards, to EV charging deserts forming in underserved neighborhoods, to autonomous vehicles navigating ethically ambiguous crash scenarios without coherent legal frameworks — the research community is actively documenting an emerging governance gap that policymakers must urgently address.</p>
-    </div>
+<div class="section">
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+<div class="theme-card"><h3>AI &amp; Bio-Inspired Algorithms for Dynamic Transit Optimization</h3><p>A significant trend involves the application of advanced AI, machine learning (specifically Deep Reinforcement Learning), and even biologically-inspired algorithms (like slime mold logic) to create highly dynamic and adaptive transit systems for routing, rebalancing, and real-time operations. This moves transit management from static scheduling to responsive, intelligent decision-making.</p></div>
+<div class="theme-card"><h3>Beyond Fixed Routes: Flexible &amp; Heterogeneous Network Design</h3><p>There's a strong push to move past conventional, rigid fixed-route transit network designs. Research now explores flexible line routing, heterogeneous grid networks, and demand-responsive systems that can adapt to spatially varying demand, urban expansion, and reduce generalized costs, improving service quality and equity.</p></div>
+<div class="theme-card"><h3>Mobility Data for Socioeconomic Understanding &amp; Resilience</h3><p>Large-scale human mobility data is being increasingly leveraged to gain deeper socioeconomic insights, such as understanding urban deprivation beyond static indicators ('deprivation bubble breaking') and predicting social resilience during urban shocks. This highlights the critical role of mobility in urban equity and adaptive capacity.</p></div>
+<div class="theme-card"><h3>Sustainable &amp; Resilient Transit Infrastructure</h3><p>Papers are addressing critical infrastructure challenges, from optimizing energy management for solar-powered electric bus charging stations (integrating renewables and storage) to understanding human adaptation in extreme conditions (like subway floods). This emphasizes the need for robust, environmentally conscious, and adaptable transit systems.</p></div>
+<div class="theme-card"><h3>Advanced Computational Methods for Network Optimization</h3><p>Sophisticated mathematical frameworks, including Continuum Approximation models, Geometric Programming, and spanning tree concepts, are being developed and refined to achieve global optimality in transit network design, offering robust and efficient tools for planners to minimize costs and improve service.</p></div>
+
   </div>
-</section>
+</div>
 
-<!-- ── PAPER OF THE DAY ── -->
-<section>
-  <div class="container">
-    <div class="section-label">Featured</div>
-    <div class="section-title">Paper of the Day</div>
-    <div class="paper-of-day">
-      <div class="potd-label">⭐ Paper of the Day</div>
-      <h3>Regulating EV Charging Markets for Fairness: Incentives for Pricing and Capacity Decisions</h3>
-      <p style="color:#a8a8c0; font-size:13px; margin-bottom:16px;">Ruiting Wang, Kita Hu, Yitong Yu, Scott Moura · arXiv eess.SY · <a href="https://arxiv.org/abs/2606.01266v1">arxiv.org/abs/2606.01266v1</a></p>
-      <div class="potd-grid">
-        <div class="potd-field">
-          <h4>Detailed Overview</h4>
-          <p>Using game theory to model competition between EV charging station operators, this paper shows that profit-maximizing operators predictably under-invest in charger capacity and overprice services in lower-income neighborhoods — not from malice, but from rational market incentives. The authors formally prove that unregulated Nash equilibria create "charging deserts" in communities where EV adoption would benefit most from affordable infrastructure. They then design regulatory mechanisms — targeted subsidies, pricing caps tied to local income indices, and minimum capacity mandates — that can achieve equitable outcomes while maintaining operator profitability above their unregulated baseline.</p>
-        </div>
-        <div class="potd-field">
-          <h4>Why It Stands Out</h4>
-          <p>Unlike most EV infrastructure papers that treat inequity as an observation, this paper proves it as a theorem: market failure in charging access is structural, not incidental. The game-theoretic framework enables precise policy calibration — regulators can compute the exact subsidy magnitude needed to close the equity gap without over-correcting. This transforms a problem typically addressed through broad mandates into one that can be solved with surgical regulatory interventions grounded in economic theory.</p>
-        </div>
-        <div class="potd-field">
-          <h4>What Makes It Novel</h4>
-          <p>The paper is the first to formally model EV charging station competition as a multi-player game incorporating both pricing decisions and capacity investment simultaneously. Prior work treated these as separate problems. The joint formulation reveals a strategic complementarity: lower prices attract more users but require more capacity, so operators in low-income areas face a negative feedback loop that rational actors cannot escape without external intervention.</p>
-        </div>
-        <div class="potd-field">
-          <h4>Real-World Impact</h4>
-          <p>With EV mandates accelerating across the US, EU, and Asia, the risk of replicating automobile-era infrastructure inequity in the electrified fleet is real and imminent. This paper gives regulators a mathematical toolkit to design market interventions before inequitable patterns calcify. California's CPUC, the EU's AFIR regulation, and NEVI formula programs in the US are all actively deciding infrastructure placement rules — this framework arrives at exactly the right moment to inform those decisions.</p>
-        </div>
-      </div>
-    </div>
+<div class="section">
+  <div class="section-label">Contrarian Insights</div>
+  <div class="contrarian-box">
+<div class="contrarian-item"><span class="ci-num">1</span><p>Human operators' immediate 'defensive risk overestimation' during crises can diverge significantly from optimal, experience-based trajectories, suggesting that human 'caution' isn't always efficient or ideal in disaster management.</p></div>
+<div class="contrarian-item"><span class="ci-num">2</span><p>An apparent 'shortage of buses' in a city might not be the real problem; rather, it could be a symptom of a fundamentally flawed and rigid network structure that fails to adapt to urban growth patterns.</p></div>
+<div class="contrarian-item"><span class="ci-num">3</span><p>Traditional static, residence-based measures of urban deprivation overlook a crucial 'compensatory mobility' pattern where residents actively travel to less deprived areas, meaning that perceived local amenity deficits are often overcome through daily travel.</p></div>
+<div class="contrarian-item"><span class="ci-num">4</span><p>Optimal fixed-route transit networks are not necessarily uniform or rigidly gridded; significant cost reductions and benefits are achieved through allowing heterogeneous, flexible line configurations (detouring, merging, diverging), especially in cities with strong spatial demand heterogeneity.</p></div>
+
   </div>
-</section>
+</div>
 
-<!-- ── EMERGING THEMES ── -->
-<section>
-  <div class="container">
-    <div class="section-label">Analysis</div>
-    <div class="section-title">Emerging Themes</div>
-    <div class="themes-grid">
-      <div class="theme-card">
-        <div class="theme-name">The Governance Gap</div>
-        <p>Multiple papers document technology outpacing regulation: AV liability frameworks are inconsistent across jurisdictions, urban air mobility lacks standardized separation rules, and EV markets self-sort into inequitable equilibria. The research community is signaling that technical capability is no longer the binding constraint — institutional readiness is.</p>
-      </div>
-      <div class="theme-card">
-        <div class="theme-name">Equity as Engineering Constraint</div>
-        <p>Papers on EV charging markets and emergency evacuation routing explicitly incorporate demographic equity into their optimization objectives. This marks a shift from treating equity as a policy afterthought to embedding it as a first-class engineering constraint — a methodological evolution with significant implications for how transportation infrastructure is designed.</p>
-      </div>
-      <div class="theme-card">
-        <div class="theme-name">Simulation as Infrastructure</div>
-        <p>Two papers advance the state of traffic and emergency simulation: genetic calibration of urban traffic models from sparse sensors, and instance-based learning models of operator cognition during subway floods. As physical sensor networks remain expensive, high-fidelity simulation calibrated from minimal real data is becoming a critical form of planning infrastructure for resource-constrained agencies.</p>
-      </div>
-      <div class="theme-card">
-        <div class="theme-name">Multimodal Risk Integration</div>
-        <p>From waterway GNSS accuracy to urban air mobility corridors to autonomous vehicle perception errors, papers across diverse transport modes share a common challenge: quantifying and managing risk in environments where sensor reliability, human factors, and edge-case scenarios interact in poorly understood ways. A cross-modal framework for transportation risk is becoming necessary.</p>
-      </div>
-    </div>
+<div class="section">
+  <div class="section-label">Individual Papers (12)</div>
+
+<div class="paper-card" id="paper-1">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2606.06189v1" target="_blank">A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</a></h3>
+    <span class="conf-badge conf-high">High</span>
   </div>
-</section>
-
-<!-- ── CONTRARIAN INSIGHTS ── -->
-<section>
-  <div class="container">
-    <div class="section-label">Critical Perspective</div>
-    <div class="section-title">Contrarian Insights</div>
-    <div class="contrarian-box">
-      <div class="contrarian-item">
-        <div class="contrarian-num">1</div>
-        <p>Market competition in EV charging doesn't improve access for underserved communities — it makes it worse. The game-theoretic proof in Wang et al. demonstrates that competitive charging markets without regulation systematically produce charging deserts in lower-income areas, directly contradicting the standard policy assumption that market entry will solve infrastructure gaps through competition.</p>
-      </div>
-      <div class="contrarian-item">
-        <div class="contrarian-num">2</div>
-        <p>More autonomous vehicle data has not resolved fundamental safety questions. Despite millions of miles of real-world AV driving data captured by NHTSA and DMV, the risk assessment paper finds that perception failures still account for a disproportionate share of incidents, and that ethical decision-making frameworks remain mutually inconsistent across manufacturers. Scale of deployment has not produced the safety convergence the industry promised.</p>
-      </div>
-      <div class="contrarian-item">
-        <div class="contrarian-num">3</div>
-        <p>Finite-horizon traffic control outperforms the standard infinite-horizon approach for real-world conditions — a finding that challenges decades of traffic engineering practice. The LQR traffic control paper shows that by accounting for known future events (incidents, work zones, events), finite-horizon controllers achieve materially better outcomes, suggesting that the computational convenience of infinite-horizon methods has come at a hidden cost to performance.</p>
-      </div>
-    </div>
+  <div class="paper-meta">
+    <span class="authors">Lindsay Burke, Maxfield Comstock, Jason Graham, Ruth Malenda, Simon Garnier, Petras Swissler</span>
+    <span class="source-badge">arXiv</span>
   </div>
-</section>
-
-<!-- ── INDIVIDUAL PAPERS ── -->
-<section>
-  <div class="container">
-    <div class="section-label">Research</div>
-    <div class="section-title">Individual Paper Analyses</div>
-    <div class="papers-list">
-
-      <!-- PAPER 1 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Computational Modeling of Human Adaptation in Urban Infrastructure Management under Extreme Conditions: A Case Study of Subway Flood Scenarios</h3>
-          <span class="confidence-badge conf-medium">Medium</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Jinfeng Lou, Zijie Liang, Pengkun Liu, Yuxin Zhang, Cleotilde Gonzalez, Pingbo Tang</span>
-          <span class="source-tag">arXiv cs.CY</span>
-          <a href="https://arxiv.org/abs/2606.06429v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06429v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">A cognitive modeling framework reveals that subway operators exhibit non-linear, experience-dependent adaptation during flooding emergencies — with implications for training program design and control room human-machine interface layout.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>Subway flooding is among the most dangerous and complex emergencies transit systems face — yet most operational training assumes linear skill progression. This paper's finding that adaptation is non-linear (with experienced operators sometimes performing worse than novices under novel flood configurations due to anchoring to past scenarios) has direct implications for how agencies design emergency protocols. It also provides a computational foundation for digital twin simulations of transit emergency management.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>Instance-Based Learning Theory (IBLT) successfully captures operator decision patterns in subway flood simulations, validating a cognitive science framework in a transit domain context</li>
-              <li>Experienced operators show "expertise-induced rigidity" — over-relying on previously successful response patterns even when the new scenario demands different actions</li>
-              <li>Non-linear adaptation patterns mean that simple experience metrics are poor predictors of emergency performance; scenario variety in training is more predictive than hours of experience</li>
-              <li>The computational model can predict when operators are likely to make suboptimal decisions, enabling targeted just-in-time decision support from automated systems</li>
-              <li>Human-machine interface design significantly modulates adaptation speed — information layout affects how quickly operators update their mental models during rapidly evolving floods</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>IBLT cognitive simulation combined with controlled human subjects experiments in a subway flood scenario simulator</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Non-linear adaptation curves; scenario variety in training outperforms hours-based experience metrics as a performance predictor</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Laboratory simulation may not fully capture time pressure and physical stressors of real flooding events; limited sample size of operators</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>Transit agency emergency managers, operations control center designers, training curriculum developers, HMI engineers</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>Transit agencies should redesign emergency training to prioritize scenario diversity over repetition volume. Control room HMI systems should be redesigned to provide dynamic decision support that adapts to operator cognitive load levels. The IBLT model could be embedded in digital twin systems to enable proactive operator assistance during emergencies.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Prior transit emergency management research focused on procedural compliance and evacuation optimization; this paper is among the first to model the cognitive dynamics of the human operators managing the response in real-time, filling a critical gap in the socio-technical systems literature.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 2 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Calibrating Urban Traffic Simulation from Sparse Road Observations via Genetic Optimization</h3>
-          <span class="confidence-badge conf-high">High</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Hunter Sawyer, Jesse Roberts, Simon Matei</span>
-          <span class="source-tag">arXiv cs.CY</span>
-          <a href="https://arxiv.org/abs/2606.03823v1" target="_blank" rel="noopener">arxiv.org/abs/2606.03823v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">A genetic algorithm approach calibrates city-scale traffic simulations using only sparse loop detector readings — without origin-destination matrices or job location data — achieving accurate results that generalize to unobserved road segments.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>High-fidelity traffic simulation currently requires extensive data collection (household travel surveys, O-D matrices, comprehensive sensor networks) that most mid-sized and smaller cities cannot afford. This method dramatically lowers the data requirements for accurate simulation, making evidence-based traffic planning accessible to the vast majority of municipalities globally that lack comprehensive sensor infrastructure. The generalization to unmonitored road segments is particularly significant — it means cities don't need to instrument every road to benefit from simulation.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>Genetic optimization can effectively search the high-dimensional parameter space of traffic simulation models without requiring complete observational data</li>
-              <li>The calibrated model generalizes to road segments withheld from calibration, demonstrating that sparse sensor placement captures sufficient network-level signal</li>
-              <li>The method eliminates the need for expensive household travel surveys or employment data — replacing them with publicly available road count data</li>
-              <li>Computation remains practical on standard hardware, enabling cities without supercomputing access to run calibrated simulations</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>Genetic algorithm optimization over SUMO traffic simulator parameters, validated against held-out loop detector measurements</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Strong correlation between simulated and observed traffic volumes on both calibration and withheld road segments</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Tested in a single city; generalizability to different urban morphologies (grid vs. organic street networks) needs validation</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>City transportation departments, metropolitan planning organizations, traffic engineering consultants, urban planners in developing cities</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>Cities with only a handful of existing traffic counters can now build calibrated simulation models sufficient for evaluating infrastructure investments, signal timing changes, and network redesigns. This democratizes traffic modeling in a way that could accelerate evidence-based planning in the Global South and smaller US/EU cities.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Traditional calibration methods (SPSA, gradient descent) require either dense sensor networks or repeated simulation runs that are computationally prohibitive. Genetic algorithms have been used in transportation before but not in combination with sparse data constraints; this paper demonstrates that combining the two unlocks practical citywide calibration from minimal infrastructure.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 3 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Impact of RTK Augmentation and INS Integration on GNSS Positioning Accuracy and Continuity: A Benchmarking Study on Inland Waterways</h3>
-          <span class="confidence-badge conf-high">High</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Yan-Yun Zhang, Jef Billet, Jan Swevers, Peter Slaets</span>
-          <span class="source-tag">arXiv eess.SY</span>
-          <a href="https://arxiv.org/abs/2606.06358v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06358v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">RTK-augmented GNSS with INS integration dramatically improves positioning accuracy for inland waterway vessels navigating under bridges — a critical enabling technology for autonomous barge and ferry operations in urban canals.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>Inland waterways carry significant freight volume in Europe and Asia, and autonomous or semi-autonomous vessel technology could substantially reduce operating costs and improve safety. However, bridges — ubiquitous on urban waterways — create satellite signal outages that make standard GNSS navigation unreliable. This paper quantifies how combining RTK corrections with inertial sensors solves this problem, providing the empirical basis for autonomous waterway navigation systems to be certified for commercial deployment.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>Standard GNSS positioning under bridges can degrade to meter-scale errors — far below autonomous navigation requirements; RTK+INS fusion reduces this to decimeter scale</li>
-              <li>INS alone provides positioning continuity through outages but accumulates drift rapidly; the integration with RTK provides the corrections needed to maintain accuracy across an entire voyage</li>
-              <li>Bridge passage duration is a critical variable — longer passages require better INS quality to maintain positioning within safe margins</li>
-              <li>The benchmarking methodology developed is reusable and portable, enabling waterway authorities to evaluate navigation system performance systematically</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>Field benchmarking of multiple GNSS/INS configurations along real inland waterways with known-position ground truth</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>RTK+INS achieves consistent decimeter-level accuracy through bridge passages where GNSS alone fails; continuity maintained through extended outages</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Tested on specific European waterways; results may vary with different bridge geometries, waterway widths, and satellite constellation visibility</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>Autonomous vessel developers, inland waterway authorities, port operators, maritime navigation system vendors</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>Autonomous barge and ferry developers can now specify GNSS/INS system requirements with empirical accuracy targets derived from real waterway conditions. Waterway authorities can use the benchmarking framework to certify navigation systems for autonomous operation on specific routes. The results support the case for RTK reference station infrastructure investment alongside major inland waterway corridors.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Most GNSS/INS integration research targets road and aviation applications; inland waterway navigation is understudied despite its economic importance. This paper fills that gap with empirical rigor, providing the first systematic benchmarking specifically for waterway environments with bridge passage challenges.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 4 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Optimal Finite-Horizon LQR Control for Traffic Flow via Variable Speed Limits</h3>
-          <span class="confidence-badge conf-high">High</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Brian Block, Stephanie Stockar</span>
-          <span class="source-tag">arXiv eess.SY</span>
-          <a href="https://arxiv.org/abs/2606.03632v1" target="_blank" rel="noopener">arxiv.org/abs/2606.03632v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">Finite-horizon LQR control theory applied to variable speed limit systems produces demonstrably better traffic flow outcomes than the standard infinite-horizon formulation — because it can anticipate and prepare for known future disturbances.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>Variable speed limit systems are already deployed on major freeways worldwide, but most use simple reactive algorithms or infinite-horizon control that treats tomorrow like today. This paper shows that incorporating known future information — scheduled events, predicted incidents, rush hour patterns — into a finite-horizon optimal control formulation produces meaningfully better throughput and reduced stop-and-go waves. As freeway management systems modernize, this provides the mathematical foundation for a generation of smarter VSL controllers.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>The finite-horizon LQR formulation is computationally tractable in real-time on standard traffic management hardware</li>
-              <li>Performance gains are largest when the control horizon aligns with predictable recurring patterns — morning rush, event traffic, work zones</li>
-              <li>The controller automatically handles the tradeoff between upstream speed reduction and downstream throughput without manual parameter tuning</li>
-              <li>Infinite-horizon approaches are suboptimal specifically because they cannot pre-position traffic state ahead of known demand peaks</li>
-              <li>The approach is compatible with existing VSL sign infrastructure — no hardware changes required for deployment</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>LQR optimal control derived from second-order traffic flow model (METANET); finite vs. infinite horizon compared in simulation</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Finite-horizon controller achieves lower total travel time and reduced shock wave severity versus infinite-horizon baseline across multiple demand scenarios</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Relies on accurate demand forecasting; forecast errors reduce but do not eliminate performance advantages; simulation-only validation</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>Freeway management system operators, state DOT traffic management centers, VSL system vendors, traffic control researchers</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>Transportation agencies operating VSL systems on predictable high-demand corridors (commuter corridors, airport access roads, stadium approaches) should evaluate finite-horizon controllers as drop-in improvements to existing infrastructure. The paper provides sufficient mathematical detail for direct implementation by traffic management system developers.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Prior VSL control literature has largely used model predictive control (MPC) as the dominant optimal control framework; LQR is less common. The authors demonstrate that LQR is competitive with MPC while being computationally simpler, potentially lowering implementation barriers for agencies without advanced optimization toolchains.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 5 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Equivalent Circuit Model based Electric Vehicle Evacuation with Mobile Charging Stations</h3>
-          <span class="confidence-badge conf-medium">Medium</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Joseph Moyalan, Ricardo de Castro, Shuang Feng, Xuchang Tang, Xinfan Lin, Qijian Gan</span>
-          <span class="source-tag">arXiv eess.SY</span>
-          <a href="https://arxiv.org/abs/2606.03149v1" target="_blank" rel="noopener">arxiv.org/abs/2606.03149v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">Modeling EV evacuation networks as electrical circuits enables real-time optimization of vehicle routing, mobile charging station placement, and congestion management simultaneously — turning a computationally intractable emergency logistics problem into a solvable circuit analysis.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>As EV adoption grows, emergency evacuation planning faces a new and complex constraint: range anxiety. Vehicles that run out of charge during evacuations become obstacles on evacuation routes, potentially creating dangerous blockages. This paper provides the first computationally practical framework for co-optimizing EV routing and charging infrastructure placement during mass evacuation events, directly addressing an emerging public safety gap as EVs reach significant fleet share.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>The circuit analogy maps vehicle flows to currents, road capacity to conductance, and battery state to voltage — enabling established circuit analysis tools to solve the evacuation problem</li>
-              <li>Mobile charging stations (on trucks or deployed assets) can prevent range-related evacuation failures at a fraction of the cost of fixed infrastructure expansion</li>
-              <li>The optimal placement of mobile chargers is highly sensitive to the spatial distribution of low-SOC vehicles at evacuation onset</li>
-              <li>Real-time re-optimization as evacuation progresses is computationally feasible using the circuit model, enabling dynamic response to changing conditions</li>
-              <li>Even partial charging (30-50% SOC boost) at strategically placed mobile stations dramatically reduces the incidence of range-stranded vehicles</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>Circuit theory analogy for network flow optimization; simulation-based validation on synthetic evacuation networks with EV state-of-charge modeling</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Mobile charging station optimization eliminates range-related evacuation failures in tested scenarios; computationally tractable for real-time use</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Synthetic network testing only; assumes known initial SOC distribution which may not be available in real emergencies; mobile station logistics not fully modeled</p>
-            </div>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>Emergency managers, state emergency planning agencies, utility companies with mobile charging assets, EV fleet operators, FEMA</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>Emergency management agencies should begin incorporating EV range constraints into evacuation plans now, while EV market share is still modest, to avoid being caught unprepared. Utilities and municipalities should evaluate pre-positioning mobile charging assets in disaster-prone areas. The circuit model provides a practical planning tool that doesn't require operations research expertise to use.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Prior EV evacuation work focused on routing with fixed charging stations; the introduction of mobile charging station placement as a decision variable is novel and dramatically changes the solution space. The circuit analogy is a creative methodological contribution that sidesteps the computational complexity of integer programming approaches used previously.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 6 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Corridor Design and Separation Definition in Advanced Air Mobility: Systematic Literature Review</h3>
-          <span class="confidence-badge conf-medium">Medium</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Evgenii Vinogradov, Debashisha Mishra, Mariam Ali Askar Alobeidli, Jamal Khaled Al Ali, Ahmed Saleh Alshehhi, Jennifer Simonjan, Enrico Natalizio</span>
-          <span class="source-tag">arXiv eess.SY</span>
-          <a href="https://arxiv.org/abs/2606.02757v1" target="_blank" rel="noopener">arxiv.org/abs/2606.02757v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">A systematic review of Advanced Air Mobility corridor design literature reveals a critical standards gap: no consensus exists on minimum separation distances, altitude layering, or conflict resolution protocols for high-density eVTOL operations over cities.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>Multiple eVTOL manufacturers are targeting commercial launch within the next 2-3 years, yet the airspace management framework needed for safe dense urban operations remains undefined. This review synthesizes what is known and, critically, maps what remains contested or unresolved — providing regulators (FAA, EASA) and standards bodies (ASTM, ICAO) with a clear picture of where urgent consensus-building is needed before commercial-scale urban air mobility operations can safely proceed.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>Proposed minimum separation distances in the literature range from 30 meters to over 300 meters depending on vehicle type and operational context — a 10x variance that makes any unified standard elusive</li>
-              <li>Altitude layering schemes (assigning different vehicle types to altitude bands) are the most widely proposed conflict-avoidance mechanism, but optimal layer thicknesses remain unvalidated</li>
-              <li>FAA and EASA approaches to Urban Air Traffic Management diverge significantly in philosophy: FAA favors performance-based rules; EASA favors prescriptive minimums</li>
-              <li>No existing study has validated proposed separation standards under realistic high-density scenarios with mixed vehicle types and navigation performance variations</li>
-              <li>Communication and control link requirements for urban environments are underspecified relative to other AAM standards domains</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>Systematic literature review following PRISMA guidelines; synthesis of academic, regulatory, and industry technical documents on AAM airspace management</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Critical gaps identified in separation standards, altitude layering validation, and conflict resolution protocol consensus; mapped against regulatory frameworks</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Rapidly evolving field means some reviewed standards documents may already be superseded; no original data collection or simulation</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>FAA/EASA rulemakers, eVTOL manufacturers, urban air traffic management developers, city aviation offices, ICAO working groups</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>Regulators should treat the separation standards gap identified in this review as a blocking issue for commercial AAM approvals at scale. The 10x variance in proposed separation distances must be resolved through coordinated high-density simulation studies before dense urban AAM can be safely authorized. eVTOL operators planning commercial launches should actively participate in standards-setting bodies to ensure their vehicle performance envelope informs the standards ultimately adopted.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Previous reviews of AAM focused on vehicle technology or energy systems; this review specifically targets the airspace management and standards domain, which has received far less systematic academic attention despite being the primary near-term deployment barrier.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 7 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Regulating EV Charging Markets for Fairness: Incentives for Pricing and Capacity Decisions</h3>
-          <span class="confidence-badge conf-high">High</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Ruiting Wang, Kita Hu, Yitong Yu, Scott Moura</span>
-          <span class="source-tag">arXiv eess.SY</span>
-          <a href="https://arxiv.org/abs/2606.01266v1" target="_blank" rel="noopener">arxiv.org/abs/2606.01266v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">Game-theoretic analysis proves that unregulated EV charging markets structurally under-serve low-income communities, and derives the regulatory mechanisms — targeted subsidies and pricing caps — that achieve equitable access while maintaining operator profitability.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>EV mandates in the US, EU, and China are rapidly driving fleet electrification — but if charging infrastructure follows unregulated market logic, lower-income communities will face charging deserts precisely as they most need affordable access. This paper provides both the economic proof that this outcome is inevitable without intervention and the mathematical tools to design effective interventions, arriving at a critical moment when NEVI, AFIR, and similar programs are actively allocating billions in charging infrastructure investment.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>In unregulated Nash equilibria, operators rationally under-invest in capacity and charge higher prices in lower-income areas — because demand elasticity is higher and capital recovery is slower</li>
-              <li>Targeted subsidies calibrated to local income indices can close the equity gap without requiring operators to accept below-market returns</li>
-              <li>Pricing caps alone are insufficient — they must be paired with capacity investment incentives to prevent operators from withdrawing from underserved markets</li>
-              <li>The equity-optimal regulatory solution also reduces total system costs by eliminating duplicate infrastructure in high-income areas where unregulated markets over-build</li>
-              <li>Operator profitability under the regulated optimum exceeds the unregulated equilibrium for operators in underserved markets — a Pareto improvement</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>Multi-player non-cooperative game theory; Nash equilibrium analysis; mechanism design for regulatory interventions; numerical case studies</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Formal proof of market failure in charging access equity; regulatory mechanism design achieving equitable outcomes with Pareto-improved operator profitability</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Model abstracts away some real-world operator heterogeneity; assumes rational actors; implementation of income-indexed pricing mechanisms faces political and administrative challenges</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>State PUCs and energy regulators, NEVI program administrators, EV charging operators, transportation equity advocates, city sustainability offices</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>Regulators should immediately audit whether NEVI and similar programs' placement requirements are sufficient to prevent charging deserts, or whether pricing and capacity regulations are also needed. The paper's mechanism design framework can be directly applied to calibrate subsidy levels for specific local markets. Equity advocates should use this paper's formal results to argue for regulatory requirements alongside infrastructure funding.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Prior EV equity work documented disparate access as an empirical fact; this paper is among the first to formally prove it as an inevitable market outcome and to derive mathematically optimal regulatory responses. The game-theoretic approach enables policy prescriptions with a rigor that observational studies cannot provide.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 8 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>RiskFlow: Fast and Faithful Safety-Critical Traffic Scenario Generation</h3>
-          <span class="confidence-badge conf-high">High</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Qi Lan, Yining Tang, Yu Shen, Yi Zhou, Yuhao Wei, Jie Li, Guofa Li</span>
-          <span class="source-tag">arXiv cs.AI</span>
-          <a href="https://arxiv.org/abs/2606.06423v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06423v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">RiskFlow generates physically realistic, safety-critical multi-agent traffic scenarios for autonomous vehicle testing at a fraction of the computational cost of prior diffusion-based methods, while significantly reducing unrealistic motion artifacts.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>Autonomous vehicle safety validation requires exposure to rare, dangerous scenarios (near-misses, sudden cut-offs, emergency braking) that real-world driving rarely produces. Generating these synthetically is a solved problem in principle but previous approaches were too slow for large-scale testing pipelines or produced unrealistic physical violations that invalidate test results. RiskFlow addresses both constraints simultaneously, potentially enabling higher-throughput safety validation that could accelerate responsible AV deployment.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>Applying diffusion guidance in action space (rather than state space) dramatically reduces motion artifacts while preserving scenario diversity</li>
-              <li>The closed-loop framework enables generated scenarios to respond dynamically to the AV under test, rather than playing out predetermined agent trajectories</li>
-              <li>RiskFlow achieves faster generation than prior diffusion-based methods while maintaining or improving physical realism metrics</li>
-              <li>The approach generalizes to generating scenarios of varying severity, enabling systematic coverage of the risk spectrum from mild to catastrophic</li>
-              <li>Physical plausibility constraints are enforced implicitly through the action-space formulation rather than requiring explicit post-processing</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>Diffusion model with guidance in vehicle action space; closed-loop simulation framework; compared against prior scenario generation baselines on realism and efficiency metrics</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Fewer physical violations than prior methods; faster generation throughput; maintains scenario diversity and criticality targeting across tested traffic conditions</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>Validation in simulation only; real-world transfer of generated scenario difficulty may differ; limited to highway-like environments in current form</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>AV developers and safety teams, automotive OEM simulation engineers, regulatory bodies developing AV safety standards, AV testing service providers</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>AV safety teams can integrate RiskFlow into existing simulation pipelines to increase the density of safety-critical coverage in test suites without proportionally increasing compute costs. Regulatory agencies developing AV safety certification frameworks should evaluate scenario generation methods like RiskFlow as components of virtual testing protocols that complement real-world testing requirements.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Prior safety-critical scenario generation approaches (adversarial perturbation, naturalistic sampling, early diffusion methods) each suffered from either unrealism, limited coverage, or prohibitive compute costs. RiskFlow advances on all three dimensions simultaneously, representing a meaningful step toward practical high-throughput safety validation.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAPER 9 -->
-      <div class="paper-card">
-        <div class="paper-header">
-          <h3>Risk Assessment of Autonomous Driving: Integrating Technical Failures, Ethical Dilemmas, and Policy Frameworks</h3>
-          <span class="confidence-badge conf-medium">Medium</span>
-        </div>
-        <div class="paper-meta">
-          <span class="authors">Boyi Chen, Shengqin Chu, Zicheng Wang, Brian Baetz, Zhen Gao</span>
-          <span class="source-tag">arXiv cs.AI</span>
-          <a href="https://arxiv.org/abs/2606.06396v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06396v1</a>
-        </div>
-        <div class="paper-body">
-          <div class="one-sentence">A comprehensive multi-dimensional risk audit of autonomous vehicles — spanning technical failures, ethical decision-making, and regulatory inconsistencies — concludes that perception errors dominate real-world incidents and that jurisdictional regulatory fragmentation creates unequal safety outcomes.</div>
-          <div class="why-it-matters">
-            <div class="label">Why It Matters</div>
-            <p>AV deployment is accelerating across multiple jurisdictions but safety governance has not kept pace. This paper provides a rare integrated analysis that connects the technical, ethical, and regulatory dimensions — revealing how gaps in one dimension propagate into failures in others. The NHTSA and DMV data analysis grounds the otherwise theoretical discussion in empirical reality, making the policy recommendations harder to dismiss.</p>
-          </div>
-          <div class="key-insights">
-            <div class="label">Key Insights</div>
-            <ul>
-              <li>Perception errors (sensor failures, object misclassification, edge-case detection failures) account for a disproportionate share of AV incidents in NHTSA data — suggesting that hardware and ML model robustness remain the primary technical bottleneck</li>
-              <li>Ethical decision-making frameworks adopted by different manufacturers are mutually inconsistent, creating different risk distributions across users, bystanders, and third parties</li>
-              <li>Regulatory inconsistencies across US states and between the US, EU, and China create opportunities for safety arbitrage — deploying riskier configurations in jurisdictions with weaker oversight</li>
-              <li>Cybersecurity risks are systematically under-addressed in current AV risk frameworks despite the demonstrated vulnerability of connected vehicle systems</li>
-              <li>The proposed integrated governance framework requires coordination across technical standards bodies, ethics review processes, and national/state regulators — a coordination challenge with no clear institutional home</li>
-            </ul>
-          </div>
-          <div class="mini-grid">
-            <div class="mini-cell">
-              <div class="mini-label">Methodology</div>
-              <p>Analysis of NHTSA Standing General Order AV crash reports and DMV disengagement data; systematic review of ethical frameworks and regulatory texts across jurisdictions</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Results</div>
-              <p>Perception errors dominant in real crash data; regulatory fragmentation across 50+ jurisdictions documented; integrated risk governance framework proposed</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Limitations</div>
-              <p>NHTSA data quality and completeness is contested; self-reported disengagement data may not reflect actual safety performance; proposed governance framework lacks implementation pathway</p>
-            </div>
-            <div class="mini-cell">
-              <div class="mini-label">Who Should Care</div>
-              <p>Federal and state AV regulators, AV developers' safety and policy teams, insurance actuaries, legislators, transportation safety researchers</p>
-            </div>
-          </div>
-          <div class="implications-block">
-            <div class="label">Practical Implications</div>
-            <p>AV developers should treat the perception failure dominance finding as a priority signal for R&D investment. Federal regulators should evaluate whether the current patchwork of state AV regulations creates safety arbitrage incentives and consider minimum federal safety floors. International regulatory coordination (US-EU-China) on AV safety standards should be treated as urgent to prevent a race to the bottom.</p>
-          </div>
-          <div class="comparison-block">
-            <div class="label">Comparison to Prior Work</div>
-            <p>Most AV risk literature addresses technical, ethical, or regulatory dimensions in isolation; this paper's contribution is the integrated multi-dimensional framework. While the individual components are not novel, the synthesis reveals interaction effects (e.g., how regulatory fragmentation exacerbates the impact of ethical framework inconsistency) that siloed analyses miss.</p>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /papers-list -->
+  <div class="one-sentence">This paper proposes a distributed, slime-mold-inspired swarm algorithm for demand-responsive transit (DRT) that uses dynamic transfers and cooperative bidding among vehicles to significantly improve efficiency and passenger delivery.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> This research addresses the core challenges of demand-responsive transit (DRT)—high operating costs and low reliability—by introducing a highly flexible, biologically-inspired routing paradigm that could revolutionize flexible mobility services.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>A slime-mold-inspired distributed routing algorithm significantly enhances DRT effectiveness.</li><li>Dynamic transfers, managed through cooperative vehicle bidding, are key to optimizing network efficiency.</li><li>The swarm-driven approach dramatically increases passenger delivery rates (28-101% depending on scenario) compared to fixed networks.</li><li>Passenger walking times are reduced by over 75% across suburban, urban, and semi-rural environments.</li><li>Moving from centralized to distributed, dynamic routing mitigates common DRT issues.</li></ul>
   </div>
-</section>
-
-<!-- ── ACTIONABLE TAKEAWAYS ── -->
-<section>
-  <div class="container">
-    <div class="section-label">For Practitioners</div>
-    <div class="section-title">Actionable Takeaways</div>
-    <div class="takeaways-box">
-      <ol>
-        <li><strong>Regulators administering EV charging infrastructure programs (NEVI, AFIR):</strong> Require pricing and capacity minimums in underserved markets, not just geographic placement rules. Wang et al. prove that placement alone is insufficient — market incentives will produce charging deserts even in mandated areas without price/capacity regulation.</li>
-        <li><strong>Transit emergency managers:</strong> Redesign operator training curricula to maximize scenario variety rather than total training hours. The subway flood modeling paper shows that diverse scenario exposure is a stronger predictor of emergency performance than cumulative experience, and that experienced operators can be more vulnerable to novel scenario patterns.</li>
-        <li><strong>Municipal transportation planners in data-constrained environments:</strong> You can now run calibrated city-scale traffic simulations from a handful of existing loop detectors. The genetic calibration paper demonstrates that comprehensive sensor networks are not a prerequisite for evidence-based traffic modeling — a finding that removes a major barrier to simulation-based planning for smaller cities.</li>
-        <li><strong>Emergency management agencies in high-EV-adoption regions:</strong> Begin incorporating EV range constraints into evacuation plans now, while EV fleet share is still low. Develop mobile charging station pre-positioning strategies for disaster-prone zones before range-related evacuation failures become a public safety crisis at scale.</li>
-        <li><strong>AV developers and safety teams:</strong> The dominance of perception errors in real-world AV incidents (Chen et al.) and the availability of higher-throughput realistic scenario generation (RiskFlow) together point to a clear investment priority: more compute-efficient adversarial testing focused specifically on edge-case perception challenges, not just increased aggregate simulation mileage.</li>
-      </ol>
-    </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The study develops a computational model simulating a swarm-driven transit network. It uses map networks extracted from OpenStreetMap for suburban, urban, and semi-rural scenarios, comparing its performance against a fixed-network approach.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>Simulations show that the swarm-driven approach increases passenger delivery rates by 28% in suburban, 49% in urban, and 101% in semi-rural scenarios, while reducing walking time by over 75% in all cases.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>The findings are based on simulations and would require real-world pilots to validate performance under actual operational complexities, human behavior, and varying traffic conditions. The computational overhead for large-scale real-time implementation is not fully detailed.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Transit agency planners, DRT operators, urban mobility researchers, smart city innovators, and software developers creating dispatch or routing solutions.</p></div>
   </div>
-</section>
+  <div class="practical"><strong>Practical Implications:</strong> Transit agencies can leverage this framework to design more efficient, cost-effective, and passenger-friendly DRT systems, particularly in areas poorly served by fixed routes. It offers a blueprint for next-generation flexible mobility solutions.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> Unlike traditional DRT relying on centralized, manually scheduled systems, this work introduces a novel distributed, biologically-inspired algorithm with dynamic transfers, representing a significant paradigm shift in operational control and efficiency.</div>
+</div>
 
-<!-- ── LONG-TERM IMPLICATIONS ── -->
-<section>
-  <div class="container">
-    <div class="section-label">Horizon</div>
-    <div class="section-title">Long-Term Implications</div>
-    <div class="implications-two-col">
-      <div class="implications-col">
-        <h4>The Next Five Years (2026–2031)</h4>
-        <p>The convergence of AV maturation, EV fleet growth, and urban air mobility commercialization will create an unprecedented period of transportation system complexity. The governance gaps documented across today's papers — fragmented AV regulations, undefined AAM separation standards, inequitable charging access — must be resolved in this window or they will calcify into durable structural inequities and safety deficits. The research community is providing the analytical tools; the binding constraint is now institutional will and coordination capacity among regulators, industry, and civil society. Agencies that invest now in simulation infrastructure (traffic, emergency, and AV testing) will be far better positioned to evaluate and respond to the rapid changes ahead.</p>
-      </div>
-      <div class="implications-col">
-        <h4>The Decade Beyond (2031–2036)</h4>
-        <p>If the governance gaps are resolved effectively, the 2030s could see a transportation system dramatically safer, more equitable, and more efficient than today's: autonomous freight on inland waterways reducing trucking emissions, eVTOL providing high-speed urban mobility in corridors currently underserved by transit, and EVs accessible across income levels with well-distributed charging. If governance gaps persist, the opposite is equally plausible — a bifurcated transportation system where advanced mobility technologies serve affluent users in well-regulated jurisdictions while underserved communities experience the costs (road noise, safety risks, displacement) without the benefits. Today's research papers are, in aggregate, a map of which path we're currently on and where the critical forks lie.</p>
-      </div>
-    </div>
+<div class="paper-card" id="paper-2">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2606.06429v1" target="_blank">Computational Modeling of Human Adaptation in Urban Infrastructure Management under Extreme Conditions: A Case Study of Subway Flood Scenarios</a></h3>
+    <span class="conf-badge conf-medium">Medium</span>
   </div>
-</section>
+  <div class="paper-meta">
+    <span class="authors">Jinfeng Lou, Zijie Liang, Pengkun Liu, Yuxin Zhang, Cleotilde Gonzalez, Pingbo Tang</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This study uses Instance-Based Learning Theory to model human operator decision-making during subway flood events, uncovering a four-phase adaptation cycle and exposing cognitive biases like overconfidence and defensive overcorrection.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> Understanding human decision-making and cognitive biases during extreme events is critical for designing more effective computational support systems and improving resilience in urban infrastructure management, particularly for vital transit systems like subways.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>Human operators exhibit a complex, non-linear adaptation cycle (acquisition, overconfidence, overcorrection, recalibration) during extreme events.</li><li>Computational models can integrate cognitive theories (IBLT) to simulate operator decision processes.</li><li>Human operators tend to exhibit immediate defensive risk overestimation during the post-accident overcorrection phase.</li><li>Latent psychological biases, like overconfidence and defensive overcorrection, significantly impact decision-making in crisis.</li><li>Current computational support systems often fail to account for non-monotonic human adaptation.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The research integrates Instance-Based Learning Theory (IBLT) into a computational cognitive architecture. It employs a human-in-the-loop microworld experiment that simulates subway flood-induced track suspensions to observe and model operator behavior.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>The model revealed a four-phase human adaptation cycle (acquisition, overconfidence, overcorrection, recalibration) and showed a significant divergence where human operators exhibited immediate defensive risk overestimation, while the model maintained a stable trajectory based on accumulated experience.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>The study relies on a microworld experiment, which may not fully capture the high-stress, real-world complexity of actual disaster scenarios. Generalizability across different types of extreme events or operator experience levels might vary.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Transit operations managers, emergency preparedness teams, urban planners, human-computer interaction researchers, and developers of crisis management software.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> The findings can inform the design of advanced decision support systems for transit infrastructure management, leading to improved training programs that mitigate cognitive biases, and more resilient operational protocols for extreme weather events.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This study advances prior work by integrating a computational cognitive theory (IBLT) to model non-monotonic human adaptation and psychological biases, moving beyond systems that assume rational, monotonic decision-making in crisis.</div>
+</div>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <p><strong>Transit Research Briefing</strong> — June 5, 2026</p>
-    <p>9 papers analyzed · Sources: arXiv (cs.CY, eess.SY, cs.AI)</p>
-    <p><a href="index.html">← Return to Archive</a> · <a href="research.html">Full Research Index</a></p>
-    <p style="margin-top:16px; font-size:11px; color:#4a4a60;">Papers sourced from arXiv preprint server. This briefing represents analyst synthesis and should not be taken as peer-reviewed conclusions. Always consult original papers for full methodology and caveats.</p>
+<div class="paper-card" id="paper-3">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2606.01745v1" target="_blank">Enhancing the Socioeconomic Understanding of Foundation Models with Urban Mobility</a></h3>
+    <span class="conf-badge conf-high">High</span>
   </div>
+  <div class="paper-meta">
+    <span class="authors">Baoshen Guo, Donghang Li, Zhiqing Hong, Kailai Sun, Heye Huang, Alok Prakash, Shenhao Wang</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This paper introduces MobFusion, a modular framework that integrates large-scale urban mobility patterns into foundation models to significantly improve the accuracy of urban socioeconomic predictions.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> By incorporating dynamic mobility patterns, MobFusion dramatically enhances the predictive power of AI models for urban phenomena, offering a more nuanced and accurate understanding of cities for policymakers, planners, and businesses.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>Mobility patterns are crucial for revealing functional connections between places, which are often ignored by static socioeconomic prediction models.</li><li>MobFusion enhances foundation models by using mobility networks as contexts for zero-shot LLM prompting.</li><li>Mobility data can serve as graph connectors for fusing geospatial embeddings, improving model accuracy.</li><li>Structured mobility tokens enable multimodal LLM reasoning, providing a richer understanding of urban dynamics.</li><li>The framework improves urban prediction tasks (e.g., median household income, population density, crime) across various instantiations.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>MobFusion proposes three complementary designs for integrating mobility: mobility networks as contexts for LLM prompting, as graph connectors for fusing geospatial embeddings, and as structured tokens for multimodal LLM reasoning. It uses anonymized large-scale mobility datasets from three U.S. metropolitan areas.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>MobFusion consistently improves urban prediction tasks, including median household income, population density, and crime prediction, across all three proposed integration methods.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>The reliance on anonymized large-scale mobility datasets raises questions about data access, privacy, and potential biases in the underlying data collection. The generalizability to cities with different mobility patterns or data availability needs further exploration.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Urban planners, municipal governments, data scientists, AI/ML researchers working with geospatial data, real estate developers, and economic development agencies.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> Urban planners can gain more precise insights for resource allocation, infrastructure development, and policy evaluation. Businesses can leverage improved predictions for market analysis and site selection, while governments can better target social interventions.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This work moves beyond previous foundation models that relied solely on static attributes of places, by innovatively integrating dynamic mobility patterns in multiple ways (prompting, graph connection, structured tokens) to capture functional urban connections.</div>
+</div>
+
+<div class="paper-card" id="paper-4">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2605.23230v1" target="_blank">Optimal designs of heterogeneous grid transit networks</a></h3>
+    <span class="conf-badge conf-high">High</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Wenbo Fan, Haoyang Mao, Li Zhen, Weihua Gu</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This paper presents a Continuum Approximation (CA) model for optimizing transit network designs in grid cities, allowing flexible line routing like detouring, merging, and diverging to reduce generalized costs under spatially heterogeneous demand.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It offers a more advanced and flexible approach to designing fixed-route transit networks, potentially leading to more efficient, cost-effective, and patron-friendly systems, especially in diverse urban environments.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>A Continuum Approximation (CA) model can optimize grid transit networks under spatially heterogeneous demand.</li><li>Allowing bus lines to make lateral movements, detour, merge, and diverge significantly reduces generalized costs.</li><li>The fully heterogeneous network structure is particularly advantageous where patron demand exhibits strong spatial heterogeneity.</li><li>Greatest benefits are observed in high-demand, low-wage, and large-area cities.</li><li>The framework reduces generalized costs by over 7% compared to existing models.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The authors propose a general Continuum Approximation (CA) model that allows flexible line configurations (detouring, merging, diverging) within grid cities. A sequential geometric programming framework transforms the model into standard GP problems for optimization.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>Under representative spatially heterogeneous demand scenarios, the model effectively reduces generalized costs by over 7% compared to existing homogeneous and restricted heterogeneous TND models, with the greatest benefits in high-demand, low-wage, and large-area cities.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>Continuum Approximation models inherently simplify the discrete nature of transit networks. Real-world implementation would require accounting for specific street layouts, existing infrastructure, and operational constraints not fully captured in the continuous model.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Transit network designers, urban planners, public transport agencies, and researchers in transportation optimization.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> Urban transit planners can use this model to design more adaptive and efficient bus networks, especially in rapidly growing or structurally complex grid cities, leading to better service provision and reduced operational expenses.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This framework distinguishes itself from conventional studies by allowing significantly more flexible geometric line configurations (detouring, merging, diverging) within a CA model, overcoming the rigid assumptions of many existing homogeneous and restricted heterogeneous TND models.</div>
+</div>
+
+<div class="paper-card" id="paper-5">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2605.18778v1" target="_blank">T-REX: Fast and Dynamic Journey Planning for Continental-Scale Public Transit Networks</a></h3>
+    <span class="conf-badge conf-high">High</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Jonas Sauer, Patrick Steil, Sascha Witt</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">T-REX (Transfer-Ranked EXploration) is a novel algorithm for public transit journey planning that achieves sub-10ms query times on continental-scale networks with real-time schedule updates, by applying multi-level overlays to Trip-Based Public Transit Routing.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> T-REX represents a breakthrough in real-time journey planning, enabling truly interactive applications for long-distance transit across vast networks, significantly enhancing user experience and operational capabilities for inter-city travel.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>T-REX provides sub-10ms query times for journey planning on continental-scale public transit networks.</li><li>The algorithm uses multi-level overlays on Trip-Based Public Transit Routing (TB) to identify relevant long-distance transfers.</li><li>It achieves speedups of 20x compared to TB and 80x compared to algorithms without preprocessing.</li><li>Real-time schedule updates can be incorporated in a few seconds, with a precomputation time of only two minutes.</li><li>T-REX is the first algorithm to meet the requirements for interactive real-time applications at a continental scale.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>T-REX applies multi-level overlays to Trip-Based Public Transit Routing (TB). It identifies relevant transfers for long-distance travel during a short precomputation phase to optimize query answering speed.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>The algorithm answers queries in less than 10ms on a Europe-wide network, achieving a 20x speedup over TB and 80x over non-preprocessing algorithms. It maintains moderate memory footprint and allows real-time schedule updates within seconds.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>While efficient, the complexity of managing and updating multi-level overlays for extremely dynamic, very large-scale events (e.g., widespread disruptions affecting numerous transfers) could still pose challenges. The focus is on speed, not necessarily other optimization objectives like comfort.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Public transit technology providers, app developers, national and international transit authorities, logistics companies, and urban mobility researchers.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> This technology enables the next generation of public transit routing applications, providing instant, accurate journey plans for users across countries and continents, improving travel convenience and fostering greater use of public transport for long distances.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> T-REX significantly outperforms existing Trip-Based Public Transit Routing (TB) and other algorithms in terms of speed and real-time adaptability on continental scales, making it the first to fulfill the requirements for interactive real-time applications at this magnitude.</div>
+</div>
+
+<div class="paper-card" id="paper-6">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2604.15754v1" target="_blank">Urban transit network design using spanning tree: A case study of Canberra transit network</a></h3>
+    <span class="conf-badge conf-medium">Medium</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Satoshi Suguira, Kam-Fung Cheung, Michael G. H. Bell, Hitomi Nakanishi, Fumitaka Kurauchi, Supun Perera, Yogi Vidyattama</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This paper proposes a mixed-integer optimization model based on the spanning tree concept and a tabu search heuristic to redesign public transit networks, aiming to minimize total passenger-kilometers, demonstrated using Canberra's bus network.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It offers a systematic, computationally efficient approach for transit agencies to redesign networks, leading to more direct routes, reduced passenger travel burden, and potentially lower operational costs by minimizing unnecessary travel.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>The spanning tree concept can be effectively applied to redesign public transit networks.</li><li>A mixed-integer optimization model can minimize total passenger-kilometers in a transit network.</li><li>A tabu search heuristic efficiently identifies promising spanning tree designs for large networks.</li><li>A greedy algorithm can further optimize by adding links to improve the network while relaxing constraints.</li><li>The approach provides clear implications for policymakers seeking to improve public transit network design.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The study formulates transit network redesign as a mixed-integer optimization problem, minimizing total passenger-kilometers, adopting the concept of a spanning tree. A tabu search-based heuristic is developed to find promising solutions, followed by a greedy algorithm to add links and further optimize.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>The efficacy of the proposed method is verified using the Canberra bus network data, demonstrating its ability to output improved network designs that reduce total passenger-kilometers.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>As a case study, generalizability to cities with vastly different topologies, demand patterns, or existing infrastructure might require adaptation. The model's primary objective is passenger-kilometers, potentially overlooking other important metrics like network coverage or frequency.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Urban planners, public transport authorities, transportation engineers, and researchers focused on network optimization.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> Policy makers and transit planners can use this methodology to systematically evaluate and redesign existing bus networks, identify areas for improvement, and create more efficient and passenger-centric routes.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This work uniquely adopts the spanning tree concept for urban transit network design, formulated as a mixed-integer optimization model, and combines it with a heuristic and greedy algorithm to provide a practical, computationally efficient solution for real-world networks.</div>
+</div>
+
+<div class="paper-card" id="paper-7">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2603.29782v1" target="_blank">Urban mobility enables deprivation bubble breaking in Indian and Mexican cities</a></h3>
+    <span class="conf-badge conf-high">High</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Yuan Liao, Federico Delussu, Silvia de Sojo, Laura Alessandretti, Antonio Desiderio</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This study reveals that residents of deprived urban areas in India and Mexico use daily mobility to 'break deprivation bubbles' by traveling to better-off locations, highlighting a dynamic aspect of spatial inequality uncaptured by static measures.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It offers a crucial, mobility-centric understanding of urban deprivation, challenging traditional static indicators and providing vital insights for policies aimed at promoting social equity through improved access and transit infrastructure.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>Traditional, residence-based deprivation indicators overlook the role of daily movement in accessing opportunities.</li><li>'Bubble breaking' describes travel from deprived to less deprived areas to meet daily needs.</li><li>Residents of deprived areas systematically exhibit compensatory mobility patterns, significantly exceeding gravity model expectations.</li><li>Residual bubble breaking quantifies reliance on cross-neighborhood mobility to overcome local amenity deficits.</li><li>This mobility-based perspective reveals a dimension of spatial inequality missed by static measures.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The researchers quantified 'bubble breaking' by analyzing large-scale mobile phone mobility networks combined with satellite-derived deprivation indices across 64 cities in India and Mexico. They compared observed mobility patterns against gravity models.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>The analysis shows that residents of deprived areas systematically travel to better-off locations for daily needs, exhibiting a compensatory mobility pattern that significantly exceeds expectations from gravity models, revealing unobserved spatial inequality.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>The use of mobile phone data might introduce biases (e.g., smartphone ownership, specific network coverage). Deprivation indices, even satellite-derived, are approximations. Cultural and infrastructural differences between cities could affect generalizability.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Urban planners, social equity advocates, public transit agencies, government officials focused on poverty reduction, and researchers in urban geography and mobility.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> Policymakers should consider mobility patterns when defining and addressing urban deprivation. Investments in transit infrastructure and service provision that connect deprived areas to opportunity-rich zones can directly impact social equity and access to amenities.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This study significantly advances the understanding of urban deprivation by moving beyond static, residence-based indicators to a dynamic, mobility-centric view, offering a novel quantification of 'bubble breaking' and compensatory mobility patterns.</div>
+</div>
+
+<div class="paper-card" id="paper-8">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2602.15470v1" target="_blank">The Skeletal Trap: Mapping Spatial Inequality and Ghost Stops in Ankara's Transit Network</a></h3>
+    <span class="conf-badge conf-medium">Medium</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Elifnaz Kancan</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This study argues that Ankara's public transport crisis stems from a structural mismatch between fragmented urban expansion and a rigid, center-oriented bus network, leading to significant center-periphery asymmetries and accessibility inequalities.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It provides a critical framework for understanding how unchecked urban growth combined with inflexible transit planning can create deep-seated spatial inequalities and inefficiency, offering lessons for cities worldwide facing similar development pressures.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>Ankara's transit crisis is fundamentally morphological and structural, not merely due to a bus shortage.</li><li>Leapfrog urban expansion has created disconnected peripheral clusters.</li><li>The rigid, center-oriented bus network fails to adequately serve peripheral districts, leading to chronic under-service or forced transfer dependency.</li><li>Demand remains intensely concentrated along central axes and western corridors.</li><li>Analysis reveals persistent center-periphery asymmetries, structural bottlenecks, and spatially embedded accessibility inequalities.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The research analyzes a 173-day operational dataset of route-level passenger and trip reports. A Connectivity-Based Weighted Distribution Model is used to reallocate passenger volumes to 1km x 1km grid cells using network centrality metrics.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>Findings reveal persistent center-periphery asymmetries, structural bottlenecks, and spatially embedded accessibility inequalities within Ankara's transit network, confirming the negative impact of rigid network design on fragmented urban development.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>As a case study, direct generalizability to all cities might be limited, though the underlying principles are broadly applicable. The study focuses on bus networks, potentially overlooking the role of other transit modes in Ankara.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Urban planners, municipal governments, public transit authorities, policy makers in developing cities, and transportation geographers.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> This analysis urges Ankara's policymakers to rethink transit network design, prioritizing adaptive, multi-directional routes over rigid, center-oriented ones, and considering the morphological impacts of urban expansion on accessibility. Other cities can learn from this example.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This study shifts the framing of Ankara's transit problems from operational efficiency or fleet size to a fundamental morphological and structural mismatch, offering a deeper, systemic critique based on extensive operational data and spatial analysis.</div>
+</div>
+
+<div class="paper-card" id="paper-9">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2605.14501v1" target="_blank">Fully Dynamic Rebalancing in Dockless Bike-Sharing Systems via Deep Reinforcement Learning</a></h3>
+    <span class="conf-badge conf-high">High</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Edoardo Scarpel, Alberto Pettena, Matteo Cederle, Federico Chiariotti, Marco Fabris, Gian Antonio Susto</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This paper proposes a fully dynamic Deep Reinforcement Learning (DRL) method for real-time rebalancing of dockless bike-sharing systems, effectively reducing availability failures and spatial inequality with a minimal fleet size.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It offers a sophisticated, real-time solution to a critical operational challenge in micro-mobility, significantly improving service reliability, user satisfaction, and equitable access while minimizing operational costs for bike-sharing companies.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>A fully dynamic DRL method can overcome limitations of periodic, system-wide rebalancing interventions in dockless bike-sharing.</li><li>Rebalancing is effectively cast as a Markov decision process within a graph-based simulator.</li><li>A DRL agent can route a single truck in real time to execute localized pick-up, drop-off, and charging actions.</li><li>Spatiotemporal criticality scores guide the DRL agent's rebalancing decisions.</li><li>The method significantly reduces availability failures with a minimal fleet size while limiting spatial inequality and mobility deserts.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The service is modeled through a graph-based simulator, and rebalancing is framed as a Markov decision process. A Deep Reinforcement Learning (DRL) agent is trained to route a single rebalancing truck in real time, using spatiotemporal criticality scores.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>Experiments using real-world data demonstrate significant reductions in availability failures, requiring only a minimal rebalancing fleet size, and effectively limiting spatial inequality and the formation of mobility deserts.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>The study focuses on a single rebalancing truck; scaling to multiple trucks with cooperative DRL could introduce further complexities. Real-world implementation might face unpredictable factors not fully captured in the simulator, such as traffic congestion or unexpected events.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Dockless bike-sharing companies, micro-mobility operators, urban logistics managers, smart city technologists, and AI/ML researchers.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> Dockless bike-sharing operators can adopt this DRL method to optimize their rebalancing operations, leading to higher bike availability, improved customer satisfaction, reduced operational costs, and fairer distribution of resources across the city.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This approach offers a fully dynamic, real-time, DRL-based solution, moving beyond traditional periodic or static rebalancing methods to offer localized, demand-responsive interventions, significantly improving efficiency and equity.</div>
+</div>
+
+<div class="paper-card" id="paper-10">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2605.14282v1" target="_blank">Energy Management for Solar-Powered Electric-Bus Charging Station: A Data-Driven Method</a></h3>
+    <span class="conf-badge conf-high">High</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Xiaoting Wang, Supun Amarathunga, Pasan Gunawardena, Gregory Kish, Yunwei Li</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This paper develops a data-driven, flexible energy management system (EMS) for solar-powered electric bus charging stations (EBCS) that optimally manages renewable generation, energy storage, and charging, accounting for various uncertainties.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It provides a robust solution for the efficient and sustainable operation of electric bus fleets, enabling better integration of renewable energy, reducing operational costs, and contributing to grid stability and decarbonization goals.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>A flexible EMS for EBCS can effectively integrate solar PV, energy storage, and electric bus charging.</li><li>The system robustly accounts for uncertainties in solar PV output, electricity prices, and EB arrival/departure states of charge.</li><li>A data-driven polynomial chaos expansion surrogate models uncertainties from limited samples.</li><li>Nonparametric inference enriches input data when historical data is limited, improving robustness.</li><li>The proposed EMS demonstrates effectiveness in managing 20 EBs within a solar-powered EBCS.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The researchers developed a flexible energy management system (EMS) for an EBCS integrating solar PV, energy storage, and EB charging. They use a data-driven polynomial chaos expansion surrogate for uncertainty modeling and a nonparametric inference method to enrich limited historical data.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>Case studies on a solar-powered EBCS with 20 electric buses demonstrate the effectiveness of the proposed EMS in optimizing energy management despite significant uncertainties.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>The study's effectiveness is shown through case studies on a specific EBCS size (20 EBs); scalability to much larger fleets or more complex grid interactions may require further analysis. Real-world implementation might face hardware integration and regulatory challenges.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Electric bus fleet operators, energy managers, smart grid developers, public utilities, and urban sustainability planners.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> Transit agencies transitioning to electric bus fleets can adopt this EMS to optimize their charging infrastructure, maximize the use of solar energy, reduce electricity costs, and enhance the overall sustainability and resilience of their operations.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This work introduces a data-driven method leveraging polynomial chaos expansion and nonparametric inference to account for multiple uncertainties, providing a more robust and flexible energy management solution compared to deterministic or less adaptive approaches for EBCS.</div>
+</div>
+
+<div class="paper-card" id="paper-11">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2602.18546v1" target="_blank">Urban mobility network centrality predicts social resilience</a></h3>
+    <span class="conf-badge conf-high">High</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Lin Chen, Fengli Xu, Esteban Moro, Pan Hui, Yong Li, James Evans</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This study demonstrates that eigenvector centrality of urban mobility networks, interlinking types of venues, robustly predicts social resilience across various shocks in 15 US cities, indicating areas providing essential services.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It provides a powerful, data-driven metric for understanding and enhancing urban resilience, helping cities identify vulnerable areas, prioritize resource allocation, and design more effective recovery strategies in the face of diverse shocks.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>Urban mobility networks, connecting different venue types, can serve as a robust indicator of social resilience.</li><li>Eigenvector network centrality within these mobility networks strongly predicts a city's ability to withstand and recover from shocks.</li><li>Centrality often indicates areas providing essential services that maintain functionality during crises.</li><li>This metric elevates explanatory power by over 80% in predicting both segregation and mobility change compared to intuitive features.</li><li>Social interactions fostered by mobility are crucial for urban well-being and resilience.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The researchers analyzed large-scale human mobility data from 15 US cities (103+ million residents) across three distinct urban shocks (pandemic, hurricane, wildfire). They constructed a mobility network interlinking venue types and calculated eigenvector centrality.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>Eigenvector network centrality robustly predicts social resilience across all three varied urban shocks, demonstrating its ability to indicate areas providing essential services and elevating explanatory power by over 80% compared to more intuitive features for predicting segregation and mobility change.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>Reliance on large-scale human mobility data raises privacy concerns, even if anonymized. The definition of 'social resilience' is operationalized through mobility changes and segregation, which may not encompass all aspects of resilience. Generalizability to cities outside the US or different types of shocks might vary.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Urban planners, emergency management teams, public health officials, municipal governments, data scientists, and urban policy researchers.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> City planners and emergency management agencies can use mobility network centrality to identify critical urban areas, design more resilient infrastructure, strategically allocate resources during crises, and develop policies to enhance social cohesion and access to essential services.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This research provides a novel and robust, data-driven metric (mobility network centrality) for predicting social resilience across multiple urban shocks, significantly improving upon predictions made by more intuitive or static urban features.</div>
+</div>
+
+<div class="paper-card" id="paper-12">
+  <div class="paper-header">
+    <h3 class="paper-title"><a href="http://arxiv.org/abs/2603.16710v1" target="_blank">Design of Transit Networks: Global Optimization of Continuous Approximation Models via Geometric Programming</a></h3>
+    <span class="conf-badge conf-high">High</span>
+  </div>
+  <div class="paper-meta">
+    <span class="authors">Haoyang Mao, Weihua Gu, Wenbo Fan, Zhicheng Jin, Xiaokuan Zhao</span>
+    <span class="source-badge">arXiv</span>
+  </div>
+  <div class="one-sentence">This paper introduces a geometric programming (GP)-based method for the global optimization of Continuous Approximation (CA) models in transit network design, achieving consistent cost reductions across diverse demand scenarios.</div>
+  <div class="why-matters"><span class="why-label">Why it matters:</span> It provides a mathematically rigorous and robust framework for optimizing transit network designs, leading to more efficient and cost-effective systems that can better serve varying urban demands.</div>
+  <div class="key-insights">
+    <h4>Key Insights</h4>
+    <ul><li>Continuous Approximation (CA) models for transit network design can be globally optimized using a geometric programming (GP)-based method.</li><li>The GP approach consistently outperforms coordinate descent, achieving cost reductions of 1-4%.</li><li>The framework is robust and efficient across various combinations of heterogeneous demand distributions, total demand levels, and value-of-time parameters.</li><li>GP provides significant advantages in high-demand and highly heterogeneous network environments.</li><li>Traditional CA models are often formulated as nonconvex optimization problems, making global optimality difficult to guarantee.</li></ul>
+  </div>
+  <div class="mini-grid">
+    <div class="mini-cell"><h5>Methodology</h5><p>The study formulates Continuous Approximation (CA) models for transit network design as geometric programming (GP) problems, which allows for global optimization. It conducts comprehensive tests under combinations of six heterogeneous demand distributions, four total demand levels, and three value-of-time parameters.</p></div>
+    <div class="mini-cell"><h5>Results</h5><p>The GP approach consistently outperforms coordinate descent across all test cases, achieving cost reductions of approximately 1-4%. This demonstrates GP as an efficient and robust optimization framework, particularly beneficial in high-demand and highly heterogeneous network environments.</p></div>
+    <div class="mini-cell"><h5>Limitations</h5><p>Similar to other CA models, this approach involves idealizations of real-world networks (e.g., continuous service, simplified geometry). Practical application requires careful translation of continuous results into discrete network designs and consideration of specific local constraints.</p></div>
+    <div class="mini-cell"><h5>Who Should Care</h5><p>Transit network designers, urban transportation engineers, academic researchers in operations research, and public transport authorities.</p></div>
+  </div>
+  <div class="practical"><strong>Practical Implications:</strong> Transit planners and engineers can employ this GP-based optimization framework to design new networks or optimize existing ones with greater confidence in achieving global optimality, leading to better resource allocation and service quality.</div>
+  <div class="prior-work"><strong>Comparison to Prior Work:</strong> This work directly addresses the common challenge of nonconvexity in CA models by introducing a GP-based method that guarantees global optimality, consistently outperforming iterative local optimization methods like coordinate descent used in prior research.</div>
+</div>
+</div>
+
+<div class="section">
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways-box">
+    <ol>
+<li><span class="ta-num">1</span>**Pilot AI-Driven Demand-Responsive Transit:** Invest in pilot projects for swarm-based DRT or similar AI-driven dynamic routing solutions to address first-mile/last-mile challenges and serve low-density areas more efficiently.</li>
+<li><span class="ta-num">2</span>**Redesign Fixed-Route Networks with Flexibility:** Utilize advanced computational models (e.g., Continuum Approximation with geometric programming) to design or redesign fixed-route networks, prioritizing heterogeneous and flexible line structures that adapt to spatially varied demand.</li>
+<li><span class="ta-num">3</span>**Enhance Real-time Journey Planning:** Implement or upgrade to real-time, continental-scale journey planning algorithms like T-REX to provide seamless, dynamic information for inter-city and long-distance public transit, improving user experience and encouraging ridership.</li>
+<li><span class="ta-num">4</span>**Integrate Mobility Data for Urban Planning &amp; Equity:** Leverage anonymized large-scale mobility data and foundation models (e.g., MobFusion) to gain deeper insights into socioeconomic patterns and 'deprivation bubble breaking,' informing more equitable transit investments and urban development policies.</li>
+<li><span class="ta-num">5</span>**Fortify Transit Infrastructure Resilience:** Incorporate human factors research on cognitive biases into crisis management training for subway and critical infrastructure operators, and develop flexible energy management systems for electric bus charging stations that can integrate renewables and adapt to uncertainties.</li>
+<li><span class="ta-num">6</span>**Re-evaluate Network Structure vs. Fleet Size:** For cities experiencing transit crises, prioritize a fundamental re-evaluation of the transit network's morphological structure before simply increasing the number of vehicles, particularly in rapidly expanding peripheral areas.</li>
+
+    </ol>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Long-Term Implications</div>
+  <div class="lt-grid">
+    <div class="lt-col">The confluence of AI, big data, and advanced computational modeling is setting the stage for a profound transformation of urban transit into highly intelligent, autonomous, and seamlessly integrated systems. In the long term, we can anticipate a future where public transit is less about fixed schedules and routes and more about dynamic, on-demand services that adapt in real-time to individual needs, traffic conditions, and even unexpected events. This will necessitate significant investments in digital infrastructure, retraining of the transit workforce, and the development of new regulatory frameworks that can govern complex, AI-driven operations and data privacy. The 'transit agency' of the future may operate less like a traditional utility and more like a sophisticated software and logistics provider.</div>
+    <div class="lt-col">Beyond efficiency, these advancements have deep implications for social equity and urban resilience. By understanding how mobility shapes access to opportunities and contributes to a city's ability to recover from shocks, future urban planning will increasingly prioritize network connectivity that actively breaks down spatial inequalities. Cities will become more adaptable to climate change impacts and other disruptions, with infrastructure designed not just for daily commutes but for crisis management. The emphasis on sustainable energy integration for electric fleets also points towards a fully decarbonized transit sector, significantly contributing to global environmental goals and reshaping urban energy landscapes.</div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Transit Research Briefing · June 5, 2026 · 12 papers analyzed</p>
+  <p style="margin-top: 0.5rem;">Sources: <a href="https://arxiv.org" target="_blank">arXiv</a> · Powered by Gemini 2.5 Flash</p>
 </footer>
 
 </body>

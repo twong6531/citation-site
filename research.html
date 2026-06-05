@@ -6,248 +6,150 @@
 <title>Transit Research Archive</title>
 <style>
 :root {
-  --bg: #0a0a0f;
-  --surface: #111118;
-  --surface2: #18181f;
-  --border: #2a2a35;
-  --text: #e8e8f0;
-  --text-muted: #7a7a90;
-  --accent: #00897b;
-  --accent2: #6c47ff;
+  --bg: #0a0a0f; --surface: #111118; --surface2: #18181f;
+  --border: #2a2a35; --text: #e8e8f0; --text-muted: #7a7a90;
+  --accent: #00897b; --accent2: #6c47ff;
   --font: system-ui, -apple-system, sans-serif;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font);
-  line-height: 1.6;
-  font-size: 15px;
-}
-
+body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.6; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .site-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  padding: 0.75rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 32px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
-.site-header .brand { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; }
-.site-header .center-label { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; }
-.site-header .home-link { font-size: 13px; color: var(--accent); }
-
-.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+.brand { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; }
 
 .hero {
-  padding: 64px 0 48px;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .hero h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 0.5rem;
 }
-.hero .subtitle {
-  font-size: 15px;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-.hero .stats-badge {
-  display: inline-block;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 6px 18px;
-  font-size: 12px;
-  color: var(--text-muted);
-}
+.hero .subtitle { color: var(--text-muted); font-size: 1rem; }
 
-.archive-section { padding: 48px 0; }
+.content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
 
 .section-label {
-  font-size: 10px;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-top: 2.5rem;
 }
 
-/* Featured (latest) card */
 .featured-card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--accent2);
-  border-radius: 10px;
-  padding: 32px 36px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s, transform 0.2s;
 }
-.featured-card .card-body { flex: 1; }
-.featured-card .featured-tag {
+.featured-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.featured-badge {
   display: inline-block;
-  font-size: 10px;
+  background: var(--accent);
+  color: #000;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent2);
-  margin-bottom: 10px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
-.featured-card h2 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-.featured-card .meta { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
-.featured-card .description { font-size: 13px; color: #a8a8c0; line-height: 1.7; margin-bottom: 20px; }
-.featured-card .cta-btn {
-  display: inline-block;
-  background: var(--accent2);
-  color: white;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 10px 22px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-.featured-card .cta-btn:hover { background: #7d5fff; text-decoration: none; }
-.featured-card .paper-count-big {
-  flex-shrink: 0;
-  text-align: center;
-  background: rgba(108,71,255,0.1);
-  border: 1px solid rgba(108,71,255,0.25);
-  border-radius: 8px;
-  padding: 20px 28px;
-}
-.featured-card .paper-count-big .num {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent2);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.featured-card .paper-count-big .label { font-size: 11px; color: var(--text-muted); }
+.featured-card .fc-date { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
+.featured-card h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem; }
+.featured-card p { color: var(--text-muted); }
 
-/* Grid of past briefings */
-.briefings-grid {
+.archive-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
-.briefing-card {
+.archive-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 24px;
-  transition: border-color 0.15s;
+  padding: 1.25rem 1.5rem;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s;
 }
-.briefing-card:hover { border-color: var(--accent); }
-.briefing-card .date-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  background: rgba(0,137,123,0.1);
-  border: 1px solid rgba(0,137,123,0.2);
-  border-radius: 4px;
-  padding: 2px 8px;
-  display: inline-block;
-  margin-bottom: 12px;
+.archive-card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
 }
-.briefing-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-.briefing-card .card-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
-.briefing-card .read-link { font-size: 13px; color: var(--accent); font-weight: 600; }
+.arc-date { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 0.25rem; }
+.arc-label { font-size: 0.95rem; color: var(--text-muted); }
 
-footer {
-  background: var(--surface);
+.footer {
   border-top: 1px solid var(--border);
-  padding: 28px 32px;
+  padding: 1.5rem 2rem;
   text-align: center;
-  font-size: 12px;
   color: var(--text-muted);
+  font-size: 0.85rem;
 }
-footer a { color: var(--accent); }
 </style>
 </head>
 <body>
 
-<!-- ── SITE HEADER ── -->
 <header class="site-header">
-  <span class="brand">Transit Research</span>
-  <span class="center-label">Archive</span>
-  <a class="home-link" href="index.html">← Home</a>
+  <span class="brand">Transit Research Archive</span>
+  <span style="font-size:0.8rem; color: var(--text-muted);">1 briefings</span>
 </header>
 
-<!-- ── HERO ── -->
 <div class="hero">
-  <div class="container">
-    <h1>Transit Research Archive</h1>
-    <div class="subtitle">A growing body of work — daily intelligence briefings on transportation research</div>
-    <div class="stats-badge">1 briefing · 9 papers analyzed</div>
-  </div>
+  <h1>Transit Research Archive</h1>
+  <p class="subtitle">A growing body of work — daily intelligence briefings on transit &amp; urban mobility research</p>
 </div>
 
-<!-- ── ARCHIVE SECTION ── -->
-<div class="archive-section">
-  <div class="container">
+<div class="content">
+  <div class="section-label">Latest Briefing</div>
+  <a href="research-2026-06-05.html" class="featured-card">
+    <div class="featured-badge">Latest</div>
+    <div class="fc-date">June 5, 2026</div>
+    <h2>Transit Research Briefing</h2>
+    <p>Today's briefing covering urban mobility, transit network design, demand-responsive systems, and more.</p>
+  </a>
 
-    <div class="section-label">Latest Briefing</div>
+  
 
-    <!-- Featured Card -->
-    <div class="featured-card">
-      <div class="card-body">
-        <div class="featured-tag">⭐ Most Recent</div>
-        <h2>Transit Research Briefing — June 5, 2026</h2>
-        <div class="meta">Published June 5, 2026 · 9 papers analyzed</div>
-        <div class="description">
-          Today's briefing covers autonomous driving risk governance, EV charging equity, urban air mobility standards gaps, traffic simulation democratization, and human cognition in transit emergencies. A comprehensive look at where transportation research stands at the midpoint of 2026.
-        </div>
-        <a class="cta-btn" href="research-2026-06-05.html">Read Briefing →</a>
-      </div>
-      <div class="paper-count-big">
-        <div class="num">9</div>
-        <div class="label">papers<br>analyzed</div>
-      </div>
-    </div>
-
-    <!-- Past briefings grid (will grow daily) -->
-    <div class="section-label">All Briefings</div>
-    <div class="briefings-grid">
-
-      <div class="briefing-card">
-        <div class="date-tag">June 5, 2026</div>
-        <h3>Transit Research Briefing</h3>
-        <div class="card-meta">9 papers · arXiv cs.CY, eess.SY, cs.AI</div>
-        <a class="read-link" href="research-2026-06-05.html">Read →</a>
-      </div>
-
-    </div><!-- /briefings-grid -->
-
-  </div>
 </div>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div>
-    <p><strong>Transit Research Archive</strong> · Updated daily</p>
-    <p style="margin-top:8px;">1 briefing published · Sources: arXiv, Semantic Scholar</p>
-    <p style="margin-top:8px;"><a href="index.html">← Back to Home</a></p>
-  </div>
+<footer class="footer">
+  <p>Transit Research Archive · 1 total briefing · Updated daily</p>
 </footer>
 
 </body>
