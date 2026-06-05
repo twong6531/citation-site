@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing Archive</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --border: #1e1e2e;
+    --text: #e2e2f0;
+    --muted: #6b6b8a;
+    --accent: #7c3aed;
+    --accent-glow: rgba(124, 58, 237, 0.15);
+    --mono: 'Courier New', Courier, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 64px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 300px;
+    background: radial-gradient(ellipse, rgba(124,58,237,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .header-title {
+    font-family: var(--mono);
+    font-size: clamp(24px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .header-tagline {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* CONTENT WRAPPER */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* FEATURED CARD */
+  .featured-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 2px;
+    padding: 36px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    transition: background 0.2s, border-color 0.2s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--accent-glow);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .featured-card:hover { border-color: var(--accent); }
+  .featured-card:hover::before { opacity: 1; }
+
+  .featured-left { position: relative; }
+
+  .featured-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .featured-badge::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .featured-date {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .featured-dayofweek {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .featured-stories {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 16px;
+    font-family: var(--mono);
+    letter-spacing: 0.05em;
+  }
+
+  .featured-cta {
+    flex-shrink: 0;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    position: relative;
+  }
+  .featured-cta:hover { opacity: 0.85; }
+
+  /* ARCHIVE GRID */
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .archive-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .archive-grid { grid-template-columns: 1fr; }
+    .featured-card { flex-direction: column; align-items: flex-start; }
+  }
+
+  .archive-card {
+    background: var(--surface);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .archive-card:hover { background: #15151f; }
+
+  .archive-date {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+
+  .archive-dow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .archive-headline {
+    font-size: 12px;
+    color: #8888aa;
+    line-height: 1.4;
+    margin-top: 4px;
+    flex-grow: 1;
+  }
+
+  .archive-btn {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(124,58,237,0.3);
+    padding: 5px 12px;
+    border-radius: 2px;
+    align-self: flex-start;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .archive-card:hover .archive-btn {
+    background: rgba(124,58,237,0.1);
+    border-color: var(--accent);
+  }
+
+  /* EMPTY STATE */
+  .empty-past {
+    grid-column: 1 / -1;
+    padding: 48px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-count {
+    display: inline-block;
+    background: var(--border);
+    border-radius: 2px;
+    padding: 3px 10px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: var(--text);
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-eyebrow">A Growing Body of Work</div>
+  <h1 class="header-title">Daily Briefing Archive</h1>
+  <p class="header-tagline">AI-curated tech &amp; science news · generated daily</p>
+</header>
+
+<div class="content">
+
+  <!-- FEATURED: TODAY -->
+  <div class="section-label">Latest Issue</div>
+  <a class="featured-card" href="2026-06-05.html">
+    <div class="featured-left">
+      <div class="featured-badge">New</div>
+      <div class="featured-date">June 5, 2026</div>
+      <div class="featured-dayofweek">Friday</div>
+      <div class="featured-stories">6 stories &nbsp;·&nbsp; VoidZero joins Cloudflare, Anthropic AI self-improvement, Meta facial recognition glasses &amp; more</div>
+    </div>
+    <span class="featured-cta">Read Today →</span>
+  </a>
+
+  <!-- PAST ISSUES -->
+  <div class="section-label">Past Issues</div>
+  <div class="archive-grid">
+    <div class="empty-past">More issues will appear here as the archive grows each day.</div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-count">1 infographic in archive</div>
+  <div>Generated by AI &nbsp;·&nbsp; Sources: Hacker News, Google News</div>
+</footer>
+
+</body>
+</html>

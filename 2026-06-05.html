@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — June 5, 2026</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --border: #1e1e2e;
+    --text: #e2e2f0;
+    --muted: #6b6b8a;
+    --accent-1: #7c3aed;
+    --accent-2: #0ea5e9;
+    --accent-3: #10b981;
+    --accent-4: #f59e0b;
+    --accent-5: #ef4444;
+    --accent-6: #ec4899;
+    --mono: 'Courier New', Courier, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* TOP NAV */
+  .topnav {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .topnav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .topnav a:hover { color: var(--text); }
+  .topnav::before { content: '←'; color: var(--muted); font-size: 12px; }
+
+  /* HEADER */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 200px;
+    background: radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .header-title {
+    font-family: var(--mono);
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .header-date {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .header-count {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 4px 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    border-top: 3px solid transparent;
+    transition: background 0.2s;
+  }
+  .card:hover { background: #15151f; }
+
+  .card:nth-child(1) { border-top-color: var(--accent-1); }
+  .card:nth-child(2) { border-top-color: var(--accent-2); }
+  .card:nth-child(3) { border-top-color: var(--accent-3); }
+  .card:nth-child(4) { border-top-color: var(--accent-4); }
+  .card:nth-child(5) { border-top-color: var(--accent-5); }
+  .card:nth-child(6) { border-top-color: var(--accent-6); }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .card-left-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-emoji {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .card-category {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 2px 6px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  .card-number {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--border);
+    letter-spacing: 0.1em;
+  }
+
+  .card-impact {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .impact-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .impact-score {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .impact-bar {
+    display: flex;
+    gap: 2px;
+  }
+  .impact-pip {
+    width: 3px;
+    height: 10px;
+    background: var(--border);
+    border-radius: 1px;
+  }
+  .card:nth-child(1) .impact-pip.active { background: var(--accent-1); }
+  .card:nth-child(2) .impact-pip.active { background: var(--accent-2); }
+  .card:nth-child(3) .impact-pip.active { background: var(--accent-3); }
+  .card:nth-child(4) .impact-pip.active { background: var(--accent-4); }
+  .card:nth-child(5) .impact-pip.active { background: var(--accent-5); }
+  .card:nth-child(6) .impact-pip.active { background: var(--accent-6); }
+
+  .headline {
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .summary {
+    font-size: 13px;
+    color: #9999b8;
+    line-height: 1.65;
+  }
+
+  .why-section {
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid var(--border);
+    padding: 10px 12px;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .why-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  .why-text {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: auto;
+  }
+
+  .bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: #8888aa;
+    line-height: 1.4;
+  }
+
+  .bullet::before {
+    content: '✓';
+    flex-shrink: 0;
+    font-size: 11px;
+    margin-top: 1px;
+  }
+  .card:nth-child(1) .bullet::before { color: var(--accent-1); }
+  .card:nth-child(2) .bullet::before { color: var(--accent-2); }
+  .card:nth-child(3) .bullet::before { color: var(--accent-3); }
+  .card:nth-child(4) .bullet::before { color: var(--accent-4); }
+  .card:nth-child(5) .bullet::before { color: var(--accent-5); }
+  .card:nth-child(6) .bullet::before { color: var(--accent-6); }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">Back to Archive</a>
+</nav>
+
+<header class="header">
+  <div class="header-label">Daily Briefing</div>
+  <h1 class="header-title">Daily Briefing</h1>
+  <div class="header-date">June 5, 2026</div>
+  <div class="header-count">6 Stories</div>
+</header>
+
+<main class="grid">
+
+  <!-- CARD 1 -->
+  <article class="card">
+    <div class="card-meta">
+      <div class="card-left-meta">
+        <span class="card-emoji">⚡</span>
+        <span class="card-category">Tech</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="card-impact">
+          <div class="impact-bar">
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip"></div>
+          </div>
+          <span class="impact-score">9</span>
+        </div>
+        <span class="card-number">#01</span>
+      </div>
+    </div>
+    <h2 class="headline">VoidZero Joins Cloudflare to Transform JS Tooling</h2>
+    <p class="summary">VoidZero, the startup behind Vite and the Rust-based Rolldown bundler, is merging with Cloudflare. The deal brings the most widely used JavaScript build tooling under the Cloudflare infrastructure umbrella.</p>
+    <div class="why-section">
+      <div class="why-label">Why It Matters</div>
+      <p class="why-text">This consolidation reshapes who controls the foundational tools that power modern web development for millions of developers worldwide.</p>
+    </div>
+    <div class="bullets">
+      <div class="bullet">Vite receives over 12 million weekly npm downloads, making it the dominant frontend build tool</div>
+      <div class="bullet">Rolldown is rewriting JavaScript bundling in Rust, targeting 10–100× speed improvements over Webpack</div>
+      <div class="bullet">Cloudflare gains direct influence over the build ecosystem used by virtually every major JavaScript framework</div>
+    </div>
+  </article>
+
+  <!-- CARD 2 -->
+  <article class="card">
+    <div class="card-meta">
+      <div class="card-left-meta">
+        <span class="card-emoji">🤖</span>
+        <span class="card-category">AI</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="card-impact">
+          <div class="impact-bar">
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+          </div>
+          <span class="impact-score">10</span>
+        </div>
+        <span class="card-number">#02</span>
+      </div>
+    </div>
+    <h2 class="headline">Anthropic Reveals Progress on AI Self-Improvement</h2>
+    <p class="summary">Anthropic published research detailing measurable advances toward AI systems capable of recursively improving their own capabilities. The institute shared findings openly to help the broader AI safety community understand and respond to the milestone.</p>
+    <div class="why-section">
+      <div class="why-label">Why It Matters</div>
+      <p class="why-text">Recursive self-improvement is one of the most consequential and debated milestones in AI development, with profound implications for safety and the pace of capability growth.</p>
+    </div>
+    <div class="bullets">
+      <div class="bullet">Researchers demonstrated measurable improvement cycles in controlled evaluation environments</div>
+      <div class="bullet">Safety evaluations ran in parallel with every improvement iteration throughout the study</div>
+      <div class="bullet">Results are published openly to accelerate alignment research across the field</div>
+    </div>
+  </article>
+
+  <!-- CARD 3 -->
+  <article class="card">
+    <div class="card-meta">
+      <div class="card-left-meta">
+        <span class="card-emoji">👓</span>
+        <span class="card-category">Tech</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="card-impact">
+          <div class="impact-bar">
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip"></div>
+          </div>
+          <span class="impact-score">9</span>
+        </div>
+        <span class="card-number">#03</span>
+      </div>
+    </div>
+    <h2 class="headline">Meta Adds Facial Recognition to Ray-Ban Glasses</h2>
+    <p class="summary">Meta quietly shipped facial recognition to its Ray-Ban smart glasses, enabling wearers to identify strangers in real time with a glance. Privacy advocates warn the feature enables consumer-grade mass surveillance with no opt-out for bystanders.</p>
+    <div class="why-section">
+      <div class="why-label">Why It Matters</div>
+      <p class="why-text">Embedding facial recognition in mainstream consumer wearables normalizes persistent surveillance in everyday public spaces, with sweeping civil liberties consequences.</p>
+    </div>
+    <div class="bullets">
+      <div class="bullet">Recognition resolves a face within seconds of a person entering the wearer's field of view</div>
+      <div class="bullet">12 US senators sent a joint letter demanding Meta explain the feature's privacy safeguards</div>
+      <div class="bullet">No opt-out mechanism exists for members of the public who do not wish to be identified</div>
+    </div>
+  </article>
+
+  <!-- CARD 4 -->
+  <article class="card">
+    <div class="card-meta">
+      <div class="card-left-meta">
+        <span class="card-emoji">🔐</span>
+        <span class="card-category">AI</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="card-impact">
+          <div class="impact-bar">
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip"></div>
+            <div class="impact-pip"></div>
+          </div>
+          <span class="impact-score">8</span>
+        </div>
+        <span class="card-number">#04</span>
+      </div>
+    </div>
+    <h2 class="headline">Anthropic Open-Sources AI Bug-Finding Framework</h2>
+    <p class="summary">Anthropic released a reference harness for using AI to automatically discover security vulnerabilities in code at scale. The open-source toolkit is designed to help defenders find and patch bugs faster than attackers can exploit them.</p>
+    <div class="why-section">
+      <div class="why-label">Why It Matters</div>
+      <p class="why-text">AI-powered vulnerability discovery could fundamentally shift the long-standing asymmetry between attackers and defenders in cybersecurity.</p>
+    </div>
+    <div class="bullets">
+      <div class="bullet">Framework identified real CVEs in multiple open-source projects during internal testing</div>
+      <div class="bullet">Released under an open-source license to accelerate adoption across defensive security teams</div>
+      <div class="bullet">Integrates directly with standard static analysis and fuzzing pipelines in existing CI workflows</div>
+    </div>
+  </article>
+
+  <!-- CARD 5 -->
+  <article class="card">
+    <div class="card-meta">
+      <div class="card-left-meta">
+        <span class="card-emoji">📻</span>
+        <span class="card-category">World</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="card-impact">
+          <div class="impact-bar">
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip"></div>
+            <div class="impact-pip"></div>
+            <div class="impact-pip"></div>
+          </div>
+          <span class="impact-score">7</span>
+        </div>
+        <span class="card-number">#05</span>
+      </div>
+    </div>
+    <h2 class="headline">Parents Ditch Smartphones for Retro Tech for Kids</h2>
+    <p class="summary">A growing wave of parents is turning to Game Boys, flip phones, and basic cameras to shield children from algorithmic social media and addictive app loops. The movement signals a cultural inflection point in how families manage children's relationship with technology.</p>
+    <div class="why-section">
+      <div class="why-label">Why It Matters</div>
+      <p class="why-text">How parents respond to smartphone anxiety at home will shape the next generation's mental health outcomes and relationship with digital technology.</p>
+    </div>
+    <div class="bullets">
+      <div class="bullet">Flip phone sales to under-18s rose an estimated 40% over the past two years</div>
+      <div class="bullet">Studies link even modest smartphone reduction to measurably improved sleep and focus in teenagers</div>
+      <div class="bullet">Dozens of school districts across the US and Europe introduced total smartphone bans in 2025–2026</div>
+    </div>
+  </article>
+
+  <!-- CARD 6 -->
+  <article class="card">
+    <div class="card-meta">
+      <div class="card-left-meta">
+        <span class="card-emoji">🧠</span>
+        <span class="card-category">AI</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="card-impact">
+          <div class="impact-bar">
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip active"></div>
+            <div class="impact-pip"></div>
+            <div class="impact-pip"></div>
+            <div class="impact-pip"></div>
+          </div>
+          <span class="impact-score">7</span>
+        </div>
+        <span class="card-number">#06</span>
+      </div>
+    </div>
+    <h2 class="headline">Huawei Releases KV-Cache Quantization for LLM Inference</h2>
+    <p class="summary">Huawei open-sourced KVarN, a native vLLM backend that applies aggressive quantization to the KV-cache to drastically reduce GPU memory use during large language model inference. The release targets production teams running frontier-scale models on constrained hardware budgets.</p>
+    <div class="why-section">
+      <div class="why-label">Why It Matters</div>
+      <p class="why-text">Memory efficiency determines the maximum model size organizations can deploy, making KV-cache compression a key lever on the cost and accessibility of AI inference.</p>
+    </div>
+    <div class="bullets">
+      <div class="bullet">Reduces KV-cache GPU memory consumption by up to 75% compared to standard FP16 baselines</div>
+      <div class="bullet">Compatible with existing vLLM deployments via minimal configuration changes — no model retraining required</div>
+      <div class="bullet">Benchmarks show under 1% accuracy degradation across standard evaluation suites at maximum compression</div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="footer">
+  Generated by AI &nbsp;·&nbsp; June 5, 2026 &nbsp;·&nbsp; Sources: Hacker News, Google News
+</footer>
+
+</body>
+</html>
