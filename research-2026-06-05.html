@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Briefing — June 5, 2026</title>
+<style>
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --border: #2a2a35;
+  --text: #e8e8f0;
+  --text-muted: #7a7a90;
+  --accent: #00897b;
+  --accent2: #6c47ff;
+  --font: system-ui, -apple-system, sans-serif;
+  --mono: "SF Mono", "Fira Code", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Site Header ── */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .brand { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; }
+.site-header .center-label { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; }
+.site-header .archive-link { font-size: 13px; color: var(--accent); }
+
+/* ── Layout ── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Hero ── */
+.hero {
+  padding: 72px 0 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.hero .date-line {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hero .count-badge {
+  display: inline-block;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* ── Section Headers ── */
+section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+section:last-child { border-bottom: none; }
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+/* ── Executive Summary ── */
+.exec-summary-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 32px 36px;
+}
+.exec-summary-box p { margin-bottom: 16px; line-height: 1.8; color: #c8c8d8; }
+.exec-summary-box p:last-child { margin-bottom: 0; }
+
+/* ── Paper of the Day ── */
+.paper-of-day {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent2);
+  border-radius: 8px;
+  padding: 32px 36px;
+}
+.paper-of-day .potd-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+.paper-of-day h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+.potd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+.potd-field h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 8px;
+}
+.potd-field p { color: #c8c8d8; font-size: 14px; line-height: 1.7; }
+
+/* ── Themes Grid ── */
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+.theme-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+}
+.theme-card .theme-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.theme-card p { font-size: 13px; color: #a8a8c0; line-height: 1.6; }
+
+/* ── Contrarian Insights ── */
+.contrarian-box {
+  background: #0f0f18;
+  border: 1px solid #3a2a55;
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+.contrarian-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.contrarian-item:last-child { margin-bottom: 0; }
+.contrarian-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--accent2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+.contrarian-item p { color: #c8c8d8; font-size: 14px; line-height: 1.7; }
+
+/* ── Individual Papers ── */
+.papers-list { display: flex; flex-direction: column; gap: 28px; margin-top: 8px; }
+
+.paper-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.paper-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.paper-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  flex: 1;
+}
+.confidence-badge {
+  flex-shrink: 0;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.conf-high { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+.conf-medium { background: rgba(234,179,8,0.15); color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
+.conf-low { background: rgba(156,163,175,0.15); color: #9ca3af; border: 1px solid rgba(156,163,175,0.3); }
+
+.paper-meta {
+  padding: 12px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.paper-meta .authors { font-size: 12px; color: var(--text-muted); }
+.paper-meta .source-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: rgba(0,137,123,0.1);
+  border: 1px solid rgba(0,137,123,0.25);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+.paper-meta a { font-size: 12px; color: var(--accent); }
+
+.paper-body { padding: 24px 28px; }
+
+.one-sentence {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.why-it-matters {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  margin-bottom: 20px;
+}
+.why-it-matters .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.why-it-matters p { font-size: 13px; color: #a8a8c0; line-height: 1.7; }
+
+.key-insights { margin-bottom: 20px; }
+.key-insights .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.key-insights ul { list-style: none; padding: 0; }
+.key-insights li {
+  padding: 6px 0 6px 18px;
+  position: relative;
+  font-size: 13px;
+  color: #b8b8cc;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(42,42,53,0.5);
+}
+.key-insights li:last-child { border-bottom: none; }
+.key-insights li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+@media (max-width: 700px) {
+  .mini-grid { grid-template-columns: repeat(2, 1fr); }
+  .potd-grid { grid-template-columns: 1fr; }
+}
+.mini-cell {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px;
+}
+.mini-cell .mini-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.mini-cell p { font-size: 12px; color: #a0a0b8; line-height: 1.55; }
+
+.implications-block, .comparison-block { margin-bottom: 16px; }
+.implications-block .label, .comparison-block .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.implications-block p, .comparison-block p { font-size: 13px; color: #a0a0b8; line-height: 1.7; }
+
+/* ── Actionable Takeaways ── */
+.takeaways-box {
+  background: rgba(0,137,123,0.07);
+  border: 1px solid rgba(0,137,123,0.25);
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+.takeaways-box ol { padding-left: 20px; }
+.takeaways-box li {
+  padding: 8px 0;
+  color: #c8c8d8;
+  font-size: 14px;
+  line-height: 1.7;
+  border-bottom: 1px solid rgba(0,137,123,0.1);
+}
+.takeaways-box li:last-child { border-bottom: none; }
+
+/* ── Long-Term Implications ── */
+.implications-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 8px;
+}
+@media (max-width: 700px) { .implications-two-col { grid-template-columns: 1fr; } }
+.implications-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent2);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+.implications-col p { font-size: 14px; color: #a8a8c0; line-height: 1.8; }
+
+/* ── Footer ── */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 32px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+footer a { color: var(--accent); }
+footer .footer-inner { max-width: 600px; margin: 0 auto; }
+footer p { margin-bottom: 8px; }
+footer p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<!-- ── SITE HEADER BAR ── -->
+<header class="site-header">
+  <span class="brand">Daily Briefing</span>
+  <span class="center-label">Transit Research</span>
+  <a class="archive-link" href="index.html">← Archive</a>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="container">
+    <div class="date-line">June 5, 2026</div>
+    <h1>Transit Research Briefing</h1>
+    <div class="count-badge">9 papers analyzed today</div>
+  </div>
+</div>
+
+<!-- ── EXECUTIVE SUMMARY ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Overview</div>
+    <div class="section-title">Executive Summary</div>
+    <div class="exec-summary-box">
+      <p>The June 5, 2026 transit research landscape reveals a field at an inflection point across three interconnected dimensions: the maturation of autonomous mobility technologies, the emergence of electric vehicle infrastructure equity challenges, and the digitization of traffic management systems. Today's nine papers collectively document the transition from proof-of-concept demonstrations to real-world deployment pressures — where technical excellence alone is insufficient and governance, equity, and human factors become decisive variables.</p>
+      <p>Particularly striking is the convergence of equity concerns and technical optimization. The EV charging market study exposes systematic market failures that disadvantage lower-income communities, while the autonomous driving risk assessment reveals how regulatory fragmentation creates uneven safety outcomes across jurisdictions. Meanwhile, computational advances in traffic simulation and optimal control theory are lowering the cost barrier for smaller municipalities to implement evidence-based transportation management — democratizing tools previously available only to well-funded agencies.</p>
+      <p>Across all papers, a meta-theme emerges: transportation's technological transformation is creating new categories of risk and inequity that existing governance frameworks were not designed to handle. From urban air mobility corridors lacking standardized separation standards, to EV charging deserts forming in underserved neighborhoods, to autonomous vehicles navigating ethically ambiguous crash scenarios without coherent legal frameworks — the research community is actively documenting an emerging governance gap that policymakers must urgently address.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAPER OF THE DAY ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Featured</div>
+    <div class="section-title">Paper of the Day</div>
+    <div class="paper-of-day">
+      <div class="potd-label">⭐ Paper of the Day</div>
+      <h3>Regulating EV Charging Markets for Fairness: Incentives for Pricing and Capacity Decisions</h3>
+      <p style="color:#a8a8c0; font-size:13px; margin-bottom:16px;">Ruiting Wang, Kita Hu, Yitong Yu, Scott Moura · arXiv eess.SY · <a href="https://arxiv.org/abs/2606.01266v1">arxiv.org/abs/2606.01266v1</a></p>
+      <div class="potd-grid">
+        <div class="potd-field">
+          <h4>Detailed Overview</h4>
+          <p>Using game theory to model competition between EV charging station operators, this paper shows that profit-maximizing operators predictably under-invest in charger capacity and overprice services in lower-income neighborhoods — not from malice, but from rational market incentives. The authors formally prove that unregulated Nash equilibria create "charging deserts" in communities where EV adoption would benefit most from affordable infrastructure. They then design regulatory mechanisms — targeted subsidies, pricing caps tied to local income indices, and minimum capacity mandates — that can achieve equitable outcomes while maintaining operator profitability above their unregulated baseline.</p>
+        </div>
+        <div class="potd-field">
+          <h4>Why It Stands Out</h4>
+          <p>Unlike most EV infrastructure papers that treat inequity as an observation, this paper proves it as a theorem: market failure in charging access is structural, not incidental. The game-theoretic framework enables precise policy calibration — regulators can compute the exact subsidy magnitude needed to close the equity gap without over-correcting. This transforms a problem typically addressed through broad mandates into one that can be solved with surgical regulatory interventions grounded in economic theory.</p>
+        </div>
+        <div class="potd-field">
+          <h4>What Makes It Novel</h4>
+          <p>The paper is the first to formally model EV charging station competition as a multi-player game incorporating both pricing decisions and capacity investment simultaneously. Prior work treated these as separate problems. The joint formulation reveals a strategic complementarity: lower prices attract more users but require more capacity, so operators in low-income areas face a negative feedback loop that rational actors cannot escape without external intervention.</p>
+        </div>
+        <div class="potd-field">
+          <h4>Real-World Impact</h4>
+          <p>With EV mandates accelerating across the US, EU, and Asia, the risk of replicating automobile-era infrastructure inequity in the electrified fleet is real and imminent. This paper gives regulators a mathematical toolkit to design market interventions before inequitable patterns calcify. California's CPUC, the EU's AFIR regulation, and NEVI formula programs in the US are all actively deciding infrastructure placement rules — this framework arrives at exactly the right moment to inform those decisions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EMERGING THEMES ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Analysis</div>
+    <div class="section-title">Emerging Themes</div>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-name">The Governance Gap</div>
+        <p>Multiple papers document technology outpacing regulation: AV liability frameworks are inconsistent across jurisdictions, urban air mobility lacks standardized separation rules, and EV markets self-sort into inequitable equilibria. The research community is signaling that technical capability is no longer the binding constraint — institutional readiness is.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-name">Equity as Engineering Constraint</div>
+        <p>Papers on EV charging markets and emergency evacuation routing explicitly incorporate demographic equity into their optimization objectives. This marks a shift from treating equity as a policy afterthought to embedding it as a first-class engineering constraint — a methodological evolution with significant implications for how transportation infrastructure is designed.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-name">Simulation as Infrastructure</div>
+        <p>Two papers advance the state of traffic and emergency simulation: genetic calibration of urban traffic models from sparse sensors, and instance-based learning models of operator cognition during subway floods. As physical sensor networks remain expensive, high-fidelity simulation calibrated from minimal real data is becoming a critical form of planning infrastructure for resource-constrained agencies.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-name">Multimodal Risk Integration</div>
+        <p>From waterway GNSS accuracy to urban air mobility corridors to autonomous vehicle perception errors, papers across diverse transport modes share a common challenge: quantifying and managing risk in environments where sensor reliability, human factors, and edge-case scenarios interact in poorly understood ways. A cross-modal framework for transportation risk is becoming necessary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTRARIAN INSIGHTS ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Critical Perspective</div>
+    <div class="section-title">Contrarian Insights</div>
+    <div class="contrarian-box">
+      <div class="contrarian-item">
+        <div class="contrarian-num">1</div>
+        <p>Market competition in EV charging doesn't improve access for underserved communities — it makes it worse. The game-theoretic proof in Wang et al. demonstrates that competitive charging markets without regulation systematically produce charging deserts in lower-income areas, directly contradicting the standard policy assumption that market entry will solve infrastructure gaps through competition.</p>
+      </div>
+      <div class="contrarian-item">
+        <div class="contrarian-num">2</div>
+        <p>More autonomous vehicle data has not resolved fundamental safety questions. Despite millions of miles of real-world AV driving data captured by NHTSA and DMV, the risk assessment paper finds that perception failures still account for a disproportionate share of incidents, and that ethical decision-making frameworks remain mutually inconsistent across manufacturers. Scale of deployment has not produced the safety convergence the industry promised.</p>
+      </div>
+      <div class="contrarian-item">
+        <div class="contrarian-num">3</div>
+        <p>Finite-horizon traffic control outperforms the standard infinite-horizon approach for real-world conditions — a finding that challenges decades of traffic engineering practice. The LQR traffic control paper shows that by accounting for known future events (incidents, work zones, events), finite-horizon controllers achieve materially better outcomes, suggesting that the computational convenience of infinite-horizon methods has come at a hidden cost to performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INDIVIDUAL PAPERS ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Research</div>
+    <div class="section-title">Individual Paper Analyses</div>
+    <div class="papers-list">
+
+      <!-- PAPER 1 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Computational Modeling of Human Adaptation in Urban Infrastructure Management under Extreme Conditions: A Case Study of Subway Flood Scenarios</h3>
+          <span class="confidence-badge conf-medium">Medium</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Jinfeng Lou, Zijie Liang, Pengkun Liu, Yuxin Zhang, Cleotilde Gonzalez, Pingbo Tang</span>
+          <span class="source-tag">arXiv cs.CY</span>
+          <a href="https://arxiv.org/abs/2606.06429v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06429v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">A cognitive modeling framework reveals that subway operators exhibit non-linear, experience-dependent adaptation during flooding emergencies — with implications for training program design and control room human-machine interface layout.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>Subway flooding is among the most dangerous and complex emergencies transit systems face — yet most operational training assumes linear skill progression. This paper's finding that adaptation is non-linear (with experienced operators sometimes performing worse than novices under novel flood configurations due to anchoring to past scenarios) has direct implications for how agencies design emergency protocols. It also provides a computational foundation for digital twin simulations of transit emergency management.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>Instance-Based Learning Theory (IBLT) successfully captures operator decision patterns in subway flood simulations, validating a cognitive science framework in a transit domain context</li>
+              <li>Experienced operators show "expertise-induced rigidity" — over-relying on previously successful response patterns even when the new scenario demands different actions</li>
+              <li>Non-linear adaptation patterns mean that simple experience metrics are poor predictors of emergency performance; scenario variety in training is more predictive than hours of experience</li>
+              <li>The computational model can predict when operators are likely to make suboptimal decisions, enabling targeted just-in-time decision support from automated systems</li>
+              <li>Human-machine interface design significantly modulates adaptation speed — information layout affects how quickly operators update their mental models during rapidly evolving floods</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>IBLT cognitive simulation combined with controlled human subjects experiments in a subway flood scenario simulator</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Non-linear adaptation curves; scenario variety in training outperforms hours-based experience metrics as a performance predictor</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Laboratory simulation may not fully capture time pressure and physical stressors of real flooding events; limited sample size of operators</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>Transit agency emergency managers, operations control center designers, training curriculum developers, HMI engineers</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>Transit agencies should redesign emergency training to prioritize scenario diversity over repetition volume. Control room HMI systems should be redesigned to provide dynamic decision support that adapts to operator cognitive load levels. The IBLT model could be embedded in digital twin systems to enable proactive operator assistance during emergencies.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Prior transit emergency management research focused on procedural compliance and evacuation optimization; this paper is among the first to model the cognitive dynamics of the human operators managing the response in real-time, filling a critical gap in the socio-technical systems literature.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 2 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Calibrating Urban Traffic Simulation from Sparse Road Observations via Genetic Optimization</h3>
+          <span class="confidence-badge conf-high">High</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Hunter Sawyer, Jesse Roberts, Simon Matei</span>
+          <span class="source-tag">arXiv cs.CY</span>
+          <a href="https://arxiv.org/abs/2606.03823v1" target="_blank" rel="noopener">arxiv.org/abs/2606.03823v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">A genetic algorithm approach calibrates city-scale traffic simulations using only sparse loop detector readings — without origin-destination matrices or job location data — achieving accurate results that generalize to unobserved road segments.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>High-fidelity traffic simulation currently requires extensive data collection (household travel surveys, O-D matrices, comprehensive sensor networks) that most mid-sized and smaller cities cannot afford. This method dramatically lowers the data requirements for accurate simulation, making evidence-based traffic planning accessible to the vast majority of municipalities globally that lack comprehensive sensor infrastructure. The generalization to unmonitored road segments is particularly significant — it means cities don't need to instrument every road to benefit from simulation.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>Genetic optimization can effectively search the high-dimensional parameter space of traffic simulation models without requiring complete observational data</li>
+              <li>The calibrated model generalizes to road segments withheld from calibration, demonstrating that sparse sensor placement captures sufficient network-level signal</li>
+              <li>The method eliminates the need for expensive household travel surveys or employment data — replacing them with publicly available road count data</li>
+              <li>Computation remains practical on standard hardware, enabling cities without supercomputing access to run calibrated simulations</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>Genetic algorithm optimization over SUMO traffic simulator parameters, validated against held-out loop detector measurements</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Strong correlation between simulated and observed traffic volumes on both calibration and withheld road segments</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Tested in a single city; generalizability to different urban morphologies (grid vs. organic street networks) needs validation</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>City transportation departments, metropolitan planning organizations, traffic engineering consultants, urban planners in developing cities</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>Cities with only a handful of existing traffic counters can now build calibrated simulation models sufficient for evaluating infrastructure investments, signal timing changes, and network redesigns. This democratizes traffic modeling in a way that could accelerate evidence-based planning in the Global South and smaller US/EU cities.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Traditional calibration methods (SPSA, gradient descent) require either dense sensor networks or repeated simulation runs that are computationally prohibitive. Genetic algorithms have been used in transportation before but not in combination with sparse data constraints; this paper demonstrates that combining the two unlocks practical citywide calibration from minimal infrastructure.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 3 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Impact of RTK Augmentation and INS Integration on GNSS Positioning Accuracy and Continuity: A Benchmarking Study on Inland Waterways</h3>
+          <span class="confidence-badge conf-high">High</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Yan-Yun Zhang, Jef Billet, Jan Swevers, Peter Slaets</span>
+          <span class="source-tag">arXiv eess.SY</span>
+          <a href="https://arxiv.org/abs/2606.06358v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06358v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">RTK-augmented GNSS with INS integration dramatically improves positioning accuracy for inland waterway vessels navigating under bridges — a critical enabling technology for autonomous barge and ferry operations in urban canals.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>Inland waterways carry significant freight volume in Europe and Asia, and autonomous or semi-autonomous vessel technology could substantially reduce operating costs and improve safety. However, bridges — ubiquitous on urban waterways — create satellite signal outages that make standard GNSS navigation unreliable. This paper quantifies how combining RTK corrections with inertial sensors solves this problem, providing the empirical basis for autonomous waterway navigation systems to be certified for commercial deployment.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>Standard GNSS positioning under bridges can degrade to meter-scale errors — far below autonomous navigation requirements; RTK+INS fusion reduces this to decimeter scale</li>
+              <li>INS alone provides positioning continuity through outages but accumulates drift rapidly; the integration with RTK provides the corrections needed to maintain accuracy across an entire voyage</li>
+              <li>Bridge passage duration is a critical variable — longer passages require better INS quality to maintain positioning within safe margins</li>
+              <li>The benchmarking methodology developed is reusable and portable, enabling waterway authorities to evaluate navigation system performance systematically</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>Field benchmarking of multiple GNSS/INS configurations along real inland waterways with known-position ground truth</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>RTK+INS achieves consistent decimeter-level accuracy through bridge passages where GNSS alone fails; continuity maintained through extended outages</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Tested on specific European waterways; results may vary with different bridge geometries, waterway widths, and satellite constellation visibility</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>Autonomous vessel developers, inland waterway authorities, port operators, maritime navigation system vendors</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>Autonomous barge and ferry developers can now specify GNSS/INS system requirements with empirical accuracy targets derived from real waterway conditions. Waterway authorities can use the benchmarking framework to certify navigation systems for autonomous operation on specific routes. The results support the case for RTK reference station infrastructure investment alongside major inland waterway corridors.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Most GNSS/INS integration research targets road and aviation applications; inland waterway navigation is understudied despite its economic importance. This paper fills that gap with empirical rigor, providing the first systematic benchmarking specifically for waterway environments with bridge passage challenges.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 4 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Optimal Finite-Horizon LQR Control for Traffic Flow via Variable Speed Limits</h3>
+          <span class="confidence-badge conf-high">High</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Brian Block, Stephanie Stockar</span>
+          <span class="source-tag">arXiv eess.SY</span>
+          <a href="https://arxiv.org/abs/2606.03632v1" target="_blank" rel="noopener">arxiv.org/abs/2606.03632v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">Finite-horizon LQR control theory applied to variable speed limit systems produces demonstrably better traffic flow outcomes than the standard infinite-horizon formulation — because it can anticipate and prepare for known future disturbances.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>Variable speed limit systems are already deployed on major freeways worldwide, but most use simple reactive algorithms or infinite-horizon control that treats tomorrow like today. This paper shows that incorporating known future information — scheduled events, predicted incidents, rush hour patterns — into a finite-horizon optimal control formulation produces meaningfully better throughput and reduced stop-and-go waves. As freeway management systems modernize, this provides the mathematical foundation for a generation of smarter VSL controllers.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>The finite-horizon LQR formulation is computationally tractable in real-time on standard traffic management hardware</li>
+              <li>Performance gains are largest when the control horizon aligns with predictable recurring patterns — morning rush, event traffic, work zones</li>
+              <li>The controller automatically handles the tradeoff between upstream speed reduction and downstream throughput without manual parameter tuning</li>
+              <li>Infinite-horizon approaches are suboptimal specifically because they cannot pre-position traffic state ahead of known demand peaks</li>
+              <li>The approach is compatible with existing VSL sign infrastructure — no hardware changes required for deployment</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>LQR optimal control derived from second-order traffic flow model (METANET); finite vs. infinite horizon compared in simulation</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Finite-horizon controller achieves lower total travel time and reduced shock wave severity versus infinite-horizon baseline across multiple demand scenarios</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Relies on accurate demand forecasting; forecast errors reduce but do not eliminate performance advantages; simulation-only validation</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>Freeway management system operators, state DOT traffic management centers, VSL system vendors, traffic control researchers</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>Transportation agencies operating VSL systems on predictable high-demand corridors (commuter corridors, airport access roads, stadium approaches) should evaluate finite-horizon controllers as drop-in improvements to existing infrastructure. The paper provides sufficient mathematical detail for direct implementation by traffic management system developers.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Prior VSL control literature has largely used model predictive control (MPC) as the dominant optimal control framework; LQR is less common. The authors demonstrate that LQR is competitive with MPC while being computationally simpler, potentially lowering implementation barriers for agencies without advanced optimization toolchains.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 5 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Equivalent Circuit Model based Electric Vehicle Evacuation with Mobile Charging Stations</h3>
+          <span class="confidence-badge conf-medium">Medium</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Joseph Moyalan, Ricardo de Castro, Shuang Feng, Xuchang Tang, Xinfan Lin, Qijian Gan</span>
+          <span class="source-tag">arXiv eess.SY</span>
+          <a href="https://arxiv.org/abs/2606.03149v1" target="_blank" rel="noopener">arxiv.org/abs/2606.03149v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">Modeling EV evacuation networks as electrical circuits enables real-time optimization of vehicle routing, mobile charging station placement, and congestion management simultaneously — turning a computationally intractable emergency logistics problem into a solvable circuit analysis.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>As EV adoption grows, emergency evacuation planning faces a new and complex constraint: range anxiety. Vehicles that run out of charge during evacuations become obstacles on evacuation routes, potentially creating dangerous blockages. This paper provides the first computationally practical framework for co-optimizing EV routing and charging infrastructure placement during mass evacuation events, directly addressing an emerging public safety gap as EVs reach significant fleet share.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>The circuit analogy maps vehicle flows to currents, road capacity to conductance, and battery state to voltage — enabling established circuit analysis tools to solve the evacuation problem</li>
+              <li>Mobile charging stations (on trucks or deployed assets) can prevent range-related evacuation failures at a fraction of the cost of fixed infrastructure expansion</li>
+              <li>The optimal placement of mobile chargers is highly sensitive to the spatial distribution of low-SOC vehicles at evacuation onset</li>
+              <li>Real-time re-optimization as evacuation progresses is computationally feasible using the circuit model, enabling dynamic response to changing conditions</li>
+              <li>Even partial charging (30-50% SOC boost) at strategically placed mobile stations dramatically reduces the incidence of range-stranded vehicles</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>Circuit theory analogy for network flow optimization; simulation-based validation on synthetic evacuation networks with EV state-of-charge modeling</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Mobile charging station optimization eliminates range-related evacuation failures in tested scenarios; computationally tractable for real-time use</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Synthetic network testing only; assumes known initial SOC distribution which may not be available in real emergencies; mobile station logistics not fully modeled</p>
+            </div>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>Emergency managers, state emergency planning agencies, utility companies with mobile charging assets, EV fleet operators, FEMA</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>Emergency management agencies should begin incorporating EV range constraints into evacuation plans now, while EV market share is still modest, to avoid being caught unprepared. Utilities and municipalities should evaluate pre-positioning mobile charging assets in disaster-prone areas. The circuit model provides a practical planning tool that doesn't require operations research expertise to use.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Prior EV evacuation work focused on routing with fixed charging stations; the introduction of mobile charging station placement as a decision variable is novel and dramatically changes the solution space. The circuit analogy is a creative methodological contribution that sidesteps the computational complexity of integer programming approaches used previously.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 6 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Corridor Design and Separation Definition in Advanced Air Mobility: Systematic Literature Review</h3>
+          <span class="confidence-badge conf-medium">Medium</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Evgenii Vinogradov, Debashisha Mishra, Mariam Ali Askar Alobeidli, Jamal Khaled Al Ali, Ahmed Saleh Alshehhi, Jennifer Simonjan, Enrico Natalizio</span>
+          <span class="source-tag">arXiv eess.SY</span>
+          <a href="https://arxiv.org/abs/2606.02757v1" target="_blank" rel="noopener">arxiv.org/abs/2606.02757v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">A systematic review of Advanced Air Mobility corridor design literature reveals a critical standards gap: no consensus exists on minimum separation distances, altitude layering, or conflict resolution protocols for high-density eVTOL operations over cities.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>Multiple eVTOL manufacturers are targeting commercial launch within the next 2-3 years, yet the airspace management framework needed for safe dense urban operations remains undefined. This review synthesizes what is known and, critically, maps what remains contested or unresolved — providing regulators (FAA, EASA) and standards bodies (ASTM, ICAO) with a clear picture of where urgent consensus-building is needed before commercial-scale urban air mobility operations can safely proceed.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>Proposed minimum separation distances in the literature range from 30 meters to over 300 meters depending on vehicle type and operational context — a 10x variance that makes any unified standard elusive</li>
+              <li>Altitude layering schemes (assigning different vehicle types to altitude bands) are the most widely proposed conflict-avoidance mechanism, but optimal layer thicknesses remain unvalidated</li>
+              <li>FAA and EASA approaches to Urban Air Traffic Management diverge significantly in philosophy: FAA favors performance-based rules; EASA favors prescriptive minimums</li>
+              <li>No existing study has validated proposed separation standards under realistic high-density scenarios with mixed vehicle types and navigation performance variations</li>
+              <li>Communication and control link requirements for urban environments are underspecified relative to other AAM standards domains</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>Systematic literature review following PRISMA guidelines; synthesis of academic, regulatory, and industry technical documents on AAM airspace management</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Critical gaps identified in separation standards, altitude layering validation, and conflict resolution protocol consensus; mapped against regulatory frameworks</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Rapidly evolving field means some reviewed standards documents may already be superseded; no original data collection or simulation</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>FAA/EASA rulemakers, eVTOL manufacturers, urban air traffic management developers, city aviation offices, ICAO working groups</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>Regulators should treat the separation standards gap identified in this review as a blocking issue for commercial AAM approvals at scale. The 10x variance in proposed separation distances must be resolved through coordinated high-density simulation studies before dense urban AAM can be safely authorized. eVTOL operators planning commercial launches should actively participate in standards-setting bodies to ensure their vehicle performance envelope informs the standards ultimately adopted.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Previous reviews of AAM focused on vehicle technology or energy systems; this review specifically targets the airspace management and standards domain, which has received far less systematic academic attention despite being the primary near-term deployment barrier.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 7 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Regulating EV Charging Markets for Fairness: Incentives for Pricing and Capacity Decisions</h3>
+          <span class="confidence-badge conf-high">High</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Ruiting Wang, Kita Hu, Yitong Yu, Scott Moura</span>
+          <span class="source-tag">arXiv eess.SY</span>
+          <a href="https://arxiv.org/abs/2606.01266v1" target="_blank" rel="noopener">arxiv.org/abs/2606.01266v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">Game-theoretic analysis proves that unregulated EV charging markets structurally under-serve low-income communities, and derives the regulatory mechanisms — targeted subsidies and pricing caps — that achieve equitable access while maintaining operator profitability.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>EV mandates in the US, EU, and China are rapidly driving fleet electrification — but if charging infrastructure follows unregulated market logic, lower-income communities will face charging deserts precisely as they most need affordable access. This paper provides both the economic proof that this outcome is inevitable without intervention and the mathematical tools to design effective interventions, arriving at a critical moment when NEVI, AFIR, and similar programs are actively allocating billions in charging infrastructure investment.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>In unregulated Nash equilibria, operators rationally under-invest in capacity and charge higher prices in lower-income areas — because demand elasticity is higher and capital recovery is slower</li>
+              <li>Targeted subsidies calibrated to local income indices can close the equity gap without requiring operators to accept below-market returns</li>
+              <li>Pricing caps alone are insufficient — they must be paired with capacity investment incentives to prevent operators from withdrawing from underserved markets</li>
+              <li>The equity-optimal regulatory solution also reduces total system costs by eliminating duplicate infrastructure in high-income areas where unregulated markets over-build</li>
+              <li>Operator profitability under the regulated optimum exceeds the unregulated equilibrium for operators in underserved markets — a Pareto improvement</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>Multi-player non-cooperative game theory; Nash equilibrium analysis; mechanism design for regulatory interventions; numerical case studies</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Formal proof of market failure in charging access equity; regulatory mechanism design achieving equitable outcomes with Pareto-improved operator profitability</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Model abstracts away some real-world operator heterogeneity; assumes rational actors; implementation of income-indexed pricing mechanisms faces political and administrative challenges</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>State PUCs and energy regulators, NEVI program administrators, EV charging operators, transportation equity advocates, city sustainability offices</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>Regulators should immediately audit whether NEVI and similar programs' placement requirements are sufficient to prevent charging deserts, or whether pricing and capacity regulations are also needed. The paper's mechanism design framework can be directly applied to calibrate subsidy levels for specific local markets. Equity advocates should use this paper's formal results to argue for regulatory requirements alongside infrastructure funding.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Prior EV equity work documented disparate access as an empirical fact; this paper is among the first to formally prove it as an inevitable market outcome and to derive mathematically optimal regulatory responses. The game-theoretic approach enables policy prescriptions with a rigor that observational studies cannot provide.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 8 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>RiskFlow: Fast and Faithful Safety-Critical Traffic Scenario Generation</h3>
+          <span class="confidence-badge conf-high">High</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Qi Lan, Yining Tang, Yu Shen, Yi Zhou, Yuhao Wei, Jie Li, Guofa Li</span>
+          <span class="source-tag">arXiv cs.AI</span>
+          <a href="https://arxiv.org/abs/2606.06423v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06423v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">RiskFlow generates physically realistic, safety-critical multi-agent traffic scenarios for autonomous vehicle testing at a fraction of the computational cost of prior diffusion-based methods, while significantly reducing unrealistic motion artifacts.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>Autonomous vehicle safety validation requires exposure to rare, dangerous scenarios (near-misses, sudden cut-offs, emergency braking) that real-world driving rarely produces. Generating these synthetically is a solved problem in principle but previous approaches were too slow for large-scale testing pipelines or produced unrealistic physical violations that invalidate test results. RiskFlow addresses both constraints simultaneously, potentially enabling higher-throughput safety validation that could accelerate responsible AV deployment.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>Applying diffusion guidance in action space (rather than state space) dramatically reduces motion artifacts while preserving scenario diversity</li>
+              <li>The closed-loop framework enables generated scenarios to respond dynamically to the AV under test, rather than playing out predetermined agent trajectories</li>
+              <li>RiskFlow achieves faster generation than prior diffusion-based methods while maintaining or improving physical realism metrics</li>
+              <li>The approach generalizes to generating scenarios of varying severity, enabling systematic coverage of the risk spectrum from mild to catastrophic</li>
+              <li>Physical plausibility constraints are enforced implicitly through the action-space formulation rather than requiring explicit post-processing</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>Diffusion model with guidance in vehicle action space; closed-loop simulation framework; compared against prior scenario generation baselines on realism and efficiency metrics</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Fewer physical violations than prior methods; faster generation throughput; maintains scenario diversity and criticality targeting across tested traffic conditions</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>Validation in simulation only; real-world transfer of generated scenario difficulty may differ; limited to highway-like environments in current form</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>AV developers and safety teams, automotive OEM simulation engineers, regulatory bodies developing AV safety standards, AV testing service providers</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>AV safety teams can integrate RiskFlow into existing simulation pipelines to increase the density of safety-critical coverage in test suites without proportionally increasing compute costs. Regulatory agencies developing AV safety certification frameworks should evaluate scenario generation methods like RiskFlow as components of virtual testing protocols that complement real-world testing requirements.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Prior safety-critical scenario generation approaches (adversarial perturbation, naturalistic sampling, early diffusion methods) each suffered from either unrealism, limited coverage, or prohibitive compute costs. RiskFlow advances on all three dimensions simultaneously, representing a meaningful step toward practical high-throughput safety validation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER 9 -->
+      <div class="paper-card">
+        <div class="paper-header">
+          <h3>Risk Assessment of Autonomous Driving: Integrating Technical Failures, Ethical Dilemmas, and Policy Frameworks</h3>
+          <span class="confidence-badge conf-medium">Medium</span>
+        </div>
+        <div class="paper-meta">
+          <span class="authors">Boyi Chen, Shengqin Chu, Zicheng Wang, Brian Baetz, Zhen Gao</span>
+          <span class="source-tag">arXiv cs.AI</span>
+          <a href="https://arxiv.org/abs/2606.06396v1" target="_blank" rel="noopener">arxiv.org/abs/2606.06396v1</a>
+        </div>
+        <div class="paper-body">
+          <div class="one-sentence">A comprehensive multi-dimensional risk audit of autonomous vehicles — spanning technical failures, ethical decision-making, and regulatory inconsistencies — concludes that perception errors dominate real-world incidents and that jurisdictional regulatory fragmentation creates unequal safety outcomes.</div>
+          <div class="why-it-matters">
+            <div class="label">Why It Matters</div>
+            <p>AV deployment is accelerating across multiple jurisdictions but safety governance has not kept pace. This paper provides a rare integrated analysis that connects the technical, ethical, and regulatory dimensions — revealing how gaps in one dimension propagate into failures in others. The NHTSA and DMV data analysis grounds the otherwise theoretical discussion in empirical reality, making the policy recommendations harder to dismiss.</p>
+          </div>
+          <div class="key-insights">
+            <div class="label">Key Insights</div>
+            <ul>
+              <li>Perception errors (sensor failures, object misclassification, edge-case detection failures) account for a disproportionate share of AV incidents in NHTSA data — suggesting that hardware and ML model robustness remain the primary technical bottleneck</li>
+              <li>Ethical decision-making frameworks adopted by different manufacturers are mutually inconsistent, creating different risk distributions across users, bystanders, and third parties</li>
+              <li>Regulatory inconsistencies across US states and between the US, EU, and China create opportunities for safety arbitrage — deploying riskier configurations in jurisdictions with weaker oversight</li>
+              <li>Cybersecurity risks are systematically under-addressed in current AV risk frameworks despite the demonstrated vulnerability of connected vehicle systems</li>
+              <li>The proposed integrated governance framework requires coordination across technical standards bodies, ethics review processes, and national/state regulators — a coordination challenge with no clear institutional home</li>
+            </ul>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-cell">
+              <div class="mini-label">Methodology</div>
+              <p>Analysis of NHTSA Standing General Order AV crash reports and DMV disengagement data; systematic review of ethical frameworks and regulatory texts across jurisdictions</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Results</div>
+              <p>Perception errors dominant in real crash data; regulatory fragmentation across 50+ jurisdictions documented; integrated risk governance framework proposed</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Limitations</div>
+              <p>NHTSA data quality and completeness is contested; self-reported disengagement data may not reflect actual safety performance; proposed governance framework lacks implementation pathway</p>
+            </div>
+            <div class="mini-cell">
+              <div class="mini-label">Who Should Care</div>
+              <p>Federal and state AV regulators, AV developers' safety and policy teams, insurance actuaries, legislators, transportation safety researchers</p>
+            </div>
+          </div>
+          <div class="implications-block">
+            <div class="label">Practical Implications</div>
+            <p>AV developers should treat the perception failure dominance finding as a priority signal for R&D investment. Federal regulators should evaluate whether the current patchwork of state AV regulations creates safety arbitrage incentives and consider minimum federal safety floors. International regulatory coordination (US-EU-China) on AV safety standards should be treated as urgent to prevent a race to the bottom.</p>
+          </div>
+          <div class="comparison-block">
+            <div class="label">Comparison to Prior Work</div>
+            <p>Most AV risk literature addresses technical, ethical, or regulatory dimensions in isolation; this paper's contribution is the integrated multi-dimensional framework. While the individual components are not novel, the synthesis reveals interaction effects (e.g., how regulatory fragmentation exacerbates the impact of ethical framework inconsistency) that siloed analyses miss.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /papers-list -->
+  </div>
+</section>
+
+<!-- ── ACTIONABLE TAKEAWAYS ── -->
+<section>
+  <div class="container">
+    <div class="section-label">For Practitioners</div>
+    <div class="section-title">Actionable Takeaways</div>
+    <div class="takeaways-box">
+      <ol>
+        <li><strong>Regulators administering EV charging infrastructure programs (NEVI, AFIR):</strong> Require pricing and capacity minimums in underserved markets, not just geographic placement rules. Wang et al. prove that placement alone is insufficient — market incentives will produce charging deserts even in mandated areas without price/capacity regulation.</li>
+        <li><strong>Transit emergency managers:</strong> Redesign operator training curricula to maximize scenario variety rather than total training hours. The subway flood modeling paper shows that diverse scenario exposure is a stronger predictor of emergency performance than cumulative experience, and that experienced operators can be more vulnerable to novel scenario patterns.</li>
+        <li><strong>Municipal transportation planners in data-constrained environments:</strong> You can now run calibrated city-scale traffic simulations from a handful of existing loop detectors. The genetic calibration paper demonstrates that comprehensive sensor networks are not a prerequisite for evidence-based traffic modeling — a finding that removes a major barrier to simulation-based planning for smaller cities.</li>
+        <li><strong>Emergency management agencies in high-EV-adoption regions:</strong> Begin incorporating EV range constraints into evacuation plans now, while EV fleet share is still low. Develop mobile charging station pre-positioning strategies for disaster-prone zones before range-related evacuation failures become a public safety crisis at scale.</li>
+        <li><strong>AV developers and safety teams:</strong> The dominance of perception errors in real-world AV incidents (Chen et al.) and the availability of higher-throughput realistic scenario generation (RiskFlow) together point to a clear investment priority: more compute-efficient adversarial testing focused specifically on edge-case perception challenges, not just increased aggregate simulation mileage.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ── LONG-TERM IMPLICATIONS ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Horizon</div>
+    <div class="section-title">Long-Term Implications</div>
+    <div class="implications-two-col">
+      <div class="implications-col">
+        <h4>The Next Five Years (2026–2031)</h4>
+        <p>The convergence of AV maturation, EV fleet growth, and urban air mobility commercialization will create an unprecedented period of transportation system complexity. The governance gaps documented across today's papers — fragmented AV regulations, undefined AAM separation standards, inequitable charging access — must be resolved in this window or they will calcify into durable structural inequities and safety deficits. The research community is providing the analytical tools; the binding constraint is now institutional will and coordination capacity among regulators, industry, and civil society. Agencies that invest now in simulation infrastructure (traffic, emergency, and AV testing) will be far better positioned to evaluate and respond to the rapid changes ahead.</p>
+      </div>
+      <div class="implications-col">
+        <h4>The Decade Beyond (2031–2036)</h4>
+        <p>If the governance gaps are resolved effectively, the 2030s could see a transportation system dramatically safer, more equitable, and more efficient than today's: autonomous freight on inland waterways reducing trucking emissions, eVTOL providing high-speed urban mobility in corridors currently underserved by transit, and EVs accessible across income levels with well-distributed charging. If governance gaps persist, the opposite is equally plausible — a bifurcated transportation system where advanced mobility technologies serve affluent users in well-regulated jurisdictions while underserved communities experience the costs (road noise, safety risks, displacement) without the benefits. Today's research papers are, in aggregate, a map of which path we're currently on and where the critical forks lie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <p><strong>Transit Research Briefing</strong> — June 5, 2026</p>
+    <p>9 papers analyzed · Sources: arXiv (cs.CY, eess.SY, cs.AI)</p>
+    <p><a href="index.html">← Return to Archive</a> · <a href="research.html">Full Research Index</a></p>
+    <p style="margin-top:16px; font-size:11px; color:#4a4a60;">Papers sourced from arXiv preprint server. This briefing represents analyst synthesis and should not be taken as peer-reviewed conclusions. Always consult original papers for full methodology and caveats.</p>
+  </div>
+</footer>
+
+</body>
+</html>
