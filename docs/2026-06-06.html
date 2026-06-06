@@ -5,202 +5,186 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Briefing — June 6, 2026</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0d0d0d;
-    --bg2: #141414;
-    --bg3: #1a1a1a;
-    --border: #2a2a2a;
-    --text: #e8e8e8;
-    --muted: #666;
-    --accent: #f0f0f0;
-  }
-  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; }
-  
-  .top-bar { height: 4px; background: #f0f0f0; }
-  
-  header { padding: 40px 40px 30px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
-  .header-left { display: flex; flex-direction: column; gap: 6px; }
-  .daily-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; color: var(--muted); }
-  .day-topic { font-size: 28px; font-weight: 700; color: var(--accent); line-height: 1.2; }
-  .date-label { font-size: 13px; color: var(--muted); }
-  .header-right a { color: var(--muted); text-decoration: none; font-size: 12px; letter-spacing: 1px; border: 1px solid var(--border); padding: 8px 16px; }
-  .header-right a:hover { color: var(--accent); border-color: var(--accent); }
-  
-  .infographic-section { padding: 40px; border-bottom: 1px solid var(--border); }
-  .section-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); font-weight: 600; margin-bottom: 20px; }
-  .infographic-container { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
-  .infographic-container img { max-width: 400px; width: 100%; border: 1px solid var(--border); }
-  .download-links { display: flex; flex-direction: column; gap: 10px; }
-  .download-links a { color: var(--muted); text-decoration: none; font-size: 12px; border: 1px solid var(--border); padding: 10px 16px; display: inline-block; }
-  .download-links a:hover { color: var(--accent); border-color: var(--accent); }
-  
-  .stories-section { padding: 40px; }
-  .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1px; background: var(--border); }
-  
-  .story-card {
-    background: var(--bg2);
-    padding: 24px;
-    position: relative;
-    transition: background 0.15s;
-  }
-  .story-card:hover { background: var(--bg3); }
-  
-  .story-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-  .story-num { font-size: 11px; font-weight: 600; color: var(--muted); }
-  .category-pill { font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 10px; color: #fff; }
-  .story-emoji { font-size: 22px; margin-bottom: 10px; }
-  .story-headline { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 10px; line-height: 1.35; }
-  .story-summary { font-size: 12px; color: #999; line-height: 1.55; margin-bottom: 10px; }
-  .story-bullets { margin: 0 0 10px 16px; }
-  .story-bullets li { font-size: 11px; color: #777; margin-bottom: 3px; line-height: 1.4; }
-  .story-topic { font-size: 9px; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 12px; opacity: 0.7; }
-  .impact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-  .impact-bar-bg { flex: 1; height: 2px; background: #2a2a2a; }
-  .impact-bar-fill { height: 100%; }
-  .impact-label { font-size: 9px; color: var(--muted); white-space: nowrap; }
-  .why-matters { font-size: 11px; color: #666; line-height: 1.5; border-top: 1px solid var(--border); padding-top: 10px; margin-top: 4px; }
-  
-  footer { padding: 30px 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--muted); }
-  .bottom-bar { height: 3px; background: #f0f0f0; }
-  
-  @media (max-width: 600px) {
-    header { flex-direction: column; gap: 16px; align-items: flex-start; }
-    .stories-grid { grid-template-columns: 1fr; }
-    .infographic-container { flex-direction: column; }
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0D0D0D; color: #E8E8E8; font-family: 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; }
+  header { background: #111; border-bottom: 1px solid #222; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; }
+  header h1 { font-size: 13px; font-weight: 600; letter-spacing: 3px; color: #888; text-transform: uppercase; }
+  header .day-topic { font-size: 22px; font-weight: 700; color: #FFF; margin-top: 6px; }
+  header .date { font-size: 13px; color: #666; margin-top: 4px; }
+  .nav-link { color: #6C47FF; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+  .nav-link:hover { color: #8B6FFF; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+  .featured { margin-bottom: 48px; }
+  .featured h2 { font-size: 11px; letter-spacing: 3px; color: #555; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+  .infographic-wrap { background: #1A1A1A; border: 1px solid #2A2A2A; border-radius: 4px; padding: 24px; display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .infographic-wrap img { max-width: 500px; width: 100%; border-radius: 2px; }
+  .infographic-links { display: flex; gap: 12px; margin-top: 12px; }
+  .dl-link { display: inline-block; padding: 8px 16px; background: #222; color: #CCC; text-decoration: none; font-size: 12px; border: 1px solid #333; border-radius: 2px; }
+  .dl-link:hover { background: #2A2A2A; color: #FFF; }
+  .stories-section h2 { font-size: 11px; letter-spacing: 3px; color: #555; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1px; background: #1A1A1A; border: 1px solid #1A1A1A; }
+  .card { background: #111; padding: 24px; position: relative; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .card-num { font-size: 12px; color: #444; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .emoji { font-size: 20px; }
+  .category { font-size: 10px; font-weight: 600; color: #FFF; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.5px; margin-left: auto; }
+  .headline { font-size: 16px; font-weight: 700; color: #F0F0F0; line-height: 1.35; margin-bottom: 10px; }
+  .summary { font-size: 13px; color: #888; line-height: 1.55; margin-bottom: 12px; }
+  .bullets { list-style: none; padding: 0; margin-bottom: 14px; }
+  .bullets li { font-size: 11px; color: #666; line-height: 1.5; padding: 3px 0; padding-left: 14px; position: relative; }
+  .bullets li::before { content: "•"; position: absolute; left: 0; color: #444; }
+  .meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .impact-wrap { flex: 0 0 120px; height: 2px; background: #222; }
+  .impact-bar { height: 2px; background: #E8E8E8; }
+  .impact-label { font-size: 10px; color: #555; }
+  .topic-tag { font-size: 10px; font-weight: 600; margin-left: auto; }
+  .why { font-size: 11px; color: #555; line-height: 1.5; border-top: 1px solid #1A1A1A; padding-top: 10px; margin-top: 4px; }
+  .why strong { color: #666; }
+  footer { border-top: 1px solid #1A1A1A; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 40px; }
+  footer p { font-size: 11px; color: #444; }
+  footer a { color: #6C47FF; text-decoration: none; }
 </style>
 </head>
 <body>
-<div class="top-bar"></div>
-
 <header>
-  <div class="header-left">
-    <div class="daily-label">DAILY BRIEFING</div>
-    <div class="day-topic">AI Tools Shape Open Source</div>
-    <div class="date-label">June 6, 2026</div>
+  <div>
+    <div class="h1">DAILY BRIEFING</div>
+    <div class="day-topic">AI Industry Shifts</div>
+    <div class="date">June 6, 2026</div>
   </div>
-  <div class="header-right">
-    <a href="index.html">← ARCHIVE</a>
-  </div>
+  <a href="index.html" class="nav-link">← Archive</a>
 </header>
-
-<section class="infographic-section">
-  <div class="section-label">FEATURED INFOGRAPHIC</div>
-  <div class="infographic-container">
-    <img src="infographic-2026-06-06.svg" alt="Daily Briefing Infographic June 6, 2026">
-    <div class="download-links">
-      <a href="infographic-2026-06-06.svg" download>↓ Download SVG</a>
+<div class="container">
+  <div class="featured">
+    <h2>Featured Infographic</h2>
+    <div class="infographic-wrap">
+      <img src="infographic-2026-06-06.svg" alt="Daily Infographic — June 6, 2026">
+      <div>
+        <p style="font-size:13px;color:#666;margin-bottom:16px;line-height:1.6;">Visual summary of today's most impactful tech and world stories, curated from Hacker News and Google News.</p>
+        <div class="infographic-links">
+          <a href="infographic-2026-06-06.svg" download class="dl-link">⬇ Download SVG</a>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-
-<section class="stories-section">
-  <div class="section-label">TODAY'S TOP STORIES</div>
-  <div class="stories-grid">
-    <div class="story-card" style="border-left: 3px solid #00897B;">
-      <div class="story-header">
-        <span class="story-num">01</span>
-        <span class="category-pill" style="background:#00897B;">Tech</span>
+  <div class="stories-section">
+    <h2>Today's Top Stories</h2>
+    <div class="grid">
+      
+    <div class="card" style="border-left: 3px solid #2E7D32">
+      <div class="card-header">
+        <span class="card-num">01</span>
+        <span class="emoji">📊</span>
+        <span class="category" style="background:#2E7D32">Business</span>
       </div>
-      <div class="story-emoji">⌨️</div>
-      <h3 class="story-headline">Keyboard App Controls Your Entire Desktop</h3>
-      <p class="story-summary">Mouseless is a new utility that enables complete keyboard-driven control of macOS, Linux, and Windows. It eliminates the need for a mouse or trackpad, appealing to power users and accessibility workflows.</p>
-      <ul class="story-bullets"><li>Available for macOS, Linux, and Windows platforms</li><li>Top-voted story on Hacker News with 453 points</li><li>Eliminates mouse dependency for keyboard-focused power users</li></ul>
-      <div class="story-topic">KEYBOARD PRODUCTIVITY</div>
-      <div class="impact-row">
-        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%; background:#00897B;"></div></div>
-        <span class="impact-label">IMPACT 8/10</span>
+      <h2 class="headline">S&amp;P 500 Blocks SpaceX, OpenAI, Anthropic</h2>
+      <p class="summary">The S&amp;P 500 has refused to fast-track SpaceX's entry and confirmed it will also block OpenAI and Anthropic from rapid inclusion. The decision upholds profitability and public float requirements that these high-profile tech companies currently don't meet.</p>
+      <ul class="bullets"><li>S&amp;P 500 requires 4 consecutive quarters of GAAP profitability</li><li>SpaceX valued at $350B+ but remains privately held and unprofitable on GAAP basis</li><li>OpenAI and Anthropic both private — trillions in index funds cannot invest</li></ul>
+      <div class="meta">
+        <div class="impact-wrap">
+          <div class="impact-bar" style="width:90%"></div>
+        </div>
+        <span class="impact-label">Impact 9/10</span>
+        <span class="topic-tag" style="color:#2E7D32">AI Investment</span>
       </div>
-      <p class="why-matters"><strong>Why it matters:</strong> Accessibility and productivity tools that reduce peripheral dependency have broad appeal for developers and power users globally.</p>
+      <p class="why"><strong>Why it matters:</strong> This shapes how trillions in index-tracking funds flow — or don't — to the most powerful AI companies of our era.</p>
     </div>
-    <div class="story-card" style="border-left: 3px solid #0077CC;">
-      <div class="story-header">
-        <span class="story-num">02</span>
-        <span class="category-pill" style="background:#0077CC;">Science</span>
+    <div class="card" style="border-left: 3px solid #0077CC">
+      <div class="card-header">
+        <span class="card-num">02</span>
+        <span class="emoji">💧</span>
+        <span class="category" style="background:#0077CC">Science</span>
       </div>
-      <div class="story-emoji">🚀</div>
-      <h3 class="story-headline">ISS Astronauts Return After Air Leak Repairs</h3>
-      <p class="story-summary">NASA astronauts who sheltered aboard the International Space Station returned to duty following successful air leak repairs. The incident highlights ongoing challenges of maintaining aging orbital infrastructure.</p>
-      <ul class="story-bullets"><li>Astronauts sheltered as a precautionary measure during the leak</li><li>Air leak was identified and repaired aboard the ISS</li><li>Incident raises concerns about aging ISS systems and future maintenance costs</li></ul>
-      <div class="story-topic">ISS SAFETY</div>
-      <div class="impact-row">
-        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%; background:#0077CC;"></div></div>
-        <span class="impact-label">IMPACT 9/10</span>
+      <h2 class="headline">Zero-Waste Ocean Desalination Breakthrough</h2>
+      <p class="summary">University of Rochester researchers developed a desalination method that converts seawater to drinking water with zero brine waste. Traditional plants reject 50-60% of water as harmful concentrated saltwater discharged back into the ocean.</p>
+      <ul class="bullets"><li>New method achieves near-100% water recovery vs. 40-50% for current plants</li><li>Brine discharge harms marine ecosystems in 150+ countries with coastal desalination</li><li>2.2 billion people currently lack access to safe drinking water globally</li></ul>
+      <div class="meta">
+        <div class="impact-wrap">
+          <div class="impact-bar" style="width:90%"></div>
+        </div>
+        <span class="impact-label">Impact 9/10</span>
+        <span class="topic-tag" style="color:#0077CC">Water Crisis</span>
       </div>
-      <p class="why-matters"><strong>Why it matters:</strong> ISS safety incidents directly affect international research programs and inform planning for future long-duration space missions.</p>
+      <p class="why"><strong>Why it matters:</strong> Waste-free desalination could transform global water access while eliminating the environmental damage caused by brine discharge.</p>
     </div>
-    <div class="story-card" style="border-left: 3px solid #2E7D32;">
-      <div class="story-header">
-        <span class="story-num">03</span>
-        <span class="category-pill" style="background:#2E7D32;">Business</span>
+    <div class="card" style="border-left: 3px solid #00897B">
+      <div class="card-header">
+        <span class="card-num">03</span>
+        <span class="emoji">🍎</span>
+        <span class="category" style="background:#00897B">Tech</span>
       </div>
-      <div class="story-emoji">💳</div>
-      <h3 class="story-headline">UK Government Ditches Stripe for Dutch Adyen</h3>
-      <p class="story-summary">The UK government's GOV.UK payment platform has replaced American fintech giant Stripe with Dutch processor Adyen. The switch signals a growing preference for European payment infrastructure amid geopolitical considerations.</p>
-      <ul class="story-bullets"><li>GOV.UK processes millions of government payments annually</li><li>Adyen is headquartered in Amsterdam, Netherlands</li><li>Move follows a broader EU/UK trend of reducing dependency on US tech</li></ul>
-      <div class="story-topic">DIGITAL SOVEREIGNTY</div>
-      <div class="impact-row">
-        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:70%; background:#2E7D32;"></div></div>
-        <span class="impact-label">IMPACT 7/10</span>
+      <h2 class="headline">WWDC 2026: Gemini Powers Siri, iOS 27</h2>
+      <p class="summary">Apple's WWDC 2026 is set to reveal Siri upgraded with Google's Gemini AI, alongside iOS 27 and macOS 27. The partnership signals Apple's strategy of integrating third-party AI models to compete with ChatGPT's assistant dominance.</p>
+      <ul class="bullets"><li>Gemini-powered Siri extends Apple-Google AI deal announced in 2025</li><li>iOS 27 and macOS 27 expected on supported devices this fall</li><li>Apple Intelligence reached an estimated 2 billion active devices by end of 2025</li></ul>
+      <div class="meta">
+        <div class="impact-wrap">
+          <div class="impact-bar" style="width:80%"></div>
+        </div>
+        <span class="impact-label">Impact 8/10</span>
+        <span class="topic-tag" style="color:#00897B">Apple AI</span>
       </div>
-      <p class="why-matters"><strong>Why it matters:</strong> Government infrastructure decisions reflect geopolitical shifts in tech procurement and the push for European digital sovereignty.</p>
+      <p class="why"><strong>Why it matters:</strong> A Gemini-powered Siri places a top AI model on 2 billion Apple devices, immediately reshaping the competitive AI assistant landscape.</p>
     </div>
-    <div class="story-card" style="border-left: 3px solid #00897B;">
-      <div class="story-header">
-        <span class="story-num">04</span>
-        <span class="category-pill" style="background:#00897B;">Tech</span>
+    <div class="card" style="border-left: 3px solid #6C47FF">
+      <div class="card-header">
+        <span class="card-num">04</span>
+        <span class="emoji">🤖</span>
+        <span class="category" style="background:#6C47FF">AI</span>
       </div>
-      <div class="story-emoji">🗄️</div>
-      <h3 class="story-headline">Microsoft Open Sources PostgreSQL Durable Execution</h3>
-      <p class="story-summary">Microsoft released pg_durable, a PostgreSQL extension enabling durable execution of long-running workflows directly within a database. This brings workflow orchestration typically requiring separate services directly into Postgres.</p>
-      <ul class="story-bullets"><li>Released as open source on GitHub by Microsoft</li><li>Enables in-database durable execution without extra orchestration services</li><li>Built on PostgreSQL, the world's most popular open-source database</li></ul>
-      <div class="story-topic">DATABASE WORKFLOWS</div>
-      <div class="impact-row">
-        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%; background:#00897B;"></div></div>
-        <span class="impact-label">IMPACT 8/10</span>
+      <h2 class="headline">Microsoft: We Are Free From OpenAI</h2>
+      <p class="summary">Microsoft's AI chief stated the company feels 'set free' from its OpenAI partnership to independently pursue superintelligence. This marks a strategic pivot emphasizing Microsoft's own frontier model research over dependence on OpenAI's GPT series.</p>
+      <ul class="bullets"><li>Microsoft invested $13B+ in OpenAI across multiple rounds since 2019</li><li>Internal AI team now numbering thousands developing proprietary frontier models</li><li>Microsoft's Copilot revenue projected at $10B ARR by end of 2026</li></ul>
+      <div class="meta">
+        <div class="impact-wrap">
+          <div class="impact-bar" style="width:80%"></div>
+        </div>
+        <span class="impact-label">Impact 8/10</span>
+        <span class="topic-tag" style="color:#6C47FF">AI Race</span>
       </div>
-      <p class="why-matters"><strong>Why it matters:</strong> Embedding durable execution in Postgres reduces infrastructure complexity for applications requiring reliable long-running workflow orchestration.</p>
+      <p class="why"><strong>Why it matters:</strong> Microsoft's declaration of AI independence signals a fracturing of tech's most influential AI partnership and accelerates the superintelligence race.</p>
     </div>
-    <div class="story-card" style="border-left: 3px solid #6C47FF;">
-      <div class="story-header">
-        <span class="story-num">05</span>
-        <span class="category-pill" style="background:#6C47FF;">AI</span>
+    <div class="card" style="border-left: 3px solid #6C47FF">
+      <div class="card-header">
+        <span class="card-num">05</span>
+        <span class="emoji">🧠</span>
+        <span class="category" style="background:#6C47FF">AI</span>
       </div>
-      <div class="story-emoji">🤖</div>
-      <h3 class="story-headline">Study: Did Claude AI Introduce Bugs in Rsync?</h3>
-      <p class="story-summary">A developer analyzed the rsync codebase's commit history to investigate whether AI assistant Claude introduced new bugs into this critical utility. The study raises important questions about AI-assisted development and software quality.</p>
-      <ul class="story-bullets"><li>Analysis examined rsync's open-source commit history for AI-generated changes</li><li>Rsync is a critical Unix file synchronization utility used globally</li><li>Findings spark broader debate about AI tools in open-source software maintenance</li></ul>
-      <div class="story-topic">AI CODE QUALITY</div>
-      <div class="impact-row">
-        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%; background:#6C47FF;"></div></div>
-        <span class="impact-label">IMPACT 8/10</span>
+      <h2 class="headline">How LLMs Work: Technical Explainer Goes Viral</h2>
+      <p class="summary">A deep-dive technical article on how large language models function attracted 591 upvotes on Hacker News, reflecting enormous public appetite for AI literacy. The piece covers tokenization, transformers, attention mechanisms, and inference in accessible terms.</p>
+      <ul class="bullets"><li>591 upvotes on Hacker News within 24 hours of posting</li><li>Transformers power all major AI: GPT-4, Claude, Gemini, and Llama</li><li>Surveys show 78% of adults use AI tools but cannot explain how they function</li></ul>
+      <div class="meta">
+        <div class="impact-wrap">
+          <div class="impact-bar" style="width:70%"></div>
+        </div>
+        <span class="impact-label">Impact 7/10</span>
+        <span class="topic-tag" style="color:#6C47FF">AI Education</span>
       </div>
-      <p class="why-matters"><strong>Why it matters:</strong> Questions about AI tools introducing bugs into critical open-source software have major implications for software supply chain security.</p>
+      <p class="why"><strong>Why it matters:</strong> Public understanding of AI internals is essential for informed regulation, responsible use, and separating hype from capability.</p>
     </div>
-    <div class="story-card" style="border-left: 3px solid #6C47FF;">
-      <div class="story-header">
-        <span class="story-num">06</span>
-        <span class="category-pill" style="background:#6C47FF;">AI</span>
+    <div class="card" style="border-left: 3px solid #00897B">
+      <div class="card-header">
+        <span class="card-num">06</span>
+        <span class="emoji">🖥️</span>
+        <span class="category" style="background:#00897B">Tech</span>
       </div>
-      <div class="story-emoji">📱</div>
-      <h3 class="story-headline">Google Gemma 4 QAT Optimized for Mobile AI</h3>
-      <p class="story-summary">Google released Gemma 4 quantization-aware training (QAT) models designed for efficient operation on mobile devices and laptops. The models use advanced compression to maintain performance while dramatically reducing hardware requirements.</p>
-      <ul class="story-bullets"><li>QAT reduces model size while preserving accuracy for inference</li><li>Optimized to run on consumer mobile and laptop hardware</li><li>Part of Google's open-weights Gemma model family</li></ul>
-      <div class="story-topic">EDGE AI MODELS</div>
-      <div class="impact-row">
-        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%; background:#6C47FF;"></div></div>
-        <span class="impact-label">IMPACT 8/10</span>
+      <h2 class="headline">Azure Linux Desktop Revealed at Build 2026</h2>
+      <p class="summary">Microsoft unveiled Azure Linux Desktop at Build 2026, merging WSL, WinUI, and Azure cloud tools into a seamless Linux experience on Windows. The announcement signals Microsoft's deepening commitment to unifying developer workflows across platforms.</p>
+      <ul class="bullets"><li>Combines WSLc, WinUI Reactor, and Azure cloud services in one environment</li><li>Linux powers 90%+ of cloud workloads; Windows hosts majority of developer PCs</li><li>Microsoft Windows installed on 1B+ devices globally</li></ul>
+      <div class="meta">
+        <div class="impact-wrap">
+          <div class="impact-bar" style="width:70%"></div>
+        </div>
+        <span class="impact-label">Impact 7/10</span>
+        <span class="topic-tag" style="color:#00897B">Cloud Dev Tools</span>
       </div>
-      <p class="why-matters"><strong>Why it matters:</strong> On-device AI models enable privacy-preserving and offline AI capabilities for anyone with a smartphone or laptop.</p>
+      <p class="why"><strong>Why it matters:</strong> A native Linux desktop on Windows could finally unify enterprise developer workflows across local machines and cloud environments.</p>
+    </div>
     </div>
   </div>
-</section>
-
+</div>
 <footer>
-  <span>Generated by AI · Daily News Infographic</span>
-  <span>June 6, 2026</span>
+  <p>Generated by AI · Sources: Hacker News, Google News · <a href="index.html">Archive</a></p>
+  <p>June 6, 2026</p>
 </footer>
-<div class="bottom-bar"></div>
 </body>
 </html>

@@ -1,104 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" width="800" height="1400">
-  <rect width="800" height="1400" fill="#F7F7F5"/>
-  
-  <!-- TOP BAR -->
-  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
-  
-  <!-- HEADER -->
-  <text x="400" y="35" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#999999" letter-spacing="3" text-anchor="middle" dominant-baseline="middle">DAILY BRIEFING</text>
-  <text x="400" y="72" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="700" fill="#111111" text-anchor="middle" dominant-baseline="middle">AI Tools Shape Open Source</text>
-  <text x="400" y="105" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#888888" text-anchor="middle" dominant-baseline="middle">June 6, 2026</text>
-  <line x1="40" y1="128" x2="760" y2="128" stroke="#DDDDDD" stroke-width="1"/>
-
-  <rect x="0" y="140" width="800" height="200" fill="#F7F7F5"/>
-  <rect x="40" y="141" width="3" height="198" fill="#00897B"/>
-  <text x="56" y="162" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#BBBBBB">01</text>
-  <text x="76" y="162" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#444444">⌨️</text>
-  <rect x="716" y="148" width="44" height="20" rx="10" fill="#00897B"/>
-  <text x="738" y="158" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Tech</text>
-  <text x="56" y="182" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Keyboard App Controls Your Entire Desktop</text>
-  <text x="56" y="212" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">Mouseless is a new utility that enables complete keyboard-driven control</text>
-  <text x="56" y="227" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">of macOS, Linux, and Windows. It eliminates the need for a mouse or</text>
-  <text x="56" y="250" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" fill="#00897B" letter-spacing="0.5">KEYBOARD PRODUCTIVITY</text>
-  <rect x="56" y="310" width="260" height="2" fill="#E8E8E8"/>
-  <rect x="56" y="310" width="208" height="2" fill="#00897B"/>
-  <text x="324" y="311" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" dominant-baseline="middle">IMPACT 8/10</text>
-  <line x1="40" y1="340" x2="760" y2="340" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="0" y="340" width="800" height="200" fill="#FFFFFF"/>
-  <rect x="40" y="341" width="3" height="198" fill="#0077CC"/>
-  <text x="56" y="362" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#BBBBBB">02</text>
-  <text x="76" y="362" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#444444">🚀</text>
-  <rect x="695" y="348" width="65" height="20" rx="10" fill="#0077CC"/>
-  <text x="728" y="358" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Science</text>
-  <text x="56" y="382" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">ISS Astronauts Return After Air Leak Repairs</text>
-  <text x="56" y="412" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">NASA astronauts who sheltered aboard the International Space Station</text>
-  <text x="56" y="427" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">returned to duty following successful air leak repairs. The incident</text>
-  <text x="56" y="450" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" fill="#0077CC" letter-spacing="0.5">ISS SAFETY</text>
-  <rect x="56" y="510" width="260" height="2" fill="#E8E8E8"/>
-  <rect x="56" y="510" width="234" height="2" fill="#0077CC"/>
-  <text x="324" y="511" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" dominant-baseline="middle">IMPACT 9/10</text>
-  <line x1="40" y1="540" x2="760" y2="540" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="0" y="540" width="800" height="200" fill="#F7F7F5"/>
-  <rect x="40" y="541" width="3" height="198" fill="#2E7D32"/>
-  <text x="56" y="562" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#BBBBBB">03</text>
-  <text x="76" y="562" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#444444">💳</text>
-  <rect x="688" y="548" width="72" height="20" rx="10" fill="#2E7D32"/>
-  <text x="724" y="558" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Business</text>
-  <text x="56" y="582" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">UK Government Ditches Stripe for Dutch Adyen</text>
-  <text x="56" y="612" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">The UK government's GOV.UK payment platform has replaced American</text>
-  <text x="56" y="627" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">fintech giant Stripe with Dutch processor Adyen. The switch signals a</text>
-  <text x="56" y="650" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" fill="#2E7D32" letter-spacing="0.5">DIGITAL SOVEREIGNTY</text>
-  <rect x="56" y="710" width="260" height="2" fill="#E8E8E8"/>
-  <rect x="56" y="710" width="182" height="2" fill="#2E7D32"/>
-  <text x="324" y="711" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" dominant-baseline="middle">IMPACT 7/10</text>
-  <line x1="40" y1="740" x2="760" y2="740" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="0" y="740" width="800" height="200" fill="#FFFFFF"/>
-  <rect x="40" y="741" width="3" height="198" fill="#00897B"/>
-  <text x="56" y="762" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#BBBBBB">04</text>
-  <text x="76" y="762" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#444444">🗄️</text>
-  <rect x="716" y="748" width="44" height="20" rx="10" fill="#00897B"/>
-  <text x="738" y="758" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Tech</text>
-  <text x="56" y="782" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Microsoft Open Sources PostgreSQL Durable</text>
-  <text x="56" y="802" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Execution</text>
-  <text x="56" y="832" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">Microsoft released pg_durable, a PostgreSQL extension enabling durable</text>
-  <text x="56" y="847" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">execution of long-running workflows directly within a database. This</text>
-  <text x="56" y="870" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" fill="#00897B" letter-spacing="0.5">DATABASE WORKFLOWS</text>
-  <rect x="56" y="910" width="260" height="2" fill="#E8E8E8"/>
-  <rect x="56" y="910" width="208" height="2" fill="#00897B"/>
-  <text x="324" y="911" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" dominant-baseline="middle">IMPACT 8/10</text>
-  <line x1="40" y1="940" x2="760" y2="940" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="0" y="940" width="800" height="200" fill="#F7F7F5"/>
-  <rect x="40" y="941" width="3" height="198" fill="#6C47FF"/>
-  <text x="56" y="962" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#BBBBBB">05</text>
-  <text x="76" y="962" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#444444">🤖</text>
-  <rect x="730" y="948" width="30" height="20" rx="10" fill="#6C47FF"/>
-  <text x="745" y="958" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">AI</text>
-  <text x="56" y="982" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Study: Did Claude AI Introduce Bugs in Rsync?</text>
-  <text x="56" y="1012" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">A developer analyzed the rsync codebase's commit history to investigate</text>
-  <text x="56" y="1027" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">whether AI assistant Claude introduced new bugs into this critical</text>
-  <text x="56" y="1050" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" fill="#6C47FF" letter-spacing="0.5">AI CODE QUALITY</text>
-  <rect x="56" y="1110" width="260" height="2" fill="#E8E8E8"/>
-  <rect x="56" y="1110" width="208" height="2" fill="#6C47FF"/>
-  <text x="324" y="1111" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" dominant-baseline="middle">IMPACT 8/10</text>
-  <line x1="40" y1="1140" x2="760" y2="1140" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="0" y="1140" width="800" height="200" fill="#FFFFFF"/>
-  <rect x="40" y="1141" width="3" height="198" fill="#6C47FF"/>
-  <text x="56" y="1162" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#BBBBBB">06</text>
-  <text x="76" y="1162" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#444444">📱</text>
-  <rect x="730" y="1148" width="30" height="20" rx="10" fill="#6C47FF"/>
-  <text x="745" y="1158" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">AI</text>
-  <text x="56" y="1182" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Google Gemma 4 QAT Optimized for Mobile AI</text>
-  <text x="56" y="1212" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">Google released Gemma 4 quantization-aware training (QAT) models</text>
-  <text x="56" y="1227" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#666666">designed for efficient operation on mobile devices and laptops. The</text>
-  <text x="56" y="1250" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" fill="#6C47FF" letter-spacing="0.5">EDGE AI MODELS</text>
-  <rect x="56" y="1310" width="260" height="2" fill="#E8E8E8"/>
-  <rect x="56" y="1310" width="208" height="2" fill="#6C47FF"/>
-  <text x="324" y="1311" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" dominant-baseline="middle">IMPACT 8/10</text>
-  <line x1="40" y1="1340" x2="760" y2="1340" stroke="#E0E0E0" stroke-width="1"/>
-  <!-- FOOTER -->
-  <rect x="0" y="1340" width="800" height="60" fill="#F7F7F5"/>
-  <text x="40" y="1368" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA">Generated by AI · twong6531.github.io/citation-site</text>
-  <text x="760" y="1368" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" text-anchor="end">June 6, 2026</text>
-  <rect x="0" y="1397" width="800" height="3" fill="#111111"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1348" width="800" height="1348">
+<rect width="800" height="1348" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#888888" font-weight="600" letter-spacing="3">DAILY BRIEFING</text>
+<text x="40" y="76" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" fill="#111111" font-weight="700">AI Industry Shifts</text>
+<text x="40" y="102" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#888888">June 6, 2026</text>
+<line x1="40" y1="116" x2="760" y2="116" stroke="#DDDDDD" stroke-width="1"/>
+<rect x="0" y="136" width="800" height="190" fill="#FFFFFF"/>
+<text x="40" y="166" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#BBBBBB" font-weight="700">01</text>
+<rect x="684" y="148" width="76" height="20" rx="10" fill="#2E7D32"/>
+<text x="722" y="162" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" font-weight="600" text-anchor="middle">Business</text>
+<text x="64" y="168" font-size="18">📊</text>
+<text x="90" y="168" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">S&amp;P 500 Blocks SpaceX, OpenAI, Anthropic</text>
+<text x="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">
+<tspan x="90" y="188">The S&amp;P 500 has refused to fast-track SpaceX's entry and confirmed it will also block OpenAI</tspan>
+<tspan x="90" y="204">and Anthropic from rapid inclusion. The decision upholds profitability and public float</tspan>
+<tspan x="90" y="220">requirements that these high-profile tech companies currently don't meet.</tspan>
+</text>
+<text x="90" y="244" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• S&amp;P 500 requires 4 consecutive quarters of GAAP profitability</text>
+<text x="90" y="259" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• SpaceX valued at $350B+ but remains privately held and unprofitable on GAAP basis</text>
+<text x="90" y="274" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• OpenAI and Anthropic both private — trillions in index funds cannot invest</text>
+<rect x="90" y="298" width="300" height="2" fill="#EEEEEE"/>
+<rect x="90" y="298" width="270" height="2" fill="#111111"/>
+<text x="400" y="306" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">Impact 9/10</text>
+<text x="460" y="306" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#2E7D32" font-weight="600">AI Investment</text>
+<line x1="40" y1="325" x2="760" y2="325" stroke="#E5E5E5" stroke-width="1"/>
+<rect x="0" y="326" width="800" height="190" fill="#F2F2F0"/>
+<text x="40" y="356" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#BBBBBB" font-weight="700">02</text>
+<rect x="691" y="338" width="69" height="20" rx="10" fill="#0077CC"/>
+<text x="725" y="352" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" font-weight="600" text-anchor="middle">Science</text>
+<text x="64" y="358" font-size="18">💧</text>
+<text x="90" y="358" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Zero-Waste Ocean Desalination Breakthrough</text>
+<text x="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">
+<tspan x="90" y="378">University of Rochester researchers developed a desalination method that converts seawater</tspan>
+<tspan x="90" y="394">to drinking water with zero brine waste. Traditional plants reject 50-60% of water as</tspan>
+<tspan x="90" y="410">harmful concentrated saltwater discharged back into the ocean.</tspan>
+</text>
+<text x="90" y="434" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• New method achieves near-100% water recovery vs. 40-50% for current plants</text>
+<text x="90" y="449" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Brine discharge harms marine ecosystems in 150+ countries with coastal desalination</text>
+<text x="90" y="464" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• 2.2 billion people currently lack access to safe drinking water globally</text>
+<rect x="90" y="488" width="300" height="2" fill="#EEEEEE"/>
+<rect x="90" y="488" width="270" height="2" fill="#111111"/>
+<text x="400" y="496" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">Impact 9/10</text>
+<text x="460" y="496" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#0077CC" font-weight="600">Water Crisis</text>
+<line x1="40" y1="515" x2="760" y2="515" stroke="#E5E5E5" stroke-width="1"/>
+<rect x="0" y="516" width="800" height="190" fill="#FFFFFF"/>
+<text x="40" y="546" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#BBBBBB" font-weight="700">03</text>
+<rect x="712" y="528" width="48" height="20" rx="10" fill="#00897B"/>
+<text x="736" y="542" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" font-weight="600" text-anchor="middle">Tech</text>
+<text x="64" y="548" font-size="18">🍎</text>
+<text x="90" y="548" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">WWDC 2026: Gemini Powers Siri, iOS 27</text>
+<text x="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">
+<tspan x="90" y="568">Apple's WWDC 2026 is set to reveal Siri upgraded with Google's Gemini AI, alongside iOS 27</tspan>
+<tspan x="90" y="584">and macOS 27. The partnership signals Apple's strategy of integrating third-party AI models</tspan>
+<tspan x="90" y="600">to compete with ChatGPT's assistant dominance.</tspan>
+</text>
+<text x="90" y="624" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Gemini-powered Siri extends Apple-Google AI deal announced in 2025</text>
+<text x="90" y="639" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• iOS 27 and macOS 27 expected on supported devices this fall</text>
+<text x="90" y="654" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Apple Intelligence reached an estimated 2 billion active devices by end of 2025</text>
+<rect x="90" y="678" width="300" height="2" fill="#EEEEEE"/>
+<rect x="90" y="678" width="240" height="2" fill="#111111"/>
+<text x="400" y="686" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">Impact 8/10</text>
+<text x="460" y="686" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="600">Apple AI</text>
+<line x1="40" y1="705" x2="760" y2="705" stroke="#E5E5E5" stroke-width="1"/>
+<rect x="0" y="706" width="800" height="190" fill="#F2F2F0"/>
+<text x="40" y="736" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#BBBBBB" font-weight="700">04</text>
+<rect x="726" y="718" width="34" height="20" rx="10" fill="#6C47FF"/>
+<text x="743" y="732" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="64" y="738" font-size="18">🤖</text>
+<text x="90" y="738" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Microsoft: We Are Free From OpenAI</text>
+<text x="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">
+<tspan x="90" y="758">Microsoft's AI chief stated the company feels 'set free' from its OpenAI partnership to</tspan>
+<tspan x="90" y="774">independently pursue superintelligence. This marks a strategic pivot emphasizing Microsoft's</tspan>
+<tspan x="90" y="790">own frontier model research over dependence on OpenAI's GPT series.</tspan>
+</text>
+<text x="90" y="814" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Microsoft invested $13B+ in OpenAI across multiple rounds since 2019</text>
+<text x="90" y="829" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Internal AI team now numbering thousands developing proprietary frontier models</text>
+<text x="90" y="844" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Microsoft's Copilot revenue projected at $10B ARR by end of 2026</text>
+<rect x="90" y="868" width="300" height="2" fill="#EEEEEE"/>
+<rect x="90" y="868" width="240" height="2" fill="#111111"/>
+<text x="400" y="876" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">Impact 8/10</text>
+<text x="460" y="876" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#6C47FF" font-weight="600">AI Race</text>
+<line x1="40" y1="895" x2="760" y2="895" stroke="#E5E5E5" stroke-width="1"/>
+<rect x="0" y="896" width="800" height="190" fill="#FFFFFF"/>
+<text x="40" y="926" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#BBBBBB" font-weight="700">05</text>
+<rect x="726" y="908" width="34" height="20" rx="10" fill="#6C47FF"/>
+<text x="743" y="922" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="64" y="928" font-size="18">🧠</text>
+<text x="90" y="928" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">How LLMs Work: Technical Explainer Goes Viral</text>
+<text x="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">
+<tspan x="90" y="948">A deep-dive technical article on how large language models function attracted 591 upvotes on</tspan>
+<tspan x="90" y="964">Hacker News, reflecting enormous public appetite for AI literacy. The piece covers</tspan>
+<tspan x="90" y="980">tokenization, transformers, attention mechanisms, and inference in accessible terms.</tspan>
+</text>
+<text x="90" y="1004" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• 591 upvotes on Hacker News within 24 hours of posting</text>
+<text x="90" y="1019" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Transformers power all major AI: GPT-4, Claude, Gemini, and Llama</text>
+<text x="90" y="1034" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Surveys show 78% of adults use AI tools but cannot explain how they function</text>
+<rect x="90" y="1058" width="300" height="2" fill="#EEEEEE"/>
+<rect x="90" y="1058" width="210" height="2" fill="#111111"/>
+<text x="400" y="1066" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">Impact 7/10</text>
+<text x="460" y="1066" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#6C47FF" font-weight="600">AI Education</text>
+<line x1="40" y1="1085" x2="760" y2="1085" stroke="#E5E5E5" stroke-width="1"/>
+<rect x="0" y="1086" width="800" height="190" fill="#F2F2F0"/>
+<text x="40" y="1116" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#BBBBBB" font-weight="700">06</text>
+<rect x="712" y="1098" width="48" height="20" rx="10" fill="#00897B"/>
+<text x="736" y="1112" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" font-weight="600" text-anchor="middle">Tech</text>
+<text x="64" y="1118" font-size="18">🖥️</text>
+<text x="90" y="1118" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Azure Linux Desktop Revealed at Build 2026</text>
+<text x="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">
+<tspan x="90" y="1138">Microsoft unveiled Azure Linux Desktop at Build 2026, merging WSL, WinUI, and Azure cloud</tspan>
+<tspan x="90" y="1154">tools into a seamless Linux experience on Windows. The announcement signals Microsoft's</tspan>
+<tspan x="90" y="1170">deepening commitment to unifying developer workflows across platforms.</tspan>
+</text>
+<text x="90" y="1194" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Combines WSLc, WinUI Reactor, and Azure cloud services in one environment</text>
+<text x="90" y="1209" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Linux powers 90%+ of cloud workloads; Windows hosts majority of developer PCs</text>
+<text x="90" y="1224" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#777777">• Microsoft Windows installed on 1B+ devices globally</text>
+<rect x="90" y="1248" width="300" height="2" fill="#EEEEEE"/>
+<rect x="90" y="1248" width="210" height="2" fill="#111111"/>
+<text x="400" y="1256" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">Impact 7/10</text>
+<text x="460" y="1256" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="600">Cloud Dev Tools</text>
+<line x1="40" y1="1275" x2="760" y2="1275" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1306" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA">Generated by AI · Data from Hacker News &amp; Google News</text>
+<text x="760" y="1306" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" text-anchor="end">June 6, 2026</text>
+<rect x="0" y="1321" width="800" height="3" fill="#111111"/>
 </svg>

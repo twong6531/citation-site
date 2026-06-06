@@ -5,100 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Briefing Archive</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0d0d0d;
-    --bg2: #141414;
-    --bg3: #1a1a1a;
-    --border: #2a2a2a;
-    --text: #e8e8e8;
-    --muted: #666;
-    --accent: #f0f0f0;
-  }
-  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; }
-  
-  .top-bar { height: 4px; background: #f0f0f0; }
-  
-  header { padding: 40px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
-  .header-title { font-size: 24px; font-weight: 700; color: var(--accent); }
-  .header-sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
-  .header-count { font-size: 11px; color: var(--muted); }
-  .header-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
-  .header-links a { color: var(--muted); text-decoration: none; font-size: 12px; border: 1px solid var(--border); padding: 8px 14px; }
-  .header-links a:hover { color: var(--accent); border-color: var(--accent); }
-  
-  .featured-section { padding: 40px; border-bottom: 1px solid var(--border); }
-  .section-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); font-weight: 600; margin-bottom: 24px; }
-  
-  .featured-card { background: var(--bg2); border: 1px solid var(--border); padding: 32px; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto; gap: 12px 24px; max-width: 900px; }
-  .featured-label { font-size: 9px; letter-spacing: 2px; font-weight: 600; color: var(--muted); grid-column: 1; }
-  .featured-topic { font-size: 32px; font-weight: 700; color: var(--accent); grid-column: 1; line-height: 1.2; }
-  .featured-date { font-size: 13px; color: var(--muted); grid-column: 1; }
-  .featured-links { display: flex; gap: 12px; grid-column: 1; }
-  .featured-cta { display: inline-block; background: var(--accent); color: #000; text-decoration: none; font-size: 12px; font-weight: 700; padding: 10px 20px; }
-  .featured-download { display: inline-block; border: 1px solid var(--border); color: var(--muted); text-decoration: none; font-size: 12px; padding: 10px 16px; }
-  .featured-download:hover { color: var(--accent); border-color: var(--accent); }
-  .featured-thumb { grid-column: 2; grid-row: 1 / 5; width: 180px; border: 1px solid var(--border); }
-  
-  .archive-section { padding: 40px; }
-  .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: var(--border); margin-top: 0; }
-  .archive-card { background: var(--bg2); padding: 20px; text-decoration: none; color: var(--text); display: block; transition: background 0.15s; }
-  .archive-card:hover { background: var(--bg3); }
-  .arc-date { font-size: 10px; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.5px; }
-  .arc-topic { font-size: 14px; font-weight: 600; color: var(--accent); line-height: 1.35; }
-  
-  footer { padding: 30px 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--muted); }
-  .bottom-bar { height: 3px; background: #f0f0f0; }
-  
-  @media (max-width: 600px) {
-    header { flex-direction: column; gap: 16px; align-items: flex-start; }
-    .featured-card { grid-template-columns: 1fr; }
-    .featured-thumb { grid-column: 1; width: 100%; max-width: 300px; }
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0D0D0D; color: #E8E8E8; font-family: 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; }
+  header { background: #111; border-bottom: 1px solid #222; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; }
+  header .title { font-size: 13px; font-weight: 600; letter-spacing: 3px; color: #888; text-transform: uppercase; }
+  header .subtitle { font-size: 22px; font-weight: 700; color: #FFF; margin-top: 6px; }
+  header .count { font-size: 12px; color: #555; margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-link { color: #6C47FF; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+  .nav-link:hover { color: #8B6FFF; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+  .featured-today { margin-bottom: 48px; }
+  .section-label { font-size: 11px; letter-spacing: 3px; color: #555; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+  .today-card { background: #111; border: 1px solid #2A2A2A; border-left: 3px solid #6C47FF; padding: 32px; border-radius: 2px; display: flex; justify-content: space-between; align-items: center; }
+  .today-card .info .label { font-size: 11px; color: #555; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .today-card .info .date { font-size: 13px; color: #888; margin-top: 6px; }
+  .today-card .info .topic { font-size: 24px; font-weight: 700; color: #FFF; }
+  .today-card .thumb img { max-width: 200px; opacity: 0.85; }
+  .today-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #6C47FF; color: #FFF; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 2px; margin-top: 16px; }
+  .today-link:hover { background: #5935D4; }
+  .archive-section { margin-bottom: 40px; }
+  .past-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: #1A1A1A; border: 1px solid #1A1A1A; }
+  .past-card { background: #111; padding: 20px; text-decoration: none; display: block; transition: background 0.15s; }
+  .past-card:hover { background: #161616; }
+  .past-date { font-size: 11px; color: #555; margin-bottom: 8px; }
+  .past-topic { font-size: 14px; font-weight: 600; color: #CCC; line-height: 1.3; }
+  footer { border-top: 1px solid #1A1A1A; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+  footer p { font-size: 11px; color: #444; }
+  footer a { color: #6C47FF; text-decoration: none; }
 </style>
 </head>
 <body>
-<div class="top-bar"></div>
-
 <header>
   <div>
-    <div class="header-title">DAILY BRIEFING</div>
-    <div class="header-sub">AI-generated tech news infographics · Updated daily</div>
+    <div class="title">Daily Briefing</div>
+    <div class="subtitle">Archive</div>
+    <div class="count">2 editions published</div>
   </div>
-  <div class="header-links">
-    <a href="research.html">Transit Research Archive →</a>
-    <span class="header-count">2 EDITIONS</span>
+  <div class="nav-links">
+    <a href="research.html" class="nav-link">Transit Research Archive →</a>
   </div>
 </header>
-
-<section class="featured-section">
-  <div class="section-label">LATEST</div>
-  <div class="featured-card">
-    <div class="featured-label">TODAY'S BRIEFING</div>
-    <div class="featured-topic">AI Tools Shape Open Source</div>
-    <div class="featured-date">June 6, 2026</div>
-    <div class="featured-links">
-      <a href="2026-06-06.html" class="featured-cta">Read Full Briefing →</a>
-      <a href="infographic-2026-06-06.svg" class="featured-download">↓ SVG</a>
+<div class="container">
+  <div class="featured-today">
+    <div class="section-label">Today's Edition</div>
+    <div class="today-card">
+      <div class="info">
+        <div class="label">Latest Briefing</div>
+        <div class="topic">AI Industry Shifts</div>
+        <div class="date">June 6, 2026</div>
+        <a href="2026-06-06.html" class="today-link">Read Today's Briefing →</a>
+      </div>
+      <div class="thumb">
+        <img src="infographic-2026-06-06.svg" alt="Today's infographic">
+      </div>
     </div>
-    <img src="infographic-2026-06-06.svg" class="featured-thumb" alt="Today's infographic">
   </div>
-</section>
-
-<section class="archive-section">
-  <div class="section-label">ARCHIVE</div>
-  <div class="archive-grid">
-    <a href="2026-06-05.html" class="archive-card">
-      <div class="arc-date">June 5, 2026</div>
-      <div class="arc-topic">Daily Briefing</div>
+  <div class="archive-section">
+    <div class="section-label">Past Editions</div>
+    <div class="past-grid">
+      
+    <a href="2026-06-05.html" class="past-card">
+      <div class="past-date">June 5, 2026</div>
+      <div class="past-topic">Daily Briefing</div>
     </a>
+    </div>
   </div>
-</section>
-
+</div>
 <footer>
-  <span>Daily Briefing · 2 editions published</span>
-  <span>June 6, 2026</span>
+  <p>Daily AI-generated news briefings · <a href="research.html">Transit Research Archive</a></p>
+  <p>2 total editions</p>
 </footer>
-<div class="bottom-bar"></div>
 </body>
 </html>
