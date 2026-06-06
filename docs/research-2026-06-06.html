@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research — June 6, 2026</title>
+<style>
+  :root {
+    --bg: #0d0d0f;
+    --surface: #16161a;
+    --surface2: #1e1e24;
+    --border: #2a2a32;
+    --teal: #00c4a7;
+    --teal-dim: #00c4a722;
+    --text: #e8e8ee;
+    --muted: #888898;
+    --accent: #4a90d9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .site-header a { color: var(--muted); font-size: 13px; }
+  .site-header a:hover { color: var(--teal); }
+
+  .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 60px 40px 50px; max-width: 900px; margin: 0 auto; }
+  .hero-label { font-size: 11px; letter-spacing: 3px; color: var(--teal); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+  .hero-meta { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+  .hero-summary { font-size: 16px; line-height: 1.7; color: #c0c0cc; max-width: 720px; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+  section { padding: 50px 0; border-bottom: 1px solid var(--border); }
+  .section-label { font-size: 10px; letter-spacing: 3px; color: var(--teal); text-transform: uppercase; margin-bottom: 28px; }
+
+  .infographic-wrap { text-align: center; margin-top: 16px; }
+  .infographic-wrap svg { max-width: 100%; height: auto; border-radius: 8px; }
+  .download-link { display: inline-block; margin-top: 16px; font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 8px 16px; border-radius: 4px; }
+  .download-link:hover { color: var(--teal); border-color: var(--teal); text-decoration: none; }
+
+  .potd { background: var(--surface2); border: 1px solid var(--teal); border-radius: 8px; padding: 30px; margin-top: 8px; }
+  .potd-badge { display: inline-block; background: var(--teal); color: #000; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 4px 12px; border-radius: 4px; margin-bottom: 16px; }
+  .potd h2 { font-size: 22px; margin-bottom: 8px; }
+  .potd .authors { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .potd .rationale { font-size: 14px; color: #b0b0bc; line-height: 1.7; }
+
+  .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .theme-card { background: var(--surface2); border-radius: 6px; padding: 22px; border: 1px solid var(--border); }
+  .theme-name { font-size: 13px; font-weight: 700; color: var(--teal); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .theme-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .takeaways { list-style: none; counter-reset: tak; }
+  .takeaways li { counter-increment: tak; display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+  .takeaways li:last-child { border-bottom: none; }
+  .tak-num { font-size: 24px; font-weight: 800; color: var(--teal); min-width: 32px; }
+  .tak-text { font-size: 15px; color: #c0c0cc; line-height: 1.65; }
+
+  .paper-list { display: flex; flex-direction: column; gap: 20px; }
+  .paper-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+  .paper-card:hover { border-color: var(--teal); }
+  .paper-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .conf-badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 3px; letter-spacing: 1px; }
+  .conf-high { background: #003d35; color: var(--teal); }
+  .conf-med { background: #1e2d2a; color: #80d4c4; }
+  .conf-low { background: #252020; color: #b09080; }
+  .paper-source { font-size: 11px; color: var(--muted); }
+  .paper-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .paper-title a { color: var(--text); }
+  .paper-title a:hover { color: var(--teal); }
+  .paper-authors { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+  .paper-summary { font-size: 14px; color: #b0b0bc; margin-bottom: 14px; line-height: 1.65; }
+  .paper-insights { margin-top: 12px; }
+  .paper-insights-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .insight-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .insight-list li { font-size: 13px; color: #a0a0b0; padding-left: 16px; position: relative; }
+  .insight-list li::before { content: '→'; position: absolute; left: 0; color: var(--teal); }
+
+  .insight-box { background: var(--surface); border-left: 3px solid var(--teal); padding: 16px 20px; border-radius: 0 6px 6px 0; }
+  .insight-box p { font-size: 14px; color: #c0c0cc; margin-bottom: 8px; }
+  .insight-box p:last-child { margin-bottom: 0; }
+
+  .implications-text { font-size: 15px; color: #b0b0bc; line-height: 1.75; max-width: 720px; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 30px 40px; text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--teal); }
+
+  @media (max-width: 680px) {
+    .theme-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .hero { padding: 40px 20px 30px; }
+    .container { padding: 0 20px; }
+    .site-header { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html">← Home</a>
+  <span style="font-size:12px;color:var(--muted);">Transit Research Digest</span>
+  <a href="research.html">Archive</a>
+</header>
+
+<div style="background:var(--surface);border-bottom:1px solid var(--border);">
+  <div class="hero">
+    <div class="hero-label">Transit Research · June 6, 2026</div>
+    <h1>AI Designs Transit Networks</h1>
+    <div class="hero-meta">10 Papers Analyzed &nbsp;·&nbsp; arXiv, Springer, MDPI, ACS, Transportation Planning &amp; Technology</div>
+    <p class="hero-summary">
+      Machine learning has crossed a threshold in 2026: algorithms can now generate viable city-scale transit networks from scratch. This edition covers AlphaTransit's hybrid MCTS+neural approach, the alarming finding that MARL routing can destabilize urban traffic, equity-first network design, rail electrification's 89% air quality gain, autonomous minibuses, LLMs in transit planning, and the unresolved tension between micromobility and transit ridership.
+    </p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- INFOGRAPHIC -->
+  <section>
+    <div class="section-label">Visual Summary</div>
+    <div class="infographic-wrap">
+      <img src="research-infographic-2026-06-06.svg" alt="AI Designs Transit Networks — Infographic" style="max-width:100%;border-radius:8px;"/>
+    </div>
+    <div style="text-align:center;">
+      <a href="research-infographic-2026-06-06.svg" download class="download-link">↓ Download SVG Infographic</a>
+    </div>
+  </section>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section>
+    <div class="section-label">Executive Summary</div>
+    <p class="implications-text">
+      June 2026 transit research marks an inflection point: artificial intelligence is no longer a peripheral planning tool but a primary engine for transit network design. AlphaTransit demonstrates that a hybrid Monte Carlo Tree Search and neural network framework can produce city-scale bus route networks that surpass reinforcement learning alone by nearly 10%. Simultaneously, researchers sound a critical alarm — Multi-Agent Reinforcement Learning systems deployed for autonomous vehicle routing frequently <em>worsen</em> urban traffic rather than improving it, with MARL policies failing to converge in complex networks and risking increased emissions. On the sustainability front, evidence from commuter rail electrification shows an 89% reduction in onboard black carbon pollution, providing one of the strongest documented public health arguments for diesel-to-electric conversion. Equity is emerging as a first-class design variable: the equitable network design paper explicitly builds fairness metrics into route generation, while the Kolkata MRTS ridership study shows ML models must account for spatial heterogeneity to generalize. LLMs are beginning to reshape the traveler-transit interface (San Antonio case study, AAAI 2025), though practical deployment still requires careful fine-tuning on transit-specific data.
+    </p>
+  </section>
+
+  <!-- PAPER OF THE DAY -->
+  <section>
+    <div class="section-label">Paper of the Day</div>
+    <div class="potd">
+      <div class="potd-badge">PAPER OF THE DAY</div>
+      <h2>AlphaTransit: Learning to Design City-scale Transit Routes</h2>
+      <div class="authors">Bibek Poudel, Sai Swaminathan, Weizi Li &nbsp;·&nbsp; arXiv:2605.28730 &nbsp;·&nbsp; May 27, 2026</div>
+      <p class="rationale">
+        AlphaTransit tackles the Transit Route Network Design Problem — historically a combinatorially intractable planning challenge — by combining Monte Carlo Tree Search with a policy network (route proposals) and a value network (quality estimation). Evaluated on the Bloomington benchmark, the system achieves 54.6% service rate under mixed demand and 82.1% under full demand, outperforming reinforcement learning by 9.9–11.4% and unguided MCTS by 2.5–11.2%. This is the strongest published result for learning-based city-scale transit design, and its open code+data release makes it immediately reproducible. Selected as Paper of the Day for its technical rigor, recency (May 2026), practical reproducibility, and the fact that it reframes transit route design as a learnable problem with quantifiable benchmarks.
+      </p>
+    </div>
+  </section>
+
+  <!-- EMERGING THEMES -->
+  <section>
+    <div class="section-label">Emerging Themes</div>
+    <div class="theme-grid">
+      <div class="theme-card">
+        <div class="theme-name">AI Route Generation</div>
+        <div class="theme-desc">Machine learning now designs city-scale transit networks with performance rivaling expert planners. AlphaTransit, equitable network design, and demand-responsive routing papers collectively signal that the transit route design problem is becoming a machine learning benchmark problem — with all the reproducibility and comparability that implies.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-name">Fleet Decarbonization</div>
+        <div class="theme-desc">Rail electrification delivers 89% black carbon reduction; TOD in Jakarta demonstrates that policy frameworks are the binding constraint on sustainability outcomes — physical infrastructure alone underperforms. Hydrogen rail and solar-integrated charging are emerging as complementary pathways on lower-demand lines.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-name">Equity by Design</div>
+        <div class="theme-desc">Equity is shifting from an afterthought to a first-class constraint in transit optimization. Algebraic connectivity now doubles as a spatial fairness proxy; ML ridership models are being interrogated for demographic bias; and micromobility research reveals substitution effects that may harm low-income transit-dependent riders.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <section>
+    <div class="section-label">Actionable Takeaways</div>
+    <ol class="takeaways">
+      <li>
+        <span class="tak-num">1</span>
+        <span class="tak-text"><strong>Adopt hybrid MCTS+neural methods for route design:</strong> AlphaTransit's approach outperforms both pure RL and unguided MCTS. Transit agencies exploring AI-assisted network planning should start here rather than with raw MARL systems, which the literature shows can diverge and destabilize traffic.</span>
+      </li>
+      <li>
+        <span class="tak-num">2</span>
+        <span class="tak-text"><strong>Regulate AV routing algorithms at the city level:</strong> The MARL routing paper is a direct warning to city authorities — deploy regulatory sandboxes and monitoring frameworks before allowing commercial AV fleets to run unconstrained routing optimization on public roads.</span>
+      </li>
+      <li>
+        <span class="tak-num">3</span>
+        <span class="tak-text"><strong>Accelerate diesel-to-electric rail conversions:</strong> An 89% reduction in onboard black carbon creates a public health ROI argument that goes far beyond climate commitments — position electrification as a health intervention to unlock public health funding streams.</span>
+      </li>
+      <li>
+        <span class="tak-num">4</span>
+        <span class="tak-text"><strong>Lead TOD with policy, not pavement:</strong> Jakarta's evidence shows that transit-oriented development without supportive land use policy, affordable housing protections, and multimodal access consistently underperforms energy and emission targets. Policy infrastructure must precede physical infrastructure.</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <section>
+    <div class="section-label">Contrarian Insights</div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="insight-box">
+        <p><strong>More AI routing ≠ better transit.</strong> The Psarou et al. (2025) MARL paper finds that standard reinforcement learning routing algorithms for autonomous vehicles frequently fail to converge and — when deployed in real networks — risk destabilizing urban traffic, increasing congestion and emissions. The instinct to "add more AI" to transit systems needs to be tempered with a robust governance layer.</p>
+      </div>
+      <div class="insight-box">
+        <p><strong>Micromobility may cannibalize transit ridership.</strong> The 2025 Transportation Planning &amp; Technology paper finds that shared micromobility (e-scooters, bikeshare) acts as a <em>substitute</em> for public transit in some US metro contexts, not a complement — potentially shrinking the ridership base rather than growing it. Agencies promoting micromobility partnerships should monitor mode-shift data carefully.</p>
+      </div>
+      <div class="insight-box">
+        <p><strong>Ridership models don't travel well.</strong> The Kolkata MRTS study demonstrates that catchment areas and ridership predictors vary dramatically by spatial context. ML models trained on one city's data should not be directly applied in another without substantial local recalibration — a warning for agencies importing transit AI tools from different urban contexts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL PAPERS -->
+  <section>
+    <div class="section-label">All Papers — June 6, 2026</div>
+    <div class="paper-list">
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+          <span class="paper-source">arXiv · Computer Science / AI · May 2026</span>
+        </div>
+        <div class="paper-title"><a href="https://arxiv.org/abs/2605.28730" target="_blank" rel="noopener">AlphaTransit: Learning to Design City-scale Transit Routes</a></div>
+        <div class="paper-authors">Bibek Poudel, Sai Swaminathan, Weizi Li</div>
+        <p class="paper-summary">Introduces a hybrid Monte Carlo Tree Search + neural network framework for the Transit Route Network Design Problem. A policy network proposes route extensions while a value network assesses downstream quality. Achieves 54.6% service rate (mixed demand) and 82.1% (full demand) on the Bloomington benchmark — 9.9% and 11.4% improvements over RL alone, 2.5–11.2% over unguided MCTS.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>Hybrid MCTS+neural outperforms either method in isolation across all benchmark configurations</li>
+            <li>The problem is reformulated as a sequential route extension task, enabling policy gradient training</li>
+            <li>Value network allows pruning of low-quality routes before expensive simulation</li>
+            <li>Code and data publicly released, enabling direct comparison for future work</li>
+            <li>First paper to achieve &gt;80% service rate on Bloomington full-demand benchmark with a learned approach</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-med">MEDIUM CONFIDENCE</span>
+          <span class="paper-source">arXiv · Multiagent Systems · Feb 2025 (rev. June 2025)</span>
+        </div>
+        <div class="paper-title"><a href="https://arxiv.org/abs/2502.13188" target="_blank" rel="noopener">Collaboration Between the City and Machine Learning Community is Crucial to Efficient Autonomous Vehicles Routing</a></div>
+        <div class="paper-authors">Anastasia Psarou, Ahmet Onur Akman, Łukasz Gorczyca, Michał Hoffmann, Grzegorz Jamróz, Rafał Kucharski</div>
+        <p class="paper-summary">Investigates how MARL-based AV routing algorithms behave in realistic traffic networks. Finds that standard MARL policies frequently fail to converge and that real-world deployment risks traffic destabilization, increased CO₂ emissions, and privacy exposure. Argues city authorities must co-govern routing algorithms.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>MARL convergence failure is systematic, not edge-case — observed across simplified and complex networks</li>
+            <li>Simulation-only training is unreliable because human driver behavioral models are inadequate</li>
+            <li>Centralized routing approaches create traveler privacy risks</li>
+            <li>Policy recommendation: cities should establish regulatory sandboxes and monitoring standards</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-med">MEDIUM CONFIDENCE</span>
+          <span class="paper-source">arXiv · Physics &amp; Society · Feb 2026</span>
+        </div>
+        <div class="paper-title"><a href="https://arxiv.org/abs/2602.15053" target="_blank" rel="noopener">One Rule to Bring Them All: Investigating Transport Connectivity in Public Transport Route Generation for Equitable Access</a></div>
+        <div class="paper-authors">Aleksandr Morozov, Ruslan Kozliak, Georgii Kontsevik, Sergey Mityagin</div>
+        <p class="paper-summary">Proposes hybrid neuroevolutionary methods (graph neural networks + evolutionary algorithms) for transit network design with an explicit equity objective. Introduces a transport connectivity-aware accessibility metric based on algebraic graph connectivity as a proxy for spatial fairness.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>Algebraic connectivity can serve as both a network resilience and a social equity metric simultaneously</li>
+            <li>Hybrid neuroevolutionary approach balances computational efficiency with fairness objectives</li>
+            <li>Real-world urban data reveals challenges that synthetic benchmarks obscure</li>
+            <li>Improvements demonstrated on synthetic datasets; real-world validation ongoing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-low">LOW CONFIDENCE</span>
+          <span class="paper-source">arXiv · Machine Learning / AI · Jan 2025</span>
+        </div>
+        <div class="paper-title"><a href="https://arxiv.org/abs/2501.03904" target="_blank" rel="noopener">Exploring the Potential of Large Language Models in Public Transportation: San Antonio Case Study</a></div>
+        <div class="paper-authors">Ramya Jonnala, Gongbo Liang, Jeong Yang, Izzat Alsmadi</div>
+        <p class="paper-summary">Examines LLMs' ability to enhance urban mobility by analyzing GTFS data and providing personalized travel assistance. Compares ChatGPT model variants on route planning and transit information tasks. Accepted to AAAI 2025 Workshop on AI for Urban Planning.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>LLMs show significant promise for route planning and wait-time reduction in transit applications</li>
+            <li>Effective deployment requires careful fine-tuning on transit-specific structured data (GTFS)</li>
+            <li>Different ChatGPT model variants show meaningfully different transit data comprehension capabilities</li>
+            <li>San Antonio case study positions itself as a replicable template — but generalizability is untested</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-med">MEDIUM CONFIDENCE</span>
+          <span class="paper-source">arXiv · Systems &amp; Control · Dec 2024</span>
+        </div>
+        <div class="paper-title"><a href="https://arxiv.org/abs/2501.00219" target="_blank" rel="noopener">Autonomous Minibus Service with Semi-on-demand Routes in Grid Networks</a></div>
+        <div class="paper-authors">Max T.M. Ng, Hani S. Mahmassani</div>
+        <p class="paper-summary">Models autonomous minibuses that switch between on-demand directional routes in sparse-demand zones and fixed routes in high-demand areas within grid networks. Analyzes cost-benefit advantages using Chicago bus routes as real-world case studies.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>Semi-on-demand routing reduces both passenger costs and operator generalized costs vs. fully fixed routes</li>
+            <li>Zonal express and parallel route configurations offer different tradeoffs</li>
+            <li>Strongest benefits in suburban-to-CBD corridors with variable demand density</li>
+            <li>Mathematical model provides selection indicators for converting existing fixed routes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-med">MEDIUM CONFIDENCE</span>
+          <span class="paper-source">arXiv · Physics &amp; Society · Mar 2024</span>
+        </div>
+        <div class="paper-title"><a href="https://arxiv.org/abs/2404.02172" target="_blank" rel="noopener">Unveiling Urban Mobility Patterns: A Data-Driven Analysis of Public Transit</a></div>
+        <div class="paper-authors">Oluwaleke Yusuf, Adil Rasheed, Frank Lindseth</div>
+        <p class="paper-summary">Develops a data preprocessing framework for historical public transit data to support digital twin development and ML/DL-based predictive modeling. Analyzes patterns across temporal, geospatial, external, and operational dimensions.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>Systematic data preprocessing is a prerequisite for reliable transit ML modeling — often underemphasized in the literature</li>
+            <li>Digital twins informed by historical transit data enable demand forecasting and infrastructure gap detection</li>
+            <li>Data quality assessment should be treated as a first-class research contribution</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-low">LOW CONFIDENCE</span>
+          <span class="paper-source">MDPI Sustainability · 2026</span>
+        </div>
+        <div class="paper-title"><a href="https://www.mdpi.com/2071-1050/17/23/10603" target="_blank" rel="noopener">Sustainable Mobility in Jakarta's Transit-Oriented Development: Energy Savings and Emission Reduction Strategies</a></div>
+        <div class="paper-authors">Multiple authors (MDPI Sustainability, Vol. 17, No. 23)</div>
+        <p class="paper-summary">Assesses Jakarta's TOD implementation for energy efficiency and emission reduction outcomes, finding that effectiveness is highly mediated by policy frameworks, transportation accessibility, and degree of land use integration rather than physical development alone.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>Policy framework quality is the primary differentiator between high- and low-performing TOD areas</li>
+            <li>Land use integration (mix of uses, density) is necessary but insufficient without transport accessibility</li>
+            <li>Emission reductions in Jakarta TOD zones significantly outperform non-TOD corridors with equivalent physical density</li>
+            <li>Findings are highly context-specific to Jakarta's regulatory and spatial environment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+          <span class="paper-source">Environmental Science &amp; Technology Letters · ACS · 2025</span>
+        </div>
+        <div class="paper-title"><a href="https://pubs.acs.org/doi/10.1021/acs.estlett.4c01096" target="_blank" rel="noopener">Dramatic Air Quality Improvements after the Complete Electrification of a Commuter Rail System</a></div>
+        <div class="paper-authors">Multiple authors (ACS Environmental Science &amp; Technology Letters, 2025)</div>
+        <p class="paper-summary">Documents air quality changes following complete electrification of a commuter rail system, with direct measurement of onboard particulate matter concentrations before and after conversion. Finds 89% average reduction in black carbon exposure on board trains.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>89% reduction in black carbon onboard — one of the largest documented rail electrification air quality effects</li>
+            <li>Diesel exhaust (black carbon) is the dominant pollutant on non-electrified commuter rail</li>
+            <li>Benefits extend to station and platform environments, not only in-vehicle</li>
+            <li>Findings provide a strong public health ROI case independent of climate/carbon arguments</li>
+            <li>High confidence: direct measurement study with clear pre/post design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-med">MEDIUM CONFIDENCE</span>
+          <span class="paper-source">Transportation Planning and Technology · 2025</span>
+        </div>
+        <div class="paper-title"><a href="https://www.tandfonline.com/doi/full/10.1080/03081060.2025.2526556" target="_blank" rel="noopener">Effect of Shared Micromobility on Public Transit Ridership in Metro and Medium-sized Urban Areas in the United States</a></div>
+        <div class="paper-authors">Multiple authors (Transportation Planning and Technology, 2025)</div>
+        <p class="paper-summary">Examines whether shared micromobility (bikeshare, e-scooters) complements or substitutes public transit ridership in U.S. cities of varying sizes. Finds substitution effects in some contexts, challenging the common assumption that micromobility grows the transit ridership base.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>Micromobility acts as a substitute (not complement) for transit in several US metro contexts</li>
+            <li>Effect varies by city size — medium-sized cities show stronger substitution than large metros</li>
+            <li>Transit agencies deploying micromobility partnerships should monitor mode-shift impacts</li>
+            <li>Low-income and transit-dependent riders may be disproportionately affected by ridership loss</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-meta">
+          <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+          <span class="paper-source">Transportation · Springer · 2026</span>
+        </div>
+        <div class="paper-title"><a href="https://link.springer.com/article/10.1007/s11116-026-10749-3" target="_blank" rel="noopener">Reconceptualising Transit Ridership through Locational Utility: Integrating OLS, GWR and ML in Kolkata's MRTS</a></div>
+        <div class="paper-authors">Multiple authors (Transportation, Springer, 2026)</div>
+        <p class="paper-summary">Applies ordinary least squares, geographically weighted regression, and machine learning to model transit ridership in Kolkata's MRTS, finding that catchment areas and predictor importance vary substantially across spatial contexts. Demonstrates that spatial heterogeneity is a systematic source of model error.</p>
+        <div class="paper-insights">
+          <div class="paper-insights-label">Key Insights</div>
+          <ul class="insight-list">
+            <li>GWR and ML substantially outperform OLS by capturing spatially varying relationships</li>
+            <li>Catchment area size for MRTS stations varies widely depending on local density and access</li>
+            <li>Models trained without accounting for spatial heterogeneity systematically mispredict ridership in peripheral zones</li>
+            <li>Locational utility framework provides a generalizable conceptual basis for multi-city ridership modeling</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <section>
+    <div class="section-label">Long-term Implications</div>
+    <p class="implications-text">
+      The convergence of AI-designed transit networks, electrified fleets, equity-first planning frameworks, and LLM-powered traveler interfaces could fundamentally reshape urban mobility by 2035. However, the MARL routing paper's finding that algorithmic destabilization is a real risk — not a theoretical concern — signals that purely AI-driven transit systems require substantial governance infrastructure before citywide deployment. The emerging pattern across this literature is that the technical breakthroughs (AlphaTransit's benchmark performance, LLMs' transit data comprehension, ML ridership modeling) are outpacing the institutional frameworks needed to govern them safely and equitably. The next critical research gap is not technical capability but policy architecture: how do cities co-govern AI-designed and AI-routed transit systems while ensuring that algorithmic optimization does not reproduce or amplify spatial inequities? The equity-by-design papers from this edition suggest that researchers are beginning to ask this question; the field now needs practitioners and policymakers to answer it in deployment contexts.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>Transit Research Digest &nbsp;·&nbsp; June 6, 2026 &nbsp;·&nbsp; <a href="research.html">View Archive</a> &nbsp;·&nbsp; Sources: arXiv · Springer · MDPI · ACS · Taylor &amp; Francis</p>
+</footer>
+
+</body>
+</html>

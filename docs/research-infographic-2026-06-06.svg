@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- TOP BAR -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- HEADER -->
+  <text x="40" y="38" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" letter-spacing="3" fill="#888888">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="82" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#111111">AI DESIGNS TRANSIT NETWORKS</text>
+  <text x="40" y="108" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#888888">June 6, 2026 · 10 Papers Analyzed · arXiv, Springer, MDPI, ACS</text>
+  <line x1="40" y1="126" x2="760" y2="126" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- KEY FINDINGS -->
+  <text x="40" y="158" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">KEY FINDINGS</text>
+
+  <text x="40" y="186" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">01</text>
+  <text x="68" y="186" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">AlphaTransit achieves 54.6% service coverage using Monte Carlo</text>
+  <text x="68" y="204" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">Tree Search + neural networks — 9.9% better than RL alone.</text>
+
+  <text x="40" y="232" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">02</text>
+  <text x="68" y="232" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">Commuter rail electrification cuts onboard black carbon exposure</text>
+  <text x="68" y="250" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">by 89% — the strongest single air quality benefit documented.</text>
+
+  <text x="40" y="278" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">03</text>
+  <text x="68" y="278" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">MARL routing algorithms for autonomous vehicles frequently</text>
+  <text x="68" y="296" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">destabilize urban traffic — more AI is not always better transit.</text>
+
+  <line x1="40" y1="318" x2="760" y2="318" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- PAPER OF THE DAY -->
+  <rect x="40" y="330" width="138" height="24" rx="4" fill="#008080"/>
+  <text x="109" y="347" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">PAPER OF THE DAY</text>
+
+  <text x="40" y="376" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#111111">AlphaTransit: Learning to Design</text>
+  <text x="40" y="398" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#111111">City-scale Transit Routes</text>
+  <text x="40" y="420" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#888888">Bibek Poudel, Sai Swaminathan, Weizi Li · arXiv:2605.28730 · May 2026</text>
+
+  <text x="40" y="448" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">A hybrid MCTS + neural network framework generates viable bus</text>
+  <text x="40" y="466" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">transit networks from scratch — matching or beating expert design</text>
+  <text x="40" y="484" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">with 11.2% improvement over unguided Monte Carlo search.</text>
+
+  <rect x="40" y="500" width="92" height="20" rx="3" fill="#E0F5F2"/>
+  <text x="86" y="514" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#008080" text-anchor="middle">HIGH CONFIDENCE</text>
+
+  <line x1="40" y1="536" x2="760" y2="536" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="562" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">EMERGING THEMES</text>
+
+  <!-- 3 columns -->
+  <line x1="293" y1="575" x2="293" y2="740" stroke="#DDDDDD" stroke-width="1"/>
+  <line x1="546" y1="575" x2="546" y2="740" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- Column 1 -->
+  <text x="40" y="592" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#111111">AI Route Generation</text>
+  <text x="40" y="612" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Machine learning now designs</text>
+  <text x="40" y="628" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">city-scale transit networks with</text>
+  <text x="40" y="644" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">performance rivaling human</text>
+  <text x="40" y="660" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">planners — but equity and</text>
+  <text x="40" y="676" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">real-world validation remain</text>
+  <text x="40" y="692" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">open challenges.</text>
+
+  <!-- Column 2 -->
+  <text x="310" y="592" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#111111">Fleet Decarbonization</text>
+  <text x="310" y="612" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Rail electrification and TOD</text>
+  <text x="310" y="628" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">deliver measurable air quality</text>
+  <text x="310" y="644" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">and emission gains. Policy</text>
+  <text x="310" y="660" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">frameworks are the binding</text>
+  <text x="310" y="676" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">constraint on TOD success,</text>
+  <text x="310" y="692" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">not physical infrastructure.</text>
+
+  <!-- Column 3 -->
+  <text x="563" y="592" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#111111">Equity by Design</text>
+  <text x="563" y="612" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Researchers now embed equity</text>
+  <text x="563" y="628" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">metrics directly into transit</text>
+  <text x="563" y="644" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">optimization algorithms, not</text>
+  <text x="563" y="660" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">as an afterthought. Algebraic</text>
+  <text x="563" y="676" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">connectivity now doubles as</text>
+  <text x="563" y="692" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">a social fairness measure.</text>
+
+  <line x1="40" y1="756" x2="760" y2="756" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="784" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">PAPER CONFIDENCE DISTRIBUTION</text>
+
+  <!-- High bar -->
+  <text x="40" y="814" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">High</text>
+  <rect x="110" y="800" width="165" height="20" rx="2" fill="#008080"/>
+  <text x="282" y="814" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666666">  3 papers</text>
+
+  <!-- Medium bar -->
+  <text x="40" y="854" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Medium</text>
+  <rect x="110" y="840" width="220" height="20" rx="2" fill="#008080" opacity="0.55"/>
+  <text x="337" y="854" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666666">  4 papers</text>
+
+  <!-- Low bar -->
+  <text x="40" y="894" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Low</text>
+  <rect x="110" y="880" width="165" height="20" rx="2" fill="#008080" opacity="0.25"/>
+  <text x="282" y="894" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666666">  3 papers</text>
+
+  <line x1="40" y1="918" x2="760" y2="918" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="946" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="40" y="978" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">1</text>
+  <text x="62" y="978" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Deploy MCTS+neural hybrid methods (like AlphaTransit) for route</text>
+  <text x="62" y="996" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">network design — validated against benchmarks before MARL systems.</text>
+
+  <text x="40" y="1024" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">2</text>
+  <text x="62" y="1024" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">City authorities must co-govern AV routing algorithms; MARL deployed</text>
+  <text x="62" y="1042" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">without oversight risks network-wide traffic destabilization.</text>
+
+  <text x="40" y="1070" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">3</text>
+  <text x="62" y="1070" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Accelerate diesel-to-electric rail conversion: 89% black carbon</text>
+  <text x="62" y="1088" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">reduction provides a public health ROI case beyond climate targets.</text>
+
+  <text x="40" y="1116" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">4</text>
+  <text x="62" y="1116" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Ensure TOD policy frameworks precede physical development — Jakarta</text>
+  <text x="62" y="1134" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">evidence shows physical TOD alone underperforms emission targets.</text>
+
+  <line x1="40" y1="1158" x2="760" y2="1158" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <text x="40" y="1186" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">CONTRARIAN INSIGHTS</text>
+
+  <text x="40" y="1216" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">· MARL routing for AVs can <tspan font-weight="700">worsen</tspan> urban congestion, not improve it.</text>
+  <text x="40" y="1240" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">· Shared micromobility may <tspan font-weight="700">substitute</tspan> for transit, not complement it</text>
+  <text x="40" y="1258" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">  in some city types — cannibalizing the ridership it was meant to grow.</text>
+  <text x="40" y="1282" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">· ML models for ridership prediction vary strongly by context — a model</text>
+  <text x="40" y="1300" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">  trained in one city may fail systematically in another.</text>
+
+  <line x1="40" y1="1326" x2="760" y2="1326" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <text x="40" y="1356" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">LONG-TERM IMPLICATIONS</text>
+  <text x="40" y="1386" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">The convergence of AI-designed networks, electrified fleets, and equity-first</text>
+  <text x="40" y="1404" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">planning could reshape urban mobility by 2035. LLMs are emerging as the new</text>
+  <text x="40" y="1422" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">traveler interface — but algorithmic governance remains the critical missing</text>
+  <text x="40" y="1440" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">layer between AI promise and safe, equitable deployment at city scale.</text>
+
+  <!-- FOOTER -->
+  <line x1="0" y1="1484" x2="800" y2="1484" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="40" y="1510" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#AAAAAA">Transit Research Digest · June 6, 2026</text>
+  <text x="760" y="1510" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#AAAAAA" text-anchor="end">Sources: arXiv · Springer · MDPI · ACS · TandF</text>
+  <rect x="0" y="1597" width="800" height="3" fill="#111111"/>
+</svg>
