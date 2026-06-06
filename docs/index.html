@@ -5,247 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Briefing Archive</title>
 <style>
-  :root {
-    --bg: #0a0a0f;
-    --surface: #111118;
-    --surface2: #18181f;
-    --border: #2a2a35;
-    --text: #e8e8f0;
-    --text-muted: #7a7a90;
-    --accent: #6c63ff;
-  }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Courier New', Courier, monospace;
-    min-height: 100vh;
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #666;
+    --accent: #f0f0f0;
   }
-
-  /* HEADER */
-  .header {
-    padding: 56px 24px 40px;
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-  }
-  .header-label {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 14px;
-  }
-  .header h1 {
-    font-size: clamp(24px, 5vw, 48px);
-    font-weight: 900;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text);
-    line-height: 1.1;
-  }
-  .header-tagline {
-    margin-top: 12px;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-  }
-
-  /* MAIN */
-  .main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
-
-  /* FEATURED */
-  .section-label {
-    font-size: 9px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  .featured-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--accent);
-    padding: 32px;
-    margin-bottom: 48px;
-    text-decoration: none;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .featured-card:hover {
-    background: var(--surface2);
-    border-color: var(--accent);
-  }
-  .featured-badge {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    margin-bottom: 16px;
-    width: fit-content;
-  }
-  .featured-date {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    color: var(--text);
-    text-transform: uppercase;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .featured-dow {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .featured-headline {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  .featured-headline strong { color: var(--text); }
-  .featured-cta {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 8px 20px;
-    text-decoration: none;
-    width: fit-content;
-    transition: opacity 0.2s;
-  }
-  .featured-cta:hover { opacity: 0.85; }
-
-  /* ARCHIVE GRID */
-  .archive-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    margin-bottom: 48px;
-  }
-  @media (max-width: 800px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 500px) { .archive-grid { grid-template-columns: 1fr; } }
-
-  .archive-card {
-    background: var(--surface);
-    padding: 24px 20px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    transition: background 0.2s;
-    border-top: 2px solid var(--border);
-  }
-  .archive-card:hover { background: var(--surface2); }
-  .archive-card-date {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 0.05em;
-  }
-  .archive-card-dow {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-  .archive-card-headline {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.5;
-    flex: 1;
-  }
-  .archive-card-btn {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 4px 12px;
-    width: fit-content;
-    transition: background 0.2s, color 0.2s;
-  }
-  .archive-card:hover .archive-card-btn {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  /* FOOTER */
-  .footer {
-    padding: 20px 24px;
-    text-align: center;
-    border-top: 1px solid var(--border);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    background: var(--surface);
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; }
+  
+  .top-bar { height: 4px; background: #f0f0f0; }
+  
+  header { padding: 40px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
+  .header-title { font-size: 24px; font-weight: 700; color: var(--accent); }
+  .header-sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .header-count { font-size: 11px; color: var(--muted); }
+  .header-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+  .header-links a { color: var(--muted); text-decoration: none; font-size: 12px; border: 1px solid var(--border); padding: 8px 14px; }
+  .header-links a:hover { color: var(--accent); border-color: var(--accent); }
+  
+  .featured-section { padding: 40px; border-bottom: 1px solid var(--border); }
+  .section-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); font-weight: 600; margin-bottom: 24px; }
+  
+  .featured-card { background: var(--bg2); border: 1px solid var(--border); padding: 32px; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto; gap: 12px 24px; max-width: 900px; }
+  .featured-label { font-size: 9px; letter-spacing: 2px; font-weight: 600; color: var(--muted); grid-column: 1; }
+  .featured-topic { font-size: 32px; font-weight: 700; color: var(--accent); grid-column: 1; line-height: 1.2; }
+  .featured-date { font-size: 13px; color: var(--muted); grid-column: 1; }
+  .featured-links { display: flex; gap: 12px; grid-column: 1; }
+  .featured-cta { display: inline-block; background: var(--accent); color: #000; text-decoration: none; font-size: 12px; font-weight: 700; padding: 10px 20px; }
+  .featured-download { display: inline-block; border: 1px solid var(--border); color: var(--muted); text-decoration: none; font-size: 12px; padding: 10px 16px; }
+  .featured-download:hover { color: var(--accent); border-color: var(--accent); }
+  .featured-thumb { grid-column: 2; grid-row: 1 / 5; width: 180px; border: 1px solid var(--border); }
+  
+  .archive-section { padding: 40px; }
+  .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: var(--border); margin-top: 0; }
+  .archive-card { background: var(--bg2); padding: 20px; text-decoration: none; color: var(--text); display: block; transition: background 0.15s; }
+  .archive-card:hover { background: var(--bg3); }
+  .arc-date { font-size: 10px; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.5px; }
+  .arc-topic { font-size: 14px; font-weight: 600; color: var(--accent); line-height: 1.35; }
+  
+  footer { padding: 30px 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--muted); }
+  .bottom-bar { height: 3px; background: #f0f0f0; }
+  
+  @media (max-width: 600px) {
+    header { flex-direction: column; gap: 16px; align-items: flex-start; }
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-thumb { grid-column: 1; width: 100%; max-width: 300px; }
   }
 </style>
 </head>
 <body>
+<div class="top-bar"></div>
 
-<header class="header">
-  <div class="header-label">// A Growing Body of Work</div>
-  <h1>Daily Briefing Archive</h1>
-  <div class="header-tagline">AI-curated tech &amp; science news &mdash; every day</div>
+<header>
+  <div>
+    <div class="header-title">DAILY BRIEFING</div>
+    <div class="header-sub">AI-generated tech news infographics · Updated daily</div>
+  </div>
+  <div class="header-links">
+    <a href="research.html">Transit Research Archive →</a>
+    <span class="header-count">2 EDITIONS</span>
+  </div>
 </header>
 
-<main class="main">
-
-  <div class="section-label">// Latest Edition</div>
-  <a href="2026-06-05.html" class="featured-card">
-    <span class="featured-badge">Today &mdash; Latest</span>
-    <div class="featured-date">June 5, 2026</div>
-    <div class="featured-dow">Friday</div>
-    <div class="featured-headline">
-      <strong>Top story:</strong> Meta Adds Covert Face-Recognition Code to Millions of Phones
+<section class="featured-section">
+  <div class="section-label">LATEST</div>
+  <div class="featured-card">
+    <div class="featured-label">TODAY'S BRIEFING</div>
+    <div class="featured-topic">AI Tools Shape Open Source</div>
+    <div class="featured-date">June 6, 2026</div>
+    <div class="featured-links">
+      <a href="2026-06-06.html" class="featured-cta">Read Full Briefing →</a>
+      <a href="infographic-2026-06-06.svg" class="featured-download">↓ SVG</a>
     </div>
-    <span class="featured-cta">View Briefing &rarr;</span>
-  </a>
+    <img src="infographic-2026-06-06.svg" class="featured-thumb" alt="Today's infographic">
+  </div>
+</section>
 
-  <!-- RESEARCH SECTION -->
-  <div class="section-label" style="margin-top:48px">// Transit Research Intelligence</div>
-  <a href="research.html" class="featured-card" style="border-top-color:#00897b;margin-bottom:48px">
-    <span class="featured-badge" style="background:#00897b">Daily &mdash; Research Feed</span>
-    <div class="featured-date" style="color:#00897b;font-size:20px">Transit Research Briefing</div>
-    <div class="featured-dow">arXiv &middot; Semantic Scholar &middot; Gemini Analysis</div>
-    <div class="featured-headline">Premium daily intelligence report &mdash; every paper analyzed with 14-point breakdown, executive summary, emerging themes, contrarian insights, and actionable takeaways.</div>
-    <span class="featured-cta" style="background:#00897b">View Research Archive &rarr;</span>
-  </a>
-
-  <!-- EXPLAINERS SECTION -->
-  <div class="section-label" style="margin-top:0">// Explainers &amp; Deep Dives</div>
-  <div class="archive-grid" style="margin-bottom:48px">
-    <a href="transit-oriented-development.html" class="archive-card" style="border-top-color:#00897b">
-      <div class="archive-card-date" style="color:#00897b">&#127968; Urban Planning</div>
-      <div class="archive-card-dow">Explainer &mdash; June 2026</div>
-      <div class="archive-card-headline" style="font-size:13px;color:var(--text)">Transit-Oriented Development</div>
-      <div class="archive-card-headline">What it is, why it matters, and the stats that make the case &mdash; 6 infographic cards.</div>
-      <span class="archive-card-btn" style="border-color:#00897b;color:#00897b">Read Explainer &rarr;</span>
+<section class="archive-section">
+  <div class="section-label">ARCHIVE</div>
+  <div class="archive-grid">
+    <a href="2026-06-05.html" class="archive-card">
+      <div class="arc-date">June 5, 2026</div>
+      <div class="arc-topic">Daily Briefing</div>
     </a>
   </div>
+</section>
 
-</main>
-
-<footer class="footer">
-  1 daily briefing &nbsp;&middot;&nbsp; 1 research feed &nbsp;&middot;&nbsp; 1 explainer &nbsp;&middot;&nbsp; Updated daily by AI
+<footer>
+  <span>Daily Briefing · 2 editions published</span>
+  <span>June 6, 2026</span>
 </footer>
-
+<div class="bottom-bar"></div>
 </body>
 </html>
