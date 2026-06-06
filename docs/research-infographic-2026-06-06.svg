@@ -1,148 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <!-- Background -->
   <rect width="800" height="1600" fill="#F7F7F5"/>
 
-  <!-- TOP BAR -->
+  <!-- HEADER (h=152) -->
   <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+  <text x="48" y="38" font-size="11" fill="#888888" letter-spacing="3">TRANSIT RESEARCH</text>
+  <text x="48" y="78" font-size="28" fill="#111111" font-weight="700"><tspan>Urban Transit</tspan></text>
+  <text x="48" y="112" font-size="28" fill="#111111" font-weight="700"><tspan>Network Optimization</tspan></text>
+  <text x="48" y="136" font-size="11" fill="#888888" letter-spacing="1">June 6, 2026 — 9 Papers Analyzed</text>
+  <line x1="0" y1="152" x2="800" y2="152" stroke="#DDDDDD" stroke-width="1"/>
 
-  <!-- HEADER -->
-  <text x="40" y="38" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" letter-spacing="3" fill="#888888">TRANSIT RESEARCH DIGEST</text>
-  <text x="40" y="82" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#111111">AI DESIGNS TRANSIT NETWORKS</text>
-  <text x="40" y="108" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#888888">June 6, 2026 · 10 Papers Analyzed · arXiv, Springer, MDPI, ACS</text>
-  <line x1="40" y1="126" x2="760" y2="126" stroke="#DDDDDD" stroke-width="1"/>
+  <!-- KEY FINDINGS (h=200) -->
+  <text x="48" y="182" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">KEY FINDINGS</text>
+  <line x1="48" y1="192" x2="752" y2="192" stroke="#EEEEEE" stroke-width="1"/>
 
-  <!-- KEY FINDINGS -->
-  <text x="40" y="158" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">KEY FINDINGS</text>
+  <text x="48" y="226" font-size="30" fill="#0D9488" font-weight="700">01</text>
+  <text x="94" y="216" font-size="13" fill="#111111" font-weight="700"><tspan>ML Replaces Fixed-Demand Planning</tspan></text>
+  <text x="94" y="232" font-size="11" fill="#555555"><tspan>Two-level demand models separate core riders from conditional adopters,</tspan></text>
+  <text x="94" y="247" font-size="11" fill="#555555"><tspan>producing fundamentally more realistic transit network designs.</tspan></text>
 
-  <text x="40" y="186" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">01</text>
-  <text x="68" y="186" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">AlphaTransit achieves 54.6% service coverage using Monte Carlo</text>
-  <text x="68" y="204" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">Tree Search + neural networks — 9.9% better than RL alone.</text>
+  <text x="48" y="284" font-size="30" fill="#0D9488" font-weight="700">02</text>
+  <text x="94" y="274" font-size="13" fill="#111111" font-weight="700"><tspan>Spatial Heterogeneity Drives Ridership</tspan></text>
+  <text x="94" y="290" font-size="11" fill="#555555"><tspan>GWR with station amenities explains 92.7% of ridership variance vs.</tspan></text>
+  <text x="94" y="305" font-size="11" fill="#555555"><tspan>79.2% place-only — a critical 13-point accuracy advantage.</tspan></text>
 
-  <text x="40" y="232" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">02</text>
-  <text x="68" y="232" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">Commuter rail electrification cuts onboard black carbon exposure</text>
-  <text x="68" y="250" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">by 89% — the strongest single air quality benefit documented.</text>
+  <text x="48" y="342" font-size="30" fill="#0D9488" font-weight="700">03</text>
+  <text x="94" y="332" font-size="13" fill="#111111" font-weight="700"><tspan>Equity Must Be a Hard Constraint</tspan></text>
+  <text x="94" y="348" font-size="11" fill="#555555"><tspan>AV integration without explicit equity design worsens outcomes for</tspan></text>
+  <text x="94" y="363" font-size="11" fill="#555555"><tspan>low-income and peripheral communities across all studied models.</tspan></text>
 
-  <text x="40" y="278" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">03</text>
-  <text x="68" y="278" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">MARL routing algorithms for autonomous vehicles frequently</text>
-  <text x="68" y="296" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">destabilize urban traffic — more AI is not always better transit.</text>
+  <line x1="0" y1="388" x2="800" y2="388" stroke="#DDDDDD" stroke-width="1"/>
 
-  <line x1="40" y1="318" x2="760" y2="318" stroke="#DDDDDD" stroke-width="1"/>
+  <!-- PAPER OF THE DAY (h=220) -->
+  <text x="48" y="416" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <rect x="48" y="428" width="110" height="22" rx="11" fill="#0D9488"/>
+  <text x="103" y="443" font-size="10" fill="#FFFFFF" text-anchor="middle" letter-spacing="1" font-weight="600">FEATURED</text>
 
-  <!-- PAPER OF THE DAY -->
-  <rect x="40" y="330" width="138" height="24" rx="4" fill="#008080"/>
-  <text x="109" y="347" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">PAPER OF THE DAY</text>
+  <text x="48" y="476" font-size="15" fill="#111111" font-weight="700"><tspan>Transit Network Design with Two-Level</tspan></text>
+  <text x="48" y="496" font-size="15" fill="#111111" font-weight="700"><tspan>Demand Uncertainties</tspan></text>
+  <text x="48" y="516" font-size="11" fill="#888888"><tspan>Guan, Basciftci, Van Hentenryck · arXiv:2603.00010</tspan></text>
+  <text x="48" y="538" font-size="12" fill="#444444" font-style="italic"><tspan>ML mode-choice models embedded in CP-SAT optimization produce</tspan></text>
+  <text x="48" y="554" font-size="12" fill="#444444" font-style="italic"><tspan>transit networks validated across Atlanta's metro area (38,000+ trips).</tspan></text>
+  <rect x="48" y="568" width="72" height="20" rx="4" fill="#111111"/>
+  <text x="84" y="582" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">HIGH CONF.</text>
 
-  <text x="40" y="376" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#111111">AlphaTransit: Learning to Design</text>
-  <text x="40" y="398" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#111111">City-scale Transit Routes</text>
-  <text x="40" y="420" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#888888">Bibek Poudel, Sai Swaminathan, Weizi Li · arXiv:2605.28730 · May 2026</text>
+  <line x1="0" y1="604" x2="800" y2="604" stroke="#DDDDDD" stroke-width="1"/>
 
-  <text x="40" y="448" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">A hybrid MCTS + neural network framework generates viable bus</text>
-  <text x="40" y="466" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">transit networks from scratch — matching or beating expert design</text>
-  <text x="40" y="484" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">with 11.2% improvement over unguided Monte Carlo search.</text>
+  <!-- EMERGING THEMES (3 columns, h=280) -->
+  <text x="48" y="632" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">EMERGING THEMES</text>
+  <line x1="316" y1="648" x2="316" y2="860" stroke="#DDDDDD" stroke-width="1"/>
+  <line x1="558" y1="648" x2="558" y2="860" stroke="#DDDDDD" stroke-width="1"/>
 
-  <rect x="40" y="500" width="92" height="20" rx="3" fill="#E0F5F2"/>
-  <text x="86" y="514" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#008080" text-anchor="middle">HIGH CONFIDENCE</text>
+  <!-- Theme 1 -->
+  <text x="48" y="668" font-size="12" fill="#0D9488" font-weight="700"><tspan>AI-Native Planning</tspan></text>
+  <text x="48" y="688" font-size="10" fill="#555555"><tspan>ML moves from prediction</tspan></text>
+  <text x="48" y="702" font-size="10" fill="#555555"><tspan>into network design itself.</tspan></text>
+  <text x="48" y="716" font-size="10" fill="#555555"><tspan>Demand becomes a</tspan></text>
+  <text x="48" y="730" font-size="10" fill="#555555"><tspan>probabilistic input, not a</tspan></text>
+  <text x="48" y="744" font-size="10" fill="#555555"><tspan>fixed given. Two Atlanta</tspan></text>
+  <text x="48" y="758" font-size="10" fill="#555555"><tspan>papers validate this shift</tspan></text>
+  <text x="48" y="772" font-size="10" fill="#555555"><tspan>at metropolitan scale.</tspan></text>
 
-  <line x1="40" y1="536" x2="760" y2="536" stroke="#DDDDDD" stroke-width="1"/>
+  <!-- Theme 2 -->
+  <text x="334" y="668" font-size="12" fill="#0D9488" font-weight="700"><tspan>Equity Engineering</tspan></text>
+  <text x="334" y="688" font-size="10" fill="#555555"><tspan>Equity must be a hard</tspan></text>
+  <text x="334" y="702" font-size="10" fill="#555555"><tspan>optimization constraint.</tspan></text>
+  <text x="334" y="716" font-size="10" fill="#555555"><tspan>AV regulation, SAMS</tspan></text>
+  <text x="334" y="730" font-size="10" fill="#555555"><tspan>integration, and informal</tspan></text>
+  <text x="334" y="744" font-size="10" fill="#555555"><tspan>transit all confirm: market</tspan></text>
+  <text x="334" y="758" font-size="10" fill="#555555"><tspan>defaults produce inequity</tspan></text>
+  <text x="334" y="772" font-size="10" fill="#555555"><tspan>without policy guardrails.</tspan></text>
 
-  <!-- EMERGING THEMES -->
-  <text x="40" y="562" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">EMERGING THEMES</text>
+  <!-- Theme 3 -->
+  <text x="576" y="668" font-size="12" fill="#0D9488" font-weight="700"><tspan>Mobility Statistics</tspan></text>
+  <text x="576" y="688" font-size="10" fill="#555555"><tspan>Bogotá's 2.3B trips confirm</tspan></text>
+  <text x="576" y="702" font-size="10" fill="#555555"><tspan>Lévy-flight statistics govern</tspan></text>
+  <text x="576" y="716" font-size="10" fill="#555555"><tspan>urban transit. Patterns are</tspan></text>
+  <text x="576" y="730" font-size="10" fill="#555555"><tspan>stable despite major policy</tspan></text>
+  <text x="576" y="744" font-size="10" fill="#555555"><tspan>changes — cities should</tspan></text>
+  <text x="576" y="758" font-size="10" fill="#555555"><tspan>match infrastructure to</tspan></text>
+  <text x="576" y="772" font-size="10" fill="#555555"><tspan>established behavior.</tspan></text>
 
-  <!-- 3 columns -->
-  <line x1="293" y1="575" x2="293" y2="740" stroke="#DDDDDD" stroke-width="1"/>
-  <line x1="546" y1="575" x2="546" y2="740" stroke="#DDDDDD" stroke-width="1"/>
+  <line x1="0" y1="862" x2="800" y2="862" stroke="#DDDDDD" stroke-width="1"/>
 
-  <!-- Column 1 -->
-  <text x="40" y="592" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#111111">AI Route Generation</text>
-  <text x="40" y="612" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Machine learning now designs</text>
-  <text x="40" y="628" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">city-scale transit networks with</text>
-  <text x="40" y="644" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">performance rivaling human</text>
-  <text x="40" y="660" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">planners — but equity and</text>
-  <text x="40" y="676" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">real-world validation remain</text>
-  <text x="40" y="692" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">open challenges.</text>
+  <!-- CONFIDENCE CHART (h=160) -->
+  <text x="48" y="892" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">CONFIDENCE DISTRIBUTION — 9 PAPERS</text>
 
-  <!-- Column 2 -->
-  <text x="310" y="592" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#111111">Fleet Decarbonization</text>
-  <text x="310" y="612" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Rail electrification and TOD</text>
-  <text x="310" y="628" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">deliver measurable air quality</text>
-  <text x="310" y="644" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">and emission gains. Policy</text>
-  <text x="310" y="660" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">frameworks are the binding</text>
-  <text x="310" y="676" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">constraint on TOD success,</text>
-  <text x="310" y="692" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">not physical infrastructure.</text>
+  <text x="48" y="924" font-size="11" fill="#111111" font-weight="600">HIGH</text>
+  <rect x="130" y="910" width="400" height="22" rx="2" fill="#0D9488"/>
+  <text x="540" y="926" font-size="11" fill="#111111" font-weight="600">6 papers</text>
 
-  <!-- Column 3 -->
-  <text x="563" y="592" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#111111">Equity by Design</text>
-  <text x="563" y="612" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Researchers now embed equity</text>
-  <text x="563" y="628" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">metrics directly into transit</text>
-  <text x="563" y="644" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">optimization algorithms, not</text>
-  <text x="563" y="660" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">as an afterthought. Algebraic</text>
-  <text x="563" y="676" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">connectivity now doubles as</text>
-  <text x="563" y="692" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">a social fairness measure.</text>
+  <text x="48" y="966" font-size="11" fill="#111111" font-weight="600">MED</text>
+  <rect x="130" y="952" width="134" height="22" rx="2" fill="#0D9488" opacity="0.5"/>
+  <text x="274" y="968" font-size="11" fill="#111111" font-weight="600">2 papers</text>
 
-  <line x1="40" y1="756" x2="760" y2="756" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="48" y="1008" font-size="11" fill="#888888" font-weight="600">LOW</text>
+  <text x="140" y="1008" font-size="11" fill="#AAAAAA">0 papers</text>
 
-  <!-- CONFIDENCE CHART -->
-  <text x="40" y="784" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">PAPER CONFIDENCE DISTRIBUTION</text>
+  <line x1="0" y1="1028" x2="800" y2="1028" stroke="#DDDDDD" stroke-width="1"/>
 
-  <!-- High bar -->
-  <text x="40" y="814" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">High</text>
-  <rect x="110" y="800" width="165" height="20" rx="2" fill="#008080"/>
-  <text x="282" y="814" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666666">  3 papers</text>
+  <!-- ACTIONABLE TAKEAWAYS (h=280) -->
+  <text x="48" y="1058" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">ACTIONABLE TAKEAWAYS</text>
 
-  <!-- Medium bar -->
-  <text x="40" y="854" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Medium</text>
-  <rect x="110" y="840" width="220" height="20" rx="2" fill="#008080" opacity="0.55"/>
-  <text x="337" y="854" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666666">  4 papers</text>
+  <text x="48" y="1096" font-size="22" fill="#0D9488" font-weight="700">1</text>
+  <text x="80" y="1088" font-size="12" fill="#111111" font-weight="700"><tspan>Adopt Two-Level Demand Models</tspan></text>
+  <text x="80" y="1105" font-size="11" fill="#555555"><tspan>Replace fixed-demand planning with frameworks separating core riders</tspan></text>
+  <text x="80" y="1120" font-size="11" fill="#555555"><tspan>from conditional adopters — 2LRC-TND validated at Atlanta metro scale.</tspan></text>
 
-  <!-- Low bar -->
-  <text x="40" y="894" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Low</text>
-  <rect x="110" y="880" width="165" height="20" rx="2" fill="#008080" opacity="0.25"/>
-  <text x="282" y="894" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666666">  3 papers</text>
+  <text x="48" y="1154" font-size="22" fill="#0D9488" font-weight="700">2</text>
+  <text x="80" y="1146" font-size="12" fill="#111111" font-weight="700"><tspan>Mandate Equity-as-Constraint in AV Procurement</tspan></text>
+  <text x="80" y="1163" font-size="11" fill="#555555"><tspan>Require equity scoring as a binding optimization objective in any AV</tspan></text>
+  <text x="80" y="1178" font-size="11" fill="#555555"><tspan>or shared mobility service integration — market defaults worsen equity.</tspan></text>
 
-  <line x1="40" y1="918" x2="760" y2="918" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="48" y="1212" font-size="22" fill="#0D9488" font-weight="700">3</text>
+  <text x="80" y="1204" font-size="12" fill="#111111" font-weight="700"><tspan>Use GWR for Station Investment Prioritization</tspan></text>
+  <text x="80" y="1221" font-size="11" fill="#555555"><tspan>GWR with amenity data explains 92.7% of ridership variance — agencies</tspan></text>
+  <text x="80" y="1236" font-size="11" fill="#555555"><tspan>can immediately improve investment targeting with spatial analysis.</tspan></text>
 
-  <!-- ACTIONABLE TAKEAWAYS -->
-  <text x="40" y="946" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">ACTIONABLE TAKEAWAYS</text>
+  <text x="48" y="1270" font-size="22" fill="#0D9488" font-weight="700">4</text>
+  <text x="80" y="1262" font-size="12" fill="#111111" font-weight="700"><tspan>Subsidize Informal Transit Routes Before Formalizing</tspan></text>
+  <text x="80" y="1279" font-size="11" fill="#555555"><tspan>Targeted cross-subsidization improves informal transit efficiency</tspan></text>
+  <text x="80" y="1294" font-size="11" fill="#555555"><tspan>without the political costs of full formalization — applicable globally.</tspan></text>
 
-  <text x="40" y="978" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">1</text>
-  <text x="62" y="978" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Deploy MCTS+neural hybrid methods (like AlphaTransit) for route</text>
-  <text x="62" y="996" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">network design — validated against benchmarks before MARL systems.</text>
+  <line x1="0" y1="1318" x2="800" y2="1318" stroke="#DDDDDD" stroke-width="1"/>
 
-  <text x="40" y="1024" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">2</text>
-  <text x="62" y="1024" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">City authorities must co-govern AV routing algorithms; MARL deployed</text>
-  <text x="62" y="1042" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">without oversight risks network-wide traffic destabilization.</text>
-
-  <text x="40" y="1070" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">3</text>
-  <text x="62" y="1070" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Accelerate diesel-to-electric rail conversion: 89% black carbon</text>
-  <text x="62" y="1088" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">reduction provides a public health ROI case beyond climate targets.</text>
-
-  <text x="40" y="1116" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">4</text>
-  <text x="62" y="1116" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Ensure TOD policy frameworks precede physical development — Jakarta</text>
-  <text x="62" y="1134" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">evidence shows physical TOD alone underperforms emission targets.</text>
-
-  <line x1="40" y1="1158" x2="760" y2="1158" stroke="#DDDDDD" stroke-width="1"/>
-
-  <!-- CONTRARIAN INSIGHTS -->
-  <text x="40" y="1186" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">CONTRARIAN INSIGHTS</text>
-
-  <text x="40" y="1216" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">· MARL routing for AVs can <tspan font-weight="700">worsen</tspan> urban congestion, not improve it.</text>
-  <text x="40" y="1240" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">· Shared micromobility may <tspan font-weight="700">substitute</tspan> for transit, not complement it</text>
-  <text x="40" y="1258" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">  in some city types — cannibalizing the ridership it was meant to grow.</text>
-  <text x="40" y="1282" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">· ML models for ridership prediction vary strongly by context — a model</text>
-  <text x="40" y="1300" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">  trained in one city may fail systematically in another.</text>
-
-  <line x1="40" y1="1326" x2="760" y2="1326" stroke="#DDDDDD" stroke-width="1"/>
-
-  <!-- LONG-TERM IMPLICATIONS -->
-  <text x="40" y="1356" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">LONG-TERM IMPLICATIONS</text>
-  <text x="40" y="1386" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">The convergence of AI-designed networks, electrified fleets, and equity-first</text>
-  <text x="40" y="1404" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">planning could reshape urban mobility by 2035. LLMs are emerging as the new</text>
-  <text x="40" y="1422" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">traveler interface — but algorithmic governance remains the critical missing</text>
-  <text x="40" y="1440" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">layer between AI promise and safe, equitable deployment at city scale.</text>
+  <!-- CONTRARIAN INSIGHT -->
+  <text x="48" y="1348" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">CONTRARIAN INSIGHT</text>
+  <rect x="48" y="1362" width="4" height="110" fill="#0D9488"/>
+  <text x="68" y="1382" font-size="13" fill="#111111" font-weight="700"><tspan>More transit does not automatically mean cleaner air</tspan></text>
+  <text x="68" y="1402" font-size="11" fill="#555555"><tspan>The multi-city PM2.5 study shows transit-air quality relationships are highly city-specific.</tspan></text>
+  <text x="68" y="1418" font-size="11" fill="#555555"><tspan>NYC dynamics differ fundamentally from Phoenix. Cities should audit their own pathways</tspan></text>
+  <text x="68" y="1434" font-size="11" fill="#555555"><tspan>rather than citing aggregate statistics. Similarly, AV service mandates reduce geographic</tspan></text>
+  <text x="68" y="1450" font-size="11" fill="#555555"><tspan>inequality but worsen income inequality — a finding that should challenge assumptions</tspan></text>
+  <text x="68" y="1466" font-size="11" fill="#555555"><tspan>among advocates who treat spatial coverage requirements as equity tools.</tspan></text>
 
   <!-- FOOTER -->
-  <line x1="0" y1="1484" x2="800" y2="1484" stroke="#DDDDDD" stroke-width="1"/>
-  <text x="40" y="1510" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#AAAAAA">Transit Research Digest · June 6, 2026</text>
-  <text x="760" y="1510" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#AAAAAA" text-anchor="end">Sources: arXiv · Springer · MDPI · ACS · TandF</text>
-  <rect x="0" y="1597" width="800" height="3" fill="#111111"/>
+  <line x1="0" y1="1530" x2="800" y2="1530" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="48" y="1556" font-size="10" fill="#888888"><tspan>Transit Research Daily · June 6, 2026 · 9 Papers</tspan></text>
+  <text x="752" y="1556" font-size="10" fill="#888888" text-anchor="end"><tspan>twong6531.github.io/citation-site</tspan></text>
+  <rect x="0" y="1572" width="800" height="3" fill="#111111"/>
 </svg>

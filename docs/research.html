@@ -5,110 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transit Research Archive</title>
 <style>
-:root {
-  --bg: #0a0a0f; --surface: #111118; --surface2: #18181f;
-  --border: #2a2a35; --text: #e8e8f0; --text-muted: #7a7a90;
-  --accent: #00897b; --accent2: #6c47ff;
-  --font: system-ui, -apple-system, sans-serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.65; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.site-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 32px; background: var(--surface);
-  border-bottom: 1px solid var(--border);
-}
-.site-header-brand { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; }
-.site-header-center { font-size: 12px; color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-.hero { padding: 64px 32px 48px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--border); }
-.hero-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
-.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 12px; letter-spacing: -0.02em; }
-.hero-sub { font-size: 16px; color: var(--text-muted); }
-.section { max-width: 1200px; margin: 0 auto; padding: 48px 32px; border-bottom: 1px solid var(--border); }
-.section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 20px; }
-.featured-card {
-  display: block;
-  background: var(--surface);
-  border: 2px solid var(--accent2);
-  border-radius: 16px;
-  padding: 36px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-.featured-card:hover { border-color: var(--accent); text-decoration: none; }
-.featured-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent2), var(--accent)); }
-.featured-badge { display: inline-block; background: rgba(108,71,255,0.13); color: var(--accent2); border: 1px solid rgba(108,71,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; }
-.featured-date { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-.featured-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 20px; }
-.featured-link { font-size: 14px; color: var(--accent); font-weight: 600; }
-.archive-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 16px; margin-top: 8px; }
-.archive-card {
-  display: block;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
-  transition: border-color 0.2s;
-}
-.archive-card:hover { border-color: var(--accent); text-decoration: none; }
-.archive-date { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-.archive-topic { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-.archive-arrow { font-size: 13px; color: var(--accent); font-weight: 600; }
-.stats { display: flex; gap: 32px; flex-wrap: wrap; }
-.stat { text-align: center; }
-.stat-num { font-size: 2.5rem; font-weight: 800; color: var(--accent); line-height: 1; }
-.stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; color: var(--text-muted); font-size: 13px; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0F0F0F; color: #E0E0E0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: #0D9488; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header { background: #0A0A0A; border-bottom: 1px solid #222; padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; }
+  .site-header a { color: #888; font-size: 13px; letter-spacing: 1px; }
+  .site-header a:hover { color: #E0E0E0; }
+
+  .hero { padding: 64px 48px 40px; border-bottom: 1px solid #1E1E1E; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+  .hero-label { font-size: 11px; letter-spacing: 4px; color: #0D9488; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; }
+  .hero-title { font-size: 42px; font-weight: 700; color: #F5F5F5; line-height: 1.1; margin-bottom: 12px; }
+  .hero-sub { font-size: 15px; color: #666; }
+
+  .section { padding: 56px 0; border-bottom: 1px solid #1A1A1A; }
+  .section-label { font-size: 10px; letter-spacing: 4px; color: #555; font-weight: 600; text-transform: uppercase; margin-bottom: 28px; }
+
+  /* Featured card */
+  .featured-card { background: #111; border: 1px solid #0D9488; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 900px; }
+  .featured-infographic { background: #F7F7F5; padding: 20px; display: flex; align-items: center; justify-content: center; }
+  .featured-infographic img { width: 100%; max-width: 340px; height: auto; display: block; }
+  .featured-content { padding: 36px; }
+  .featured-badge { display: inline-block; background: #0D9488; color: #fff; font-size: 10px; letter-spacing: 2px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+  .featured-date { font-size: 11px; color: #555; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .featured-topic { font-size: 22px; font-weight: 700; color: #F0F0F0; line-height: 1.3; margin-bottom: 12px; }
+  .featured-meta { font-size: 12px; color: #666; margin-bottom: 20px; }
+  .featured-summary { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 24px; }
+  .featured-link { display: inline-block; background: #0D9488; color: #fff; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 4px; }
+  .featured-link:hover { background: #0B7A70; text-decoration: none; }
+
+  /* Past grid */
+  .past-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .past-card { background: #111; border: 1px solid #1E1E1E; border-radius: 6px; padding: 24px; transition: border-color 0.2s; }
+  .past-card:hover { border-color: #333; }
+  .past-date { font-size: 10px; letter-spacing: 2px; color: #555; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+  .past-topic { font-size: 16px; font-weight: 700; color: #E0E0E0; margin-bottom: 8px; line-height: 1.3; }
+  .past-meta { font-size: 12px; color: #555; margin-bottom: 16px; }
+  .past-link { font-size: 13px; color: #0D9488; font-weight: 500; }
+
+  /* Stats bar */
+  .stats-bar { display: flex; gap: 40px; padding: 32px 0; }
+  .stat-item { text-align: center; }
+  .stat-num { font-size: 36px; font-weight: 700; color: #0D9488; display: block; }
+  .stat-label { font-size: 11px; color: #555; letter-spacing: 2px; text-transform: uppercase; }
+
+  footer { padding: 40px 48px; border-top: 1px solid #1A1A1A; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #555; max-width: 1100px; margin: 0 auto; }
 </style>
 </head>
 <body>
+
 <header class="site-header">
-  <div class="site-header-brand">Daily Briefing</div>
-  <div class="site-header-center">Transit Research Archive</div>
-  <div></div>
+  <a href="index.html">← Home</a>
+  <span style="color:#555; font-size:13px;">Transit Research Archive</span>
 </header>
-<section class="hero">
-  <div class="hero-label">Intelligence Archive</div>
-  <h1>Transit Research Archive</h1>
-  <p class="hero-sub">A growing body of work &mdash; daily transit &amp; transportation research briefings</p>
-</section>
-<section class="section">
-  <div class="section-label">Statistics</div>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Briefings Published</div></div>
-    <div class="stat"><div class="stat-num">31</div><div class="stat-label">Papers Analyzed</div></div>
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Emerging Themes</div></div>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">Research Archive</div>
+    <h1 class="hero-title">Transit Research Daily</h1>
+    <p class="hero-sub">Daily synthesis of transit, urban mobility, and transportation research — 2 reports published</p>
   </div>
-</section>
-<section class="section">
-  <div class="section-label">Latest Briefing</div>
-  <a href="research-2026-06-06.html" class="featured-card">
-    <div class="featured-badge">Most Recent</div>
-    <div class="featured-date">June 6, 2026</div>
-    <div class="featured-desc">AI Designs Transit Networks — 10 papers on AlphaTransit's city-scale route generation, MARL routing risks for autonomous vehicles, equitable network design, commuter rail electrification's 89% black carbon reduction, LLMs in transit planning, and micromobility's surprising substitution effects on ridership.</div>
-    <div class="featured-link">Read Today's Briefing &rarr;</div>
-  </a>
-</section>
-<section class="section">
-  <div class="section-label">Archive &mdash; 2 Past Briefings</div>
-  <div class="archive-grid">
-    <a href="research-2026-06-06.html" class="archive-card">
-      <div class="archive-date">June 6, 2026</div>
-      <div class="archive-topic">AI Designs Transit Networks: AlphaTransit, MARL risks, electrification, equity-first route design</div>
-      <div class="archive-arrow">Read &rarr;</div>
-    </a>
-    <a href="research-2026-06-05.html" class="archive-card">
-      <div class="archive-date">June 5, 2026</div>
-      <div class="archive-topic">Transit Equity &amp; Automation: hybrid decarbonization, autonomous microtransit, AI walkability, income segregation</div>
-      <div class="archive-arrow">Read &rarr;</div>
-    </a>
+</div>
+
+<div class="container">
+
+  <!-- Stats -->
+  <div class="section">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Reports</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">18+</span>
+        <span class="stat-label">Papers Analyzed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">9</span>
+        <span class="stat-label">Today's Papers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Emerging Themes</span>
+      </div>
+    </div>
   </div>
-</section>
+
+  <!-- Featured: Today -->
+  <div class="section">
+    <div class="section-label">Today's Report — June 6, 2026</div>
+    <div class="featured-card">
+      <div class="featured-infographic">
+        <img src="research-infographic-2026-06-06.svg" alt="Urban Transit Network Optimization infographic" />
+      </div>
+      <div class="featured-content">
+        <div class="featured-badge">LATEST</div>
+        <div class="featured-date">June 6, 2026</div>
+        <div class="featured-topic">Urban Transit Network Optimization</div>
+        <div class="featured-meta">9 papers · 6 High Confidence · 5 Themes</div>
+        <p class="featured-summary">ML is entering the core of network design itself. Bogotá's 2.3B trips reveal Lévy-flight mobility statistics. Atlanta tests both ML-optimized networks and SAV microtransit. The clearest policy signal: AV integration without equity constraints systematically worsens outcomes for low-income communities.</p>
+        <a class="featured-link" href="research-2026-06-06.html">Read Full Report →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Past Reports -->
+  <div class="section">
+    <div class="section-label">Past Reports</div>
+    <div class="past-grid">
+
+      <div class="past-card">
+        <div class="past-date">June 5, 2026</div>
+        <div class="past-topic">Transit-Oriented Development &amp; Ridership Equity</div>
+        <div class="past-meta">9 papers · Daily synthesis</div>
+        <a class="past-link" href="research-2026-06-05.html">Read Report →</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 <footer>
-  <p>Transit Research Archive &middot; Updated daily &middot; Sources: arXiv &middot; Semantic Scholar &middot; Springer &middot; MDPI &middot; ACS</p>
+  <div class="footer-inner">
+    <span>Transit Research Daily · Autonomous Research Agent</span>
+    <span>Updated June 6, 2026</span>
+    <a href="index.html">Home</a>
+  </div>
 </footer>
+
 </body>
 </html>
