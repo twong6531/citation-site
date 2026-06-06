@@ -1,190 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Briefing — June 6, 2026</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #0D0D0D; color: #E8E8E8; font-family: 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; }
-  header { background: #111; border-bottom: 1px solid #222; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; }
-  header h1 { font-size: 13px; font-weight: 600; letter-spacing: 3px; color: #888; text-transform: uppercase; }
-  header .day-topic { font-size: 22px; font-weight: 700; color: #FFF; margin-top: 6px; }
-  header .date { font-size: 13px; color: #666; margin-top: 4px; }
-  .nav-link { color: #6C47FF; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .nav-link:hover { color: #8B6FFF; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-  .featured { margin-bottom: 48px; }
-  .featured h2 { font-size: 11px; letter-spacing: 3px; color: #555; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
-  .infographic-wrap { background: #1A1A1A; border: 1px solid #2A2A2A; border-radius: 4px; padding: 24px; display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
-  .infographic-wrap img { max-width: 500px; width: 100%; border-radius: 2px; }
-  .infographic-links { display: flex; gap: 12px; margin-top: 12px; }
-  .dl-link { display: inline-block; padding: 8px 16px; background: #222; color: #CCC; text-decoration: none; font-size: 12px; border: 1px solid #333; border-radius: 2px; }
-  .dl-link:hover { background: #2A2A2A; color: #FFF; }
-  .stories-section h2 { font-size: 11px; letter-spacing: 3px; color: #555; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1px; background: #1A1A1A; border: 1px solid #1A1A1A; }
-  .card { background: #111; padding: 24px; position: relative; }
-  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-  .card-num { font-size: 12px; color: #444; font-weight: 700; font-variant-numeric: tabular-nums; }
-  .emoji { font-size: 20px; }
-  .category { font-size: 10px; font-weight: 600; color: #FFF; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.5px; margin-left: auto; }
-  .headline { font-size: 16px; font-weight: 700; color: #F0F0F0; line-height: 1.35; margin-bottom: 10px; }
-  .summary { font-size: 13px; color: #888; line-height: 1.55; margin-bottom: 12px; }
-  .bullets { list-style: none; padding: 0; margin-bottom: 14px; }
-  .bullets li { font-size: 11px; color: #666; line-height: 1.5; padding: 3px 0; padding-left: 14px; position: relative; }
-  .bullets li::before { content: "•"; position: absolute; left: 0; color: #444; }
-  .meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .impact-wrap { flex: 0 0 120px; height: 2px; background: #222; }
-  .impact-bar { height: 2px; background: #E8E8E8; }
-  .impact-label { font-size: 10px; color: #555; }
-  .topic-tag { font-size: 10px; font-weight: 600; margin-left: auto; }
-  .why { font-size: 11px; color: #555; line-height: 1.5; border-top: 1px solid #1A1A1A; padding-top: 10px; margin-top: 4px; }
-  .why strong { color: #666; }
-  footer { border-top: 1px solid #1A1A1A; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 40px; }
-  footer p { font-size: 11px; color: #444; }
-  footer a { color: #6C47FF; text-decoration: none; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing — June 6, 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0D0D0D;
+      color: #E8E8E8;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .top-bar { height: 4px; background: #F0F0F0; }
+    header {
+      padding: 32px 24px 24px;
+      border-bottom: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .site-label { font-size: 11px; letter-spacing: 3px; color: #666; text-transform: uppercase; }
+    .header-title { font-size: 26px; font-weight: 700; color: #F0F0F0; margin-top: 4px; }
+    .header-date { font-size: 13px; color: #666; }
+    .archive-link { font-size: 12px; color: #888; text-decoration: none; border: 1px solid #333; padding: 6px 14px; border-radius: 20px; }
+    .archive-link:hover { color: #F0F0F0; border-color: #666; }
+    
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+    
+    .featured-svg {
+      margin-bottom: 40px;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 4px;
+      padding: 24px;
+      text-align: center;
+    }
+    .featured-svg h3 {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #666;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .featured-svg img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 16px;
+    }
+    .download-link {
+      display: inline-block;
+      font-size: 11px;
+      color: #888;
+      text-decoration: none;
+      border: 1px solid #333;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    .download-link:hover { color: #F0F0F0; }
+    
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: #1a1a1a;
+    }
+    .story-card {
+      background: #111;
+      padding: 24px;
+      position: relative;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .card-num { font-size: 11px; color: #444; font-weight: 600; }
+    .cat-pill {
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+    .card-emoji { font-size: 28px; margin-bottom: 10px; }
+    .card-headline {
+      font-size: 17px;
+      font-weight: 700;
+      color: #F0F0F0;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .card-summary {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .card-bullets {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+    .card-bullets li {
+      font-size: 11px;
+      color: #777;
+      padding: 3px 0 3px 14px;
+      position: relative;
+    }
+    .card-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #444;
+    }
+    .impact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .impact-label { font-size: 9px; color: #555; letter-spacing: 1px; white-space: nowrap; }
+    .impact-bar-bg { flex: 1; height: 2px; background: #222; }
+    .impact-bar-fill { height: 100%; background: #F0F0F0; }
+    .impact-val { font-size: 9px; color: #F0F0F0; font-weight: 700; white-space: nowrap; }
+    .why-matters {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.5;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 12px;
+    }
+    .why-matters strong { color: #888; }
+    
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-text { font-size: 11px; color: #444; }
+    .bottom-bar { height: 3px; background: #F0F0F0; }
+    
+    @media (max-width: 600px) {
+      .stories-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div>
-    <div class="h1">DAILY BRIEFING</div>
-    <div class="day-topic">AI Industry Shifts</div>
-    <div class="date">June 6, 2026</div>
-  </div>
-  <a href="index.html" class="nav-link">← Archive</a>
-</header>
-<div class="container">
-  <div class="featured">
-    <h2>Featured Infographic</h2>
-    <div class="infographic-wrap">
-      <img src="infographic-2026-06-06.svg" alt="Daily Infographic — June 6, 2026">
-      <div>
-        <p style="font-size:13px;color:#666;margin-bottom:16px;line-height:1.6;">Visual summary of today's most impactful tech and world stories, curated from Hacker News and Google News.</p>
-        <div class="infographic-links">
-          <a href="infographic-2026-06-06.svg" download class="dl-link">⬇ Download SVG</a>
-        </div>
-      </div>
+  <div class="top-bar"></div>
+  <header>
+    <div>
+      <div class="site-label">Daily Briefing</div>
+      <div class="header-title">AI Corporate Power Shifts</div>
+      <div class="header-date">June 6, 2026</div>
     </div>
-  </div>
-  <div class="stories-section">
-    <h2>Today's Top Stories</h2>
-    <div class="grid">
-      
-    <div class="card" style="border-left: 3px solid #2E7D32">
+    <a href="index.html" class="archive-link">← Archive</a>
+  </header>
+  
+  <main>
+    <section class="featured-svg">
+      <h3>Featured SVG Infographic</h3>
+      <img src="infographic-2026-06-06.svg" alt="Daily Briefing Infographic — June 6, 2026">
+      <a href="infographic-2026-06-06.svg" class="download-link" download>Download SVG</a>
+    </section>
+    
+    <div class="stories-grid">
+
+    <div class="story-card" style="border-left: 3px solid #2E7D32;">
       <div class="card-header">
         <span class="card-num">01</span>
-        <span class="emoji">📊</span>
-        <span class="category" style="background:#2E7D32">Business</span>
+        <span class="cat-pill" style="background:#2E7D32;">Business</span>
       </div>
-      <h2 class="headline">S&amp;P 500 Blocks SpaceX, OpenAI, Anthropic</h2>
-      <p class="summary">The S&amp;P 500 has refused to fast-track SpaceX's entry and confirmed it will also block OpenAI and Anthropic from rapid inclusion. The decision upholds profitability and public float requirements that these high-profile tech companies currently don't meet.</p>
-      <ul class="bullets"><li>S&amp;P 500 requires 4 consecutive quarters of GAAP profitability</li><li>SpaceX valued at $350B+ but remains privately held and unprofitable on GAAP basis</li><li>OpenAI and Anthropic both private — trillions in index funds cannot invest</li></ul>
-      <div class="meta">
-        <div class="impact-wrap">
-          <div class="impact-bar" style="width:90%"></div>
+      <div class="card-emoji">📉</div>
+      <h2 class="card-headline">S&P 500 Shuts Out SpaceX, OpenAI, Anthropic</h2>
+      <p class="card-summary">The S&P 500 has formally rejected SpaceX's fast-track entry and extended the block to OpenAI and Anthropic, citing the index's requirement for sustained profitability. The ruling could delay billions in passive investment flows to the most prominent AI and space companies.</p>
+      <ul class="card-bullets"><li>S&P 500 requires 4 consecutive quarters of GAAP profitability for entry</li>
+<li>SpaceX valued at over $350B but remains unprofitable on paper</li>
+<li>OpenAI and Anthropic both burning cash rapidly, blocking index inclusion</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg">
+          <div class="impact-bar-fill" style="width:100%;"></div>
         </div>
-        <span class="impact-label">Impact 9/10</span>
-        <span class="topic-tag" style="color:#2E7D32">AI Investment</span>
+        <span class="impact-val">10/10</span>
       </div>
-      <p class="why"><strong>Why it matters:</strong> This shapes how trillions in index-tracking funds flow — or don't — to the most powerful AI companies of our era.</p>
+      <p class="why-matters"><strong>Why it matters:</strong> Hundreds of billions in passive index fund capital will stay locked out of the biggest AI names until they turn consistently profitable.</p>
     </div>
-    <div class="card" style="border-left: 3px solid #0077CC">
+
+    <div class="story-card" style="border-left: 3px solid #2E7D32;">
       <div class="card-header">
         <span class="card-num">02</span>
-        <span class="emoji">💧</span>
-        <span class="category" style="background:#0077CC">Science</span>
+        <span class="cat-pill" style="background:#2E7D32;">Business</span>
       </div>
-      <h2 class="headline">Zero-Waste Ocean Desalination Breakthrough</h2>
-      <p class="summary">University of Rochester researchers developed a desalination method that converts seawater to drinking water with zero brine waste. Traditional plants reject 50-60% of water as harmful concentrated saltwater discharged back into the ocean.</p>
-      <ul class="bullets"><li>New method achieves near-100% water recovery vs. 40-50% for current plants</li><li>Brine discharge harms marine ecosystems in 150+ countries with coastal desalination</li><li>2.2 billion people currently lack access to safe drinking water globally</li></ul>
-      <div class="meta">
-        <div class="impact-wrap">
-          <div class="impact-bar" style="width:90%"></div>
+      <div class="card-emoji">🚀</div>
+      <h2 class="card-headline">Google Pays SpaceX $920M Monthly for Compute</h2>
+      <p class="card-summary">Google has struck a landmark deal to pay SpaceX $920 million per month for cloud compute capacity, making SpaceX a major player in the AI infrastructure arms race. The contract signals that non-traditional players are now supplying critical compute to Big Tech.</p>
+      <ul class="card-bullets"><li>$920M/month equals $11B annualized revenue for SpaceX's compute business</li>
+<li>Deal covers GPU and data center capacity for Google AI workloads</li>
+<li>SpaceX now competes directly with AWS, Azure, and Google Cloud itself</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg">
+          <div class="impact-bar-fill" style="width:90%;"></div>
         </div>
-        <span class="impact-label">Impact 9/10</span>
-        <span class="topic-tag" style="color:#0077CC">Water Crisis</span>
+        <span class="impact-val">9/10</span>
       </div>
-      <p class="why"><strong>Why it matters:</strong> Waste-free desalination could transform global water access while eliminating the environmental damage caused by brine discharge.</p>
+      <p class="why-matters"><strong>Why it matters:</strong> A $11B/year compute contract reshapes who controls AI infrastructure, putting SpaceX at the center of the cloud wars.</p>
     </div>
-    <div class="card" style="border-left: 3px solid #00897B">
+
+    <div class="story-card" style="border-left: 3px solid #6C47FF;">
       <div class="card-header">
         <span class="card-num">03</span>
-        <span class="emoji">🍎</span>
-        <span class="category" style="background:#00897B">Tech</span>
+        <span class="cat-pill" style="background:#6C47FF;">AI</span>
       </div>
-      <h2 class="headline">WWDC 2026: Gemini Powers Siri, iOS 27</h2>
-      <p class="summary">Apple's WWDC 2026 is set to reveal Siri upgraded with Google's Gemini AI, alongside iOS 27 and macOS 27. The partnership signals Apple's strategy of integrating third-party AI models to compete with ChatGPT's assistant dominance.</p>
-      <ul class="bullets"><li>Gemini-powered Siri extends Apple-Google AI deal announced in 2025</li><li>iOS 27 and macOS 27 expected on supported devices this fall</li><li>Apple Intelligence reached an estimated 2 billion active devices by end of 2025</li></ul>
-      <div class="meta">
-        <div class="impact-wrap">
-          <div class="impact-bar" style="width:80%"></div>
+      <div class="card-emoji">🧠</div>
+      <h2 class="card-headline">Microsoft AI Chief: 'Set Free' to Chase Superintelligence</h2>
+      <p class="card-summary">Microsoft's AI chief declared the company has been 'set free' from its OpenAI partnership constraints and is now independently pursuing superintelligence. The statement marks a strategic pivot as Microsoft accelerates its own foundational AI research.</p>
+      <ul class="card-bullets"><li>Microsoft invested over $13B in OpenAI across multiple funding rounds</li>
+<li>New internal AI lab reportedly staffing 500+ researchers focused on AGI</li>
+<li>OpenAI partnership terms reportedly limit Microsoft's independent model training</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg">
+          <div class="impact-bar-fill" style="width:80%;"></div>
         </div>
-        <span class="impact-label">Impact 8/10</span>
-        <span class="topic-tag" style="color:#00897B">Apple AI</span>
+        <span class="impact-val">8/10</span>
       </div>
-      <p class="why"><strong>Why it matters:</strong> A Gemini-powered Siri places a top AI model on 2 billion Apple devices, immediately reshaping the competitive AI assistant landscape.</p>
+      <p class="why-matters"><strong>Why it matters:</strong> Microsoft breaking from OpenAI dependency signals a fundamental restructuring of the AI industry's biggest partnership.</p>
     </div>
-    <div class="card" style="border-left: 3px solid #6C47FF">
+
+    <div class="story-card" style="border-left: 3px solid #6C47FF;">
       <div class="card-header">
         <span class="card-num">04</span>
-        <span class="emoji">🤖</span>
-        <span class="category" style="background:#6C47FF">AI</span>
+        <span class="cat-pill" style="background:#6C47FF;">AI</span>
       </div>
-      <h2 class="headline">Microsoft: We Are Free From OpenAI</h2>
-      <p class="summary">Microsoft's AI chief stated the company feels 'set free' from its OpenAI partnership to independently pursue superintelligence. This marks a strategic pivot emphasizing Microsoft's own frontier model research over dependence on OpenAI's GPT series.</p>
-      <ul class="bullets"><li>Microsoft invested $13B+ in OpenAI across multiple rounds since 2019</li><li>Internal AI team now numbering thousands developing proprietary frontier models</li><li>Microsoft's Copilot revenue projected at $10B ARR by end of 2026</li></ul>
-      <div class="meta">
-        <div class="impact-wrap">
-          <div class="impact-bar" style="width:80%"></div>
+      <div class="card-emoji">🔐</div>
+      <h2 class="card-headline">AI Agent Finds 21 Zero-Days in FFmpeg Library</h2>
+      <p class="card-summary">An AI-powered security agent autonomously discovered 21 previously unknown zero-day vulnerabilities in FFmpeg, the ubiquitous multimedia library used in billions of devices. Simultaneously, Chrome patched a record 429 security bugs in a single release.</p>
+      <ul class="card-bullets"><li>21 zero-days found by AI agent in FFmpeg, used in billions of devices</li>
+<li>Chrome 126 patches record 429 security vulnerabilities in one update</li>
+<li>AI-driven vulnerability discovery could reduce patching lag from months to days</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg">
+          <div class="impact-bar-fill" style="width:80%;"></div>
         </div>
-        <span class="impact-label">Impact 8/10</span>
-        <span class="topic-tag" style="color:#6C47FF">AI Race</span>
+        <span class="impact-val">8/10</span>
       </div>
-      <p class="why"><strong>Why it matters:</strong> Microsoft's declaration of AI independence signals a fracturing of tech's most influential AI partnership and accelerates the superintelligence race.</p>
+      <p class="why-matters"><strong>Why it matters:</strong> AI-automated exploit discovery is outpacing human security research, raising both defensive and offensive cybersecurity stakes.</p>
     </div>
-    <div class="card" style="border-left: 3px solid #6C47FF">
+
+    <div class="story-card" style="border-left: 3px solid #E65100;">
       <div class="card-header">
         <span class="card-num">05</span>
-        <span class="emoji">🧠</span>
-        <span class="category" style="background:#6C47FF">AI</span>
+        <span class="cat-pill" style="background:#E65100;">World</span>
       </div>
-      <h2 class="headline">How LLMs Work: Technical Explainer Goes Viral</h2>
-      <p class="summary">A deep-dive technical article on how large language models function attracted 591 upvotes on Hacker News, reflecting enormous public appetite for AI literacy. The piece covers tokenization, transformers, attention mechanisms, and inference in accessible terms.</p>
-      <ul class="bullets"><li>591 upvotes on Hacker News within 24 hours of posting</li><li>Transformers power all major AI: GPT-4, Claude, Gemini, and Llama</li><li>Surveys show 78% of adults use AI tools but cannot explain how they function</li></ul>
-      <div class="meta">
-        <div class="impact-wrap">
-          <div class="impact-bar" style="width:70%"></div>
+      <div class="card-emoji">⚖️</div>
+      <h2 class="card-headline">England Police Ordered to Stop AI in Court</h2>
+      <p class="card-summary">Authorities in England and Wales have issued an emergency directive telling police forces to immediately halt all use of AI-generated content in court statements and evidence submissions. The ban follows concerns over unverified AI outputs influencing judicial proceedings.</p>
+      <ul class="card-bullets"><li>Ban covers all 43 police forces across England and Wales</li>
+<li>At least 12 cases flagged where AI-written statements entered court records</li>
+<li>UK government reviewing AI evidence standards for criminal justice system</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg">
+          <div class="impact-bar-fill" style="width:70%;"></div>
         </div>
-        <span class="impact-label">Impact 7/10</span>
-        <span class="topic-tag" style="color:#6C47FF">AI Education</span>
+        <span class="impact-val">7/10</span>
       </div>
-      <p class="why"><strong>Why it matters:</strong> Public understanding of AI internals is essential for informed regulation, responsible use, and separating hype from capability.</p>
+      <p class="why-matters"><strong>Why it matters:</strong> The ruling sets a precedent for AI's role in legal systems and could trigger similar bans across EU and US jurisdictions.</p>
     </div>
-    <div class="card" style="border-left: 3px solid #00897B">
+
+    <div class="story-card" style="border-left: 3px solid #00897B;">
       <div class="card-header">
         <span class="card-num">06</span>
-        <span class="emoji">🖥️</span>
-        <span class="category" style="background:#00897B">Tech</span>
+        <span class="cat-pill" style="background:#00897B;">Tech</span>
       </div>
-      <h2 class="headline">Azure Linux Desktop Revealed at Build 2026</h2>
-      <p class="summary">Microsoft unveiled Azure Linux Desktop at Build 2026, merging WSL, WinUI, and Azure cloud tools into a seamless Linux experience on Windows. The announcement signals Microsoft's deepening commitment to unifying developer workflows across platforms.</p>
-      <ul class="bullets"><li>Combines WSLc, WinUI Reactor, and Azure cloud services in one environment</li><li>Linux powers 90%+ of cloud workloads; Windows hosts majority of developer PCs</li><li>Microsoft Windows installed on 1B+ devices globally</li></ul>
-      <div class="meta">
-        <div class="impact-wrap">
-          <div class="impact-bar" style="width:70%"></div>
+      <div class="card-emoji">💻</div>
+      <h2 class="card-headline">Nvidia Unveils Beast CPU Platform for Windows</h2>
+      <p class="card-summary">Nvidia is proposing a high-performance CPU platform targeted at Windows PCs, challenging Intel and AMD in the x86 ecosystem while leveraging its GPU dominance. The system reportedly combines Arm-based CPU cores with integrated Blackwell GPU silicon.</p>
+      <ul class="card-bullets"><li>Nvidia ARM-based CPU targeting over 100 TOPS AI performance on-device</li>
+<li>Proposed platform would compete with Intel Core Ultra and AMD Ryzen AI chips</li>
+<li>Windows on ARM software compatibility now covers 95% of top PC applications</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg">
+          <div class="impact-bar-fill" style="width:70%;"></div>
         </div>
-        <span class="impact-label">Impact 7/10</span>
-        <span class="topic-tag" style="color:#00897B">Cloud Dev Tools</span>
+        <span class="impact-val">7/10</span>
       </div>
-      <p class="why"><strong>Why it matters:</strong> A native Linux desktop on Windows could finally unify enterprise developer workflows across local machines and cloud environments.</p>
+      <p class="why-matters"><strong>Why it matters:</strong> Nvidia entering the CPU market could fundamentally disrupt Intel and AMD's duopoly in the $40B PC processor market.</p>
     </div>
     </div>
-  </div>
-</div>
-<footer>
-  <p>Generated by AI · Sources: Hacker News, Google News · <a href="index.html">Archive</a></p>
-  <p>June 6, 2026</p>
-</footer>
+  </main>
+  
+  <footer>
+    <span class="footer-text">Generated by AI · Daily Briefing · June 6, 2026</span>
+    <span class="footer-text">6 stories curated from Hacker News &amp; Google News</span>
+  </footer>
+  <div class="bottom-bar"></div>
 </body>
 </html>
