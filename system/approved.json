@@ -1,0 +1,5 @@
+{
+  "approved": [],
+  "rejected": [],
+  "instructions": "Add item slugs to 'approved' array to allow Publishing Agent to go live. Format: YYYY-MM-DD-type-slug (e.g. '2026-06-07-article-brt-funding'). Edit this file directly in GitHub to approve without touching local code."
+}

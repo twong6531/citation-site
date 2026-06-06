@@ -1,0 +1,31 @@
+{
+  "last_updated": "2026-06-06",
+  "published": [
+    { "date": "2026-06-05", "type": "news", "url": "2026-06-05.html", "topic": "Meta Face Recognition" },
+    { "date": "2026-06-05", "type": "research", "url": "research-2026-06-05.html", "topic": "Transit Equity Automation" },
+    { "date": "2026-06-06", "type": "news", "url": "2026-06-06.html", "topic": "AI Industry Shifts" },
+    { "date": "2026-06-06", "type": "research", "url": "research-2026-06-06.html", "topic": "Transit Equity Automation" },
+    { "date": "2026-06-06", "type": "explainer", "url": "california-hsr.html", "topic": "California HSR Failure" },
+    { "date": "2026-06-06", "type": "explainer", "url": "transit-oriented-development.html", "topic": "Transit-Oriented Development" }
+  ],
+  "topic_performance": {
+    "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
+    "Transit-Oriented Development": { "published": "2026-06-06", "engagement": "high" },
+    "AI Industry Shifts": { "published": "2026-06-06", "engagement": "medium" }
+  },
+  "covered_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity",
+    "autonomous vehicles",
+    "AI industry",
+    "Meta face recognition"
+  ],
+  "niche_focus": ["transit", "urban mobility", "infrastructure policy", "AI & technology"],
+  "failed_jobs": [],
+  "content_gaps": [
+    "No video scripts produced yet",
+    "No long-form articles beyond explainers",
+    "No infographic series on a single topic"
+  ]
+}
