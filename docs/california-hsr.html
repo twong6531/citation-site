@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California High-Speed Rail: The $231 Billion Failure</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #18181f;
+    --border: #2a2a35;
+    --text: #e8e8f0;
+    --text-muted: #7a7a90;
+    --red: #c0392b;
+    --orange: #e67e22;
+    --purple: #8e44ad;
+    --slate: #2c3e50;
+    --gray: #7f8c8d;
+    --accent: #c0392b;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--surface);
+    border-bottom: 4px solid var(--red);
+    padding: 72px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 64px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 span { color: var(--red); }
+  .hero-sub {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+  }
+
+  /* MAIN */
+  .main { max-width: 1100px; margin: 0 auto; padding: 56px 24px; }
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    background: var(--red);
+    padding: 40px 48px;
+    margin-bottom: 64px;
+    text-align: center;
+  }
+  .pull-quote p {
+    font-size: clamp(20px, 4vw, 36px);
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .pull-quote cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    font-style: normal;
+  }
+
+  /* STAT CARDS */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 64px;
+  }
+  @media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 500px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat-card {
+    background: var(--surface);
+    padding: 28px 20px;
+    border-top: 3px solid var(--border);
+  }
+  .stat-card.red   { border-top-color: var(--red); }
+  .stat-card.orange{ border-top-color: var(--orange); }
+  .stat-card.purple{ border-top-color: var(--purple); }
+  .stat-card.slate { border-top-color: #4a6fa5; }
+  .stat-card.gray  { border-top-color: var(--gray); }
+  .stat-value {
+    font-size: clamp(22px, 3.5vw, 36px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .stat-context {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    margin-bottom: 64px;
+    position: relative;
+  }
+  .timeline-track {
+    position: absolute;
+    left: 120px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .timeline-item {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .timeline-year {
+    width: 120px;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    padding: 20px 24px 20px 0;
+    text-align: right;
+    line-height: 1;
+  }
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 24px;
+    position: relative;
+    z-index: 1;
+    margin-left: -5px;
+  }
+  .timeline-dot.planned { background: var(--text-muted); border: 2px solid var(--border); }
+  .timeline-dot.failed  { background: var(--red); }
+  .timeline-dot.current { background: var(--orange); }
+  .timeline-body {
+    flex: 1;
+    padding: 16px 0 16px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-event {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .timeline-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .timeline-badge {
+    display: inline-block;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .badge-failed  { background: rgba(192,57,43,0.2); color: var(--red); }
+  .badge-current { background: rgba(230,126,34,0.2); color: var(--orange); }
+  .badge-planned { background: rgba(122,122,144,0.15); color: var(--text-muted); }
+
+  /* FAILURE MODES */
+  .failure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 64px;
+  }
+  @media (max-width: 700px) { .failure-grid { grid-template-columns: 1fr; } }
+  .failure-card {
+    background: var(--surface);
+    padding: 32px 28px;
+  }
+  .failure-severity {
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .severity-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .severity-critical .severity-dot { background: var(--red); }
+  .severity-critical .severity-text { color: var(--red); }
+  .severity-high .severity-dot { background: var(--orange); }
+  .severity-high .severity-text { color: var(--orange); }
+  .failure-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .failure-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* INFOGRAPHIC SECTION */
+  .infographic-wrap {
+    margin-bottom: 64px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+    text-align: center;
+  }
+  .infographic-wrap svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .infographic-dl {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .infographic-dl:hover { background: var(--red); color: #fff; }
+
+  /* VERDICT */
+  .verdict {
+    background: var(--surface);
+    border-left: 4px solid var(--red);
+    padding: 36px 40px;
+    margin-bottom: 64px;
+  }
+  .verdict-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .verdict p {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 20px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--surface);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">// Infrastructure Analysis &mdash; June 2026</div>
+  <h1>The <span>$231 Billion</span><br>Promise Broken</h1>
+  <p class="hero-sub">California's high-speed rail was sold to voters as a $33 billion project finished by 2020. Eighteen years later, $15 billion has been spent and not a single mile of high-speed track exists.</p>
+  <div class="hero-meta">
+    <span>Sources: FRA &middot; CAHSRA 2026 Business Plan &middot; CA Policy Center</span>
+    <span>Published June 6, 2026</span>
+    <span>AI Analysis</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <a href="index.html" class="back-link">&larr; Back to Archive</a>
+
+  <!-- INFOGRAPHIC -->
+  <div class="section-label">// Infographic</div>
+  <div class="infographic-wrap">
+    <img src="california-hsr-infographic.svg" alt="California HSR Failure Infographic" style="max-width:600px;width:100%">
+    <br>
+    <a href="california-hsr-infographic.svg" class="infographic-dl" download>Download SVG &darr;</a>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote">
+    <p>&ldquo;$15 billion spent.<br>Zero miles of high-speed track.&rdquo;</p>
+    <cite>Federal Railroad Administration audit finding &mdash; 2025</cite>
+  </div>
+
+  <!-- STATS -->
+  <div class="section-label">// Key Numbers</div>
+  <div class="stat-grid" style="margin-bottom:64px">
+    <div class="stat-card slate">
+      <div class="stat-label">Original Budget</div>
+      <div class="stat-value">$33B</div>
+      <div class="stat-context">Promised to California voters in 2008 Prop 1A</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Current Estimate</div>
+      <div class="stat-value">$126&ndash;231B</div>
+      <div class="stat-context">283% to 600% over the original number</div>
+    </div>
+    <div class="stat-card orange">
+      <div class="stat-label">Spent So Far</div>
+      <div class="stat-value">$15B</div>
+      <div class="stat-context">With zero miles of high-speed track laid</div>
+    </div>
+    <div class="stat-card purple">
+      <div class="stat-label">Funding Gap</div>
+      <div class="stat-value">$86.8B</div>
+      <div class="stat-context">Shortfall with no credible plan to close it</div>
+    </div>
+    <div class="stat-card gray">
+      <div class="stat-label">Federal Grants Lost</div>
+      <div class="stat-value">$4B</div>
+      <div class="stat-context">Terminated July 2025 &mdash; 9 compliance violations</div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section-label">// Timeline of Failure</div>
+  <div class="timeline">
+    <div class="timeline-track"></div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2008</div>
+      <div class="timeline-dot planned"></div>
+      <div class="timeline-body">
+        <div class="timeline-event">Voters approve Proposition 1A <span class="timeline-badge badge-planned">Promised</span></div>
+        <div class="timeline-detail">$33 billion bond authorized. Completion promised by 2020. San Francisco to Los Angeles in under 3 hours.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2012</div>
+      <div class="timeline-dot planned"></div>
+      <div class="timeline-body">
+        <div class="timeline-event">First cost revision: $68 billion</div>
+        <div class="timeline-detail">Budget doubles within 4 years of approval. Completion date pushed to 2033. Red flags largely ignored.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2020</div>
+      <div class="timeline-dot failed"></div>
+      <div class="timeline-body">
+        <div class="timeline-event">Original completion date &mdash; missed entirely <span class="timeline-badge badge-failed">Failed</span></div>
+        <div class="timeline-detail">Not a single mile of high-speed rail in service. Construction activity limited to Central Valley earthwork. No trainset vendor procured.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">Jul 2025</div>
+      <div class="timeline-dot failed"></div>
+      <div class="timeline-body">
+        <div class="timeline-event">Federal Railroad Administration pulls $4B in grants <span class="timeline-badge badge-failed">Failed</span></div>
+        <div class="timeline-detail">FRA cites 9 distinct compliance failures. $15 billion already spent with no high-speed infrastructure. Transportation Sec. Sean Duffy terminates funding.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">Mar 2026</div>
+      <div class="timeline-dot current"></div>
+      <div class="timeline-body">
+        <div class="timeline-event">Former oversight chair declares &ldquo;dead end&rdquo; <span class="timeline-badge badge-current">Now</span></div>
+        <div class="timeline-detail">Lou Thompson, ex-chair of the Peer Review Group, writes to the state Legislature that the project "has reached a dead end." 2026 Business Plan puts cost at $126B&ndash;$231B.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2033</div>
+      <div class="timeline-dot planned"></div>
+      <div class="timeline-body">
+        <div class="timeline-event">Revised target: Merced to Bakersfield only <span class="timeline-badge badge-planned">Revised</span></div>
+        <div class="timeline-detail">Original SF&ndash;LA vision abandoned for near-term scope. Critics call the Central Valley segment "a train to nowhere" &mdash; a low-ridership corridor connecting mid-sized inland cities.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">~2040</div>
+      <div class="timeline-dot planned"></div>
+      <div class="timeline-body">
+        <div class="timeline-event">Full Phase I &mdash; if funded, if built <span class="timeline-badge badge-planned">Uncertain</span></div>
+        <div class="timeline-detail">Full SF to LA service projected for around 2040, pending closure of $86.8B funding gap. No credible mechanism identified. Cap-and-trade provides ~$1B/year through 2045.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAILURE MODES -->
+  <div class="section-label">// How It Failed</div>
+  <div class="failure-grid">
+
+    <div class="failure-card">
+      <div class="failure-severity severity-critical">
+        <div class="severity-dot"></div>
+        <span class="severity-text">Critical Failure</span>
+      </div>
+      <div class="failure-name">Cost Explosion</div>
+      <div class="failure-desc">The budget grew from $33 billion to a minimum of $126 billion — potentially $231 billion for the full build. That is a 283–600% increase on a project voters approved based on a number that bore no relationship to reality. No independent cost estimate was required before the bond measure passed.</div>
+    </div>
+
+    <div class="failure-card">
+      <div class="failure-severity severity-critical">
+        <div class="severity-dot"></div>
+        <span class="severity-text">Critical Failure</span>
+      </div>
+      <div class="failure-name">Federal Noncompliance</div>
+      <div class="failure-desc">The Federal Railroad Administration cited 9 distinct compliance violations before terminating $4 billion in grants in July 2025. Among the failures: a $7 billion funding shortfall just for the Initial Operating Segment and a missed 2024 deadline to procure a trainset vendor — 16 years into the project.</div>
+    </div>
+
+    <div class="failure-card">
+      <div class="failure-severity severity-high">
+        <div class="severity-dot"></div>
+        <span class="severity-text">High Severity</span>
+      </div>
+      <div class="failure-name">Scope Collapse</div>
+      <div class="failure-desc">The transformative SF-to-LA vision has collapsed into a Merced-to-Bakersfield segment serving the Central Valley — a corridor with low ridership potential and no connection to major metro areas. The project that was supposed to rival Japan's Shinkansen now may become a short regional link to two mid-size inland cities.</div>
+    </div>
+
+    <div class="failure-card">
+      <div class="failure-severity severity-high">
+        <div class="severity-dot"></div>
+        <span class="severity-text">High Severity</span>
+      </div>
+      <div class="failure-name">Institutional Breakdown</div>
+      <div class="failure-desc">No trainset vendor has been procured after 18 years. The former chair of the independent oversight body declared the project a "dead end" in a formal letter to legislators. The 2026 Business Plan — branded as ambitious — cannot identify a credible path to close an $86.8 billion funding gap. The authority continues to spend $1B+ per year regardless.</div>
+    </div>
+
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="verdict-label">// Editorial Verdict</div>
+    <p>California's high-speed rail project stands as a case study in institutional failure at every level: governance, procurement, cost estimation, and political accountability. Eighteen years after voters approved it and $15 billion later, no high-speed track exists anywhere in the state. The project's collapse was not the result of any single catastrophic event — it was the product of chronic underestimation, political dysfunction, and an authority that continued spending without accountability. The question is no longer whether it will be built on time. The question is whether it will be built at all.</p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div style="margin-bottom:8px"><a href="index.html" style="color:inherit;text-decoration:none">&larr; Daily Briefing Archive</a></div>
+  AI-assisted analysis &middot; Sources: FRA, CAHSRA 2026 Business Plan, CA Policy Center, Newsweek &middot; June 6, 2026
+</footer>
+
+</body>
+</html>
