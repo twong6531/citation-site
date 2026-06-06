@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1700" width="800" height="1700">
+  <rect width="800" height="1700" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+  <text x="40" y="40" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" letter-spacing="3" fill="#888888">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="82" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#111111">TRANSIT EQUITY & AUTOMATION</text>
+  <text x="40" y="108" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#888888">June 6, 2026 · 10 Papers Analyzed · arXiv, iScience, IER</text>
+  <line x1="40" y1="124" x2="760" y2="124" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- KEY FINDINGS -->
+  <text x="40" y="154" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">KEY FINDINGS</text>
+  <text x="40" y="182" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">01</text>
+  <text x="64" y="182" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">Hybrid buses outperform all-electric mandates under budget constraints,</text>
+  <text x="64" y="200" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">yielding 6% more emissions reduction over 18 years.</text>
+  <text x="40" y="226" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">02</text>
+  <text x="64" y="226" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">Fast transit expansions can increase income segregation — type of</text>
+  <text x="64" y="244" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">transit investment matters as much as amount.</text>
+  <text x="40" y="270" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">03</text>
+  <text x="64" y="270" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">Solar-integrated e-bus charging optimization cuts operating costs</text>
+  <text x="64" y="288" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#333333">by up to 32% on real transit networks.</text>
+  <line x1="40" y1="308" x2="760" y2="308" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- PAPER OF THE DAY -->
+  <rect x="40" y="320" width="120" height="24" rx="4" fill="#008080"/>
+  <text x="100" y="337" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">PAPER OF THE DAY</text>
+  <text x="40" y="366" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#111111">Public Transit Access and Income Segregation</text>
+  <text x="40" y="387" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#888888">Prottoy Akbar et al. · International Economic Review, 2025</text>
+  <text x="40" y="412" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">Fast transit improvements increase income segregation while slow transit</text>
+  <text x="40" y="429" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#555555">improvements decrease it — a finding that reshapes equity investment logic.</text>
+  <rect x="40" y="445" width="72" height="20" rx="3" fill="#E8F5F5"/>
+  <text x="76" y="459" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#008080" text-anchor="middle">HIGH CONFIDENCE</text>
+  <line x1="40" y1="478" x2="760" y2="478" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="504" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">EMERGING THEMES</text>
+  <line x1="293" y1="514" x2="293" y2="650" stroke="#DDDDDD" stroke-width="1"/>
+  <line x1="546" y1="514" x2="546" y2="650" stroke="#DDDDDD" stroke-width="1"/>
+
+  <text x="40" y="534" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">Pragmatic</text>
+  <text x="40" y="551" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">Decarbonization</text>
+  <text x="40" y="573" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Hybrid bus strategies</text>
+  <text x="40" y="589" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">outperform all-electric</text>
+  <text x="40" y="605" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">mandates under real</text>
+  <text x="40" y="621" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">budget constraints.</text>
+  <text x="40" y="643" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#008080">2 papers</text>
+
+  <text x="310" y="534" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">Equity-Aware</text>
+  <text x="310" y="551" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">Automation</text>
+  <text x="310" y="573" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">Autonomous transit</text>
+  <text x="310" y="589" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">requires explicit equity</text>
+  <text x="310" y="605" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">mandates to avoid</text>
+  <text x="310" y="621" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">widening access gaps.</text>
+  <text x="310" y="643" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#008080">3 papers</text>
+
+  <text x="563" y="534" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">AI-Augmented</text>
+  <text x="563" y="551" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">Planning</text>
+  <text x="563" y="573" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">LLMs, ML models,</text>
+  <text x="563" y="589" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">and VR-digital twins</text>
+  <text x="563" y="605" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">scale planning from</text>
+  <text x="563" y="621" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555555">expert to automated.</text>
+  <text x="563" y="643" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#008080">3 papers</text>
+  <line x1="40" y1="662" x2="760" y2="662" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="688" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">EVIDENCE CONFIDENCE</text>
+  <text x="40" y="716" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">High</text>
+  <rect x="100" y="703" width="144" height="18" fill="#008080"/>
+  <text x="252" y="716" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">4 papers</text>
+  <text x="40" y="748" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Medium</text>
+  <rect x="100" y="735" width="144" height="18" fill="#4AACAC"/>
+  <text x="252" y="748" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">4 papers</text>
+  <text x="40" y="780" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Low</text>
+  <rect x="100" y="767" width="72" height="18" fill="#AADDDD"/>
+  <text x="180" y="780" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">2 papers</text>
+  <line x1="40" y1="802" x2="760" y2="802" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <text x="40" y="828" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">CONTRARIAN INSIGHTS</text>
+  <text x="40" y="854" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#008080">"</text>
+  <text x="62" y="854" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#333333">Fast transit can increase income segregation, not reduce it.</text>
+  <text x="40" y="876" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#008080">"</text>
+  <text x="62" y="876" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#333333">Weather data hurts ridership forecasting models — temporal features win.</text>
+  <text x="40" y="898" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#008080">"</text>
+  <text x="62" y="898" font-family="Helvetica,Arial,sans-serif" font-size="12" font-style="italic" fill="#333333">All-electric bus mandates without infrastructure funding worsen climate outcomes.</text>
+  <line x1="40" y1="918" x2="760" y2="918" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="944" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">ACTIONABLE TAKEAWAYS</text>
+  <text x="40" y="970" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">1.</text>
+  <text x="58" y="970" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Model hybrid bus scenarios before committing to all-electric fleets in compliance plans.</text>
+  <text x="40" y="998" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">2.</text>
+  <text x="58" y="998" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Prioritize dynamic repositioning algorithms over vehicle procurement for microtransit ROI.</text>
+  <text x="40" y="1026" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">3.</text>
+  <text x="58" y="1026" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Require expert-knowledge calibration in AI walkability tools to prevent score inflation.</text>
+  <text x="40" y="1054" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">4.</text>
+  <text x="58" y="1054" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333333">Disaggregate equity analysis by service type (local vs. express) before investment decisions.</text>
+  <line x1="40" y1="1078" x2="760" y2="1078" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <text x="40" y="1104" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#008080">LONG-TERM IMPLICATIONS</text>
+  <text x="40" y="1130" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">The transit sector is approaching a bifurcation: agencies integrating equity</text>
+  <text x="40" y="1148" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">analysis, renewable energy co-planning, and AI-assisted operations will diverge</text>
+  <text x="40" y="1166" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">sharply from those treating each challenge in isolation. The 2030s will be</text>
+  <text x="40" y="1184" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">defined not by whether cities adopt EVs or AVs, but by whether they can</text>
+  <text x="40" y="1202" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#444444">deploy these tools in ways that reduce rather than entrench inequality.</text>
+
+  <!-- FOOTER -->
+  <line x1="40" y1="1250" x2="760" y2="1250" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="40" y="1272" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#888888">Transit Research Digest · June 6, 2026</text>
+  <text x="760" y="1272" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#888888" text-anchor="end">twong6531.github.io/citation-site</text>
+  <rect x="0" y="1285" width="800" height="3" fill="#111111"/>
+</svg>

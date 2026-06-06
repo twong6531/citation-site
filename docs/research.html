@@ -55,6 +55,7 @@ a:hover { text-decoration: underline; }
 }
 .archive-card:hover { border-color: var(--accent); text-decoration: none; }
 .archive-date { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.archive-topic { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
 .archive-arrow { font-size: 13px; color: var(--accent); font-weight: 600; }
 .stats { display: flex; gap: 32px; flex-wrap: wrap; }
 .stat { text-align: center; }
@@ -77,21 +78,32 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 <section class="section">
   <div class="section-label">Statistics</div>
   <div class="stats">
-    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Briefings Published</div></div>
-    <div class="stat"><div class="stat-num">11</div><div class="stat-label">Papers Analyzed</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Briefings Published</div></div>
+    <div class="stat"><div class="stat-num">21</div><div class="stat-label">Papers Analyzed</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Emerging Themes</div></div>
   </div>
 </section>
 <section class="section">
   <div class="section-label">Latest Briefing</div>
-  <a href="research-2026-06-05.html" class="featured-card">
+  <a href="research-2026-06-06.html" class="featured-card">
     <div class="featured-badge">Most Recent</div>
-    <div class="featured-date">June 5, 2026</div>
-    <div class="featured-desc">Comprehensive analysis of 11 transit, mobility, and autonomous vehicle research papers — datasets, road safety, AV deployment gaps, and EV infrastructure economics.</div>
+    <div class="featured-date">June 6, 2026</div>
+    <div class="featured-desc">Transit Equity &amp; Automation — 10 papers on hybrid bus decarbonization, autonomous microtransit, AI walkability assessment, ridership forecasting, and the surprising finding that fast transit can increase income segregation.</div>
     <div class="featured-link">Read Today's Briefing &rarr;</div>
   </a>
 </section>
+<section class="section">
+  <div class="section-label">Archive — 1 Past Briefing</div>
+  <div class="archive-grid">
+    <a href="research-2026-06-05.html" class="archive-card">
+      <div class="archive-date">June 5, 2026</div>
+      <div class="archive-topic">Datasets, road safety, AV deployment, EV infrastructure economics</div>
+      <div class="archive-arrow">Read &rarr;</div>
+    </a>
+  </div>
+</section>
 <footer>
-  <p>Transit Research Archive &middot; Updated daily &middot; Sources: arXiv &middot; Semantic Scholar</p>
+  <p>Transit Research Archive &middot; Updated daily &middot; Sources: arXiv &middot; Semantic Scholar &middot; iScience</p>
 </footer>
 </body>
 </html>
