@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transit-Oriented Development — Daily Briefing</title>
+  <style>
+    :root {
+      --bg: #f0f0f0; --card-bg: #ffffff; --text-primary: #111111;
+      --text-secondary: #444444; --text-muted: #888888; --border: #e0e0e0;
+      --font: system-ui, -apple-system, sans-serif;
+      --mono: "SF Mono", "Fira Code", monospace;
+      --green: #2e7d32; --blue: #0077cc; --purple: #6c47ff;
+      --teal: #00897b; --orange: #e65100; --red: #c62828;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#111; --card-bg:#1a1a1a; --text-primary:#f0f0f0; --text-secondary:#aaa; --text-muted:#555; --border:#2a2a2a; }
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:var(--font); background:var(--bg); color:var(--text-primary); min-height:100vh; }
+
+    .site-header { background:var(--card-bg); border-bottom:1px solid var(--border); padding:14px 32px; display:flex; align-items:center; justify-content:space-between; }
+    .site-name { font-family:var(--mono); font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .site-header a { text-decoration:none; color:var(--text-muted); font-size:11px; font-family:var(--mono); letter-spacing:.05em; }
+    .site-header a:hover { color:var(--text-primary); }
+
+    .white-bg { background:var(--card-bg); border-bottom:1px solid var(--border); }
+    .hero { max-width:800px; margin:0 auto; padding:64px 32px 48px; }
+    .hero-label { font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:16px; }
+    h1 { font-size:clamp(28px,5vw,48px); font-weight:800; line-height:1.15; letter-spacing:-.02em; margin-bottom:20px; }
+    .hero-sub { font-size:17px; line-height:1.7; color:var(--text-secondary); max-width:620px; margin-bottom:28px; }
+    .hero-quote { border-left:3px solid var(--teal); padding:12px 20px; font-style:italic; font-size:15px; color:var(--text-secondary); line-height:1.6; }
+    .hero-quote cite { display:block; margin-top:8px; font-style:normal; font-size:12px; color:var(--text-muted); font-family:var(--mono); }
+
+    .section { max-width:800px; margin:0 auto; padding:48px 32px; }
+    .section-label { font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+    .explainer { margin-bottom:28px; }
+    .explainer h2 { font-size:20px; font-weight:700; margin-bottom:10px; line-height:1.3; }
+    .explainer p { font-size:14px; line-height:1.75; color:var(--text-secondary); }
+
+    .stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:40px 0; }
+    .stat-cell { background:var(--card-bg); padding:24px 20px; text-align:center; }
+    .stat-number { font-family:var(--mono); font-size:32px; font-weight:700; line-height:1; margin-bottom:6px; }
+    .stat-label { font-size:11px; color:var(--text-muted); line-height:1.4; }
+    @media(max-width:540px) { .stat-row { grid-template-columns:1fr; } }
+
+    .cards-section { background:var(--bg); padding:48px 0; border-top:1px solid var(--border); }
+    .cards-inner { max-width:1080px; margin:0 auto; padding:0 24px; }
+    .cards-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+    .cards-title { font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); }
+    .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
+    @media(max-width:780px) { .card-grid { grid-template-columns:1fr; } }
+    @media(min-width:781px) and (max-width:1080px) { .card-grid { grid-template-columns:repeat(2,1fr); } }
+
+    .card { background:var(--card-bg); display:flex; flex-direction:column; }
+    .card-top-border { height:3px; }
+    .card-head { padding:16px 16px 12px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); }
+    .card-head-left { display:flex; align-items:center; gap:8px; }
+    .card-emoji { font-size:22px; line-height:1; }
+    .badge { font-size:9px; font-family:var(--mono); font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:3px 8px; border-radius:2px; color:#fff; }
+    .card-num { font-family:var(--mono); font-size:11px; color:var(--text-muted); }
+    .card-headline { padding:14px 16px 8px; font-size:15px; font-weight:700; line-height:1.35; }
+    .card-summary { padding:0 16px 12px; font-size:13px; line-height:1.65; color:var(--text-secondary); flex:1; }
+    .card-why-label { padding:0 16px 4px; font-family:var(--mono); font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); }
+    .card-why { padding:0 16px 12px; font-size:12px; font-style:italic; color:var(--text-secondary); line-height:1.55; }
+    .card-divider { height:1px; background:var(--border); }
+    .card-bullets { padding:10px 16px 16px; }
+    .bullet-row { display:flex; align-items:flex-start; gap:8px; margin-bottom:7px; }
+    .bullet-row:last-child { margin-bottom:0; }
+    .bullet-mark { width:17px; height:17px; border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; font-size:10px; color:#fff; font-weight:700; line-height:1; }
+    .bullet-text { font-size:12px; color:var(--text-secondary); line-height:1.5; }
+
+    footer { text-align:center; padding:32px; font-size:11px; color:var(--text-muted); font-family:var(--mono); border-top:1px solid var(--border); }
+    footer a { color:var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="site-name">Daily Briefing</span>
+  <a href="index.html">&#8592; Archive</a>
+</header>
+
+<!-- HERO -->
+<div class="white-bg">
+  <div class="hero">
+    <div class="hero-label">Urban Planning &middot; Explainer</div>
+    <h1>Transit-Oriented<br>Development</h1>
+    <p class="hero-sub">A strategy for building compact, walkable, mixed-use communities centered on high-quality public transit &mdash; designed to reduce car dependence, cut emissions, and create more livable cities.</p>
+    <blockquote class="hero-quote">
+      &ldquo;The essence of TOD is not just about transportation &mdash; it&rsquo;s about creating livable, sustainable communities.&rdquo;
+      <cite>&mdash; Peter Calthorpe, urbanist and TOD pioneer</cite>
+    </blockquote>
+  </div>
+</div>
+
+<!-- WHAT IS IT -->
+<div class="white-bg">
+  <div class="section">
+    <div class="section-label">01 &mdash; What is it</div>
+    <div class="explainer">
+      <h2>The Core Idea</h2>
+      <p>Transit-Oriented Development (TOD) concentrates housing, jobs, shops, and services within a half-mile walking radius of a transit hub &mdash; train station, light rail stop, or bus rapid transit terminal. The idea is simple: put the places people need to go next to the systems that take them there, and design the streets in between to be walkable and human-scaled.</p>
+    </div>
+    <div class="explainer">
+      <h2>What It Looks Like</h2>
+      <p>A TOD district typically has a transit station at its center, surrounded by dense mixed-use buildings &mdash; ground-floor retail with apartments or offices above. Streets are narrow enough to cross comfortably, blocks are small, and parking is limited. As you move outward from the station, density gradually decreases. The result is a neighborhood that functions well without a car.</p>
+    </div>
+    <div class="explainer">
+      <h2>Where It Comes From</h2>
+      <p>The term was popularized by architect Peter Calthorpe in the early 1990s, though the underlying pattern &mdash; build dense around transit &mdash; is as old as the streetcar suburbs of the 1800s. Modern TOD formalizes those principles with equity, sustainability, and mixed-income housing as explicit goals.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="white-bg">
+  <div class="section">
+    <div class="section-label">02 &mdash; By the numbers</div>
+    <div class="stat-row">
+      <div class="stat-cell"><div class="stat-number" style="color:var(--teal)">3&times;</div><div class="stat-label">Less CO&#8322; per capita in dense city centers vs. suburbs</div></div>
+      <div class="stat-cell"><div class="stat-number" style="color:var(--blue)">$17T</div><div class="stat-label">Global infrastructure savings 2015&ndash;2050 from compact growth</div></div>
+      <div class="stat-cell"><div class="stat-number" style="color:var(--green)">1.5%</div><div class="stat-label">Drop in traffic fatalities per 1% increase in urban compactness</div></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-cell"><div class="stat-number" style="color:var(--purple)">$3K</div><div class="stat-label">Annual per-capita cost of urban sprawl in the US</div></div>
+      <div class="stat-cell"><div class="stat-number" style="color:var(--orange)">&#189; mi</div><div class="stat-label">Standard walkable radius around a TOD transit hub</div></div>
+      <div class="stat-cell"><div class="stat-number" style="color:var(--red)">1.35M</div><div class="stat-label">Annual global road crash deaths &mdash; compactness measurably reduces this</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- INFOGRAPHIC CARDS -->
+<div class="cards-section">
+  <div class="cards-inner">
+    <div class="cards-header">
+      <span class="cards-title">Why TOD Matters &mdash; 6 Key Benefits</span>
+      <span class="cards-title">06 cards</span>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top-border" style="background:var(--teal)"></div>
+        <div class="card-head"><div class="card-head-left"><span class="card-emoji">&#127757;</span><span class="badge" style="background:var(--teal)">Environment</span></div><span class="card-num">01</span></div>
+        <div class="card-headline">Cuts Carbon Emissions Dramatically</div>
+        <div class="card-summary">TOD reduces reliance on personal vehicles &mdash; the single largest source of urban CO&#8322;. Dense, transit-connected neighborhoods generate far less greenhouse gas per resident than sprawling suburbs.</div>
+        <div class="card-why-label">Why it matters</div>
+        <div class="card-why">City centers built around transit emit up to 3&times; less CO&#8322; per capita than car-dependent suburbs &mdash; making TOD one of the most effective climate tools at a city&rsquo;s disposal.</div>
+        <div class="card-divider"></div>
+        <div class="card-bullets">
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--teal)">&#10003;</div><span class="bullet-text">Dense urban cores emit 3&times; less CO&#8322; per capita than suburbs</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--teal)">&#10003;</div><span class="bullet-text">Reduces CO, SO&#8322;, and particulate matter from fewer vehicle miles</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--teal)">&#10003;</div><span class="bullet-text">Compact growth uses less land &mdash; preserving forests and farmland</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top-border" style="background:var(--blue)"></div>
+        <div class="card-head"><div class="card-head-left"><span class="card-emoji">&#128176;</span><span class="badge" style="background:var(--blue)">Economic</span></div><span class="card-num">02</span></div>
+        <div class="card-headline">Saves Trillions in Infrastructure Costs</div>
+        <div class="card-summary">Sprawl is expensive to service &mdash; every road, pipe, and power line must stretch further. Compact TOD clusters demand within a smaller footprint, dramatically reducing what governments spend building and maintaining infrastructure.</div>
+        <div class="card-why-label">Why it matters</div>
+        <div class="card-why">Compact urban growth could save over $17 trillion in global infrastructure costs between 2015 and 2050 &mdash; funds that can be reinvested in housing, schools, and transit itself.</div>
+        <div class="card-divider"></div>
+        <div class="card-bullets">
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--blue)">&#10003;</div><span class="bullet-text">$17 trillion in global infrastructure savings projected by 2050</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--blue)">&#10003;</div><span class="bullet-text">Urban sprawl costs the US approximately $3,000 per person per year</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--blue)">&#10003;</div><span class="bullet-text">Higher property values near transit stations generate more tax revenue</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top-border" style="background:var(--green)"></div>
+        <div class="card-head"><div class="card-head-left"><span class="card-emoji">&#127973;</span><span class="badge" style="background:var(--green)">Health</span></div><span class="card-num">03</span></div>
+        <div class="card-headline">Safer Streets, Cleaner Air, Healthier Lives</div>
+        <div class="card-summary">Walkable TOD neighborhoods encourage daily physical activity and expose residents to less traffic pollution. Fewer cars on the road means fewer crashes, less exhaust, and better air quality for everyone.</div>
+        <div class="card-why-label">Why it matters</div>
+        <div class="card-why">1.35 million people die in traffic crashes globally each year. Compactness reduces fatalities by 1.5% for every 1% increase in density &mdash; a measurable, scalable lifesaving effect.</div>
+        <div class="card-divider"></div>
+        <div class="card-bullets">
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--green)">&#10003;</div><span class="bullet-text">1.5% fewer traffic fatalities per 1% increase in urban compactness</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--green)">&#10003;</div><span class="bullet-text">Children within 75m of major roads have 50% higher asthma risk</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--green)">&#10003;</div><span class="bullet-text">Walkable streets replace sedentary car trips with daily active movement</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top-border" style="background:var(--purple)"></div>
+        <div class="card-head"><div class="card-head-left"><span class="card-emoji">&#9878;</span><span class="badge" style="background:var(--purple)">Equity</span></div><span class="card-num">04</span></div>
+        <div class="card-headline">Connects Low-Income Workers to Opportunity</div>
+        <div class="card-summary">Car ownership is expensive and not universally accessible. TOD gives residents &mdash; especially lower-income households &mdash; reliable access to jobs, schools, healthcare, and services without depending on a personal vehicle.</div>
+        <div class="card-why-label">Why it matters</div>
+        <div class="card-why">In Mexico City, commuting consumes up to 25% of daily wages for low-income workers &mdash; TOD slashes that burden by putting transit at the center of where people live.</div>
+        <div class="card-divider"></div>
+        <div class="card-bullets">
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--purple)">&#10003;</div><span class="bullet-text">Links workers to employment centers without requiring car ownership</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--purple)">&#10003;</div><span class="bullet-text">Creates construction, maintenance, and transit operations jobs locally</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--purple)">&#10003;</div><span class="bullet-text">Inclusionary zoning and community land trusts prevent displacement</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top-border" style="background:var(--orange)"></div>
+        <div class="card-head"><div class="card-head-left"><span class="card-emoji">&#127961;</span><span class="badge" style="background:var(--orange)">Urbanism</span></div><span class="card-num">05</span></div>
+        <div class="card-headline">Activates Streets and Local Economies</div>
+        <div class="card-summary">Mixed-use TOD fills ground floors with shops, cafes, and services that benefit from constant foot traffic. Streets become places &mdash; not just corridors for cars &mdash; generating commerce, community, and civic life at the neighborhood scale.</div>
+        <div class="card-why-label">Why it matters</div>
+        <div class="card-why">Chicago&rsquo;s Wicker Park TOD catalyzed sustained economic growth around the Division Blue Line station, combining 99 mixed-income apartments with office space and ground-floor retail.</div>
+        <div class="card-divider"></div>
+        <div class="card-bullets">
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--orange)">&#10003;</div><span class="bullet-text">Ground-floor retail thrives on reliable daily commuter foot traffic</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--orange)">&#10003;</div><span class="bullet-text">Chicago Wicker Park: 99 mixed-income units + office + retail near Blue Line</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--orange)">&#10003;</div><span class="bullet-text">Diverse land use reduces vulnerability to sector-specific downturns</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top-border" style="background:var(--red)"></div>
+        <div class="card-head"><div class="card-head-left"><span class="card-emoji">&#9201;</span><span class="badge" style="background:var(--red)">Time</span></div><span class="card-num">06</span></div>
+        <div class="card-headline">Gives People Their Time Back</div>
+        <div class="card-summary">Long car commutes are a daily tax on time and mental health. TOD compresses distances and provides frequent, reliable transit &mdash; so residents spend less of their lives in traffic and more time living.</div>
+        <div class="card-why-label">Why it matters</div>
+        <div class="card-why">In Dar es Salaam, a new BRT system cut average commute times from 2 hours to 45 minutes &mdash; giving workers back over an hour every single day.</div>
+        <div class="card-divider"></div>
+        <div class="card-bullets">
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--red)">&#10003;</div><span class="bullet-text">Dar es Salaam BRT reduced commutes from 2 hours to 45 minutes</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--red)">&#10003;</div><span class="bullet-text">20% of Mexico City workers spend 3+ hours commuting every day</span></div>
+          <div class="bullet-row"><div class="bullet-mark" style="background:var(--red)">&#10003;</div><span class="bullet-text">Shorter commutes correlate with higher productivity and life satisfaction</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  Transit-Oriented Development &middot; Research compiled June 2026 &middot;
+  Sources: <a href="https://www.transit.dot.gov/TOD">FTA</a> &middot;
+  <a href="https://tod.itdp.org/why-tod-matters.html">ITDP</a> &middot;
+  <a href="https://en.wikipedia.org/wiki/Transit-oriented_development">Wikipedia</a> &middot;
+  <a href="https://www.numberanalytics.com/blog/impact-transit-oriented-development-urban-society">Number Analytics</a>
+</footer>
+</body>
+</html>
