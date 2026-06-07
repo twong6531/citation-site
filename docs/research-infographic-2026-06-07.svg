@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+  
+  <!-- Header bar -->
+  <rect x="0" y="0" width="800" height="120" fill="#1A1A1A"/>
+  
+  <!-- Header text -->
+  <text x="40" y="45" fill="#F7F7F5" font-size="11" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="80" fill="#FFFFFF" font-size="24" font-weight="700" letter-spacing="-0.5">June 7, 2026</text>
+  <text x="40" y="108" fill="#888888" font-size="11" letter-spacing="1">13 PAPERS · URBAN MOBILITY · AUTONOMOUS SYSTEMS · MICROMOBILITY</text>
+  
+  <!-- Red accent line -->
+  <rect x="0" y="120" width="800" height="4" fill="#E63946"/>
+  
+  <!-- SECTION: KEY FINDINGS -->
+  <text x="40" y="165" fill="#1A1A1A" font-size="10" letter-spacing="3" font-weight="600">KEY FINDINGS</text>
+  <line x1="40" y1="172" x2="760" y2="172" stroke="#DDDDDD" stroke-width="1"/>
+  
+  <!-- Finding 1 -->
+  <rect x="40" y="185" width="32" height="32" fill="#E63946"/>
+  <text x="56" y="207" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">1</text>
+  <text x="85" y="200" fill="#1A1A1A" font-size="13" font-weight="700">Speed governance yields broader safety dividends than expected</text>
+  <text x="85" y="218" fill="#555555" font-size="11">
+    <tspan x="85" dy="0">19.5M e-scooter trips across 52 South Korean cities prove firmware speed caps reduce</tspan>
+    <tspan x="85" dy="14">harsh acceleration AND deceleration—not just top speed. No behavioral offsetting detected.</tspan>
+  </text>
+  
+  <!-- Finding 2 -->
+  <rect x="40" y="265" width="32" height="32" fill="#E63946"/>
+  <text x="56" y="287" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">2</text>
+  <text x="85" y="280" fill="#1A1A1A" font-size="13" font-weight="700">Post-accident dispatcher overcorrection is the hidden transit safety crisis</text>
+  <text x="85" y="298" fill="#555555" font-size="11">
+    <tspan x="85" dy="0">Cognitive modeling of subway flood scenarios reveals operators enter a dangerous</tspan>
+    <tspan x="85" dy="14">'overcorrection' phase post-accident—performing worse than a naive memory model.</tspan>
+  </text>
+  
+  <!-- Finding 3 -->
+  <rect x="40" y="345" width="32" height="32" fill="#E63946"/>
+  <text x="56" y="367" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">3</text>
+  <text x="85" y="360" fill="#1A1A1A" font-size="13" font-weight="700">LLMs enter transit operations as exception handlers, not replacements</text>
+  <text x="85" y="378" fill="#555555" font-size="11">
+    <tspan x="85" dy="0">AMPLIFY (Chicago e-scooter fleets) and E-bike agents both show LLMs excel at</tspan>
+    <tspan x="85" dy="14">emergent events and qualitative analysis—where rigid algorithms systematically fail.</tspan>
+  </text>
+  
+  <!-- Divider -->
+  <rect x="0" y="420" width="800" height="3" fill="#1A1A1A"/>
+  
+  <!-- PAPER OF THE DAY -->
+  <rect x="0" y="423" width="800" height="160" fill="#1A1A1A"/>
+  <text x="40" y="455" fill="#E63946" font-size="10" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <text x="40" y="478" fill="#FFFFFF" font-size="14" font-weight="700">
+    <tspan x="40">Do E-Scooter Speed Governance Policies Reduce Harsh</tspan>
+    <tspan x="40" dy="18">Acceleration and Deceleration?</tspan>
+  </text>
+  <text x="40" y="520" fill="#AAAAAA" font-size="11">Choi, Yoo, Lee · arXiv 2604.26236</text>
+  <text x="40" y="545" fill="#CCCCCC" font-size="11">
+    <tspan x="40">Evidence from 19.5 Million GPS-instrumented trips across 52 cities. Difference-in-differences</tspan>
+    <tspan x="40" dy="14">causal identification. Firmware speed caps reduce ALL aggressive driving behaviors—</tspan>
+    <tspan x="40" dy="14">the highest-ROI safety intervention in urban micromobility regulation.</tspan>
+  </text>
+  
+  <!-- SECTION: CONFIDENCE CHART -->
+  <text x="40" y="615" fill="#1A1A1A" font-size="10" letter-spacing="3" font-weight="600">PAPER CONFIDENCE RATINGS</text>
+  <line x1="40" y1="622" x2="760" y2="622" stroke="#DDDDDD" stroke-width="1"/>
+  
+  <!-- High confidence papers -->
+  <text x="40" y="645" fill="#555555" font-size="10" letter-spacing="2">HIGH CONFIDENCE</text>
+  <rect x="40" y="652" width="240" height="16" fill="#1A1A1A"/>
+  <text x="290" y="664" fill="#333333" font-size="10">E-Scooter Speed Governance · 19.5M trips</text>
+  <rect x="40" y="673" width="240" height="16" fill="#1A1A1A"/>
+  <text x="290" y="685" fill="#333333" font-size="10">Subway Dispatcher Overcorrection</text>
+  <rect x="40" y="694" width="240" height="16" fill="#1A1A1A"/>
+  <text x="290" y="706" fill="#333333" font-size="10">RiskFlow AV Scenario Generation</text>
+  <rect x="40" y="715" width="240" height="16" fill="#1A1A1A"/>
+  <text x="290" y="727" fill="#333333" font-size="10">Vehicle Platoon Stochastic Stability</text>
+  <rect x="40" y="736" width="240" height="16" fill="#1A1A1A"/>
+  <text x="290" y="748" fill="#333333" font-size="10">E-Scooter Demand Forecasting · Austin TX</text>
+  <rect x="40" y="757" width="240" height="16" fill="#1A1A1A"/>
+  <text x="290" y="769" fill="#333333" font-size="10">CoPark Autonomous Parking RL</text>
+  <rect x="40" y="778" width="240" height="16" fill="#1A1A1A"/>
+  <text x="290" y="790" fill="#333333" font-size="10">VZCrash IMU Dataset · 31K crashes</text>
+  
+  <!-- Medium confidence papers -->
+  <text x="40" y="820" fill="#555555" font-size="10" letter-spacing="2">MEDIUM CONFIDENCE</text>
+  <rect x="40" y="827" width="160" height="16" fill="#555555"/>
+  <text x="210" y="839" fill="#333333" font-size="10">AMPLIFY LLM Fleet Rebalancing</text>
+  <rect x="40" y="848" width="160" height="16" fill="#555555"/>
+  <text x="210" y="860" fill="#333333" font-size="10">E-bike Accident LLM Analysis</text>
+  <rect x="40" y="869" width="160" height="16" fill="#555555"/>
+  <text x="210" y="881" fill="#333333" font-size="10">AV Risk Assessment Framework</text>
+  <rect x="40" y="890" width="160" height="16" fill="#555555"/>
+  <text x="210" y="902" fill="#333333" font-size="10">EV Charging Congestion Forecasting</text>
+  <rect x="40" y="911" width="160" height="16" fill="#555555"/>
+  <text x="210" y="923" fill="#333333" font-size="10">MicroVRide VR Simulator · N=12</text>
+  <rect x="40" y="932" width="160" height="16" fill="#555555"/>
+  <text x="210" y="944" fill="#333333" font-size="10">Traffic Sign Inspection IDC</text>
+  
+  <!-- Divider -->
+  <line x1="40" y1="975" x2="760" y2="975" stroke="#DDDDDD" stroke-width="1"/>
+  
+  <!-- EMERGING THEMES - 3 columns -->
+  <text x="40" y="997" fill="#1A1A1A" font-size="10" letter-spacing="3" font-weight="600">EMERGING THEMES</text>
+  
+  <!-- Theme 1 -->
+  <rect x="40" y="1010" width="220" height="3" fill="#E63946"/>
+  <text x="40" y="1030" fill="#1A1A1A" font-size="12" font-weight="700">LLMs Enter Operations</text>
+  <text x="40" y="1048" fill="#555555" font-size="10">
+    <tspan x="40" dy="0">From fleet rebalancing to</tspan>
+    <tspan x="40" dy="13">injury analysis, LLMs move</tspan>
+    <tspan x="40" dy="13">from research tool to live</tspan>
+    <tspan x="40" dy="13">operational asset.</tspan>
+  </text>
+  
+  <!-- Theme 2 -->
+  <rect x="290" y="1010" width="220" height="3" fill="#E63946"/>
+  <text x="290" y="1030" fill="#1A1A1A" font-size="12" font-weight="700">Micromobility Matures</text>
+  <text x="290" y="1048" fill="#555555" font-size="10">
+    <tspan x="290" dy="0">E-scooters and e-bikes now</tspan>
+    <tspan x="290" dy="13">have national datasets, causal</tspan>
+    <tspan x="290" dy="13">policy experiments, and VR</tspan>
+    <tspan x="290" dy="13">simulation research tracks.</tspan>
+  </text>
+  
+  <!-- Theme 3 -->
+  <rect x="540" y="1010" width="220" height="3" fill="#E63946"/>
+  <text x="540" y="1030" fill="#1A1A1A" font-size="12" font-weight="700">Probabilistic Certification</text>
+  <text x="540" y="1048" fill="#555555" font-size="10">
+    <tspan x="540" dy="0">AV platoons, EV charging,</tspan>
+    <tspan x="540" dy="13">and traffic testing all shift</tspan>
+    <tspan x="540" dy="13">from worst-case to distribu-</tspan>
+    <tspan x="540" dy="13">tional guarantees.</tspan>
+  </text>
+  
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <rect x="0" y="1130" width="800" height="360" fill="#F0EFE8"/>
+  <text x="40" y="1162" fill="#1A1A1A" font-size="10" letter-spacing="3" font-weight="600">ACTIONABLE TAKEAWAYS</text>
+  <line x1="40" y1="1169" x2="760" y2="1169" stroke="#BBBBBB" stroke-width="1"/>
+  
+  <text x="40" y="1192" fill="#1A1A1A" font-size="11">
+    <tspan x="40" dy="0" font-weight="700">→ Transit agencies: </tspan>
+    <tspan>Design dispatcher training around post-accident overcorrection phase specifically.</tspan>
+  </text>
+  <text x="40" y="1225" fill="#1A1A1A" font-size="11">
+    <tspan x="40" dy="0" font-weight="700">→ City regulators: </tspan>
+    <tspan>Update e-scooter speed governance cost-benefit analyses—acceleration/braking gains are real and large.</tspan>
+  </text>
+  <text x="40" y="1258" fill="#1A1A1A" font-size="11">
+    <tspan x="40" dy="0" font-weight="700">→ Micromobility operators: </tspan>
+    <tspan>Add LLM adaptation modules for emergent event handling in fleet rebalancing.</tspan>
+  </text>
+  <text x="40" y="1291" fill="#1A1A1A" font-size="11">
+    <tspan x="40" dy="0" font-weight="700">→ EV fleet operators: </tspan>
+    <tspan>Adopt fluid-queue congestion forecasting—14% waiting downtime reduction is achievable today.</tspan>
+  </text>
+  <text x="40" y="1324" fill="#1A1A1A" font-size="11">
+    <tspan x="40" dy="0" font-weight="700">→ AV certification bodies: </tspan>
+    <tspan>Accept probabilistic stability guarantees for platooning—worst-case bounds block viable tech.</tspan>
+  </text>
+  
+  <!-- CONTRARIAN INSIGHT BOX -->
+  <rect x="40" y="1355" width="720" height="100" fill="#1A1A1A" rx="2"/>
+  <text x="60" y="1378" fill="#E63946" font-size="10" letter-spacing="2" font-weight="600">CONTRARIAN INSIGHT</text>
+  <text x="60" y="1398" fill="#FFFFFF" font-size="11">
+    <tspan x="60" dy="0">The human operator is the weakest link in transit emergencies—not the algorithm. Cognitive</tspan>
+    <tspan x="60" dy="15">modeling shows operators in post-accident 'overcorrection' make systematically worse decisions</tspan>
+    <tspan x="60" dy="15">than a naive memory model. Experience does not protect against crisis-induced bias.</tspan>
+  </text>
+  
+  <!-- Footer -->
+  <rect x="0" y="1560" width="800" height="40" fill="#1A1A1A"/>
+  <text x="40" y="1584" fill="#888888" font-size="10">Transit Research Digest · June 7, 2026 · arXiv + Semantic Scholar · Analysis by Claude</text>
+  <text x="760" y="1584" fill="#888888" font-size="10" text-anchor="end">twong6531.github.io/citation-site</text>
+</svg>

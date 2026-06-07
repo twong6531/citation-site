@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — June 7, 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0E0E0E;
+    --surface: #161616;
+    --surface2: #1E1E1E;
+    --border: #2A2A2A;
+    --accent: #E63946;
+    --text: #F0F0F0;
+    --muted: #888;
+    --label: #AAA;
+    --tag-bg: #252525;
+    --link: #7DBEFF;
+    --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  html { font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.6;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  
+  /* ── NAV ── */
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo { font-weight: 700; font-size: 15px; letter-spacing: -0.3px; color: var(--text); }
+  .nav-sep { color: var(--border); }
+  .nav-link { font-size: 13px; color: var(--muted); }
+  .nav-link:hover { color: var(--text); text-decoration: none; }
+  
+  /* ── HERO ── */
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .hero-stat { display: flex; flex-direction: column; gap: 4px; }
+  .hero-stat-value { font-size: 28px; font-weight: 700; color: var(--accent); }
+  .hero-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+  
+  /* ── MAIN ── */
+  .main { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    padding: 48px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-count {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  
+  /* ── EXECUTIVE SUMMARY ── */
+  .exec-summary {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #CCC;
+    border-radius: 0 2px 2px 0;
+  }
+  
+  /* ── PAPER CARD ── */
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 60px; }
+  .paper-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    transition: border-color 0.15s;
+  }
+  .paper-card:hover { border-color: #444; }
+  .paper-card.potd {
+    border-color: var(--accent);
+    background: #1A1010;
+  }
+  .paper-potd-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .paper-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+  .paper-title a { color: var(--text); }
+  .paper-title a:hover { color: var(--link); text-decoration: none; }
+  .paper-meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .paper-confidence {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .confidence-high { background: #0D2A1F; color: #4CAF50; }
+  .confidence-medium { background: #2A2010; color: #FF9800; }
+  .confidence-low { background: #2A1010; color: #F44336; }
+  .paper-summary {
+    font-size: 14px;
+    color: #CCC;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-left: 2px solid var(--border);
+    padding-left: 16px;
+  }
+  .paper-section { margin-bottom: 18px; }
+  .paper-section-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .paper-section-body { font-size: 13px; color: #BBB; line-height: 1.65; }
+  .insights-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .insights-list li {
+    font-size: 13px;
+    color: #BBB;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.55;
+  }
+  .insights-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 12px;
+  }
+  .paper-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+  @media (max-width: 700px) { .paper-grid-2 { grid-template-columns: 1fr; } }
+  
+  /* ── POTD SPECIAL ── */
+  .potd-reason {
+    background: #0F0A0A;
+    border: 1px solid #3A1A1A;
+    padding: 16px 20px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #CC9;
+    line-height: 1.65;
+    margin-top: 16px;
+  }
+  .potd-reason strong { color: var(--accent); }
+  
+  /* ── THEMES GRID ── */
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px; }
+  @media (max-width: 800px) { .themes-grid { grid-template-columns: 1fr; } }
+  .theme-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    padding: 24px;
+    border-radius: 0 0 4px 4px;
+  }
+  .theme-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+  .theme-body { font-size: 13px; color: #999; line-height: 1.65; }
+  
+  /* ── CONTRARIAN ── */
+  .contrarian-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 60px; }
+  .contrarian-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid #FF9800;
+    padding: 20px 24px;
+    border-radius: 0 4px 4px 0;
+    font-size: 13px;
+    color: #CCC;
+    line-height: 1.65;
+  }
+  
+  /* ── TAKEAWAYS ── */
+  .takeaways-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 60px; }
+  .takeaway-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #CCC;
+    line-height: 1.6;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .takeaway-num {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  
+  /* ── LONG TERM ── */
+  .longterm-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 32px;
+    border-radius: 4px;
+    margin-bottom: 60px;
+    font-size: 14px;
+    color: #BBB;
+    line-height: 1.75;
+  }
+  
+  /* ── SVG SECTION ── */
+  .svg-section { margin-bottom: 60px; }
+  .svg-container {
+    background: #F7F7F5;
+    border-radius: 4px;
+    padding: 8px;
+    max-width: 800px;
+  }
+  .svg-container svg { width: 100%; height: auto; display: block; }
+  .svg-download {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--link);
+    cursor: pointer;
+  }
+  .svg-download:hover { background: var(--surface2); }
+  
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-text { font-size: 12px; color: var(--muted); }
+  .footer-link { font-size: 13px; color: var(--link); }
+  
+  /* ── HR ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <span class="nav-logo">Transit Research Digest</span>
+  <span class="nav-sep">|</span>
+  <a class="nav-link" href="research.html">← Archive</a>
+  <a class="nav-link" href="index.html">Home</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Transit Research Digest</div>
+  <h1 class="hero-title">Urban Mobility Research<br>June 7, 2026</h1>
+  <div class="hero-meta">
+    <div class="hero-stat">
+      <span class="hero-stat-value">13</span>
+      <span class="hero-stat-label">Papers Analyzed</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-value">19.5M</span>
+      <span class="hero-stat-label">Trips in Paper of the Day</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-value">52</span>
+      <span class="hero-stat-label">Cities Studied</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-value">31K+</span>
+      <span class="hero-stat-label">Real Crashes in Dataset</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- Executive Summary -->
+  <div class="section-header">
+    <span class="section-title">Executive Summary</span>
+  </div>
+  <div class="exec-summary">
+    Today's transit research converges on three accelerating frontiers: <strong>AI/ML embedded in live operations</strong> (LLM-driven fleet rebalancing, deep-learning demand forecasting, automated crash detection), <strong>micromobility safety at scale</strong> (a 19.5-million-trip natural experiment in South Korea, LLM injury analysis, VR simulation), and <strong>the institutional scaffolding needed to deploy autonomous vehicles safely</strong> (platoon stability theory, integrated risk frameworks, reactive multi-agent parking). The standout empirical result is causally rigorous: mandating firmware speed governors on e-scooters does not merely cap top speed—it measurably reduces harsh acceleration and deceleration events through a purely mechanical channel, with no behavioral offsetting. Meanwhile, a cognitive modeling study of subway dispatchers during flood emergencies reveals a dangerous "overcorrection" phase after accidents that overrides rational memory-based adaptation—a finding with direct implications for training protocols across all transit operations.
+  </div>
+
+  <!-- Papers -->
+  <div class="section-header">
+    <span class="section-title">Paper Analyses</span>
+    <span class="section-count">13 papers</span>
+  </div>
+  <div class="papers-grid">
+
+    <!-- Paper of the Day -->
+    <div class="paper-card potd">
+      <div class="paper-potd-badge">⭐ Paper of the Day</div>
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2604.26236" target="_blank">Do E-Scooter Speed Governance Policies Reduce Harsh Acceleration and Deceleration? Evidence from 19.5 Million Trips Around a Regulatory Ban</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Seongjin Choi, Sunbin Yoo, Sugie Lee</span>
+        <span>arXiv · 2026-04-29</span>
+        <span class="paper-confidence confidence-high">High Confidence</span>
+      </div>
+      <p class="paper-summary">Analyzing 19.5 million GPS-instrumented e-scooter trips across 52 South Korean cities before and after a firmware ban, this study causally demonstrates that speed governors reduce harsh accelerations AND decelerations—not just top speed—with no behavioral offsetting.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Speed governance reduces harsh acceleration events beyond the mechanical speed cap effect</li>
+          <li>Harsh deceleration events also decline—braking behavior improves, not just top speed</li>
+          <li>No behavioral offsetting: riders didn't compensate by being more aggressive in other ways</li>
+          <li>Effect is purely mechanical (firmware-level), not behavioral change by riders</li>
+          <li>Causal identification via DID with 3-month parallel trends test across 52 cities</li>
+        </ul>
+      </div>
+      
+      <div class="paper-grid-2">
+        <div class="paper-section">
+          <div class="paper-section-title">Methodology</div>
+          <div class="paper-section-body">Two-stage predict-then-validate: Phase I uses random-parameters binary logit on pre-ban period; Phase II uses difference-in-differences exploiting system-wide firmware change in December 2023; Bonferroni-corrected significance.</div>
+        </div>
+        <div class="paper-section">
+          <div class="paper-section-title">Practical Implications</div>
+          <div class="paper-section-body">Speed governance policies have broader safety ROI than commonly assumed. Policy cost-benefit analyses should credit deceleration and acceleration improvements—the total safety dividend is substantially larger than regulators have modeled.</div>
+        </div>
+      </div>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Who Should Care</div>
+        <div class="paper-section-body">City micromobility regulators, e-scooter operators (Lime, Bird, Tier), road safety authorities, insurance actuaries, transportation equity researchers.</div>
+      </div>
+      
+      <div class="potd-reason">
+        <strong>Why Paper of the Day:</strong> A natural experiment of this scale (19.5M GPS-instrumented trips, 52 cities, rigorous DID causal identification) is exceptionally rare in transport research. The finding—that firmware speed caps reduce aggressive driving behaviors beyond the speed they cap—is simultaneously counterintuitive, policy-actionable, and methodologically bulletproof. It rewrites the cost-benefit analysis for an intervention that every major city with e-scooters is currently evaluating.
+      </div>
+    </div>
+
+    <!-- Paper 2 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2606.06429" target="_blank">Computational Modeling of Human Adaptation in Urban Infrastructure Management under Extreme Conditions: A Case Study of Subway Flood Scenarios</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Jinfeng Lou, Zijie Liang, Pengkun Liu, Yuxin Zhang, Cleotilde Gonzalez, Pingbo Tang</span>
+        <span>arXiv · 2026-06-04</span>
+        <span class="paper-confidence confidence-high">High Confidence</span>
+      </div>
+      <p class="paper-summary">A cognitive architecture using Instance-Based Learning Theory exposes a dangerous "overcorrection" phase in subway dispatcher behavior after flood accidents—overconfidence and then panic override rational memory-based adaptation.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Human adaptation follows a 4-phase cycle: acquisition → overconfidence → overcorrection → recalibration</li>
+          <li>The "overcorrection" phase is most dangerous: operators exhibit defensive risk overestimation post-accident</li>
+          <li>Computational IBLT model maintained stable decisions while human operators diverged sharply</li>
+          <li>Operational instability after failure is driven by acute psychological bias, not lack of experience</li>
+          <li>Framework transferable to any high-stakes transit environment (rail dispatch, ATC, signal operations)</li>
+        </ul>
+      </div>
+      
+      <div class="paper-grid-2">
+        <div class="paper-section">
+          <div class="paper-section-title">Methodology</div>
+          <div class="paper-section-body">Human-in-the-loop microworld experiment simulating subway flood-induced track suspensions; dispatchers balance safety vs. service efficiency; computational IBLT cognitive model as baseline to isolate bias effects.</div>
+        </div>
+        <div class="paper-section">
+          <div class="paper-section-title">Practical Implications</div>
+          <div class="paper-section-body">Transit training programs should include simulated post-accident scenarios to build recalibration muscle. AI decision-support tools should flag and counteract overcorrection bias in real-time dispatch systems.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper 3 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.00176" target="_blank">Bridging Policy and Real-World Dynamics: LLM-Augmented Rebalancing for Shared Micromobility Systems</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Heng Tan, Hua Yan, Yu Yang</span>
+        <span>arXiv · 2026-02-26</span>
+        <span class="paper-confidence confidence-medium">Medium Confidence</span>
+      </div>
+      <p class="paper-summary">AMPLIFY integrates an LLM with standard rebalancing algorithms to handle emergent events (demand surges, vehicle outages, regulatory interventions) in e-scooter fleets, improving demand satisfaction on real Chicago data.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>LLMs can ingest system context, demand predictions, and baseline strategies to produce refined operational adjustments</li>
+          <li>Self-reflection mechanism enables iterative improvement of rebalancing decisions</li>
+          <li>Framework handles emergent events not seen in training distributions</li>
+          <li>Architecture separates normal-condition optimization from emergent-event response</li>
+          <li>Outperforms both rigid optimization and robust RL baselines on revenue and demand satisfaction</li>
+        </ul>
+      </div>
+      
+      <div class="paper-grid-2">
+        <div class="paper-section">
+          <div class="paper-section-title">Methodology</div>
+          <div class="paper-section-body">Baseline module (standard rebalancing) + LLM adaptation module with self-reflection; evaluated on real Chicago e-scooter operational data.</div>
+        </div>
+        <div class="paper-section">
+          <div class="paper-section-title">Limitations</div>
+          <div class="paper-section-body">LLM inference latency may be too slow for real-time operations; single city evaluation; self-reflection may hallucinate in truly novel operational contexts.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper 4 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2506.04654" target="_blank">E-bike agents: Large Language Model-Driven E-Bike Accident Analysis and Severity Prediction</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Zhichao Yang, Jiashu He, Mohammad B. Al-Khasawneh</span>
+        <span>arXiv · 2025-06-05</span>
+        <span class="paper-confidence confidence-medium">Medium Confidence</span>
+      </div>
+      <p class="paper-summary">LLM-driven analysis of CPSC and NEISS e-bike injury data reveals distinct failure modes—battery fires, brake failures—separating e-bikes from traditional bicycles in both risk profile and affected demographics.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Battery-related fires are a uniquely e-bike risk absent from traditional bicycle incidents</li>
+          <li>Brake failures occur at higher rates in e-bikes due to higher operating speeds and weights</li>
+          <li>Injury severity patterns differ by demographic group in ways that vary between e-bikes and traditional bikes</li>
+          <li>Loss of control and pedal malfunctions are shared causes across both vehicle types</li>
+          <li>Infrastructure design needs to account for e-bike-specific kinetic energy and fire risk</li>
+        </ul>
+      </div>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Practical Implications</div>
+        <div class="paper-section-body">Product safety standards must differentiate e-bikes from bicycles. Bike lanes need redesign for e-bike speeds and weights. First responder training needs battery fire protocols. Infrastructure design should account for higher kinetic energy at collision.</div>
+      </div>
+    </div>
+
+    <!-- Paper 5 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2606.06423" target="_blank">RiskFlow: Fast and Faithful Safety-Critical Traffic Scenario Generation</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Qi Lan, Yining Tang, Yu Shen</span>
+        <span>arXiv · 2026-06-04</span>
+        <span class="paper-confidence confidence-high">High Confidence</span>
+      </div>
+      <p class="paper-summary">RiskFlow generates realistic adversarial traffic scenarios for AV testing using flow-based transport in action space rather than iterative diffusion, achieving better realism at substantially faster inference times on nuScenes.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Flow-based transport in action space eliminates iterative denoising, reducing inference time substantially</li>
+          <li>JVP-based objective enables efficient and stable training</li>
+          <li>Output-space guidance steers critical agents toward risk while regularizing off-road behavior</li>
+          <li>Better adversariality-realism trade-off than diffusion baselines in multi-agent settings</li>
+          <li>Single forward pass removes compounding artifacts of sequential denoising (jitter, abnormal acceleration)</li>
+        </ul>
+      </div>
+      
+      <div class="paper-grid-2">
+        <div class="paper-section">
+          <div class="paper-section-title">Who Should Care</div>
+          <div class="paper-section-body">AV developers (Waymo, Aurora), simulation platform engineers, automotive safety certifiers, NHTSA/EURO NCAP evaluation teams.</div>
+        </div>
+        <div class="paper-section">
+          <div class="paper-section-title">Comparison to Prior Work</div>
+          <div class="paper-section-body">Addresses known limitations of diffusion-based methods (jitter, abnormal acceleration, off-road behavior) while preserving their adversariality advantages.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper 6 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2606.06396" target="_blank">Risk Assessment of Autonomous Driving: Integrating Technical Failures, Ethical Dilemmas, and Policy Frameworks</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Boyi Chen, Shengqin Chu, Zicheng Wang</span>
+        <span>arXiv · 2026-06-04</span>
+        <span class="paper-confidence confidence-medium">Medium Confidence</span>
+      </div>
+      <p class="paper-summary">Drawing on NHTSA crash data, CA DMV disengagement reports, and MIT Moral Machines, this paper shows that perception errors dominate AV technical failures while regulatory fragmentation across 5 jurisdictions compounds deployment uncertainty.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Perception and classification errors account for the largest share of reported AV accidents</li>
+          <li>No consensus ethical framework exists across jurisdictions for AV decision-making in dilemma situations</li>
+          <li>Regulatory fragmentation across 5 studied jurisdictions creates significant uncertainty for AV operators</li>
+          <li>Technical failures, ethical disagreements, and inconsistent regulations are co-dependent risk factors</li>
+          <li>Adaptive governance combining engineering standards + ethics + institutional supervision recommended</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Paper 7 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2606.06406" target="_blank">Expected String Stability of Human-Led Vehicle Platoons under Stochastic Communication Delays (Full Version)</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Francisco Aguilera, Víctor Jaque, Andrés A. Peters</span>
+        <span>arXiv · 2026-06-04</span>
+        <span class="paper-confidence confidence-high">High Confidence</span>
+      </div>
+      <p class="paper-summary">A stochastic framework certifies that human-led autonomous truck platoons remain stable even when V2V communication delays exceed deterministic safety bounds, using integral inequalities over the full delay distribution.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>String stability can be certified probabilistically, not just deterministically</li>
+          <li>Framework accounts for the full delay distribution, not just worst-case bounds</li>
+          <li>Human-induced disturbances from the lead vehicle are analyzed separately from autonomous follower dynamics</li>
+          <li>Practical stability is achievable even when delays occasionally exceed deterministic admissible bounds</li>
+          <li>Directly enables commercial truck platooning deployment in real V2V environments</li>
+        </ul>
+      </div>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Practical Implications</div>
+        <div class="paper-section-body">Enables truck platoon deployment in real-world V2V environments with less conservative deployment criteria. Could accelerate commercial platooning in freight corridors—platooning can reduce highway freight fuel consumption by 10-15%.</div>
+      </div>
+    </div>
+
+    <!-- Paper 8 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2604.10829" target="_blank">MicroVRide: Exploring 4-in-1 Virtual Reality Micromobility Simulator</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Xiaoyan Zhou, Natalia Sempere, Pooria Ghavamian</span>
+        <span>arXiv · 2026-04-12</span>
+        <span class="paper-confidence confidence-medium">Medium Confidence</span>
+      </div>
+      <p class="paper-summary">MicroVRide is a unified VR simulator covering e-scooters, Segways, electric unicycles, and one-wheeled skateboards, enabling controlled behavioral research with distinct experiential profiles per vehicle type.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Each micromobility vehicle type has distinct control metaphors requiring different simulation approaches</li>
+          <li>Vehicle-specific physical constraints can be preserved within a unified VR platform</li>
+          <li>Pilot study (N=12) reveals distinct experiential profiles across vehicle types</li>
+          <li>First simulator to unify multiple micromobility types on a single platform</li>
+          <li>Modular design enables extension to additional vehicle types as urban mobility evolves</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Paper 9 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.13609" target="_blank">A Grid-Based Framework for E-Scooter Demand Representation and Temporal Input Design for Deep Learning: Evidence from Austin, Texas</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Mohammad Sahnoon, Merkebe Getachew Demissie, Roberto Souza</span>
+        <span>arXiv · 2026-03-13</span>
+        <span class="paper-confidence confidence-high">High Confidence</span>
+      </div>
+      <p class="paper-summary">A statistically validated spatiotemporal deep learning framework for e-scooter demand prediction achieves 37% MSE reduction for 1-hour forecasts using principled temporal input design over heuristic baselines.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>37% MSE reduction for 1-hour forecasts; 35% for 24-hour forecasts vs. fixed-period baselines</li>
+          <li>Temporal depth selection via combined correlation- and error-based procedure outperforms heuristics</li>
+          <li>Grid-based image-to-image deep learning captures spatial demand patterns</li>
+          <li>Optimal temporal structures capture both short-term persistence AND weekly cycles simultaneously</li>
+          <li>Global activity mask limits evaluation to historically active areas, reducing noise</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2606.06149" target="_blank">CoPark: Learning Reactive Parking via Self-Play</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Jiarong Wei, Yanxing Chen, Sinuo Song</span>
+        <span>arXiv · 2026-06-02</span>
+        <span class="paper-confidence confidence-high">High Confidence</span>
+      </div>
+      <p class="paper-summary">CoPark uses multi-agent self-play RL with a residual policy architecture to achieve 70-85% success in autonomous parking, with emergent cooperative behaviors like reverse-yielding, queuing, and tight-corridor passing.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Residual policy architecture separates slot-frame geometry (fixed prior) from reactive interaction (learned)</li>
+          <li>Channel-asymmetric authority allocation: longitudinal yields to neighbors, lateral stays anchored</li>
+          <li>Self-play enables learning interaction behaviors where scripted data falls short</li>
+          <li>Emergent behaviors include reverse-yielding, mid-maneuver yielding, and queuing</li>
+          <li>Zero-shot generalization from 6 training lots to DLP and DSC3D benchmarks</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Paper 11 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2605.26970" target="_blank">Congestion Forecasting for Electric Vehicle Charging Scheduling with Fluid Queues</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Joas Kahlert, Ruiting Wang, Jonas Mårtensson</span>
+        <span>arXiv · 2026-05-26</span>
+        <span class="paper-confidence confidence-medium">Medium Confidence</span>
+      </div>
+      <p class="paper-summary">A fluid-queue-based model forecasts EV charging station congestion under uncertain arrival patterns, reducing waiting-related downtime by up to 14% in scheduling applications.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Fluid queue model accounts for uncertainty in both known and unforeseen arrival patterns</li>
+          <li>Station capacity constraints explicitly respected in the forecasting model</li>
+          <li>Up to 14% reduction in waiting-related downtime vs. standard scheduling baselines</li>
+          <li>Applicable to route planning as well as charging scheduling</li>
+          <li>Knowledge of vehicle arrivals and congestion levels directly quantified for system performance</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Paper 12 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2606.06074" target="_blank">VZCrash: A Large-Scale IMU Dataset of Ego-Vehicle Crashes</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Tommaso Bianconcini, Henrique Piñeiro Monteagudo, Aurel Pjetri</span>
+        <span>arXiv · 2026-06-04</span>
+        <span class="paper-confidence confidence-high">High Confidence</span>
+      </div>
+      <p class="paper-summary">VZCrash releases 31,000+ validated real-world vehicle crashes with 100Hz IMU and GPS telemetry from 73,010 commercial vehicles—the largest public crash detection dataset, enabling robust model training and deployment.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>31K+ crashes from 73K vehicles—substantially larger than any prior public crash IMU dataset</li>
+          <li>Hard cases and distractors included, not just clear positive examples</li>
+          <li>Scale matters more for real-world deployment than for benchmark performance</li>
+          <li>Deep learning models significantly outperform threshold-based heuristics at this scale</li>
+          <li>100Hz IMU + 1Hz GPS speed captures crash signatures missed by lower-frequency devices</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Paper 13 -->
+    <div class="paper-card">
+      <h2 class="paper-title">
+        <a href="https://arxiv.org/abs/2606.06375" target="_blank">Rethinking Infrastructure Inspection as Image Difference Classification: A Traffic Sign Case Study</a>
+      </h2>
+      <div class="paper-meta">
+        <span>Ching Yau Fergus Mok, Lavindra de Silva, Varun Kumar Reja</span>
+        <span>arXiv · 2026-06-04</span>
+        <span class="paper-confidence confidence-medium">Medium Confidence</span>
+      </div>
+      <p class="paper-summary">Reformulating traffic sign defect detection as image difference classification (comparing against digital twin reference images) dramatically reduces training data requirements and outperforms standard encoder-based approaches.</p>
+      
+      <div class="paper-section">
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Image Difference Classification (IDC) exploits the relational nature of continuous asset monitoring</li>
+          <li>Instruction-based classifier outperforms encoder-based classifiers in low-resource settings</li>
+          <li>Comparison against reference images (digital twin baseline) provides critical context</li>
+          <li>Effective despite limited annotated training data—a major practical constraint for road agencies</li>
+          <li>Framework generalizable beyond traffic signs to any infrastructure with reference digital twins</li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- end papers-grid -->
+
+  <!-- Emerging Themes -->
+  <div class="section-header">
+    <span class="section-title">Emerging Themes</span>
+  </div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <div class="theme-title">LLMs Enter Transit Operations</div>
+      <div class="theme-body">From fleet rebalancing (AMPLIFY) to injury analysis (E-bike agents) to demand response, large language models are moving from transport research curiosity to live operational asset. The consistent pattern: LLMs excel at exception handling and qualitative synthesis where optimization algorithms are brittle.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-title">Micromobility Safety Matures</div>
+      <div class="theme-body">E-scooters and e-bikes now have national injury surveillance datasets, 19.5M-trip natural experiments, VR simulation platforms, and grid-based deep learning forecasting. The field is professionalizing rapidly—policy is catching up to evidence.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-title">Probabilistic Certification</div>
+      <div class="theme-body">Vehicle platoon stability, EV charging congestion forecasting, and AV safety testing all shift from worst-case to distributional guarantees. This reflects a maturation in how we think about deploying uncertain autonomous systems—and will be critical for unlocking deployment at scale.</div>
+    </div>
+  </div>
+
+  <!-- Contrarian Insights -->
+  <div class="section-header">
+    <span class="section-title">Contrarian Insights</span>
+  </div>
+  <div class="contrarian-list">
+    <div class="contrarian-item">
+      <strong>Speed caps may be the single highest-ROI intervention in urban mobility regulation.</strong> The 19.5M-trip study shows that firmware speed governors yield safety improvements on behavioral margins (acceleration, braking) that regulators did not intend to target—suggesting we're systematically undervaluing simple mechanical interventions relative to complex behavioral programs.
+    </div>
+    <div class="contrarian-item">
+      <strong>The human operator, not the algorithm, is the weakest link in subway flood emergencies.</strong> The cognitive modeling study shows that operators in the post-accident "overcorrection" phase make worse decisions than a naive memory-based model, challenging the assumption that experienced operators are reliable crisis managers.
+    </div>
+    <div class="contrarian-item">
+      <strong>LLMs are better at handling operational exceptions than at optimization.</strong> AMPLIFY's key insight is that standard algorithms handle normal operations well but fail on emergent events, while LLMs handle exceptions well but aren't needed for routine optimization—suggesting a modular architecture is optimal rather than end-to-end LLM control.
+    </div>
+  </div>
+
+  <!-- Actionable Takeaways -->
+  <div class="section-header">
+    <span class="section-title">Actionable Takeaways</span>
+  </div>
+  <div class="takeaways-list">
+    <div class="takeaway-item">
+      <div class="takeaway-num">1</div>
+      <div><strong>Transit agencies:</strong> Design dispatcher training around the post-accident overcorrection phase specifically—simulate the psychological conditions that trigger bias (post-accident stress, uncertainty about service restoration), not just the emergency itself.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">2</div>
+      <div><strong>City regulators:</strong> Update e-scooter speed governance cost-benefit analyses to include acceleration and braking safety benefits. The total safety ROI is substantially larger than assumed—implications for fee structures and operator licensing requirements.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">3</div>
+      <div><strong>Micromobility operators:</strong> Audit your rebalancing systems for emergent event handling. Consider adding LLM adaptation modules as targeted additions for exception management—not wholesale replacements of existing optimization logic.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">4</div>
+      <div><strong>EV fleet operators:</strong> Adopt fluid-queue congestion forecasting for charging scheduling. A 14% waiting downtime reduction is immediately achievable with existing station arrival data—no new hardware required.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">5</div>
+      <div><strong>AV certification bodies:</strong> Accept probabilistic stability guarantees for truck platooning. Requiring deterministic worst-case bounds may be blocking deployment of commercially viable platooning technology that is safe in practice.</div>
+    </div>
+  </div>
+
+  <!-- Long-Term Implications -->
+  <div class="section-header">
+    <span class="section-title">Long-Term Implications</span>
+  </div>
+  <div class="longterm-box">
+    The convergence of LLMs, large-scale behavioral datasets (19.5M trips, 31K crashes), and rigorous causal methods is shifting transit research from descriptive to prescriptive at scale. In 5-10 years, the operational decision-making infrastructure of urban mobility—rebalancing, dispatch, maintenance scheduling—will likely be LLM-adjacent in some form. The critical governance question, raised by today's AV risk paper, is whether regulatory frameworks will adapt fast enough to enable deployment while preserving safety. The cognitive modeling work on subway dispatchers points to a deeper long-term challenge: as transit systems become more automated, the humans remaining in the loop may be there precisely for emergencies—yet this is exactly when human judgment is most vulnerable to bias. Designing human-AI teaming for crisis scenarios, not just routine operations, will be one of the defining transit engineering challenges of the next decade.
+  </div>
+
+  <!-- SVG Infographic -->
+  <div class="section-header">
+    <span class="section-title">Research Infographic</span>
+  </div>
+  <div class="svg-section">
+    <div class="svg-container">
+      <img src="research-infographic-2026-06-07.svg" alt="Transit Research Infographic June 7, 2026" style="width:100%;height:auto;display:block;border-radius:2px;">
+    </div>
+    <a class="svg-download" href="research-infographic-2026-06-07.svg" download>↓ Download SVG Infographic</a>
+  </div>
+
+</div><!-- end main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-text">
+    Transit Research Digest · June 7, 2026<br>
+    13 papers from arXiv · Analysis by Claude · Sources: arXiv preprints
+  </div>
+  <a class="footer-link" href="research.html">← Back to Archive</a>
+</div>
+
+</body>
+</html>
