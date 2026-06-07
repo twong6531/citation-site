@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" font-family="'Helvetica Neue', Arial, sans-serif">
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+  <!-- Top bar -->
+  <rect width="800" height="4" fill="#111"/>
+  <!-- Header -->
+  <text x="400" y="40" text-anchor="middle" font-size="11" fill="#888" letter-spacing="3" font-weight="500">DAILY BRIEFING</text>
+  <text x="400" y="80" text-anchor="middle" font-size="30" fill="#111" font-weight="700">AI Reshaping Software Careers</text>
+  <text x="400" y="108" text-anchor="middle" font-size="13" fill="#999">June 7, 2026</text>
+  <line x1="40" y1="124" x2="760" y2="124" stroke="#DDD" stroke-width="1"/>
+
+  <!-- STORY 1 -->
+  <rect x="40" y="136" width="720" height="178" fill="#F7F7F5"/>
+  <text x="56" y="162" font-size="11" fill="#888" font-weight="600">01</text>
+  <rect x="76" y="148" width="42" height="18" rx="3" fill="#6C47FF"/>
+  <text x="97" y="161" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">AI</text>
+  <text x="130" y="162" font-size="11" fill="#6C47FF" font-weight="600">Impact Score: 9/10</text>
+  <text x="56" y="186" font-size="16" fill="#111" font-weight="700">AI Tools Are Hollowing Out Engineering Jobs</text>
+  <text x="56" y="204" font-size="12" fill="#555">A senior engineer's viral essay details how LLM coding tools automate tasks that once defined the role.</text>
+  <text x="56" y="218" font-size="12" fill="#555">Work is drying up, compensation pressure is real, and career paths look uncertain for many.</text>
+  <text x="56" y="238" font-size="11" fill="#444">• Score 329 — highest HN story of the day</text>
+  <text x="56" y="254" font-size="11" fill="#444">• Engineers report AI handles 60–80% of routine coding tasks</text>
+  <text x="56" y="270" font-size="11" fill="#444">• Junior/mid-level job postings declined sharply through 2025–26</text>
+  <!-- Impact bar -->
+  <rect x="56" y="284" width="720" height="4" rx="2" fill="#EEE"/>
+  <rect x="56" y="284" width="648" height="4" rx="2" fill="#6C47FF"/>
+  <line x1="40" y1="314" x2="760" y2="314" stroke="#DDD" stroke-width="1"/>
+
+  <!-- STORY 2 -->
+  <rect x="40" y="316" width="720" height="178" fill="#F7F7F5"/>
+  <text x="56" y="342" font-size="11" fill="#888" font-weight="600">02</text>
+  <rect x="76" y="328" width="42" height="18" rx="3" fill="#00897B"/>
+  <text x="97" y="341" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">TECH</text>
+  <text x="130" y="342" font-size="11" fill="#00897B" font-weight="600">Impact Score: 8/10</text>
+  <text x="56" y="366" font-size="16" fill="#111" font-weight="700">Valve Ignores Two-Month P2P Networking Bug</text>
+  <text x="56" y="384" font-size="12" fill="#555">GameNetworkingSockets, used by hundreds of indie games, has had a critical peer-to-peer bug since April.</text>
+  <text x="56" y="398" font-size="12" fill="#555">Valve has not responded to the open GitHub issue, leaving developers scrambling for workarounds.</text>
+  <text x="56" y="418" font-size="11" fill="#444">• Bug unaddressed for 60+ days with zero official response</text>
+  <text x="56" y="434" font-size="11" fill="#444">• Affects all games using Valve's open-source networking library</text>
+  <text x="56" y="450" font-size="11" fill="#444">• 220 HN upvotes; GitHub issue thread growing daily</text>
+  <rect x="56" y="464" width="720" height="4" rx="2" fill="#EEE"/>
+  <rect x="56" y="464" width="576" height="4" rx="2" fill="#00897B"/>
+  <line x1="40" y1="494" x2="760" y2="494" stroke="#DDD" stroke-width="1"/>
+
+  <!-- STORY 3 -->
+  <rect x="40" y="496" width="720" height="178" fill="#F7F7F5"/>
+  <text x="56" y="522" font-size="11" fill="#888" font-weight="600">03</text>
+  <rect x="76" y="508" width="62" height="18" rx="3" fill="#0077CC"/>
+  <text x="107" y="521" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">SCIENCE</text>
+  <text x="150" y="522" font-size="11" fill="#0077CC" font-weight="600">Impact Score: 8/10</text>
+  <text x="56" y="546" font-size="16" fill="#111" font-weight="700">Cloned Horses Redefine Professional Polo Sport</text>
+  <text x="56" y="564" font-size="12" fill="#555">Elite polo has been transformed by equine cloning technology, with top players fielding teams of genetic twins.</text>
+  <text x="56" y="578" font-size="12" fill="#555">Some champion horses have been cloned over 70 times, creating "fields of clones" at major tournaments.</text>
+  <text x="56" y="598" font-size="11" fill="#444">• Individual champion horses cloned 70+ times</text>
+  <text x="56" y="614" font-size="11" fill="#444">• Cloning costs $50,000–100,000 per horse</text>
+  <text x="56" y="630" font-size="11" fill="#444">• Major tournaments now feature teams of genetic duplicates</text>
+  <rect x="56" y="644" width="720" height="4" rx="2" fill="#EEE"/>
+  <rect x="56" y="644" width="576" height="4" rx="2" fill="#0077CC"/>
+  <line x1="40" y1="674" x2="760" y2="674" stroke="#DDD" stroke-width="1"/>
+
+  <!-- STORY 4 -->
+  <rect x="40" y="676" width="720" height="178" fill="#F7F7F5"/>
+  <text x="56" y="702" font-size="11" fill="#888" font-weight="600">04</text>
+  <rect x="76" y="688" width="42" height="18" rx="3" fill="#6C47FF"/>
+  <text x="97" y="701" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">AI</text>
+  <text x="130" y="702" font-size="11" fill="#6C47FF" font-weight="600">Impact Score: 8/10</text>
+  <text x="56" y="726" font-size="16" fill="#111" font-weight="700">AI Memory Costs Slashed by 4x Compression</text>
+  <text x="56" y="744" font-size="12" fill="#555">Researchers demonstrate "speculative KV coding" that losslessly compresses LLM key-value cache 4x.</text>
+  <text x="56" y="758" font-size="12" fill="#555">A cheap predictor model drives an arithmetic coder against the cache — no quality loss, major cost savings.</text>
+  <text x="56" y="778" font-size="11" fill="#444">• 4× lossless compression ratio demonstrated in benchmarks</text>
+  <text x="56" y="794" font-size="11" fill="#444">• Uses a smaller predictor model paired with arithmetic coding</text>
+  <text x="56" y="810" font-size="11" fill="#444">• Could dramatically lower inference costs for large AI deployments</text>
+  <rect x="56" y="824" width="720" height="4" rx="2" fill="#EEE"/>
+  <rect x="56" y="824" width="576" height="4" rx="2" fill="#6C47FF"/>
+  <line x1="40" y1="854" x2="760" y2="854" stroke="#DDD" stroke-width="1"/>
+
+  <!-- STORY 5 -->
+  <rect x="40" y="856" width="720" height="178" fill="#F7F7F5"/>
+  <text x="56" y="882" font-size="11" fill="#888" font-weight="600">05</text>
+  <rect x="76" y="868" width="42" height="18" rx="3" fill="#6C47FF"/>
+  <text x="97" y="881" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">AI</text>
+  <text x="130" y="882" font-size="11" fill="#6C47FF" font-weight="600">Impact Score: 7/10</text>
+  <text x="56" y="906" font-size="16" fill="#111" font-weight="700">Netlify CTO: Coders Must Become Agent Architects</text>
+  <text x="56" y="924" font-size="12" fill="#555">Dana Lawson argues writing code has ceased to be the primary skill of software engineers in 2026.</text>
+  <text x="56" y="938" font-size="12" fill="#555">The new role is "agent experience engineering" — designing and orchestrating AI agents, not writing code.</text>
+  <text x="56" y="958" font-size="11" fill="#444">• Netlify CTO publicly redefines what software engineers do</text>
+  <text x="56" y="974" font-size="11" fill="#444">• "Agent experience engineer" emerges as new job category</text>
+  <text x="56" y="990" font-size="11" fill="#444">• Aligns with industry-wide AI-first engineering shift in 2026</text>
+  <rect x="56" y="1004" width="720" height="4" rx="2" fill="#EEE"/>
+  <rect x="56" y="1004" width="504" height="4" rx="2" fill="#6C47FF"/>
+  <line x1="40" y1="1034" x2="760" y2="1034" stroke="#DDD" stroke-width="1"/>
+
+  <!-- STORY 6 -->
+  <rect x="40" y="1036" width="720" height="178" fill="#F7F7F5"/>
+  <text x="56" y="1062" font-size="11" fill="#888" font-weight="600">06</text>
+  <rect x="76" y="1048" width="42" height="18" rx="3" fill="#00897B"/>
+  <text x="97" y="1061" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">TECH</text>
+  <text x="130" y="1062" font-size="11" fill="#00897B" font-weight="600">Impact Score: 6/10</text>
+  <text x="56" y="1086" font-size="16" fill="#111" font-weight="700">IOCCC Crowns Masters of Unreadable C Code</text>
+  <text x="56" y="1104" font-size="12" fill="#555">The 29th International Obfuscated C Code Contest announces 2025 winners with mind-bending entries.</text>
+  <text x="56" y="1118" font-size="12" fill="#555">Running since 1984, the contest celebrates C programs that work correctly while being deliberately incomprehensible.</text>
+  <text x="56" y="1138" font-size="11" fill="#444">• 29th annual contest — running continuously since 1984</text>
+  <text x="56" y="1154" font-size="11" fill="#444">• Winning entries often compute complex algorithms in single-line expressions</text>
+  <text x="56" y="1170" font-size="11" fill="#444">• Score 275 — 2nd highest HN story of the day</text>
+  <rect x="56" y="1184" width="720" height="4" rx="2" fill="#EEE"/>
+  <rect x="56" y="1184" width="432" height="4" rx="2" fill="#00897B"/>
+  <line x1="40" y1="1214" x2="760" y2="1214" stroke="#DDD" stroke-width="1"/>
+
+  <!-- Footer -->
+  <text x="400" y="1250" text-anchor="middle" font-size="11" fill="#AAA">Generated by AI · June 7, 2026</text>
+  <text x="400" y="1268" text-anchor="middle" font-size="10" fill="#CCC">Sources: Hacker News · Analysis: Claude</text>
+  <rect x="0" y="1397" width="800" height="3" fill="#111"/>
+</svg>

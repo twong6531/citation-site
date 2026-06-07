@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing – June 7, 2026</title>
+<style>
+  :root {
+    --bg: #0d0d0f;
+    --surface: #16161a;
+    --surface2: #1e1e24;
+    --border: #2a2a35;
+    --text: #e8e8f0;
+    --muted: #888898;
+    --ai: #6C47FF;
+    --tech: #00897B;
+    --science: #0077CC;
+    --business: #2E7D32;
+    --world: #E65100;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+
+  .page-header {
+    border-top: 4px solid var(--text);
+    padding: 32px 40px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-header-left .label { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .page-header-left .day-topic { font-size: 28px; font-weight: 700; line-height: 1.2; }
+  .page-header-right { text-align: right; color: var(--muted); font-size: 13px; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── SECTION A: EDITORIAL IMAGE ── */
+  .section-a {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+  }
+  .section-label {
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .visual-heading { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .visual-date { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+  .no-image-block {
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 64px 32px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .no-image-block .subject { font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .no-image-block .desc { font-size: 14px; line-height: 1.7; max-width: 560px; margin: 0 auto 20px; }
+  .no-image-block .note { font-size: 11px; color: var(--muted); font-style: italic; }
+
+  /* ── SECTION B: NEWS ANALYSIS ── */
+  .section-b { padding: 48px 0; }
+  .section-b-header { margin-bottom: 32px; }
+  .section-b-header h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .section-b-header p { font-size: 13px; color: var(--muted); }
+
+  .story-grid { display: flex; flex-direction: column; gap: 2px; }
+  .story-card {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 20px;
+  }
+  .story-num { font-size: 13px; color: var(--muted); font-weight: 600; padding-top: 2px; }
+  .story-body {}
+  .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .cat-pill {
+    font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px; color: #fff;
+  }
+  .cat-ai { background: var(--ai); }
+  .cat-tech { background: var(--tech); }
+  .cat-science { background: var(--science); }
+  .cat-business { background: var(--business); }
+  .cat-world { background: var(--world); }
+  .impact-label { font-size: 11px; color: var(--muted); }
+  .emoji { font-size: 18px; }
+  .story-headline { font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+  .story-summary { font-size: 13px; color: #bbbbc8; line-height: 1.65; margin-bottom: 14px; }
+  .story-bullets { list-style: none; margin-bottom: 16px; }
+  .story-bullets li {
+    font-size: 12px; color: var(--muted); padding: 3px 0 3px 16px; position: relative; line-height: 1.5;
+  }
+  .story-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--border); }
+  .why-matters { font-size: 12px; color: #9999aa; font-style: italic; border-left: 2px solid var(--border); padding-left: 12px; }
+  .impact-bar-wrap { margin-top: 16px; }
+  .impact-bar-bg { height: 3px; background: var(--border); border-radius: 2px; }
+  .impact-bar-fill { height: 3px; border-radius: 2px; transition: width 0.3s; }
+
+  .svg-download { margin-top: 48px; padding: 20px; border: 1px solid var(--border); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+  .svg-download-text { font-size: 13px; color: var(--muted); }
+  .svg-download a { background: var(--surface2); padding: 8px 20px; border-radius: 4px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); color: var(--text); }
+  .svg-download a:hover { background: var(--border); }
+
+  footer { border-top: 3px solid var(--text); padding: 24px 40px; display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-left">
+    <div class="label">Daily Briefing</div>
+    <div class="day-topic">AI Reshaping Software Careers</div>
+  </div>
+  <div class="page-header-right">
+    <div>June 7, 2026</div>
+    <div>6 stories · Hacker News</div>
+  </div>
+</header>
+
+<!-- ══ SECTION A: EDITORIAL IMAGE ══ -->
+<section class="section-a">
+  <div class="container">
+    <div class="section-label">Today's Visual</div>
+    <div class="visual-heading">Cloned Polo Pony — Technical Editorial Illustration</div>
+    <div class="visual-date">June 7, 2026</div>
+    <div class="no-image-block">
+      <div class="subject">🐴 Cloned Polo Pony</div>
+      <div class="desc">
+        An Argentine Thoroughbred-Criollo polo pony, 15.2 hands tall, bay coat with white blaze —
+        cloned 70+ times from champion bloodlines. Today's most visually compelling story:
+        equine cloning has quietly transformed elite polo, with entire teams now fielding
+        genetically identical horses bred from a single champion.
+      </div>
+      <div class="desc" style="margin-top:12px">
+        <strong>Visual concept:</strong> Photorealistic render with hand-drawn black ink annotation overlays
+        in a technical pen / architectural sketch style. Labels: withers height, cannon bone,
+        polo wrap, standing martingale, saddle, mane, white blaze. Scale bar: 15.2 hands.
+        Multiple identical horses visible in the background on Argentine pampas grassland.
+      </div>
+      <div class="note" style="margin-top:16px">Independently researched and rendered by AI from today's news · Image generation unavailable (requires paid API plan)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION B: NEWS ANALYSIS ══ -->
+<section class="section-b">
+  <div class="container">
+    <div class="section-b-header">
+      <h2>News Analysis</h2>
+      <p>6 most impactful stories from Hacker News · June 7, 2026</p>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- Story 1 -->
+      <div class="story-card">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="story-meta">
+            <span class="cat-pill cat-ai">AI</span>
+            <span class="impact-label">Impact 9/10</span>
+            <span class="emoji">🤖</span>
+          </div>
+          <div class="story-headline">AI Tools Are Hollowing Out Engineering Jobs</div>
+          <div class="story-summary">A senior software engineer's viral essay details how LLM coding tools are automating tasks that once defined the role. Work is drying up, compensation pressure is mounting, and career paths look genuinely uncertain for many practitioners.</div>
+          <ul class="story-bullets">
+            <li>Score 329 — highest HN story of the day</li>
+            <li>Engineers report AI handles 60–80% of routine coding tasks</li>
+            <li>Junior/mid-level job postings declined sharply through 2025–26</li>
+          </ul>
+          <div class="why-matters">The software engineering labor market is undergoing a structural shift as AI absorbs the tasks that defined entry-level and mid-career roles.</div>
+          <div class="impact-bar-wrap"><div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%;background:#6C47FF"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="story-card">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="story-meta">
+            <span class="cat-pill cat-tech">TECH</span>
+            <span class="impact-label">Impact 8/10</span>
+            <span class="emoji">🔌</span>
+          </div>
+          <div class="story-headline">Valve Ignores Two-Month P2P Networking Bug</div>
+          <div class="story-summary">The GameNetworkingSockets library, used by hundreds of indie games for peer-to-peer connections, has had a critical bug since early April 2026. Valve has not responded to the open GitHub issue, leaving game developers scrambling for workarounds.</div>
+          <ul class="story-bullets">
+            <li>Bug unaddressed for 60+ days with zero official response from Valve</li>
+            <li>Affects all games using Valve's open-source networking library</li>
+            <li>220 HN upvotes; GitHub issue thread growing with no fix in sight</li>
+          </ul>
+          <div class="why-matters">Developer trust in open-source stewardship by large companies erodes when critical bugs go unaddressed for months.</div>
+          <div class="impact-bar-wrap"><div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%;background:#00897B"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="story-card">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="story-meta">
+            <span class="cat-pill cat-science">SCIENCE</span>
+            <span class="impact-label">Impact 8/10</span>
+            <span class="emoji">🐴</span>
+          </div>
+          <div class="story-headline">Cloned Horses Redefine Professional Polo Sport</div>
+          <div class="story-summary">Elite polo has been quietly transformed by equine cloning technology, with top players now fielding entire teams of genetically identical horses bred from champion bloodlines. Some horses have been individually cloned over 70 times, creating literal "fields of clones" at major tournaments.</div>
+          <ul class="story-bullets">
+            <li>Individual champion horses cloned 70+ times from preserved cells</li>
+            <li>Cloning costs approximately $50,000–100,000 per horse</li>
+            <li>Major international tournaments now feature teams of genetic duplicates</li>
+          </ul>
+          <div class="why-matters">Commercial animal cloning has crossed from laboratory curiosity to standard sporting practice, raising questions about sports integrity and genetic diversity.</div>
+          <div class="impact-bar-wrap"><div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%;background:#0077CC"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Story 4 -->
+      <div class="story-card">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="story-meta">
+            <span class="cat-pill cat-ai">AI</span>
+            <span class="impact-label">Impact 8/10</span>
+            <span class="emoji">🧠</span>
+          </div>
+          <div class="story-headline">AI Memory Costs Slashed by 4× Compression</div>
+          <div class="story-summary">Researchers demonstrate "speculative KV coding" that can losslessly compress the key-value cache of large language models by up to 4×. A cheap predictor model drives an arithmetic coder against the cache data — delivering no quality loss with dramatic memory savings.</div>
+          <ul class="story-bullets">
+            <li>4× lossless compression ratio demonstrated in published benchmarks</li>
+            <li>Uses a small predictor model paired with arithmetic coding algorithm</li>
+            <li>Could dramatically lower inference costs for large-scale AI deployments</li>
+          </ul>
+          <div class="why-matters">Reducing KV cache memory requirements could make large AI models economically viable for many more applications and providers.</div>
+          <div class="impact-bar-wrap"><div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%;background:#6C47FF"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Story 5 -->
+      <div class="story-card">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="story-meta">
+            <span class="cat-pill cat-ai">AI</span>
+            <span class="impact-label">Impact 7/10</span>
+            <span class="emoji">🏗️</span>
+          </div>
+          <div class="story-headline">Netlify CTO: Coders Must Become Agent Architects</div>
+          <div class="story-summary">Netlify CTO Dana Lawson argues publicly that writing code has ceased to be the primary skill of software engineers in 2026. The new role is "agent experience engineering" — designing, orchestrating, and evaluating AI agents rather than writing the code directly.</div>
+          <ul class="story-bullets">
+            <li>Netlify CTO publicly redefines the software engineer job description</li>
+            <li>"Agent experience engineer" emerging as new industry job category</li>
+            <li>Aligns with an industry-wide AI-first engineering shift accelerating in 2026</li>
+          </ul>
+          <div class="why-matters">When infrastructure executives redefine what engineers do, the hiring market, training pipelines, and career ladders shift accordingly.</div>
+          <div class="impact-bar-wrap"><div class="impact-bar-bg"><div class="impact-bar-fill" style="width:70%;background:#6C47FF"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Story 6 -->
+      <div class="story-card">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="story-meta">
+            <span class="cat-pill cat-tech">TECH</span>
+            <span class="impact-label">Impact 6/10</span>
+            <span class="emoji">💻</span>
+          </div>
+          <div class="story-headline">IOCCC Crowns Masters of Unreadable C Code</div>
+          <div class="story-summary">The 29th International Obfuscated C Code Contest has announced its 2025 winners, with entries that push the C language to its absolute limits. Running continuously since 1984, IOCCC celebrates programs that function perfectly while remaining deliberately incomprehensible to human readers.</div>
+          <ul class="story-bullets">
+            <li>29th annual contest — running continuously since 1984</li>
+            <li>Winning entries compute complex algorithms in single incomprehensible expressions</li>
+            <li>Score 275 — 2nd most upvoted HN story of the day</li>
+          </ul>
+          <div class="why-matters">IOCCC entries reveal deep truths about how computers actually work beneath the clean abstractions of modern software.</div>
+          <div class="impact-bar-wrap"><div class="impact-bar-bg"><div class="impact-bar-fill" style="width:60%;background:#00897B"></div></div></div>
+        </div>
+      </div>
+
+    </div><!-- /story-grid -->
+
+    <div class="svg-download">
+      <div class="svg-download-text">Download full typographic infographic (SVG)</div>
+      <a href="infographic-2026-06-07.svg" download>↓ infographic-2026-06-07.svg</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <span>Generated by AI · June 7, 2026</span>
+  <span>Sources: Hacker News · Analysis: Claude</span>
+</footer>
+
+</body>
+</html>
