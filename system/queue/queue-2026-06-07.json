@@ -1,0 +1,62 @@
+{
+  "date": "2026-06-07",
+  "generated_at": "2026-06-07T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "13 US Transit Projects Opening in 2026: The BRT Expansion Wave",
+      "angle": "Deep analysis of why 2026 is a breakout year for Bus Rapid Transit — what changed in funding, political will, and urban planning that unlocked this pipeline after decades of stalled transit investment",
+      "rationale": "Multiple signals converge: Sound Transit Stride S3 groundbreaking, Atlanta BRT launch, 13 projects opening this year per Construction Owners, and TransLink cost overruns show both momentum and friction. BRT not yet covered. Highly timely with real-world pegs.",
+      "target_length": "long",
+      "slug": "brt-expansion-2026",
+      "output_path": "drafts/articles/brt-expansion-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "Free Public Transit: The Real Numbers",
+      "angle": "Visual breakdown of fare-free transit experiments — cities that tried it, ridership changes, cost to taxpayers, and whether it actually shifts people out of cars",
+      "rationale": "Harvard Kennedy School explainer just published on free transit costs and benefits. Rural transit ROI story ($4 return per $1 spent) adds data angle. Visually compelling, shareable, no overlap with prior content.",
+      "target_length": "medium",
+      "slug": "free-transit-explainer",
+      "output_path": "drafts/infographics/free-transit-explainer.html"
+    },
+    {
+      "rank": 3,
+      "type": "video_script",
+      "topic": "Why American Cities Are Decades Behind on Public Transit",
+      "angle": "The 5 policy decisions from 1950-1990 that locked US cities into car dependency — and whether the current transit wave can break the cycle",
+      "rationale": "Addresses the biggest content gap: no video scripts produced yet. The Guardian piece ('How car-loving American cities fell so far behind global peers') provides the hook. Strong narrative arc, high YouTube/social potential.",
+      "target_length": "medium",
+      "slug": "us-cities-transit-gap-script",
+      "output_path": "drafts/scripts/us-cities-transit-gap-script.html"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "AI-Native Urban Infrastructure: McKinsey Analysis and What It Means for Transit",
+      "angle": "Synthesize emerging research on AI integration into city operations — traffic management, predictive maintenance, real-time routing — and what cities actually need to implement it vs. hype",
+      "rationale": "McKinsey published 'How AI-native public infrastructure changes how cities operate.' Nature paper on AI for carbon-free cities. Available Infrastructure $5B Project Qestrel deploying urban AI sites nationwide by end of 2026. Strong intersection with site's AI + transit niche.",
+      "target_length": "medium",
+      "slug": "ai-urban-infrastructure-2026",
+      "output_path": "drafts/articles/ai-urban-infrastructure-2026.html"
+    }
+  ],
+  "retries": [],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity (general)",
+    "autonomous vehicles",
+    "AI industry (general)",
+    "Meta face recognition"
+  ],
+  "trend_signals": [
+    "BRT expansion: 13 US transit projects opening in 2026",
+    "Self-driving cars vs. public transit tension resurging",
+    "Fare-free transit policy debate gaining traction",
+    "AI-native city infrastructure — McKinsey + $5B urban AI investment",
+    "US transit falling decades behind global peers (Guardian, Urban Institute)"
+  ]
+}

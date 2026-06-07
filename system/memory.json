@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06",
+  "last_updated": "2026-06-07",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -25,7 +25,14 @@
   "failed_jobs": [],
   "content_gaps": [
     "No video scripts produced yet",
-    "No long-form articles beyond explainers",
-    "No infographic series on a single topic"
+    "No long-form deep-dive articles (beyond explainers)",
+    "No infographic data series",
+    "BRT coverage missing despite major 2026 pipeline"
+  ],
+  "queued_today": [
+    { "date": "2026-06-07", "type": "article", "slug": "brt-expansion-2026", "status": "pending" },
+    { "date": "2026-06-07", "type": "infographic", "slug": "free-transit-explainer", "status": "pending" },
+    { "date": "2026-06-07", "type": "video_script", "slug": "us-cities-transit-gap-script", "status": "pending" },
+    { "date": "2026-06-07", "type": "research", "slug": "ai-urban-infrastructure-2026", "status": "pending" }
   ]
 }

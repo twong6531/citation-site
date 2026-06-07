@@ -1,0 +1,14 @@
+{
+  "date": "2026-06-07",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 4
+}
