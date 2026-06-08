@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoCal Transit Analysis — June 8, 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a1628; color: #e2e8f0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; }
+
+    /* NAV */
+    nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1e3a5f; }
+    .nav-brand { font-weight: 700; font-size: 1.1rem; color: #60a5fa; letter-spacing: 0.02em; }
+    .nav-links a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #60a5fa; }
+
+    /* HERO */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 420px;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 30%, #0f4c8a 55%, #1e3a5f 80%, #0f172a 100%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 30% 60%, rgba(250,160,50,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 70% 40%, rgba(96,165,250,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 30% 30% at 50% 80%, rgba(34,197,94,0.10) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; opacity: 0.07;
+      background-image: linear-gradient(#60a5fa 1px, transparent 1px), linear-gradient(90deg, #60a5fa 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; z-index: 2; padding: 2rem; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #fbbf24; margin-bottom: 0.75rem; }
+    .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.7); line-height: 1.1; margin-bottom: 0.75rem; }
+    .hero-title span { color: #60a5fa; }
+    .hero-subtitle { font-size: 1.1rem; color: #cbd5e1; text-shadow: 0 1px 8px rgba(0,0,0,0.6); }
+    .hero-tags { margin-top: 1.25rem; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+    .hero-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #e2e8f0; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; }
+
+    /* SECTION LABELS */
+    .section-label {
+      padding: 2rem 2rem 1rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #64748b;
+    }
+    .section-label span { border-bottom: 2px solid #1e3a5f; padding-bottom: 0.25rem; }
+
+    /* STORY GRID */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+      padding: 0.5rem 2rem 2rem;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column; gap: 0.85rem;
+      border: 1px solid #2d3f55;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+    .card-title { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; line-height: 1.3; flex: 1; }
+    .badge {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.2rem 0.55rem; border-radius: 999px; white-space: nowrap; flex-shrink: 0;
+    }
+    .badge-high { background: #7f1d1d; color: #fca5a5; }
+    .badge-medium { background: #78350f; color: #fde68a; }
+    .badge-low { background: #1e3a5f; color: #93c5fd; }
+
+    .card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .agency-pill {
+      background: #334155; color: #94a3b8; font-size: 0.7rem; font-weight: 600;
+      padding: 0.15rem 0.5rem; border-radius: 4px;
+    }
+    .date-chip { color: #64748b; font-size: 0.72rem; }
+
+    .card-summary { font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; }
+    .card-summary strong { color: #f1f5f9; }
+
+    .key-facts { background: #0f172a; border-radius: 8px; padding: 0.85rem 1rem; }
+    .key-facts-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #64748b; margin-bottom: 0.5rem; }
+    .key-facts ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .key-facts li { font-size: 0.83rem; color: #94a3b8; padding-left: 1rem; position: relative; }
+    .key-facts li::before { content: '▸'; position: absolute; left: 0; color: #3b82f6; font-size: 0.65rem; top: 0.2em; }
+    .key-facts li strong { color: #e2e8f0; }
+
+    .why-matters {
+      font-size: 0.85rem; font-style: italic; color: #94a3b8;
+      border-left: 3px solid #3b82f6; padding-left: 0.85rem;
+      margin-top: auto;
+    }
+    .connections { font-size: 0.78rem; color: #64748b; margin-top: 0.25rem; }
+    .connections strong { color: #7dd3fc; }
+
+    /* AGENCY STATUS BOARD */
+    .status-section { background: #0f172a; padding: 2rem; }
+    .status-section h2 { font-size: 1.25rem; font-weight: 700; color: #f1f5f9; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .status-section h2::before { content: '◈'; color: #3b82f6; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead tr { background: #334155; }
+    thead th { padding: 0.75rem 1rem; text-align: left; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; }
+    tbody tr:nth-child(odd) { background: #1e293b; }
+    tbody tr:nth-child(even) { background: #0f172a; }
+    tbody td { padding: 0.75rem 1rem; vertical-align: top; }
+    .agency-name { font-weight: 700; color: #60a5fa; white-space: nowrap; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 0.4rem; vertical-align: middle; }
+    .dot-green { background: #22c55e; }
+    .dot-yellow { background: #eab308; }
+    .dot-red { background: #ef4444; }
+    .dot-blue { background: #3b82f6; }
+
+    /* THEMES */
+    .themes-section { padding: 2rem; }
+    .themes-section h2 { font-size: 1.25rem; font-weight: 700; color: #f1f5f9; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .themes-section h2::before { content: '◈'; color: #f59e0b; }
+    .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; }
+    .theme-card { background: #1e293b; border-radius: 10px; padding: 1.25rem; border-left: 4px solid #3b82f6; }
+    .theme-card:nth-child(2) { border-color: #ef4444; }
+    .theme-card:nth-child(3) { border-color: #22c55e; }
+    .theme-card:nth-child(4) { border-color: #f59e0b; }
+    .theme-card:nth-child(5) { border-color: #a855f7; }
+    .theme-number { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #64748b; margin-bottom: 0.35rem; }
+    .theme-title { font-size: 1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.6rem; }
+    .theme-body { font-size: 0.88rem; color: #94a3b8; line-height: 1.65; }
+
+    /* FOOTER */
+    footer { background: #080f1e; padding: 2rem; border-top: 1px solid #1e3a5f; }
+    .footer-inner { max-width: 900px; }
+    .footer-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #64748b; margin-bottom: 0.75rem; }
+    .sources-list { display: flex; flex-direction: column; gap: 0.25rem; }
+    .sources-list a { color: #3b82f6; font-size: 0.82rem; text-decoration: none; }
+    .sources-list a:hover { text-decoration: underline; }
+    .footer-timestamp { margin-top: 1.25rem; font-size: 0.75rem; color: #475569; }
+
+    @media (max-width: 640px) {
+      .story-grid { grid-template-columns: 1fr; padding: 0.5rem 1rem 1.5rem; }
+      nav { padding: 0.75rem 1rem; }
+      .section-label { padding: 1.5rem 1rem 0.75rem; }
+      .status-section, .themes-section, footer { padding: 1.25rem 1rem; }
+      .themes-grid { grid-template-columns: 1fr; }
+      table { font-size: 0.8rem; }
+      thead th, tbody td { padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">SoCal Transit Intelligence</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="transit.html">Archive</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Southern California Transit Intelligence Brief</div>
+    <h1 class="hero-title">SoCal Transit<br><span>Analysis</span></h1>
+    <p class="hero-subtitle">June 8, 2026 &nbsp;·&nbsp; 11 Stories &nbsp;·&nbsp; 9-Day Coverage Window</p>
+    <div class="hero-tags">
+      <span class="hero-tag">LA Metro</span>
+      <span class="hero-tag">Metrolink</span>
+      <span class="hero-tag">D Line Extension</span>
+      <span class="hero-tag">FIFA World Cup 2026</span>
+      <span class="hero-tag">SB 79</span>
+      <span class="hero-tag">Contactless Fares</span>
+      <span class="hero-tag">CA HSR</span>
+    </div>
+  </div>
+</div>
+
+<!-- STORY CARDS -->
+<div class="section-label"><span>Story Briefs</span></div>
+<div class="story-grid">
+
+  <!-- STORY 1: FY27 Budget -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Board Approves $9.7B FY27 Budget — No Service Cuts Despite Deficit</div>
+      <span class="badge badge-high">HIGH</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="date-chip">Jun 2–3, 2026</span>
+    </div>
+    <p class="card-summary">
+      The Metro Board of Directors approved a balanced <strong>$9.7 billion FY27 budget</strong>, navigating a large structural deficit driven by rising operational and construction costs without cutting service. The budget explicitly prioritizes <strong>bus service, safety, and cleanliness</strong>. Community input was record-breaking: over <strong>7,500 participants</strong> engaged in the "My Metro Budget" process — <strong>1,000 more</strong> than the prior year. Funds are allocated to ongoing construction projects and expanded safety initiatives including the new sworn officer program.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li><strong>$9.7 billion</strong> total FY27 budget — largest in Metro history</li>
+        <li>Structural deficit absorbed; <strong>no service cuts</strong> implemented</li>
+        <li>Priorities: bus service, safety, cleanliness per LA Daily News</li>
+        <li><strong>7,500+</strong> community participants in budget engagement process</li>
+        <li>Funds construction of new projects including D Line Sections 2 &amp; 3</li>
+        <li>Expands sworn officer hiring and safety programs</li>
+      </ul>
+    </div>
+    <p class="why-matters">A $9.7B budget balanced without cuts in a high-inflation environment signals effective financial management; the safety and bus emphasis reflects lessons from post-pandemic ridership recovery challenges.</p>
+    <p class="connections"><strong>Connects to:</strong> Sworn Officer Recruitment (#2), D Line Extension (#4), FIFA World Cup Prep (#5)</p>
+  </div>
+
+  <!-- STORY 2: Sworn Officers -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Sworn Officer Recruitment: 950 Applications on Day One</div>
+      <span class="badge badge-high">HIGH</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="date-chip">Jun 8, 2026</span>
+    </div>
+    <p class="card-summary">
+      LA Metro launched its recruitment drive for <strong>sworn public safety officers</strong> — and the response was immediate: <strong>950 applications</strong> arrived on the first day. Unlike contracted security guards, sworn officers carry full law enforcement authority including arrest powers. The program is a centerpiece of Metro's FY27 safety expansion, funded in the budget approved days earlier. Coverage appeared simultaneously in Metro Magazine and Progressive Railroading.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li><strong>950 applications</strong> received on launch day (June 8, 2026)</li>
+        <li>Sworn officers — full law enforcement authority, not contracted guards</li>
+        <li>Part of FY27 budget safety expansion</li>
+        <li>Replaces/supplements prior contracted security model</li>
+        <li>Reported by Metro Magazine and Progressive Railroading</li>
+      </ul>
+    </div>
+    <p class="why-matters">Persistent rider safety concerns — from crime incidents to fare evasion — have been Metro's biggest public-perception challenge; a shift to sworn officers is a substantive policy response, not just optics, with implications for cost and accountability.</p>
+    <p class="connections"><strong>Connects to:</strong> FY27 Budget (#1); Bus Safety Gold Award (#9)</p>
+  </div>
+
+  <!-- STORY 3: Contactless Fares + App -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Goes Contactless: Tap Any Card, New Unified App Launched</div>
+      <span class="badge badge-high">HIGH</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="agency-pill">TAP Network</span>
+      <span class="date-chip">May 28 – Jun 4, 2026</span>
+    </div>
+    <p class="card-summary">
+      Metro launched two simultaneous rider-facing upgrades: <strong>open-loop contactless payment</strong> (tap any credit, debit, Apple Pay, or Google Pay at TAP validators) and a <strong>new unified mobile app</strong> consolidating trip planning, TAP accounts, and service alerts. The contactless system extends across <strong>25 regional transit agencies</strong> in the TAP network, though LADOT will join later. Both were timed to debut before the <strong>FIFA World Cup</strong> when millions of international visitors arrive.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>Open-loop: tap physical credit/debit card or phone (Apple/Google Pay)</li>
+        <li>Works at TAP validators on <strong>buses and all rail stations</strong></li>
+        <li>Operational across <strong>25 participating TAP agencies</strong></li>
+        <li>LADOT contactless <strong>excluded from initial rollout</strong></li>
+        <li>New app: trip planner + TAP account + service alerts in one</li>
+        <li>Covered by Cities Today, KTLA, GovTech, Xinhua</li>
+      </ul>
+    </div>
+    <p class="why-matters">Eliminating the need to pre-purchase a TAP card is the single biggest friction reduction for occasional and international riders; this move makes Metro as accessible as transit systems in London, NYC, and Tokyo just in time for global attention.</p>
+    <p class="connections"><strong>Connects to:</strong> FIFA World Cup (#5), New Service Schedules (#10)</p>
+  </div>
+
+  <!-- STORY 4: D Line Section 1 Open -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">D Line (Purple) Extension Section 1 Open — Celebration Continues</div>
+      <span class="badge badge-high">HIGH</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="date-chip">Opened May 8 · Ongoing</span>
+    </div>
+    <p class="card-summary">
+      The Metro Purple Line Extension Section 1 — now branded the <strong>D Line</strong> — opened on <strong>May 8, 2026</strong>, adding stations at Wilshire/La Brea, Wilshire/Fairfax, and Wilshire/La Cienega through the Miracle Mile and West Hollywood-adjacent corridors. It is the most significant subway expansion in Los Angeles in over two decades. Contractor Skanska celebrated the milestone on June 8; engineering firm WSP marked it in May. Koreatown residents described the opening as long-overdue ("I wish we had started this 50 years ago"). Sections 2 and 3 continue toward Westwood/UCLA.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>Opened <strong>May 8, 2026</strong> — 3 new stations added</li>
+        <li>Stations: <strong>Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega</strong></li>
+        <li>Part of 9-mile total extension to Westwood/VA Hospital</li>
+        <li>Sections 2 &amp; 3 still under construction</li>
+        <li>Contractors: Skanska; engineering: WSP</li>
+        <li>Timed to open before FIFA World Cup 2026 in LA</li>
+      </ul>
+    </div>
+    <p class="why-matters">Section 1 finally connects high-density Koreatown and the Miracle Mile to the subway grid, potentially transforming one of LA's most congested corridors; the full extension to Westwood/UCLA will be a generational upgrade to transit access in West LA.</p>
+    <p class="connections"><strong>Connects to:</strong> FIFA World Cup (#5), Contactless Fares launch timing (#3)</p>
+  </div>
+
+  <!-- STORY 5: Zum / FIFA World Cup -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Partners with Zum for FIFA World Cup 2026 Supplemental Transit</div>
+      <span class="badge badge-medium">MEDIUM</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="agency-pill">LAWA</span>
+      <span class="date-chip">Jun 4, 2026</span>
+    </div>
+    <p class="card-summary">
+      LA Metro has contracted with <strong>Zum</strong> — a tech-enabled fleet operator — to provide supplemental bus transportation during the <strong>FIFA World Cup 2026</strong> tournament in Los Angeles. Zum will complement Metro's existing rail and express bus service to <strong>SoFi Stadium</strong> in Inglewood and fan zones across LA County. Metro is also running direct express bus service from multiple county locations to match venues and will support dozens of free fan events.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>Contract with Zum announced <strong>June 4, 2026</strong> via PR Newswire</li>
+        <li>Zum: tech-enabled fleet/school bus operator pivoting to event transit</li>
+        <li>Primary venue: <strong>SoFi Stadium, Inglewood</strong></li>
+        <li>Metro also operating direct express buses from multiple LA County locations</li>
+        <li>Free fan zones supported across LA County</li>
+        <li>First FIFA World Cup match in LA: June 2026</li>
+      </ul>
+    </div>
+    <p class="why-matters">The FIFA World Cup is the world's largest single-sport event; integrating private mobility partners into Metro's surge plan is a model that could outlast the tournament and inform future large-event transit coordination in LA.</p>
+    <p class="connections"><strong>Connects to:</strong> D Line Opening (#4), Contactless Fares (#3), FY27 Budget (#1)</p>
+  </div>
+
+  <!-- STORY 6: Election Day Free Rides -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Waives Fares Systemwide for California Primary Election Day</div>
+      <span class="badge badge-medium">MEDIUM</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="date-chip">Jun 2, 2026</span>
+    </div>
+    <p class="card-summary">
+      Metro provided <strong>free rides across its entire bus and rail system</strong> on California Primary Election Day, June 2, 2026. The civic initiative — covered by KTLA and NBC Los Angeles — is part of Metro's expanding program of fare-free days tied to community milestones. Prior free-ride days include Transit Equity Day (February 4) and Earth Day (April 22).
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>Free fares on <strong>all Metro bus and rail</strong> on June 2, 2026</li>
+        <li>CA Primary Election Day civic engagement initiative</li>
+        <li>Previous free days: Transit Equity Day (Feb 4), Earth Day (Apr 22)</li>
+        <li>Reported by KTLA 5 and NBC Los Angeles</li>
+      </ul>
+    </div>
+    <p class="why-matters">Fare-free civic days serve equity goals and boost ridership metrics, but come with a real revenue cost in a year Metro balanced against structural deficits; the strategy signals Metro's view of itself as civic infrastructure, not just a fare-box-funded service.</p>
+    <p class="connections"><strong>Connects to:</strong> FY27 Budget / Revenue (#1)</p>
+  </div>
+
+  <!-- STORY 7: SB 79 Map -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">SB 79 Map Released: Where SoCal Transit Corridors Become Upzoning Zones</div>
+      <span class="badge badge-medium">MEDIUM</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">SCAG</span>
+      <span class="agency-pill">LA Metro</span>
+      <span class="agency-pill">Metrolink</span>
+      <span class="date-chip">Jun 1, 2026</span>
+    </div>
+    <p class="card-summary">
+      LAist published an interactive map showing exactly where California's <strong>SB 79</strong> — signed by Gov. Newsom in October 2025 — applies throughout Southern California. The law enables up to <strong>9-story buildings near transit stops</strong> serving frequent bus and rail service. The map makes concrete for the first time which SoCal neighborhoods are subject to transit-oriented upzoning. The City of LA had previously sought delays for certain areas; housing opponents are challenging implementation.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>SB 79 signed by Gov. Newsom, <strong>October 2025</strong></li>
+        <li>Allows up to <strong>9-story buildings near transit stops</strong></li>
+        <li>Applies near frequent bus AND rail service — not just subway/rail</li>
+        <li>LAist SoCal interactive map published <strong>June 1, 2026</strong></li>
+        <li>City of LA sought implementation delays for certain areas</li>
+        <li>Housing opponents challenging law (CalMatters, Oct 2025)</li>
+      </ul>
+    </div>
+    <p class="why-matters">SB 79 makes every Metro and Metrolink corridor a potential housing development zone; the LAist map transforms an abstract state law into a neighborhood-level reckoning that will shape transit ridership, property values, and political conflict for years.</p>
+    <p class="connections"><strong>Connects to:</strong> Metro D Line corridors (#4), Metrolink fare/ridership crisis (#8)</p>
+  </div>
+
+  <!-- STORY 8: Metrolink Cuts + Fare Hikes -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metrolink Raises Fares, Extends Service Cuts Amid Ridership Crisis</div>
+      <span class="badge badge-medium">MEDIUM</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">Metrolink</span>
+      <span class="date-chip">May 26, 2026</span>
+    </div>
+    <p class="card-summary">
+      Metrolink is hiking fares for commuters — UCR campus newspaper reported the increases as of May 26 — even as "temporary" service cuts implemented earlier in 2026 continue with no clear end date. An <strong>Orange County Register</strong> investigation (May 15) described Metrolink as plagued by ridership drops and service cuts while struggling to define its future. The commuter rail system prepared limited expanded service for FIFA World Cup matches but faces a deepening structural challenge from remote-work-driven ridership decline.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>UCR commuter fares increased — reported May 26, 2026</li>
+        <li>"Temporary" service cuts ongoing as of May 7 (Planetizen)</li>
+        <li>OC Register: "Ridership drop, service cuts plague Metrolink" (May 15)</li>
+        <li>World Cup: Metrolink prepared supplemental service to SoFi-area (Apr)</li>
+        <li>Remote work depressing core weekday commuter demand</li>
+        <li>System serves LA, OC, Riverside, San Bernardino, Ventura counties</li>
+      </ul>
+    </div>
+    <p class="why-matters">Metrolink's simultaneous fare hike and service reduction is a textbook death-spiral signal; unlike Metro, it lacks a dedicated sales tax base and depends heavily on farebox and agency funding that dried up with remote work. Without a structural fix, more cuts are likely.</p>
+    <p class="connections"><strong>Connects to:</strong> SB 79 / transit proximity housing (#7), CA HSR long-term vision</p>
+  </div>
+
+  <!-- STORY 9: Bus Roadeo -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Three-Peats at International Bus Roadeo, Wins Safety Gold Award</div>
+      <span class="badge badge-low">LOW-MEDIUM</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="date-chip">Jun 4, 2026</span>
+    </div>
+    <p class="card-summary">
+      Metro's maintenance team won the <strong>International Bus Roadeo championship for the third consecutive year</strong> and was named <strong>Grand Champion</strong> for the second year in a row. The agency also earned the <strong>2026 Bus Security Gold Award</strong> for its innovative Bus Barrier project, a physical safety measure protecting passengers in bus-only lanes and stops. The team is based at the Pacific Boulevard maintenance facility in Vernon.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li><strong>3rd consecutive</strong> International Bus Roadeo championship</li>
+        <li><strong>2nd year</strong> as Grand Champion</li>
+        <li><strong>2026 Bus Security Gold Award</strong> for Bus Barrier project</li>
+        <li>Home base: Pacific Boulevard maintenance facility, Vernon</li>
+      </ul>
+    </div>
+    <p class="why-matters">Three straight Roadeo wins suggest Metro has built a genuine culture of maintenance excellence that sustains through budget pressures; the Bus Barrier Gold Award shows safety innovation is complementing the new sworn officer program from a facilities angle.</p>
+    <p class="connections"><strong>Connects to:</strong> FY27 Bus Service Priority (#1), Sworn Officers (#2)</p>
+  </div>
+
+  <!-- STORY 10: New Service Schedules -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Refreshes Bus and Rail Schedules Systemwide — Effective June 7</div>
+      <span class="badge badge-low">LOW-MEDIUM</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="date-chip">Effective Jun 7, 2026</span>
+    </div>
+    <p class="card-summary">
+      Metro implemented its <strong>twice-yearly service schedule update</strong> on June 7, adjusting multiple bus and rail lines to better match actual travel times and improve on-time performance. The changes reflect data from real-world operations and aim to rebuild rider confidence in schedule reliability. Updated timetables are at metro.net/mybus and metro.net/riding/schedules-2/.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>Effective date: <strong>June 7, 2026</strong></li>
+        <li>Routine bi-annual schedule update cycle</li>
+        <li>Adjusts multiple bus and rail lines for reliability</li>
+        <li>Schedules match actual travel times to reduce late arrivals</li>
+      </ul>
+    </div>
+    <p class="why-matters">Schedule accuracy is a leading driver of transit satisfaction; updating timetables to reflect reality rather than aspirational running times directly reduces missed connections and erodes the perception gap between planned and actual service.</p>
+    <p class="connections"><strong>Connects to:</strong> Contactless Fares and App launch (same week, #3)</p>
+  </div>
+
+  <!-- STORY 11: Metro Sues Burbank -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Metro Files Lawsuit Against Burbank Over Regional Transit Construction Permits</div>
+      <span class="badge badge-medium">MEDIUM</span>
+    </div>
+    <div class="card-meta">
+      <span class="agency-pill">LA Metro</span>
+      <span class="agency-pill">City of Burbank</span>
+      <span class="date-chip">May 21, 2026</span>
+    </div>
+    <p class="card-summary">
+      In an unusual intergovernmental conflict, <strong>LA Metro has sued the City of Burbank</strong> over construction permits required for a regional transit project, per LAist's May 21 report. The nature of the dispute pits a regional transit agency against one of the cities it serves — a legal confrontation that could establish precedent for how municipalities may resist or obstruct transit corridor construction through permitting leverage.
+    </p>
+    <div class="key-facts">
+      <div class="key-facts-title">Key Facts</div>
+      <ul>
+        <li>LAist reported the lawsuit on <strong>May 21, 2026</strong></li>
+        <li>Metro suing Burbank over <strong>construction permits</strong></li>
+        <li>Dispute involves a "regional transit project" (project not specified)</li>
+        <li>Unusual: transit agency suing a city in its own service area</li>
+        <li>May set precedent for inter-jurisdictional transit disputes</li>
+      </ul>
+    </div>
+    <p class="why-matters">If individual cities can effectively veto transit construction through permit delays, Metro's entire expansion roadmap — including the D Line extensions and BRT corridors — is vulnerable to political obstruction at each municipal boundary, which would have catastrophic implications for LA's transit future.</p>
+    <p class="connections"><strong>Connects to:</strong> D Line construction pipeline (#4), regional expansion projects</p>
+  </div>
+
+</div><!-- end .story-grid -->
+
+
+<!-- AGENCY STATUS BOARD -->
+<div class="status-section">
+  <h2>Agency Status Board</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Development</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="agency-name">LA Metro</td>
+        <td><span class="status-dot dot-green"></span>Advancing</td>
+        <td>$9.7B FY27 budget approved; D Line Section 1 open; contactless fares &amp; new app live; 950 Day-1 sworn officer applications; FIFA World Cup ready; Bus Roadeo three-peat</td>
+      </tr>
+      <tr>
+        <td class="agency-name">Metrolink</td>
+        <td><span class="status-dot dot-red"></span>Struggling</td>
+        <td>Fare hikes for UCR commuters; "temporary" service cuts ongoing; ridership declining post-pandemic; World Cup supplemental service planned but structural crisis unresolved</td>
+      </tr>
+      <tr>
+        <td class="agency-name">LADOT</td>
+        <td><span class="status-dot dot-yellow"></span>Lagging</td>
+        <td>Excluded from initial contactless TAP rollout across 25 agencies; integration planned for later date; no major announcements this week</td>
+      </tr>
+      <tr>
+        <td class="agency-name">CA High-Speed Rail</td>
+        <td><span class="status-dot dot-yellow"></span>Uncertain</td>
+        <td>Cost estimates soared to $231B (Fox 11, Apr 30); LA–Anaheim draft EIR released Dec 2025; Newsom championed at State of State but federal funding in doubt under Trump</td>
+      </tr>
+      <tr>
+        <td class="agency-name">Amtrak Pacific Surfliner</td>
+        <td><span class="status-dot dot-green"></span>Expanding</td>
+        <td>New daily LA–San Luis Obispo round-trip added (Apr 2026); Santa Barbara Metrolink proposal scrapped in favor of Surfliner extension (Jan 2026)</td>
+      </tr>
+      <tr>
+        <td class="agency-name">SCAG</td>
+        <td><span class="status-dot dot-blue"></span>Policy Active</td>
+        <td>SB 79 transit-oriented upzoning map released via LAist (Jun 1); regional housing-transit nexus under intense scrutiny; cities seeking delays or exemptions</td>
+      </tr>
+      <tr>
+        <td class="agency-name">LAWA / LAX</td>
+        <td><span class="status-dot dot-green"></span>Coordinating</td>
+        <td>SkyLink people mover testing reported Apr 2026 (LA Times); World Cup airport coordination underway; Uber/Lyft fee hikes effective; no new major developments this week</td>
+      </tr>
+      <tr>
+        <td class="agency-name">San Diego MTS</td>
+        <td><span class="status-dot dot-blue"></span>Monitoring</td>
+        <td>Transit briefs noted Railway Age (Apr 2026); no major SoCal-specific MTS developments in current 9-day window; fiscal cliff op-ed signals regional concern (Mar 2026)</td>
+      </tr>
+      <tr>
+        <td class="agency-name">City of Burbank</td>
+        <td><span class="status-dot dot-red"></span>In Dispute</td>
+        <td>Named defendant in Metro lawsuit over transit construction permits; intergovernmental conflict escalating per LAist (May 21)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- EMERGING THEMES -->
+<div class="themes-section">
+  <h2>Emerging Themes</h2>
+  <div class="themes-grid">
+
+    <div class="theme-card">
+      <div class="theme-number">Theme 01</div>
+      <div class="theme-title">The World Cup as Transit Forcing Function</div>
+      <p class="theme-body">The FIFA World Cup 2026 has functioned as a hard deadline that compressed years of transit modernization into months. Metro's simultaneous launch of contactless payment, a unified app, a Zum charter partnership, new D Line stations, and June 7 schedule refresh all converged on the same forcing event. This pattern — major events accelerating infrastructure delivery — is now a proven model that Metro will likely replicate for the 2028 LA Olympics. The risk is that event-driven timelines create rushed implementations; the upside is that international visibility demands quality that routine upgrades rarely receive.</p>
+    </div>
+
+    <div class="theme-card">
+      <div class="theme-number">Theme 02</div>
+      <div class="theme-title">Safety as the Defining Political Battleground</div>
+      <p class="theme-body">With 950 applications flooding in on the first day of sworn officer recruitment, Metro has signaled that it is staking its public credibility on a substantive safety transformation — not just contracted guards or outreach workers. Combined with the FY27 budget's explicit safety priority, the Bus Security Gold Award, and the Bus Roadeo excellence story, Metro is building a multi-layered safety narrative. The transition to sworn officers is expensive and complex, but the Day-1 application flood suggests the labor pool is there. Whether the sworn officer program changes rider perception will be the metric to watch over the next 12–18 months.</p>
+    </div>
+
+    <div class="theme-card">
+      <div class="theme-number">Theme 03</div>
+      <div class="theme-title">SB 79 Makes Transit Lines Housing Policy Lines</div>
+      <p class="theme-body">The LAist SoCal map release transforms SB 79 from a state law into a visible neighborhood-level mandate. Every frequent bus route and rail corridor in Southern California is now also a potential 9-story upzoning zone — and Metro's network is the densest in the region. This creates a new political dynamic where transit expansion inherently triggers housing politics, and vice versa. Municipalities pushing back (LA's delay requests, the earlier anti-SB 79 Valley organizing) will now have to answer to a map that shows exactly what upzoning means on their streets. The transit-land use nexus has never been more legible.</p>
+    </div>
+
+    <div class="theme-card">
+      <div class="theme-number">Theme 04</div>
+      <div class="theme-title">The Metro–Metrolink Divergence</div>
+      <p class="theme-body">This week crystallizes a widening gap between LA Metro's trajectory and Metrolink's. Metro approved a $9.7B budget without cuts, opened a new subway extension, launched contactless payment, and recruited 950 sworn officer applicants in one day. Metrolink, by contrast, raised fares while extending service cuts amid a ridership crisis it has no obvious solution to. The structural difference is revenue: Metro has Measure M (2016) and Measure R (2008) dedicated sales tax streams; Metrolink does not. Without a dedicated funding mechanism, Metrolink's decline looks structural, not cyclical. The two agencies are on diverging trajectories that will reshape regional mobility.</p>
+    </div>
+
+    <div class="theme-card">
+      <div class="theme-number">Theme 05</div>
+      <div class="theme-title">Inter-Jurisdictional Friction: The Hidden Transit Bottleneck</div>
+      <p class="theme-body">Metro's lawsuit against Burbank over construction permits is easy to dismiss as a routine legal dispute, but it reveals a systemic vulnerability. Regional transit agencies must build across dozens of municipal jurisdictions, each with independent permitting, zoning, and political interests. If any city can delay a corridor through permit withholding, the cost and timeline risk for every project Metro builds multiplies exponentially. Coupled with SB 79's forced upzoning creating local political resistance, the inter-jurisdictional friction problem may become the dominant constraint on LA's transit future — harder to solve than funding or engineering.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-title">Sources</div>
+    <div class="sources-list">
+      <a href="https://thesource.metro.net" target="_blank" rel="noopener">LA Metro — The Source (thesource.metro.net)</a>
+      <a href="https://laist.com" target="_blank" rel="noopener">LAist — SB 79 SoCal Map; Metro D Line; Metro vs. Burbank</a>
+      <a href="https://www.metro.net" target="_blank" rel="noopener">LA Metro Official — Budget, App, Contactless Fares, Schedules</a>
+      <a href="https://www.smartcitiesdive.com" target="_blank" rel="noopener">Smart Cities Dive — D Line Launch Party; Federal Funding</a>
+      <a href="https://www.ocregister.com" target="_blank" rel="noopener">Orange County Register — Metrolink Ridership/Service Cuts (May 15)</a>
+      <a href="https://www.dailynews.com" target="_blank" rel="noopener">Los Angeles Daily News — Metro FY27 Budget (May 29–Jun 2)</a>
+      <a href="https://highlandernews.org" target="_blank" rel="noopener">UCR Highlander — Metrolink Fare Increases (May 26)</a>
+      <a href="https://www.prnewswire.com" target="_blank" rel="noopener">PR Newswire — Metro / Zum FIFA World Cup Contract (Jun 4)</a>
+      <a href="https://www.metro-mag.com" target="_blank" rel="noopener">Metro Magazine — Sworn Officer Recruitment 950 Applications (Jun 8)</a>
+      <a href="https://www.progressiverailroading.com" target="_blank" rel="noopener">Progressive Railroading — Metro Officer Recruitment (Jun 8)</a>
+      <a href="https://constructionequipmentguide.com" target="_blank" rel="noopener">Construction Equipment Guide — Skanska D Line Celebration (Jun 8)</a>
+      <a href="https://www.planetizen.com" target="_blank" rel="noopener">Planetizen — Metrolink Service Cuts (May 7)</a>
+      <a href="https://ktla.com" target="_blank" rel="noopener">KTLA 5 — Election Day Free Fares; Contactless Payment Launch</a>
+      <a href="https://www.nbclosangeles.com" target="_blank" rel="noopener">NBC Los Angeles — Metro Free Election Day Rides (Jun 2)</a>
+      <a href="https://news.google.com" target="_blank" rel="noopener">Google News RSS — Aggregated regional coverage (scraped Jun 8, 2026)</a>
+    </div>
+    <div class="footer-timestamp">
+      Generated: June 8, 2026 &nbsp;·&nbsp; Coverage window: May 30 – June 8, 2026 &nbsp;·&nbsp; 11 stories analyzed &nbsp;·&nbsp; Agencies: LA Metro, Metrolink, SCAG, LAWA, Amtrak, CA HSR, LADOT, City of Burbank &nbsp;·&nbsp; Hero image: CSS gradient (Imagen API unavailable)
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
