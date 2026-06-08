@@ -1,0 +1,26 @@
+{
+  "file": "dopamine-fracking-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-08T17:36:54Z",
+  "verdict": "REVISE",
+  "score": 70,
+  "checks_passed": [
+    "Reel script exists",
+    "YouTube script exists",
+    "YouTube word count within range (~1110 words)",
+    "Hook in first 3 lines (reel and YouTube)",
+    "Hook does not start with 'Did you know'",
+    "CTA present in both reel and YouTube",
+    "Visual notes present for reel",
+    "No AI tells ('As an AI', 'certainly', 'I'd be happy to', etc.)",
+    "No duplicate topic in published docs (last 14 days)"
+  ],
+  "checks_failed": [
+    "Reel script over 200-word limit: voiceover is 223 words (23 over limit). At ~150 wpm this runs ~89 seconds, not 60.",
+    "Placeholder text present: '[site URL]' appears twice (reel SCENE 4 ON SCREEN TEXT and YouTube OUTRO ON SCREEN TEXT). Must be replaced before publish.",
+    "Primary source citation is insufficiently specific: 'viral essay (Hacker News, 579 upvotes / 291 comments, 2026-06-08)' has no author name, essay title, or URL. All downstream claims that lean on this source (the fracking metaphor origin, the three-domain argument, the AI slop framing) inherit this sourcing gap."
+  ],
+  "revision_notes": "1. Trim reel voiceover to ~175-185 words. The Scene 2 block is the most cuttable — the Facebook detail about 'social networking is no longer what it does' can be cut to a single sentence without losing impact. 2. Replace both '[site URL]' placeholders with the actual published article URL or a consistent placeholder token the publishing pipeline can substitute. 3. Upgrade the primary source citation: add the essay author, title, and direct URL. Without this, the central 'dopamine fracking' coinage claim cannot be independently verified by viewers.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

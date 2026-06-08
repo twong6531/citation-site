@@ -1,0 +1,29 @@
+{
+  "file": "us-cities-transit-gap-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-08T17:36:54Z",
+  "verdict": "REVISE",
+  "score": 62,
+  "checks_passed": [
+    "Reel script exists",
+    "YouTube script exists",
+    "YouTube word count within acceptable range (~1223 words, marginally over 1200)",
+    "Hook in first 3 lines (reel and YouTube)",
+    "Hook does not start with 'Did you know'",
+    "CTA present in both reel and YouTube",
+    "Visual notes present for reel",
+    "No AI tells",
+    "No duplicate topic in last 14 days — distinct angle from prior transit equity articles"
+  ],
+  "checks_failed": [
+    "Reel script over 200-word limit: voiceover is 229 words (15% over). At 150 wpm this runs ~92 seconds.",
+    "Placeholder text present: '[site URL]' in YouTube OUTRO.",
+    "Funding gap figure inconsistency: reel states '$90 billion annual transit funding gap' (unsourced inline); YouTube states '$100B+ maintenance backlog' attributed to APTA. These are different metrics (annual funding gap vs. deferred maintenance backlog) and should not be conflated — nor should either appear without its proper inline source citation.",
+    "Two Wikipedia citations used as primary sources ('Wikipedia — General Motors streetcar conspiracy'; 'Wikipedia — Interstate Highway System'). Wikipedia is not an acceptable inline source for published scripts. These should cite the underlying primary sources (US v. National City Lines, 1949 court record; FHWA construction cost records) or an academic secondary source.",
+    "Script generation date is 2026-06-07 (yesterday), not 2026-06-08. File is not recorded in today's status.json video_scripts_produced list. Confirm this draft is intentionally included in today's QC cycle.",
+    "Thematic overlap with slime-mold-transit-script.md: both scripts cover the US suburban transit coverage failure as their setup. If published in sequence, the overlap in framing needs editorial differentiation."
+  ],
+  "revision_notes": "1. Trim reel voiceover to ~180 words. Scene 2 can lose the UMTA $375M figure (keep the 26-year exclusion, cut the dollar amount detail to the YouTube version). 2. Replace '[site URL]' placeholder. 3. Reconcile funding figures: pick one metric and source it inline. Recommend: in reel, cut '$90B annual gap' entirely and replace with '26 years of compound highway-only investment' (more concrete and already sourced). In YouTube, keep the APTA $100B backlog figure and distinguish it explicitly from annual funding as 'deferred maintenance backlog.' 4. Replace both Wikipedia citations. For the streetcar conspiracy: cite the 1949 federal case (United States v. National City Lines, 186 F.2d 562) directly. For the Interstate cost figures: cite the FHWA 'Interstate Highway System' cost record or a peer-reviewed source. 5. Confirm intended publish date and add to status.json if this is a today item.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

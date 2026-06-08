@@ -1,0 +1,40 @@
+{
+  "date": "2026-06-08",
+  "total_reviewed": 3,
+  "passed": 0,
+  "revise": 3,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [
+    {
+      "slug": "dopamine-fracking-script",
+      "score": 70,
+      "top_issues": [
+        "Reel VO 223 words (limit: 200)",
+        "[site URL] placeholder x2",
+        "Primary essay source lacks author/title/URL"
+      ]
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "score": 73,
+      "top_issues": [
+        "Reel VO 254 words (limit: 200)",
+        "[site URL] placeholder"
+      ]
+    },
+    {
+      "slug": "us-cities-transit-gap-script",
+      "score": 62,
+      "top_issues": [
+        "Reel VO 229 words (limit: 200)",
+        "[site URL] placeholder",
+        "Funding gap figures inconsistent between reel and YouTube ($90B unsourced vs $100B APTA)",
+        "Two Wikipedia citations — replace with primary/academic sources",
+        "Script dated 2026-06-07, not in today's status.json — confirm publish date"
+      ]
+    }
+  ],
+  "blocked": [],
+  "notes": "All three scripts have the same systemic issues: (1) reel voiceovers are 15-27% over the 200-word ceiling in every case — this is a generation pattern that needs correction upstream; (2) '[site URL]' placeholder is unfilled across all scripts — the content generation pipeline should either inject the real URL or use a consistent token the publishing pipeline resolves. No articles or infographics were produced today per status.json (articles: pending, infographics: pending). Zero items approved for publish."
+}

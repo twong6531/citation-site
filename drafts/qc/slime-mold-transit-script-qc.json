@@ -1,0 +1,27 @@
+{
+  "file": "slime-mold-transit-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-08T17:36:54Z",
+  "verdict": "REVISE",
+  "score": 73,
+  "checks_passed": [
+    "Reel script exists",
+    "YouTube script exists",
+    "YouTube word count within acceptable range (~1223 words, marginally over 1200)",
+    "Hook in first 3 lines (reel and YouTube)",
+    "Hook does not start with 'Did you know'",
+    "All major claims have sources noted inline with specific arXiv IDs and author lists",
+    "CTA present in both reel and YouTube",
+    "Visual notes present for reel",
+    "No AI tells",
+    "No duplicate topic in published docs (last 14 days) — slime-mold/swarm transit is a novel angle",
+    "Factual content is well-grounded: arXiv IDs, full author lists, 2010 Science paper citation all verifiable"
+  ],
+  "checks_failed": [
+    "Reel script significantly over 200-word limit: voiceover is 254 words (27% over). At 150 wpm this runs ~102 seconds — far too long for a 60-second reel. Scene 3 (the US coverage problem) is the largest block and can be compressed substantially.",
+    "Placeholder text present: '[site URL]' in YouTube OUTRO ON SCREEN TEXT. Must be replaced before publish."
+  ],
+  "revision_notes": "1. Cut reel voiceover to 175-185 words. Scene 3 is the main target: the wheelchair user / rural American lines are strong but this level of detail belongs in the long-form. Cut to: 'The US has a transit coverage problem fixed routes can't solve — suburbs built too sparse for scheduled service. Swarm transit routes to wherever demand actually is. That changes the math entirely.' (approx. 30 words vs. 85 currently). 2. Replace '[site URL]' with the actual article URL or publishing pipeline placeholder. Minor: YouTube total word count is ~1223 — 23 over the 1200 ceiling. Trim one paragraph in Section 3 (the ADA/OPENPATH connection can lose ~30 words without losing the argument).",
+  "fail_reason": null,
+  "approved_for_publish": false
+}
