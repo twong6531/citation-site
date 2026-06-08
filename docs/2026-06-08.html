@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — June 8, 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0D0D0F; color: #E8E8E6; font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: #7B9EFF; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-nav { padding: 16px 32px; border-bottom: 1px solid #1E1E22; display: flex; align-items: center; justify-content: space-between; }
+  .site-nav .brand { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #888; text-transform: uppercase; }
+  .site-nav .back-link { font-size: 13px; color: #666; }
+
+  .hero { max-width: 960px; margin: 0 auto; padding: 56px 32px 32px; }
+  .hero-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; color: #555; text-transform: uppercase; margin-bottom: 12px; }
+  .hero-title { font-size: 42px; font-weight: 800; line-height: 1.1; color: #F0F0EE; margin-bottom: 8px; }
+  .hero-date { font-size: 14px; color: #666; margin-bottom: 48px; }
+
+  /* SECTION A: EDITORIAL IMAGE */
+  .section-a { background: #111114; border-top: 3px solid #333; border-bottom: 1px solid #1E1E22; padding: 64px 0; }
+  .section-a-inner { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .section-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 4px 12px; border: 1px solid #333; color: #888; margin-bottom: 24px; }
+  .visual-title { font-size: 28px; font-weight: 700; color: #F0F0EE; margin-bottom: 6px; }
+  .visual-subtitle { font-size: 14px; color: #666; margin-bottom: 32px; }
+  .visual-placeholder { width: 100%; max-width: 600px; aspect-ratio: 1; background: #0A0A0C; border: 1px dashed #2A2A2E; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #333; font-size: 13px; gap: 10px; margin: 0 auto; }
+  .visual-placeholder svg { opacity: 0.2; }
+  .visual-caption { text-align: center; margin-top: 20px; font-size: 13px; color: #555; font-style: italic; }
+  .visual-note { text-align: center; margin-top: 8px; font-size: 11px; color: #444; }
+  .editorial-img { display: block; max-width: 600px; width: 100%; margin: 0 auto; border: 1px solid #222; }
+
+  /* SECTION B: NEWS ANALYSIS */
+  .section-b { max-width: 960px; margin: 0 auto; padding: 64px 32px; }
+  .section-b-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px; }
+  .section-b-title { font-size: 22px; font-weight: 700; color: #F0F0EE; }
+  .section-b-count { font-size: 13px; color: #555; }
+
+  .story-card { border-top: 1px solid #1E1E22; padding: 32px 0; display: grid; grid-template-columns: 48px 1fr; gap: 20px; }
+  .story-num { font-size: 28px; font-weight: 800; color: #222; line-height: 1; padding-top: 4px; }
+  .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .story-cat { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 10px; }
+  .cat-world { background: #2A1500; color: #E65100; }
+  .cat-tech { background: #00201E; color: #00897B; }
+  .cat-science { background: #00152A; color: #0077CC; }
+  .cat-ai { background: #1A1040; color: #6C47FF; }
+  .cat-business { background: #0A1A0A; color: #2E7D32; }
+  .story-emoji { font-size: 18px; }
+  .story-headline { font-size: 20px; font-weight: 700; color: #F0F0EE; line-height: 1.2; margin-bottom: 10px; }
+  .story-summary { font-size: 14px; color: #888; line-height: 1.6; margin-bottom: 14px; }
+  .story-bullets { list-style: none; margin-bottom: 16px; }
+  .story-bullets li { font-size: 13px; color: #AAA; padding: 4px 0 4px 18px; position: relative; }
+  .story-bullets li::before { content: '→'; position: absolute; left: 0; color: #444; }
+  .story-impact { display: flex; align-items: center; gap: 12px; }
+  .impact-label { font-size: 10px; color: #555; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+  .impact-bar-bg { height: 4px; width: 140px; background: #1A1A1E; border-radius: 2px; }
+  .impact-bar-fill { height: 4px; border-radius: 2px; }
+  .impact-score { font-size: 12px; font-weight: 700; }
+  .why-matters { font-size: 12px; color: #666; font-style: italic; margin-top: 10px; padding-top: 10px; border-top: 1px solid #151518; }
+
+  .infographic-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 48px; padding: 12px 24px; border: 1px solid #2A2A2E; color: #888; font-size: 13px; transition: all 0.2s; }
+  .infographic-link:hover { border-color: #555; color: #CCC; text-decoration: none; }
+
+  .footer { border-top: 3px solid #111; padding: 32px; text-align: center; font-size: 12px; color: #444; }
+  .footer a { color: #555; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="brand">Daily Briefing</span>
+  <a href="index.html" class="back-link">← All Briefings</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Daily Briefing</div>
+  <div class="hero-title">Algorithmic Dopamine Extraction</div>
+  <div class="hero-date">June 8, 2026</div>
+</div>
+
+<!-- SECTION A: EDITORIAL IMAGE -->
+<section class="section-a">
+  <div class="section-a-inner">
+    <div class="section-tag">Section A — Today's Visual</div>
+    <div class="visual-title">Vinyl Cutting Lathe</div>
+    <div class="visual-subtitle">June 8, 2026 — Technical Editorial Illustration</div>
+
+    <div class="visual-placeholder">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="28" stroke="#555" stroke-width="2"/>
+        <circle cx="32" cy="32" r="18" stroke="#444" stroke-width="1.5"/>
+        <circle cx="32" cy="32" r="8" stroke="#444" stroke-width="1"/>
+        <circle cx="32" cy="32" r="2" fill="#555"/>
+        <line x1="32" y1="4" x2="32" y2="14" stroke="#555" stroke-width="1.5"/>
+        <line x1="32" y1="50" x2="32" y2="60" stroke="#555" stroke-width="1.5"/>
+      </svg>
+      <span>Imagen illustration unavailable</span>
+      <span style="font-size:11px">Gemini API key not authorized for Imagen</span>
+    </div>
+
+    <p class="visual-caption">Vinyl Cutting Lathe — Technical Editorial Illustration</p>
+    <p class="visual-note">Independently researched and rendered by AI from today's news</p>
+
+    <div style="max-width:600px;margin:32px auto 0;padding:20px;background:#0A0A0C;border:1px solid #1A1A1E;">
+      <p style="font-size:13px;color:#666;margin-bottom:8px;font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:10px;">Subject Research</p>
+      <p style="font-size:13px;color:#888;line-height:1.6;">Teenage Engineering's APC-2 is a precision vinyl record cutting lathe — an electromechanical device that engraves audio waveforms as modulated spiral grooves into soft lacquer blanks. The diamond-tipped cutting stylus is mounted on a precision linear rail that advances exactly 0.3mm per platter revolution, carving groove walls only 25 micrometers wide. The turntable platter spins at 33 or 45 RPM; the stylus vibrates laterally and vertically at audio frequencies simultaneously (the 45° stereo groove standard), creating the groove geometry that a playback stylus will later trace to reproduce sound. Previously, cutting lathes required six-figure studio investment — Neumann and Scully machines ran $50,000–$250,000. The APC-2 brings this process to independent artists and audiophile engineers at a fraction of that cost.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION B: NEWS ANALYSIS -->
+<section class="section-b">
+  <div class="section-b-header">
+    <div class="section-b-title">Section B — News Analysis</div>
+    <div class="section-b-count">6 stories · June 8, 2026</div>
+  </div>
+
+  <!-- Story 1 -->
+  <div class="story-card">
+    <div class="story-num">01</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="story-cat cat-world">World</span>
+        <span class="story-emoji">🧠</span>
+        <span style="font-size:11px;color:#555;">impact_score: 9/10 · Digital Culture</span>
+      </div>
+      <div class="story-headline">Dopamine Fracking: Optimizing Culture to Death</div>
+      <div class="story-summary">A viral essay coins 'dopamine fracking' — the industrial-scale optimization of media, games, and social platforms to extract maximum neurochemical reward with zero regard for cultural substance. The author argues this process is as destructive to human creativity and connection as hydraulic fracking is to the environment.</div>
+      <ul class="story-bullets">
+        <li>Essay earned 579 upvotes on Hacker News, sparking 291 comments in under 24 hours</li>
+        <li>Author traces the phenomenon across streaming algorithms, infinite-scroll feeds, AI slop generation, and competitive gaming</li>
+        <li>Compares to commodity extraction: high short-term yield, permanent long-term damage to cultural substrate</li>
+      </ul>
+      <div class="story-impact">
+        <span class="impact-label">Impact</span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%;background:#E65100;"></div></div>
+        <span class="impact-score" style="color:#E65100;">9/10</span>
+      </div>
+      <div class="why-matters">Gives a precise vocabulary for the mechanism behind social media's hollowing-out of genuine culture, creativity, and human connection.</div>
+    </div>
+  </div>
+
+  <!-- Story 2 -->
+  <div class="story-card">
+    <div class="story-num">02</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="story-cat cat-tech">Tech</span>
+        <span class="story-emoji">🔓</span>
+        <span style="font-size:11px;color:#555;">impact_score: 8/10 · Data Security</span>
+      </div>
+      <div class="story-headline">1,000 Breaches Tracked: Disclosure Gets Worse</div>
+      <div class="story-summary">Security researcher Troy Hunt, after cataloguing 1,000 data breaches in Have I Been Pwned, finds that the average lag between breach occurrence and public notification has grown despite years of GDPR and CCPA regulatory pressure. Victims are routinely left exposed for months or years while companies delay disclosure.</div>
+      <ul class="story-bullets">
+        <li>Have I Been Pwned database now contains over 1,000 individually catalogued breach incidents</li>
+        <li>Disclosure lag in many cases exceeds 12–18 months between breach date and victim notification</li>
+        <li>GDPR's 72-hour notification mandate has not reduced average industry-wide disclosure timelines</li>
+      </ul>
+      <div class="story-impact">
+        <span class="impact-label">Impact</span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%;background:#00897B;"></div></div>
+        <span class="impact-score" style="color:#00897B;">8/10</span>
+      </div>
+      <div class="why-matters">Every month of delayed disclosure is a month attackers can monetize stolen credentials while victims remain unaware and unprotected.</div>
+    </div>
+  </div>
+
+  <!-- Story 3 -->
+  <div class="story-card">
+    <div class="story-num">03</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="story-cat cat-science">Science</span>
+        <span class="story-emoji">🔬</span>
+        <span style="font-size:11px;color:#555;">impact_score: 9/10 · Research Integrity</span>
+      </div>
+      <div class="story-headline">Thermo Fisher Antibody Data Shows Manipulation</div>
+      <div class="story-summary">An independent researcher's analysis of western blot images in Thermo Fisher Scientific's antibody product catalog reveals widespread signs of image splicing and band duplication. Thermo Fisher is the world's largest life sciences supplier, and its antibody data underpins countless published studies.</div>
+      <ul class="story-bullets">
+        <li>Thermo Fisher Scientific had ~$42.9B revenue in 2024; antibodies are among its core product lines</li>
+        <li>Repeated pixel patterns consistent with copy-paste manipulation found across hundreds of product listings</li>
+        <li>Thousands of peer-reviewed studies may have relied on manipulated validation data, threatening reproducibility</li>
+      </ul>
+      <div class="story-impact">
+        <span class="impact-label">Impact</span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%;background:#0077CC;"></div></div>
+        <span class="impact-score" style="color:#0077CC;">9/10</span>
+      </div>
+      <div class="why-matters">If antibody validation data has been systematically falsified by a major supplier, it could undermine the reproducibility of a significant portion of recent biomedical research.</div>
+    </div>
+  </div>
+
+  <!-- Story 4 -->
+  <div class="story-card">
+    <div class="story-num">04</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="story-cat cat-tech">Tech</span>
+        <span class="story-emoji">📱</span>
+        <span style="font-size:11px;color:#555;">impact_score: 7/10 · Social Media</span>
+      </div>
+      <div class="story-headline">Social Media Feeds Now Fads, Not Friends</div>
+      <div class="story-summary">A BBC Worklife investigation documents how major platforms have algorithmically replaced friends' actual updates with viral fad content, transforming social networks into passive entertainment delivery systems. Engagement-maximizing recommendation engines now prioritize strangers' trending content over posts from users' actual social graph.</div>
+      <ul class="story-bullets">
+        <li>Over 60% of average feeds on major platforms now serve non-followed content via recommendations</li>
+        <li>Facebook friend post interactions have fallen dramatically since 2018 algorithmic changes</li>
+        <li>Platforms argue engagement metrics justify the shift; critics say this ends social networking as a category</li>
+      </ul>
+      <div class="story-impact">
+        <span class="impact-label">Impact</span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:70%;background:#00897B;"></div></div>
+        <span class="impact-score" style="color:#00897B;">7/10</span>
+      </div>
+      <div class="why-matters">The pivot from social graph to interest graph fundamentally changes how people maintain relationships and encounter information online.</div>
+    </div>
+  </div>
+
+  <!-- Story 5 -->
+  <div class="story-card">
+    <div class="story-num">05</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="story-cat cat-tech">Tech</span>
+        <span class="story-emoji">💿</span>
+        <span style="font-size:11px;color:#555;">impact_score: 6/10 · Analog Revival</span>
+      </div>
+      <div class="story-headline">APC-2: Teenage Engineering's Desktop Vinyl Lathe</div>
+      <div class="story-summary">Teenage Engineering releases the APC-2, a precision vinyl record cutting lathe that lets studios and audiophiles cut original playable discs from any audio source. The machine revives an industrial process previously requiring six-figure professional equipment, now in a desktop form factor.</div>
+      <ul class="story-bullets">
+        <li>The APC-2 cuts standard 7-inch and 12-inch vinyl discs at 33 and 45 RPM via a direct-drive lathe mechanism</li>
+        <li>Legacy professional cutting lathes (Neumann, Scully) required $50,000–$250,000 in studio investment</li>
+        <li>Post scored 246 HN points, reflecting strong community interest in analog hardware revival</li>
+      </ul>
+      <div class="story-impact">
+        <span class="impact-label">Impact</span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:60%;background:#00897B;"></div></div>
+        <span class="impact-score" style="color:#00897B;">6/10</span>
+      </div>
+      <div class="why-matters">Democratizing vinyl mastering could spark a wave of independent, uncompressed physical music releases outside streaming's lossy pipelines.</div>
+    </div>
+  </div>
+
+  <!-- Story 6 -->
+  <div class="story-card">
+    <div class="story-num">06</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="story-cat cat-tech">Tech</span>
+        <span class="story-emoji">⚠️</span>
+        <span style="font-size:11px;color:#555;">impact_score: 7/10 · Supply Chain Security</span>
+      </div>
+      <div class="story-headline">Config Files Are Secret Code Execution Blindspots</div>
+      <div class="story-summary">Security researchers at SafeDep document how ubiquitous config files — pyproject.toml, package.json, Makefiles, and GitHub Actions workflows — silently execute arbitrary code during install, build, or CI processes. Most developers treat these as inert text, not as executable attack surfaces.</div>
+      <ul class="story-bullets">
+        <li>npm postinstall scripts and pyproject.toml build hooks execute shell commands without explicit user confirmation</li>
+        <li>A malicious dependency's postinstall script can exfiltrate SSH keys, env vars, and tokens silently</li>
+        <li>Supply chain attacks via config injection increased ~633% between 2020 and 2024 per industry reports</li>
+      </ul>
+      <div class="story-impact">
+        <span class="impact-label">Impact</span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:70%;background:#00897B;"></div></div>
+        <span class="impact-score" style="color:#00897B;">7/10</span>
+      </div>
+      <div class="why-matters">Every developer's build pipeline is a potential attack surface hiding in plain sight inside files assumed to be configuration, not code.</div>
+    </div>
+  </div>
+
+  <a class="infographic-link" href="infographic-2026-06-08.svg" download>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Download SVG Infographic
+  </a>
+</section>
+
+<footer class="footer">
+  <p>Generated by AI · June 8, 2026 · Sources: Hacker News, BBC Worklife, Troy Hunt, SafeDep</p>
+  <p style="margin-top:8px;"><a href="index.html">← Back to all briefings</a></p>
+</footer>
+
+</body>
+</html>

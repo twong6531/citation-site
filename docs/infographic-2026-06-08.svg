@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1420" width="800" height="1420">
+  <rect width="800" height="1420" fill="#F7F7F5"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- Header -->
+  <text x="400" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#999999" text-anchor="middle">DAILY BRIEFING</text>
+  <text x="400" y="82" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="700" fill="#111111" text-anchor="middle">Algorithmic Dopamine Extraction</text>
+  <text x="400" y="106" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#AAAAAA" text-anchor="middle">June 8, 2026</text>
+  <line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- Story 1: Dopamine Fracking -->
+  <rect x="40" y="136" width="720" height="185" rx="0" fill="#F7F7F5"/>
+  <text x="56" y="162" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="600">01</text>
+  <!-- Category pill -->
+  <rect x="76" y="148" width="52" height="18" rx="9" fill="#E65100"/>
+  <text x="102" y="161" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">WORLD</text>
+  <!-- Emoji -->
+  <text x="750" y="163" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" text-anchor="middle">🧠</text>
+  <text x="140" y="163" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Dopamine Fracking: Optimizing Culture to Death</text>
+  <text x="56" y="183" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555" width="688">A viral essay coins 'dopamine fracking' — industrial-scale optimization of media</text>
+  <text x="56" y="199" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">to extract maximum neurochemical reward with zero regard for cultural substance.</text>
+  <text x="56" y="221" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• 579 upvotes, 291 comments on Hacker News in under 24 hours</text>
+  <text x="56" y="237" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Traces the phenomenon across streaming algorithms, infinite-scroll feeds, AI content</text>
+  <text x="56" y="253" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• High short-term yield, permanent long-term damage to cultural substrate</text>
+  <!-- Impact bar -->
+  <text x="56" y="274" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" font-weight="600">IMPACT</text>
+  <rect x="110" y="264" width="200" height="6" rx="3" fill="#E0E0E0"/>
+  <rect x="110" y="264" width="180" height="6" rx="3" fill="#E65100"/>
+  <text x="318" y="273" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#E65100" font-weight="700">9/10</text>
+  <line x1="40" y1="327" x2="760" y2="327" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 2: Data Breaches -->
+  <text x="56" y="352" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="600">02</text>
+  <rect x="76" y="338" width="36" height="18" rx="9" fill="#00897B"/>
+  <text x="94" y="351" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">TECH</text>
+  <text x="750" y="353" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" text-anchor="middle">🔓</text>
+  <text x="122" y="353" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">1,000 Breaches Tracked: Disclosure Gets Worse</text>
+  <text x="56" y="373" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">Troy Hunt finds after cataloguing 1,000 data breaches, disclosure lag has grown</text>
+  <text x="56" y="389" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">despite years of GDPR and CCPA regulatory pressure on companies.</text>
+  <text x="56" y="411" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Have I Been Pwned now catalogs over 1,000 individual breach incidents</text>
+  <text x="56" y="427" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Disclosure lag in many cases exceeds 12–18 months post-breach</text>
+  <text x="56" y="443" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• 72-hour GDPR notification mandate has not reduced average industry timelines</text>
+  <text x="56" y="464" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" font-weight="600">IMPACT</text>
+  <rect x="110" y="454" width="200" height="6" rx="3" fill="#E0E0E0"/>
+  <rect x="110" y="454" width="160" height="6" rx="3" fill="#00897B"/>
+  <text x="318" y="463" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">8/10</text>
+  <line x1="40" y1="517" x2="760" y2="517" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 3: Thermo Fisher -->
+  <text x="56" y="542" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="600">03</text>
+  <rect x="76" y="528" width="64" height="18" rx="9" fill="#0077CC"/>
+  <text x="108" y="541" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">SCIENCE</text>
+  <text x="750" y="543" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" text-anchor="middle">🔬</text>
+  <text x="150" y="543" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Thermo Fisher Antibody Data Shows Manipulation</text>
+  <text x="56" y="563" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">Analysis of western blot images in Thermo Fisher's catalog reveals signs of image</text>
+  <text x="56" y="579" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">splicing across hundreds of products, threatening biomedical research integrity.</text>
+  <text x="56" y="601" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Thermo Fisher Scientific had ~$42.9B revenue in 2024; antibodies are core products</text>
+  <text x="56" y="617" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Repeated pixel patterns consistent with copy-paste manipulation found in listings</text>
+  <text x="56" y="633" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Thousands of peer-reviewed studies may have relied on manipulated validation data</text>
+  <text x="56" y="654" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" font-weight="600">IMPACT</text>
+  <rect x="110" y="644" width="200" height="6" rx="3" fill="#E0E0E0"/>
+  <rect x="110" y="644" width="180" height="6" rx="3" fill="#0077CC"/>
+  <text x="318" y="653" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#0077CC" font-weight="700">9/10</text>
+  <line x1="40" y1="707" x2="760" y2="707" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 4: Social Media -->
+  <text x="56" y="732" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="600">04</text>
+  <rect x="76" y="718" width="36" height="18" rx="9" fill="#00897B"/>
+  <text x="94" y="731" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">TECH</text>
+  <text x="750" y="733" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" text-anchor="middle">📱</text>
+  <text x="122" y="733" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Social Media Feeds Now Fads, Not Friends</text>
+  <text x="56" y="753" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">BBC investigates how platforms replaced friends' updates with viral fad content,</text>
+  <text x="56" y="769" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">transforming social networks into passive entertainment delivery systems.</text>
+  <text x="56" y="791" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Over 60% of average feeds now serve non-followed content via recommendations</text>
+  <text x="56" y="807" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Facebook friend post interactions have fallen dramatically since 2018 algorithm changes</text>
+  <text x="56" y="823" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Platforms prioritize engagement metrics over social graph connections by design</text>
+  <text x="56" y="844" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" font-weight="600">IMPACT</text>
+  <rect x="110" y="834" width="200" height="6" rx="3" fill="#E0E0E0"/>
+  <rect x="110" y="834" width="140" height="6" rx="3" fill="#00897B"/>
+  <text x="318" y="843" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">7/10</text>
+  <line x1="40" y1="897" x2="760" y2="897" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 5: APC-2 Vinyl Lathe -->
+  <text x="56" y="922" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="600">05</text>
+  <rect x="76" y="908" width="36" height="18" rx="9" fill="#00897B"/>
+  <text x="94" y="921" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">TECH</text>
+  <text x="750" y="923" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" text-anchor="middle">💿</text>
+  <text x="122" y="923" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">APC-2: Teenage Engineering's Desktop Vinyl Lathe</text>
+  <text x="56" y="943" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">Teenage Engineering releases a precision vinyl record cutting lathe for studios and</text>
+  <text x="56" y="959" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">audiophiles, democratizing a process previously requiring six-figure equipment.</text>
+  <text x="56" y="981" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Cuts standard 7-inch and 12-inch discs at 33 and 45 RPM</text>
+  <text x="56" y="997" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Priced in the several-thousand-dollar range for professional/audiophile market</text>
+  <text x="56" y="1013" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• 246 HN upvotes reflect strong community interest in analog hardware revival</text>
+  <text x="56" y="1034" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" font-weight="600">IMPACT</text>
+  <rect x="110" y="1024" width="200" height="6" rx="3" fill="#E0E0E0"/>
+  <rect x="110" y="1024" width="120" height="6" rx="3" fill="#00897B"/>
+  <text x="318" y="1033" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">6/10</text>
+  <line x1="40" y1="1087" x2="760" y2="1087" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 6: Config Files -->
+  <text x="56" y="1112" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="600">06</text>
+  <rect x="76" y="1098" width="36" height="18" rx="9" fill="#00897B"/>
+  <text x="94" y="1111" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">TECH</text>
+  <text x="750" y="1113" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" text-anchor="middle">⚠️</text>
+  <text x="122" y="1113" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">Config Files Are Secret Code Execution Blindspots</text>
+  <text x="56" y="1133" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">Security researchers show how pyproject.toml, package.json, and Makefiles silently</text>
+  <text x="56" y="1149" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">execute arbitrary code on install, creating underappreciated supply chain vectors.</text>
+  <text x="56" y="1171" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• npm postinstall scripts can exfiltrate SSH keys and env vars silently</text>
+  <text x="56" y="1187" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• GitHub Actions workflows execute arbitrary shell on every push and PR</text>
+  <text x="56" y="1203" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333333">• Supply chain attacks via config injection up ~633% from 2020 to 2024</text>
+  <text x="56" y="1224" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA" font-weight="600">IMPACT</text>
+  <rect x="110" y="1214" width="200" height="6" rx="3" fill="#E0E0E0"/>
+  <rect x="110" y="1214" width="140" height="6" rx="3" fill="#00897B"/>
+  <text x="318" y="1223" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">7/10</text>
+  <line x1="40" y1="1277" x2="760" y2="1277" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Footer -->
+  <text x="400" y="1310" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" text-anchor="middle">Generated by AI · June 8, 2026</text>
+  <text x="400" y="1328" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#CCCCCC" text-anchor="middle">Sources: Hacker News · BBC Worklife · Troy Hunt · SafeDep</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="1417" width="800" height="3" fill="#111111"/>
+</svg>
