@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest &mdash; June 8, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #222;
+    --border: #2E2E2E;
+    --text: #E8E8E8;
+    --muted: #888;
+    --accent: #F5F5F0;
+    --highlight: #C8F542;
+    --link: #7EB8F7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; font-size: 15px; line-height: 1.65; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .site-header .logo { font-size: 13px; font-weight: 700; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+  .site-header nav a { color: var(--muted); font-size: 13px; margin-left: 24px; }
+
+  .hero { padding: 80px 48px 60px; max-width: 1100px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-size: 52px; font-weight: 800; letter-spacing: -2px; line-height: 1.1; color: var(--accent); margin-bottom: 20px; }
+  .hero-meta { display: flex; gap: 32px; color: var(--muted); font-size: 13px; margin-bottom: 40px; }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+  .exec-summary { background: var(--surface); border-left: 3px solid var(--highlight); padding: 32px 40px; margin: 0 auto 60px; max-width: 1100px; margin-left: 48px; margin-right: 48px; border-radius: 2px; }
+  .exec-summary h2 { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .exec-summary p { font-size: 16px; line-height: 1.75; color: #CCC; }
+
+  section { max-width: 1100px; margin: 0 auto; padding: 0 48px 60px; }
+  .section-label { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 32px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .paper-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 28px 32px; margin-bottom: 20px; transition: border-color 0.2s; }
+  .paper-card:hover { border-color: #444; }
+  .paper-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .paper-num { font-size: 11px; font-weight: 800; color: var(--muted); letter-spacing: 1px; }
+  .paper-source { font-size: 11px; color: var(--muted); background: var(--surface2); padding: 3px 8px; border-radius: 2px; font-family: monospace; }
+  .confidence-badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 2px; color: #000; margin-left: auto; }
+  .paper-card h3 { font-size: 17px; font-weight: 700; line-height: 1.4; margin-bottom: 6px; color: var(--accent); }
+  .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .summary-box { background: var(--surface2); border-left: 2px solid var(--highlight); padding: 12px 16px; margin-bottom: 20px; font-size: 14px; color: #CCC; border-radius: 0 2px 2px 0; }
+  .paper-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 16px; }
+  .paper-card h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin: 16px 0 6px; }
+  .paper-card p, .paper-card li { font-size: 13px; color: #AAA; line-height: 1.6; }
+  .paper-card ul { padding-left: 16px; }
+  .paper-card li { margin-bottom: 4px; }
+  .prior-work { font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px; margin-top: 4px; }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; border-radius: 4px; }
+  .theme-card h3 { font-size: 13px; font-weight: 700; color: var(--highlight); margin-bottom: 10px; }
+  .theme-card p { font-size: 12px; color: #AAA; line-height: 1.6; }
+
+  .insights-box { background: var(--surface); border: 1px solid var(--border); padding: 32px; border-radius: 4px; margin-bottom: 20px; }
+  .insights-box h3 { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+  .insights-box p, .insights-box li { font-size: 13px; color: #AAA; line-height: 1.65; }
+  .insights-box ul { padding-left: 18px; }
+  .insights-box li { margin-bottom: 10px; }
+
+  .infographic-section { background: var(--surface); border: 1px solid var(--border); padding: 32px; border-radius: 4px; text-align: center; margin-bottom: 20px; }
+  .infographic-section svg { max-width: 100%; height: auto; }
+  .infographic-section .dl-link { display: inline-block; margin-top: 16px; font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 6px 16px; border-radius: 2px; }
+  .infographic-section .dl-link:hover { border-color: #555; }
+
+  .pot-card { background: linear-gradient(135deg, #1A1A1A 0%, #222 100%); border: 1px solid var(--highlight); padding: 36px; border-radius: 4px; margin-bottom: 48px; }
+  .pot-card .eyebrow { font-size: 10px; letter-spacing: 3px; color: var(--highlight); text-transform: uppercase; margin-bottom: 14px; }
+  .pot-card h3 { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .pot-card .pot-authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .pot-card p { font-size: 14px; color: #BBB; line-height: 1.7; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 40px 48px; }
+  footer .footer-grid { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 12px; color: var(--muted); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px; }
+    .hero h1 { font-size: 32px; }
+    section { padding: 0 20px 40px; }
+    .paper-grid { grid-template-columns: 1fr; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .exec-summary { margin-left: 20px; margin-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="logo">Transit Research Digest</span>
+  <nav>
+    <a href="research.html">Archive</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">Urban Mobility &middot; Research Analysis &middot; June 8, 2026</p>
+  <h1>Transit Research<br>Digest</h1>
+  <div class="hero-meta">
+    <span>&#x1F4C5; June 8, 2026</span>
+    <span>&#x1F4C4; 12 papers analyzed</span>
+    <span>&#x1F50D; arXiv + Semantic Scholar</span>
+    <span>&#x1F916; Autonomous research agent</span>
+  </div>
+</div>
+
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <p>The June 8, 2026 transit research landscape reveals a field in deep transformation across three converging fronts: AI-native planning systems, electrification economics, and behavioral data exploitation. The week's most striking result shows that a slime-mold-inspired distributed transit system outperforms fixed-route networks by 28–101% across multiple scenarios — suggesting biology may have solved the routing problem that urban planners have struggled with for decades. EV charging behavioral data from 760,000+ drivers rewrites infrastructure siting logic, while a Shanghai emissions study reveals EV climate benefits are largely determined by grid carbon intensity, not vehicle efficiency. Equity emerges as a cross-cutting measurable theme: from wheelchair job accessibility deficits quantified for the first time at city scale by OPENPATH, to EV charging market failures documented leaving low-income communities unserved.</p>
+</div>
+
+<section>
+  <div class="pot-card">
+    <p class="eyebrow">Paper of the Day</p>
+    <h3><a href="http://arxiv.org/abs/2606.07486" target="_blank">OPENPATH: A Supervisor–Specialist Agent System for Personalized, Accessible, and Multi-stop Urban Trip Planning</a></h3>
+    <p class="pot-authors">Ziyang Xiong, He Zong, Zhiyuan Xue, Manxi Wu &mdash; arXiv:2606.07486 &middot; 2026</p>
+    <p>Selected as paper of the day for combining technical AI innovation with direct, first-ever city-scale quantification of wheelchair job accessibility loss from ADA infrastructure gaps — bridging machine learning research and disability equity policy in a single system. Applied to NYC data, the work produces policy-actionable metrics rather than abstract equity claims.</p>
+  </div>
+
+  <p class="section-label">All 12 Papers &mdash; Full Analysis</p>
+  
+    <div class="paper-card" id="paper-0">
+      <div class="paper-header">
+        <span class="paper-num">#01</span>
+        <span class="paper-source">arXiv:2606.07044</span>
+        <span class="confidence-badge" style="background:#2ECC71">High Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.07044" target="_blank" rel="noopener">Hierarchical Forecast Reconciliation for Urban Rail Transit Demand Prediction under Operational Disruptions</a></h3>
+      <p class="authors">Dang Viet Anh Nguyen, Alma Fazlagic, Kristine Pryds Loft, Filipe Rodrigues &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> A neural reconciliation framework ensures consistent station-level and OD demand forecasts in rail transit, proving especially valuable during service disruptions.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Accurate demand forecasting during disruptions enables better resource allocation and passenger communication in real-time rail operations — precisely when operators need it most.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Neural Fully Connected Reconciler enforces structural consistency in hierarchical forecasts</li><li>Benefits are amplified during service disruptions, when reliable forecasting is most critical</li><li>Tested on real Copenhagen S-train smart-card data, not just synthetic benchmarks</li></ul>
+          <h4>Methodology</h4>
+          <p>Hierarchical forecast reconciliation with neural networks applied to smart-card data from Copenhagen S-train</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Consistent improvements in OD forecast accuracy; substantial gains specifically during severe disruptions</p>
+          <h4>Limitations</h4>
+          <p>Tested on a single European city (Copenhagen); may require recalibration for other rail systems with different smart-card data quality</p>
+          <h4>Who Should Care</h4>
+          <p>Transit agencies, operations control centers, smart city platform developers</p>
+          <h4>Practical Implications</h4>
+          <p>Can be deployed in real-time control centers to improve passenger information systems and resource dispatching during disruptions</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Extends traditional linear reconciliation methods with non-linear neural approaches that better capture complex demand patterns
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-1">
+      <div class="paper-header">
+        <span class="paper-num">#02</span>
+        <span class="paper-source">arXiv:2606.06189</span>
+        <span class="confidence-badge" style="background:#F39C12">Medium Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.06189" target="_blank" rel="noopener">A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</a></h3>
+      <p class="authors">Lindsay Burke, Maxfield Comstock, Jason Graham, Ruth Malenda, Simon Garnier, Petras Swissler &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> A biologically-inspired swarm transit system where buses bid cooperatively for passengers improves delivery rates 28–101% over fixed-route networks in multi-environment simulation.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Fixed-route transit fails in low-density suburbs and rural areas; demand-responsive approaches inspired by slime mold network formation could unlock coverage without proportional cost increases.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Distributed cooperative bidding eliminates single points of failure versus centralized schedulers</li><li>28–101% delivery rate improvement spans suburban, urban, and semi-rural environments</li><li>Slime mold analog: buses form efficient routes through emergent behavior without central control</li></ul>
+          <h4>Methodology</h4>
+          <p>Agent-based simulation across multiple urban density scenarios using Physarum polycephalum network formation principles</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>28–101% passenger delivery rate increases over fixed-route networks, with significant walking time reductions</p>
+          <h4>Limitations</h4>
+          <p>Simulation-based only; real-world deployment faces fleet management complexity, regulatory hurdles, and passenger unfamiliarity with non-scheduled service</p>
+          <h4>Who Should Care</h4>
+          <p>Transit planners, mobility-as-a-service companies, suburban community planners, microtransit startups</p>
+          <h4>Practical Implications</h4>
+          <p>Could fundamentally change how transit is designed in low-density areas, potentially replacing fixed routes with responsive swarms of smaller vehicles</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Prior demand-responsive transit work used centralized optimization; this is the first to apply distributed swarm intelligence to public transit routing
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-2">
+      <div class="paper-header">
+        <span class="paper-num">#03</span>
+        <span class="paper-source">arXiv:2606.06429</span>
+        <span class="confidence-badge" style="background:#F39C12">Medium Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.06429" target="_blank" rel="noopener">Computational Modeling of Human Adaptation in Urban Infrastructure Management under Extreme Conditions: A Case Study of Subway Flood Scenarios</a></h3>
+      <p class="authors">Jinfeng Lou, Zijie Liang, Pengkun Liu, Yuxin Zhang, Cleotilde Gonzalez, Pingbo Tang &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> An IBL-theory computational model reveals subway dispatchers follow a four-phase cognitive adaptation cycle during floods, with dangerous overcorrection bias that worsens outcomes.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>As climate change increases urban flood frequency, understanding how dispatchers cognitively adapt — and fail — is critical for improving training programs and automation trigger points.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Four-phase adaptation cycle: Surprise → Over-reaction → Stabilization → Recovery</li><li>Overcorrection bias creates secondary disruptions worse than the original incident</li><li>Memory-based learning diverges dangerously from psychological biases under time pressure</li></ul>
+          <h4>Methodology</h4>
+          <p>Instance-Based Learning Theory computational simulation of dispatcher behavior during flood disruption scenarios</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Identified four distinct adaptation phases; overcorrection shown to produce worse outcomes than memory-based response strategies</p>
+          <h4>Limitations</h4>
+          <p>Simulation-based; validation against real dispatcher behavior during actual flood events remains needed</p>
+          <h4>Who Should Care</h4>
+          <p>Transit operators, emergency management agencies, human factors engineers, control center designers</p>
+          <h4>Practical Implications</h4>
+          <p>Could improve dispatcher training programs and inform automated intervention thresholds to prevent overcorrection cascades</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Extends IBL theory from controlled lab settings to complex real-world transit emergency infrastructure for the first time
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-3">
+      <div class="paper-header">
+        <span class="paper-num">#04</span>
+        <span class="paper-source">arXiv:2606.07486</span>
+        <span class="confidence-badge" style="background:#2ECC71">High Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.07486" target="_blank" rel="noopener">OPENPATH: A Supervisor–Specialist Agent System for Personalized, Accessible, and Multi-stop Urban Trip Planning</a></h3>
+      <p class="authors">Ziyang Xiong, He Zong, Zhiyuan Xue, Manxi Wu &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> An LLM multi-agent trip planner applied to NYC quantifies how ADA infrastructure gaps measurably reduce job accessibility for wheelchair users — turning equity concerns into policy metrics.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Combining AI planning with real accessibility data produces the first city-scale quantification of inequality in transportation access — turning abstract equity concerns into actionable infrastructure metrics.</p>
+          <h4>Key Insights</h4>
+          <ul><li>LLM supervisor orchestrates natural language while classical algorithms optimize accessible routes</li><li>ADA infrastructure deficiencies measurably cut job accessibility for wheelchair users</li><li>Multi-stop, multi-modal itineraries with accessibility constraints remain unsolved by commercial planners</li></ul>
+          <h4>Methodology</h4>
+          <p>Multi-agent LLM system with classical routing algorithms applied to NYC mobility and ADA compliance datasets</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Successfully plans accessible multi-stop routes; quantifies job accessibility reduction from ADA gaps at city scale</p>
+          <h4>Limitations</h4>
+          <p>Depends on quality of accessibility data, which is often outdated, crowd-sourced, or incomplete in U.S. cities</p>
+          <h4>Who Should Care</h4>
+          <p>Disability advocates, urban planners, transit agencies, technology companies building travel apps, ADA compliance officers</p>
+          <h4>Practical Implications</h4>
+          <p>Could be deployed as an API to support disabled travelers; provides policymakers with quantified ADA compliance gap analysis</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> First system to integrate LLM orchestration with ADA compliance data for city-scale accessibility quantification; prior planners ignored multi-stop accessibility enforcement
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-4">
+      <div class="paper-header">
+        <span class="paper-num">#05</span>
+        <span class="paper-source">arXiv:2606.07016</span>
+        <span class="confidence-badge" style="background:#F39C12">Medium Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.07016" target="_blank" rel="noopener">An Integrated Roadside Sensing and Communication Framework for Vulnerable Road User Safety at Signalized Intersections</a></h3>
+      <p class="authors">Parvez Anowar &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> A multi-modal sensor fusion system combining LiDAR, radar, and thermal cameras with V2X messaging provides all-weather pedestrian and cyclist protection at signalized intersections.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Pedestrian and cyclist fatalities continue rising in U.S. cities; sensor-equipped intersections need to work reliably in rain, fog, and darkness — conditions where cameras alone fail.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Thermal sensing fills critical gaps where optical cameras fail: night, fog, rain, and glare</li><li>V2X/P2X messaging can simultaneously warn both vehicles and pedestrian personal devices</li><li>Edge computing keeps latency within the sub-second window needed for actionable intervention</li></ul>
+          <h4>Methodology</h4>
+          <p>Multi-modal sensor fusion architecture with edge analytics and V2X/P2X communication framework for intersection safety</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Framework demonstrates capability to detect vulnerable users in conditions where single-sensor approaches fail</p>
+          <h4>Limitations</h4>
+          <p>Lacks large-scale real-world deployment testing; high infrastructure cost per intersection limits scalability</p>
+          <h4>Who Should Care</h4>
+          <p>Traffic engineers, city DOTs, autonomous vehicle manufacturers, safety researchers, Vision Zero planners</p>
+          <h4>Practical Implications</h4>
+          <p>Roadmap for smart intersection upgrades compatible with connected vehicle standards; deployable with DSRC or C-V2X hardware</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Prior intersection safety work focused on camera-only or radar-only approaches; this is first to integrate three modalities with simultaneous V2X and P2X messaging
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-5">
+      <div class="paper-header">
+        <span class="paper-num">#06</span>
+        <span class="paper-source">arXiv:2606.07464</span>
+        <span class="confidence-badge" style="background:#2ECC71">High Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.07464" target="_blank" rel="noopener">Planning-aligned Token Compression for Long-Context Autonomous Driving</a></h3>
+      <p class="authors">Zhixuan Liang, Yuxiao Chen, Yurong You, Peter Karkus, et al. (NVIDIA, HKUST) &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> COMPACT-VA compresses temporal autonomous driving context using planning-aligned VQ-VAE, achieving significant speedup and memory reduction without losing safety-critical decision quality.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Long-context vision-action models are the future of autonomous vehicles, but current computational costs prevent real-time deployment; this shows a principled compression path.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Not all temporal context is equally important — planning-alignment filters noise from irrelevant history</li><li>Conditional VQ-VAE creates semantically meaningful token compression tied to driving decisions</li><li>Achieves speedup and memory reduction while maintaining safety-critical benchmark performance</li></ul>
+          <h4>Methodology</h4>
+          <p>Conditional VQ-VAE for planning-aligned context compression in vision-action autonomous driving models</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Significant speedup and memory reduction on autonomous driving benchmarks without performance degradation</p>
+          <h4>Limitations</h4>
+          <p>Benchmark performance may not reflect all edge cases in real-world deployment; tested in simulation</p>
+          <h4>Who Should Care</h4>
+          <p>Autonomous vehicle engineers, ML researchers, automotive chip designers, AV safety regulators</p>
+          <h4>Practical Implications</h4>
+          <p>Enables deployment of more capable AV models on current automotive-grade hardware without waiting for next-gen compute</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Extends token compression techniques developed for language models to the driving-specific domain with safety-preserving alignment
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-6">
+      <div class="paper-header">
+        <span class="paper-num">#07</span>
+        <span class="paper-source">arXiv:2606.03732</span>
+        <span class="confidence-badge" style="background:#2ECC71">High Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.03732" target="_blank" rel="noopener">When are supercapacitors practically feasible in electric vehicles?</a></h3>
+      <p class="authors">Yue Wu, Ziqing Xia, Shaokun Li, Heng Li, Shengyu Tao, Zhiwu Huang &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> City buses are the clear economic and technical sweet spot for hybrid supercapacitor-battery EVs; passenger cars face mass, volume, and cost barriers that make adoption impractical today.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Identifying where supercapacitors actually work prevents wasted R&D investment and focuses transit fleet electrification on the highest-value applications.</p>
+          <h4>Key Insights</h4>
+          <ul><li>City bus stop-and-go duty cycles match supercapacitor peak-power strengths perfectly</li><li>Regenerative braking energy capture is maximized by supercapacitor's rapid charge/discharge capability</li><li>Passenger cars lack the kilowatt-scale demands and space needed to justify hybrid storage systems</li></ul>
+          <h4>Methodology</h4>
+          <p>Techno-economic feasibility analysis across vehicle types using energy cycle modeling</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Clear feasibility boundary established: buses viable, passenger cars not viable under current supercapacitor technology economics</p>
+          <h4>Limitations</h4>
+          <p>Rapidly evolving supercapacitor energy density and cost curves may shift the boundary; analysis is static</p>
+          <h4>Who Should Care</h4>
+          <p>Fleet operators, transit agencies, energy storage manufacturers, municipal procurement officers</p>
+          <h4>Practical Implications</h4>
+          <p>Guides fleet electrification investment toward city bus applications where the technology delivers measurable cost and efficiency gains</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Extends general EV storage literature with vehicle-class-specific feasibility analysis that prior work treated as uniform
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-7">
+      <div class="paper-header">
+        <span class="paper-num">#08</span>
+        <span class="paper-source">arXiv:2606.02848</span>
+        <span class="confidence-badge" style="background:#2ECC71">High Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.02848" target="_blank" rel="noopener">Using large scale GPS data to reveal EV driver activity patterns beyond charging sessions</a></h3>
+      <p class="authors">Callie Clark, Anne Driscoll, Xiyuan Ren, Salsabil Salah, Marta C. Gonzalez, Joseph Y.J. Chow, Takahiro Yabe &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> Analysis of 760,000+ EV drivers across U.S. metros reveals trip-bundling behavior and disproportionate restaurant/café patronage during charging dwell time — rewriting infrastructure siting rules.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Charging station siting based on energy needs alone misses the behavioral ecosystem around charging; real GPS data reveals co-location opportunities that improve utilization and user experience.</p>
+          <h4>Key Insights</h4>
+          <ul><li>EV drivers visit food and beverage establishments disproportionately during charging dwell time</li><li>Trip bundling dominates charging behavior — charging is integrated into existing errands, not a special trip</li><li>EV driver behavioral profiles differ significantly and measurably from non-EV driver patterns</li></ul>
+          <h4>Methodology</h4>
+          <p>Large-scale GPS data analysis across multiple U.S. metropolitan areas covering 760,000+ EV drivers</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Distinct EV driver behavioral profiles with strong trip-bundling and food/beverage preferences during charging</p>
+          <h4>Limitations</h4>
+          <p>GPS data has privacy limitations and sampling biases; may not capture all trip types or income demographics equally</p>
+          <h4>Who Should Care</h4>
+          <p>Charging network operators, real estate developers, urban planners, retailers, city EV infrastructure planners</p>
+          <h4>Practical Implications</h4>
+          <p>Charging stations co-located with restaurants and retail see higher utilization; commercial real estate developers can design charging-anchor destinations</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Prior EV research focused on charging sessions in isolation; this is the first large-scale behavioral study revealing the activity ecosystem surrounding charging
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-8">
+      <div class="paper-header">
+        <span class="paper-num">#09</span>
+        <span class="paper-source">arXiv:2606.01266</span>
+        <span class="confidence-badge" style="background:#2ECC71">High Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.01266" target="_blank" rel="noopener">Regulating EV Charging Markets for Fairness: Incentives for Pricing and Capacity Decisions</a></h3>
+      <p class="authors">Ruiting Wang, Kita Hu, Yitong Yu, Scott Moura &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> Unregulated EV charging market competition clusters infrastructure in wealthy areas and deepens geographic and income-based access disparities; game-theoretic incentives can correct the market failure.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>EV infrastructure equity is becoming a major federal and state policy priority; this provides a rigorous economic framework showing exactly why regulation is required and what form it should take.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Free market EV charging leads to geographic clustering in high-income areas, abandoning low-income communities</li><li>Game-theoretic incentive design can align private investment with public equity goals without heavy-handed mandates</li><li>Pricing regulation alone is insufficient; both pricing and capacity siting incentives are required together</li></ul>
+          <h4>Methodology</h4>
+          <p>Game-theoretic analysis of EV charging market competition and regulatory intervention design</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Combined pricing and capacity incentive mechanisms reduce geographic and income-based disparities in EV charging access</p>
+          <h4>Limitations</h4>
+          <p>Model simplifications may not capture all real-world market dynamics, regulatory constraints, or utility rate structures</p>
+          <h4>Who Should Care</h4>
+          <p>Utility regulators, state energy offices, EV charging companies, environmental justice advocates, federal infrastructure planners</p>
+          <h4>Practical Implications</h4>
+          <p>Policy framework for utility regulators and state energy offices to mandate equitable EV charging deployment through incentive design</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Extends EV charging optimization literature by introducing equity as an explicit design objective, not just an afterthought
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-9">
+      <div class="paper-header">
+        <span class="paper-num">#10</span>
+        <span class="paper-source">arXiv:2605.29266</span>
+        <span class="confidence-badge" style="background:#2ECC71">High Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2605.29266" target="_blank" rel="noopener">Quantifying real-world energy use and CO2 emissions of electric vehicles via a city-scale bottom-up framework</a></h3>
+      <p class="authors">Shuhan Ge, Yanqiao Deng, Minda Ma &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> Shanghai city-scale modeling shows real EV energy consumption far exceeds test-cycle predictions, and that grid decarbonization — not vehicle efficiency — determines most of the climate benefit.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Policy projections based on test-cycle data systematically overestimate EV climate benefits, potentially misdirecting billions in climate subsidies and grid investment toward the wrong priorities.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Real-world consumption significantly exceeds test-cycle values due to congestion, HVAC load, and driving behavior</li><li>Grid carbon intensity determines most of the actual CO2 impact — a dirty grid undermines EV climate math</li><li>City-scale bottom-up modeling is substantially more accurate than national fleet averages or test data</li></ul>
+          <h4>Methodology</h4>
+          <p>City-scale bottom-up energy consumption and emissions modeling using real operational data from Shanghai EV fleet</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Real consumption exceeds test cycles significantly; grid decarbonization shown to dominate the climate calculus for urban EVs</p>
+          <h4>Limitations</h4>
+          <p>Shanghai-specific findings; cold-climate cities will show even larger gaps due to battery thermal management; grid mix varies by region</p>
+          <h4>Who Should Care</h4>
+          <p>Climate policymakers, utility commissions, EV manufacturers, environmental researchers, transport decarbonization strategists</p>
+          <h4>Practical Implications</h4>
+          <p>Policymakers should pair EV adoption subsidies with grid decarbonization mandates or risk overstating achieved emission reductions</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Extends lifecycle analysis with real-world operational data at city scale, replacing test-cycle assumptions that have dominated prior EV emissions modeling
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-10">
+      <div class="paper-header">
+        <span class="paper-num">#11</span>
+        <span class="paper-source">arXiv:2606.07437</span>
+        <span class="confidence-badge" style="background:#F39C12">Medium Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.07437" target="_blank" rel="noopener">Re-imagining ISO 26262 in the Age of Autonomous Vehicles: Enhancing Controllability through Transferability and Predictability</a></h3>
+      <p class="authors">Chaitanya Shinde, Hadi Hajieghrary, Paul Schmitt, Adam Shoemaker, Bodo Seifert, Steve Kenner &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> ISO 26262's human-controllability assumption is conceptually invalid for SAE Level 4–5 autonomous vehicles; new safety metrics of Transferability and Predictability are proposed as replacements.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>The entire global regulatory framework for vehicle safety was designed assuming human drivers can intervene; getting autonomous safety standards right is a prerequisite for mass deployment.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Traditional Controllability presumes a human can intervene — an invalid assumption for full autonomy</li><li>Transferability: can the system safely hand off control to another agent or come to a safe stop?</li><li>Predictability: can the system's behavior be anticipated by other road users to enable safe co-existence?</li></ul>
+          <h4>Methodology</h4>
+          <p>Standards analysis and theoretical framework extension for autonomous vehicle functional safety beyond ISO 26262 and ISO 21448 (SOTIF)</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Proposed framework addresses fundamental conceptual gaps in current standards for SAE Level 4–5 driverless vehicles</p>
+          <h4>Limitations</h4>
+          <p>Untested at scale in real deployments; regulatory adoption through standards bodies is notoriously slow (5–10 year cycles)</p>
+          <h4>Who Should Care</h4>
+          <p>AV manufacturers, automotive safety engineers, insurance actuaries, transportation regulators, standards bodies</p>
+          <h4>Practical Implications</h4>
+          <p>Provides foundation for updating global AV safety standards and informing OEM safety validation processes before regulatory mandates arrive</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Builds on ISO 26262 and ISO 21448 (SOTIF) with AV-specific extensions that acknowledge the absence of human control as a first-class design consideration
+      </div>
+    </div>
+
+    <div class="paper-card" id="paper-11">
+      <div class="paper-header">
+        <span class="paper-num">#12</span>
+        <span class="paper-source">arXiv:2606.07161</span>
+        <span class="confidence-badge" style="background:#F39C12">Medium Confidence</span>
+      </div>
+      <h3><a href="http://arxiv.org/abs/2606.07161" target="_blank" rel="noopener">TraRA: Trajectory-level Recognition Aggregation for Video Text Spotting in Urban Surveillance</a></h3>
+      <p class="authors">Duc Tri Tran, Trung Thanh Nguyen, Vijay John, Phi Le Nguyen, Yasutomo Kawanishi &mdash; 2026</p>
+      <div class="summary-box">
+        <strong>In one sentence:</strong> A trajectory-aggregating vision-language system improves license plate and signage recognition in urban traffic surveillance by exploiting temporal consistency across video frames.
+      </div>
+      <div class="paper-grid">
+        <div>
+          <h4>Why It Matters</h4>
+          <p>Reliable automated text recognition in urban surveillance enables automated enforcement, incident detection, and traffic management — but fails under challenging real-world urban conditions without this approach.</p>
+          <h4>Key Insights</h4>
+          <ul><li>Aggregating recognition across frames dramatically improves accuracy over single-frame inference</li><li>Temporal consistency is exploited as a free signal requiring no additional annotation</li><li>Vision-language fusion provides semantic context that pure vision approaches miss in urban environments</li></ul>
+          <h4>Methodology</h4>
+          <p>Trajectory-based temporal aggregation with vision-language model fusion for video text recognition in transportation surveillance systems</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <p>Improved performance on urban surveillance benchmarks under challenging conditions including occlusion, motion blur, and variable illumination</p>
+          <h4>Limitations</h4>
+          <p>Real-time deployment may face latency constraints; significant privacy and civil liberties implications of expanded surveillance capability</p>
+          <h4>Who Should Care</h4>
+          <p>Traffic management agencies, transit operators, smart city platform developers, transportation researchers</p>
+          <h4>Practical Implications</h4>
+          <p>More reliable automated license plate reading, bus destination board recognition, and traffic sign monitoring for management systems</p>
+        </div>
+      </div>
+      <div class="prior-work">
+        <strong>vs. Prior Work:</strong> Extends standard video text spotting with transit-specific trajectory modeling that prior general-purpose approaches lacked
+      </div>
+    </div>
+</section>
+
+<section>
+  <p class="section-label">Emerging Themes</p>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>AI Orchestration</h3>
+      <p>Multi-agent LLM and swarm systems are outperforming centralized dispatchers across trip planning, transit routing, and EV charging management. The centralized scheduler may be an architectural dead-end.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Equity as Metric</h3>
+      <p>Infrastructure equity is being quantified with real data for the first time at city scale: job access lost to ADA gaps, charging deserts mapped by income zone, coverage failures documented by geography.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Model vs. Reality Gap</h3>
+      <p>Lab results, test cycles, and simulations diverge from real-world performance in EV emissions, transit dispatch behavior, and autonomous driving — with policy-scale consequences.</p>
+    </div>
+  </div>
+
+  <div class="insights-box">
+    <h3>Contrarian Insights</h3>
+    <p>The most counterintuitive finding this week: slime mold behavior outperforms human-designed transit networks by up to 101%. A second: EV climate benefits in Shanghai are dominated by grid carbon intensity, making grid decarbonization more valuable than increasing EV adoption rate. A third: ISO 26262 — the gold standard of vehicle safety — is conceptually inadequate for the vehicles it now governs. And: unregulated EV charging markets actively harm equity, not just fail to help it.</p>
+  </div>
+
+  <div class="insights-box">
+    <h3>Actionable Takeaways</h3>
+    <ul><li>Transit agencies should pilot demand-responsive swarm routing in low-density suburbs before committing to new fixed infrastructure — simulation shows 28–101% delivery rate improvement.</li><li>Charging network developers should prioritize co-location with restaurants and retail; GPS data from 760K+ EV drivers confirms trip-bundling and food/beverage patronage during charging dwell time.</li><li>Municipalities should audit ADA compliance gaps using OPENPATH-style data tools to quantify the job accessibility impact before announcing new transit services — equity must be measurable, not aspirational.</li><li>Climate policymakers should mandate grid decarbonization as a co-condition of EV incentive programs; vehicle efficiency improvements are secondary to grid carbon intensity in actual emission outcomes.</li></ul>
+  </div>
+
+  <div class="insights-box">
+    <h3>Long-Term Implications</h3>
+    <p>The convergence of AI planning, electrification, and behavioral analytics suggests transit will become increasingly personalized, demand-responsive, and data-intensive over the next decade. The equity challenge — whether these technologies serve all users or deepen existing divides in EV charging access and ADA compliance — will determine public acceptance and regulatory outcomes. Autonomous vehicle safety standards face a fundamental conceptual rebuild. And biological optimization principles, ignored by transit planners for decades, may prove to be the most efficient routing solution available.</p>
+  </div>
+</section>
+
+<section>
+  <p class="section-label">Data Infographic</p>
+  <div class="infographic-section">
+    <img src="research-infographic-2026-06-08.svg" alt="Transit Research Infographic June 8, 2026" style="max-width:800px; width:100%;">
+    <br>
+    <a class="dl-link" href="research-infographic-2026-06-08.svg" download>&#x2193; Download SVG</a>
+  </div>
+</section>
+
+<section>
+  <p class="section-label">Visual Subject &mdash; June 8, 2026</p>
+  <div class="insights-box">
+    <h3>Physarum polycephalum slime mold network growing over a metropolitan transit map</h3>
+    <p>The most visually striking scientific subject from today&rsquo;s papers: <em>Physarum polycephalum</em>, the bright yellow slime mold whose network-formation behavior inspired the swarm transit routing paper. The organism builds branching cytoplasmic tube networks with cytoplasm streaming at up to 1mm/second, periodically reversing direction every ~100 seconds. Researchers have shown it recreates Tokyo&rsquo;s actual rail network when fed oat flakes at city locations &mdash; &ldquo;with comparable efficiency, fault tolerance, and cost.&rdquo; Today&rsquo;s Burke et al. paper translates this biological optimization directly into a public transit routing framework achieving 28&ndash;101% delivery rate improvements.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <p>Transit Research Digest &mdash; June 8, 2026 &mdash; 12 papers</p>
+    <p><a href="research.html">Full archive &rarr;</a> &nbsp; <a href="index.html">Home &rarr;</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

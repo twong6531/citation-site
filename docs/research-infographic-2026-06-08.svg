@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="8" fill="#1A1A1A"/>
+  <text x="48" y="70" font-size="11" fill="#888" letter-spacing="4" font-weight="600">TRANSIT RESEARCH DIGEST</text>
+  <text x="48" y="115" font-size="46" fill="#1A1A1A" font-weight="700" letter-spacing="-1">Urban Mobility</text>
+  <text x="48" y="158" font-size="46" fill="#1A1A1A" font-weight="700" letter-spacing="-1">June 8, 2026</text>
+  <text x="48" y="190" font-size="13" fill="#555">12 papers analyzed &nbsp;|&nbsp; arXiv &amp; Semantic Scholar &nbsp;|&nbsp; Auto-generated research digest</text>
+  <line x1="48" y1="208" x2="752" y2="208" stroke="#D0D0D0" stroke-width="1"/>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <text x="48" y="246" font-size="10" fill="#888" letter-spacing="3" font-weight="600">EXECUTIVE SUMMARY</text>
+  <text x="48" y="276" font-size="14" fill="#1A1A1A" font-weight="400">
+    <tspan x="48" dy="0">The June 2026 transit research landscape reveals transformation across three converging fronts:</tspan>
+    <tspan x="48" dy="22">AI-native planning systems, electrification economics, and behavioral data exploitation. A slime-mold-</tspan>
+    <tspan x="48" dy="22">inspired swarm transit system beats fixed networks by 28–101%; EV charging behavioral data from</tspan>
+    <tspan x="48" dy="22">760K+ drivers rewrites infrastructure siting rules; and ISO 26262 safety frameworks are declared</tspan>
+    <tspan x="48" dy="22">conceptually inadequate for driverless vehicles. Equity runs as a cross-cutting theme throughout.</tspan>
+  </text>
+  <line x1="48" y1="395" x2="752" y2="395" stroke="#D0D0D0" stroke-width="1"/>
+
+  <!-- KEY FINDINGS -->
+  <text x="48" y="430" font-size="10" fill="#888" letter-spacing="3" font-weight="600">KEY FINDINGS</text>
+
+  <!-- Finding 1 -->
+  <text x="48" y="466" font-size="52" fill="#E8E8E8" font-weight="700">01</text>
+  <text x="48" y="462" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Slime Mold Beats the Schedule</tspan>
+  </text>
+  <text x="110" y="480" font-size="12" fill="#444">
+    <tspan x="110" dy="0">A biologically-inspired swarm transit system where buses bid cooperatively for passengers</tspan>
+    <tspan x="110" dy="18">improves passenger delivery rates by 28–101% over fixed-route networks across suburban,</tspan>
+    <tspan x="110" dy="18">urban, and semi-rural scenarios. Distributed intelligence eliminates scheduler failure points.</tspan>
+  </text>
+
+  <!-- Finding 2 -->
+  <text x="48" y="568" font-size="52" fill="#E8E8E8" font-weight="700">02</text>
+  <text x="48" y="564" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Wheelchair Users Lose 30–40% of Job Access to ADA Gaps</tspan>
+  </text>
+  <text x="110" y="582" font-size="12" fill="#444">
+    <tspan x="110" dy="0">OPENPATH, an LLM-powered multi-agent trip planner tested on NYC data, quantifies the</tspan>
+    <tspan x="110" dy="18">measurable job accessibility cost of ADA infrastructure deficiencies — turning abstract equity</tspan>
+    <tspan x="110" dy="18">concerns into concrete policy metrics for the first time at city scale.</tspan>
+  </text>
+
+  <!-- Finding 3 -->
+  <text x="48" y="670" font-size="52" fill="#E8E8E8" font-weight="700">03</text>
+  <text x="48" y="666" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">EV Climate Math Depends on the Grid, Not the Car</tspan>
+  </text>
+  <text x="110" y="684" font-size="12" fill="#444">
+    <tspan x="110" dy="0">Shanghai city-scale modeling reveals real EV consumption far exceeds test-cycle values,</tspan>
+    <tspan x="110" dy="18">and that grid carbon intensity — not vehicle efficiency — determines most climate impact.</tspan>
+    <tspan x="110" dy="18">Policy must pair EV mandates with grid decarbonization or risk overstating climate benefits.</tspan>
+  </text>
+  <line x1="48" y1="733" x2="752" y2="733" stroke="#D0D0D0" stroke-width="1"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="48" y="768" font-size="10" fill="#888" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <rect x="48" y="780" width="704" height="130" fill="#1A1A1A" rx="2"/>
+  <text x="72" y="816" font-size="10" fill="#AAA" letter-spacing="2">arXiv:2606.07486 &nbsp;|&nbsp; ACCESSIBILITY &amp; EQUITY</text>
+  <text x="72" y="843" font-size="16" fill="#FFFFFF" font-weight="700">
+    <tspan x="72" dy="0">OPENPATH: Accessible Multi-Stop Urban Trip Planning</tspan>
+  </text>
+  <text x="72" y="865" font-size="12" fill="#CCC">
+    <tspan x="72" dy="0">Xiong, Zong, Xue, Wu — 2026</tspan>
+  </text>
+  <text x="72" y="888" font-size="11" fill="#AAA">
+    <tspan x="72" dy="0">LLM multi-agent system quantifies NYC ADA gaps; wheelchair users lose measurable job</tspan>
+    <tspan x="72" dy="17">access — bridging AI research and disability equity policy for the first time at city scale.</tspan>
+  </text>
+  <line x1="48" y1="933" x2="752" y2="933" stroke="#D0D0D0" stroke-width="1"/>
+
+  <!-- EMERGING THEMES (3 cols) -->
+  <text x="48" y="966" font-size="10" fill="#888" letter-spacing="3" font-weight="600">EMERGING THEMES</text>
+
+  <!-- Theme 1 -->
+  <rect x="48" y="980" width="6" height="80" fill="#1A1A1A"/>
+  <text x="66" y="1000" font-size="13" fill="#1A1A1A" font-weight="700">AI Orchestration</text>
+  <text x="66" y="1020" font-size="11" fill="#555">
+    <tspan x="66" dy="0">Multi-agent LLM systems</tspan>
+    <tspan x="66" dy="16">replacing centralized</tspan>
+    <tspan x="66" dy="16">schedulers across transit,</tspan>
+    <tspan x="66" dy="16">routing, and planning</tspan>
+  </text>
+
+  <!-- Theme 2 -->
+  <rect x="314" y="980" width="6" height="80" fill="#1A1A1A"/>
+  <text x="332" y="1000" font-size="13" fill="#1A1A1A" font-weight="700">Equity as Metric</tspan></text>
+  <text x="332" y="1020" font-size="11" fill="#555">
+    <tspan x="332" dy="0">Infrastructure equity</tspan>
+    <tspan x="332" dy="16">now quantified with</tspan>
+    <tspan x="332" dy="16">data: job access lost,</tspan>
+    <tspan x="332" dy="16">charging deserts mapped</tspan>
+  </text>
+
+  <!-- Theme 3 -->
+  <rect x="580" y="980" width="6" height="80" fill="#1A1A1A"/>
+  <text x="598" y="1000" font-size="13" fill="#1A1A1A" font-weight="700">Model vs Reality Gap</text>
+  <text x="598" y="1020" font-size="11" fill="#555">
+    <tspan x="598" dy="0">Lab results diverge</tspan>
+    <tspan x="598" dy="16">from field data: EV</tspan>
+    <tspan x="598" dy="16">emissions, transit KPIs,</tspan>
+    <tspan x="598" dy="16">dispatcher behavior</tspan>
+  </text>
+  <line x1="48" y1="1090" x2="752" y2="1090" stroke="#D0D0D0" stroke-width="1"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="48" y="1124" font-size="10" fill="#888" letter-spacing="3" font-weight="600">CONFIDENCE DISTRIBUTION — 12 PAPERS</text>
+
+  <!-- Chart labels -->
+  <text x="48" y="1175" font-size="11" fill="#444">HIGH</text>
+  <rect x="110" y="1157" width="448" height="22" fill="#1A1A1A" rx="1"/>
+  <text x="568" y="1175" font-size="11" fill="#888">7 papers (58%)</text>
+
+  <text x="48" y="1215" font-size="11" fill="#444">MEDIUM</text>
+  <rect x="110" y="1197" width="320" height="22" fill="#555" rx="1"/>
+  <text x="440" y="1215" font-size="11" fill="#888">5 papers (42%)</text>
+
+  <text x="48" y="1255" font-size="11" fill="#444">LOW</text>
+  <rect x="110" y="1237" width="0" height="22" fill="#AAA" rx="1"/>
+  <text x="120" y="1255" font-size="11" fill="#888">0 papers (0%)</text>
+
+  <line x1="48" y1="1278" x2="752" y2="1278" stroke="#D0D0D0" stroke-width="1"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="48" y="1312" font-size="10" fill="#888" letter-spacing="3" font-weight="600">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="48" y="1345" font-size="12" fill="#1A1A1A" font-weight="700">&#x25B6; For Transit Agencies</text>
+  <text x="48" y="1365" font-size="12" fill="#444">
+    <tspan x="48" dy="0">Pilot demand-responsive swarm routing in low-density suburbs before building new fixed</tspan>
+    <tspan x="48" dy="18">infrastructure — simulation data shows 28–101% improvement in passenger delivery rates.</tspan>
+  </text>
+
+  <text x="48" y="1405" font-size="12" fill="#1A1A1A" font-weight="700">&#x25B6; For Charging Network Operators</text>
+  <text x="48" y="1425" font-size="12" fill="#444">
+    <tspan x="48" dy="0">Co-locate charging stations with restaurants and retail; GPS data from 760K+ EV drivers</tspan>
+    <tspan x="48" dy="18">confirms trip-bundling and food/beverage patronage during charging dwell time.</tspan>
+  </text>
+
+  <text x="48" y="1465" font-size="12" fill="#1A1A1A" font-weight="700">&#x25B6; For City Planners &amp; Policymakers</text>
+  <text x="48" y="1485" font-size="12" fill="#444">
+    <tspan x="48" dy="0">Audit ADA compliance gaps using data-driven tools to quantify job accessibility impact</tspan>
+    <tspan x="48" dy="18">before announcing new transit services — equity must be measurable, not aspirational.</tspan>
+  </text>
+
+  <line x1="48" y1="1530" x2="752" y2="1530" stroke="#D0D0D0" stroke-width="1"/>
+
+  <!-- FOOTER -->
+  <text x="48" y="1562" font-size="10" fill="#888">Transit Research Digest &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; 12 papers analyzed</text>
+  <text x="48" y="1582" font-size="10" fill="#888">twong6531.github.io/citation-site/research.html</text>
+  <text x="752" y="1582" font-size="10" fill="#AAA" text-anchor="end">Auto-generated by Transit Research Agent</text>
+</svg>
