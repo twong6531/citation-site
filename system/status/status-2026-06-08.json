@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-08",
+  "jobs": {
+    "briefing": "completed",
+    "research": "completed",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "completed",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "video_scripts_produced": [
+    {
+      "slug": "dopamine-fracking-script",
+      "topic": "Dopamine Fracking: How Platforms Are Strip-Mining Your Brain",
+      "path": "drafts/scripts/dopamine-fracking-script.md",
+      "sources": ["Hacker News viral essay (579 upvotes)", "BBC Worklife investigation"],
+      "status": "completed"
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "topic": "Biology Solved Public Transit. We Just Built It.",
+      "path": "drafts/scripts/slime-mold-transit-script.md",
+      "sources": ["arXiv:2606.06189 (Burke et al., 2026)", "arXiv:2606.07486 (Xiong et al., 2026)"],
+      "status": "completed"
+    }
+  ],
+  "queue_items": 0
+}
