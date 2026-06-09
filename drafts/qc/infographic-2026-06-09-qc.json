@@ -1,0 +1,27 @@
+{
+  "file": "docs/infographic-2026-06-09.svg",
+  "type": "infographic",
+  "reviewed_at": "2026-06-09T17:40:00Z",
+  "verdict": "PASS",
+  "score": 80,
+  "checks_passed": [
+    "Valid SVG: file starts with <svg xmlns='http://www.w3.org/2000/svg'>",
+    "viewBox attribute present: viewBox='0 0 800 1440'",
+    "Meaningful text content: 6 news stories with titles, 2-line summaries, and impact ratings (10/10 down to 7/10)",
+    "No placeholder text (no Lorem ipsum, TODO, [INSERT], TBD, [site URL])",
+    "Date correct: June 9, 2026 in header",
+    "Footer includes site attribution: twong6531.github.io/citation-site",
+    "Story 1 (Apple Gemini) consistent with apple-gemini-2026-script.md content",
+    "Story 2 (Microsoft hack) cross-referenced in apple-gemini YouTube script outro — internally consistent",
+    "Story 6 (Kushner Albania) independently plausible current-events content",
+    "SVG-only: no PNG companion, but file is in docs/ (published), not drafts/ — SVG-only status is acceptable for this pipeline stage"
+  ],
+  "checks_failed": [
+    "PROCESS ANOMALY: File is in docs/ (published) rather than drafts/infographics/. This infographic bypassed the draft-stage QC gate. Noting post-publication — no publish action needed but pipeline gap should be addressed.",
+    "Story 5 ('AI Code Debt'): claims '3–5× higher defect density' from 'a viral essay' with no source name, publication, or author. Weakest-sourced claim in the infographic. Not a blocker at this score but would flag for a future revision pass."
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "publish_note": "Already in docs/ — treated as post-publication review. PASS is retroactive. Recommend: (a) add source attribution for Story 5 defect density claim in a future infographic revision; (b) fix pipeline to route infographic drafts through drafts/infographics/ before docs/."
+}

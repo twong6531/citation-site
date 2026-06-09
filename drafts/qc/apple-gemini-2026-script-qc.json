@@ -1,0 +1,27 @@
+{
+  "file": "apple-gemini-2026-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-09T17:40:00Z",
+  "verdict": "REVISE",
+  "score": 70,
+  "checks_passed": [
+    "YouTube VO word count within range (1044 words; limit: 600–1200)",
+    "Reel hook present in first 3 lines",
+    "Hook does not start with 'Did you know'",
+    "CTA present in both reel and YouTube versions",
+    "Visual/scene notes present for every reel segment",
+    "Primary sources cited inline: WWDC 2026 keynote, Apple Intelligence docs (2024), US v. Google LLC (2024)",
+    "No AI tells ('As an AI', 'certainly', 'I cannot', 'I'd be happy to')",
+    "No Lorem ipsum, TODO, [INSERT], or TBD placeholders",
+    "Topic not a duplicate of covered_topics in memory.json (closest match 'AI Industry Shifts' is 2026-06-06, distinct angle)"
+  ],
+  "checks_failed": [
+    "Reel VO word count 262 words — 31% over the 200-word ceiling. Largest offender: Scene 1 context block (60 words), Scene 2 (71 words). Both need cutting.",
+    "'[site URL]' placeholder unfilled at YouTube outro (ON SCREEN TEXT: '[site URL] — Full source breakdown') and implied in reel CTA flow.",
+    "Source 'reported deal terms' used as inline citation 3 times with no outlet, journalist, or filing named. Presents unconfirmed figure ($10B+/year) as established fact in several on-screen text cards.",
+    "Source 'public hiring data; industry estimates' for Apple ~600 AI PhDs is too vague. The metric conflates 'AI PhDs' with total ML headcount — Apple's actual ML workforce is substantially larger. Risks being called out as misleading."
+  ],
+  "revision_notes": "1) CUT REEL TO ≤200 WORDS: Scene 1 context block (lines 22–24) runs 60 words — strip the history-of-Apple-Google rivalry paragraph entirely; a 60-second reel cannot carry it. Scene 2 (lines 30–31) runs 71 words — cut to the single sharpest sentence on the on-device failure. Target: Hook 30w, S1 30w, S2 40w, S3 50w, CTA 30w = 180w total. 2) FILL '[site URL]': Replace with actual domain or use a consistent token (e.g., {{SITE_URL}}) that the publishing pipeline resolves — same fix needed in transit-desert-pomdp-script. 3) SOURCE THE $10B FIGURE: Tag it as 'per [outlet] reporting ahead of WWDC' or mark as 'unconfirmed at time of recording' rather than presenting on-screen as established fact. 4) CLARIFY HEADCOUNT STAT: Either cite a specific source for the ~600 AI PhDs figure (e.g., LinkedIn data, academic paper) or reframe as 'Apple has ~600 dedicated AI researchers vs. Google DeepMind's 4,000+' with a note that this excludes broader ML engineering staff.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

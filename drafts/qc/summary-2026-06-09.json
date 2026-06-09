@@ -1,0 +1,42 @@
+{
+  "date": "2026-06-09",
+  "total_reviewed": 4,
+  "passed": 2,
+  "revise": 2,
+  "failed": 0,
+  "ready_to_publish": [
+    "infographic-2026-06-09",
+    "research-infographic-2026-06-09"
+  ],
+  "needs_revision": [
+    {
+      "slug": "apple-gemini-2026-script",
+      "score": 70,
+      "top_issues": [
+        "Reel VO 262 words (limit: 200) — cut ~65 words, focus cuts on Scene 1 context block and Scene 2",
+        "'[site URL]' placeholder unfilled in YouTube outro",
+        "Source 'reported deal terms' used 3× with no outlet named — clarify as unconfirmed",
+        "Apple ~600 AI PhDs stat is vague and potentially misleading — needs specific citation or metric clarification"
+      ]
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "score": 72,
+      "top_issues": [
+        "Reel VO 317 words (limit: 200) — most severe overrun in this batch (59% over); major cut required",
+        "'[site URL]' placeholder unfilled in YouTube outro"
+      ]
+    }
+  ],
+  "blocked": [],
+  "pipeline_anomalies": [
+    "Both infographics (infographic-2026-06-09.svg, research-infographic-2026-06-09.svg) were placed directly in docs/ rather than drafts/infographics/ — bypassed draft QC gate. Both passed retroactive review. Fix: route generated infographics to drafts/infographics/ before docs/.",
+    "Daily briefing article (docs/2026-06-09.html) and research digest (docs/research-2026-06-09.html) were also placed in docs/ directly with no drafts/articles/ stage — not reviewed in this QC pass. Both are live. If these contain QC-relevant issues, they would need a retroactive edit-in-place. Recommend adding article QC to this pipeline.",
+    "status-2026-06-09.json had no 'qc' field — this is the first time QC has been gated in today's pipeline. 'qc' field added as 'completed'."
+  ],
+  "systemic_issues": [
+    "Reel VO over-length is a persistent generation pattern: 3 of 3 scripts reviewed on 2026-06-08 were over 200 words (223, 254, 229 words); today's 2 scripts are 262 and 317 words. The generation pipeline must be patched — add an explicit hard constraint: 'Reel voiceover MUST be ≤200 words. Count words before finalizing. Reject and rewrite if over.'",
+    "'[site URL]' placeholder unfilled is also persistent across all scripts reviewed. Inject the real URL (or a resolvable token) at generation time, not manually post-QC."
+  ],
+  "notes": "Zero FAILs today — the two infographics are production-quality and publish-ready. The two scripts have fixable issues and are close to publishable with targeted cuts. The reel over-length problem is an upstream generation issue requiring a prompt-level fix; it is not the content writer's fault at revision time. Prioritize systemic fixes before the next generation run."
+}

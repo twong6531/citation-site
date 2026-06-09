@@ -1,0 +1,27 @@
+{
+  "file": "transit-desert-pomdp-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-09T17:40:00Z",
+  "verdict": "REVISE",
+  "score": 72,
+  "checks_passed": [
+    "YouTube VO word count within range (1200 words; exactly at ceiling — acceptable)",
+    "Reel hook present in first 3 lines",
+    "Hook does not start with 'Did you know'",
+    "CTA present in both reel and YouTube versions",
+    "Visual/scene notes present for every reel segment",
+    "Primary paper cited inline throughout: Khoroshevskaya & Perukari (2026) with arXiv ID 2606.08371 cross-checkable via research infographic",
+    "APTA sourced for 55M transit desert figure and 3× poverty correlation",
+    "No AI tells",
+    "No Lorem ipsum, TODO, [INSERT], or TBD placeholders (aside from [site URL])",
+    "Not a direct duplicate: covered 'transit equity' on 2026-06-05/06 but this is specifically POMDP+CVaR methodology at 25-city scale — distinct angle",
+    "Key claim robustness: 5pp improvement confirmed consistent between reel and YouTube scripts (no figure inconsistency, unlike us-cities-transit-gap-script)"
+  ],
+  "checks_failed": [
+    "Reel VO word count 317 words — 59% over the 200-word ceiling. This is the most severe overrun in the 2026-06-09 batch. Scene 1 (77 words), Scene 2 (82 words), Scene 3 (83 words) are each longer than a typical full reel script.",
+    "'[site URL]' placeholder unfilled at YouTube outro (ON SCREEN TEXT: '[site URL] — Full transit research digest, June 9, 2026')."
+  ],
+  "revision_notes": "1) MAJOR REEL CUT REQUIRED — target ≤180 words: Scene 1 (APTA background) is doing too much work for a 60-second reel. Cut to one sentence max: 'Roughly 55 million Americans live in transit deserts — neighborhoods where transit is so far away or infrequent it's functionally useless.' (~20 words). Scene 2 (POMDP explanation) cut to: 'The system learns from real ridership as routes deploy. No demand data needed to start — the model adapts as you build.' (~25 words). Scene 3 cut to the headline stat only. Reel VO budget per scene: Hook 20w, S1 25w, S2 30w, S3 30w, CTA 25w = 130–140w target. 2) FILL '[site URL]': Same fix as apple-gemini-2026-script — inject real domain or pipeline token.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}
