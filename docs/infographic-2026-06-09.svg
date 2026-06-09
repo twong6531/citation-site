@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1440" width="800" height="1440">
+  <rect width="800" height="1440" fill="#F7F7F5"/>
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- HEADER -->
+  <text x="400" y="34" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#999999" text-anchor="middle">DAILY BRIEFING</text>
+  <text x="400" y="76" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="800" fill="#111111" text-anchor="middle">APPLE BETS ON GEMINI</text>
+  <text x="400" y="102" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#888888" text-anchor="middle">June 9, 2026</text>
+  <line x1="40" y1="118" x2="760" y2="118" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 1: Apple Gemini -->
+  <rect x="40" y="132" width="720" height="186" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="132" width="4" height="186" fill="#6C47FF"/>
+  <text x="56" y="155" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#6C47FF" letter-spacing="1">01</text>
+  <rect x="74" y="143" width="22" height="16" rx="3" fill="#6C47FF"/>
+  <text x="85" y="154" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">AI</text>
+  <text x="56" y="180" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">Apple Rebuilds AI on Google</text>
+  <text x="56" y="200" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">Gemini Models</text>
+  <text x="56" y="222" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555" xml:space="preserve">At WWDC 2026, Apple revealed its AI infrastructure now runs on Google Gemini,</text>
+  <text x="56" y="238" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">abandoning its own foundation models in a historic $10B+ strategic shift.</text>
+  <!-- Impact bar -->
+  <text x="56" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#999999" letter-spacing="1">IMPACT</text>
+  <rect x="110" y="251" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="251" width="200" height="6" rx="3" fill="#6C47FF"/>
+  <text x="318" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#6C47FF">10/10</text>
+  <line x1="40" y1="318" x2="760" y2="318" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 2: Microsoft hack -->
+  <rect x="40" y="326" width="720" height="186" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="326" width="4" height="186" fill="#00897B"/>
+  <text x="56" y="349" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#00897B" letter-spacing="1">02</text>
+  <rect x="74" y="337" width="28" height="16" rx="3" fill="#00897B"/>
+  <text x="88" y="348" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">TECH</text>
+  <text x="56" y="374" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">Microsoft Dev Tools Hacked</text>
+  <text x="56" y="394" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">to Steal AI Passwords</text>
+  <text x="56" y="416" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">Attackers compromised Microsoft open-source packages to harvest API keys</text>
+  <text x="56" y="432" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">from AI engineers, exposing OpenAI, Azure, and Hugging Face credentials.</text>
+  <text x="56" y="454" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#999999" letter-spacing="1">IMPACT</text>
+  <rect x="110" y="445" width="180" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="445" width="180" height="6" rx="3" fill="#00897B"/>
+  <text x="298" y="454" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#00897B">9/10</text>
+  <line x1="40" y1="512" x2="760" y2="512" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 3: OpenCV 5 -->
+  <rect x="40" y="520" width="720" height="186" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="520" width="4" height="186" fill="#6C47FF"/>
+  <text x="56" y="543" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#6C47FF" letter-spacing="1">03</text>
+  <rect x="74" y="531" width="22" height="16" rx="3" fill="#6C47FF"/>
+  <text x="85" y="542" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">AI</text>
+  <text x="56" y="568" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">OpenCV 5 Launches With</text>
+  <text x="56" y="588" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">LLM and Hardware Support</text>
+  <text x="56" y="610" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">OpenCV 5 delivers the largest overhaul in 25 years: graph-based DNN engine,</text>
+  <text x="56" y="626" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">80%+ ONNX coverage, 3× throughput gains, and native LLM/VLM inference.</text>
+  <text x="56" y="648" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#999999" letter-spacing="1">IMPACT</text>
+  <rect x="110" y="639" width="160" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="639" width="160" height="6" rx="3" fill="#6C47FF"/>
+  <text x="278" y="648" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#6C47FF">8/10</text>
+  <line x1="40" y1="706" x2="760" y2="706" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 4: Apple Foldable -->
+  <rect x="40" y="714" width="720" height="186" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="714" width="4" height="186" fill="#00897B"/>
+  <text x="56" y="737" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#00897B" letter-spacing="1">04</text>
+  <rect x="74" y="725" width="28" height="16" rx="3" fill="#00897B"/>
+  <text x="88" y="736" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">TECH</text>
+  <text x="56" y="762" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">Apple Unveils Foldable iPhone</text>
+  <text x="56" y="782" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">at WWDC 2026</text>
+  <text x="56" y="804" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">Apple's first foldable iPhone features an 8-inch inner OLED, titanium multi-bar</text>
+  <text x="56" y="820" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">hinge rated 500K folds, and a $2,099+ starting price launching Q4 2026.</text>
+  <text x="56" y="842" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#999999" letter-spacing="1">IMPACT</text>
+  <rect x="110" y="833" width="160" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="833" width="160" height="6" rx="3" fill="#00897B"/>
+  <text x="278" y="842" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#00897B">8/10</text>
+  <line x1="40" y1="900" x2="760" y2="900" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 5: AI Code Debt -->
+  <rect x="40" y="908" width="720" height="186" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="908" width="4" height="186" fill="#00897B"/>
+  <text x="56" y="931" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#00897B" letter-spacing="1">05</text>
+  <rect x="74" y="919" width="28" height="16" rx="3" fill="#00897B"/>
+  <text x="88" y="930" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">TECH</text>
+  <text x="56" y="956" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">AI Code Debt: The Hidden Cost</text>
+  <text x="56" y="976" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">of Rockstar Coders</text>
+  <text x="56" y="998" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">A viral essay documents how AI-assisted code sprints produce 3–5× higher defect</text>
+  <text x="56" y="1014" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">density than careful human work, with months of remediation following fast ships.</text>
+  <text x="56" y="1036" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#999999" letter-spacing="1">IMPACT</text>
+  <rect x="110" y="1027" width="140" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="1027" width="140" height="6" rx="3" fill="#00897B"/>
+  <text x="258" y="1036" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#00897B">7/10</text>
+  <line x1="40" y1="1094" x2="760" y2="1094" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 6: Albania Kushner -->
+  <rect x="40" y="1102" width="720" height="186" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="1102" width="4" height="186" fill="#E65100"/>
+  <text x="56" y="1125" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#E65100" letter-spacing="1">06</text>
+  <rect x="74" y="1113" width="36" height="16" rx="3" fill="#E65100"/>
+  <text x="92" y="1124" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">WORLD</text>
+  <text x="56" y="1150" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">Kushner's $4B Albania Resort</text>
+  <text x="56" y="1170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="800" fill="#111111">Sparks EU Warning</text>
+  <text x="56" y="1192" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">Jared Kushner's $4B Riviera project triggered mass protests, an EU rule-of-law</text>
+  <text x="56" y="1208" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#555555">warning, and an asset freeze after clearing protected flamingo habitat in Albania.</text>
+  <text x="56" y="1230" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#999999" letter-spacing="1">IMPACT</text>
+  <rect x="110" y="1221" width="140" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="1221" width="140" height="6" rx="3" fill="#E65100"/>
+  <text x="258" y="1230" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#E65100">7/10</text>
+  <line x1="40" y1="1288" x2="760" y2="1288" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- FOOTER -->
+  <text x="400" y="1318" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#999999" text-anchor="middle">Generated by AI · June 9, 2026 · twong6531.github.io/citation-site</text>
+  <rect x="0" y="1437" width="800" height="3" fill="#111111"/>
+</svg>
