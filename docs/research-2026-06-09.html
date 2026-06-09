@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Transit Research — June 9, 2026</title>
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e6;
+    --muted: #888;
+    --accent: #ffffff;
+    --green: #4ade80;
+    --yellow: #facc15;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+  body { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* NAV */
+  .topnav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+  .topnav a { color: var(--muted); text-decoration: none; font-size: 12px; letter-spacing: 1px; }
+  .topnav a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero { margin-bottom: 60px; }
+  .hero-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(32px, 6vw, 56px); font-weight: 700; line-height: 1.05; letter-spacing: -1px; margin-bottom: 20px; }
+  .hero-meta { display: flex; gap: 32px; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta strong { color: var(--text); }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary { background: var(--surface); border: 1px solid var(--border); padding: 32px; margin-bottom: 48px; }
+  .exec-summary h2 { font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 16px; }
+  .exec-summary p { font-size: 16px; line-height: 1.7; color: #cccccc; }
+
+  /* PAPER OF THE DAY */
+  .potd { background: var(--accent); color: #000; padding: 32px; margin-bottom: 48px; }
+  .potd-label { font-size: 10px; letter-spacing: 3px; color: #555; margin-bottom: 12px; }
+  .potd h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .potd-reason { font-size: 14px; line-height: 1.7; color: #333; }
+  .potd a { color: #000; }
+
+  /* SECTION HEADER */
+  .section-header { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--border); margin: 48px 0 24px; }
+
+  /* THEMES / CONTRARIAN / TAKEAWAYS */
+  .findings-list { list-style: none; display: grid; gap: 16px; }
+  .findings-list li { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; }
+  .findings-list li::before { content: '→'; color: var(--muted); margin-right: 12px; font-size: 18px; }
+  .findings-list p { display: inline; font-size: 14px; line-height: 1.7; color: #cccccc; }
+
+  /* LONG-TERM */
+  .longterm { background: var(--surface2); border-left: 3px solid var(--accent); padding: 24px 28px; margin: 24px 0; font-size: 14px; line-height: 1.8; color: #cccccc; }
+
+  /* SVG SECTION */
+  .svg-section { margin: 48px 0; text-align: center; }
+  .svg-section img { max-width: 100%; border: 1px solid var(--border); }
+  .svg-download { display: inline-block; margin-top: 12px; padding: 8px 20px; border: 1px solid var(--border); color: var(--muted); font-size: 11px; text-decoration: none; letter-spacing: 1px; }
+  .svg-download:hover { color: var(--text); border-color: var(--text); }
+
+  /* PAPER CARDS */
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 24px; }
+  .paper-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
+  .paper-num { font-size: 36px; font-weight: 700; color: var(--border); line-height: 1; min-width: 48px; }
+  .paper-meta { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; }
+  .arxiv-link { font-size: 11px; color: var(--muted); text-decoration: none; font-family: monospace; }
+  .arxiv-link:hover { color: var(--text); }
+  .paper-date { font-size: 11px; color: var(--muted); }
+  .conf-badge { font-size: 11px; font-weight: 700; }
+  .paper-title { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .paper-authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .one-sentence { font-size: 14px; line-height: 1.7; margin-bottom: 10px; color: #cccccc; }
+  .why-matters { font-size: 14px; line-height: 1.7; margin-bottom: 18px; color: #aaaaaa; }
+  .insights-block { margin-bottom: 20px; }
+  .insights-block h3 { font-size: 10px; letter-spacing: 2px; color: var(--muted); margin-bottom: 10px; }
+  .insights-block ul { list-style: disc; padding-left: 20px; }
+  .insights-block li { font-size: 13px; line-height: 1.65; color: #cccccc; margin-bottom: 4px; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid var(--border); padding-top: 20px; }
+  .detail-grid h4 { font-size: 9px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+  .detail-grid p { font-size: 12px; line-height: 1.65; color: #888; }
+
+  /* FOOTER */
+  .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); flex-wrap: wrap; gap: 8px; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .detail-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">← CITATION SITE</a>
+  <a href="research.html">RESEARCH ARCHIVE</a>
+</nav>
+
+<header class="hero">
+  <p class="hero-label">Transit Research Digest</p>
+  <h1>Urban Mobility<br>Research Brief</h1>
+  <div class="hero-meta">
+    <span>📅 <strong>June 9, 2026</strong></span>
+    <span>📄 <strong>12 Papers</strong> analyzed</span>
+    <span>🔬 Sources: <strong>arXiv · Semantic Scholar</strong></span>
+    <span>🤖 Analysis by <strong>Claude (Anthropic)</strong></span>
+  </div>
+</header>
+
+<section class="exec-summary">
+  <h2>EXECUTIVE SUMMARY</h2>
+  <p>Today's transit research corpus reveals a field in rapid transformation across three converging axes: equity-driven service design, autonomous vehicle integration, and data-scale breakthroughs. The standout finding is from Khoroshevskaya & Perukari (2026), who demonstrate that a risk-aware POMDP can systematically remediate transit deserts — areas affecting tens of millions of Americans — with 53.6% tract coverage after five years, outperforming static planning by 5 points. Simultaneously, the Atlanta SAV microtransit case study and the Chicago equity network redesign paper together show that autonomous vehicles must be deliberately programmed for equity — they do not automatically serve underserved populations. The SF-LIFE dataset release (3 trillion records) creates a new benchmark era for transit ML. At the network level, multilayer theory emerges as an urgent paradigm shift: the transit resilience literature has fundamentally outgrown single-layer models.</p>
+</section>
+
+<div class="section-header">PAPER OF THE DAY</div>
+<div class="potd">
+  <p class="potd-label">PAPER OF THE DAY · June 9, 2026</p>
+  <h3>Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</h3>
+  <p class="potd-reason">This paper is the most actionable and original contribution in today's corpus. It addresses a problem of profound equity significance (tens of millions of Americans in transit deserts), uses a sophisticated but practically grounded methodology (POMDP with CVaR), and delivers concrete quantitative results across 25 real cities. The insight that demand priors can be learned from deployed service observations — enabling adaptive planning even before ridership data exists — is a genuine methodological innovation with immediate policy implications.</p>
+</div>
+
+<div class="section-header">EMERGING THEMES</div>
+<ul class="findings-list"><li><p>Transit equity as optimization objective: Multiple papers explicitly incorporate equity constraints (CVaR, vertical equity) rather than treating equity as a post-hoc evaluation — a disciplinary shift from descriptive to prescriptive equity analysis.</p></li><li><p>Autonomous vehicles need equity engineering: Atlanta SAV microtransit and Chicago network redesign both show AVs improve outcomes only when equity is built into the operational design — without it, suburban and low-income areas may be left behind.</p></li><li><p>Data scale phase transition: SF-LIFE's 3-trillion-record simulated dataset and Beijing's 20-million smart card study represent a new scale of transit research enabling network science findings impossible at smaller data volumes.</p></li><li><p>Multilayer network formalism as unifying theory: The Šfiligoj et al. review argues convincingly that most existing transit models are structurally inadequate — the field needs a paradigm upgrade to multilayer formalisms.</p></li><li><p>AI as transit interface: LLMs for passenger communication (San Antonio) and VLMs for accessibility assessment (wheelchair barriers) suggest AI is entering transit's operational layer, not just its planning layer.</p></li></ul>
+
+<div class="section-header">CONTRARIAN INSIGHTS</div>
+<ul class="findings-list"><li><p>High-frequency riders may be transit's weakest link: The Beijing smart card analysis (Sun et al.) reveals that the most loyal riders form fragile network structures vulnerable to targeted disruption — the opposite of what most agencies assume.</p></li><li><p>Infrastructure investment has diminishing equity returns: The Chicago SAMS equity paper finds that additional infrastructure spending beyond SAMS deployment yields less additional equity benefit than expected — suggesting operational design matters more than capital investment.</p></li><li><p>Static transit optimization is demonstrably obsolete: Khoroshevskaya & Perukari show +5.0pp improvement over static methods even with demand miscalibration — implying that many current transit planning processes are leaving measurable equity gains on the table.</p></li><li><p>Simulated data may now be better than real data: SF-LIFE's ethically-sourced, noise-free, complete simulation arguably provides a more reliable research substrate than privacy-limited, noisy real-world GPS datasets.</p></li></ul>
+
+<div class="section-header">ACTIONABLE TAKEAWAYS</div>
+<ul class="findings-list"><li><p>Transit agencies in cities with identified desert tracts should pilot the POMDP remediation framework — even partial deployment in 16/25 cities showed improvement, and the model is robust to demand miscalibration.</p></li><li><p>Any agency deploying SAV-based microtransit must add explicit equity objectives to the dispatching algorithm — not just cost/efficiency optimization.</p></li><li><p>Network resilience teams should immediately assess whether their modeling tools support multilayer (multi-modal) failure simulation — monolayer tools will underestimate cascading failure risk.</p></li><li><p>Transit data teams should download and benchmark against SF-LIFE before publishing new demand prediction models — it establishes the new baseline.</p></li><li><p>Smart city implementers should run LLM pilots on their GTFS data now — the technology is ready for passenger information use cases with human oversight.</p></li></ul>
+
+<div class="section-header">LONG-TERM IMPLICATIONS</div>
+<div class="longterm">Within 5–10 years, the convergence of POMDP-based service expansion, equity-optimized SAV dispatching, and multilayer network resilience modeling will fundamentally change how transit agencies plan, operate, and evaluate service. The manual transit planning processes that dominate today — spreadsheet-based frequency setting, expert-opinion network design — will be displaced by adaptive, data-driven systems that learn from deployed service and explicitly optimize for social outcomes. The SF-LIFE dataset signals that synthetic simulation environments will become standard for transit AI training, reducing dependence on privacy-sensitive real-world data. The deeper long-term risk: without aggressive equity-objective engineering, all these efficiency gains risk automating and amplifying existing transit inequities at unprecedented scale.</div>
+
+<div class="svg-section">
+  <div class="section-header">DATA INFOGRAPHIC</div>
+  <img src="research-infographic-2026-06-09.svg" alt="Transit Research Infographic June 9, 2026"/>
+  <br/>
+  <a href="research-infographic-2026-06-09.svg" download class="svg-download">↓ DOWNLOAD SVG</a>
+</div>
+
+<div class="section-header">ALL 12 PAPERS — FULL ANALYSIS</div>
+
+<article class="paper-card" id="paper-P01">
+  <div class="paper-header">
+    <span class="paper-num">01</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2606.08371" target="_blank" class="arxiv-link">2606.08371</a>
+      <span class="paper-date">2026-06-06</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</h2>
+  <p class="paper-authors">Polina Khoroshevskaya, Ashish Kumar Perukari</p>
+  <p class="one-sentence"><strong>Summary:</strong> A Markov decision process with CVaR constraints remediates transit deserts in 25 US cities, recovering a median 53.6% of underserved tracts in five years by learning latent demand from observed ridership.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Tens of millions of Americans live in transit deserts where service cannot be planned using conventional ridership data — this work provides the first financially rigorous, adaptive framework for targeting those communities.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>Transit deserts affect tens of millions of residents in the Americas where demand signal is absent before service exists.</li><li>Risk-aware planner outperforms static optimization by 5.0 percentage points across 25 cities.</li><li>Median 53.6% of transit-desert tracts remediated after five years under baseline budget.</li><li>Gains largest at moderate budgets (+9.9 points) and persist under 50% prior-demand miscalibration.</li><li>Population density and existing transit density are strongest predictors of per-tract remediation cost (R²=0.41).</li><li>CVaR constraints explicitly bound financial tail risk, enabling responsible public spending.</li><li>Model improves in 16 of 25 cities tested, showing broad geographic generalizability.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Partially observable Markov decision process (POMDP) with Conditional Value-at-Risk financial constraints; Bayesian prior over latent demand updated from observed ridership; unified financial model covering OpEx, CapEx, fare revenue, and net subsidy; tested on 25 US cities using demographic, land-use, and employment data.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>After five simulated years: median 53.6% of transit-desert tracts remediated; +5.0pp improvement over static optimization; gains in 16/25 cities; +9.9pp at moderate budget; robust to 50% prior miscalibration.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Tested only in the Americas; model assumes Markovian demand evolution; latent demand prior quality depends on data availability; does not model network effects between adjacent tracts.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies can use this framework to stage service introductions in underserved areas, reduce financial risk of failed routes, and prioritize high-density, transit-adjacent corridors for fastest ROI.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Transit planners, municipal budget officers, transportation equity advocates, urban planning departments in mid-sized US cities.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>Prior work on transit desert identification (Delmelle, 2018; Canepa, 2007) is static and descriptive. This is the first adaptive, financially-constrained prescriptive model using POMDP.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P02">
+  <div class="paper-header">
+    <span class="paper-num">02</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2601.21046" target="_blank" class="arxiv-link">2601.21046</a>
+      <span class="paper-date">2026-01-28</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">The Impact of Shared Autonomous Vehicles in Microtransit Systems: A Case Study in Atlanta</h2>
+  <p class="paper-authors">Jason Lu, Tejas Santanam, Hongzhao Guan, Connor Riley</p>
+  <p class="one-sentence"><strong>Summary:</strong> SAVs integrated into MARTA's microtransit pilot improve service quality and user experience over conventional on-demand shuttles through model predictive control rebalancing.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> The MARTA Reach pilot provides rare real-world data on microtransit, and this paper demonstrates that autonomous vehicles can meaningfully improve first/last-mile service without requiring extensive historical demand data.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>SAVs enable more sustainable operations and greater system reliability than human-driven demand-responsive shuttles.</li><li>Model predictive control dynamically rebalances SAVs toward high-demand areas without historical data dependency.</li><li>Using MARTA Reach real data grounds results in operational reality rather than simulation.</li><li>SAVs reduce idle travel and improve passenger wait times compared to baseline dispatching.</li><li>Driver behavior modeling is explicitly incorporated to make SAV transition comparisons fair.</li><li>Results suggest SAVs are viable for near-term microtransit deployment.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Shuttle dispatching optimization enhanced for SAV driver behavior modeling; model predictive control (MPC) for dynamic rebalancing; scenario-driven experiments using MARTA Reach microtransit pilot data from Atlanta.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>SAVs elevated service quality and user experience relative to traditional on-demand shuttles; MPC rebalancing reduced idle travel; system reliability improved across tested scenarios.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Single city case study; MARTA Reach pilot area may not generalize to other urban geometries; cost of SAV ownership vs. driver wages not fully modeled; cybersecurity and edge-case failure modes unaddressed.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies considering SAV-based microtransit can use MPC rebalancing even without historical demand data — valuable for new service areas or post-disruption recovery.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Transit agencies considering autonomous vehicle deployment; MARTA; DOT researchers; microtransit vendors.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>Extends prior microtransit optimization work by explicitly modeling SAV capabilities; more operationally grounded than simulation-only SAV studies.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P03">
+  <div class="paper-header">
+    <span class="paper-num">03</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2603.21130" target="_blank" class="arxiv-link">2603.21130</a>
+      <span class="paper-date">2026-03-22</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Multilayer Public Transport Networks</h2>
+  <p class="paper-authors">Tina Šfiligoj, Renzo Massobrio, Oded Cats</p>
+  <p class="one-sentence"><strong>Summary:</strong> A systematic review and research agenda for multilayer network approaches to public transit modelling, arguing that monolayer models inadequately capture real transit complexity.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Public transit systems are inherently multimodal — bus, rail, ferry, and bike-share layers interact in complex ways that single-layer network models cannot capture, limiting the usefulness of most existing transit optimization research.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>Monolayer network models are insufficient for real-world transit systems that involve multiple heterogeneous layers.</li><li>Multilayer network theory has proven invaluable in physics and biology but remains underused in transport.</li><li>Existing transit multilayer literature lacks unified terminology, creating reproducibility problems.</li><li>Cascading failures across transit layers (e.g., rail delay propagating to bus connections) are only capturable in multilayer models.</li><li>Interdependency between transit layers is critical for resilience analysis after disasters or service disruptions.</li><li>Research agenda proposed for next decade covers formalism, disruption modeling, and equity integration.</li><li>Low-altitude mobility (drone/UAV) may enhance multilayer transit resilience per 2026 literature.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Systematic literature review of multilayer network approaches in public transport; taxonomy development for modelling approaches; research agenda synthesis from cross-domain perspectives.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>Identified vast uncovered potential in multilayer approaches; produced taxonomy of modelling strategies; proposed decade-long research agenda with priority domains.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Review-based — does not generate new empirical results; proposed research agenda requires validation; terminology standardization effort is community-level.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies and planners should demand multilayer-aware modelling tools from vendors; resilience analysis of transit networks requires inter-modal coupling data.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Transit network modellers, operations researchers, urban resilience planners, software vendors building transit simulation tools.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>Advances on earlier transport network reviews (Derrible & Kennedy, 2011) by integrating the full multilayer formalism developed in complexity science.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P04">
+  <div class="paper-header">
+    <span class="paper-num">04</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2501.01615" target="_blank" class="arxiv-link">2501.01615</a>
+      <span class="paper-date">2025-01-08</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Equity Impacts of Public Transit Network Redesign with Shared Autonomous Mobility Services</h2>
+  <p class="paper-authors">Max T. M. Ng, Meredith Raymer, Hani S. Mahmassani, Omer Verbas</p>
+  <p class="one-sentence"><strong>Summary:</strong> SAMS (shared autonomous mobility services) reduce transit access gaps in Greater Chicago — especially in suburbs and underserved city areas — when equity is explicitly built into the network redesign objective.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Simply deploying autonomous shuttles without equity-focused design may widen rather than close transit access gaps; this paper shows that explicitly optimizing for equity produces meaningfully different and better outcomes for vulnerable populations.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>Equity-agnostic optimization reduces overall costs but leaves suburban access gaps largely unaddressed.</li><li>Equity-focused optimization produces differential improvement across suburbs and underserved city zones.</li><li>SAMS bridges transit access gaps in suburban and city areas currently underserved by fixed-route transit.</li><li>Greater Chicago's disproportionate concentration of vulnerable populations in the city center creates opportunity for vertical equity gains.</li><li>SAMS enhance both horizontal equity (geographic coverage) and vertical equity (income-based access).</li><li>Infrastructure investment alone (beyond SAMS) provides less additional equity benefit under constrained budgets.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Multimodal transit network redesign optimization; two objective functions: minimize total generalized costs vs. prioritize service in low-income areas; accessibility clustering analysis; Greater Chicago case study.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>Equity-focused design substantially reduces access gaps for low-income zones; SAMS show greater equity impact in suburban areas; city access gaps require targeted vertical equity objectives.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Chicago-specific findings may not generalize to less-dense metros; model assumes SAMS operating costs as projected; demand elasticity not fully captured.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies redesigning networks should adopt explicit equity optimization objectives — not just cost minimization — to ensure SAMS benefits reach those most in need.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Metropolitan planning organizations, transit equity advocates, federal transit administration, Chicago-area planners.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>Advances beyond cost-minimization transit redesign literature; explicitly quantifies equity impacts of SAV integration, which prior work largely ignored.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P05">
+  <div class="paper-header">
+    <span class="paper-num">05</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2606.00430" target="_blank" class="arxiv-link">2606.00430</a>
+      <span class="paper-date">2026-05-29</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">SF-LIFE: A Large-Scale Simulated Movement Dataset for the San Francisco Bay Area</h2>
+  <p class="paper-authors">Chanuka Algama, Taylor Anderson, Henrique Ferraz de Arruda, et al. (17 authors)</p>
+  <p class="one-sentence"><strong>Summary:</strong> SF-LIFE provides 3 trillion GPS-second records of 500,000 simulated agents with multi-modal trajectories across SF Bay Area transit networks — the largest ethically-sourced urban mobility dataset ever released.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Real-world mobility data is constrained by privacy regulations and noise; SF-LIFE provides a privacy-free, complete, multi-modal benchmark that can train and validate next-generation transit optimization algorithms at previously impossible scales.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>3,024,000,000,000 (3 trillion) location records across 500,000 agents over 70 days at 1Hz resolution.</li><li>Covers 40+ transit agencies across 9 SF Bay Area counties using real GTFS data.</li><li>Multi-modal trajectories: bus, rail, bike, automobile, walking — all in a single dataset.</li><li>Agent-based simulation driven by needs-based daily agendas overcomes privacy and coverage limits of real data.</li><li>Includes demographic data and causal activity labels — rare in mobility datasets.</li><li>Overcomes privacy, noise, and completeness limitations inherent in real-world GPS tracking.</li><li>Multiple resolution versions available for computationally constrained researchers.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Agent-based simulation of 500,000 agents; needs-driven daily agendas; OpenStreetMap road network; GTFS data from 40+ agencies; kinematic trajectory generation at 1Hz; demographic profiling.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>Released complete dataset with trajectory data, demographic profiles, activity labels, and road network; enables transit optimization, human mobility analysis, and urban computing research at unprecedented scale.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Simulated, not real — behavioral fidelity depends on simulation model validity; does not capture spontaneous or irregular travel; weather and event disruptions not modeled.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>ML researchers can train transit demand prediction models at scale without ethical concerns; transit agencies can benchmark routing algorithms against realistic multi-modal scenarios.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>ML researchers in transportation, transit agencies, urban computing labs, privacy researchers building mobility models.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>Orders of magnitude larger than existing mobility datasets (e.g., MDC, GeoLife); first to combine multi-modal GTFS-based trajectories with demographic and causal activity labels at this scale.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P06">
+  <div class="paper-header">
+    <span class="paper-num">06</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2502.17054" target="_blank" class="arxiv-link">2502.17054</a>
+      <span class="paper-date">2025-02-24</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Optimizing Urban Mobility Through Complex Network Analysis and Big Data from Smart Cards</h2>
+  <p class="paper-authors">Li Sun, Negin Ashrafi, Maryam Pishgar</p>
+  <p class="one-sentence"><strong>Summary:</strong> Analysis of 20 million Beijing smart-card records reveals that high-frequency travelers create fragile, congestion-prone networks while low-frequency riders form resilient distributed backbones.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Most transit optimization focuses on aggregate flows, but this paper shows that different rider types create structurally different network properties with opposing resilience characteristics — a finding that reshapes how we should design service improvements.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>High-frequency (HF) riders (top 25% by usage) form highly connected networks with clustering coefficient 0.72 but lower disruption resilience.</li><li>HF networks lose 35% efficiency under targeted disruptions vs. only 10% for low-frequency (LF) networks.</li><li>57.4% of HF trips occur in the 6–10AM window, driving peak congestion.</li><li>LF networks are dispersed yet resilient, with stronger intra-community connectivity.</li><li>Network science reveals structural vulnerabilities invisible to aggregate ridership statistics.</li><li>Targeted strategies: diversify HF key routes; improve accessibility in LF-dominated areas.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Smart card transaction analysis (20 million records); network construction for HF and LF traveler segments; clustering coefficient calculation; targeted disruption simulation; temporal pattern analysis; Beijing transit network.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>HF networks: avg clustering 0.72, avg path 6.2 during peak, 35% efficiency drop under attack. LF networks: 10% efficiency drop, broader temporal spread, stronger intra-community links.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Beijing-specific; smart card data doesn't capture transfer behavior completely; model defines HF/LF by frequency alone, missing trip-purpose variation.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies should diversify routing options in HF corridors to reduce cascading failure risk; off-peak incentives for HF commuters could reduce network fragility.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Transit operations planners, network resilience analysts, smart-city data scientists, Beijing transit authority.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>Extends smart card analysis literature (Pelletier et al., 2011) with explicit network science framing; novel distinction between HF and LF network structures.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P07">
+  <div class="paper-header">
+    <span class="paper-num">07</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2606.07642" target="_blank" class="arxiv-link">2606.07642</a>
+      <span class="paper-date">2026-06-01</span>
+      <span class="conf-badge" style="color:#facc15">● Medium</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Do VLMs See What Sensors Feel? A Scalable Expert-Guided Design for Wheelchair Accessibility Assessment from Street View</h2>
+  <p class="paper-authors">Dongdong Wang, Alina Hagen, Isabelle Gatmaitan, et al.</p>
+  <p class="one-sentence"><strong>Summary:</strong> Vision-language models partially but consistently align with GPS-derived wheelchair friction signals when guided by ADA-informed rubrics — enabling scalable built-environment accessibility audits.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Manual accessibility auditing is expensive and slow; this paper demonstrates that VLMs fed expert ADA guidance can partially substitute for physical sensors in identifying barriers — potentially enabling city-scale accessibility assessment.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>VLM accessibility ratings negatively correlated with GPS dwell time (proxy for mobility friction).</li><li>Curb ramps and crosswalks reliably associated with higher VLM accessibility scores.</li><li>Alignment fails for subtle surface conditions, transient obstructions, and viewpoint-dependent barriers.</li><li>407 unique Street View locations linked to wheelchair GPS dwell behavior at University of Florida campus.</li><li>Expert-guided retrieval-augmented framework outperforms vanilla VLM prompting.</li><li>Results suggest VLMs are promising but not yet sufficient as standalone accessibility sensors.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Expert-guided retrieval-augmented VLM evaluation; Google Street View imagery; ADA-informed rubrics; GPS-derived wheelchair dwell time as mobility-friction signal; University of Florida campus dataset (407 locations).</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>VLM ratings negatively correlated with dwell time; partial distributional alignment; VLMs detect explicit physical barriers but miss subtle and transient ones.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Campus-only dataset — may not generalize to complex urban streetscapes; GSV imagery is temporally static; VLM evaluation is not yet reliable enough for safety-critical decisions.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>City planners can use VLM-based screening to prioritize accessibility site visits; framework can be scaled to audit thousands of locations before manual inspection.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Disability advocates, city accessibility coordinators, pedestrian infrastructure planners, ADA compliance officers.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>First study to explicitly link VLM Street View scores with behavioral GPS mobility-friction data; extends prior StreetScore and computer-vision accessibility work.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P08">
+  <div class="paper-header">
+    <span class="paper-num">08</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2606.09532" target="_blank" class="arxiv-link">2606.09532</a>
+      <span class="paper-date">2026-06-08</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Interpretable Crisis Behavior Analysis Using Mobility and Social Media Data</h2>
+  <p class="paper-authors">Muhammad Hamza Arshad Majeed, Sidahmed Benabderrahmane, Talal Rahwan</p>
+  <p class="one-sentence"><strong>Summary:</strong> Mobility disruptions and social sentiment during crises are tightly coupled with predictable lead times, enabling operational policy briefs with 2–7 day advance warning of behavioral state changes.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Emergency managers currently lack reliable advance warning of how populations will move during crises; this framework turns mobility-sentiment coupling into actionable policy briefs with verified predictive stability.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>Traffic stress, fear/anger sentiment, and governance discourse are tightly coupled during the LA wildfires (33-day window, 100% confidence rules).</li><li>40 clean predictive rules with 2–7 day lead horizons identified in UAE COVID data.</li><li>8 stable same-day rules (88% holdout pass rate) for COVID mobility-sentiment coupling.</li><li>Formal Concept Analysis extracts co-occurrence structure without labelled training data.</li><li>Policy-translation layer converts rules into operational briefs with trigger conditions and action playbooks.</li><li>Cross-domain behavioral structure is consistent across wildfire and pandemic crises.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Multimodal fusion of mobility signals and social media data; binary behavioral state transformation; Formal Concept Analysis (FCA); association rule mining; chronological holdout testing; two case studies: LA wildfires (33 days) and UAE COVID-19 (671 days).</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>Wildfire: key rules reach 100% confidence, lift up to 2.5; COVID: 40 predictive rules with 2–7 day lead, 88% holdout stability.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Binary behavioral states may oversimplify complex mobility patterns; social media sentiment data has known demographic biases; model requires crisis-specific calibration.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Emergency management agencies can use this framework to anticipate evacuation demand surges, pre-position transit resources, and communicate behavioral interventions 2–7 days in advance.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Emergency management agencies, transit resilience planners, disaster preparedness officials, crisis communications teams.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>First work to jointly model mobility and social sentiment in a policy-actionable pipeline; extends prior mobility disruption studies with novel FCA-based pattern extraction.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P09">
+  <div class="paper-header">
+    <span class="paper-num">09</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2404.05885" target="_blank" class="arxiv-link">2404.05885</a>
+      <span class="paper-date">2024-04-08</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Design of Transit-Centric Multimodal Urban Mobility System with Autonomous Mobility-on-Demand</h2>
+  <p class="paper-authors">Xiaotong Guo, Jinhua Zhao</p>
+  <p class="one-sentence"><strong>Summary:</strong> A first-of-its-kind joint optimization framework for transit network design, AMoD fleet sizing, and multimodal pricing reduces passenger disutility at scale in Chicago across diverse demand scenarios.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Transit agencies and AMoD operators have historically optimized independently — this framework shows that joint optimization substantially outperforms siloed planning and can be computed at city scale.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>Joint optimization of transit design, fleet sizing, and pricing outperforms sequential/siloed planning.</li><li>First-order approximation algorithm enables city-scale computation.</li><li>Discrete choice models for passenger mode and route selection are explicitly integrated.</li><li>Chicago case study shows robust performance across heterogeneous demand scenarios.</li><li>System operator minimizes aggregate passenger disutility — not just cost or ridership.</li><li>AMoD fleet allocation decisions interact non-linearly with transit frequency settings.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Mixed-integer optimization for transit network design and AMoD fleet allocation; first-order approximation for tractability; discrete choice mode/route models; Chicago CTA + AMoD case study.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>Framework demonstrates feasibility of city-scale joint optimization; outperforms baseline in passenger disutility minimization; robust across demand scenarios tested.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Requires high-quality origin-destination demand data; computational cost may limit real-time application; discrete choice model parameters need local calibration.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies procuring AMoD services should negotiate joint operations agreements rather than treating them as independent add-ons; MIT Energy Initiative partners show interest in deployment.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Transit agency planners, AMoD operators (Waymo, Uber Transit), transportation economists, city planning departments.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>First paper to jointly optimize all three levers (network design, fleet sizing, pricing); extends AMoD-transit integration literature (Salazar et al., 2020) with explicit pricing and discrete choice.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P10">
+  <div class="paper-header">
+    <span class="paper-num">10</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2501.03904" target="_blank" class="arxiv-link">2501.03904</a>
+      <span class="paper-date">2025-01-07</span>
+      <span class="conf-badge" style="color:#facc15">● Medium</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Exploring the Potential of Large Language Models in Public Transportation: San Antonio Case Study</h2>
+  <p class="paper-authors">Ramya Jonnala, Gongbo Liang, Jeong Yang, Izzat Alsmadi</p>
+  <p class="one-sentence"><strong>Summary:</strong> LLMs can meaningfully process GTFS transit data to assist route planning and passenger queries in San Antonio, but require careful fine-tuning to reach production-quality accuracy.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Transit systems are information-heavy and under-staffed for passenger communications; LLMs offer a scalable path to personalized travel assistance, but this paper provides the first systematic evaluation of what current models actually get right and wrong.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>LLMs can parse GTFS feed data and answer natural language transit queries with reasonable accuracy.</li><li>Route planning and wait-time estimation queries perform better than multimodal transfer queries.</li><li>GPT-4 class models substantially outperform GPT-3.5 class models on transit-specific tasks.</li><li>Fine-tuning on transit domain data is essential — general models hallucinate stop names and schedules.</li><li>Personalized travel assistance via LLMs could reduce call center volume and improve passenger satisfaction.</li><li>Resource allocation optimization is promising but requires integration with real-time operations data.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Comparative evaluation of multiple ChatGPT model versions; GTFS data integration; natural language query design across route planning, schedule, and service gap tasks; San Antonio VIA Metropolitan Transit system.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>LLMs show immense promise; GPT-4 outperforms GPT-3.5 substantially; careful engineering and fine-tuning essential; San Antonio provides generalizable benchmark.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Tested only on San Antonio system; evaluation methodology relies on manual quality assessment; real-time feed integration not tested; safety-critical error rates not quantified.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies should begin piloting LLM-powered passenger information systems with human oversight loops; GTFS standardization enables rapid deployment across systems.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Transit agency IT departments, passenger information system vendors, smart city implementers, transit communications staff.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>First systematic transit-specific LLM evaluation using real GTFS data; extends general chatbot evaluation literature to transportation domain.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P11">
+  <div class="paper-header">
+    <span class="paper-num">11</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2407.10791" target="_blank" class="arxiv-link">2407.10791</a>
+      <span class="paper-date">2024-08-26</span>
+      <span class="conf-badge" style="color:#4ade80">● High</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Interactive Public Transport Infrastructure Analysis through Mobility Profiles</h2>
+  <p class="paper-authors">Yannick Metz, Dennis Ackermann, Daniel A. Keim, Maximilian T. Fischer</p>
+  <p class="one-sentence"><strong>Summary:</strong> A population-group-aware visual analytics system reveals individualized transit service gaps in Konstanz, Germany by simulating schoolchildren, students, workers, and pensioners separately.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Aggregate transit accessibility metrics mask dramatic disparities in service quality across demographic groups — this system makes those invisible gaps visible to planners at the housing-unit level.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>Aggregate transit metrics hide critical service gaps for specific population groups (pensioners, schoolchildren).</li><li>Individual housing-level accessibility calculations reveal deficiencies invisible at zone level.</li><li>Scenario modeling shows that targeted stop relocations outperform broad schedule changes for equity.</li><li>Visual analytics combining heatmaps, density maps, and network overlays enables intuitive gap identification.</li><li>Konstanz case study confirmed findings through formative user study with actual planners.</li><li>Framework handles legacy network constraints that prevent wholesale redesign.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Agent-based simulation across demographic groups; travel time calculation to Points of Interest (POI); visual analytics workflow with heatmaps, density maps, and network overlays; Konstanz, Germany case study; formative user study.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>Key service gaps identified at housing-unit granularity; strategic stop relocations identified; user study confirmed planning utility; gap findings confirmed by city planners.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Case study limited to one medium-sized German city; computational cost of individual-level simulation may scale poorly to megacities; POI database quality affects results.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>City planners can justify targeted infrastructure investments (stop moves, schedule changes) with demographic-specific accessibility data — politically powerful for budget negotiations.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>City transit planners, urban accessibility researchers, demographic equity advocates, visualization researchers.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>Extends accessibility analysis from zone-level to individual housing-unit level; novel demographic group simulation framework for visual transit planning.</p>
+    </div>
+  </div>
+</article>
+
+
+<article class="paper-card" id="paper-P12">
+  <div class="paper-header">
+    <span class="paper-num">12</span>
+    <div class="paper-meta">
+      <a href="https://arxiv.org/abs/2404.02172" target="_blank" class="arxiv-link">2404.02172</a>
+      <span class="paper-date">2024-03-31</span>
+      <span class="conf-badge" style="color:#facc15">● Medium</span>
+    </div>
+  </div>
+  <h2 class="paper-title">Unveiling Urban Mobility Patterns: A Data-Driven Analysis of Public Transit</h2>
+  <p class="paper-authors">Oluwaleke Yusuf, Adil Rasheed, Frank Lindseth</p>
+  <p class="one-sentence"><strong>Summary:</strong> Historical Trondheim bus data reveals shifting ridership dynamics against growing urban population, establishing a data-quality and preprocessing framework for mobility digital twins.</p>
+  <p class="why-matters"><strong>Why it matters:</strong> Digital twins of transit systems require rigorous data pipelines; this paper establishes what quality benchmarks real transit data must meet before ML predictive models can be reliably trained.</p>
+  <div class="insights-block">
+    <h3>Key Insights</h3>
+    <ul><li>Transit data from Trondheim's bus system (May 2020–Nov 2023) reveals pandemic recovery dynamics across geospatial and temporal dimensions.</li><li>Data quality assessment is a critical undervalued step before any ML/DL modeling of transit demand.</li><li>Temporal and geospatial metadata enrichment significantly improves pattern detectability.</li><li>Urban population growth creates non-linear ridership demand that simple trend extrapolation misses.</li><li>External influences (weather, events, holidays) create identifiable and modelable ridership spikes.</li><li>Framework serves as blueprint for ML-ready transit digital twin data pipelines.</li></ul>
+  </div>
+  <div class="detail-grid">
+    <div>
+      <h4>Methodology</h4>
+      <p>Historical public transit data analysis; temporal and geospatial metadata enrichment; data preprocessing framework; ML/DL readiness assessment; Trondheim Norway bus system, May 2020–November 2023.</p>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <p>Identified clear temporal and geospatial mobility patterns; established data quality framework; revealed pandemic-era ridership shifts against population growth; created foundation for digital twin deployment.</p>
+    </div>
+    <div>
+      <h4>Limitations</h4>
+      <p>Single-city dataset from a mid-sized Norwegian city — may not generalize to megacities; covers pandemic recovery period which is atypically volatile; digital twin deployment not yet demonstrated.</p>
+    </div>
+    <div>
+      <h4>Practical Implications</h4>
+      <p>Transit agencies building predictive demand models should follow this preprocessing framework before deploying ML — poor data quality is the primary cause of model failures in practice.</p>
+    </div>
+    <div>
+      <h4>Who Should Care</h4>
+      <p>Transit data engineers, ML researchers in urban computing, digital twin developers, transit operations analysts.</p>
+    </div>
+    <div>
+      <h4>vs. Prior Work</h4>
+      <p>More rigorous data quality focus than typical transit pattern analysis; explicitly positions findings as digital twin input rather than standalone analysis.</p>
+    </div>
+  </div>
+</article>
+
+
+<footer class="footer">
+  <span>Transit Research Digest · June 9, 2026</span>
+  <a href="research.html">← Back to Archive</a>
+  <span>Sources: arXiv, Semantic Scholar · Analysis: Claude (Anthropic)</span>
+</footer>
+
+</body>
+</html>

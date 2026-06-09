@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="110" fill="#1A1A1A"/>
+  <text x="40" y="38" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" letter-spacing="4" fill="#888888" text-decoration="none">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="72" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">
+    <tspan>Urban Mobility</tspan>
+  </text>
+  <text x="40" y="96" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#666666" letter-spacing="1">June 9, 2026 · 12 Papers Analyzed · arXiv + Semantic Scholar</text>
+
+  <!-- DIVIDER LINE -->
+  <line x1="40" y1="130" x2="760" y2="130" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- SECTION LABEL: KEY FINDINGS -->
+  <text x="40" y="158" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="#888888">KEY FINDINGS</text>
+
+  <!-- FINDING 01 -->
+  <text x="40" y="185" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#E8E8E6">01</text>
+  <text x="120" y="174" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1A1A1A">
+    <tspan>Transit desert remediation recovers</tspan>
+  </text>
+  <text x="120" y="192" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1A1A1A">
+    <tspan>53.6% of underserved tracts in 5 years</tspan>
+  </text>
+  <text x="120" y="208" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#555555">
+    <tspan>Risk-aware POMDP outperforms static optimization +5.0pp across 25 cities</tspan>
+  </text>
+
+  <!-- FINDING 02 -->
+  <text x="40" y="258" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#E8E8E6">02</text>
+  <text x="120" y="247" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1A1A1A">
+    <tspan>High-frequency riders form fragile networks</tspan>
+  </text>
+  <text x="120" y="264" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1A1A1A">
+    <tspan>—35% efficiency loss under disruption</tspan>
+  </text>
+  <text x="120" y="280" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#555555">
+    <tspan>20M Beijing smart card records; LF networks lose only 10% (Sun et al., 2025)</tspan>
+  </text>
+
+  <!-- FINDING 03 -->
+  <text x="40" y="330" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#E8E8E6">03</text>
+  <text x="120" y="318" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1A1A1A">
+    <tspan>AVs improve equity only when equity</tspan>
+  </text>
+  <text x="120" y="336" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1A1A1A">
+    <tspan>is built into the objective function</tspan>
+  </text>
+  <text x="120" y="352" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#555555">
+    <tspan>Chicago SAMS + Atlanta SAV microtransit — without equity objectives, gaps persist</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <line x1="40" y1="375" x2="760" y2="375" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="40" y="400" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="#888888">PAPER OF THE DAY</text>
+  <rect x="40" y="412" width="720" height="92" fill="#1A1A1A"/>
+  <text x="60" y="433" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#888888">arXiv: 2606.08371 · JUNE 6, 2026</text>
+  <text x="60" y="454" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">
+    <tspan>Risk-Aware Planning for Transit Desert Remediation</tspan>
+  </text>
+  <text x="60" y="471" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">
+    <tspan>Under Demand Uncertainty</tspan>
+  </text>
+  <text x="60" y="488" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#AAAAAA">Khoroshevskaya &amp; Perukari · POMDP + CVaR · 25 US cities · Confidence: HIGH</text>
+
+  <!-- DIVIDER -->
+  <line x1="40" y1="525" x2="760" y2="525" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="550" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="#888888">EMERGING THEMES</text>
+
+  <!-- Theme col 1 -->
+  <rect x="40" y="562" width="230" height="4" fill="#1A1A1A"/>
+  <text x="40" y="584" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">Equity as Optimization</text>
+  <text x="40" y="600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="40" dy="0">CVaR constraints, vertical</tspan>
+  </text>
+  <text x="40" y="614" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="40" dy="0">equity objectives replace</tspan>
+  </text>
+  <text x="40" y="628" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="40" dy="0">post-hoc equity evaluation</tspan>
+  </text>
+
+  <!-- Theme col 2 -->
+  <rect x="295" y="562" width="230" height="4" fill="#1A1A1A"/>
+  <text x="295" y="584" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">Data Scale Phase Shift</text>
+  <text x="295" y="600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="295" dy="0">SF-LIFE: 3 trillion records.</tspan>
+  </text>
+  <text x="295" y="614" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="295" dy="0">Beijing: 20M smart cards.</tspan>
+  </text>
+  <text x="295" y="628" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="295" dy="0">New benchmarks established</tspan>
+  </text>
+
+  <!-- Theme col 3 -->
+  <rect x="550" y="562" width="210" height="4" fill="#1A1A1A"/>
+  <text x="550" y="584" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">Multilayer Formalism</text>
+  <text x="550" y="600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="550" dy="0">Monolayer models structurally</tspan>
+  </text>
+  <text x="550" y="614" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="550" dy="0">inadequate for real transit.</tspan>
+  </text>
+  <text x="550" y="628" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan x="550" dy="0">Paradigm upgrade required</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <line x1="40" y1="658" x2="760" y2="658" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="682" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="#888888">CONFIDENCE DISTRIBUTION · 12 PAPERS</text>
+
+  <!-- HIGH bar -->
+  <text x="40" y="712" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">HIGH</text>
+  <rect x="100" y="700" width="570" height="18" fill="#1A1A1A"/>
+  <text x="680" y="714" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#1A1A1A">9</text>
+
+  <!-- MEDIUM bar -->
+  <text x="40" y="742" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">MED</text>
+  <rect x="100" y="730" width="190" height="18" fill="#888888"/>
+  <text x="300" y="744" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#1A1A1A">3</text>
+
+  <!-- LOW bar -->
+  <text x="40" y="772" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">LOW</text>
+  <rect x="100" y="760" width="0" height="18" fill="#CCCCCC"/>
+  <text x="108" y="774" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#1A1A1A">0</text>
+
+  <!-- DIVIDER -->
+  <line x1="40" y1="800" x2="760" y2="800" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="825" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="#888888">ACTIONABLE TAKEAWAYS</text>
+
+  <!-- Takeaway 1 -->
+  <text x="40" y="855" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#E8E8E6">→</text>
+  <text x="70" y="850" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">
+    <tspan>Pilot POMDP desert remediation in cities</tspan>
+  </text>
+  <text x="70" y="866" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan>with identified underserved tracts — robust to 50% demand miscalibration</tspan>
+  </text>
+
+  <!-- Takeaway 2 -->
+  <text x="40" y="900" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#E8E8E6">→</text>
+  <text x="70" y="895" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">
+    <tspan>Add explicit equity objectives to SAV dispatching</tspan>
+  </text>
+  <text x="70" y="911" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan>Cost-only optimization leaves suburban and low-income areas behind</tspan>
+  </text>
+
+  <!-- Takeaway 3 -->
+  <text x="40" y="945" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#E8E8E6">→</text>
+  <text x="70" y="940" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">
+    <tspan>Audit resilience modeling tools for multilayer capability</tspan>
+  </text>
+  <text x="70" y="956" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan>Monolayer models underestimate cascading failure risk across modes</tspan>
+  </text>
+
+  <!-- Takeaway 4 -->
+  <text x="40" y="990" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#E8E8E6">→</text>
+  <text x="70" y="985" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">
+    <tspan>Benchmark transit ML models against SF-LIFE dataset</tspan>
+  </text>
+  <text x="70" y="1001" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan>3 trillion records, 40+ agencies, multi-modal — new standard benchmark</tspan>
+  </text>
+
+  <!-- Takeaway 5 -->
+  <text x="40" y="1035" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#E8E8E6">→</text>
+  <text x="70" y="1030" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A">
+    <tspan>Launch LLM pilot on your GTFS data with human oversight</tspan>
+  </text>
+  <text x="70" y="1046" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#555555">
+    <tspan>GPT-4 class models show production-ready passenger info capability in San Antonio</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <line x1="40" y1="1072" x2="760" y2="1072" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- PAPER GRID -->
+  <text x="40" y="1096" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="#888888">ALL 12 PAPERS AT A GLANCE</text>
+
+  <!-- Paper row items -->
+  <text x="40" y="1120" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2606.08371</text>
+  <text x="130" y="1120" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">Transit Desert Remediation — POMDP · CVaR · 25 cities</text>
+  <text x="40" y="1138" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2601.21046</text>
+  <text x="130" y="1138" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">SAV Microtransit Atlanta — MARTA Reach · MPC dispatching</text>
+  <text x="40" y="1156" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2603.21130</text>
+  <text x="130" y="1156" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">Multilayer Transit Networks — Systematic review · Research agenda</text>
+  <text x="40" y="1174" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2501.01615</text>
+  <text x="130" y="1174" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">SAMS Equity Chicago — Horizontal + vertical equity · Redesign</text>
+  <text x="40" y="1192" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2606.00430</text>
+  <text x="130" y="1192" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">SF-LIFE Dataset — 3T records · 500K agents · 40+ agencies</text>
+  <text x="40" y="1210" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2502.17054</text>
+  <text x="130" y="1210" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">Beijing Smart Cards — 20M records · HF/LF network fragility</text>
+  <text x="40" y="1228" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2606.07642</text>
+  <text x="130" y="1228" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">VLM Accessibility — Street View · Wheelchair · GPS friction</text>
+  <text x="40" y="1246" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2606.09532</text>
+  <text x="130" y="1246" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">Crisis Mobility — LA wildfires · UAE COVID · FCA rules · 2–7 day lead</text>
+  <text x="40" y="1264" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2404.05885</text>
+  <text x="130" y="1264" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">Transit-Centric AMoD Chicago — Joint optimization · Discrete choice</text>
+  <text x="40" y="1282" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2501.03904</text>
+  <text x="130" y="1282" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">LLMs in Transit — San Antonio · GTFS · GPT-4 outperforms GPT-3.5</text>
+  <text x="40" y="1300" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2407.10791</text>
+  <text x="130" y="1300" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">Mobility Profiles Konstanz — Visual analytics · Demographic equity</text>
+  <text x="40" y="1318" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">2404.02172</text>
+  <text x="130" y="1318" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#555555">Trondheim Bus Patterns — Digital twin pipeline · ML readiness</text>
+
+  <!-- DIVIDER -->
+  <line x1="40" y1="1345" x2="760" y2="1345" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- FOOTER -->
+  <text x="40" y="1370" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#AAAAAA">Generated June 9, 2026 · Transit Research Digest · Sources: arXiv, Semantic Scholar</text>
+  <text x="40" y="1388" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#AAAAAA">Analysis performed by Claude (Anthropic) · twong6531.github.io/citation-site</text>
+
+</svg>
