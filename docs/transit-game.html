@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOD Builder - Transit Oriented Development Game</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; }
+#game-root { display: flex; flex-direction: column; height: 100vh; user-select: none; background: #f0ece4; }
+#top-bar { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #fff; border-bottom: 1px solid #e0ddd6; flex-wrap: wrap; }
+#top-bar h2 { font-size: 14px; font-weight: 500; margin-right: 8px; }
+.stat-chip { display: flex; align-items: center; gap: 5px; background: #f5f3ee; border-radius: 8px; padding: 4px 10px; font-size: 12px; color: #666; border: 0.5px solid #ddd; }
+.stat-chip b { color: #111; font-weight: 500; }
+#sim-btn { margin-left: auto; padding: 5px 14px; font-size: 12px; border-radius: 8px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+#turn-label { font-size: 12px; color: #888; min-width: 60px; }
+#main { display: flex; flex: 1; overflow: hidden; }
+#sidebar { width: 190px; min-width: 190px; background: #fff; border-right: 1px solid #e0ddd6; display: flex; flex-direction: column; overflow-y: auto; }
+#sidebar h3 { font-size: 11px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: .08em; padding: 10px 12px 4px; }
+.tool-btn { display: flex; align-items: center; gap: 8px; padding: 7px 12px; cursor: pointer; border-bottom: 0.5px solid #eee; font-size: 12px; color: #111; transition: background .1s; }
+.tool-btn:hover { background: #f5f3ee; }
+.tool-btn.active { background: #e6f1fb; color: #185FA5; }
+.tool-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; border: 0.5px solid rgba(0,0,0,.15); }
+.tool-cost { margin-left: auto; font-size: 11px; color: #aaa; }
+#info-panel { padding: 10px 12px; border-top: 1px solid #eee; flex: 1; }
+#info-panel h3 { font-size: 11px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+#info-content { font-size: 11px; color: #666; line-height: 1.6; }
+#map-area { flex: 1; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+canvas#grid { cursor: crosshair; display: block; }
+#msg-bar { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.65); color: #fff; font-size: 11px; padding: 5px 12px; pointer-events: none; min-height: 22px; }
+</style>
+</head>
+<body>
+<div id="game-root">
+  <div id="top-bar">
+    <h2>&#x1F687; TOD Builder</h2>
+    <div class="stat-chip">&#x1F4B5; Budget: <b id="s-budget">$5,000,000</b></div>
+    <div class="stat-chip">&#x1F465; Pop: <b id="s-pop">0</b></div>
+    <div class="stat-chip">&#x1F686; Daily Riders: <b id="s-riders">0</b></div>
+    <div class="stat-chip">&#x1F60A; Satisfaction: <b id="s-sat">-</b></div>
+    <div class="stat-chip">&#x1F4C8; Revenue: <b id="s-rev">$0/yr</b></div>
+    <span id="turn-label">Year 1</span>
+    <button id="sim-btn">&#9654; Advance Year</button>
+  </div>
+  <div id="main">
+    <div id="sidebar">
+      <h3>Transit</h3>
+      <div class="tool-btn active" data-tool="metro_station"><div class="tool-swatch" style="background:#378ADD"></div>Metro Station<span class="tool-cost">$800k</span></div>
+      <div class="tool-btn" data-tool="metro_track"><div class="tool-swatch" style="background:#185FA5"></div>Metro Track<span class="tool-cost">$150k</span></div>
+      <div class="tool-btn" data-tool="bus_stop"><div class="tool-swatch" style="background:#85B7EB"></div>Bus Stop<span class="tool-cost">$50k</span></div>
+      <div class="tool-btn" data-tool="bike_share"><div class="tool-swatch" style="background:#97C459"></div>Bike Share<span class="tool-cost">$30k</span></div>
+      <h3>Zoning</h3>
+      <div class="tool-btn" data-tool="residential_high"><div class="tool-swatch" style="background:#D85A30"></div>High Density Res<span class="tool-cost">$200k</span></div>
+      <div class="tool-btn" data-tool="residential_med"><div class="tool-swatch" style="background:#F0997B"></div>Medium Density Res<span class="tool-cost">$100k</span></div>
+      <div class="tool-btn" data-tool="mixed_use"><div class="tool-swatch" style="background:#D4537E"></div>Mixed Use<span class="tool-cost">$250k</span></div>
+      <div class="tool-btn" data-tool="commercial"><div class="tool-swatch" style="background:#BA7517"></div>Commercial<span class="tool-cost">$150k</span></div>
+      <div class="tool-btn" data-tool="office"><div class="tool-swatch" style="background:#7F77DD"></div>Office<span class="tool-cost">$200k</span></div>
+      <div class="tool-btn" data-tool="park"><div class="tool-swatch" style="background:#639922"></div>Park / Plaza<span class="tool-cost">$80k</span></div>
+      <div class="tool-btn" data-tool="parking_lot"><div class="tool-swatch" style="background:#888780"></div>Parking Lot<span class="tool-cost">$40k</span></div>
+      <h3>Infrastructure</h3>
+      <div class="tool-btn" data-tool="road"><div class="tool-swatch" style="background:#444441"></div>Road<span class="tool-cost">$20k</span></div>
+      <div class="tool-btn" data-tool="pedestrian"><div class="tool-swatch" style="background:#FAC775"></div>Pedestrian Path<span class="tool-cost">$10k</span></div>
+      <div class="tool-btn" data-tool="erase"><div class="tool-swatch" style="background:transparent;border:1.5px dashed #888;"></div>Erase<span class="tool-cost">free</span></div>
+      <div id="info-panel"><h3>Tile info</h3><div id="info-content">Hover a tile to inspect it.</div></div>
+    </div>
+    <div id="map-area">
+      <canvas id="grid"></canvas>
+      <div id="msg-bar"></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+const COLS=32,ROWS=22,CELL=26;
+const canvas=document.getElementById("grid");
+const ctx=canvas.getContext("2d");
+const msgBar=document.getElementById("msg-bar");
+const infoContent=document.getElementById("info-content");
+function resize(){const area=document.getElementById("map-area");canvas.width=area.clientWidth;canvas.height=area.clientHeight;draw();}
+const TOOLS={metro_station:{cost:800000,color:"#378ADD",label:"M",cat:"transit"},metro_track:{cost:150000,color:"#185FA5",label:"-",cat:"transit"},bus_stop:{cost:50000,color:"#85B7EB",label:"B",cat:"transit"},bike_share:{cost:30000,color:"#97C459",label:"*",cat:"transit"},residential_high:{cost:200000,color:"#D85A30",label:"RH",cat:"zone"},residential_med:{cost:100000,color:"#F0997B",label:"RM",cat:"zone"},mixed_use:{cost:250000,color:"#D4537E",label:"MX",cat:"zone"},commercial:{cost:150000,color:"#BA7517",label:"CM",cat:"zone"},office:{cost:200000,color:"#7F77DD",label:"OF",cat:"zone"},park:{cost:80000,color:"#639922",label:"PK",cat:"zone"},parking_lot:{cost:40000,color:"#888780",label:"PR",cat:"zone"},road:{cost:20000,color:"#444441",label:"",cat:"infra"},pedestrian:{cost:10000,color:"#FAC775",label:"",cat:"infra"},erase:{cost:0,color:"transparent",label:"",cat:"util"}};
+const TOOL_DESCS={metro_station:"Hub for metro lines. Raises land value in a 4-tile radius by 35%. Generates high ridership if connected to tracks.",metro_track:"Connects metro stations. Must form a continuous path. Cost per tile.",bus_stop:"Flexible transit. Raises land value in 2-tile radius by 15%. Less capacity than metro.",bike_share:"Encourages active mobility. Adds walkability bonus. Pairs well with transit nodes.",residential_high:"High-rise apartments. High pop density (120/tile), high tax revenue. Needs transit within 3 tiles.",residential_med:"Mid-rise housing. Moderate density (50/tile). Less transit-dependent than high density.",mixed_use:"Retail+residential combo. Adds jobs + residents. Best within 2 tiles of transit. Premium tax revenue.",commercial:"Shops and retail. Generates jobs and sales tax. Needs pedestrian access for full bonus.",office:"Employment center. High job density. Drives AM/PM peak ridership if near transit.",park:"Amenity that raises nearby land value by 20%. Reduces congestion stress. Required for high satisfaction.",parking_lot:"Cheap land use but reduces walkability score. Penalizes nearby land values slightly.",road:"Basic road. Required for most zones to function. Lowers walkability if overused.",pedestrian:"Pedestrian-only path. Raises walkability. Required for full mixed-use / commercial bonus.",erase:"Remove a tile. Refunds 40% of build cost."};
+let grid=[];for(let r=0;r<ROWS;r++){grid[r]=[];for(let c=0;c<COLS;c++)grid[r][c]=null;}
+let state={budget:5000000,year:1,pop:0,riders:0,satisfaction:0,revenue:0,selectedTool:"metro_station"};
+let isDragging=false;
+function fmt(n){if(n>=1000000)return "$"+(n/1000000).toFixed(1)+"M";if(n>=1000)return "$"+(n/1000).toFixed(0)+"k";return "$"+n;}
+function cellAt(mx,my){const c=Math.floor(mx/CELL),r=Math.floor(my/CELL);if(r>=0&&r<ROWS&&c>=0&&c<COLS)return{r,c};return null;}
+function getTileAt(r,c){return(r>=0&&r<ROWS&&c>=0&&c<COLS)?grid[r][c]:null;}
+function transitNearby(r,c,range){let score=0;for(let dr=-range;dr<=range;dr++)for(let dc=-range;dc<=range;dc++){if(Math.abs(dr)+Math.abs(dc)>range)continue;const t=getTileAt(r+dr,c+dc);if(!t)continue;if(t==="metro_station")score+=10;if(t==="bus_stop")score+=4;if(t==="bike_share")score+=2;}return score;}
+function countNearby(r,c,range,type){let n=0;for(let dr=-range;dr<=range;dr++)for(let dc=-range;dc<=range;dc++){if(Math.abs(dr)+Math.abs(dc)>range)continue;if(getTileAt(r+dr,c+dc)===type)n++;}return n;}
+function hasRoad(r,c){for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){if(dr===0&&dc===0)continue;const t=getTileAt(r+dr,c+dc);if(t==="road"||t==="pedestrian")return true;}return false;}
+function simulate(){let pop=0,riders=0,revenue=0,walkScore=0,greenScore=0,transitConnected=0;for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){const t=grid[r][c];if(!t)continue;const ts=transitNearby(r,c,4);const ts2=transitNearby(r,c,2);const parkBonus=countNearby(r,c,2,"park")>0?1.2:1;const walkPenalty=countNearby(r,c,1,"parking_lot")>0?.85:1;const roadAccess=hasRoad(r,c);if(t==="residential_high"){const p=Math.round(120*(ts>0?1:0.3)*parkBonus*walkPenalty);pop+=p;riders+=Math.round(p*(ts2>5?0.65:ts>0?0.4:0.08));revenue+=p*1200;if(ts>0)transitConnected++;}else if(t==="residential_med"){const p=Math.round(50*(ts>0?1:0.5)*parkBonus*walkPenalty);pop+=p;riders+=Math.round(p*(ts2>5?0.45:ts>0?0.28:0.06));revenue+=p*900;if(ts>0)transitConnected++;}else if(t==="mixed_use"){const p=Math.round(80*(ts>0?1:0.35)*parkBonus*walkPenalty);pop+=p;riders+=Math.round(p*(ts2>5?0.72:ts>0?0.5:0.1));revenue+=p*1500+(roadAccess?50000:0);if(ts>0)transitConnected++;}else if(t==="commercial"){revenue+=ts>0?180000:60000;riders+=ts>0?300:50;if(ts>0)transitConnected++;}else if(t==="office"){revenue+=ts>0?220000:70000;riders+=ts>0?500:80;if(ts>0)transitConnected++;}else if(t==="park"){greenScore++;walkScore++;}else if(t==="bike_share"){walkScore+=2;}else if(t==="pedestrian"){walkScore++;}else if(t==="parking_lot"){walkScore--;}else if(t==="road"){walkScore-=0.2;}}const totalZones=countAllZones();const todRatio=totalZones>0?transitConnected/totalZones:0;const walkN=Math.max(0,Math.min(100,50+walkScore*3));const greenN=Math.min(100,greenScore*8);const todN=Math.min(100,Math.round(todRatio*100));const sat=Math.round(walkN*0.35+greenN*0.25+todN*0.4);state.pop=pop;state.riders=riders;state.revenue=Math.round(revenue+(riders*0.5)*365);state.satisfaction=sat;}
+function countAllZones(){const zones=["residential_high","residential_med","mixed_use","commercial","office"];let n=0;for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++)if(zones.includes(grid[r][c]))n++;return n;}
+function updateStats(){simulate();document.getElementById("s-budget").textContent=fmt(state.budget);document.getElementById("s-pop").textContent=state.pop.toLocaleString();document.getElementById("s-riders").textContent=state.riders.toLocaleString();document.getElementById("s-sat").textContent=state.satisfaction+"%";document.getElementById("s-rev").textContent=fmt(state.revenue)+"/yr";document.getElementById("turn-label").textContent="Year "+state.year;}
+function setMsg(t){msgBar.textContent=t;}
+function placeTile(r,c){const tool=state.selectedTool;if(tool==="erase"){const cur=grid[r][c];if(cur){const refund=Math.round((TOOLS[cur]?.cost||0)*0.4);state.budget+=refund;grid[r][c]=null;setMsg("Demolished. Refund: "+fmt(refund));updateStats();draw();}return;}if(grid[r][c]===tool)return;const cost=TOOLS[tool].cost;if(cost>state.budget){setMsg("Not enough budget! Need "+fmt(cost)+".");return;}if(grid[r][c]){const refund=Math.round((TOOLS[grid[r][c]]?.cost||0)*0.4);state.budget+=refund;}state.budget-=cost;grid[r][c]=tool;setMsg("Placed "+tool.replace(/_/g," ")+" - cost "+fmt(cost));updateStats();draw();}
+function draw(){const W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);ctx.fillStyle="#e8e4dc";ctx.fillRect(0,0,W,H);for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){const x=c*CELL,y=r*CELL,t=grid[r][c];if(t){ctx.fillStyle=TOOLS[t]?.color||"#ccc";ctx.fillRect(x+1,y+1,CELL-2,CELL-2);const lbl=TOOLS[t]?.label||"";if(lbl&&lbl.length<=2){ctx.fillStyle="rgba(255,255,255,0.88)";ctx.font="bold "+(lbl.length>1?8:11)+"px system-ui";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(lbl,x+CELL/2,y+CELL/2);}}else{ctx.strokeStyle="rgba(0,0,0,0.06)";ctx.strokeRect(x+.5,y+.5,CELL-1,CELL-1);}}drawLandValueOverlay();}
+function drawLandValueOverlay(){for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){const val=getLandValue(r,c);if(val>0){const alpha=Math.min(0.18,val/100*0.2);ctx.fillStyle="rgba(55,138,221,"+alpha+")";ctx.fillRect(c*CELL,r*CELL,CELL,CELL);}}}
+function getLandValue(r,c){let v=0;for(let dr=-4;dr<=4;dr++)for(let dc=-4;dc<=4;dc++){const dist=Math.abs(dr)+Math.abs(dc);const t=getTileAt(r+dr,c+dc);if(!t)continue;if(t==="metro_station")v+=Math.max(0,(8-dist))*5;if(t==="bus_stop")v+=Math.max(0,(4-dist))*3;if(t==="park")v+=Math.max(0,(3-dist))*4;if(t==="bike_share")v+=Math.max(0,(2-dist))*2;if(t==="parking_lot")v-=Math.max(0,(2-dist))*3;}return Math.max(0,v);}
+canvas.addEventListener("mousedown",e=>{isDragging=true;const pos=cellAt(e.offsetX,e.offsetY);if(pos)placeTile(pos.r,pos.c);});
+canvas.addEventListener("mousemove",e=>{const pos=cellAt(e.offsetX,e.offsetY);if(pos){const t=grid[pos.r][pos.c];const val=getLandValue(pos.r,pos.c);const ts=transitNearby(pos.r,pos.c,4);infoContent.innerHTML=t?"<b>"+t.replace(/_/g," ")+"</b><br>Land value: +"+Math.round(val)+"<br>Transit score: "+ts:"Empty tile ("+pos.c+","+pos.r+")<br>Land value: +"+Math.round(val)+"<br>Transit score: "+ts;if(isDragging)placeTile(pos.r,pos.c);}});
+canvas.addEventListener("mouseup",()=>{isDragging=false;});
+canvas.addEventListener("mouseleave",()=>{isDragging=false;});
+document.querySelectorAll(".tool-btn").forEach(btn=>{btn.addEventListener("click",()=>{document.querySelectorAll(".tool-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");const tool=btn.dataset.tool;state.selectedTool=tool;infoContent.innerHTML="<b>"+tool.replace(/_/g," ")+"</b><br><br>"+(TOOL_DESCS[tool]||"")+(TOOLS[tool]?.cost?"<br><br>Cost: "+fmt(TOOLS[tool].cost):"");setMsg("Tool: "+tool.replace(/_/g," ")+" - click/drag to place");});});
+document.getElementById("sim-btn").addEventListener("click",()=>{state.year++;const income=state.revenue;const ops=countAllOps();const net=income-ops;state.budget+=net;let msg="Year "+state.year+": Revenue "+fmt(income)+", Ops "+fmt(ops)+", Net "+(net>=0?"+":"")+fmt(net);if(state.satisfaction>75)msg+=" Great livability!";else if(state.satisfaction<30)msg+=" Low satisfaction - add parks and transit!";setMsg(msg);updateStats();draw();});
+function countAllOps(){let ops=0;for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){const t=grid[r][c];if(t==="metro_station")ops+=120000;if(t==="metro_track")ops+=15000;if(t==="bus_stop")ops+=8000;if(t==="bike_share")ops+=3000;}return ops;}
+window.addEventListener("resize",resize);
+resize();
+setMsg("Select a tool and click to build. Start with metro stations and tracks, then zone around them!");
+updateStats();
+})();
+</script>
+</body>
+</html>
