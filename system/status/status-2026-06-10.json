@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-10",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "blocked"
+  },
+  "queue_items": 4,
+  "generated_at": "2026-06-10T06:00:00Z",
+  "alerts": [
+    "approved.json has been empty since at least 2026-06-07 — Publishing Agent is blocked. Human approval required."
+  ]
+}

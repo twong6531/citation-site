@@ -1,0 +1,66 @@
+{
+  "date": "2026-06-10",
+  "generated_at": "2026-06-10T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Japan's 154-year train station network: infrastructure longevity lessons for US transit",
+      "angle": "Data journalism deep-dive: what 9,300 stations built over 154 years reveals about infrastructure investment timelines, density vs ridership tradeoffs, and policy lessons for chronically under-funded US transit systems. HN viral hook (animated station map) gives strong entry point.",
+      "rationale": "Trending #5 on Hacker News today — animated visualization of all 9,300 Japanese stations 1872-2026 is a viral hook that sits squarely in our transit niche. No comparable US coverage drawing policy lessons. Long-form article format allows depth that short-form competitors skip. Strong data journalism angle with high share potential.",
+      "target_length": "long",
+      "slug": "japan-rail-154-years-infrastructure-lessons",
+      "output_path": "drafts/articles/japan-rail-154-years-infrastructure-lessons.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "The transit infrastructure lifecycle: from groundbreaking to decommissioning",
+      "angle": "Visual explainer showing the full asset lifecycle — planning, construction, operation, maintenance, end-of-life, and surplus/reuse — triggered by the Swiss Federal Railways publicly selling trains, bridges, and track. Connects sustainability policy to transit infrastructure economics.",
+      "rationale": "Swiss Railway surplus sale trending on HN today (#4). No transit-niche publication has covered this angle. Strong visual format: lifecycle flowchart with cost/timeline data at each phase. High editorial value and pairs well with Rank 1 Japan article.",
+      "target_length": "medium",
+      "slug": "transit-infrastructure-lifecycle-infographic",
+      "output_path": "drafts/infographics/transit-infrastructure-lifecycle-infographic.svg"
+    },
+    {
+      "rank": 3,
+      "type": "video_script",
+      "topic": "Electric axial flux motors and the coming revolution in urban transit vehicles",
+      "angle": "Mercedes-Benz begins large-scale production of compact axial flux electric motors — explain why this miniaturization breakthrough matters specifically for electric buses and light rail, which cities' fleets are positioned to retrofit first, and what it means for transit electrification timelines.",
+      "rationale": "Mercedes EV motor news trending (#3 on HN). Electric transit vehicles are underserved in our library vs. auto-centric EV coverage. Video/short-form format ideal for tech explainers with a transit hook. Strong YouTube and social share potential targeting transit/EV crossover audience.",
+      "target_length": "medium",
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "output_path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "AI vendor data-sharing mandates and the public transit agency dilemma",
+      "angle": "AWS Bedrock's new requirement to share customer data with Anthropic for future model training raises urgent questions for transit agencies using AI SaaS tools. Research brief covers: what data transit agencies are feeding AI vendors, emerging federal guidance, and recommended data governance frameworks for public-sector mobility programs.",
+      "rationale": "AWS/Anthropic data policy trending on HN (#8). Intersects our core AI + infrastructure policy niche in an underreported direction. No competitor has bridged AI vendor governance to transit/public-sector implications. Timely given growing transit agency AI adoption.",
+      "target_length": "medium",
+      "slug": "ai-vendor-data-policy-transit-agencies-2026",
+      "output_path": "drafts/articles/ai-vendor-data-policy-transit-agencies-2026.html"
+    }
+  ],
+  "retries": [],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity and automation",
+    "Apple Gemini AI partnership",
+    "AI-driven transit desert remediation (POMDP/CVaR)",
+    "Southern California transit systems",
+    "Meta face recognition",
+    "BRT expansion funding",
+    "Slime mold network optimization",
+    "US cities transit gap analysis"
+  ],
+  "trend_signals": [
+    "All 9,300 Japanese train stations animated 1872-2026 (HN viral)",
+    "Swiss Federal Railway selling trains, bridges, and track as surplus",
+    "Mercedes-Benz large-scale production of electric axial flux motor",
+    "Claude Fable 5 model release (AI capability frontier)",
+    "AWS Bedrock mandatory data-sharing with Anthropic for future models"
+  ]
+}
