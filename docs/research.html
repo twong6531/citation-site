@@ -1,128 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Transit Research Archive</title>
-<style>
-  :root {
-    --bg: #0e0e0e;
-    --surface: #161616;
-    --border: #2a2a2a;
-    --text: #e8e8e6;
-    --muted: #888;
-    --accent: #ffffff;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; }
-  body { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
-
-  .topnav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
-  .topnav a { color: var(--muted); text-decoration: none; font-size: 12px; letter-spacing: 1px; }
-  .topnav a:hover { color: var(--text); }
-
-  .archive-hero { margin-bottom: 48px; }
-  .archive-hero-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); margin-bottom: 12px; }
-  .archive-hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 700; letter-spacing: -1px; margin-bottom: 10px; }
-  .archive-hero p { font-size: 14px; color: var(--muted); }
-
-  .stats-row { display: flex; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; }
-  .stat { display: flex; flex-direction: column; }
-  .stat-num { font-size: 36px; font-weight: 700; line-height: 1; }
-  .stat-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
-
-  .section-header { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--border); margin: 0 0 24px; }
-
-  .featured-card { background: var(--surface); border: 1px solid var(--border); margin-bottom: 48px; overflow: hidden; }
-  .featured-body { padding: 28px 32px 32px; }
-  .card-label { font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 10px; }
-  .card-title { font-size: 26px; font-weight: 700; margin-bottom: 12px; }
-  .card-desc { font-size: 14px; color: #aaa; line-height: 1.7; margin-bottom: 20px; }
-  .btn-read { display: inline-block; padding: 10px 24px; background: var(--accent); color: #000; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-right: 12px; }
-  .btn-svg { display: inline-block; padding: 10px 18px; border: 1px solid var(--border); color: var(--muted); text-decoration: none; font-size: 11px; }
-  .btn-svg:hover { color: var(--text); }
-
-  .past-grid { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 48px; }
-  .past-card { background: var(--surface); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: var(--text); transition: background 0.15s; }
-  .past-card:hover { background: #1e1e1e; }
-  .past-date { font-size: 12px; color: var(--muted); }
-  .past-title { font-size: 13px; color: var(--text); }
-
-  .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); flex-wrap: wrap; gap: 8px; }
-  .footer a { color: var(--muted); text-decoration: none; }
-  .footer a:hover { color: var(--text); }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transit Research Digest — Archive</title>
+  <style>
+    :root { --bg: #0D0D0D; --surface: #161616; --border: #2A2A2A; --text: #E8E8E6; --muted: #888; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+    a { color: var(--text); }
+    a:hover { opacity: 0.7; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 32px 48px; }
+    .header-meta { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+    .header-title { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; }
+    .header-sub { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .container { max-width: 960px; margin: 0 auto; padding: 48px 48px; }
+    .section-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; font-weight: 600; }
+    .featured { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 32px; margin-bottom: 48px; display: flex; gap: 32px; align-items: flex-start; }
+    .featured-img { width: 200px; flex-shrink: 0; }
+    .featured-img img { width: 100%; border: 1px solid var(--border); }
+    .featured-img .no-img { width: 200px; height: 200px; background: #1A1A1A; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; border: 1px solid var(--border); }
+    .featured-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .featured-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .featured-meta { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .featured-link { display: inline-block; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--border); padding: 10px 20px; text-decoration: none; color: var(--text); }
+    .featured-link:hover { background: var(--surface); }
+    .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .archive-card { background: var(--surface); border: 1px solid var(--border); padding: 20px; border-radius: 4px; text-decoration: none; display: block; }
+    .archive-card:hover { border-color: #444; }
+    .archive-date { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .archive-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .archive-count { font-size: 12px; color: var(--muted); }
+    .count-badge { font-size: 24px; font-weight: 700; color: var(--muted); margin-bottom: 4px; }
+    .stats-row { display: flex; gap: 48px; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .stat { }
+    .stat-n { font-size: 36px; font-weight: 700; letter-spacing: -1px; }
+    .stat-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    footer { padding: 32px 48px; border-top: 1px solid var(--border); }
+    .footer-text { font-size: 12px; color: var(--muted); max-width: 960px; margin: 0 auto; }
+    @media (max-width: 700px) {
+      header { padding: 24px 20px; }
+      .container { padding: 24px 20px; }
+      .featured { flex-direction: column; }
+      .featured-img { width: 100%; }
+      .stats-row { flex-wrap: wrap; gap: 24px; }
+    }
+  </style>
 </head>
 <body>
+<header>
+  <div class="header-meta">Transit Research Digest</div>
+  <div class="header-title">Research Archive</div>
+  <div class="header-sub">Autonomous transit research analysis · Updated daily</div>
+</header>
 
-<nav class="topnav">
-  <a href="index.html">← HOME</a>
-  <span style="color:var(--muted);font-size:12px;letter-spacing:1px">RESEARCH ARCHIVE</span>
-</nav>
+<div class="container">
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-n">6</div>
+      <div class="stat-label">Reports</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">90</div>
+      <div class="stat-label">Papers Analyzed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">2026</div>
+      <div class="stat-label">Active Since</div>
+    </div>
+  </div>
 
-<div class="archive-hero">
-  <p class="archive-hero-label">Transit Research Digest</p>
-  <h1>Research Archive</h1>
-  <p>Daily analysis of urban mobility and public transit research from arXiv and Semantic Scholar.</p>
+  <div class="section-label">Latest Report</div>
+  <div class="featured">
+    <div class="featured-img">
+      <div class="no-img">No illustration</div>
+    </div>
+    <div>
+      <div class="featured-label">Featured · June 10, 2026</div>
+      <div class="featured-title">Transit Research Digest</div>
+      <div class="featured-meta">15 papers · arXiv · Independent Analysis</div>
+      <a href="research-2026-06-10.html" class="featured-link">Read Report →</a>
+    </div>
+  </div>
+
+  <div class="section-label">Past Reports</div>
+  <div class="archive-grid">
+
+    <a href="research-2026-06-09.html" class="archive-card">
+      <div class="archive-date">June 9, 2026</div>
+      <div class="archive-title">Transit Research Digest</div>
+      <div class="archive-count">15 papers analyzed</div>
+    </a>
+    <a href="research-2026-06-08.html" class="archive-card">
+      <div class="archive-date">June 8, 2026</div>
+      <div class="archive-title">Transit Research Digest</div>
+      <div class="archive-count">15 papers analyzed</div>
+    </a>
+    <a href="research-2026-06-07.html" class="archive-card">
+      <div class="archive-date">June 7, 2026</div>
+      <div class="archive-title">Transit Research Digest</div>
+      <div class="archive-count">15 papers analyzed</div>
+    </a>
+    <a href="research-2026-06-06.html" class="archive-card">
+      <div class="archive-date">June 6, 2026</div>
+      <div class="archive-title">Transit Research Digest</div>
+      <div class="archive-count">15 papers analyzed</div>
+    </a>
+    <a href="research-2026-06-05.html" class="archive-card">
+      <div class="archive-date">June 5, 2026</div>
+      <div class="archive-title">Transit Research Digest</div>
+      <div class="archive-count">15 papers analyzed</div>
+    </a>
+  </div>
+
 </div>
 
-<div class="stats-row">
-  <div class="stat">
-    <span class="stat-num">5</span>
-    <span class="stat-label">Issues Published</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">50+</span>
-    <span class="stat-label">Papers Analyzed</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">2026-06-09</span>
-    <span class="stat-label">Latest Issue</span>
-  </div>
-</div>
-
-<div class="section-header">LATEST ISSUE</div>
-
-<div class="featured-card">
-  <img src="research-infographic-2026-06-09.svg" alt="Infographic" style="width:100%;max-height:340px;object-fit:cover;display:block;border-bottom:1px solid #2a2a2a"/>
-  <div class="featured-body">
-    <p class="card-label">LATEST · June 9, 2026</p>
-    <h2 class="card-title">Urban Mobility Research Brief</h2>
-    <p class="card-desc">12 transit papers analyzed — transit deserts, SAV equity, multilayer networks, 3-trillion-record SF-LIFE dataset, crisis mobility forecasting.</p>
-    <a href="research-2026-06-09.html" class="btn-read">Read Full Report →</a>
-    <a href="research-infographic-2026-06-09.svg" class="btn-svg" download>↓ SVG</a>
-  </div>
-</div>
-
-<div class="section-header">PAST ISSUES — 4 REPORTS</div>
-<div class="past-grid">
-
-<a href="research-2026-06-08.html" class="past-card">
-  <span class="past-date">June 8, 2026</span>
-  <span class="past-title">Transit Research Brief →</span>
-</a>
-
-<a href="research-2026-06-07.html" class="past-card">
-  <span class="past-date">June 7, 2026</span>
-  <span class="past-title">Transit Research Brief →</span>
-</a>
-
-<a href="research-2026-06-06.html" class="past-card">
-  <span class="past-date">June 6, 2026</span>
-  <span class="past-title">Transit Research Brief →</span>
-</a>
-
-<a href="research-2026-06-05.html" class="past-card">
-  <span class="past-date">June 5, 2026</span>
-  <span class="past-title">Transit Research Brief →</span>
-</a>
-</div>
-
-<footer class="footer">
-  <span>Transit Research Digest · Updated June 9, 2026</span>
-  <a href="index.html">← Home</a>
-  <span>Powered by Claude (Anthropic)</span>
+<footer>
+  <div class="footer-text">Transit Research Digest · Autonomous analysis · twong6531.github.io/citation-site</div>
 </footer>
-
 </body>
 </html>

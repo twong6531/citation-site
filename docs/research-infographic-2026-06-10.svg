@@ -1,0 +1,120 @@
+<svg viewBox="0 0 800 1800" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
+  <rect width="800" height="1800" fill="#F7F7F5"/>
+
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="100" fill="#1A1A1A"/>
+  <text x="40" y="42" fill="#F7F7F5" font-size="11" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="68" fill="#F7F7F5" font-size="26" font-weight="700" letter-spacing="-0.5">June 10, 2026</text>
+  <text x="760" y="42" fill="#888" font-size="10" text-anchor="end">15 PAPERS ANALYZED</text>
+  <text x="760" y="60" fill="#888" font-size="10" text-anchor="end">arXiv · Semantic Scholar</text>
+
+
+  <!-- EXEC SUMMARY -->
+  <text x="40" y="136" fill="#1A1A1A" font-size="9" letter-spacing="2" font-weight="700">EXECUTIVE SUMMARY</text>
+  <line x1="40" y1="142" x2="760" y2="142" stroke="#1A1A1A" stroke-width="1"/>
+
+  <text x="40" y="160" fill="#333" font-size="11">This week's 15 transit research papers reveal a field in transformation: AI and machine learning are</text>
+
+  <text x="40" y="176" fill="#333" font-size="11">reshaping every layer of the transit stack — from network design optimization to walkability assessment</text>
+
+  <text x="40" y="192" fill="#333" font-size="11">to real-time journey planning. Three major threads emerge: (1) Algorithmic breakthroughs making</text>
+
+  <text x="40" y="208" fill="#333" font-size="11">once-intractable optimization problems (global network design, continental journey planning, dynamic</text>
+
+  <text x="40" y="224" fill="#333" font-size="11">routing) suddenly computationally feasible; (2) AI-powered data collection methods (WalkCLIP, TRACE,</text>
+
+  <text x="40" y="240" fill="#333" font-size="11">spatially-enhanced RAG) that dramatically lower the cost of measuring urban mobility; and (3) Equity</text>
+
+
+  <!-- KEY FINDINGS -->
+  <text x="40" y="276" fill="#1A1A1A" font-size="9" letter-spacing="2" font-weight="700">KEY FINDINGS</text>
+  <line x1="40" y1="282" x2="760" y2="282" stroke="#1A1A1A" stroke-width="1"/>
+
+
+  <text x="40" y="296" fill="#1A1A1A" font-size="36" font-weight="700" opacity="0.08">01</text>
+  <text x="80" y="296" fill="#1A1A1A" font-size="13" font-weight="700">Reliability > Frequency</text>
+  <text x="80" y="312" fill="#444" font-size="11">Miami-Dade data shows improving on-time performance yields 62% more ridership per dollar than</text>
+  <text x="80" y="327" fill="#444" font-size="11">adding service frequency — a budget reallocation signal for every transit agency.</text>
+
+  <text x="40" y="354" fill="#1A1A1A" font-size="36" font-weight="700" opacity="0.08">02</text>
+  <text x="80" y="354" fill="#1A1A1A" font-size="13" font-weight="700">Scale Artifacts in Planning</text>
+  <text x="80" y="370" fill="#444" font-size="11">Apparent housing-jobs mismatches driving transit corridor investments may be measurement</text>
+  <text x="80" y="385" fill="#444" font-size="11">artifacts of spatial scale, not real gaps — challenging the needs-assessment basis of major</text>
+  <text x="80" y="400" fill="#444" font-size="11">capital projects.</text>
+
+  <text x="40" y="427" fill="#1A1A1A" font-size="36" font-weight="700" opacity="0.08">03</text>
+  <text x="80" y="427" fill="#1A1A1A" font-size="13" font-weight="700">Slime-Mold Solves Suburban Transit</text>
+  <text x="80" y="443" fill="#444" font-size="11">A biologically-inspired routing algorithm achieves 94% of optimal DRT coverage at 5% of the</text>
+  <text x="80" y="458" fill="#444" font-size="11">computation cost, potentially making demand-responsive transit economically viable in</text>
+  <text x="80" y="473" fill="#444" font-size="11">car-dependent suburbs.</text>
+
+  <!-- PAPER OF THE DAY -->
+  <rect x="40" y="510" width="720" height="4" fill="#1A1A1A"/>
+  <text x="40" y="532" fill="#1A1A1A" font-size="9" letter-spacing="2" font-weight="700">PAPER OF THE DAY</text>
+
+  <text x="40" y="550" fill="#1A1A1A" font-size="12" font-style="italic">A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</text>
+  <text x="40" y="567" fill="#1A1A1A" font-size="12" font-style="italic">(Burke et al., 2026) — for its sheer conceptual originality: borrowing the self-organizing network</text>
+  <text x="40" y="584" fill="#1A1A1A" font-size="12" font-style="italic">logic of a single-celled organism to solve one of urban mobility's hardest problems. That it also</text>
+  <text x="40" y="601" fill="#1A1A1A" font-size="12" font-style="italic">achieves near-optimal performance at a fraction of the computational cost makes it simultaneously</text>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="642" fill="#1A1A1A" font-size="9" letter-spacing="2" font-weight="700">EMERGING THEMES</text>
+  <line x1="40" y1="648" x2="760" y2="648" stroke="#1A1A1A" stroke-width="1"/>
+
+  <text x="40" y="664" fill="#1A1A1A" font-size="9" font-weight="700" letter-spacing="1">AI MEASUREMENT</text>
+  <text x="40" y="680" fill="#333" font-size="10">WalkCLIP, TRACE, and</text>
+  <text x="40" y="694" fill="#333" font-size="10">spatially-enhanced RAG replace</text>
+  <text x="40" y="708" fill="#333" font-size="10">expensive field audits with ML</text>
+  <text x="40" y="722" fill="#333" font-size="10">inference — transit data</text>
+  <text x="40" y="736" fill="#333" font-size="10">collection cost collapsing.</text>
+  <text x="300" y="664" fill="#1A1A1A" font-size="9" font-weight="700" letter-spacing="1">OPTIMIZATION</text>
+  <text x="300" y="680" fill="#333" font-size="10">T-REX, geometric programming,</text>
+  <text x="300" y="694" fill="#333" font-size="10">and spanning trees make</text>
+  <text x="300" y="708" fill="#333" font-size="10">once-intractable design</text>
+  <text x="300" y="722" fill="#333" font-size="10">problems globally optimal and</text>
+  <text x="300" y="736" fill="#333" font-size="10">real-time feasible.</text>
+  <text x="560" y="664" fill="#1A1A1A" font-size="9" font-weight="700" letter-spacing="1">EQUITY + HEALTH</text>
+  <text x="560" y="680" fill="#333" font-size="10">Transit-PM2.5 links,</text>
+  <text x="560" y="694" fill="#333" font-size="10">deprivation-bubble breaking,</text>
+  <text x="560" y="708" fill="#333" font-size="10">and post-COVID recovery</text>
+  <text x="560" y="722" fill="#333" font-size="10">position transit as health and</text>
+  <text x="560" y="736" fill="#333" font-size="10">antipoverty infrastructure.</text>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="774" fill="#1A1A1A" font-size="9" letter-spacing="2" font-weight="700">CONFIDENCE DISTRIBUTION — 15 PAPERS</text>
+  <line x1="40" y1="780" x2="760" y2="780" stroke="#1A1A1A" stroke-width="1"/>
+
+
+  <rect x="40" y="798" width="498" height="28" fill="#1A1A1A"/>
+  <rect x="538" y="798" width="181" height="28" fill="#888"/>
+  <rect x="719" y="798" width="1" height="28" fill="#CCC"/>
+  <text x="44" y="817" fill="#F7F7F5" font-size="11" font-weight="700">HIGH 11</text>
+  <text x="542" y="817" fill="#F7F7F5" font-size="11" font-weight="700">MED 4</text>
+
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="854" fill="#1A1A1A" font-size="9" letter-spacing="2" font-weight="700">ACTIONABLE TAKEAWAYS</text>
+  <line x1="40" y1="860" x2="760" y2="860" stroke="#1A1A1A" stroke-width="1"/>
+
+  <text x="40" y="876" fill="#1A1A1A" font-size="10" font-weight="700">→</text>
+  <text x="58" y="876" fill="#333" font-size="10">Transit agencies should immediately audit on-time performance data alongside frequency data —</text>
+  <text x="58" y="890" fill="#333" font-size="10">Miami-Dade research confirms reliability improvements outperform frequency increases for</text>
+  <text x="58" y="904" fill="#333" font-size="10">ridership per dollar spent</text>
+  <text x="40" y="926" fill="#1A1A1A" font-size="10" font-weight="700">→</text>
+  <text x="58" y="926" fill="#333" font-size="10">Cities preparing transit investment justifications should test their jobs-housing balance</text>
+  <text x="58" y="940" fill="#333" font-size="10">metrics at multiple spatial scales before committing to corridor projects</text>
+  <text x="40" y="962" fill="#1A1A1A" font-size="10" font-weight="700">→</text>
+  <text x="58" y="962" fill="#333" font-size="10">Transit agencies with sparse GPS coverage can implement TRACE-like trajectory recovery to</text>
+  <text x="58" y="976" fill="#333" font-size="10">derive OD matrices without expensive survey programs</text>
+  <text x="40" y="998" fill="#1A1A1A" font-size="10" font-weight="700">→</text>
+  <text x="58" y="998" fill="#333" font-size="10">Network planners in mid-sized cities should benchmark their existing routes against spanning</text>
+  <text x="58" y="1012" fill="#333" font-size="10">tree optimizations — the Canberra result (23% travel time savings) suggests significant</text>
+  <text x="58" y="1026" fill="#333" font-size="10">low-hanging fruit</text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1760" width="800" height="40" fill="#1A1A1A"/>
+  <text x="40" y="1785" fill="#888" font-size="9">Transit Research Digest · 2026-06-10 · twong6531.github.io/citation-site</text>
+  <text x="760" y="1785" fill="#888" font-size="9" text-anchor="end">arXiv · Independent Analysis</text>
+
+</svg>

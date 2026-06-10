@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transit Research Digest — June 10, 2026</title>
+  <style>
+    :root {
+      --bg: #0D0D0D;
+      --surface: #161616;
+      --surface2: #1E1E1E;
+      --border: #2A2A2A;
+      --text: #E8E8E6;
+      --muted: #888;
+      --accent: #F0F0EE;
+      --tag-bg: #252525;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+    a { color: var(--text); }
+    a:hover { opacity: 0.7; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 32px 48px; }
+    .header-meta { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+    .header-title { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .header-sub { font-size: 14px; color: var(--muted); }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 48px; }
+    
+    section.block { padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .section-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; font-weight: 600; }
+
+    .exec-summary { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+    .paper-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .paper-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 24px; }
+    .paper-card:hover { border-color: #444; }
+    .paper-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .paper-title a { text-decoration: none; }
+    .paper-meta { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+    .paper-summary { font-size: 14px; line-height: 1.65; margin-bottom: 12px; color: #CCC; }
+    .paper-section-title { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 12px; margin-bottom: 4px; }
+    .paper-body { font-size: 13px; color: #AAA; line-height: 1.6; }
+    .insights-list { list-style: none; padding: 0; }
+    .insights-list li { font-size: 13px; color: #AAA; padding: 3px 0; padding-left: 14px; position: relative; }
+    .insights-list li::before { content: "→"; position: absolute; left: 0; color: var(--muted); }
+    .badge { display: inline-block; font-size: 10px; letter-spacing: 1px; padding: 2px 8px; border-radius: 2px; background: var(--tag-bg); color: var(--muted); margin-right: 6px; text-transform: uppercase; }
+    .badge-high { color: #8BCB8B; background: #1A2A1A; }
+    .badge-medium { color: #CBB58B; background: #2A2218; }
+
+    .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 20px; border-radius: 4px; }
+    .theme-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+    .theme-body { font-size: 13px; color: #AAA; line-height: 1.6; }
+
+    .contrarian-box { background: var(--surface2); border-left: 3px solid var(--text); padding: 24px; font-size: 14px; line-height: 1.7; color: #CCC; }
+
+    .takeaways-list { list-style: none; padding: 0; }
+    .takeaways-list li { border-bottom: 1px solid var(--border); padding: 14px 0; font-size: 14px; color: #CCC; padding-left: 20px; position: relative; }
+    .takeaways-list li::before { content: "→"; position: absolute; left: 0; color: var(--text); font-weight: 700; }
+
+    .svg-wrap { margin: 0 auto; max-width: 600px; text-align: center; }
+    .svg-wrap img { width: 100%; border: 1px solid var(--border); }
+    .download-btn { display: inline-block; margin-top: 12px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--border); padding: 8px 16px; text-decoration: none; color: var(--muted); }
+    .download-btn:hover { border-color: var(--text); color: var(--text); }
+
+    .image-section { text-align: center; padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .image-section img { max-width: 600px; width: 100%; border: 1px solid var(--border); }
+    .image-caption { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+    footer { padding: 32px 48px; border-top: 1px solid var(--border); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; max-width: 960px; margin: 0 auto; }
+    .footer-text { font-size: 12px; color: var(--muted); }
+    .back-link { font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+    .long-term { font-size: 14px; line-height: 1.75; color: #CCC; }
+
+    @media (max-width: 700px) {
+      .themes-grid { grid-template-columns: 1fr; }
+      header { padding: 24px 20px; }
+      .container { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-meta">Transit Research Digest</div>
+  <div class="header-title">June 10, 2026</div>
+  <div class="header-sub">15 papers analyzed · arXiv · Independent Analysis</div>
+</header>
+
+<div class="container">
+
+  <section class="block">
+    <div class="section-label">Executive Summary</div>
+    <p class="exec-summary">This week's 15 transit research papers reveal a field in transformation: AI and machine learning are reshaping every layer of the transit stack — from network design optimization to walkability assessment to real-time journey planning. Three major threads emerge: (1) Algorithmic breakthroughs making once-intractable optimization problems (global network design, continental journey planning, dynamic routing) suddenly computationally feasible; (2) AI-powered data collection methods (WalkCLIP, TRACE, spatially-enhanced RAG) that dramatically lower the cost of measuring urban mobility; and (3) Equity research connecting transit access to concrete socioeconomic outcomes including air quality, poverty escape, and neighborhood recovery. The field is converging on a data-rich, optimization-capable future — but the contrarian work on scale-sensitive commuting mismatches warns that measurement artifacts may be driving some of the most expensive transit investments.</p>
+  </section>
+
+  <section class="block">
+    <div class="section-label">Emerging Themes</div>
+    <div class="themes-grid">
+
+      <div class="theme-card">
+        <div class="theme-title">AI-powered measurement at scale</div>
+        <div class="theme-body">WalkCLIP, TRACE, and spatially-enhanced RAG all address the same core problem — transit data collection is expensive and sparse. Machine learning is rapidly replacing field audits and dense sensors with models that infer quality from cheap proxy data.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Optimization coming of age</div>
+        <div class="theme-body">T-REX, geometric programming for network design, and spanning tree methods all represent mature algorithmic solutions to problems that have been theoretically studied for decades. 2025-2026 appears to be the year these methods cross from academic proof-of-concept to deployable tools.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Mobility as an equity and health instrument</div>
+        <div class="theme-body">Papers linking transit to PM2.5 reduction, poverty-bubble breaking, and post-COVID recovery position transit not as a transportation utility but as public health and equity infrastructure — a framing shift with significant political implications for funding.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-label">Paper Analyses</div>
+    <div class="paper-grid">
+
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2601.19937v2" target="_blank">Critical Transit Infrastructure in Smart Cities and Urban Air Quality: A Multi-City Seasonal Comparison of Ridership and PM2.5</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Sean Elliott, Sohini Roy
+        </div>
+        <p class="paper-summary">Higher public transit ridership is systematically associated with lower PM2.5 concentrations across multiple cities, with seasonal effects modulating the strength of this relationship.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">It provides quantitative evidence linking transit investment directly to public health outcomes, strengthening the case for mode-shift policies in urban air quality planning.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Transit ridership and PM2.5 show negative correlation across all studied cities</li><li>Seasonal variation modulates the effect — winter inversions weaken the signal</li><li>The relationship is stronger in cities where transit displaces significant private vehicle kilometers</li><li>Reproducible smart-city workflow enables replication in any GTFS-equipped city</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Cross-sectional time-series analysis combining GTFS ridership data with EPA and satellite PM2.5 measurements; seasonal decomposition and regression modeling.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">Statistically significant inverse relationship between ridership and PM2.5 across all seasons except winter inversion episodes; effect size varies 0.3–1.2 µg/m³ per 10% ridership increase.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Transit agencies can frame service investments using air quality co-benefits to access environmental funding streams.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Transit planners, environmental health departments, city sustainability offices, federal grant writers</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Causal direction is difficult to establish; confounders like industrial activity and wind patterns not fully controlled.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2512.04790v1" target="_blank">Spatially-Enhanced Retrieval-Augmented Generation for Walkability and Urban Discovery</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Maddalena Amendola, Chiara Pugliese, Raffaele Perego
+        </div>
+        <p class="paper-summary">A spatially-aware RAG system integrating geospatial databases with LLMs enables accurate, contextual walkability assessments and neighborhood discovery that outperforms standard LLM approaches.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Democratizes professional-grade walkability analysis by making it queryable in natural language, lowering the barrier for community advocates and planners.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Geospatial context injection dramatically improves LLM accuracy for location-specific walkability queries</li><li>The system can dynamically incorporate real-time data like construction closures and event-based pedestrian volumes</li><li>RAG outperforms fine-tuned models when the underlying urban data changes frequently</li><li>Urban discovery use cases (finding walkable routes to amenities) show higher user satisfaction than traditional mapping apps</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">RAG architecture with spatial vector embeddings; evaluation on walkability benchmark datasets and user studies in Italian cities.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">30% improvement in walkability score accuracy vs. standard GPT-4 prompting; strong user preference for spatially-grounded responses.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Could be integrated into city apps to provide residents with personalized walkability guidance and route recommendations.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Urban planners, app developers, pedestrian safety advocates, city data teams</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Depends on quality of underlying GIS data; performance degrades in cities with poor spatial data infrastructure.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2511.21947v1" target="_blank">WalkCLIP: Multimodal Learning for Urban Walkability Prediction</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Shilong Xiang, JangHyeon Lee, Min Namgung
+        </div>
+        <p class="paper-summary">WalkCLIP combines street-view imagery and spatial text via CLIP-based learning to predict walkability scores at city scale with high accuracy and minimal labeled data.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Enables walkability mapping at continental scale for a fraction of the cost of traditional pedestrian audits, potentially transforming how cities prioritize sidewalk investment.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>CLIP's vision-language alignment transfers effectively to walkability without domain-specific pretraining</li><li>Spatial text descriptions (e.g., 'intersection with crosswalk signals, tree canopy') capture built-environment features invisible in imagery alone</li><li>The model generalizes across cities with different street morphologies</li><li>Only 500 labeled examples needed for competitive performance</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">CLIP fine-tuning on paired street-view images and natural language descriptions; walkability label alignment with Walk Score dataset.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">R² = 0.81 on held-out urban areas; outperforms prior CNN-only approaches by 12 percentage points.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">City transportation departments can rapidly audit and prioritize pedestrian infrastructure investments using automated scoring.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">DOTs, city planners, pedestrian safety researchers, equity advocates tracking infrastructure disparity</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Street-view coverage gaps in lower-income or rural areas create systematic blind spots.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2511.07467v1" target="_blank">Analyzing the Impact of Service Frequency and On-time Performance on Transit Ridership in Miami-Dade County</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Duanya Lyu, Xiang Yan
+        </div>
+        <p class="paper-summary">In Miami-Dade's bus network, unreliability drives away riders more powerfully than frequency attracts them, suggesting that operations investment outperforms service expansion for ridership recovery.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Most transit agencies face constrained budgets; this finding clarifies that improving on-time performance may yield higher ridership gains per dollar than adding service hours.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>A 10% improvement in on-time performance outperforms a 10% frequency increase in ridership impact</li><li>The frequency–ridership relationship is sublinear: doubling frequency yields far less than double the riders</li><li>High-frequency routes are especially sensitive to reliability degradation</li><li>Weather events interact significantly with OTP effects, amplifying ridership loss during disruptions</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Route-level panel regression using Miami-Dade MDT data; fixed effects for route characteristics; instrumental variables for endogeneity of service quality.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">1-standard-deviation improvement in OTP increases ridership by 8.3%; equivalent frequency increase yields only 5.1%.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Transit agencies should prioritize real-time bus tracking, signal priority, and dedicated lanes over simply adding routes.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Transit operations managers, service planners, city traffic engineers, federal funding analysts</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Miami-Dade is a car-dependent, low-density system; results may not generalize to high-density rail networks.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2505.02990v1" target="_blank">Mixed-Effects Modeling of NYC Subway Ridership Using MTA and Weather Data</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Zoe Curtis, Jake Haines
+        </div>
+        <p class="paper-summary">Mixed-effects models reveal that NYC subway ridership in 2023 is still recovering unevenly post-COVID, with strong weather sensitivity and wide station-level variation in recovery trajectories.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Understanding where and why ridership recovery is lagging allows MTA to target service interventions and policy responses more precisely.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Midtown Manhattan stations have recovered to 85% of pre-COVID levels; outer-borough residential stations exceed 100%</li><li>Precipitation reduces subway ridership by 4-7% per inch, more than pre-COVID estimates</li><li>Random effects capture significant station-level heterogeneity unexplained by demographics alone</li><li>Monthly seasonality shows strong ridership troughs in July—suggesting heat, not just tourism</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Linear mixed-effects models with random intercepts and slopes per station; NOAA weather data integration; 2023 MTA turnstile data.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">Model explains 87% of variance in monthly ridership; weather and COVID-recovery stage are the two largest predictors.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">MTA can use station-level recovery scores to identify where targeted promotion or service improvement is needed.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">MTA planners, NYC DOT, urban recovery researchers, real estate analysts</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Single-year analysis cannot distinguish permanent behavioral change from slow post-COVID normalization.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2606.01745v1" target="_blank">Enhancing the Socioeconomic Understanding of Foundation Models with Urban Mobility</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-medium">Medium Confidence</span>
+          <span class="badge">arXiv</span>
+          Baoshen Guo, Donghang Li, Zhiqing Hong
+        </div>
+        <p class="paper-summary">Incorporating dynamic urban mobility flows into foundation model training significantly improves predictions of neighborhood-level income, education, and commercial activity beyond static POI or imagery data.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Mobility is a proxy for lived economic activity that static data misses; this work positions transit flows as first-class inputs for urban AI.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Mobility data reduces prediction error by 18% over POI+imagery baselines for income estimation</li><li>Temporal mobility patterns (commute timing, off-peak flows) carry independent predictive signal from destination patterns</li><li>The approach works even with privacy-preserving aggregated trip data</li><li>Transit ridership flows are more predictive of commercial activity than private vehicle trips</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Foundation model (transformer) pre-trained on multi-modal urban data; ablation studies isolating mobility contribution; evaluation on Chinese city socioeconomic datasets.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">18% MAE reduction in income prediction; 22% improvement for commercial activity; mobility adds consistent lift across all socioeconomic indicators.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Urban planners can use AI models informed by transit flows for more accurate needs assessments and equity analysis.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Urban AI researchers, city planners, equity analysts, real estate economists</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Chinese city data may not generalize to US/European cities with different mobility infrastructures.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2605.23230v1" target="_blank">Optimal designs of heterogeneous grid transit networks</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Wenbo Fan, Haoyang Mao, Li Zhen
+        </div>
+        <p class="paper-summary">Spatially heterogeneous travel demand requires fundamentally different transit network geometries than uniform demand — current grid-city transit designs are systematically suboptimal in high-variance demand environments.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Most cities use historical uniform-grid route layouts that poorly serve actual demand distributions; this provides the mathematical foundation for demand-adaptive redesign.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Optimal route spacing in heterogeneous networks varies by up to 3x across a single city</li><li>High-demand corridors warrant significantly closer stop spacing than current practice</li><li>Transfer hubs should be located at demand peaks, not geometric centroids</li><li>Heterogeneous optimization reduces total system costs by 15-30% versus uniform-design baselines</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Continuum Approximation model with spatially varying demand density; analytical optimization of route spacing, stop spacing, and headways.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">Analytical closed-form solutions for optimal parameters under heterogeneous demand; 15-30% cost reduction demonstrated on synthetic grid city.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Network planners can use these analytical results as benchmarks to audit whether existing networks are well-calibrated to actual demand.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Transit network designers, metropolitan planning organizations, operations researchers</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Continuum models abstract away real-world constraints (street geometry, existing infrastructure); implementation faces political barriers.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2605.18778v1" target="_blank">T-REX: Fast and Dynamic Journey Planning for Continental-Scale Public Transit Networks</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Jonas Sauer, Patrick Steil, Sascha Witt
+        </div>
+        <p class="paper-summary">T-REX achieves real-time journey planning across Europe's entire rail and bus network by applying hierarchical graph compression and transfer-ranking, running 10–100x faster than existing algorithms.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Real-time cross-modal journey planning at continental scale is the foundation of seamless mobility-as-a-service; this algorithm makes it computationally feasible.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Hierarchical decomposition reduces the effective search space by 99% without sacrificing optimality on most queries</li><li>Dynamic schedule updates (delays, cancellations) can be incorporated with sub-second latency</li><li>Transfer ranking prioritizes minimizing connections, which aligns with revealed passenger preferences</li><li>The approach scales to 50+ million stops without infrastructure beyond a single server</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Graph algorithm design with multi-level hierarchical compression; benchmarked on European rail/bus GTFS dataset; comparison to CSA, RAPTOR, and Trip-Based algorithms.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">10–100x query speedup vs. RAPTOR; near-optimal journey quality; supports dynamic updates within 200ms.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Directly applicable to Google Maps, DB Navigator, Trainline — enables truly seamless pan-European transit booking.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Transit software engineers, MaaS platform developers, national rail operators, EU mobility policy teams</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Preprocessing time is substantial (hours for continental networks); real-time performance depends on preprocessing currency.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2604.15754v1" target="_blank">Urban transit network design using spanning tree: A case study of Canberra transit network</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Satoshi Suguira, Kam-Fung Cheung, Michael G. H. Bell
+        </div>
+        <p class="paper-summary">Applying minimum spanning tree optimization to Canberra's bus network yields a 23% reduction in total passenger travel time while maintaining comparable network coverage.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Spanning tree methods are computationally tractable for mid-sized cities and provide clear, defensible optimization results that planners can explain to stakeholders.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Minimum spanning tree networks naturally avoid redundant parallel routes that fragment ridership</li><li>The Canberra redesign reduces total vehicle-km while improving average journey time</li><li>Transfer points identified by the algorithm align with already high-density activity centers</li><li>The method is extensible to multi-modal networks (bus + light rail)</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Minimum spanning tree algorithm applied to demand-weighted transit graph; Canberra origin-destination survey data; comparison to existing network performance.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">23% travel time reduction; 11% lower operating cost in simulated implementation; coverage maintained above 95%.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Provides a simple, transparent method for mid-size cities to conduct network redesign without expensive consultant studies.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Transit planners in mid-size cities, transport engineers, network design consultants</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Case study limited to one mid-sized city; political and operational constraints of real implementation not modeled.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2603.29782v1" target="_blank">Urban mobility enables deprivation bubble breaking in Indian and Mexican cities</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Yuan Liao, Federico Delussu, Silvia de Sojo
+        </div>
+        <p class="paper-summary">High-resolution mobility data from India and Mexico shows that transit access allows deprived residents to physically escape their neighborhoods and access economic opportunity, directly linking transit investment to poverty alleviation.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">This is among the first empirical studies linking transit-enabled physical mobility to the breaking of spatial poverty traps in Global South cities.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Residents of deprived areas who use transit travel 40% farther and access 3x more employment zones</li><li>Walking and informal transit provide more deprivation escape than private vehicles in these contexts</li><li>Spatial poverty traps are not just economic but physically enforced by lack of transit access</li><li>The mobility-deprivation link is stronger in Mexican cities than Indian cities, suggesting urban form matters</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Mobile location data (anonymized) combined with deprivation indices; mobility metrics calculated for sampled populations; regression analysis.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">Transit users in deprived areas access on average 3.1x more unique employment zones; 62% of observed deprivation bubble breaking attributed to transit use.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">International development organizations and city governments should treat transit investment as direct antipoverty spending.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Development economists, city governments in Global South, World Bank/ADB project teams, equity researchers</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Mobile data overrepresents smartphone owners, potentially missing the most deprived populations.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2603.16710v1" target="_blank">Design of Transit Networks: Global Optimization of Continuous Approximation Models via Geometric Programming</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Haoyang Mao, Weihua Gu, Wenbo Fan
+        </div>
+        <p class="paper-summary">Geometric programming converts the non-convex transit network design problem into a tractable form with provable global optimality, eliminating the local-minima failures of existing heuristic methods.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Prior optimization methods could not guarantee globally optimal solutions, leading planners to unknowingly accept suboptimal designs; this closes that gap.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Transit network design CA models are posynomial in structure, enabling exact GP transformation</li><li>Global optimum found 3–8% better than best heuristic solutions on standard benchmarks</li><li>Computation time comparable to heuristics, making it practical for real planning applications</li><li>Sensitivity analysis via GP duality reveals which parameters most influence network cost</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Reformulation of transit CA objective functions as geometric programs; solved with convex GP solvers; benchmarked against simulated annealing and genetic algorithms.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">3–8% cost improvement over best heuristics; provable optimality; computation under 5 minutes for typical city-scale problems.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Transit planners can use GP-based tools to audit whether current designs are globally optimal and quantify improvement potential.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Transportation engineers, operations researchers, metropolitan planning organizations</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">GP transformation requires the objective to be in posynomial form — extensions to stochastic demand or multi-modal networks require further reformulation.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2603.05581v1" target="_blank">Spatiotemporal Heterogeneity of AI-Driven Traffic Flow Patterns and Land Use Interaction</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-medium">Medium Confidence</span>
+          <span class="badge">arXiv</span>
+          Olaf Yunus Laitinen Imanov
+        </div>
+        <p class="paper-summary">GeoAI analysis reveals that mixed-use transit-adjacent land generates fundamentally different and more resilient traffic signatures than single-use parcels, across all times of day and seasons.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Quantifies the traffic impact of mixed-use zoning adjacent to transit, providing empirical support for TOD (transit-oriented development) policies.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Transit-adjacent mixed-use generates 35% lower peak-hour traffic per square foot vs. single-use commercial</li><li>Geographically weighted regression reveals strong spatial non-stationarity — national models poorly fit local conditions</li><li>Nighttime and weekend traffic patterns are more predictive of land-use mix than peak commute flows</li><li>AI models outperform traditional four-step travel demand models in capturing nonlinear land-use effects</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">GeoAI combining geographically weighted regression, random forests, and deep learning on multi-city traffic sensor and land-use data.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">35% lower peak traffic at mixed-use transit nodes; R² = 0.89 for traffic prediction incorporating land-use features.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Zoning boards and transit agencies can use these findings to justify mixed-use upzoning near transit stations.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Urban planners, zoning boards, DOTs, real estate developers, TOD advocates</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Single-author study warrants independent replication; land-use classification methodology not fully transparent.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2606.08207v1" target="_blank">Opportunity-Normalized Residence-Workplace Matching and the Scale-Sensitive Structure of Urban Commuting</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-medium">Medium Confidence</span>
+          <span class="badge">arXiv</span>
+          Mingzhi Xiao, Yuki Takayama
+        </div>
+        <p class="paper-summary">Apparent housing-jobs spatial mismatches that motivate transit corridor investments are often measurement artifacts of spatial scale rather than genuine inefficiency, suggesting some transit projects are solving phantom problems.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">This contrarian finding challenges a core justification for many transit corridor investments — if mismatches are scale artifacts, the policy response should target different interventions.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>What looks like spatial mismatch at coarse scales disappears when finer-grained opportunity data is used</li><li>Opportunity normalization changes which neighborhoods appear underserved by transit by 30–50%</li><li>Scale sensitivity is highest in polycentric cities with multiple employment sub-centers</li><li>Transit corridor planning should use opportunity-normalized metrics rather than simple jobs-housing ratios</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Novel opportunity-normalized commuting framework; applied to multiple US cities at varying spatial resolutions; comparison of mismatch metrics across scales.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">30–50% change in identified underserved areas when opportunity normalization applied; significant implications for transit investment prioritization.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">MPOs and transit agencies should audit their needs-assessment methodologies for scale dependence before committing to capital projects.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Metropolitan planning organizations, transit capital project evaluators, urban economists</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Theoretical framework; empirical validation on actual transit investment outcomes not yet conducted.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2606.06189v1" target="_blank">A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-medium">Medium Confidence</span>
+          <span class="badge">arXiv</span>
+          Lindsay Burke, Maxfield Comstock, Jason Graham
+        </div>
+        <p class="paper-summary">A biologically-inspired slime-mold swarm algorithm dynamically routes demand-responsive transit vehicles with near-optimal efficiency at a fraction of the computational cost of conventional optimization.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Demand-responsive transit could serve low-density areas that fixed routes cannot economically serve, but only if routing can be solved in real-time — slime-mold algorithms may be the key.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>Physarum polycephalum network formation solves the DRT routing problem as a self-organizing flow problem</li><li>Achieves 94% of optimal coverage at 5% of computational cost vs. mixed-integer programming</li><li>The algorithm naturally handles new demand requests and vehicle failures without global recomputation</li><li>Performs best in moderate-density areas where fixed routes are inefficient but pure ride-hail is unaffordable</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Agent-based simulation of slime-mold algorithm applied to synthetic and real transit demand scenarios; comparison to MILP optimizer and existing DRT algorithms.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">94% optimal coverage; computation 20x faster than MILP; degrades gracefully under demand spikes unlike rule-based systems.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Could enable affordable demand-responsive transit in suburban and rural areas that currently have no transit service.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">DRT operators, suburban transit planners, microtransit startups, rural mobility advocates</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Algorithm not yet tested in live operations; simulation assumptions may not capture full complexity of real demand patterns.</p>
+      </div>
+      <div class="paper-card">
+        <div class="paper-title"><a href="https://arxiv.org/abs/2603.19474v1" target="_blank">TRACE: Trajectory Recovery with State Propagation Diffusion for Urban Mobility</a></div>
+        <div class="paper-meta">
+          <span class="badge badge-high">High Confidence</span>
+          <span class="badge">arXiv</span>
+          Jinming Wang, Hai Wang, Hongkai Wen
+        </div>
+        <p class="paper-summary">TRACE uses diffusion modeling with state propagation to reconstruct complete GPS trajectories from sparse samples, enabling high-quality transit origin-destination analysis from low-cost sensors.</p>
+
+        <div class="paper-section-title">Why It Matters</div>
+        <p class="paper-body">Most transit agencies lack dense GPS coverage; TRACE lets them derive detailed OD data from existing sparse sensors without expensive hardware upgrades.</p>
+
+        <div class="paper-section-title">Key Insights</div>
+        <ul class="insights-list">
+          <li>State propagation diffusion outperforms interpolation and prior ML methods on highly sparse trajectories</li><li>The model correctly recovers network-constrained paths (following road/rail infrastructure) even with 90% data loss</li><li>Recovered trajectories are accurate enough for transit demand modeling applications</li><li>Works across vehicle types (bus, rail, bike-share) with minimal re-training</li>
+        </ul>
+
+        <div class="paper-section-title">Methodology</div>
+        <p class="paper-body">Diffusion probabilistic model with state propagation; trained on dense GPS traces then evaluated on artificially sparsified data; comparison to map-matching and interpolation baselines.</p>
+
+        <div class="paper-section-title">Results</div>
+        <p class="paper-body">30% improvement in trajectory recovery accuracy vs. best prior methods; functional for transit OD analysis at &lt;10% original GPS density.</p>
+
+        <div class="paper-section-title">Practical Implications</div>
+        <p class="paper-body">Transit agencies can derive OD matrices and ridership patterns from existing AVL data, reducing need for costly passenger surveys.</p>
+
+        <div class="paper-section-title">Who Should Care</div>
+        <p class="paper-body">Transit data teams, smart city analysts, transportation researchers, AVL system vendors</p>
+
+        <div class="paper-section-title">Limitations</div>
+        <p class="paper-body">Performance degrades in areas with poor OpenStreetMap data; training requires access to dense GPS traces not available everywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-label">Contrarian Insights</div>
+    <div class="contrarian-box">The most provocative paper this week is the opportunity-normalized commuting work by Xiao and Takayama. The conventional justification for building transit corridors in 'underserved' areas rests on jobs-housing balance metrics — and this paper argues those metrics are frequently misleading artifacts of the spatial scale at which they're measured. If confirmed, this would mean that some of the most expensive transit capital projects are solving measurement problems rather than real mobility gaps. This should be required reading for every MPO preparing a NEPA-compliant needs assessment.</div>
+  </section>
+
+  <section class="block">
+    <div class="section-label">Actionable Takeaways</div>
+    <ul class="takeaways-list">
+      <li>Transit agencies should immediately audit on-time performance data alongside frequency data — Miami-Dade research confirms reliability improvements outperform frequency increases for ridership per dollar spent</li>
+      <li>Cities preparing transit investment justifications should test their jobs-housing balance metrics at multiple spatial scales before committing to corridor projects</li>
+      <li>Transit agencies with sparse GPS coverage can implement TRACE-like trajectory recovery to derive OD matrices without expensive survey programs</li>
+      <li>Network planners in mid-sized cities should benchmark their existing routes against spanning tree optimizations — the Canberra result (23% travel time savings) suggests significant low-hanging fruit</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="section-label">Long-Term Implications</div>
+    <p class="long-term">The convergence of AI measurement tools, provably optimal design algorithms, and equity-linked outcome data sets the stage for a generation of evidence-based transit investment that could genuinely outperform the politically-driven planning of the past. The slime-mold DRT paper points toward a future where the suburban transit desert — long considered economically unserviceable — can be reached by adaptive, self-organizing vehicle fleets. Meanwhile, the deprivation-bubble research from India and Mexico provides the moral and economic case for aggressive Global South transit investment that international development finance has historically underweighted.</p>
+  </section>
+
+  <section class="block">
+    <div class="section-label">Data Infographic</div>
+    <div class="svg-wrap">
+      <img src="research-infographic-2026-06-10.svg" alt="Transit Research Infographic 2026-06-10">
+      <br>
+      <a href="research-infographic-2026-06-10.svg" download class="download-btn">↓ Download SVG</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-text">Transit Research Digest · June 10, 2026 · Autonomous Analysis</span>
+    <a href="research.html" class="back-link">← Archive</a>
+  </div>
+</footer>
+
+</body>
+</html>
