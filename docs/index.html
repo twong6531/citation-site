@@ -102,6 +102,31 @@
   .exp-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
   .exp-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
+  .interactive-wrap { max-width: 1000px; margin: 0 auto; padding: 0 40px 80px; }
+  .game-card {
+    background: var(--surface);
+    border: 1px solid #1a3a2a;
+    border-radius: 10px;
+    padding: 36px 40px;
+    display: flex; align-items: center; gap: 40px;
+    transition: border-color .2s;
+  }
+  .game-card:hover { border-color: #1D9E75; }
+  .game-icon { font-size: 56px; line-height: 1; flex-shrink: 0; }
+  .game-tag { font-size: 9px; letter-spacing: 2px; font-weight: 700; color: #1D9E75; margin-bottom: 10px; }
+  .game-title { font-size: 26px; font-weight: 900; margin-bottom: 10px; }
+  .game-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; max-width: 500px; }
+  .game-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #1D9E75; color: #fff;
+    font-size: 13px; font-weight: 700; padding: 10px 22px; border-radius: 6px;
+    transition: opacity .2s;
+  }
+  .game-link:hover { opacity: .85; }
+  .game-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+  .game-pill { font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 3px; border: 1px solid #1a3a2a; color: #1D9E75; }
+  @media (max-width: 600px) { .game-card { flex-direction: column; gap: 20px; } }
+
   footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; }
   footer p { font-size: 12px; color: var(--muted); }
 </style>
@@ -199,6 +224,25 @@
     </a>
 
   </div>
+</div>
+
+<!-- INTERACTIVE -->
+<div class="interactive-wrap">
+  <div class="section-label">INTERACTIVE</div>
+  <a href="transit-game.html" class="game-card">
+    <div class="game-icon">&#x1F687;</div>
+    <div>
+      <div class="game-tag">BROWSER GAME</div>
+      <div class="game-title">TOD Builder</div>
+      <div class="game-pills">
+        <span class="game-pill">TRANSIT</span>
+        <span class="game-pill">URBAN PLANNING</span>
+        <span class="game-pill">SIMULATION</span>
+      </div>
+      <div class="game-desc">Build a transit-oriented city from scratch. Place metro stations, BRT lines, bike share, and mixed-use zoning. Watch ridership, population, and satisfaction respond in real time. Advance years to collect revenue and grow your network.</div>
+      <div class="game-link">Play TOD Builder &#x2192;</div>
+    </div>
+  </a>
 </div>
 
 <footer>
