@@ -1,26 +1,25 @@
 {
   "file": "dopamine-fracking-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-08T17:36:54Z",
+  "reviewed_at": "2026-06-10T17:38:00Z",
   "verdict": "REVISE",
-  "score": 70,
+  "score": 78,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists",
-    "YouTube word count within range (~1110 words)",
-    "Hook in first 3 lines (reel and YouTube)",
+    "YouTube script exists and voiceover content is within 600-1200 words",
+    "Hook in first 3 lines: 'Over 60% of your feed is now content from strangers you never chose to follow.'",
     "Hook does not start with 'Did you know'",
-    "CTA present in both reel and YouTube",
-    "Visual notes present for reel",
-    "No AI tells ('As an AI', 'certainly', 'I'd be happy to', etc.)",
-    "No duplicate topic in published docs (last 14 days)"
+    "Major claims sourced inline: BBC Worklife 2026, Hacker News upvote count, Facebook 2018 pivot, Zuckerberg post Jan 2018",
+    "CTA present in both reel and YouTube versions",
+    "Visual notes present in reel",
+    "No placeholder text",
+    "No AI tells detected",
+    "YouTube script covers real-world limitations honestly (resistance section)"
   ],
   "checks_failed": [
-    "Reel script over 200-word limit: voiceover is 223 words (23 over limit). At ~150 wpm this runs ~89 seconds, not 60.",
-    "Placeholder text present: '[site URL]' appears twice (reel SCENE 4 ON SCREEN TEXT and YouTube OUTRO ON SCREEN TEXT). Must be replaced before publish.",
-    "Primary source citation is insufficiently specific: 'viral essay (Hacker News, 579 upvotes / 291 comments, 2026-06-08)' has no author name, essay title, or URL. All downstream claims that lean on this source (the fracking metaphor origin, the three-domain argument, the AI slop framing) inherit this sourcing gap."
+    "Reel under 200 words: voiceover is ~298 words — 49% over limit; at 150 wpm this runs ~119 seconds, nearly double a 60-second reel"
   ],
-  "revision_notes": "1. Trim reel voiceover to ~175-185 words. The Scene 2 block is the most cuttable — the Facebook detail about 'social networking is no longer what it does' can be cut to a single sentence without losing impact. 2. Replace both '[site URL]' placeholders with the actual published article URL or a consistent placeholder token the publishing pipeline can substitute. 3. Upgrade the primary source citation: add the essay author, title, and direct URL. Without this, the central 'dopamine fracking' coinage claim cannot be independently verified by viewers.",
+  "revision_notes": "Reel VO must be cut to under 200 words. Current structure has 5 scenes; for 60 seconds you need 3. Recommended cut: merge Scenes 1 and 2 into a single 60-word beat (hook + data point); cut Scene 3's extended fracking analogy to one sentence; keep Scene 4 CTA as-is. Target: Hook 20w / Data 55w / Stakes 50w / CTA 30w = 155 words.",
   "fail_reason": null,
   "approved_for_publish": false
 }

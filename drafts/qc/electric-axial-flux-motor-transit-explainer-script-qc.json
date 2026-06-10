@@ -1,0 +1,26 @@
+{
+  "file": "electric-axial-flux-motor-transit-explainer-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-10T17:38:10Z",
+  "verdict": "REVISE",
+  "score": 76,
+  "checks_passed": [
+    "Reel script exists",
+    "YouTube script exists and voiceover content is within 600-1200 words",
+    "Hook in first 3 lines: 'The motor in a Lamborghini costs more than a city bus. Mercedes just made it mass-market.'",
+    "Hook does not start with 'Did you know'",
+    "Major claims cited inline",
+    "CTA present in both reel and YouTube versions",
+    "Visual notes present (dedicated VISUAL NOTES section in reel)",
+    "No placeholder text",
+    "No AI tells detected",
+    "Strong thumbnail concept and timestamps included"
+  ],
+  "checks_failed": [
+    "Reel under 200 words: voiceover is ~202 words — marginally over limit (2 words); functionally borderline but technically fails",
+    "Source quality: all 4 listed sources are Wikipedia articles (Axial Flux Motor, Electric Bus, Transit Bus) or 'YASA company data' without a URL or document name — Wikipedia is an acceptable starting point but primary sources (Mercedes press release, YASA data sheet, peer-reviewed spec comparison) should be substituted or added alongside"
+  ],
+  "revision_notes": "1. Trim reel VO by 3-5 words to get under 200: remove 'The motor that used to fill an engine bay now fits in a wheel hub' (14 words) and replace with nothing — the 42 vs 16 kW/kg stat is sufficient. 2. In the YouTube script's source section, replace or supplement Wikipedia citations with: Mercedes-Benz YASA acquisition press release (Sept 2021), YASA official technical specs page, IEA Global EV Outlook for China bus fleet data.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

@@ -1,29 +1,27 @@
 {
   "file": "us-cities-transit-gap-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-08T17:36:54Z",
+  "reviewed_at": "2026-06-10T17:38:42Z",
   "verdict": "REVISE",
-  "score": 62,
+  "score": 72,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists",
-    "YouTube word count within acceptable range (~1223 words, marginally over 1200)",
-    "Hook in first 3 lines (reel and YouTube)",
+    "YouTube script exists and voiceover content is within 600-1200 words",
+    "Hook in first 3 lines: 'The US spent $634 BILLION to make driving free. Transit got $0.'",
     "Hook does not start with 'Did you know'",
-    "CTA present in both reel and YouTube",
-    "Visual notes present for reel",
-    "No AI tells",
-    "No duplicate topic in last 14 days — distinct angle from prior transit equity articles"
+    "YouTube: all five decisions sourced to real legislation (Federal Aid Highway Act 1956, UMTA 1964, STAA 1982, FHA 1934, US v. NCL 1949)",
+    "CTA present in both reel and YouTube versions",
+    "Visual notes present in reel",
+    "No placeholder text",
+    "No AI tells detected",
+    "Historical facts are specific and accurately sourced in YouTube version"
   ],
   "checks_failed": [
-    "Reel script over 200-word limit: voiceover is 229 words (15% over). At 150 wpm this runs ~92 seconds.",
-    "Placeholder text present: '[site URL]' in YouTube OUTRO.",
-    "Funding gap figure inconsistency: reel states '$90 billion annual transit funding gap' (unsourced inline); YouTube states '$100B+ maintenance backlog' attributed to APTA. These are different metrics (annual funding gap vs. deferred maintenance backlog) and should not be conflated — nor should either appear without its proper inline source citation.",
-    "Two Wikipedia citations used as primary sources ('Wikipedia — General Motors streetcar conspiracy'; 'Wikipedia — Interstate Highway System'). Wikipedia is not an acceptable inline source for published scripts. These should cite the underlying primary sources (US v. National City Lines, 1949 court record; FHWA construction cost records) or an academic secondary source.",
-    "Script generation date is 2026-06-07 (yesterday), not 2026-06-08. File is not recorded in today's status.json video_scripts_produced list. Confirm this draft is intentionally included in today's QC cycle.",
-    "Thematic overlap with slime-mold-transit-script.md: both scripts cover the US suburban transit coverage failure as their setup. If published in sequence, the overlap in framing needs editorial differentiation."
+    "Reel under 200 words: voiceover is ~250 words — 25% over limit",
+    "Reel Scene 3 claim '$90 billion annual transit funding gap' has no inline source citation in the reel — only the YouTube references APTA for a different figure ($100B maintenance backlog); these are two different statistics and the discrepancy needs resolution",
+    "Reel Scene 3 claim 'Americans spend more on car ownership than food' has no source cited anywhere in the script — this stat needs attribution (AAA, BLS Consumer Expenditure Survey, etc.)"
   ],
-  "revision_notes": "1. Trim reel voiceover to ~180 words. Scene 2 can lose the UMTA $375M figure (keep the 26-year exclusion, cut the dollar amount detail to the YouTube version). 2. Replace '[site URL]' placeholder. 3. Reconcile funding figures: pick one metric and source it inline. Recommend: in reel, cut '$90B annual gap' entirely and replace with '26 years of compound highway-only investment' (more concrete and already sourced). In YouTube, keep the APTA $100B backlog figure and distinguish it explicitly from annual funding as 'deferred maintenance backlog.' 4. Replace both Wikipedia citations. For the streetcar conspiracy: cite the 1949 federal case (United States v. National City Lines, 186 F.2d 562) directly. For the Interstate cost figures: cite the FHWA 'Interstate Highway System' cost record or a peer-reviewed source. 5. Confirm intended publish date and add to status.json if this is a today item.",
+  "revision_notes": "1. Trim reel VO to under 200 words: cut Scene 3 down to one sentence — the 3-5x retrofit cost claim is the strongest stat and stands alone. 2. Reconcile the funding gap figure: decide whether to use '$90B annual gap' (source it to APTA or another org) or '$100B maintenance backlog' — do not use both inconsistently. Add '[Source: APTA]' inline in reel. 3. Source or remove the car-vs-food claim: BLS Consumer Expenditure Survey shows transportation > food for most income quintiles — cite it or cut it.",
   "fail_reason": null,
   "approved_for_publish": false
 }

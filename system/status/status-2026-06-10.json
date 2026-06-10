@@ -7,12 +7,12 @@
     "articles": "pending",
     "infographics": "pending",
     "video_scripts": "completed",
-    "qc": "pending",
+    "qc": "completed",
     "publishing": "blocked"
   },
   "queue_items": 4,
   "generated_at": "2026-06-10T06:00:00Z",
   "alerts": [
-    "approved.json has been empty since at least 2026-06-07 — Publishing Agent is blocked. Human approval required."
+    "approved.json has been empty since at least 2026-06-07 \u2014 Publishing Agent is blocked. Human approval required."
   ]
 }

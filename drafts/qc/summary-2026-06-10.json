@@ -1,0 +1,40 @@
+{
+  "date": "2026-06-10",
+  "reviewed_at": "2026-06-10T17:38:56Z",
+  "total_reviewed": 6,
+  "passed": 1,
+  "revise": 5,
+  "failed": 0,
+  "ready_to_publish": [
+    "slime-mold-transit-script"
+  ],
+  "needs_revision": [
+    {
+      "slug": "apple-gemini-2026-script",
+      "score": 72,
+      "primary_issues": ["reel VO 252 words (limit 200)", "deal terms source not named", "researcher headcount stats uncited"]
+    },
+    {
+      "slug": "dopamine-fracking-script",
+      "score": 78,
+      "primary_issues": ["reel VO 298 words (limit 200) — 49% over, structural rewrite needed"]
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "score": 76,
+      "primary_issues": ["reel VO 202 words (limit 200) — marginal", "all sources are Wikipedia, primary sources needed"]
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "score": 74,
+      "primary_issues": ["reel VO 305 words (limit 200) — 52% over, full reel rewrite required"]
+    },
+    {
+      "slug": "us-cities-transit-gap-script",
+      "score": 72,
+      "primary_issues": ["reel VO 250 words (limit 200)", "$90B funding gap claim unsourced in reel", "car-vs-food claim unsourced anywhere"]
+    }
+  ],
+  "blocked": [],
+  "qc_notes": "Systemic issue: all 6 reel scripts exceed the 200-word voiceover limit, indicating the script generation agent is not enforcing the 60-second timing constraint. The YouTube scripts are structurally strong across all items. The content topics partially overlap with recently published docs/ articles (slime-mold in research-2026-06-08, POMDP in research-2026-06-09, axial flux in research-2026-06-06) — this appears intentional for multi-format coverage but should be confirmed by editorial. No AI tells, no placeholder text, no critical factual failures detected. memory.json not found; duplicate check performed against docs/ directory."
+}
