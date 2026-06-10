@@ -8,7 +8,7 @@
     "infographics": "pending",
     "video_scripts": "completed",
     "qc": "completed",
-    "publishing": "blocked"
+    "publishing": "skipped_no_approved_items"
   },
   "queue_items": 4,
   "generated_at": "2026-06-10T06:00:00Z",
