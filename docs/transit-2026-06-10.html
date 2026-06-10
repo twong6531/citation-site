@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoCal Transit Intelligence — June 10, 2026</title>
+  <meta property="og:title" content="SoCal Transit Intelligence — June 10, 2026">
+  <meta property="og:description" content="10 stories: Metro DPS 950 first-day apps, LAX SkyLink testing, CA HSR LA-Anaheim EIR, FIFA World Cup transit, Metrolink crisis, Pacific Surfliner expansion, and more.">
+  <meta property="og:image" content="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?w=1200&ssl=1">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+    nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 800; font-size: 1rem; color: #f1f5f9; letter-spacing: -0.02em; }
+    .nav-brand span { color: #3b82f6; }
+    nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; font-size: 0.875rem; }
+    nav a:hover { color: #fff; }
+    .hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+    .hero .meta { display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .hero .meta span { color: #64748b; font-size: 0.85rem; }
+    .hero .meta strong { color: #7dd3fc; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+    .card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+    .priority.high { background: #ef4444; color: #fff; }
+    .priority.medium { background: #f59e0b; color: #000; }
+    .priority.low-medium { background: #64748b; color: #fff; }
+    .agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+    .card-body { padding: 1.25rem 1.5rem 1.5rem; }
+    .card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; line-height: 1.4; }
+    .date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+    .summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+    .card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+    ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+    .why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+    .connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+    .source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+    .source-link:hover { color: #60a5fa; text-decoration: underline; }
+    .status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+    .status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+    td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+    tr:nth-child(odd) td { background: #1e293b; }
+    tr:nth-child(even) td { background: #0f172a; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .dot-green { background: #22c55e; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-red { background: #ef4444; }
+    .dot-blue { background: #3b82f6; }
+    .themes { background: #0a1628; padding: 2rem; }
+    .themes-inner { max-width: 1400px; margin: 0 auto; }
+    .themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+    .theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+    .theme:last-child { border-bottom: none; }
+    .theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+    .theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+    footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">SoCal <span>Transit</span> Intelligence</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="transit.html">Archive</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">Southern California transit briefing — June 10, 2026</p>
+  <div class="meta">
+    <span>Covering <strong>June 2 – June 10, 2026</strong></span>
+    <span><strong>10</strong> stories</span>
+    <span>LA Metro · Metrolink · Amtrak · LAWA · CA HSR · SCAG</span>
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- STORY 1 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?w=1200&ssl=1"
+           alt="Metro Department of Public Safety sworn officer recruitment"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metro DPS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: Metro DPS Sworn Officer Recruitment Opens — 950 Applications in First 24 Hours</h2>
+      <p class="date-range">June 3 – June 9, 2026</p>
+      <p class="summary">LA Metro launched sworn officer recruitment for its new Department of Public Safety (DPS) — an in-house police force being built from scratch — and received 950 applications within the first 24 hours of the effort going live. These charter officers will shape the culture, policies, and community-centered approach of the new agency from day one, replacing Metro's reliance on contracted law enforcement from LASD and LAPD.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>950 applications</strong> submitted in first 24 hours of recruitment opening (June 2026)</li>
+        <li>Metro DPS is a brand-new in-house sworn law enforcement agency</li>
+        <li>Charter officers will define the department's culture and community-focused approach</li>
+        <li>Replaces long-running contract model with LASD and LAPD on Metro system</li>
+        <li>Metro Board approved creation of DPS as part of the $9.7B FY27 budget</li>
+        <li>Recruitment is open to lateral officers and new candidates</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Building an in-house police department for America's second-largest transit system is a generational change. The 950-day-one applications signal strong interest, but Metro faces a multi-year challenge to hire, train, and deploy enough officers to credibly address the rider safety concerns that have driven ridership declines since the pandemic.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (FIFA World Cup safety), Topic 10 (FY27 Budget)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-launches-sworn-officer-recruitment-for-its-department-of-public-safety/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 2 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/05/wc-free-fan-event-map.png?w=1200&ssl=1"
+           alt="FIFA World Cup 2026 LA Metro fan event map"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">LADOT</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: FIFA World Cup 2026 Begins June 11 — Full Transit War Plan Activated</h2>
+      <p class="date-range">May 29 – June 10, 2026</p>
+      <p class="summary">With the FIFA World Cup opening June 11, LA Metro, Metrolink, and LADOT have activated the most comprehensive transit mobilization in Southern California history. Metro has contracted Zum Transportation for shuttle services and selected Moovit to power its new unified transit app — the first time Metro has offered a single trip-planning tool covering bus, rail, and partner agencies. Free fan-zone events at venues across LA County are accessible via Metro with no match tickets required.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>FIFA World Cup 2026 LA matches begin <strong>June 11, 2026</strong> at SoFi Stadium</li>
+        <li>LA Metro contracted <strong>Zum Transportation</strong> for dedicated match-day shuttle services</li>
+        <li><strong>Moovit</strong> selected to power Metro's unified transit app across all agencies</li>
+        <li>Free fan zones at dozens of LA County locations — no match ticket required</li>
+        <li>Metrolink offering additional service on match days from Orange County and San Bernardino</li>
+        <li>Special fares and TAP card deals for visitors during tournament run</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The World Cup is a stress test Metro CEO Stephanie Wiggins has called the agency's "Super Bowl every day." With millions of international visitors relying on transit, Metro's performance over the next month will directly shape LA's bid to prove the city can handle the 2028 Olympics without gridlocking.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (DPS safety), Topic 5 (contactless fares), Topic 3 (LAX SkyLink)</p>
+      <a class="source-link" href="https://thesource.metro.net/go-metro-to-free-fan-events-across-l-a-county-to-celebrate-and-watch-the-fifa-world-cup/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 3 -->
+  <article class="card">
+    <div class="card-image">
+      <img src=""
+           alt="LAX SkyLink automated people mover testing"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LAWA</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: LAX's Long-Awaited Airport Rail Begins Operational Testing</h2>
+      <p class="date-range">May 12 – June 10, 2026</p>
+      <p class="summary">The LAX Automated People Mover — the connector between the consolidated Rental Car Facility/Metro transit hub and the central terminals — has begun active operational testing after years of delays. The LA Times reported vehicles are now running on the elevated loop, connecting all eight terminal clusters to the Metro Aviation/96th Street station on the Green and Crenshaw/K lines. The system is expected to open to the public just in time for the FIFA World Cup's LA matches.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Automated people mover runs a <strong>2.25-mile loop</strong> linking all eight LAX terminal clusters</li>
+        <li>Connects passengers to <strong>Metro Aviation/96th St Station</strong> (Green + K Lines)</li>
+        <li>Also connects to the consolidated Rental Car Campus and new LAX/Metro Transit Center</li>
+        <li>Testing began May 2026; public opening targeted for World Cup (June 2026)</li>
+        <li>Project cost: originally ~<strong>$2 billion</strong>, with cost overruns</li>
+        <li>Eliminates the LAX departure/arrival horseshoe loop for transit riders</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> When open, this link completes the long-promised one-seat rail connection from downtown LA and the broader Metro network straight into LAX's central terminals — a connection that has been missing since Metro's first rail lines opened in the 1990s. Timing with the World Cup is critical for international visitor first impressions.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (World Cup), Topic 5 (contactless fares for airport arrivals)</p>
+      <a class="source-link" href="https://www.latimes.com/california/story/2026-05-15/lax-long-awaited-train-to-hit-the-rails-as-testing-begins" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 4 -->
+  <article class="card">
+    <div class="card-image">
+      <img src=""
+           alt="California High-Speed Rail Los Angeles to Anaheim segment environmental review"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">CA HSR Authority</span>
+        <span class="agency">SCAG</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: CA High-Speed Rail Releases Draft Environmental Review for LA–Anaheim Segment</h2>
+      <p class="date-range">April – June 2026</p>
+      <p class="summary">The California High-Speed Rail Authority released its Draft Environmental Impact Report/Environmental Impact Statement for the Los Angeles to Anaheim segment — the southernmost section of the statewide bullet-train system. The 50-mile segment would link Union Station in downtown LA to Anaheim's ARTIC station, running parallel to the I-5 and through several densely populated communities. The EIR opens a 60-day public comment period and represents the final major environmental step before federal approval.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Segment: <strong>Los Angeles Union Station → Anaheim ARTIC</strong> (~50 miles)</li>
+        <li>Draft EIR/EIS released spring 2026; public comment period open</li>
+        <li>Would serve Norwalk/Santa Fe Springs, Fullerton, and Anaheim stations</li>
+        <li>Overall CA HSR project cost estimate now <strong>$231 billion</strong> (FOX 11 reported March 2026)</li>
+        <li>Trump administration pulled billions in federal HSR funding earlier in 2026; CA is contesting</li>
+        <li>Brightline West (Las Vegas–Rancho Cucamonga) maintains separate 2029 completion target</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The LA-Anaheim EIR is the missing southern bookend of a project that already has significant construction progress in the Central Valley. Getting environmental clearance on this corridor is essential to any realistic LA-area connection, but the looming federal funding fight and soaring cost estimates cast a long shadow over the timeline.</p>
+      <p class="connections"><em>Connects to:</em> Topic 7 (Brightline West), Topic 9 (SB 79 transit-oriented housing)</p>
+      <a class="source-link" href="https://labusinessjournal.com/real-estate/draft-high-speed-rail-eir-released/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 5 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://erepublic.brightspotcdn.com/dims4/default/9bf1129/2147483647/strip/true/crop/2333x1134+0+65/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fa9%2F4c%2F0406a71e4acda6fcc9aa3e891fcb%2Fgt-octnov-webart-14.jpg"
+           alt="LA Metro new mobile app and contactless fare payment system"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">TAP</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: Metro App + Contactless Fares Launch — One Tap for 26 Agencies</h2>
+      <p class="date-range">May 28 – June 7, 2026</p>
+      <p class="summary">LA Metro launched contactless credit/debit card tap-to-pay across all Metro rail and bus validators — no TAP card required — and simultaneously released a new official Metro mobile app integrating trip planning, real-time alerts, and service updates. The combined upgrade, powered by Moovit on the trip-planning side, went live system-wide just weeks before the FIFA World Cup opens and covers 26 TAP-participating agencies in LA County. One card can cover up to five riders on a single tap.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Contactless Visa, Mastercard, Amex, Apple Pay, Google Pay accepted at all validators</li>
+        <li>One tap covers <strong>up to 5 riders</strong> simultaneously</li>
+        <li>Covers <strong>26 TAP partner agencies</strong> across LA County (LADOT to follow)</li>
+        <li>New Metro app: free on iOS and Android; includes real-time alerts and trip planner</li>
+        <li>Moovit selected as the platform partner powering trip-planning features</li>
+        <li>Designed specifically to eliminate barriers for <strong>international World Cup visitors</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Removing the TAP card purchase step is a game-changer for tourists and infrequent riders. This is Metro's most significant customer-facing technology launch in its history, and the real-world test comes immediately with millions of World Cup visitors in June 2026.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (World Cup), Topic 3 (LAX connection)</p>
+      <a class="source-link" href="https://thesource.metro.net/one-app-to-ride-them-all-and-yes-its-metros-app/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 6 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scpr.brightspotcdn.com/dims4/default/ac0f867/2147483647/strip/true/crop/1200x630+0+87/resize/1200x630!/quality/90/?url=http%3A%2F%2Fscpr-brightspot.s3.us-west-2.amazonaws.com%2F31%2F9b%2F9a76f3eb425f8027c1e69147475a%2Flaist-share-image.png"
+           alt="LA Metro sues Burbank over BRT construction permits"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">City of Burbank</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: LA Metro Sues Burbank Over Construction Permits for Regional BRT Project</h2>
+      <p class="date-range">May – June 2026</p>
+      <p class="summary">LA Metro has filed a lawsuit against the City of Burbank, alleging the city is blocking construction permits for a regional Bus Rapid Transit project that crosses municipal boundaries. Metro argues that as a regional agency, it has authority over multi-jurisdictional transit infrastructure and that Burbank's permitting delays constitute an unlawful impediment to a state-funded project. The suit highlights growing friction between regional transit authorities and local municipalities over project approvals.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>LA Metro filed suit against City of Burbank over withheld construction permits</li>
+        <li>Project involves a regional BRT corridor passing through Burbank's jurisdiction</li>
+        <li>Metro claims authority as a regional agency supersedes local permitting for transit</li>
+        <li>Burbank has not publicly commented on the legal action as of publication</li>
+        <li>The dispute could delay BRT construction timeline affecting commuters across the North Valley</li>
+        <li>Similar tensions have occurred with other LA County cities over Metro right-of-way access</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> If Metro wins, it establishes a strong legal precedent that regional transit projects can move over local objections — potentially accelerating BRT and light rail buildouts across LA County. A loss would embolden other cities to use permitting as a veto over state-funded infrastructure.</p>
+      <p class="connections"><em>Connects to:</em> Topic 8 (SB 79 housing / transit corridor development), Topic 10 (FY27 capital budget)</p>
+      <a class="source-link" href="https://laist.com/news/transportation/la-metro-is-suing-burbank-over-construction-permits-for-a-regional-transit-project" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 7 -->
+  <article class="card">
+    <div class="card-image">
+      <img src=""
+           alt="Metrolink commuter rail ridership drops service cuts"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">SCAG</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: Metrolink Ridership Drops, "Temporary" Service Cuts Show No End in Sight</h2>
+      <p class="date-range">April – June 2026</p>
+      <p class="summary">Metrolink, Southern California's commuter rail network, is grappling with a structural ridership and financial crisis. The Orange County Register reported that ridership figures remain well below pre-pandemic levels, and service cuts once billed as "temporary" appear increasingly permanent as the agency struggles to justify frequency on low-demand corridors. Meanwhile, Planetizen reported the agency continues operating with reduced timetables while debating its long-term service model ahead of major events like the FIFA World Cup and 2028 Olympics.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metrolink ridership remains significantly below 2019 pre-pandemic levels</li>
+        <li>"Temporary" service cuts from 2020–2021 have not been restored on multiple lines</li>
+        <li>Santa Barbara Metrolink extension proposal was scrapped; Pacific Surfliner to fill gap instead</li>
+        <li>Metrolink is preparing added capacity for FIFA World Cup match days in June 2026</li>
+        <li>Agency faces structural budget challenges with limited new revenue sources</li>
+        <li>A pedestrian was killed by a Metrolink train in Van Nuys in recent weeks</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metrolink serves as the critical inter-county connector for LA, Orange, Riverside, San Bernardino, and Ventura counties — but its future role is uncertain. Without addressing cost-per-rider ratios and attracting riders back from cars, the agency risks further contraction right as SoCal needs robust commuter rail for the Olympics buildout.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (World Cup rail demand), Topic 4 (HSR would eventually complement Metrolink)</p>
+      <a class="source-link" href="https://www.ocregister.com/2026/04/01/ridership-drop-service-cuts-plague-metrolink-as-it-struggles-to-define-its-future/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 8 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://media.amtrak.com/wp-content/uploads/2026/04/NB-Surfliner-Arriving-Santa-Barbara-Station-Photo-2-1024x683.jpg"
+           alt="Amtrak Pacific Surfliner arriving at Santa Barbara Station"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Amtrak</span>
+        <span class="agency">Pacific Surfliner</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: Pacific Surfliner Adds New Daily Roundtrip — LA to San Luis Obispo</h2>
+      <p class="date-range">April – June 2026</p>
+      <p class="summary">Amtrak's Pacific Surfliner added a new daily roundtrip connecting Los Angeles Union Station to San Luis Obispo, bringing the total to 13 daily roundtrips on the San Diego–LA–SLO corridor and creating new non-stop options for Central Coast travel. The addition also adds service to Goleta (near Santa Barbara), replacing the canceled Metrolink Santa Barbara extension proposal with intercity rail. The expansion is part of Amtrak's multi-year effort to build out the most frequent corridor in its network.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>New daily roundtrip: Los Angeles Union Station ↔ San Luis Obispo</li>
+        <li>Pacific Surfliner now runs <strong>13 daily roundtrips</strong> on the San Diego–LA–SLO corridor</li>
+        <li>New service also stops at <strong>Goleta</strong> (near Santa Barbara)</li>
+        <li>Fills gap left by canceled Metrolink Santa Barbara commuter rail extension</li>
+        <li>Pacific Surfliner is Amtrak's busiest state-supported corridor in the western US</li>
+        <li>San Diego ↔ Los Angeles leg also added a 12th daily roundtrip in parallel expansion</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Each additional Pacific Surfliner roundtrip puts more options on the table for the hundreds of thousands of Central Coast residents who currently have no practical alternative to driving Highway 101. The Goleta stop specifically unlocks connections for UCSB's 26,000-student campus and the Santa Barbara biotech corridor.</p>
+      <p class="connections"><em>Connects to:</em> Topic 7 (Metrolink Santa Barbara extension canceled), Topic 4 (CA HSR south segment would eventually parallel this route)</p>
+      <a class="source-link" href="https://media.amtrak.com/2026/04/new-daily-pacific-surfliner-train-connects-los-angeles-and-san-luis-obispo/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 9 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/8.jpeg?fit=1200%2C801&ssl=1"
+           alt="Metro painting crew at work in the transit system"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: Inside Metro's World Cup Prep — The Paint Crews Finishing the System</h2>
+      <p class="date-range">June 8, 2026</p>
+      <p class="summary">An LA Metro feature story published June 8 spotlights the agency's 40-person painting team, which has been working since 5:30 a.m. daily from its Vernon base to clean, restore, and prep stations and facilities across the entire Metro system before millions of World Cup visitors arrive. The team deploys to rail stations, maintenance yards, and anywhere in the network that needs attention — a rarely seen but essential part of the transit operation that directly affects first impressions for international riders.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metro painters start at <strong>5:30 a.m.</strong> daily from the Pacific Boulevard facility in Vernon</li>
+        <li>Team covers the full Metro system — rail stations, bus facilities, maintenance yards</li>
+        <li>World Cup prep is driving an accelerated schedule of station repainting and refurbishment</li>
+        <li>The crew handles not just aesthetics but protective coatings that extend infrastructure life</li>
+        <li>Station appearance is a top rider concern in Metro's annual survey data</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Station cleanliness and appearance rank among the top complaints from Metro riders and are directly tied to perception of safety. The intensive pre-World Cup push to refresh the system's physical condition is a tangible indicator of how seriously Metro is treating this event as a global showcase.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (World Cup), Topic 1 (DPS safety/cleanliness priority in FY27 budget)</p>
+      <a class="source-link" href="https://thesource.metro.net/meet-the-team-that-brings-color-to-the-metro-system/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 10 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/Screenshot-2026-06-04-at-11.03.43-AM.png?fit=1200%2C586&ssl=1"
+           alt="Metro three-peat win at International Bus Roadeo championship"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: Metro Three-Peats at International Bus Roadeo — Grand Champion Again</h2>
+      <p class="date-range">June 2–4, 2026</p>
+      <p class="summary">LA Metro's Maintenance team won the International Bus Roadeo championship for the third consecutive year, earning the Grand Champion title for the second year running — the sport's equivalent of back-to-back titles. Metro also captured the 2026 Bus Security Gold Award for its innovative Bus Barrier project, recognizing work to protect operators and passengers from violent incidents on buses. The Roadeo tests teams on precision driving, vehicle inspection, and emergency procedures.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>Third consecutive year</strong> winning the International Bus Roadeo</li>
+        <li>Second year in a row as <strong>Grand Champion</strong></li>
+        <li>Also won the <strong>2026 Bus Security Gold Award</strong> for the Bus Barrier project</li>
+        <li>The Roadeo tests vehicle inspection, precision driving, and emergency response</li>
+        <li>Competing against transit agencies from across North America</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Three-peat Bus Roadeo wins reflect genuine excellence in fleet maintenance and operator skill — which translates directly to vehicle reliability and safety on the street. As Metro heads into the World Cup and Olympics years, maintaining that operational standard across a 2,000-plus bus fleet is critical.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (DPS culture-building), Topic 5 (service quality ahead of World Cup)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-three-peats-at-international-bus-roadeo/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<!-- AGENCY STATUS BOARD -->
+<div class="status-board">
+  <h2>Agency Status Board — June 10, 2026</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Development</th>
+        <th>Next Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro</strong></td>
+        <td><span class="status-dot dot-green"></span>Active — World Cup Mode</td>
+        <td>Contactless fares + new app live; DPS recruitment open (950 day-one apps); D Line Section 1 open</td>
+        <td>FIFA World Cup match days Jun 11; LAX SkyLink public opening</td>
+      </tr>
+      <tr>
+        <td><strong>Metro DPS</strong></td>
+        <td><span class="status-dot dot-blue"></span>Recruitment Phase</td>
+        <td>950 applications in first 24 hours; charter officer selections underway</td>
+        <td>First officer cohort selection; training academy launch</td>
+      </tr>
+      <tr>
+        <td><strong>LAWA / LAX</strong></td>
+        <td><span class="status-dot dot-yellow"></span>Testing</td>
+        <td>Automated People Mover in operational testing; connects all terminals to Metro K/Green Lines</td>
+        <td>Public opening target: June 2026 (World Cup); full SkyLink activation</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink</strong></td>
+        <td><span class="status-dot dot-red"></span>Under Pressure</td>
+        <td>Ridership down vs. 2019; temporary cuts persisting; Santa Barbara extension scrapped</td>
+        <td>World Cup supplemental service; long-term funding strategy TBD</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak / Pacific Surfliner</strong></td>
+        <td><span class="status-dot dot-green"></span>Expanding</td>
+        <td>13th daily roundtrip (LA–SLO) added; Goleta stop restored; 12th SD–LA roundtrip also added</td>
+        <td>Further frequency additions; coordination with CA HSR planning</td>
+      </tr>
+      <tr>
+        <td><strong>CA High-Speed Rail</strong></td>
+        <td><span class="status-dot dot-yellow"></span>EIR Phase (Southern)</td>
+        <td>LA–Anaheim Draft EIR/EIS released; $231B cost estimate; federal funding under dispute</td>
+        <td>60-day public comment period closes; federal funding appeal resolution</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG / SB 79</strong></td>
+        <td><span class="status-dot dot-blue"></span>Implementation</td>
+        <td>SoCal transit-oriented housing map published; cities developing response plans</td>
+        <td>Local jurisdictions file compliance plans; appeals period for affected properties</td>
+      </tr>
+      <tr>
+        <td><strong>Brightline West</strong></td>
+        <td><span class="status-dot dot-yellow"></span>Pre-Construction</td>
+        <td>Las Vegas–Rancho Cucamonga line pre-construction underway; 2029 target maintained</td>
+        <td>Construction contract awards; Rancho Cucamonga station design finalized</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- EMERGING THEMES -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes — June 10, 2026</h2>
+
+    <div class="theme">
+      <h3>1. The World Cup Is Metro's Real Olympics Preview</h3>
+      <p>Every major system upgrade — contactless fares, new app, DPS recruitment, LAX SkyLink, station repainting — has the same deadline: the FIFA World Cup opening on June 11. Metro leadership is explicitly treating the tournament as a dress rehearsal for 2028. The agency's ability to move millions of international visitors who don't know LA's transit system will be broadcast globally and set the political baseline for Olympic-scale infrastructure investment.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. In-House Police vs. Contracted Model: A Generational Gamble</h3>
+      <p>The 950-day-one applications for Metro DPS are encouraging, but building a sworn police department from scratch — with its own culture, union, training academy, and oversight structure — is a multi-year project that will run in parallel with the most demanding operational period in Metro's history. The core question: can Metro recruit and retain enough officers fast enough to actually change the safety picture before the 2028 Olympics?</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. Metrolink and the Structural Commuter Rail Crisis</h3>
+      <p>Metrolink's ridership plateau and lingering service cuts reveal a regional commuter rail model that hasn't fully adapted to post-pandemic hybrid work. While Metro and Amtrak are expanding, Metrolink is contracting — even as the 2028 Olympics will demand more inter-county capacity than the current timetable can provide. The agency's path forward may require the kind of radical frequency or fare restructuring that has proven politically difficult for a multi-county joint-powers authority.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. CA HSR's Southern Pivot: Cost vs. Credibility</h3>
+      <p>Releasing the LA–Anaheim Draft EIR while the project's $231B price tag and federal funding disputes dominate headlines puts the High-Speed Rail Authority in a delicate position. The EIR process is legally necessary and a genuine milestone — but it also invites renewed scrutiny of whether the southern segment will ever be built within any reasonable budget. Brightline West's more modest, privately financed Las Vegas connector is increasingly cited as the more credible near-term model for high-speed rail in the region.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. Transit as Urban Infrastructure for Housing</h3>
+      <p>SB 79's implementation — requiring cities to allow dense housing near transit stops — is creating both opportunity and resistance across SoCal. The LAist transit housing map shows significant overlap between high-frequency Metro corridors and areas where cities have historically resisted upzoning. The Metro vs. Burbank BRT lawsuit adds a legal dimension: if transit agencies can override local permitting for infrastructure, that same tension will arise repeatedly as more transit corridors get built out.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>SoCal Transit Intelligence briefing — June 10, 2026</p>
+  <p style="margin-top:0.5rem">Sources: LA Metro The Source, LAist, LA Times, Amtrak Media, OC Register, CA HSR Authority, LA Business Journal, Smart Cities Dive, GovTech, Planetizen, CSULB University Times</p>
+  <p style="margin-top:0.5rem">Generated June 10, 2026 · <a href="transit.html" style="color:#3b82f6">View full archive</a></p>
+</footer>
+
+</body>
+</html>
