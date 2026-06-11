@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoCal Transit Intelligence — June 11, 2026</title>
+<meta property="og:title" content="SoCal Transit Intelligence — June 11, 2026">
+<meta property="og:description" content="10-story briefing: D Line open, $9.7B budget, World Cup transit surge, Metrolink tap-to-pay, CA HSR at $231B, LAX SkyLink testing, SB 79 housing law, and more.">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+nav .brand { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; color: #94a3b8; text-transform: uppercase; }
+nav .nav-links { display: flex; gap: 1.5rem; }
+nav a { color: #94a3b8; text-decoration: none; font-size: 0.82rem; }
+nav a:hover { color: #fff; }
+.hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+.hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; color: #3b82f6; text-transform: uppercase; font-weight: 700; margin-bottom: 0.75rem; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; line-height: 1.15; }
+.hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.05rem; }
+.hero .date-window { display: inline-block; margin-top: 1rem; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); border-radius: 999px; padding: 0.3rem 1rem; font-size: 0.78rem; color: #7dd3fc; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.priority.high { background: #ef4444; color: #fff; }
+.priority.medium { background: #f59e0b; color: #000; }
+.priority.low-medium { background: #64748b; color: #fff; }
+.agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+.card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; line-height: 1.35; }
+.date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+.connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+.source-link:hover { color: #60a5fa; text-decoration: underline; }
+.status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+.status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:nth-child(odd) td { background: #1e293b; }
+tr:nth-child(even) td { background: #0f172a; }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+.status-dot.green { background: #22c55e; }
+.status-dot.yellow { background: #f59e0b; }
+.status-dot.red { background: #ef4444; }
+.status-dot.blue { background: #3b82f6; }
+.themes { background: #0a1628; padding: 2rem; }
+.themes-inner { max-width: 1400px; margin: 0 auto; }
+.themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+.theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+.theme:last-child { border-bottom: none; }
+.theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+.theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+footer a { color: #64748b; text-decoration: none; }
+footer a:hover { color: #94a3b8; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } nav .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="brand">SoCal Transit Intelligence</span>
+  <div class="nav-links">
+    <a href="transit.html">Archive</a>
+    <a href="index.html">Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Southern California Transit Briefing</div>
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">LA Metro · Metrolink · Amtrak · LAWA · CA HSR · SCAG · OCTA · MTS</p>
+  <div class="date-window">June 2 – June 11, 2026 &nbsp;·&nbsp; 10 Stories</div>
+</div>
+
+<!-- STORY GRID -->
+<div class="grid">
+
+  <!-- TOPIC 1: D Line Opens -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/02/WilshireLaCienega2026Feb01.jpeg"
+           alt="Wilshire/La Cienega Metro D Line station"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: D Line Extension Opens — Downtown to Beverly Hills in 23 Minutes</h2>
+      <p class="date-range">May 7 – June 8, 2026</p>
+      <p class="summary">LA Metro's Purple/D Line Extension Section 1 opened May 8, 2026, extending the subway four miles westward through the Miracle Mile to Beverly Hills. Three new stations serve Koreatown, LACMA, and the La Cienega corridor, capping a 65-year planning effort. Skanska and joint venture partners completed the $3.5 billion build-out in time for a free-fare opening weekend before the FIFA World Cup's LA matches.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>$3.5 billion</strong> total cost for Section 1</li>
+        <li><strong>4 miles</strong> of new subway tunnel from Koreatown to Beverly Hills</li>
+        <li><strong>3 new stations:</strong> Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega</li>
+        <li><strong>23 minutes</strong> La Cienega → Union Station (was 45–60 min by car in rush hour)</li>
+        <li><strong>30,000+</strong> daily boardings already on corridor buses — among highest in system</li>
+        <li>Free system-wide service May 8–10 for opening weekend</li>
+        <li><strong>Sections 2 &amp; 3</strong> under construction; Westwood expected ~2028</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The D Line Extension is the most significant expansion of LA's subway in a generation, finally linking the dense Wilshire corridor to the rail network. It also positions Metro for increased ridership during the 2026 World Cup and 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (FY27 Budget), Topic 3 (World Cup Transit)</p>
+      <a class="source-link" href="https://la.streetsblog.org/2026/05/07/new-d-line-subway-will-change-how-angelenos-get-around" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 2: FY27 Budget + Projects -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/05/LARiver6thStreet2026Jan17_01.jpeg"
+           alt="LA River 6th Street Bridge and transit infrastructure"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: $9.7 Billion FY27 Budget Approved — East Valley Rail &amp; NoHo BRT Get Green Light</h2>
+      <p class="date-range">May 28 – June 4, 2026</p>
+      <p class="summary">Metro's board approved a $9.7 billion FY2026–27 budget with a modest 2.4% increase while holding service levels at 8.8 million revenue hours. The same board session locked in life-of-project budgets for two major corridors: the East San Fernando Valley Light Rail ($3.999B) and the North Hollywood–Pasadena BRT ($409M). Mayor Karen Bass was simultaneously elected Metro board chair, effective July 1. A record 7,500+ residents participated in the budget engagement process.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>$9.7 billion</strong> total budget, up 2.4% year-over-year</li>
+        <li><strong>8.8 million</strong> revenue service hours maintained</li>
+        <li><strong>$886.9 million</strong> for Highway Multimodal (95%+ freeway-focused)</li>
+        <li>Metrolink regional funding cut <strong>$181.4M → $175.3M</strong> (3.4%)</li>
+        <li>East San Fernando Valley Rail: <strong>$3.999B</strong>, 6.5 mi, 11 stations along Van Nuys Blvd, opens <strong>2032</strong></li>
+        <li>NoHo–Pasadena BRT: <strong>$409M</strong>, 19 mi, 22 stations across 5 cities, opens <strong>early 2028</strong></li>
+        <li>L.A. River bike/walk path motion advanced — governance questions to be resolved before 2028</li>
+        <li><strong>7,500+</strong> public participants in budget process — record engagement</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Locking in budgets for two major transit corridors signals Metro can still advance its 2028-era pipeline even under fiscal pressure. The Metrolink funding cut, though modest, adds to that agency's structural challenges.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (D Line), Topic 4 (Metrolink), Topic 8 (SB 79)</p>
+      <a class="source-link" href="https://la.streetsblog.org/2026/05/28/metro-may-2026-board-updates-budget-east-valley-rail-noho-pasadena-river-path-and-more" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 3: FIFA World Cup Transit Surge -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/06/WorldCupTransitmap2026Jun.jpg"
+           alt="World Cup 2026 SoCal transit map"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">Surfliner</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: FIFA World Cup 2026 — Six-Agency SoCal Transit Mobilization Begins</h2>
+      <p class="date-range">June 4 – July 19, 2026</p>
+      <p class="summary">With the World Cup's eight LA Stadium matches running June 12 through July 10, SoCal's transit agencies launched the region's largest coordinated transit operation in years. LA Metro is running direct bus service from multiple hubs to the stadium at $1.75 per ride. Metrolink is providing expanded late-night service on five lines with free Metro transfers. Amtrak Pacific Surfliner added late-night trains on match dates and made reservations mandatory through July 19.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>8 LA Stadium matches:</strong> June 12, 15, 18, 21, 25, 28; July 2, 10</li>
+        <li>Metro direct bus to LA Stadium: <strong>$1.75 each way</strong>, service starts 4 hrs before kickoff</li>
+        <li>Metrolink expanded on <strong>5 lines</strong> (91/Perris Valley, Antelope Valley, OC, San Bernardino, Ventura) with late-night trains + free Metro transfers</li>
+        <li>Pacific Surfliner: <strong>reservations required June 11–July 19</strong>; 20% discount code "soccer2026" through July 15</li>
+        <li>Late-night Surfliner departures added for June 12, 13, 15, 25 from LA Union Station</li>
+        <li>Heart of the City Union Station Fan Zone: <strong>June 25–28</strong></li>
+        <li>Burbank Downtown special stop: July 18–19 for LA World Cup Fan Zone</li>
+        <li>IDEMIA LED transit cards launched as "North America's first" for major event</li>
+        <li>LA Metro + Moovit app integration for real-time navigation</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The World Cup is the largest-scale test of SoCal's multi-agency transit coordination before the 2028 Olympics. Performance and ridership data will directly inform Olympic transit planning across LA Metro, Metrolink, and the Surfliner.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (Metrolink contactless), Topic 9 (Pacific Surfliner)</p>
+      <a class="source-link" href="https://thesource.metro.net/go-metro-to-free-fan-events-across-l-a-county-to-celebrate-and-watch-the-fifa-world-cup/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 4: Metrolink Contactless Pay -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://www.metrolinktrains.com/globalassets/news/contactlesspress2.jpg"
+           alt="Metrolink contactless payment tap validator"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">SCAG</span>
+        <span class="agency">CalSTA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: Metrolink Debuts Tap-to-Pay Pilot on San Bernardino Line Amid Ridership Pressures</h2>
+      <p class="date-range">May 15 – June 10, 2026</p>
+      <p class="summary">Metrolink launched a six-month contactless payment pilot June 10 on its San Bernardino Line and Arrow service, allowing riders to tap credit cards, debit cards, or mobile wallets at validators for a distance-based, pay-as-you-go experience — the first such system on the commuter rail network. The rollout is timed to serve World Cup visitors unfamiliar with Metrolink's traditional ticketing. This comes as the agency separately faces a significant ridership decline and service cuts, with the Orange County Register reporting the agency is "struggling to define its future."</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>6-month pilot launched <strong>June 10, 2026</strong></li>
+        <li>Lines: <strong>San Bernardino Line + Arrow</strong> (Redlands ↔ Los Angeles)</li>
+        <li>Accepts Visa, MC, Discover, Amex, <strong>Apple Pay, Google Pay</strong></li>
+        <li>Daily caps: <strong>$15 weekdays / $10 weekends</strong></li>
+        <li>Max one-way fare: <strong>$10.50</strong></li>
+        <li>Must tap same card/device at both boarding and exit validators</li>
+        <li>Day Passes, Flex Passes, Monthly Passes and loyalty discounts NOT available during pilot</li>
+        <li>Developed with <strong>SCAG and CalSTA</strong> support</li>
+        <li>Metro reduced Metrolink funding by 3.4% in FY27 budget; agency ridership still below pre-pandemic</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Contactless payments lower the friction barrier for casual riders and tourists — exactly the demographic Metrolink needs to grow. If the pilot succeeds, it could expand system-wide and become the standard ahead of the 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (FY27 Budget), Topic 3 (World Cup), Topic 5 (HSR interoperability)</p>
+      <a class="source-link" href="https://www.metrolinktrains.com/news/metrolink-debuts-contactless-payment-pilot-providing-faster-easier-fare-payment-option-ahead-of-fifa-world-cup-2026/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 5: California HSR -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2025/10/WilshireLaBrea2025Aug08_03.jpg"
+           alt="California High-Speed Rail infrastructure"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#7f1d1d,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">CA HSR</span>
+        <span class="agency">State</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: California HSR Costs Soar to $231 Billion — New Business Plan &amp; $3.5B Contract Approved</h2>
+      <p class="date-range">April 28 – June 1, 2026</p>
+      <p class="summary">California's High-Speed Rail Authority released its 2026 Business Plan, which critics say violates state law, alongside cost estimates that have ballooned to $231 billion — up from the original $33 billion estimate and a most recent $126 billion figure. Amid the controversy, the Authority approved a $3.5 billion contract to begin laying the first tracks on a new timeline, and Governor Newsom appointed a former aide as the new HSR board chair just before the board vote. Lawmakers in Sacramento are simultaneously advancing bills to shield HSR records from public scrutiny.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>New cost estimate: <strong>$231 billion</strong> (up from original $33B in 2008)</li>
+        <li>Most recent prior estimate: <strong>$126 billion</strong> (April 2026)</li>
+        <li><strong>$3.5 billion contract</strong> approved June 1 to begin laying first tracks</li>
+        <li>Former Newsom aide appointed new HSR board chair <strong>immediately before</strong> contract vote</li>
+        <li>2026 Business Plan described as "violating state law" by KCRA; adopted with controversy</li>
+        <li>California bill advancing to keep some HSR records private ("atom bomb on transparency" — CalMatters)</li>
+        <li>Republican leaders calling to "pull the plug"; Fox Business calls it "worst public infrastructure failure in US history"</li>
+        <li>Trump administration previously pulled billions in federal funding (July 2025)</li>
+        <li>Brightline West (Vegas–Rancho Cucamonga) separately targeting <strong>2029 completion</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> At $231 billion, California HSR has become a fiscal and political flashpoint that threatens to consume resources needed for near-term transit projects in SoCal. The governance controversy and transparency legislation raise serious questions about the project's accountability.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (Metro budget), Topic 6 (LAX SkyLink — federal funding risk)</p>
+      <a class="source-link" href="https://news.google.com/rss/search?q=California+high+speed+rail+2026+business+plan&hl=en-US&gl=US&ceid=US:en" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 6: LAX SkyLink -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/06/LAMayorprimary2026Jun04.jpg"
+           alt="LAX Automated People Mover SkyLink testing"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LAWA/LAX</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: LAX SkyLink APM Begins 60-Day Empty Testing — Late 2026 Opening Targeted</h2>
+      <p class="date-range">April 16 – April 24, 2026</p>
+      <p class="summary">After years of delays and more than $880 million in cost overruns, LAX's Automated People Mover — branded SkyLink — began a 60-day empty testing phase in late April, running vehicles without passengers across the automated guideway connecting all terminals and the new Consolidated Rent-A-Car facility. Testing officially confirmed underway by April 22 by NBC LA, Fox 11, and ABC7. A late 2026 public opening is now targeted, though earlier projections had promised January 2026.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Testing began: <strong>April 16–22, 2026</strong> (various agencies confirming different start dates)</li>
+        <li><strong>60-day empty testing period</strong> before passenger operations</li>
+        <li>Project is <strong>$880 million+ over original budget</strong> (per LAist, Oct 2025)</li>
+        <li>Original budget was approximately $2 billion; final cost well above $3 billion</li>
+        <li>Targeted public opening: <strong>late 2026</strong> (prior target was January 2026)</li>
+        <li>System connects all LAX terminals + Consolidated Rent-A-Car facility (ConRAC)</li>
+        <li>Passengers connect from the system to Metrolink and LA Metro at the intermodal transit center</li>
+        <li>World Cup match-day travel to LAX will precede SkyLink opening</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> SkyLink is the final link in LAX's $5.5B modernization program and will allow passengers to reach any terminal — and connect to regional rail — without ground-level traffic. Opening before the 2028 Olympics is critical for the region's reputation as an air gateway.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (World Cup transit), Topic 5 (federal funding risk)</p>
+      <a class="source-link" href="https://news.google.com/rss/search?q=LAX+SkyLink+people+mover+testing+2026&hl=en-US&gl=US&ceid=US:en" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 7: Metro Sworn Officer Recruitment -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/05/LARiver6thStreet2026Jan17_01.jpeg"
+           alt="LA Metro public safety officer recruitment"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: Metro Launches Sworn Officer Recruitment — 950 Applications on Day One</h2>
+      <p class="date-range">May 29 – June 9, 2026</p>
+      <p class="summary">LA Metro's new Department of Public Safety opened sworn officer recruitment in late May 2026, receiving 950 applications within the first 24 hours — a historic response for the agency's new community-focused policing model. The initiative represents Metro building its own in-house law enforcement capacity, a major shift from its previous reliance on LASD and LAPD contract officers. Budget approved safety expansion in FY27. Metro is pitching the role as a career pathway with community accountability.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>950 applications</strong> received within first 24 hours of recruitment opening</li>
+        <li>Recruitment opened: <strong>late May 2026</strong> (LAist reported May 29)</li>
+        <li>Metro's Department of Public Safety: described as "historic milestone" for community-focused policing</li>
+        <li>Represents shift away from LASD/LAPD contracted policing to in-house sworn officers</li>
+        <li>Safety was the <strong>#1 priority</strong> cited by 7,500+ residents in FY27 budget engagement</li>
+        <li>FY27 budget includes expanded safety initiative funding</li>
+        <li>Metro won <strong>2026 Bus Security Gold Award</strong> at International Bus Roadeo (June 4)</li>
+        <li>Metro maintenance team also won the <strong>Bus Roadeo championship for the third consecutive year</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Transit safety is the top rider concern and a critical factor in post-pandemic ridership recovery. Metro building its own sworn officer corps — rather than contracting with LASD — gives the agency direct control over conduct, accountability, and community engagement standards.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (FY27 Budget), Topic 10 (Election — safety politics)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-launches-sworn-officer-recruitment-for-its-department-of-public-safety/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 8: SB 79 Transit Housing -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/06/EastsideTransitCorridormap2026Jun.jpg"
+           alt="SoCal transit corridor map showing SB 79 upzoning zones"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">SCAG</span>
+        <span class="agency">LA City</span>
+        <span class="agency">State</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: SB 79 Transit-Oriented Housing Law — LA Tries to Delay, Thousands of Parcels at Stake</h2>
+      <p class="date-range">June 1 – June 9, 2026</p>
+      <p class="summary">California's SB 79, signed by Governor Newsom in October 2025, allows 9-story residential buildings near major transit stops and has now triggered a wave of local political responses across SoCal. Los Angeles passed a Low-Rise Housing ordinance partly to "stave off SB 79" and is seeking to delay implementation for certain areas. LAist published a SoCal-wide map showing the thousands of parcels now eligible for major upzoning along Metro, Metrolink, and BRT corridors. LAmag confirmed a new state law permitting "increased housing development near major transit stops."</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>SB 79 signed <strong>October 2025</strong>; allows <strong>9-story buildings</strong> near major transit stops</li>
+        <li>LAist mapped <strong>thousands of SoCal parcels</strong> now eligible for transit-adjacent upzoning</li>
+        <li>LA City passed <strong>Low-Rise Housing ordinance</strong> in part to limit SB 79 exposure</li>
+        <li>LA City Council also voted to <strong>delay SB 79 implementation</strong> for certain geographic areas</li>
+        <li>Valley residents previously organized to urge Newsom veto; failed</li>
+        <li>CalMatters: NIMBY groups already challenging the law through new mechanisms</li>
+        <li>Planetizen: "New California Law Allows 9-Story Buildings Near Transit"</li>
+        <li>State estimates <strong>millions of new housing units</strong> possible under the law</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> SB 79 is the most consequential land-use reform ever enacted along SoCal transit corridors. It directly ties Metro, Metrolink, BRT, and eventually HSR lines to housing supply — but implementation battles will play out city by city for years, with LA's delay attempts potentially setting a statewide precedent.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (NoHo-Pasadena BRT), Topic 10 (Election — Karen Bass), Topic 11 (Eastside Corridor)</p>
+      <a class="source-link" href="https://laist.com/news/transportation/state-law-will-put-more-housing-near-transit-stops-this-socal-map-finally-shows-where" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 9: Pacific Surfliner World Cup -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/06/WorldCupTransitmap2026Jun.jpg"
+           alt="Pacific Surfliner coastal train California"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Amtrak</span>
+        <span class="agency">Pacific Surfliner</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: Pacific Surfliner Goes Reservation-Only and Adds Late-Night World Cup Trains</h2>
+      <p class="date-range">June 4 – July 19, 2026</p>
+      <p class="summary">Amtrak's Pacific Surfliner — the busiest intercity passenger rail corridor in the western US — is requiring reservations for all trains between June 11 and July 19 as World Cup demand spikes. Amtrak added late-night departures from LA Union Station on key match dates to carry fans south to San Diego and north to Santa Barbara after evening kickoffs. The train also gains a special stop at Burbank Downtown on July 18–19 to connect to the LA World Cup Fan Zone.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>Reservations required</strong> on all Pacific Surfliner trains: June 11 – July 19</li>
+        <li>Late-night LA Union Station departures on: <strong>June 12, 13, 15, 25</strong></li>
+        <li>Special Burbank Downtown stop: <strong>July 18–19</strong> for LA World Cup Fan Zone</li>
+        <li><strong>20% fare discount</strong> with code "soccer2026" through July 15 (Coach &amp; Business)</li>
+        <li>Codeshare and Rail 2 Rail programs suspended on: June 11–15, 18, 21, 25–28; July 2, 10, 18–19</li>
+        <li>LA Metro connection from Union Station to LA Stadium: <strong>$1.75 each way</strong></li>
+        <li>A new daily Pacific Surfliner train connecting LA to San Luis Obispo launched <strong>April 2026</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The reservation-only policy marks an operational shift for a traditionally walk-on corridor. Its success or failure during the World Cup will inform whether Amtrak pushes toward reservation-based operations more broadly on the Surfliner post-2028.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (World Cup Transit), Topic 4 (Metrolink coordination)</p>
+      <a class="source-link" href="https://media.amtrak.com/2026/06/world-soccer-matches-start-in-socal-this-month-heres-how-to-ride-the-amtrak-pacific-surfliner-to-the-action/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 10: Election Results -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/06/LAMayorprimary2026Jun08.jpg"
+           alt="LA 2026 primary election results for transit advocates"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LA City</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: Transit Advocates Score Wins at LA's June 2026 Primary Ballot</h2>
+      <p class="date-range">June 3 – June 10, 2026</p>
+      <p class="summary">Streetsblog LA declared "strong voter support for most livable streets candidates" in the June 3 primary. Mayor Karen Bass (34.3%) advanced to a November runoff against City Councilmember Nithya Raman (28.9%), both considered transit-supportive. Pro-transit Controller Kenneth Mejia won outright with 63%. County Supervisor Lindsey Horvath, a transit champion, cruised to reelection with two-thirds support. The results suggest transit and streets priorities remain politically viable heading into the 2028 Olympic cycle.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>Karen Bass</strong> (34.3%) vs. <strong>Nithya Raman</strong> (28.9%) — November mayoral runoff</li>
+        <li>Both Bass and Raman considered supportive of Metro expansion and livable streets</li>
+        <li><strong>Kenneth Mejia</strong> (Controller, pro-transit) won outright with <strong>63%</strong></li>
+        <li><strong>Katy Yaroslavsky</strong> (transit advocate, CD5) reelected to Westside seat</li>
+        <li><strong>Lindsey Horvath</strong> (County Supervisor, transit champion) reelected with ~67%</li>
+        <li>Karen Bass already elected <strong>Metro Board Chair</strong> effective July 1 (separate action)</li>
+        <li>City Attorney race: progressive Marissa Roy (43.1%) vs. John McKinney (28.6%) in November</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The composition of the Metro board and City Council in 2026–2028 will shape whether LA prioritizes transit in the Olympic infrastructure buildout, and whether SB 79 upzoning near transit corridors gets implemented or delayed.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (Budget — Bass as Metro Chair), Topic 8 (SB 79)</p>
+      <a class="source-link" href="https://la.streetsblog.org/2026/06/10/2026-primary-election-results-round-up-strong-voter-support-for-most-livable-streets-candidates" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<!-- AGENCY STATUS BOARD -->
+<div class="status-board">
+  <h2>Agency Status Board — June 11, 2026</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Development</th>
+        <th>Outlook</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro</strong></td>
+        <td><span class="status-dot green"></span>Active</td>
+        <td>D Line Section 1 open; $9.7B FY27 budget approved; officer recruitment underway</td>
+        <td>Strong — World Cup test coming; Sections 2 &amp; 3 under construction</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink</strong></td>
+        <td><span class="status-dot yellow"></span>Strained</td>
+        <td>Contactless payment pilot launched; World Cup special service active; Metro funding cut 3.4%</td>
+        <td>Uncertain — ridership below pre-pandemic; agency defining future role</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak Pacific Surfliner</strong></td>
+        <td><span class="status-dot green"></span>Active</td>
+        <td>Reservation-only through July 19; late-night World Cup trains added; new daily LA–SLO service</td>
+        <td>Strong — high demand tests reservation system for post-2028 operations</td>
+      </tr>
+      <tr>
+        <td><strong>LAWA / LAX SkyLink</strong></td>
+        <td><span class="status-dot blue"></span>Testing</td>
+        <td>60-day empty testing phase begun ~April 22; $880M+ over budget</td>
+        <td>Late 2026 opening targeted; must open before 2028 Olympics</td>
+      </tr>
+      <tr>
+        <td><strong>CA High-Speed Rail</strong></td>
+        <td><span class="status-dot red"></span>Contested</td>
+        <td>Costs at $231B; 2026 Business Plan adopted amid controversy; $3.5B contract approved</td>
+        <td>Critical — political opposition mounting; federal funding gap unresolved</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG / Regional Planning</strong></td>
+        <td><span class="status-dot green"></span>Active</td>
+        <td>SB 79 transit upzoning active; Metrolink contactless pilot supported; Eastside Corridor EIR advancing</td>
+        <td>Strong — transit-oriented housing law creates biggest regional planning shift in decades</td>
+      </tr>
+      <tr>
+        <td><strong>OCTA</strong></td>
+        <td><span class="status-dot yellow"></span>Watching</td>
+        <td>Metrolink OC Line receives World Cup late-night service; SB 79 affects OC transit corridors</td>
+        <td>Moderate — World Cup operations test cross-county coordination</td>
+      </tr>
+      <tr>
+        <td><strong>San Diego MTS</strong></td>
+        <td><span class="status-dot green"></span>Active</td>
+        <td>Pacific Surfliner late-night World Cup trains connect LA fans to San Diego corridor</td>
+        <td>Monitoring — World Cup Group Stage matches not in San Diego but corridor sees demand</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- EMERGING THEMES -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes — June 2026</h2>
+
+    <div class="theme">
+      <h3>1. The 2026 World Cup as a 2028 Olympics Dress Rehearsal</h3>
+      <p>Six transit agencies — LA Metro, Metrolink, Amtrak Pacific Surfliner, LAWA, LADOT, and local shuttles — are executing their first major coordinated operation under real game-day conditions. The World Cup's eight LA matches through July 10 will stress-test multi-modal transfers at Union Station, on-time performance under surge demand, and the adequacy of last-mile connections to LA Stadium. Every operational hiccup and success will feed directly into 2028 Olympic planning, where the stakes are global.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. SB 79 Is Rewriting the SoCal Transit Development Map</h3>
+      <p>California's SB 79 transit-oriented upzoning law is forcing every city along Metro, Metrolink, BRT, and eventually HSR lines to confront a new land-use reality. Los Angeles's attempts to delay and carve out exemptions will be watched statewide. If transit corridors like Van Nuys Boulevard (East San Fernando Valley Rail) and the NoHo–Pasadena BRT corridor are surrounded by dense housing by the time they open, ridership projections improve dramatically — but city-by-city resistance could hollow out the law's impact.</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. California HSR's Credibility Crisis Threatens SoCal Near-Term Projects</h3>
+      <p>At $231 billion and climbing, California HSR has become a liability for the broader transit funding environment. Every dollar consumed by HSR's cost overruns and governance controversies is a dollar not available for the D Line Section 3, East San Fernando Valley Rail, and other projects Metro needs funded before 2028. The Trump administration's prior funding withdrawal and Sacramento's transparency bills add to the uncertainty — and signal that the project's political coalition is fracturing.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. Fare Technology Modernization Is Accelerating</h3>
+      <p>Metrolink's tap-to-pay pilot on the San Bernardino Line, IDEMIA's LED transit cards, and LA Metro's Moovit integration signal that the SoCal region is rapidly modernizing its fare and navigation systems. The shared pressure of the World Cup and the 2028 Olympics is forcing upgrades that might have taken a decade under normal circumstances. If Metrolink's contactless pilot succeeds, seamless interoperability between Metro TAP and Metrolink could become a realistic near-term goal.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. Transit-Supportive Political Alignment Is Strengthening in LA</h3>
+      <p>The June 3 primary results suggest LA voters are rewarding transit-friendly candidates: Kenneth Mejia's 63% Controller win, Katy Yaroslavsky's reelection, and Lindsey Horvath's landslide at the county level all signal a durable political constituency for public transit investment. Karen Bass's dual role as Metro Board Chair and LA Mayor (heading into a November runoff) gives the agency unusual political coherence heading into the most consequential infrastructure years in the region's history.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Sources: <a href="https://la.streetsblog.org" target="_blank">Streetsblog LA</a> · <a href="https://thesource.metro.net" target="_blank">LA Metro The Source</a> · <a href="https://www.metrolinktrains.com" target="_blank">Metrolink</a> · <a href="https://media.amtrak.com" target="_blank">Amtrak Media</a> · Google News · LAist · Progressive Railroading</p>
+  <p style="margin-top:0.5rem;">Generated June 11, 2026 · <a href="transit.html">Full Archive</a> · <a href="index.html">Home</a></p>
+</footer>
+
+</body>
+</html>
