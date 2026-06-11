@@ -1,25 +1,30 @@
 {
   "file": "transit-desert-pomdp-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-10T17:38:31Z",
+  "reviewed_at": "2026-06-11T17:36:55Z",
   "verdict": "REVISE",
-  "score": 74,
+  "score": 60,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists and voiceover content is within 600-1200 words",
-    "Hook in first 3 lines: '55 million Americans live in transit deserts. An AI just showed how to fix that — in 5 years.'",
+    "YouTube script exists",
+    "Hook in first 3 lines — '55 million Americans live in transit deserts. An AI just showed how to fix that — in 5 years.'",
     "Hook does not start with 'Did you know'",
-    "Major claims sourced inline: Khoroshevskaya & Perukari 2026, APTA",
-    "CTA present in both reel and YouTube versions",
-    "Visual notes present in reel",
-    "No placeholder text",
-    "No AI tells detected",
-    "YouTube script covers deployment barriers honestly (technical, institutional, funding mismatch)"
+    "No AI tells found",
+    "CTA present in reel ('Link in bio')",
+    "CTA present in YouTube ('Subscribe' + link to full research digest)",
+    "Visual notes present in reel (map of transit desert tracts, POMDP decision tree diagram, 25-city bar chart)",
+    "Source quality is solid: Khoroshevskaya & Perukari (2026) primary paper cited inline, APTA for population and equity data",
+    "YouTube thoroughly covers deployment barriers (data, institutional, federal funding mismatch) — good epistemic honesty",
+    "Key stats are internally consistent and plausible: 53.6% vs 48.6% coverage across 25 cities"
   ],
   "checks_failed": [
-    "Reel under 200 words: voiceover is ~305 words — 52% over limit; at 150 wpm this runs ~122 seconds, more than double the 60-second format; reel cannot be produced as written"
+    "Reel word count SIGNIFICANTLY OVER 200: estimated 298 spoken words (HOOK ~35w, Scene 1 ~74w, Scene 2 ~78w, Scene 3 ~76w, CTA ~35w). At 298 words this reel would run approximately 2 minutes at 150 wpm — three times the 60-second allotment. This reel cannot be delivered as written.",
+    "Scene 2 of reel runs ~78 words — the POMDP/CVaR explanation is full YouTube-script content crammed into a reel slot. This content is valuable in long-form but must be compressed dramatically for reel.",
+    "Scene 1 runs ~74 words for the 3-15s slot (12 seconds of airtime at ~35 wpm fast). Undeliverable at any reasonable speaking pace.",
+    "Duplicate topic concern (informational, not a block): the paper this script covers (Khoroshevskaya & Perukari 2026, POMDP + CVaR for transit deserts) was covered in the published article docs/research-2026-06-09.html ('AI-Driven Transit Desert Remediation (POMDP + CVaR)') from 2 days ago. The video script is a different format (and video vs. article is acceptable), but the content team should be aware this is the same underlying source material.",
+    "Previously marked 'qc: passed' on 2026-06-09 — the reel word count issue (298 words) was missed entirely in that review."
   ],
-  "revision_notes": "Reel requires major restructuring, not just trimming. The current 5-scene structure carries too much technical explanation (POMDP definition, CVaR explanation). For a 60-second reel, the script should be: HOOK (20w): '55 million Americans live in transit deserts. AI just fixed the planning problem.' / DATA (50w): stat + what POMDP does in one sentence / STAKES (45w): why it matters for equity / CTA (25w). Drop the CVaR explanation entirely from the reel — it belongs only in the YouTube. Target total: 140-160 words.",
+  "revision_notes": "REEL REQUIRES NEAR-COMPLETE REWRITE: The current reel is a compressed YouTube script, not a reel. Rewrite to: HOOK (0-3s, ~20w): '55 million Americans have no functional transit. An AI just proved it can fix that.' Scene 1 (3-15s, ~35w): 'A study tested a new AI system across 25 US cities. After five years: 53.6% of transit deserts reached — 5 points better than every existing method. [Source: Khoroshevskaya & Perukari 2026]' Scene 2 (15-35s, ~50w): 'The system learns from the routes it deploys. You don't need ridership data before building service — you get it as you build. That breaks the catch-22 where transit deserts never get service because there's no data to justify it.' Scene 3 (35-50s, ~35w): '5 points sounds small. Across 25 cities, it's hundreds of thousands of people with transit access who wouldn't have it otherwise. The planning tools most agencies use today are demonstrably obsolete.' CTA (50-60s, ~20w): 'Full breakdown — the model, the cities, and what deployment actually requires — in the video. Link in bio.' Total: ~160w. YOUTUBE: Recount spoken words; appears within range but verify.",
   "fail_reason": null,
   "approved_for_publish": false
 }

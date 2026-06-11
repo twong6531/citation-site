@@ -1,25 +1,27 @@
 {
   "file": "apple-gemini-2026-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-10T17:37:52Z",
+  "reviewed_at": "2026-06-11T17:36:55Z",
   "verdict": "REVISE",
-  "score": 72,
+  "score": 65,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists and voiceover content is within 600-1200 words",
-    "Hook in first 3 lines: 'Apple just handed its AI brain to its biggest competitor.'",
+    "YouTube script exists",
+    "Hook in first 3 lines of reel — 'At WWDC 2026, Apple revealed...'",
     "Hook does not start with 'Did you know'",
-    "CTA present in both reel and YouTube versions",
-    "Visual notes present in reel",
-    "No placeholder text (Lorem ipsum, TODO, TBD, [INSERT])",
-    "No AI tells detected"
+    "No AI tells found",
+    "CTA present in reel ('Link in bio')",
+    "CTA present in YouTube ('Subscribe' + link below)",
+    "Visual notes present throughout reel",
+    "Major claims sourced inline: WWDC 2026 keynote, Apple Intelligence 2024 docs, US v. Google LLC 2024, public researcher headcount",
+    "Sources are high-quality (reported deal terms, keynote, court case) — not Wikipedia-only"
   ],
   "checks_failed": [
-    "Reel under 200 words: voiceover is ~252 words — at 150 wpm this runs ~100 seconds, well over a 60-second reel",
-    "Sources: 'reported deal terms' cites no named outlet or journalist — source must be attributed (e.g. Bloomberg, WSJ, FT)",
-    "Sources: Apple '~600 AI PhDs', OpenAI '800', Google DeepMind '4,000+' cited only as 'public hiring data; industry estimates' — no specific source named for these specific numbers"
+    "Reel word count OVER 200: estimated 249 spoken words (HOOK ~31w, Scene 1 ~58w, Scene 2 ~66w, Scene 3 ~68w, CTA ~33w). A 60-second reel at 150 wpm supports ~150 words; even at fast 175 wpm this is undeliverable in 60 seconds.",
+    "YouTube word count likely at or over 1,200-word ceiling: 7-8 minute target with HOOK + INTRO + 3 full sections + OUTRO. Estimated 1,200–1,400 spoken words; may breach upper bound.",
+    "Previously marked 'qc: passed' on 2026-06-09 but reel word count issue was missed in that review."
   ],
-  "revision_notes": "1. Trim reel VO to under 200 words: cut Scene 2 (the on-device history) entirely — it can live in the YouTube script only; reduce Scene 1 to 2 sentences max. 2. Attribute 'reported deal terms' to a specific publication and date (e.g. 'per Bloomberg reporting, [date]'). 3. Add a citation for the AI researcher headcount figures — link to LinkedIn data, Levels.fyi, or a specific news article.",
+  "revision_notes": "REEL: Cut voiceover to under 200 words. Trim Scene 2 — drop the 'Two years later Siri's reasoning is routed through Gemini 1.5 Pro...' expansion (on-screen text already carries this); keep just the contrast line (~25w). Tighten Scene 3 to 2 sentences max. Target: HOOK 25w, Scene 1 45w, Scene 2 35w, Scene 3 45w, CTA 25w = ~175w. YOUTUBE: Recount spoken words precisely. If over 1,200, trim Section 3 regulatory discussion (can cut from ~180w to ~100w without losing key points — keep DOJ pattern, drop detailed Samsung/Microsoft paragraph).",
   "fail_reason": null,
   "approved_for_publish": false
 }

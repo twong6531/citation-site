@@ -1,0 +1,29 @@
+{
+  "file": "pokemon-go-drones-urban-data-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-11T17:36:55Z",
+  "verdict": "REVISE",
+  "score": 62,
+  "checks_passed": [
+    "Reel script exists",
+    "YouTube script exists",
+    "Reel word count PASSES: estimated 193 spoken words (Scene 1 ~44w, Scene 2 ~54w, Scene 3 ~69w, CTA ~26w) — the only reel in today's batch under 200",
+    "Hook present in opening frame: 'You scanned your neighborhood for a Pokémon. Someone else scanned it for a target.'",
+    "Hook does not start with 'Did you know'",
+    "No AI tells found",
+    "CTA present in reel ('link in bio')",
+    "CTA present in YouTube ('Full written breakdown...linked in description' + subscribe)",
+    "Visual notes present and specific (animated flow diagram, drone overlay on street scan, transit card tap slow-mo)",
+    "New topic — not in covered_topics or published list in memory.json; no duplicate",
+    "YouTube accurately acknowledges limits: 'is there a confirmed paper trail... The HN story puts that claim directly. What is confirmed... is the infrastructure that would make it trivially easy.'"
+  ],
+  "checks_failed": [
+    "Factual discrepancy between reel and YouTube — reel overstates certainty of military drone link: Scene 3 states 'Your Pokémon scan is exactly that kind of map' as if confirmed, but the YouTube script explicitly says there is NO confirmed paper trail linking Pokémon Go scans to a specific military drone program. The reel must not assert as confirmed fact what the YouTube script acknowledges is unconfirmed.",
+    "15-million figure conflation in reel: Scene 1 says 'Pokémon Go players have submitted over fifteen million real-world location scans' but the YouTube Section 1 clarifies this 15M figure is actually Ingress portal submissions as of July 2016 — before Pokémon Go AR scanning features even existed. The reel misattributes the Ingress crowdsourcing milestone to Pokémon Go AR scans. These are different data types (portal location tags vs. photogrammetric 3D scans).",
+    "Source quality concern — ALL sources are Wikipedia: Niantic, Ingress, SLAM, Data broker articles. The data broker / third-party doctrine claims especially need primary legal sources (e.g., the EFF reporting on DHS/Venntel purchase, actual court filings, or Congressional testimony). Wikipedia is a secondary source that itself cites these primary sources.",
+    "YouTube word count borderline: estimated 1,100-1,300 spoken words for a 7-8 min script; may be at upper bound."
+  ],
+  "revision_notes": "REEL FACTUAL FIX (REQUIRED): Scene 3 must hedge the drone claim to match the YouTube's more accurate framing. Change 'Your Pokémon scan is exactly that kind of map' to something like: 'SLAM navigation in autonomous drones runs better with pre-built urban maps. Niantic has those maps. And under current law, selling them requires no warrant.' Remove the implication it's a confirmed pipeline. 15M FIGURE FIX: Scene 1 should say 'Ingress — Niantic's earlier game — logged fifteen million real-world location submissions by 2016. Pokémon Go built on that foundation' (or similar). Do not attribute the 15M figure to Pokémon Go AR scans. SOURCES: For the DHS/Venntel data purchase claim, cite the original reporting (Vice/Motherboard reporting from 2020 on DHS purchasing Venntel data is the primary source; Wikipedia cites this). Replace Wikipedia cites with one level deeper: actual EFF or ACLU reporting, or the Wyden/Leahy Senate letter on warrantless data purchases.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

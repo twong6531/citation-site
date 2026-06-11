@@ -1,27 +1,29 @@
 {
   "file": "us-cities-transit-gap-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-10T17:38:42Z",
+  "reviewed_at": "2026-06-11T17:36:55Z",
   "verdict": "REVISE",
-  "score": 72,
+  "score": 65,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists and voiceover content is within 600-1200 words",
-    "Hook in first 3 lines: 'The US spent $634 BILLION to make driving free. Transit got $0.'",
+    "YouTube script exists",
+    "Hook in first 3 lines — 'The federal government subsidized every mile of the Interstate Highway System at 90 cents on the dollar. Public transit got nothing — for 26 years.'",
     "Hook does not start with 'Did you know'",
-    "YouTube: all five decisions sourced to real legislation (Federal Aid Highway Act 1956, UMTA 1964, STAA 1982, FHA 1934, US v. NCL 1949)",
-    "CTA present in both reel and YouTube versions",
-    "Visual notes present in reel",
-    "No placeholder text",
-    "No AI tells detected",
-    "Historical facts are specific and accurately sourced in YouTube version"
+    "No AI tells found",
+    "CTA present in reel ('Link in bio')",
+    "CTA present in YouTube ('Subscribe so you don't miss them' + link)",
+    "Visual notes present in reel (split screen Tokyo vs. empty bus shelter, animated Highway Trust Fund map, BRT station B-roll)",
+    "Source quality is STRONG for a history script: Federal Aid Highway Act 1956, Surface Transportation Assistance Act 1982, Urban Mass Transportation Act 1964, US v. National City Lines 1949, Wikipedia cited only for the GM streetcar conspiracy and Interstate history (where Wikipedia accurately summarizes well-documented public record)",
+    "No exact duplicate in docs/ — related transit topics published but not this specific '5 decisions 1950-1990' angle",
+    "YouTube handles nuance well: acknowledges streetcar conspiracy historians dispute its decisiveness, notes 2026 wave is 'real and meaningful step' but 'not the structural reset'",
+    "YouTube word count estimated within range: ~1,050–1,250 spoken words for 7-8 min script"
   ],
   "checks_failed": [
-    "Reel under 200 words: voiceover is ~250 words — 25% over limit",
-    "Reel Scene 3 claim '$90 billion annual transit funding gap' has no inline source citation in the reel — only the YouTube references APTA for a different figure ($100B maintenance backlog); these are two different statistics and the discrepancy needs resolution",
-    "Reel Scene 3 claim 'Americans spend more on car ownership than food' has no source cited anywhere in the script — this stat needs attribution (AAA, BLS Consumer Expenditure Survey, etc.)"
+    "Reel word count OVER 200: estimated 223 spoken words (HOOK ~27w, Scene 1 ~44w, Scene 2 ~62w, Scene 3 ~52w, CTA ~38w). Exceeds 200-word maximum.",
+    "Unsourced statistic in reel Scene 3: '$90 billion annual transit funding gap' appears in reel voiceover with no inline source citation. This figure does not appear with a source in the YouTube script either — the YouTube cites '$50 billion per year current spend' and '$100 billion maintenance backlog' (both APTA) but not a '$90 billion annual gap.' The reel stat may be conflating or approximating and needs either a specific source or correction to match the sourced figures.",
+    "Scene 2 of reel runs ~62 words for the 15-35s slot (20 seconds at ~60 wpm) — tight but borderline given faster reel pacing"
   ],
-  "revision_notes": "1. Trim reel VO to under 200 words: cut Scene 3 down to one sentence — the 3-5x retrofit cost claim is the strongest stat and stands alone. 2. Reconcile the funding gap figure: decide whether to use '$90B annual gap' (source it to APTA or another org) or '$100B maintenance backlog' — do not use both inconsistently. Add '[Source: APTA]' inline in reel. 3. Source or remove the car-vs-food claim: BLS Consumer Expenditure Survey shows transportation > food for most income quintiles — cite it or cut it.",
+  "revision_notes": "REEL: Trim to under 200 words. Scene 2 is the longest at ~62w — compress to: 'In 1956, Congress created the Highway Trust Fund collecting a federal gas tax — every cent went to highways. Transit was legally excluded until 1982. That's 26 years of compounding highway investment. [Source: Surface Transportation Assistance Act 1982]' (~35w). This preserves the key facts while cutting the UMTA reference (move to YouTube). UNSOURCED STAT FIX: Either (a) source the '$90 billion annual funding gap' to a specific APTA report or FTA estimate, or (b) replace with sourced figures already in the YouTube script: 'The legacy: a $100 billion maintenance backlog and a federal funding structure that still treats transit as optional.' [Source: APTA] CTA at ~38w is slightly long for the slot — trim to: '13 transit projects open in 2026. Whether this wave is real — full breakdown, link in bio.' (~18w).",
   "fail_reason": null,
   "approved_for_publish": false
 }

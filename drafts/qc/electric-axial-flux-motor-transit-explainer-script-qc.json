@@ -1,26 +1,28 @@
 {
   "file": "electric-axial-flux-motor-transit-explainer-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-10T17:38:10Z",
+  "reviewed_at": "2026-06-11T17:36:55Z",
   "verdict": "REVISE",
-  "score": 76,
+  "score": 58,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists and voiceover content is within 600-1200 words",
-    "Hook in first 3 lines: 'The motor in a Lamborghini costs more than a city bus. Mercedes just made it mass-market.'",
+    "YouTube script exists",
+    "Hook in first 3 lines — 'The motor in a Lamborghini costs more than a city bus. Mercedes just made it mass-market — and transit agencies have no idea what's coming.'",
     "Hook does not start with 'Did you know'",
-    "Major claims cited inline",
-    "CTA present in both reel and YouTube versions",
-    "Visual notes present (dedicated VISUAL NOTES section in reel)",
-    "No placeholder text",
-    "No AI tells detected",
-    "Strong thumbnail concept and timestamps included"
+    "No AI tells found",
+    "CTA present in reel ('Link in bio')",
+    "CTA present in YouTube ('Subscribe' + link below)",
+    "Visual notes present throughout reel (specific shot descriptions, on-screen text specs)",
+    "Claims sourced inline (Wikipedia citations present for all technical stats)",
+    "YouTube word count appears within range: estimated 900–1,100 spoken words for 7-8 min script"
   ],
   "checks_failed": [
-    "Reel under 200 words: voiceover is ~202 words — marginally over limit (2 words); functionally borderline but technically fails",
-    "Source quality: all 4 listed sources are Wikipedia articles (Axial Flux Motor, Electric Bus, Transit Bus) or 'YASA company data' without a URL or document name — Wikipedia is an acceptable starting point but primary sources (Mercedes press release, YASA data sheet, peer-reviewed spec comparison) should be substituted or added alongside"
+    "Reel word count OVER 200: estimated 207 spoken words (Hook ~26w, Scene 1 ~41w, Scene 2 ~55w, Scene 3 ~57w, CTA ~28w). Marginally over the 200-word limit.",
+    "Source quality concern — ALL sources are Wikipedia: 'Wikipedia (Axial Flux Motor), Wikipedia (Electric Bus), Wikipedia (Transit Bus), YASA company data.' Wikipedia is not a primary source. For a technical claims-heavy script, primary sources should include: Mercedes/YASA press releases for mass-production claim, peer-reviewed motor engineering literature for kW/kg specs, and original fleet data for Shenzhen/China EV bus statistics.",
+    "Potential factual error in reel and YouTube hook: 'Ferrari SF90. McLaren Artura. Lamborghini Revuelto. All running this exact tech.' — YASA axial flux motors are confirmed for some Ferrari applications (Ferrari had a YASA supply relationship), but the McLaren Artura uses a McLaren-developed motor, NOT a YASA unit. The Lamborghini Revuelto uses proprietary in-house electric motors. Claiming all three run 'this exact tech' (YASA axial flux) is likely inaccurate and could undermine credibility on fact-check.",
+    "The mass-production claim ('Mercedes-Benz flipped the switch on large-scale production' — June 2026) cites only Wikipedia and has no dateline or press release source. This is the central factual premise of the piece and requires a primary source."
   ],
-  "revision_notes": "1. Trim reel VO by 3-5 words to get under 200: remove 'The motor that used to fill an engine bay now fits in a wheel hub' (14 words) and replace with nothing — the 42 vs 16 kW/kg stat is sufficient. 2. In the YouTube script's source section, replace or supplement Wikipedia citations with: Mercedes-Benz YASA acquisition press release (Sept 2021), YASA official technical specs page, IEA Global EV Outlook for China bus fleet data.",
+  "revision_notes": "FACTUAL FIX (REQUIRED before publish): Verify which hypercars actually use YASA axial flux motors. YASA supplied Ferrari (confirmed for some models); McLaren Artura motor sourcing needs verification — if not YASA, remove McLaren from the hook examples. Similarly verify Lamborghini Revuelto motor supplier. Correct hook to name only verified YASA customers. PRIMARY SOURCE: Replace Wikipedia citations with: (1) Mercedes-Benz/YASA press release or official announcement for the June 2026 mass-production claim; (2) YASA technical datasheets for 42 kW/kg spec; (3) IEA or BloombergNEF for global EV bus fleet data (more authoritative than Wikipedia Electric Bus article). REEL: Trim to under 200 words — Scene 3 (transit implications) runs long at ~57w; cut 10-12 words by removing the Shenzhen date detail ('fully electric since 2018') from spoken voiceover (keep in on-screen text only).",
   "fail_reason": null,
   "approved_for_publish": false
 }

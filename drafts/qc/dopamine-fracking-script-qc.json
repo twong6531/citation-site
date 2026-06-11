@@ -1,25 +1,28 @@
 {
   "file": "dopamine-fracking-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-10T17:38:00Z",
+  "reviewed_at": "2026-06-11T17:36:55Z",
   "verdict": "REVISE",
-  "score": 78,
+  "score": 68,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists and voiceover content is within 600-1200 words",
-    "Hook in first 3 lines: 'Over 60% of your feed is now content from strangers you never chose to follow.'",
+    "YouTube script exists",
+    "Hook in first 3 lines — 'Your social media feed has been quietly replaced. Not by your friends — by an algorithm optimized to extract dopamine.'",
     "Hook does not start with 'Did you know'",
-    "Major claims sourced inline: BBC Worklife 2026, Hacker News upvote count, Facebook 2018 pivot, Zuckerberg post Jan 2018",
-    "CTA present in both reel and YouTube versions",
-    "Visual notes present in reel",
-    "No placeholder text",
-    "No AI tells detected",
-    "YouTube script covers real-world limitations honestly (resistance section)"
+    "No AI tells found",
+    "CTA present in reel ('Link in bio')",
+    "CTA present in YouTube ('Subscribe so you don't miss it' + link below)",
+    "Visual notes present in reel (rapid-cut montage, animated pie chart, split screen)",
+    "Major claims sourced inline: BBC Worklife 2026 (60% stranger content), Hacker News 2026 (579 upvotes, 291 comments), Facebook 2018 algorithmic pivot announcement",
+    "Sources are credible — BBC investigation, named platform decisions with dates",
+    "Topic not a duplicate: 'dopamine and urban design' in covered_topics is a different angle"
   ],
   "checks_failed": [
-    "Reel under 200 words: voiceover is ~298 words — 49% over limit; at 150 wpm this runs ~119 seconds, nearly double a 60-second reel"
+    "Reel word count OVER 200: estimated 215 spoken words (HOOK ~19w, Scene 1 ~36w, Scene 2 ~66w, Scene 3 ~64w, CTA ~30w). Exceeds 200-word maximum for a 60-second reel.",
+    "YouTube word count borderline at or over 1,200: 7-8 minute script with three full sections; estimated 1,100–1,300 spoken words.",
+    "Vague source in YouTube Section 3: 'multiple peer-reviewed meta-analyses, 2020-2025' is not a specific citation. Fails 'every major claim has a source noted inline' — the anxiety/depression correlation claim needs a named study."
   ],
-  "revision_notes": "Reel VO must be cut to under 200 words. Current structure has 5 scenes; for 60 seconds you need 3. Recommended cut: merge Scenes 1 and 2 into a single 60-word beat (hook + data point); cut Scene 3's extended fracking analogy to one sentence; keep Scene 4 CTA as-is. Target: Hook 20w / Data 55w / Stakes 50w / CTA 30w = 155 words.",
+  "revision_notes": "REEL: Trim to under 200 words. Scene 2 is the main bloat (~66w) — cut the Facebook historical comparison sentence ('Facebook friend-post interactions have fallen dramatically since its 2018 algorithmic shift. The platform still calls itself...') and reduce to just the 60% statistic plus one-sentence impact statement (~30w total for Scene 2). Scene 3 can drop the second sentence of the fracking analogy and keep just the business-model thesis. YOUTUBE: Recount; if over 1,200, tighten Section 3's streaming/gaming/AI-slop breakdown from ~250w to ~180w. SOURCE FIX: Replace vague meta-analysis cite with at least one named study — suggest Haidt & Allen (2020) 'Scrutinizing the effects of digital technology on mental health' (Nature), or Coyne et al. JAMA Pediatrics 2020.",
   "fail_reason": null,
   "approved_for_publish": false
 }

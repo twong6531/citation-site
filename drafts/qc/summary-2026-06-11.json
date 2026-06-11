@@ -1,0 +1,63 @@
+{
+  "date": "2026-06-11",
+  "qc_completed_at": "2026-06-11T17:36:55Z",
+  "total_reviewed": 7,
+  "passed": 0,
+  "revise": 7,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [
+    {
+      "slug": "apple-gemini-2026-script",
+      "score": 65,
+      "primary_issue": "Reel ~249 words (over 200 limit); YouTube word count borderline",
+      "effort_to_fix": "low — trim reel only"
+    },
+    {
+      "slug": "dopamine-fracking-script",
+      "score": 68,
+      "primary_issue": "Reel ~215 words (over 200 limit); vague academic source in YouTube Section 3",
+      "effort_to_fix": "low — trim reel + add named study citation"
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "score": 58,
+      "primary_issue": "Likely factual error (McLaren Artura does not use YASA axial flux motor); all-Wikipedia sources need upgrade to primary; reel slightly over 200",
+      "effort_to_fix": "medium — verify hypercar motor suppliers, add primary sources"
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "score": 62,
+      "primary_issue": "Reel overstates military drone link as confirmed (YouTube script acknowledges no confirmed paper trail); 15M figure conflation (Ingress portals vs. Pokémon Go AR scans); all-Wikipedia sources",
+      "effort_to_fix": "medium — factual corrections to reel, source upgrades"
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "score": 72,
+      "primary_issue": "Reel ~245 words (over 200 limit); Scene 3 alone is ~87 words",
+      "effort_to_fix": "low — reel trim only; content is otherwise the strongest in the batch",
+      "note": "Best content quality of all 7 scripts. Primary sources (arXiv), balanced framing, honest about simulation limitations."
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "score": 60,
+      "primary_issue": "Reel ~298 words — SEVERELY over 200, requires near-complete reel rewrite; previously passed QC incorrectly",
+      "effort_to_fix": "medium — reel rewrite needed (YouTube is solid)",
+      "note": "Duplicate topic warning: same underlying paper covered in published docs/research-2026-06-09.html. Video format is a different format so not blocked, but content team should track."
+    },
+    {
+      "slug": "us-cities-transit-gap-script",
+      "score": 65,
+      "primary_issue": "Reel ~223 words (over 200 limit); '$90 billion annual transit funding gap' statistic in reel has no inline source",
+      "effort_to_fix": "low — trim reel, source or replace one stat"
+    }
+  ],
+  "blocked": [],
+  "systemic_findings": {
+    "reel_word_count_problem": "6 of 7 reels exceed the 200-word limit. The only passing reel is pokemon-go-drones (~193w). This appears to be a systemic issue with the Video Script Agent outputting YouTube-density content into reel-length containers. Recommend adding a reel word count gate (automated count check) before QC review.",
+    "wikipedia_only_sources": "2 of 7 scripts (electric-axial-flux, pokemon-go-drones) rely entirely on Wikipedia as source. For technical and legal claims this is insufficient — Wikipedia should be used only for general background, with primary sources (press releases, academic papers, court documents, journalism) for specific statistics.",
+    "prior_qc_accuracy": "2 scripts previously marked 'qc: passed' (apple-gemini-2026-script, transit-desert-pomdp-script) have reel word count violations that were missed in the 2026-06-09 QC pass. Those verdicts should be reclassified to REVISE.",
+    "approved_json_block": "CRITICAL: approved.json remains empty for 4 consecutive days (since 2026-06-07). No scripts or articles can be published until a human adds slugs to approved.json. QC can pass content; publishing is blocked at the human approval gate.",
+    "articles_missing": "Long-form article production has not occurred in 7+ days. The drafts/articles/ directory is empty today. QC cannot review content that was not produced."
+  }
+}

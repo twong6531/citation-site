@@ -1,26 +1,29 @@
 {
   "file": "slime-mold-transit-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-10T17:38:22Z",
-  "verdict": "PASS",
-  "score": 81,
+  "reviewed_at": "2026-06-11T17:36:55Z",
+  "verdict": "REVISE",
+  "score": 72,
   "checks_passed": [
     "Reel script exists",
-    "YouTube script exists and voiceover content is within 600-1200 words",
-    "Hook in first 3 lines: 'A slime mold with no brain outperformed every fixed-route bus system tested — by up to 101%.'",
+    "YouTube script exists",
+    "Hook in first 3 lines — 'A single-celled organism just solved the transit problem US cities have been failing at for 70 years.'",
     "Hook does not start with 'Did you know'",
-    "Major claims sourced inline: arXiv:2606.06189 (Burke et al.), arXiv:2606.07486 (Xiong et al.), Tero et al. Science 2010",
-    "CTA present in both reel and YouTube versions",
-    "Visual notes present in reel",
-    "No placeholder text",
-    "No AI tells detected",
-    "YouTube script explicitly covers real-world limitations (regulatory, fleet ops, passenger predictability) — above average",
-    "Strong equity angle via OPENPATH/ADA section adds editorial depth"
+    "No AI tells found",
+    "CTA present in reel ('Link in bio')",
+    "CTA present in YouTube ('Subscribe for weekly transit and urban infrastructure analysis' + link)",
+    "Visual notes present in reel (time-lapse slime mold, animated simulation, US suburban map)",
+    "Source quality is STRONG: arXiv:2606.06189 (Burke et al. 2026) and arXiv:2606.07486 (Xiong et al. 2026) are primary academic sources. Also cites Tero et al. Science 2010 (the original slime mold / Tokyo paper) and APTA data.",
+    "Claims sourced inline throughout both reel and YouTube",
+    "YouTube honestly covers real-world limitations (simulation only, regulatory barriers, passenger predictability)",
+    "Not a duplicate of published content: topic in covered_topics list but no matching published article found in docs/ within 14 days",
+    "YouTube word count appears within range: estimated 1,050–1,200 spoken words for 7-8 min script — within acceptable range"
   ],
   "checks_failed": [
-    "Reel under 200 words: voiceover is ~253 words — 27% over limit; needs trimming before reel production"
+    "Reel word count OVER 200: estimated 245 spoken words (HOOK ~17w, Scene 1 ~44w, Scene 2 ~74w, Scene 3 ~87w, CTA ~23w). Scene 3 alone runs ~87 words — far too long for a 60-second reel segment (35-50s window is only 15 seconds of airtime).",
+    "Scene 3 of reel exceeds its time window: the 35-50s segment (15 seconds of airtime at ~40 wpm) contains ~87 words. Even at 175 wpm this would take ~30 seconds — double the allotted time."
   ],
-  "revision_notes": "Trim reel VO to under 200 words before production handoff. Suggested cut: Scene 3 currently runs 88 words — reduce to: 'US suburbs were built too sparse for fixed-route transit. Swarm transit routes to wherever demand actually is. For wheelchair users, rural Americans, and transit deserts — this changes what's possible.' (33 words). That alone saves ~55 words and brings total to ~198.",
+  "revision_notes": "REEL: Scene 3 is the primary problem. Cut it from ~87 words to under 35 words. The equity point (wheelchair users, rural Americans) is powerful but must be compressed to one sentence: 'For car-dependent suburbs — and for wheelchair users who can't reach a fixed stop — this is the transit model that actually works.' Cut the 'for anyone who's ever watched a bus drive past with two people on it while 20 people need a ride on the next block' sentence entirely — it reads well in long-form but not at reel pace. Also trim Scene 2 slightly (drop the 'No central dispatcher. No fixed stops. Just buses talking to each other...' closing — the simulation visual carries this). Target total: under 180 words. NOTE: This is one of the strongest scripts in today's batch on content quality. The sole issue is reel pacing.",
   "fail_reason": null,
-  "approved_for_publish": true
+  "approved_for_publish": false
 }
