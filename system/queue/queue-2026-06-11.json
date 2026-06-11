@@ -1,0 +1,88 @@
+{
+  "date": "2026-06-11",
+  "generated_at": "2026-06-11T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Free Transit Economics: What Cities Get Wrong",
+      "angle": "With PPI up 9.6% annualized and transit budgets under pressure, examine the evidence base for fare-free systems — which cities tried it, what ridership gains resulted, and why fiscal hawks keep killing programs that pencil out on induced demand and equity metrics",
+      "rationale": "Content gap flagged since 2026-06-07. Economic signal from HN (PPI surge) makes timing sharp. Bridges niche pillars of transit policy + AI/data-driven urban planning. No overlap with recent coverage.",
+      "target_length": "long",
+      "slug": "free-transit-economics-2026",
+      "output_path": "drafts/articles/free-transit-economics-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail: The Real Cost Breakdown",
+      "angle": "Side-by-side infrastructure cost, build time, ridership capacity, and equity outcome comparison across 10 U.S. corridors — answering why cities keep choosing BRT despite rider preference data favoring rail",
+      "rationale": "BRT deep-dive has been queued since 2026-06-07 but never produced. Infographic format is overdue (last was 2026-06-09). Visual-first comparison performs strongly with site's Transit-Oriented Development audience.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "video_script",
+      "topic": "Your City Map Trained a Military Drone",
+      "angle": "HN trending: Pokémon Go player scan data ended up in military drone navigation systems. Trace the data pipeline from consumer location apps → commercial mapping databases → defense contractors, and ask what transit agencies owe riders about how their movement data is used",
+      "rationale": "Top HN story today (Pokémon Go / military drone navigation) directly intersects urban mobility data ethics — our core niche. Timely hook, explainer format, strong shareability. No prior coverage on this angle.",
+      "target_length": "medium",
+      "slug": "pokemon-go-drones-urban-data-script",
+      "output_path": "drafts/scripts/pokemon-go-drones-urban-data-script.md"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "AI Signal Priority and Real-Time Transit Optimization: 2026 State of the Field",
+      "angle": "Survey current deployments of ML-based adaptive signal control (ASC) and transit signal priority (TSP) systems, quantify headway reliability improvements in pilot cities, and assess equity implications of algorithmic bus scheduling",
+      "rationale": "Complements existing POMDP/transit-desert research (2026-06-09) but focuses on infrastructure rather than access. No prior coverage. Aligns with AI+transit niche pillar. Academic arxiv angle available.",
+      "target_length": "medium",
+      "slug": "ai-signal-priority-transit-2026",
+      "output_path": "drafts/articles/ai-signal-priority-transit-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "article",
+      "topic": "Workers Are Botsitting AI — And Transit Agencies Are Next",
+      "angle": "HN: workers spending 6+ hrs/week supervising AI outputs. Apply this to transit ops: as agencies adopt AI for scheduling, dispatch, and maintenance prediction, who watches the algorithm? A short explainer on the human-oversight gap in automated transit management.",
+      "rationale": "Trending HN story (6-hour botsitting stat) with direct transit-agency application. Short-form treatment, timely, bridges AI and transit pillars. Good for same-day turnaround.",
+      "target_length": "short",
+      "slug": "botsitting-ai-transit-agencies-2026",
+      "output_path": "drafts/articles/botsitting-ai-transit-agencies-2026.html"
+    }
+  ],
+  "retries": [],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development (TOD Builder game just published)",
+    "transit desert POMDP",
+    "Southern California transit systems",
+    "Apple Gemini AI partnership",
+    "slime mold network optimization",
+    "dopamine and urban design",
+    "autonomous vehicles (covered 2026-06-05 cycle)",
+    "Meta face recognition"
+  ],
+  "pending_qc_drafts": [
+    "drafts/scripts/apple-gemini-2026-script.md (QC passed)",
+    "drafts/scripts/transit-desert-pomdp-script.md (QC passed)",
+    "drafts/scripts/us-cities-transit-gap-script.md (QC unknown)",
+    "drafts/scripts/slime-mold-transit-script.md (QC unknown)",
+    "drafts/scripts/dopamine-fracking-script.md (QC unknown)",
+    "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md (QC unknown)"
+  ],
+  "trend_signals": [
+    "Workers botsitting AI 6+ hrs/week — AI productivity backlash growing",
+    "Pokémon Go scan data → military drone navigation (urban data pipeline ethics)",
+    "PPI up 9.6% annualized May 2026 — infrastructure cost pressure intensifying",
+    "AI agents running amok (Fedora incident) — autonomous system reliability debate",
+    "Open reproduction of DeepSeek-R1 — open-source AI acceleration"
+  ],
+  "alerts": [
+    "CRITICAL: approved.json empty since 2026-06-07. Publishing Agent has been blocked 4 consecutive days. Human approval required to unblock publishing pipeline.",
+    "6 video scripts in drafts/scripts/ awaiting QC or approval. Two (apple-gemini, transit-desert-pomdp) passed QC but never approved.",
+    "articles/ directory has no new content — long-form article production has not occurred in at least 7 days."
+  ]
+}

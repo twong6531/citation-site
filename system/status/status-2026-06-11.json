@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-11",
+  "generated_at": "2026-06-11T06:00:00Z",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL: approved.json empty for 4 consecutive days (since 2026-06-07). Publishing Agent blocked. Human must add slugs to approved.json to unblock.",
+    "6 video scripts in drafts/scripts/ — 2 passed QC, 4 QC unknown. None approved for publishing.",
+    "Long-form article production has not occurred in 7+ days. articles/ directory appears empty."
+  ]
+}

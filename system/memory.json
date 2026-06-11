@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-10",
+  "last_updated": "2026-06-11",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -19,18 +19,23 @@
     { "date": "2026-06-09", "type": "research", "url": "docs/research-2026-06-09.html", "topic": "AI-Driven Transit Desert Remediation (POMDP + CVaR)" },
     { "date": "2026-06-09", "type": "transit", "url": "docs/transit-2026-06-09.html", "topic": "Southern California Transit Brief" },
     { "date": "2026-06-09", "type": "infographic", "url": "docs/infographic-2026-06-09.svg", "topic": "Infographic" },
-    { "date": "2026-06-09", "type": "research_infographic", "url": "docs/research-infographic-2026-06-09.svg", "topic": "Research Infographic" }
+    { "date": "2026-06-09", "type": "research_infographic", "url": "docs/research-infographic-2026-06-09.svg", "topic": "Research Infographic" },
+    { "date": "2026-06-10", "type": "research", "url": "docs/research-2026-06-10.html", "topic": "Transit Research Digest" },
+    { "date": "2026-06-10", "type": "transit", "url": "docs/transit-2026-06-10.html", "topic": "SoCal Transit Brief" },
+    { "date": "2026-06-10", "type": "interactive", "url": "docs/transit-game.html", "topic": "TOD Builder Game" }
   ],
   "drafts_pending_approval": [
     { "slug": "apple-gemini-2026-script", "path": "drafts/scripts/apple-gemini-2026-script.md", "qc": "passed", "date": "2026-06-09" },
     { "slug": "transit-desert-pomdp-script", "path": "drafts/scripts/transit-desert-pomdp-script.md", "qc": "passed", "date": "2026-06-09" },
     { "slug": "us-cities-transit-gap-script", "path": "drafts/scripts/us-cities-transit-gap-script.md", "qc": "unknown", "date": "2026-06-09" },
     { "slug": "slime-mold-transit-script", "path": "drafts/scripts/slime-mold-transit-script.md", "qc": "unknown", "date": "2026-06-09" },
-    { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "unknown", "date": "2026-06-09" }
+    { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "unknown", "date": "2026-06-09" },
+    { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "unknown", "date": "2026-06-10" }
   ],
   "topic_performance": {
     "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
     "Transit-Oriented Development": { "published": "2026-06-06", "engagement": "high" },
+    "TOD Builder Interactive Game": { "published": "2026-06-10", "engagement": "unknown" },
     "AI Industry Shifts": { "published": "2026-06-06", "engagement": "medium" },
     "Southern California Transit": { "published": "2026-06-09", "engagement": "unknown" },
     "AI-Driven Transit Desert Remediation": { "published": "2026-06-09", "engagement": "unknown" }
@@ -48,14 +53,18 @@
     "Southern California transit systems",
     "slime mold network optimization",
     "US cities transit gap",
-    "dopamine and urban design"
+    "dopamine and urban design",
+    "electric axial flux motors transit",
+    "TOD Builder interactive game"
   ],
-  "failed_jobs": [],
+  "failed_jobs": [
+    { "date": "2026-06-10", "job": "publishing", "reason": "approved.json empty — no human approvals received for 4th consecutive day" }
+  ],
   "content_gaps": [
-    "approved.json empty since 2026-06-07 — Publishing Agent blocked, no human approvals received",
-    "BRT expansion deep-dive queued 2026-06-07 but never produced as article",
-    "Free transit explainer queued 2026-06-07 but never produced",
-    "Electric transit vehicle technology uncovered",
-    "Global transit infrastructure longevity / data journalism angle uncovered"
+    "approved.json empty since 2026-06-07 — Publishing Agent blocked 4 consecutive days, no human approvals received",
+    "BRT expansion deep-dive queued 2026-06-07, still never produced as article — now rank #2 queue item 2026-06-11",
+    "Free transit explainer queued 2026-06-07, still never produced — now rank #1 queue item 2026-06-11",
+    "Global transit infrastructure longevity / data journalism angle uncovered",
+    "Long-form articles directory empty — no articles/ content produced in 7+ days"
   ]
 }
