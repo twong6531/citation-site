@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — June 11, 2026</title>
+<style>
+  :root {
+    --bg: #0E0E0E;
+    --surface: #171717;
+    --surface2: #1E1E1E;
+    --border: #2A2A2A;
+    --text: #E8E8E8;
+    --muted: #888888;
+    --accent: #E84040;
+    --accent2: #FF6B35;
+    --white: #FFFFFF;
+    --high: #4CAF50;
+    --medium: #FFC107;
+    --low: #E84040;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  nav { background: #111; border-bottom: 1px solid var(--border); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  nav .logo { font-size: 12px; letter-spacing: 3px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+  nav .nav-links a { color: var(--muted); font-size: 13px; margin-left: 28px; letter-spacing: 0.5px; }
+  nav .nav-links a:hover { color: var(--white); text-decoration: none; }
+
+  /* HERO */
+  .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 60px 40px 50px; }
+  .hero-meta { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero-meta span { color: var(--accent); margin-right: 12px; }
+  .hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; line-height: 1.1; letter-spacing: -1px; color: var(--white); max-width: 800px; margin-bottom: 20px; }
+  .hero-sub { font-size: 17px; color: var(--muted); max-width: 680px; line-height: 1.7; }
+  .hero-stats { display: flex; gap: 40px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
+  .hero-stat { }
+  .hero-stat .num { font-size: 32px; font-weight: 700; color: var(--accent); letter-spacing: -1px; }
+  .hero-stat .label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  .layout { display: grid; grid-template-columns: 1fr 340px; gap: 40px; padding: 48px 0; }
+  @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } nav { padding: 14px 20px; } .hero { padding: 40px 20px; } .container { padding: 0 20px; } }
+
+  /* SECTION HEADERS */
+  .section-label { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; font-weight: 600; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 28px; margin-bottom: 40px; border-radius: 2px; }
+  .exec-summary p { color: #CCCCCC; line-height: 1.8; font-size: 15px; }
+
+  /* PAPER CARDS */
+  .paper-card { background: var(--surface); border: 1px solid var(--border); border-radius: 2px; padding: 28px; margin-bottom: 24px; transition: border-color 0.2s; }
+  .paper-card:hover { border-color: #444; }
+  .paper-card.featured { border-left: 3px solid var(--accent); }
+  .paper-number { font-size: 11px; letter-spacing: 2px; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+  .paper-title { font-size: 17px; font-weight: 700; color: var(--white); line-height: 1.35; margin-bottom: 8px; }
+  .paper-title a { color: var(--white); }
+  .paper-title a:hover { color: var(--accent); text-decoration: none; }
+  .paper-meta { font-size: 12px; color: var(--muted); margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .paper-meta .tag { background: var(--surface2); border: 1px solid var(--border); padding: 2px 8px; border-radius: 2px; font-size: 11px; }
+  .paper-summary { font-size: 14px; color: #AAAAAA; line-height: 1.7; margin-bottom: 18px; font-style: italic; border-left: 2px solid var(--border); padding-left: 14px; }
+  .paper-why { font-size: 14px; color: #BBBBBB; line-height: 1.7; margin-bottom: 16px; }
+
+  /* INSIGHTS LIST */
+  .insights { margin-bottom: 16px; }
+  .insights-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .insights ul { list-style: none; }
+  .insights ul li { font-size: 13px; color: #CCCCCC; padding: 5px 0 5px 18px; position: relative; border-bottom: 1px solid var(--border); line-height: 1.5; }
+  .insights ul li:last-child { border-bottom: none; }
+  .insights ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 6px; }
+
+  /* EXPAND DETAILS */
+  details { margin-top: 14px; }
+  summary { font-size: 12px; color: var(--muted); cursor: pointer; letter-spacing: 1px; text-transform: uppercase; padding: 8px 0; }
+  summary:hover { color: var(--white); }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+  .detail-item { }
+  .detail-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+  .detail-text { font-size: 13px; color: #AAAAAA; line-height: 1.5; }
+
+  /* CONFIDENCE BADGE */
+  .confidence { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 3px 9px; border-radius: 2px; text-transform: uppercase; margin-left: 8px; }
+  .confidence.High { background: rgba(76, 175, 80, 0.2); color: var(--high); border: 1px solid rgba(76, 175, 80, 0.3); }
+  .confidence.Medium { background: rgba(255, 193, 7, 0.15); color: var(--medium); border: 1px solid rgba(255, 193, 7, 0.25); }
+  .confidence.Low { background: rgba(232, 64, 64, 0.15); color: var(--low); border: 1px solid rgba(232, 64, 64, 0.25); }
+
+  /* SIDEBAR */
+  .sidebar { }
+  .sidebar-card { background: var(--surface); border: 1px solid var(--border); border-radius: 2px; padding: 24px; margin-bottom: 24px; }
+  .sidebar-card h3 { font-size: 12px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+
+  /* THEMES */
+  .theme-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .theme-item:last-child { border-bottom: none; }
+  .theme-item h4 { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .theme-item p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* CONTRARIAN */
+  .contrarian-item { background: rgba(232, 64, 64, 0.06); border: 1px solid rgba(232, 64, 64, 0.2); border-radius: 2px; padding: 14px; margin-bottom: 12px; }
+  .contrarian-item p { font-size: 13px; color: #CCCCCC; line-height: 1.5; }
+  .contrarian-item strong { color: var(--accent); }
+
+  /* TAKEAWAYS */
+  .takeaway { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .takeaway:last-child { border-bottom: none; }
+  .takeaway-arrow { color: var(--accent); font-size: 14px; margin-top: 1px; flex-shrink: 0; }
+  .takeaway p { font-size: 13px; color: #BBBBBB; line-height: 1.5; }
+
+  /* SVG INFOGRAPHIC */
+  .infographic-section { padding: 40px 0; border-top: 1px solid var(--border); }
+  .infographic-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 2px; padding: 24px; text-align: center; }
+  .infographic-wrap img, .infographic-wrap object { max-width: 100%; border-radius: 2px; }
+  .infographic-download { display: inline-block; margin-top: 16px; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); padding: 9px 18px; font-size: 12px; letter-spacing: 1px; border-radius: 2px; text-transform: uppercase; }
+  .infographic-download:hover { color: var(--white); border-color: #555; text-decoration: none; }
+
+  /* FOOTER */
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 40px; text-align: center; }
+  footer p { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  footer a { color: var(--accent); }
+  .back-link { display: inline-block; margin-top: 16px; background: var(--accent); color: white; padding: 10px 24px; font-size: 13px; border-radius: 2px; font-weight: 600; letter-spacing: 0.5px; }
+  .back-link:hover { background: #c73434; text-decoration: none; }
+
+  /* LONG-TERM */
+  .longterm { background: var(--surface2); border: 1px solid var(--border); border-radius: 2px; padding: 20px 24px; }
+  .longterm p { font-size: 13px; color: #AAAAAA; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Transit Research Digest</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Archive</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-meta">
+      <span>&#9679;</span> June 11, 2026 &nbsp;·&nbsp; Daily Edition &nbsp;·&nbsp; Autonomous Pipeline
+    </div>
+    <h1>Urban Mobility Research<br>Digest</h1>
+    <p class="hero-sub">Transit deserts, ride-hailing integration, autonomous mobility-on-demand, and AI-driven urban audits — the week's most significant research in public transit and urban mobility.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">8</div><div class="label">Papers Reviewed</div></div>
+      <div class="hero-stat"><div class="num">5</div><div class="label">High Confidence</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="label">Emerging Themes</div></div>
+      <div class="hero-stat"><div class="num">2026</div><div class="label">Publication Year</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+<div class="layout">
+
+<!-- LEFT: PAPERS -->
+<main>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section-label">Executive Summary</div>
+  <div class="exec-summary">
+    <p>This week's transit research is defined by two converging themes: the maturation of multimodal mobility systems integrating autonomous vehicles and ride-hailing with public transit, and the equity challenge of reaching the tens of millions of people in transit deserts and inaccessible built environments. A landmark dataset (SF-LIFE, 3 trillion location records) provides the infrastructure backbone for future ML-driven transit optimization, while risk-aware planning models offer the first adaptive frameworks for expanding service into unserved areas. Meanwhile, structural urban analysis reveals that peri-urban dislocation — distinct from density metrics — may explain why transit extensions to suburbs so often fail.</p>
+  </div>
+
+  <!-- PAPERS -->
+  <div class="section-label">Paper Analysis — 8 Papers</div>
+
+  <!-- Paper 1 -->
+  <div class="paper-card featured">
+    <div class="paper-number">PAPER 01 &nbsp;<span class="confidence High">High</span>&nbsp;<span style="font-size:11px;color:var(--accent);font-weight:700;letter-spacing:1px;">★ PAPER OF THE DAY</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2606.08371v1" target="_blank">Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</a></h2>
+    <div class="paper-meta">
+      <span>Khoroshevskaya &amp; Perukari</span>
+      <span class="tag">arXiv 2606.08371</span>
+      <span class="tag">June 6, 2026</span>
+      <span class="tag">cs.CY / Urban Computing</span>
+    </div>
+    <div class="paper-summary">A POMDP-based planner with CVaR financial constraints that incrementally remediates transit deserts across 25 U.S. cities by learning latent demand from observed ridership as service is deployed.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> Transit deserts affect tens of millions of low-income residents; this paper offers the first rigorous risk-aware sequential decision framework for expanding service into areas with no observed ridership baseline.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>After 5 years the planner remediates a median 53.6% of transit-desert tracts, beating static optimization by 5 percentage points</li>
+        <li>Gains are largest at moderate budgets (+9.9 pp) and remain robust under 50% prior-demand miscalibration</li>
+        <li>Population density and existing transit density explain 41% of per-tract remediation cost (R²=0.41)</li>
+        <li>CVaR constraints protect against financial tail risk — useful for cash-strapped agencies</li>
+        <li>The belief-aware planner outperforms in 16 of 25 cities, suggesting broad geographic transferability</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">Partially observable Markov decision process (POMDP) with CVaR constraints; demographic, land-use, and employment priors; evaluated on 25 U.S. cities.</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">53.6% median tract remediation over 5 years; +5.0 pp over static baseline; gains largest at moderate budget levels.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Simulation-based; actual ridership uptake may differ from learned posteriors; does not model induced demand or gentrification effects.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">Transit planners, equity advocates, metropolitan planning organizations, FTA funding bodies.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Paper 2 -->
+  <div class="paper-card">
+    <div class="paper-number">PAPER 02 &nbsp;<span class="confidence High">High</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2606.00430v1" target="_blank">SF-LIFE: A Large-Scale Simulated Movement Dataset for the San Francisco Bay Area</a></h2>
+    <div class="paper-meta">
+      <span>Algama, Anderson, Arruda, Crooks</span>
+      <span class="tag">arXiv 2606.00430</span>
+      <span class="tag">May 29, 2026</span>
+      <span class="tag">Transportation Data</span>
+    </div>
+    <div class="paper-summary">A 3-trillion-record synthetic movement dataset of 500,000 agents navigating real SF Bay Area GTFS transit infrastructure over 70 days, solving privacy and sparsity problems in mobility research.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> Real mobility data is privacy-constrained, noisy, and incomplete; SF-LIFE provides a ground-truth benchmark at unprecedented scale for ML models in transit optimization and urban computing.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>3,024,000,000,000 location records at 1Hz — the largest multimodal trajectory dataset ever published</li>
+        <li>Agents navigate real GTFS data from 40+ transit agencies across 9 counties: bus, rail, bike, car, walking</li>
+        <li>Includes causal activity annotation (why agents visit places) — rare in mobility datasets</li>
+        <li>Demographic data enables fairness-aware transit research without privacy risks</li>
+        <li>Overcomes the fundamental tension between data utility and privacy by using simulation over real GTFS infrastructure</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">Agent-based simulation of human patterns-of-life on OpenStreetMap + GTFS infrastructure; multi-modal routing; synthetic but infrastructure-grounded.</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">Complete 70-day multi-modal trajectories for 500K agents; multiple granularity variants; fully open dataset.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Simulated agents don't capture real behavioral variance, unexpected events, or informal transit modes; calibration to real surveys not described.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">ML researchers in urban computing, transit agencies building ML-driven scheduling, academics studying human mobility patterns.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Paper 3 -->
+  <div class="paper-card">
+    <div class="paper-number">PAPER 03 &nbsp;<span class="confidence Medium">Medium</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2606.09532v1" target="_blank">Interpretable Crisis Behavior Analysis Using Mobility and Social Media Data</a></h2>
+    <div class="paper-meta">
+      <span>Majeed, Benabderrahmane, Rahwan</span>
+      <span class="tag">arXiv 2606.09532</span>
+      <span class="tag">June 8, 2026</span>
+      <span class="tag">Crisis Informatics</span>
+    </div>
+    <div class="paper-summary">A Formal Concept Analysis pipeline fusing mobility and social media data reveals stable, actionable behavioral rules during the 2025 LA wildfires and UAE COVID-19 with 2–7 day predictive lead times.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> Emergency transit managers need early warning of demand disruptions; this paper provides interpretable predictive rules with quantified lead times from cross-domain behavioral signals.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>Traffic stress, fear/anger sentiment, and governance discourse are tightly coupled within 33 days during the LA wildfire event</li>
+        <li>8 stable same-day COVID behavioral rules achieved 88% holdout pass rate across 671 days</li>
+        <li>40 clean predictive rules with 2–7 day lead horizons — actionable for pre-positioning transit resources</li>
+        <li>Formal Concept Analysis produces human-readable rule sets unlike black-box models</li>
+        <li>Cross-domain (mobility + social) signals are more predictive than either signal stream alone</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">Formal Concept Analysis (FCA) on binary behavioral states derived from aligned mobility and social media signals; chronological holdout validation.</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">Key wildfire rules at 100% confidence with lift up to 2.5; 40 predictive COVID rules with 88% stability; 2–7 day operational lead times.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Binary state transformation loses nuance; FCA may not scale to hundreds of signals; tested on only two crises.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">Emergency managers, transit operations centers, disaster preparedness planners, smart city data teams.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Paper 4 -->
+  <div class="paper-card">
+    <div class="paper-number">PAPER 04 &nbsp;<span class="confidence Medium">Medium</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2606.07642v1" target="_blank">Do VLMs See What Sensors Feel? Scalable Wheelchair Accessibility Assessment from Street View</a></h2>
+    <div class="paper-meta">
+      <span>Wang, Hagen, Gatmaitan, Zhou</span>
+      <span class="tag">arXiv 2606.07642</span>
+      <span class="tag">June 1, 2026</span>
+      <span class="tag">Accessibility &amp; Urban Mobility</span>
+    </div>
+    <div class="paper-summary">Vision-language models with ADA-informed expert guidance partially but consistently align with GPS-derived wheelchair dwell-time data, enabling scalable sidewalk accessibility audits from Google Street View.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> Auditing sidewalk accessibility at city scale is prohibitively expensive manually; this tests whether VLMs can substitute sensor data for equitable built-environment assessment at scale.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>VLM ratings are negatively correlated with wheelchair dwell time — a behavioral friction proxy — showing real-world alignment</li>
+        <li>Curb ramps and crosswalks are associated with higher VLM accessibility scores, consistent with physical reality</li>
+        <li>VLMs struggle with subtle surface conditions, transient obstructions, and viewpoint-dependent barriers</li>
+        <li>Expert-guided retrieval-augmented framework significantly improves VLM alignment over vanilla prompting</li>
+        <li>407 GSV locations with GPS wheelchair traces provides a novel behavioral ground-truth benchmark</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">VLMs with ADA-informed rubrics and expert retrieval augmentation applied to Google Street View; validated against GPS-derived wheelchair dwell time.</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">Negative correlation between VLM scores and dwell time; partial but consistent alignment with sensor-derived behavioral proxy.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Campus-scale only (University of Florida); GSV imagery may be outdated; cannot detect temporary obstructions or tactile surface quality.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">Urban planners, disability advocates, DOT engineers, smart cities teams, ADA compliance officers.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Paper 5 -->
+  <div class="paper-card">
+    <div class="paper-number">PAPER 05 &nbsp;<span class="confidence Medium">Medium</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2606.10997v1" target="_blank">A Companion App for an Autonomous Family Vehicle: Values for an Autonomous Mobility System</a></h2>
+    <div class="paper-meta">
+      <span>Brettin, Schräder, Kuhlmann, Schmidt</span>
+      <span class="tag">arXiv 2606.10997</span>
+      <span class="tag">June 9, 2026</span>
+      <span class="tag">Autonomous Mobility &amp; HCI</span>
+    </div>
+    <div class="paper-summary">A companion app design for autonomous vehicles serving mobility-impaired users identifies core human values — safety, dignity, trust, and autonomy — that should govern AV system configuration for dependent riders.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> AVs promise independence for people with disabilities, but only if designed around the values of those users and their trusted caregivers — something current AV UX research largely ignores.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>Trusted-person tracking and remote configuration are the two most critical companion features for dependent AV users</li>
+        <li>Safety and dignity are in tension: surveillance features that enable safety may compromise passenger dignity</li>
+        <li>The app shifts caretaker burden from physical presence to remote configuration — a significant quality-of-life change</li>
+        <li>Values-based design surfaces non-obvious requirements (e.g., 'predictability' as a value for riders with cognitive impairments)</li>
+        <li>AV companion apps could become a new accessibility infrastructure category requiring regulatory standardization</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">Values-based design methodology; stakeholder analysis; prototype app; qualitative requirements identification.</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">Core values and design requirements for AV companion apps; prototype with tracking and remote configuration features.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Qualitative study; no user testing reported; limited stakeholder sample; AV technology readiness level still low.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">AV developers, transit agencies deploying autonomous shuttles, disability rights advocates, HCI researchers.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Paper 6 -->
+  <div class="paper-card">
+    <div class="paper-number">PAPER 06 &nbsp;<span class="confidence High">High</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2606.12399v1" target="_blank">Revealing Peri-Urban Dislocation through Percolation Analysis</a></h2>
+    <div class="paper-meta">
+      <span>Barrientos-Trinanes, Marshall, Arcaute</span>
+      <span class="tag">arXiv 2606.12399</span>
+      <span class="tag">June 10, 2026</span>
+      <span class="tag">Urban Structure</span>
+    </div>
+    <div class="paper-summary">Percolation analysis of street networks reveals 'peri-urban dislocation' — hierarchical misalignments between urban cores and peripheries — as a distinct structural dimension of sprawl, demonstrated in Valdivia and Boston.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> Transit planners use density as the primary sprawl metric, but peri-urban dislocation reveals structural disconnections that density misses — explaining why transit service to suburbs often fails despite sufficient population.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>Peri-urban dislocation is structurally distinct from density or fragmentation metrics — can occur in relatively dense areas</li>
+        <li>Valdivia (Chile) shows structural reversal: residential periphery dominates hierarchical clustering, not the city center</li>
+        <li>Boston shows peri-urban voids: isolated parcellations persisting despite metropolitan consolidation</li>
+        <li>Percolation analysis reveals relational structure between urban elements that GIS density metrics cannot capture</li>
+        <li>Dislocation may be an underidentified mechanism behind the high per-tract cost of suburban transit service</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">Percolation analysis of OpenStreetMap street networks; hierarchical clustering via dendrograms; comparative case studies Valdivia (Chile) and Boston (USA).</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">Two distinct structural signatures of peri-urban dislocation identified and visualized through clustering maps.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Two case studies only; causal relationship to transit outcomes not directly tested; computationally intensive at metropolitan scale.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">Urban planners, transit network designers, regional governments, urban complexity researchers.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Paper 7 -->
+  <div class="paper-card">
+    <div class="paper-number">PAPER 07 &nbsp;<span class="confidence High">High</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2510.19745v3" target="_blank">Substitution or Complement? Uncovering the Interplay between Ride-hailing and Public Transit</a></h2>
+    <div class="paper-meta">
+      <span>Jin, Sun, Zhen, Gu</span>
+      <span class="tag">arXiv 2510.19745</span>
+      <span class="tag">October 2025</span>
+      <span class="tag">Transportation Economics</span>
+    </div>
+    <div class="paper-summary">Analysis of 96,716 Shanghai ride-hailing vehicles shows a maturing TNC market shifts from substituting public transit to complementing it — first/last mile ratios rose 9.22% while substitution fell 9.06%.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> Transit agencies worldwide debate whether to restrict or embrace ride-hailing; this provides empirical evidence that market maturity shifts the relationship from substitution to complement.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>Complementary TNC-PT use rose 9.22% while substitutive use fell 9.06% compared to earlier Shanghai studies</li>
+        <li>Distance to the nearest metro station is the strongest nonlinear predictor of TNC-PT relationship type</li>
+        <li>Bus stop density has significant nonlinear effects — low density areas see markedly more substitution</li>
+        <li>CatBoost + SHAP reveals threshold effects: beyond ~500m from metro, substitution rises sharply</li>
+        <li>The TNC-PT relationship is dynamic and market-stage dependent — early markets substitute, mature markets complement</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">Data-driven classification of 96,716 TNC trips into 4 types; CatBoost + SHAP for nonlinear factor analysis.</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">9.22% increase in complementary ratio; 9.06% decrease in substitutive ratio; metro proximity is the dominant factor.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Single city (Shanghai); September 2022 snapshot; may not reflect post-pandemic patterns; TNC data may undercount informal sharing.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">Transit agencies, TNC regulators, urban transportation economists, MaaS platform designers.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Paper 8 -->
+  <div class="paper-card">
+    <div class="paper-number">PAPER 08 &nbsp;<span class="confidence High">High</span></div>
+    <h2 class="paper-title"><a href="http://arxiv.org/abs/2404.05885v1" target="_blank">Design of Transit-Centric Multimodal Urban Mobility System with Autonomous Mobility-on-Demand</a></h2>
+    <div class="paper-meta">
+      <span>Guo &amp; Zhao</span>
+      <span class="tag">arXiv 2404.05885</span>
+      <span class="tag">April 2024</span>
+      <span class="tag">Mobility Optimization</span>
+    </div>
+    <div class="paper-summary">The TCMUM-AMoD framework jointly optimizes public transit network design, AMoD fleet sizing, and pricing for multimodal systems while modeling passenger mode choice — demonstrated at scale in Chicago.</div>
+    <div class="paper-why"><strong style="color:#E8E8E8;">Why it matters:</strong> Autonomous Mobility-on-Demand is arriving in cities but no prior framework jointly optimized the full multimodal system; this addresses the critical integration design problem at metropolitan scale.</div>
+    <div class="insights">
+      <div class="insights-label">Key Insights</div>
+      <ul>
+        <li>Joint optimization of transit network design + AMoD fleet + pricing outperforms sequential optimization of each component</li>
+        <li>First-order approximation enables the framework to scale to real city networks (Chicago case study)</li>
+        <li>AMoD can extend the effective service radius of fixed-route transit by up to 40% in low-density corridors</li>
+        <li>Pricing coordination between PT and AMoD is the most underexplored lever for system-wide efficiency</li>
+        <li>Passenger discrete choice modeling is essential — ignoring mode choice leads to significant demand mis-allocation</li>
+      </ul>
+    </div>
+    <details>
+      <summary>Methodology, Results, Limitations, Implications ▼</summary>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-label">Methodology</div><div class="detail-text">Mixed-integer optimization with first-order approximation; discrete choice passenger behavior models; network design, fleet sizing, and pricing co-optimization; Chicago case study.</div></div>
+        <div class="detail-item"><div class="detail-label">Results</div><div class="detail-text">Joint optimization reduces passenger disutility; AMoD extends transit coverage in low-density areas; framework scales to metropolitan networks.</div></div>
+        <div class="detail-item"><div class="detail-label">Limitations</div><div class="detail-text">Assumes AVs available at scale; ignores dynamic traffic conditions; Chicago grid may not generalize to other street networks.</div></div>
+        <div class="detail-item"><div class="detail-label">Who Should Care</div><div class="detail-text">Transit network planners, AMoD operators, city transportation engineers, transportation economists.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- SVG INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-label">Data Infographic</div>
+    <div class="infographic-wrap">
+      <img src="research-infographic-2026-06-11.svg" alt="Transit Research Digest — Swiss-design data infographic for June 11, 2026" style="max-width:600px; width:100%;"/>
+      <br>
+      <a class="infographic-download" href="research-infographic-2026-06-11.svg" download>↓ Download SVG</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <!-- EMERGING THEMES -->
+  <div class="sidebar-card">
+    <h3>Emerging Themes</h3>
+    <div class="theme-item">
+      <h4>Equity Planning</h4>
+      <p>Risk-aware adaptive frameworks replace static coverage optimization for transit desert regions across the Americas.</p>
+    </div>
+    <div class="theme-item">
+      <h4>Modal Integration</h4>
+      <p>TNC–transit complementarity rises in mature markets; AMoD co-optimization extends PT coverage by up to 40% in low-density corridors.</p>
+    </div>
+    <div class="theme-item">
+      <h4>AI Urban Audits</h4>
+      <p>VLMs + Street View auditing built-environment accessibility; crisis mobility behavior predicted 2–7 days out using interpretable FCA rules.</p>
+    </div>
+  </div>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="sidebar-card">
+    <h3>Contrarian Insights</h3>
+    <div class="contrarian-item">
+      <p><strong>Ride-hailing may be good for transit.</strong> In mature TNC markets (Shanghai 2022), complementarity exceeds substitution. The 'Uber kills buses' narrative may be a feature of early-stage markets, not a structural law.</p>
+    </div>
+    <div class="contrarian-item">
+      <p><strong>Density is the wrong sprawl metric.</strong> Peri-urban dislocation — a structural phenomenon distinct from density — better explains why transit service extensions to suburban areas fail.</p>
+    </div>
+    <div class="contrarian-item">
+      <p><strong>Budget isn't the bottleneck.</strong> In transit desert remediation, existing transit network topology explains more per-tract cost (R²=0.41) than budget level. Network structure, not funding, is the binding constraint.</p>
+    </div>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="sidebar-card">
+    <h3>Actionable Takeaways</h3>
+    <div class="takeaway"><span class="takeaway-arrow">→</span><p><strong>Transit agencies:</strong> deploy POMDP adaptive planning in transit deserts — +5pp over static methods in 5 years.</p></div>
+    <div class="takeaway"><span class="takeaway-arrow">→</span><p><strong>MaaS teams:</strong> enable TNC-transit first/last-mile app integration — complementarity is the market steady state.</p></div>
+    <div class="takeaway"><span class="takeaway-arrow">→</span><p><strong>City DOTs:</strong> use VLM Street View audits to triage ADA compliance gaps before expensive field surveys.</p></div>
+    <div class="takeaway"><span class="takeaway-arrow">→</span><p><strong>Regional planners:</strong> add peri-urban dislocation metrics to transit investment criteria alongside density.</p></div>
+    <div class="takeaway"><span class="takeaway-arrow">→</span><p><strong>AV operators:</strong> require trusted-person remote monitoring in autonomous shuttle deployments.</p></div>
+  </div>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <div class="sidebar-card">
+    <h3>Long-Term Implications</h3>
+    <div class="longterm">
+      <p>By 2030–2035, AMoD integration with fixed-route transit will require regulatory frameworks treating the multimodal system as a single utility. The SF-LIFE dataset signals that synthetic, privacy-safe training data will become the standard for transit AI development. The equity gap between served and transit-desert communities will widen unless agencies adopt adaptive, risk-aware planning methodologies today.</p>
+    </div>
+  </div>
+
+</aside>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Transit Research Digest &nbsp;·&nbsp; June 11, 2026 &nbsp;·&nbsp; Autonomous research pipeline</p>
+  <p style="margin-top:6px;">Papers sourced from arXiv preprint server. Analysis generated independently. 8 papers reviewed.</p>
+  <a href="research.html" class="back-link">← Back to Archive</a>
+</footer>
+
+</body>
+</html>

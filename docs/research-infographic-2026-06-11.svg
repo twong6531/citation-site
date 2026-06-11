@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" font-family="Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="110" fill="#1A1A1A"/>
+  <text x="40" y="45" font-size="11" fill="#F7F7F5" letter-spacing="4" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="78" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">
+    <tspan>Urban Mobility</tspan>
+  </text>
+  <text x="40" y="100" font-size="13" fill="#AAAAAA" letter-spacing="1">June 11, 2026  —  8 Papers Analyzed</text>
+  <rect x="680" y="20" width="80" height="26" fill="#E84040"/>
+  <text x="720" y="37" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="700" letter-spacing="1">RESEARCH</text>
+
+  <!-- RULE LINE -->
+  <rect x="40" y="130" width="720" height="1.5" fill="#1A1A1A"/>
+
+  <!-- SECTION: KEY FINDINGS -->
+  <text x="40" y="165" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">KEY FINDINGS</text>
+  
+  <!-- Finding 1 -->
+  <text x="40" y="198" font-size="42" fill="#E84040" font-weight="700">01</text>
+  <rect x="100" y="175" width="3" height="40" fill="#E84040"/>
+  <text x="115" y="192" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan>Transit deserts can be remediated adaptively</tspan>
+  </text>
+  <text x="115" y="210" font-size="11" fill="#555555">
+    <tspan>POMDP planning remediates 53.6% of tracts in 5 years; +5pp over static methods</tspan>
+  </text>
+
+  <!-- Finding 2 -->
+  <text x="40" y="256" font-size="42" fill="#1A1A1A" font-weight="700">02</text>
+  <rect x="100" y="233" width="3" height="40" fill="#1A1A1A"/>
+  <text x="115" y="250" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan>Ride-hailing complements transit in mature markets</tspan>
+  </text>
+  <text x="115" y="268" font-size="11" fill="#555555">
+    <tspan>Shanghai data: complementary ratio +9.22%, substitution ratio -9.06%</tspan>
+  </text>
+
+  <!-- Finding 3 -->
+  <text x="40" y="314" font-size="42" fill="#1A1A1A" font-weight="700">03</text>
+  <rect x="100" y="291" width="3" height="40" fill="#1A1A1A"/>
+  <text x="115" y="308" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan>Peri-urban dislocation — not density — predicts transit failure</tspan>
+  </text>
+  <text x="115" y="326" font-size="11" fill="#555555">
+    <tspan>Street network percolation reveals structural misalignments invisible to density metrics</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="350" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- SECTION: PAPER OF THE DAY -->
+  <text x="40" y="383" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <rect x="40" y="395" width="720" height="100" fill="#1A1A1A"/>
+  <text x="60" y="423" font-size="14" fill="#E84040" font-weight="700" letter-spacing="0.5">
+    <tspan>Risk-Aware Planning for Transit Desert Remediation</tspan>
+  </text>
+  <text x="60" y="441" font-size="14" fill="#E84040" font-weight="700">
+    <tspan>Under Demand Uncertainty</tspan>
+  </text>
+  <text x="60" y="461" font-size="11" fill="#AAAAAA">
+    <tspan>Khoroshevskaya &amp; Perukari  ·  arXiv 2606.08371  ·  2026</tspan>
+  </text>
+  <text x="60" y="481" font-size="11" fill="#CCCCCC">
+    <tspan>First POMDP+CVaR framework for transit deserts · Validated on 25 U.S. cities</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="510" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- SECTION: EMERGING THEMES (3 columns) -->
+  <text x="40" y="543" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">EMERGING THEMES</text>
+
+  <!-- Theme col 1 -->
+  <rect x="40" y="558" width="218" height="110" fill="#EEEEEC"/>
+  <text x="55" y="580" font-size="10" fill="#E84040" font-weight="700" letter-spacing="1">EQUITY PLANNING</text>
+  <text x="55" y="600" font-size="11" fill="#1A1A1A">
+    <tspan>Risk-aware adaptive</tspan>
+  </text>
+  <text x="55" y="616" font-size="11" fill="#1A1A1A">
+    <tspan>frameworks replace</tspan>
+  </text>
+  <text x="55" y="632" font-size="11" fill="#1A1A1A">
+    <tspan>static coverage</tspan>
+  </text>
+  <text x="55" y="648" font-size="11" fill="#1A1A1A">
+    <tspan>optimization for</tspan>
+  </text>
+  <text x="55" y="664" font-size="11" fill="#555555">
+    <tspan>transit desert regions</tspan>
+  </text>
+
+  <!-- Theme col 2 -->
+  <rect x="291" y="558" width="218" height="110" fill="#EEEEEC"/>
+  <text x="306" y="580" font-size="10" fill="#E84040" font-weight="700" letter-spacing="1">MODAL INTEGRATION</text>
+  <text x="306" y="600" font-size="11" fill="#1A1A1A">
+    <tspan>TNC–transit</tspan>
+  </text>
+  <text x="306" y="616" font-size="11" fill="#1A1A1A">
+    <tspan>complementarity rises</tspan>
+  </text>
+  <text x="306" y="632" font-size="11" fill="#1A1A1A">
+    <tspan>in mature markets;</tspan>
+  </text>
+  <text x="306" y="648" font-size="11" fill="#1A1A1A">
+    <tspan>AMoD co-optimization</tspan>
+  </text>
+  <text x="306" y="664" font-size="11" fill="#555555">
+    <tspan>extends PT coverage 40%</tspan>
+  </text>
+
+  <!-- Theme col 3 -->
+  <rect x="542" y="558" width="218" height="110" fill="#EEEEEC"/>
+  <text x="557" y="580" font-size="10" fill="#E84040" font-weight="700" letter-spacing="1">AI URBAN AUDITS</text>
+  <text x="557" y="600" font-size="11" fill="#1A1A1A">
+    <tspan>VLMs + street view</tspan>
+  </text>
+  <text x="557" y="616" font-size="11" fill="#1A1A1A">
+    <tspan>auditing built-env.</tspan>
+  </text>
+  <text x="557" y="632" font-size="11" fill="#1A1A1A">
+    <tspan>accessibility; crisis</tspan>
+  </text>
+  <text x="557" y="648" font-size="11" fill="#1A1A1A">
+    <tspan>mobility behavior</tspan>
+  </text>
+  <text x="557" y="664" font-size="11" fill="#555555">
+    <tspan>predicted 2–7 days out</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="685" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- SECTION: CONFIDENCE CHART -->
+  <text x="40" y="718" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">CONFIDENCE BY PAPER</text>
+
+  <!-- Chart bars - 8 papers -->
+  <!-- Paper 1: Transit Desert - HIGH -->
+  <rect x="40" y="735" width="480" height="22" fill="#1A1A1A"/>
+  <text x="530" y="751" font-size="10" fill="#1A1A1A">HIGH</text>
+  <text x="40" y="730" font-size="9" fill="#888888">Transit Desert Remediation</text>
+
+  <!-- Paper 2: SF-LIFE - HIGH -->
+  <rect x="40" y="772" width="480" height="22" fill="#1A1A1A"/>
+  <text x="530" y="788" font-size="10" fill="#1A1A1A">HIGH</text>
+  <text x="40" y="767" font-size="9" fill="#888888">SF-LIFE Dataset</text>
+
+  <!-- Paper 3: Crisis Mobility - MEDIUM -->
+  <rect x="40" y="809" width="320" height="22" fill="#888888"/>
+  <text x="370" y="825" font-size="10" fill="#1A1A1A">MED</text>
+  <text x="40" y="804" font-size="9" fill="#888888">Crisis Mobility Behavior</text>
+
+  <!-- Paper 4: Wheelchair VLM - MEDIUM -->
+  <rect x="40" y="846" width="320" height="22" fill="#888888"/>
+  <text x="370" y="862" font-size="10" fill="#1A1A1A">MED</text>
+  <text x="40" y="841" font-size="9" fill="#888888">VLM Accessibility Assessment</text>
+
+  <!-- Paper 5: AV Companion - MEDIUM -->
+  <rect x="40" y="883" width="320" height="22" fill="#888888"/>
+  <text x="370" y="899" font-size="10" fill="#1A1A1A">MED</text>
+  <text x="40" y="878" font-size="9" fill="#888888">AV Companion App Values</text>
+
+  <!-- Paper 6: Peri-Urban - HIGH -->
+  <rect x="40" y="920" width="480" height="22" fill="#1A1A1A"/>
+  <text x="530" y="936" font-size="10" fill="#1A1A1A">HIGH</text>
+  <text x="40" y="915" font-size="9" fill="#888888">Peri-Urban Dislocation</text>
+
+  <!-- Paper 7: Ride-hailing - HIGH -->
+  <rect x="40" y="957" width="480" height="22" fill="#1A1A1A"/>
+  <text x="530" y="973" font-size="10" fill="#1A1A1A">HIGH</text>
+  <text x="40" y="952" font-size="9" fill="#888888">TNC-Transit Substitution/Complement</text>
+
+  <!-- Paper 8: AMoD Design - HIGH -->
+  <rect x="40" y="994" width="480" height="22" fill="#1A1A1A"/>
+  <text x="530" y="1010" font-size="10" fill="#1A1A1A">HIGH</text>
+  <text x="40" y="989" font-size="9" fill="#888888">Transit-Centric AMoD Design</text>
+
+  <!-- Scale labels -->
+  <text x="40" y="1028" font-size="9" fill="#AAAAAA">LOW</text>
+  <text x="280" y="1028" font-size="9" fill="#AAAAAA" text-anchor="middle">MEDIUM</text>
+  <text x="520" y="1028" font-size="9" fill="#AAAAAA" text-anchor="middle">HIGH</text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="1046" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- SECTION: ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="1079" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="40" y="1108" font-size="11" fill="#E84040" font-weight="700">→</text>
+  <text x="55" y="1108" font-size="11" fill="#1A1A1A">
+    <tspan>Transit agencies: deploy POMDP adaptive planning in transit deserts</tspan>
+  </text>
+  <text x="55" y="1124" font-size="11" fill="#555555">
+    <tspan>5 years of adaptive routing = +5pp over static coverage optimization</tspan>
+  </text>
+
+  <text x="40" y="1150" font-size="11" fill="#E84040" font-weight="700">→</text>
+  <text x="55" y="1150" font-size="11" fill="#1A1A1A">
+    <tspan>MaaS teams: enable first/last-mile TNC-transit app integration</tspan>
+  </text>
+  <text x="55" y="1166" font-size="11" fill="#555555">
+    <tspan>Shanghai data: complementarity is the steady state in mature TNC markets</tspan>
+  </text>
+
+  <text x="40" y="1192" font-size="11" fill="#E84040" font-weight="700">→</text>
+  <text x="55" y="1192" font-size="11" fill="#1A1A1A">
+    <tspan>City DOTs: use VLM Street View audits to triage ADA compliance gaps</tspan>
+  </text>
+  <text x="55" y="1208" font-size="11" fill="#555555">
+    <tspan>Replaces expensive field surveys; campus-scale validated against GPS wheelchair data</tspan>
+  </text>
+
+  <text x="40" y="1234" font-size="11" fill="#E84040" font-weight="700">→</text>
+  <text x="55" y="1234" font-size="11" fill="#1A1A1A">
+    <tspan>Regional planners: add peri-urban dislocation to transit investment criteria</tspan>
+  </text>
+  <text x="55" y="1250" font-size="11" fill="#555555">
+    <tspan>Density metrics miss structural disconnections that make suburban service costly</tspan>
+  </text>
+
+  <text x="40" y="1276" font-size="11" fill="#E84040" font-weight="700">→</text>
+  <text x="55" y="1276" font-size="11" fill="#1A1A1A">
+    <tspan>AV operators: require trusted-person remote monitoring in autonomous shuttles</tspan>
+  </text>
+  <text x="55" y="1292" font-size="11" fill="#555555">
+    <tspan>Values-based design shows safety and dignity require remote caregiver integration</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="1315" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- CONTRARIAN INSIGHT BOX -->
+  <text x="40" y="1348" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">CONTRARIAN INSIGHT</text>
+  <rect x="40" y="1360" width="720" height="80" fill="#FFF5F5" stroke="#E84040" stroke-width="1.5"/>
+  <text x="60" y="1385" font-size="13" fill="#E84040" font-weight="700">
+    <tspan>Ride-hailing may be good for transit.</tspan>
+  </text>
+  <text x="60" y="1405" font-size="11" fill="#333333">
+    <tspan>In mature TNC markets (Shanghai 2022), complementarity exceeds substitution by a growing margin.</tspan>
+  </text>
+  <text x="60" y="1423" font-size="11" fill="#333333">
+    <tspan>The 'Uber kills buses' narrative may be a feature of early-stage markets, not a structural law.</tspan>
+  </text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1480" width="800" height="120" fill="#1A1A1A"/>
+  <text x="40" y="1520" font-size="11" fill="#AAAAAA">
+    <tspan>Transit Research Digest  ·  June 11, 2026  ·  Autonomous research pipeline</tspan>
+  </text>
+  <text x="40" y="1540" font-size="10" fill="#666666">
+    <tspan>Papers sourced from arXiv. Analysis generated independently. 8 papers reviewed.</tspan>
+  </text>
+  <text x="40" y="1560" font-size="10" fill="#666666">
+    <tspan>twong6531.github.io/citation-site/research.html</tspan>
+  </text>
+  <rect x="680" y="1495" width="80" height="50" fill="#E84040"/>
+  <text x="720" y="1518" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">2026</text>
+  <text x="720" y="1533" font-size="9" fill="#FFFFFF" text-anchor="middle">TRANSIT</text>
+  <text x="720" y="1548" font-size="9" fill="#FFFFFF" text-anchor="middle">RESEARCH</text>
+
+</svg>
