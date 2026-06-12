@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoCal Transit Intelligence — June 12, 2026</title>
+<meta property="og:title" content="SoCal Transit Intelligence — June 12, 2026">
+<meta property="og:description" content="10-story briefing: World Cup Day 1 USA vs. Paraguay, USDOT $9M injection, Olympics funding signal, Metro DPS 950 apps, rising fuel costs, Moovit integration, Lime e-bikes, and more.">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+nav .brand { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; color: #94a3b8; text-transform: uppercase; }
+nav .nav-links { display: flex; gap: 1.5rem; }
+nav a { color: #94a3b8; text-decoration: none; font-size: 0.82rem; }
+nav a:hover { color: #fff; }
+.hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+.hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; color: #3b82f6; text-transform: uppercase; font-weight: 700; margin-bottom: 0.75rem; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; line-height: 1.15; }
+.hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.05rem; }
+.hero .date-window { display: inline-block; margin-top: 1rem; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); border-radius: 999px; padding: 0.3rem 1rem; font-size: 0.78rem; color: #7dd3fc; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.priority.high { background: #ef4444; color: #fff; }
+.priority.medium { background: #f59e0b; color: #000; }
+.priority.low-medium { background: #64748b; color: #fff; }
+.agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+.card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; line-height: 1.35; }
+.date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+.connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+.source-link:hover { color: #60a5fa; text-decoration: underline; }
+.status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+.status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:nth-child(odd) td { background: #1e293b; }
+tr:nth-child(even) td { background: #0f172a; }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+.status-dot.green { background: #22c55e; }
+.status-dot.yellow { background: #f59e0b; }
+.status-dot.red { background: #ef4444; }
+.status-dot.blue { background: #3b82f6; }
+.themes { background: #0a1628; padding: 2rem; }
+.themes-inner { max-width: 1400px; margin: 0 auto; }
+.themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+.theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+.theme:last-child { border-bottom: none; }
+.theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+.theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+footer a { color: #64748b; text-decoration: none; }
+footer a:hover { color: #94a3b8; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } nav .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="brand">SoCal Transit Intelligence</span>
+  <div class="nav-links">
+    <a href="transit.html">Archive</a>
+    <a href="index.html">Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Southern California Transit Briefing</div>
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">LA Metro · Metrolink · Amtrak · LAWA · CA HSR · SCAG · OCTA · MTS</p>
+  <div class="date-window">June 3 – June 12, 2026 &nbsp;·&nbsp; 10 Stories</div>
+</div>
+
+<!-- STORY GRID -->
+<div class="grid">
+
+  <!-- TOPIC 1: World Cup Day 1 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/05/wc-free-fan-event-map.png?fit=1200%2C949&ssl=1"
+           alt="FIFA World Cup 2026 fan event map for LA County"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">Surfliner</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: World Cup Day 1 — USA vs. Paraguay Kicks Off, Metro Match-Day Operations Now Live</h2>
+      <p class="date-range">June 12, 2026</p>
+      <p class="summary">The FIFA World Cup 2026 officially opened in the Los Angeles region today with USA vs. Paraguay at SoFi Stadium in Inglewood. LA Metro is running full match-day operations including $1.75 direct bus shuttles from multiple hubs to the stadium, starting four hours before each kickoff. All six SoCal transit agencies — Metro, Metrolink, Surfliner, OCTA, LADOT, and Dash — are coordinating live operations for what is the region's largest-ever transit mobilization before the 2028 Olympics.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>8 LA Stadium matches:</strong> June 12, 15, 18, 21, 25, 28; July 2, 10</li>
+        <li>Metro $1.75 direct bus to SoFi: service starts <strong>4 hours before kickoff</strong></li>
+        <li>Metrolink expanded on <strong>5 lines</strong> with late-night trains + free Metro transfers</li>
+        <li>Pacific Surfliner: <strong>reservations required June 11–July 19</strong>; code "soccer2026" for 20% off</li>
+        <li>Stadium parking near SoFi reaching <strong>$200–$300 per space</strong></li>
+        <li>Metro contactless tap-to-pay active on all rail + bus lines for visiting fans</li>
+        <li>Moovit real-time app integration live for World Cup navigation</li>
+        <li>IDEMIA LED transit cards launched — North America's first for a major sporting event</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Today is opening day for the real-world stress test of SoCal's multi-agency transit coordination ahead of the 2028 Olympics. Ridership, delay, and incident data from these World Cup matches will directly shape Olympic transit planning, contracts, and staffing decisions for all agencies.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (USDOT $9M), Topic 3 (Olympics funding), Topic 9 (Metrolink expansion)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-service-updates-for-usa-vs-paraguay-on-friday-june-12/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 2: USDOT $9M -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/06/WorldCupTransitmap2026Jun.jpg"
+           alt="SoCal World Cup transit map federal funding"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">USDOT</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">OCTA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: USDOT Sends $9 Million to LA for World Cup Transportation Operations</h2>
+      <p class="date-range">June 12, 2026</p>
+      <p class="summary">The U.S. Department of Transportation announced a $9 million allocation to support transportation operations in Los Angeles County during the FIFA World Cup 2026 matches. The funding is intended to cover increased operational costs across transit agencies, traffic management, and pedestrian safety improvements at key stadium access points. The announcement signals renewed federal engagement with LA's transit infrastructure after months of uncertainty around federal grants tied to Trump-era budget proposals.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>$9 million</strong> federal USDOT allocation for LA World Cup transportation</li>
+        <li>Covers match days across <strong>8 LA-area games</strong> from June 12 to July 10</li>
+        <li>Funds directed toward multi-agency operational costs, traffic management, and safety</li>
+        <li>Announcement made on opening match day — USA vs. Paraguay</li>
+        <li>Follows period of federal uncertainty around transit grants under 2025–26 budget battles</li>
+        <li>Separate from LA28 Olympic infrastructure funding discussions (see Topic 3)</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Federal money flowing into LA transit during the World Cup suggests the Trump administration sees political value in ensuring this high-profile event runs smoothly on transit — potentially opening a window for LA to argue for similar Olympic-era funding. The $9M is small relative to total costs but symbolically important as federal-local transit relations have been strained.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup Day 1), Topic 3 (Olympics funding signal)</p>
+      <a class="source-link" href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxNdU9zU0FWOHVmZFhvYW9TWDhtclNHaUM5M2Y5MkVYVzFNTlB2WEl3dTNxeXV5TG14ZWxRNG1odzZEdnA1cnQ0MXMteVJ3M19KOU1KUVdLWHVkOU9YbmlkeENrbHlyajBCNDJLTk5hNV9tOWtWSUptc3ZVeUVFVGVpTVhTQjJjMU1KV0V0R1VVVTlOM0hEU0NRWWthYzY4Y1VnVmlqYUFYOWRMd1RldjZYTmozbFZha1ZjLXJqMzVfWGI3UVoxTDBPTVF1TjZKLUlxTVhxQnJjTkFObldkY2prWlNfQ0htcEw0Q2g3Y2JwZGhQZ1hGck1v?oc=5" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 3: Olympics Transportation Funding Signal -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_9887-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="LA Metro rail system Olympics 2028 transportation"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">USDOT</span>
+        <span class="agency">LA28</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: After Months of Uncertainty, a Positive Sign for LA 2028 Olympics Transportation Funding</h2>
+      <p class="date-range">June 12, 2026</p>
+      <p class="summary">The Los Angeles Times reported today that a positive federal signal has emerged for LA 2028 Olympics transportation funding, after an extended period of uncertainty tied to federal budget battles and the Trump administration's general posture toward LA-area infrastructure grants. The development — timed to World Cup opening day — suggests federal authorities are now engaging constructively with LA's transportation planning horizon for the 2028 Games, which require significant rail, bus, and active-transportation investments across multiple agencies.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>LA Times headline: <em>"After uncertainty, a positive sign for L.A. Olympics transportation funding"</em> — June 12</li>
+        <li>Funding uncertainty stems from prior federal reviews of LA-area transit grants in 2025</li>
+        <li>LA28 requires coordinated investment across Metro, Metrolink, LAWA, and LADOT</li>
+        <li>D Line Section 2 (Westwood extension ~2028), LAX SkyLink, and Metro bus network are key Olympics-era projects</li>
+        <li>World Cup match-day performance is being monitored as a proxy for 2028 readiness</li>
+        <li>Separate from USDOT's $9M World Cup operational allocation (see Topic 2)</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Federal funding for the 2028 Olympics is the single most important financial variable for LA Metro's near-term capital pipeline. A green light from Washington unlocks not just capital grants but also the political momentum to push D Line extensions, Crenshaw/LAX connections, and new bus rapid transit to completion by 2028.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup stress test), Topic 2 (USDOT $9M), Topic 9 (Metrolink)</p>
+      <a class="source-link" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOR3B1ZnpDeDk5emMxRURoRGZ5VmNNeTMxTHNjdnhlNFlWRHNxa2hXVGw3UHVBcUh5SmNYcy1rblFVSHFla19paEhBV2xaTExDRm9Dd19Pc1RCUGNMTXVOZWtoc2tfdElNaWVXS0NHMkYwU0xEbUFFUlRfQm80MHRMY3RvMlNkckMySDhMYVJxOHVnanA5eDMtUHpxWUVLaVNYYXpHSUtCSC01YnEzWGhhaEFmaEhUdw?oc=5" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 4: Metro DPS Recruitment -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?fit=1200%2C600&ssl=1"
+           alt="LA Metro Department of Public Safety sworn officer recruitment"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metro DPS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: Metro DPS Sworn Officer Recruitment Draws 950+ Applications in First 24 Hours</h2>
+      <p class="date-range">June 9, 2026</p>
+      <p class="summary">LA Metro announced its new Department of Public Safety (DPS) received 950 applications for sworn officer positions within the first 24 hours of opening its recruitment campaign on June 9. The response is described as a "strong start" as Metro moves to replace its prior LAPD and LASD contracts with an in-house law enforcement body. The first recruits will shape department culture, policy, and community engagement from the ground up, with Metro emphasizing a "community-focused approach" distinct from previous transit policing models.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>950 applications</strong> in the first 24 hours of recruitment (as of June 9)</li>
+        <li>Recruitment launched <strong>early June 2026</strong> — the DPS authorization was voted in 2025</li>
+        <li>First recruits will help build <strong>department culture, policies, and community focus</strong></li>
+        <li>Metro DPS replaces prior contracts with LAPD and LASD that cost over $150M/year</li>
+        <li>Hiring targets include experienced law enforcement officers, community safety specialists</li>
+        <li>Timeline: training academies begin late 2026; full DPS patrol deployment expected 2027</li>
+        <li>Parallel effort: Metro FY27 budget includes expanded non-sworn safety programs</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The 950-application surge signals strong interest in Metro's in-house safety model. How Metro DPS performs during the World Cup and then the 2028 Olympics will set the template for transit policing in the region — and potentially influence how other U.S. transit agencies approach public safety.</p>
+      <p class="connections"><em>Connects to:</em> Topic 8 (FY27 Budget engagement), Topic 1 (World Cup security)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-launches-sworn-officer-recruitment-for-its-department-of-public-safety/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 5: Rising Fuel Costs -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/SYynPpKYepkoz2Q59xoc4o3TUYjkZUw5Su-FxnQvUhI/g:nowe:0:92/c:2500:1412/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMjcwMTQzNTkwLmpwZw==.webp"
+           alt="Transit bus diesel fuel costs rising"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">National</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: Transit Agencies Grapple with Rising Fuel Costs — Unlike Airlines, They Can't Pass It On</h2>
+      <p class="date-range">June 12, 2026</p>
+      <p class="summary">Smart Cities Dive published an analysis on June 12 examining how public transit agencies nationwide — including in SoCal — are absorbing rising diesel fuel costs that airlines handle by simply raising fares. Transit agencies are constrained by fare policy, political mandates for affordability, and fixed operating budgets. Strategies include accelerating electric vehicle fleet transitions, fuel hedging contracts, and lobbying for emergency operating grants. LA Metro and Metrolink both carry significant diesel-bus and diesel-locomotive fuel exposure.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Diesel fuel prices have risen sharply in 2026, straining transit operating budgets</li>
+        <li>Airlines raise fares to cover fuel costs; transit agencies <strong>cannot easily pass costs to riders</strong></li>
+        <li>LA Metro operates over <strong>2,200 buses</strong>, many still diesel; EV transition is multi-year</li>
+        <li>Metrolink's locomotive fleet is entirely diesel-powered</li>
+        <li>Transit strategies: <strong>fuel hedging, electrification acceleration, federal emergency operating grants</strong></li>
+        <li>LA Metro's FY27 budget includes rising fuel cost exposure — no line-item fuel reserve disclosed</li>
+        <li>Some agencies are cutting service hours to offset fuel costs, risking ridership spirals</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Fuel costs are an underappreciated structural risk to SoCal transit. If Metro or Metrolink cannot absorb diesel spikes, service cuts become the only lever — exactly the opposite of what's needed to build ridership before the 2028 Olympics and in the World Cup period.</p>
+      <p class="connections"><em>Connects to:</em> Topic 8 (FY27 Budget), Topic 9 (Metrolink challenges), Topic 6 (EV/tech transition)</p>
+      <a class="source-link" href="https://www.smartcitiesdive.com/news/transit-agencies-rising-diesel-fuel-costs/822706/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 6: Metro + Moovit App Integration -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/8.jpeg?fit=1200%2C801&ssl=1"
+           alt="LA Metro station wayfinding and technology integration"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Moovit</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: LA Metro Puts Moovit on the Team — Real-Time World Cup Navigation Goes Live</h2>
+      <p class="date-range">June 11, 2026</p>
+      <p class="summary">LA Metro formalized a partnership with Moovit, the global transit navigation app, to deliver real-time routing and trip-planning services for World Cup visitors and local riders during the tournament. ITS International reported the integration on June 11 as "North America's first" deployment of this scale for a major sporting event. Moovit's platform aggregates real-time data from Metro buses, rail lines, Metrolink, and other SoCal operators to provide multimodal routing in multiple languages — critical for the estimated 1 million+ international visitors expected in the LA region during the World Cup.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Moovit integration live for <strong>World Cup opening day, June 12</strong></li>
+        <li>Covers LA Metro rail + bus, Metrolink, Pacific Surfliner, and LADOT Dash</li>
+        <li>Multilingual interface for international visitors — <strong>40+ languages supported</strong></li>
+        <li>Provides real-time delay, platform, and transfer data across agencies</li>
+        <li>Complements the new Metro tap-to-pay app launched May 28</li>
+        <li>Moovit has 1B+ users globally; used at Paris 2024 Olympics</li>
+        <li>IDEMIA LED transit cards also launched for World Cup — first in North America</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Real-time, multilingual navigation is essential for converting World Cup visitors into transit riders rather than rideshare customers. If Moovit performs well during the tournament, Metro will have a strong case for making the integration permanent ahead of the 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup operations), Topic 3 (Olympics readiness), Topic 5 (tech transition)</p>
+      <a class="source-link" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZFhQV01ZSEVRbVIzdmN5TDEwazJBV0tUZFlsUlpuQ19aV3N2RUdrX0Y5c2tURUppdnBhMFZRRTRqWGlRTE5DdjRtYnpFcmx5VTF1SlhxSHFrZHVVbFV0Q2IzWmYtcmc3Rk9McDBTazlsMHJJWmpRV3RvUFJkTjVKODdPczNqbFlIQW5n?oc=5" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 7: Lime E-Bikes World Cup -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/EZvzSpLvqPXJAREO9us-a4rkWd4LsDN1FMaN0P-9LdY/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0xMjgzNTk1MDUzLmpwZw==.webp"
+           alt="Lime e-bikes and e-scooters deployed for FIFA World Cup 2026"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Lime</span>
+        <span class="agency">LADOT</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: Lime Deploys Surge Fleet of E-Bikes and E-Scooters Across World Cup Host Cities</h2>
+      <p class="date-range">June 11, 2026</p>
+      <p class="summary">Lime announced it is adding a surge fleet of e-bikes and e-scooters in select FIFA World Cup host cities, including Los Angeles, drawing on lessons from its deployments at the 2024 Paris Olympics and 2026 Milan Winter Games. The micromobility company is introducing a 90-minute fixed-rate pass to accommodate fans traveling between fan zones, Metro stations, and entertainment districts. LADOT manages the Lime permit in Los Angeles, and the surge deployment adds vehicles around Union Station, Hollywood, downtown LA, and Inglewood-adjacent transit nodes.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Surge deployment across World Cup host cities, including <strong>Los Angeles</strong></li>
+        <li>New <strong>90-minute fixed-rate pass</strong> for event-day use</li>
+        <li>Fleet increased near Metro stations, fan zones, and event corridors</li>
+        <li>Based on Paris 2024 and Milan 2026 operational playbooks</li>
+        <li>LADOT administers Lime permit; operational adjustments for match days</li>
+        <li>Serves "last-mile" gap between Metro stations and SoFi-area destinations</li>
+        <li>Lime has 1B+ total rides globally; operates in 280+ cities</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Micromobility serves the critical first- and last-mile gap that keeps many Angelenos from using transit. Surge deployment during high-profile events like the World Cup builds rider familiarity — and if conversion rates are strong, may justify permanent fleet increases that reduce car dependency year-round.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup operations), Topic 6 (Moovit multimodal routing)</p>
+      <a class="source-link" href="https://www.smartcitiesdive.com/news/lime-ebikes-escooters-world-cup-cities/822602/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 8: FY27 Budget Engagement Results -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/05/LARiver6thStreet2026Jan17_01.jpeg"
+           alt="Metro FY27 budget community engagement results"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: Metro FY27 Budget Community Engagement Hits Record — 7,500+ Residents Participated</h2>
+      <p class="date-range">June 4, 2026</p>
+      <p class="summary">Following the Metro Board's approval of the $9.7 billion FY27 budget on June 2, Metro released its interactive dashboard showing the results of the "My Metro Budget" community engagement process. Over 7,500 residents participated — a record and 1,000 more than the prior year — using the "My Metro Priorities" tool to weigh in on service levels, safety spending, capital projects, and fares. The results are informing how discretionary portions of the budget are allocated across Metro's equity priority communities.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>7,500+</strong> total participants — a new record; +1,000 vs. prior year</li>
+        <li>Tools: <strong>"My Metro Budget Activity"</strong> and <strong>"My Metro Priorities"</strong> interactive dashboards</li>
+        <li>Results visible at Metro's public interactive dashboard (live as of June 4)</li>
+        <li>Engagement drove input on safety, service frequency, capital, and fare equity</li>
+        <li>Budget total: <strong>$9.7 billion</strong>; approved June 2, 2026</li>
+        <li>Riders' top priority areas: system safety, service reliability, accessibility improvements</li>
+        <li>Mayor Karen Bass elected Metro Board chair (effective July 1)</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Growing public engagement with Metro's budget process is a sign of institutional health — but also raises accountability expectations. With 7,500+ voices on record, the pressure to deliver on rider priorities (particularly safety and reliability) will intensify heading into the World Cup and Olympics years.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (DPS recruitment), Topic 5 (fuel cost pressures on budget)</p>
+      <a class="source-link" href="https://thesource.metro.net/the-results-are-in-building-the-fy27-metro-budget-together/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 9: Metrolink World Cup Expansion -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://www.metrolinktrains.com/globalassets/news/contactlesspress2.jpg"
+           alt="Metrolink train expanded World Cup service"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">SCAG</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: Metrolink Expands to Five Lines for World Cup — Late-Night Trains and Free Metro Transfers</h2>
+      <p class="date-range">May 21 – June 12, 2026</p>
+      <p class="summary">Metrolink is operating expanded World Cup service across five of its seven lines, adding late-night trains after each match and including free transfers to LA Metro on match days. The move is significant given Metrolink's ongoing structural challenges: ridership remains below pre-pandemic levels, the agency has been making "temporary" service cuts since 2023, and OCTA cut Metrolink funding earlier this year. Despite these pressures, the agency is leaning into the World Cup as a showcase for its value as a regional connector.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Expanded service on <strong>5 lines:</strong> 91/Perris Valley, Antelope Valley, OC, San Bernardino, Ventura County</li>
+        <li>Late-night trains added on all 8 LA Stadium match dates</li>
+        <li><strong>Free Metro transfers</strong> for Metrolink passengers on match days</li>
+        <li>Tap-to-pay contactless pilot launched June 10 on San Bernardino Line + Arrow</li>
+        <li>Ridership still well below pre-pandemic levels; "temporary" service cuts ongoing since 2023</li>
+        <li>Metro cut Metrolink funding 3.4% in FY27 budget ($181.4M → $175.3M)</li>
+        <li>OCTA separately cut Metrolink funding earlier in 2026</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metrolink's World Cup performance is its best argument against further funding cuts. If the agency can demonstrate strong ridership and reliable operations during the tournament's high-demand match days, it strengthens the case for restoring — rather than further reducing — funding from Metro, OCTA, and CalSTA heading into the Olympic period.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup operations), Topic 5 (fuel costs), Topic 3 (Olympics readiness)</p>
+      <a class="source-link" href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPM082TXV2VEdMZm5lSW9SaGNmTVNDOTFlSGlYQ09OSmpWYjlhZjVIZnVRc1NxV2R3T3FjS3o1U1JpZEl3MTlEemxlc0FXbVdrUFN0ZzlfWUpCUU5MU2YzN2FhRnYyX1RZb2JGWE1EOVROY1BEY0NCYk1VVzdCMDFOVFduaHN6blFxZlFwdDhvOXltZGJnMzJKMDF0dW1aUWttNkRqSFBDUXlBMmR4UnZIV2F0d9IBuwFBVV95cUxQdnNWTWlPY1lvU1B4aUpOTmFVWG92X19OYm5ud3pZRUJKWmFITUJNVTZOWHdoXzY2bkJiNEdweHYxMGlCWEh1cDhVZ0xMUk1keEZuRTRybjZoSy14X18tRG9BanhTZ3R2d29CS01CMnFrQW9LNFI3TzJ3dC1LWXRKVXBNZFgwdTF3UFprUFRtUWhUQVIwdHFnT2RJbkRwaElXakNGQ01OQmRlSzgwdkNFSjluWVFEMmVZNHdn?oc=5" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 10: Metro Three-Peat Bus Roadeo -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/Screenshot-2026-06-04-at-11.03.43-AM.png?fit=1200%2C586&ssl=1"
+           alt="LA Metro three-peat International Bus Roadeo 2026 Grand Champion"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: Metro Three-Peats at International Bus Roadeo — Grand Champion Again, Plus Bus Security Gold</h2>
+      <p class="date-range">June 4, 2026</p>
+      <p class="summary">LA Metro's Maintenance and Operations team won the International Bus Roadeo for the third consecutive year in May 2026, capturing the Grand Champion title for the second year running. The Bus Roadeo tests maintenance and operational skills including precision driving, obstacle courses, and pre-trip inspection under competition conditions. Metro also won the 2026 Bus Security Gold Award for its innovative Bus Barrier project, which protects operators from passenger assaults. The recognition comes as Metro prepares its bus fleet for the highest-demand operational period in its history during the World Cup.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>3rd consecutive</strong> International Bus Roadeo win (2024, 2025, 2026)</li>
+        <li><strong>2nd consecutive Grand Champion</strong> title</li>
+        <li>Also won <strong>2026 Bus Security Gold Award</strong> for the Bus Barrier Project</li>
+        <li>Bus Barrier protects operators from passenger aggression — deployed across Metro fleet</li>
+        <li>Maintenance team based at Pacific Boulevard facility in Vernon, CA</li>
+        <li>Metro fleet: over 2,200 buses, with expanding electric vehicle contingent</li>
+        <li>Win comes as Metro prepares for World Cup + Olympics high-service demands</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Three consecutive Roadeo wins are a signal of strong maintenance culture at Metro — the foundation of reliable bus service. The Bus Security Gold Award reflects genuine progress on driver safety, which has been a persistent labor-relations and operational challenge. Both matter as Metro enters its highest-stakes operational era.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (Metro DPS/safety), Topic 8 (FY27 Budget priorities)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-three-peats-at-international-bus-roadeo/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<!-- AGENCY STATUS BOARD -->
+<div class="status-board">
+  <h2>Agency Status Board</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Activity This Week</th>
+        <th>Watch Item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro</strong></td>
+        <td><span class="status-dot green"></span>Active</td>
+        <td>World Cup Day 1 full operations; $1.75 SoFi shuttles; DPS 950+ apps; Moovit live</td>
+        <td>Match-day ridership vs. capacity; DPS academy timeline</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink</strong></td>
+        <td><span class="status-dot yellow"></span>Cautious</td>
+        <td>5-line World Cup expansion; late-night service; contactless pilot on SB Line</td>
+        <td>Ridership vs. costs; OCTA + Metro funding erosion</td>
+      </tr>
+      <tr>
+        <td><strong>LAWA / LAX</strong></td>
+        <td><span class="status-dot blue"></span>Testing</td>
+        <td>SkyLink APM in 60-day empty testing; targeting late 2026 public opening</td>
+        <td>Testing milestone completion; revenue-service readiness for World Cup residual</td>
+      </tr>
+      <tr>
+        <td><strong>CA High-Speed Rail</strong></td>
+        <td><span class="status-dot red"></span>Contested</td>
+        <td>$231B cost estimate; $3.5B contract approved; LA–Anaheim Draft EIR released</td>
+        <td>Sacramento transparency legislation; federal funding status</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak / Pacific Surfliner</strong></td>
+        <td><span class="status-dot green"></span>Active</td>
+        <td>Reservations required June 11–July 19; late-night match-day trains added</td>
+        <td>Reservation compliance; World Cup demand vs. capacity</td>
+      </tr>
+      <tr>
+        <td><strong>USDOT / Federal</strong></td>
+        <td><span class="status-dot green"></span>Engaged</td>
+        <td>$9M World Cup operational funding; positive Olympics transportation signal</td>
+        <td>Whether World Cup engagement converts to Olympic-era capital commitments</td>
+      </tr>
+      <tr>
+        <td><strong>OCTA</strong></td>
+        <td><span class="status-dot yellow"></span>Watching</td>
+        <td>World Cup traffic management; recently cut Metrolink funding</td>
+        <td>Orange County game-day ridership; Metrolink service adequacy</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG</strong></td>
+        <td><span class="status-dot green"></span>Active</td>
+        <td>Metrolink tap-to-pay support; regional multimodal planning</td>
+        <td>Regional transit coordination post-World Cup evaluation</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- EMERGING THEMES -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes</h2>
+
+    <div class="theme">
+      <h3>1. The World Cup Is the 2028 Olympics Dress Rehearsal — And Opening Night Is Today</h3>
+      <p>With USA vs. Paraguay kicking off at SoFi Stadium today, SoCal's transit agencies are simultaneously running the most complex coordinated transit operation in the region's history and collecting the operational data that will directly shape 2028 planning. Match-day ridership on Metro's SoFi shuttles, Metrolink's expanded trains, and Surfliner late-nights will be benchmarked against Olympic demand projections. The World Cup is the one data set no agency can afford to miss.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. Federal Transit Engagement Is Back — But Conditional and Politically Framed</h3>
+      <p>The USDOT's $9M World Cup allocation and the LA Times's "positive sign" for Olympics transportation funding suggest the Trump administration sees political upside in ensuring the World Cup and Olympics run smoothly. But the engagement appears event-specific and performance-dependent rather than a general restoration of federal transit investment. LA Metro and its partners need to demonstrate World Cup competence to unlock the larger Olympic-era capital pipeline from Washington.</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. Safety, Security, and Public Confidence Are Now Metro's Top Institutional Priorities</h3>
+      <p>The 950-application surge for Metro DPS sworn officer positions, the Bus Security Gold Award, and the record community engagement in the FY27 budget process all point to the same institutional reality: public safety is now the dominant variable in Metro ridership and public trust. The DPS launch, if successful, could become Metro's most consequential institutional reform since the Rail Expansion Program began.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. Fuel Costs Expose Structural Budget Fragility Across SoCal Transit</h3>
+      <p>Rising diesel prices are a slow-motion fiscal crisis for transit agencies that can't raise fares or quickly electrify their fleets. Unlike airlines, which pass fuel costs to travelers instantly, LA Metro and Metrolink absorb these costs until budgets break and service cuts become necessary. The World Cup-era operating boost from ridership is partly offset by the fuel costs of running expanded service — a tension that will only intensify heading into the 2028 Olympics surge.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. Mobility Technology Is Converging Around the World Cup Moment</h3>
+      <p>Contactless tap-to-pay, Moovit real-time routing, IDEMIA LED transit cards, and Lime e-bike/scooter surge deployments are all going live simultaneously for World Cup 2026 — a deliberate tech stack calibration ahead of 2028. If any of these systems fail visibly during high-visibility matches, it will set back adoption. If they succeed, the World Cup becomes the proof-of-concept that justifies permanent deployment and deeper integration for the Olympics.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>SoCal Transit Intelligence · June 12, 2026 · Sources: LA Metro Source, Smart Cities Dive, ITS International, NBC Los Angeles, Streetsblog LA, LAist, National Desk, Los Angeles Times</p>
+  <p style="margin-top:0.5rem"><a href="transit.html">← Back to Archive</a> &nbsp;·&nbsp; <a href="transit-2026-06-11.html">← June 11 Briefing</a></p>
+</footer>
+
+</body>
+</html>
