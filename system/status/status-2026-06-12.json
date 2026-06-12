@@ -9,7 +9,7 @@
     "infographics": "pending",
     "video_scripts": "completed",
     "qc": "pending",
-    "publishing": "pending"
+    "publishing": "skipped_no_approved_items"
   },
   "queue_items": 5,
   "alerts": [
