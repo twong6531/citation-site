@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1808" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="800" height="1800" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="100" fill="#1a1a1a"/>
+<text x="40" y="38" font-size="11" fill="#999" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+<text x="40" y="62" font-size="22" fill="#ffffff" font-weight="700" letter-spacing="1">June 12, 2026</text>
+<text x="40" y="83" font-size="10" fill="#888" letter-spacing="2">arXiv · 12 PAPERS ANALYZED</text>
+<text x="760" y="55" font-size="10" fill="#666" text-anchor="end">EDITION 12-JUN-2026</text>
+<line x1="40" y1="120" x2="760" y2="120" stroke="#cccccc" stroke-width="0.5"/>
+<text x="40" y="136" font-size="9" fill="#1a1a1a" letter-spacing="3" font-weight="700">KEY FINDINGS</text>
+<rect x="40" y="152" width="36" height="36" fill="#1a1a1a"/>
+<text x="58" y="176" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<text x="90" y="166" font-size="13" fill="#1a1a1a" font-weight="700">Traffic Congestion is a Phase Transition</text>
+<text x="90" y="180" font-size="11" fill="#555">Effective thermodynamic temperature predicts fragility across 54</text>
+<text x="90" y="194" font-size="11" fill="#555">cities—the standard MFD is incomplete.</text>
+<rect x="40" y="232" width="36" height="36" fill="#1a1a1a"/>
+<text x="58" y="256" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<text x="90" y="246" font-size="13" fill="#1a1a1a" font-weight="700">Sequential Learning Cures Transit Deserts</text>
+<text x="90" y="260" font-size="11" fill="#555">POMDP-based planning remediates 53.6% of transit-desert tracts in 5</text>
+<text x="90" y="274" font-size="11" fill="#555">years without prior ridership data.</text>
+<rect x="40" y="312" width="36" height="36" fill="#1a1a1a"/>
+<text x="58" y="336" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<text x="90" y="326" font-size="13" fill="#1a1a1a" font-weight="700">Hierarchical Coherence Cuts Forecast Error 17%</text>
+<text x="90" y="340" font-size="11" fill="#555">Neural reconciliation of station-level and OD forecasts reduces</text>
+<text x="90" y="354" font-size="11" fill="#555">disruption prediction errors by up to 17.45%.</text>
+<line x1="40" y1="392" x2="760" y2="392" stroke="#cccccc" stroke-width="0.5"/>
+<text x="40" y="408" font-size="9" fill="#1a1a1a" letter-spacing="3" font-weight="700">PAPER OF THE DAY</text>
+<rect x="40" y="424" width="720" height="2" fill="#1a1a1a"/>
+<rect x="40" y="434" width="720" height="90" fill="#1a1a1a" rx="2"/>
+<text x="56" y="452" font-size="13" fill="#ffffff" font-weight="700">Thermodynamic Phase Transitions Reveal the Resilience</text>
+<text x="56" y="469" font-size="13" fill="#ffffff" font-weight="700">Structure of Urban Traffic Congestion</text>
+<text x="56" y="488" font-size="10" fill="#aaa" letter-spacing="1">Luis E. Olmos · arXiv:2605.03879</text>
+<text x="40" y="534" font-size="11" fill="#333">City-scale congestion follows a thermodynamic order-disorder phase transition. An</text>
+<text x="40" y="550" font-size="11" fill="#333">'effective temperature' quantifies infrastructural heterogeneity and predicts</text>
+<text x="40" y="566" font-size="11" fill="#333">congestion fragility—validated across 54 cities on 3 continents. The standard</text>
+<text x="40" y="582" font-size="11" fill="#333">macroscopic fundamental diagram is shown to be an incomplete projection of a</text>
+<text x="40" y="598" font-size="11" fill="#333">richer free-energy landscape.</text>
+<line x1="40" y1="632" x2="760" y2="632" stroke="#cccccc" stroke-width="0.5"/>
+<text x="40" y="648" font-size="9" fill="#1a1a1a" letter-spacing="3" font-weight="700">EMERGING THEMES</text>
+<rect x="40" y="664" width="220" height="3" fill="#1a1a1a"/>
+<text x="40" y="676" font-size="12" fill="#1a1a1a" font-weight="700">Phase-Transition Physics</text>
+<text x="40" y="696" font-size="10" fill="#555">Congestion is not gradual—it's</text>
+<text x="40" y="710" font-size="10" fill="#555">a brittle thermodynamic</text>
+<text x="40" y="724" font-size="10" fill="#555">collapse predictable by</text>
+<text x="40" y="738" font-size="10" fill="#555">infrastructure heterogeneity.</text>
+<rect x="280" y="664" width="220" height="3" fill="#333"/>
+<text x="280" y="676" font-size="12" fill="#1a1a1a" font-weight="700">Hierarchical Coherence as</text>
+<text x="280" y="692" font-size="12" fill="#1a1a1a" font-weight="700">Imperative</text>
+<text x="280" y="712" font-size="10" fill="#555">Neural reconciliation is</text>
+<text x="280" y="726" font-size="10" fill="#555">emerging as essential:</text>
+<text x="280" y="740" font-size="10" fill="#555">incoherent forecasts cause</text>
+<text x="280" y="754" font-size="10" fill="#555">cascading operational</text>
+<text x="280" y="768" font-size="10" fill="#555">failures.</text>
+<rect x="520" y="664" width="220" height="3" fill="#555"/>
+<text x="520" y="676" font-size="12" fill="#1a1a1a" font-weight="700">Global South Data</text>
+<text x="520" y="692" font-size="12" fill="#1a1a1a" font-weight="700">Infrastructure</text>
+<text x="520" y="712" font-size="10" fill="#555">NetMob26 (Niterói) and</text>
+<text x="520" y="726" font-size="10" fill="#555">transit-desert POMDP mark</text>
+<text x="520" y="740" font-size="10" fill="#555">serious field-wide attention</text>
+<text x="520" y="754" font-size="10" fill="#555">to equity and data scarcity.</text>
+<line x1="40" y1="806" x2="760" y2="806" stroke="#cccccc" stroke-width="0.5"/>
+<text x="40" y="822" font-size="9" fill="#1a1a1a" letter-spacing="3" font-weight="700">CONFIDENCE DISTRIBUTION</text>
+<rect x="40" y="838" width="303" height="28" fill="#1a1a1a"/>
+<text x="351" y="857" font-size="11" fill="#1a1a1a" font-weight="700">High — 7/12</text>
+<rect x="40" y="878" width="173" height="28" fill="#555"/>
+<text x="221" y="897" font-size="11" fill="#555" font-weight="700">Medium — 4/12</text>
+<rect x="40" y="918" width="43" height="28" fill="#999"/>
+<text x="91" y="937" font-size="11" fill="#999" font-weight="700">Low — 1/12</text>
+<line x1="40" y1="970" x2="760" y2="970" stroke="#cccccc" stroke-width="0.5"/>
+<text x="40" y="986" font-size="9" fill="#1a1a1a" letter-spacing="3" font-weight="700">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1002" font-size="10" fill="#888" font-weight="700">→</text>
+<text x="56" y="1002" font-size="11" fill="#333">Deploy transit service sequentially using POMDP demand learning—observe ridership</text>
+<text x="56" y="1016" font-size="11" fill="#333">before committing to full expansion</text>
+<text x="40" y="1040" font-size="10" fill="#888" font-weight="700">→</text>
+<text x="56" y="1040" font-size="11" fill="#333">Model secondary helper-line degradation in disruption plans—coordinated multimodal</text>
+<text x="56" y="1054" font-size="11" fill="#333">response consistently wins</text>
+<text x="40" y="1078" font-size="10" fill="#888" font-weight="700">→</text>
+<text x="56" y="1078" font-size="11" fill="#333">Use genetic algorithm + SUMO for traffic simulation in data-scarce cities; a</text>
+<text x="56" y="1092" font-size="11" fill="#333">handful of sensors suffices</text>
+<text x="40" y="1116" font-size="10" fill="#888" font-weight="700">→</text>
+<text x="56" y="1116" font-size="11" fill="#333">Implement mobility-sentiment FCA rules for crisis early warning with 2–7 day lead</text>
+<text x="56" y="1130" font-size="11" fill="#333">times</text>
+<line x1="40" y1="1164" x2="760" y2="1164" stroke="#cccccc" stroke-width="0.5"/>
+<text x="40" y="1180" font-size="9" fill="#1a1a1a" letter-spacing="3" font-weight="700">ALL PAPERS — JUNE 2026</text>
+<rect x="40" y="1196" width="4" height="36" fill="#1a1a1a"/>
+<text x="52" y="1210" font-size="11" fill="#1a1a1a" font-weight="700">Risk-Aware Planning for Transit Desert Remediation Under Demand</text>
+<text x="52" y="1224" font-size="9" fill="#888">Polina Khoroshevskaya, Ashish Kumar Perukari</text>
+<text x="740" y="1210" font-size="9" fill="#1a1a1a" text-anchor="end" font-weight="700">High</text>
+<rect x="40" y="1242" width="4" height="36" fill="#1a1a1a"/>
+<text x="52" y="1256" font-size="11" fill="#1a1a1a" font-weight="700">A Resilience-as-a-Service Assessment Framework for Coordinated</text>
+<text x="52" y="1270" font-size="9" fill="#888">Sara Jaber, S. M. Hassan Mahdavi et al.</text>
+<text x="740" y="1256" font-size="9" fill="#1a1a1a" text-anchor="end" font-weight="700">High</text>
+<rect x="40" y="1288" width="4" height="36" fill="#1a1a1a"/>
+<text x="52" y="1302" font-size="11" fill="#1a1a1a" font-weight="700">Hierarchical Forecast Reconciliation for Urban Rail Transit Demand</text>
+<text x="52" y="1316" font-size="9" fill="#888">Dang Viet Anh Nguyen, Alma Fazlagic et al.</text>
+<text x="740" y="1302" font-size="9" fill="#1a1a1a" text-anchor="end" font-weight="700">High</text>
+<rect x="40" y="1334" width="4" height="36" fill="#555"/>
+<text x="52" y="1348" font-size="11" fill="#1a1a1a" font-weight="700">DSFNet: Learning Dual-Domain Spectral Operators for Multi-Modality</text>
+<text x="52" y="1362" font-size="9" fill="#888">Yongchao Li, Yang Li et al.</text>
+<text x="740" y="1348" font-size="9" fill="#555" text-anchor="end" font-weight="700">Medium</text>
+<rect x="40" y="1380" width="4" height="36" fill="#555"/>
+<text x="52" y="1394" font-size="11" fill="#1a1a1a" font-weight="700">Do VLMs See What Sensors Feel? Scalable Expert-Guided Wheelchair</text>
+<text x="52" y="1408" font-size="9" fill="#888">Dongdong Wang, Alina Hagen et al.</text>
+<text x="740" y="1394" font-size="9" fill="#555" text-anchor="end" font-weight="700">Medium</text>
+<rect x="40" y="1426" width="4" height="36" fill="#1a1a1a"/>
+<text x="52" y="1440" font-size="11" fill="#1a1a1a" font-weight="700">SF-LIFE: A Large-Scale Simulated Movement Dataset for the San</text>
+<text x="52" y="1454" font-size="9" fill="#888">Chanuka Algama, Taylor Anderson et al.</text>
+<text x="740" y="1440" font-size="9" fill="#1a1a1a" text-anchor="end" font-weight="700">High</text>
+<rect x="40" y="1472" width="4" height="36" fill="#555"/>
+<text x="52" y="1486" font-size="11" fill="#1a1a1a" font-weight="700">Calibrating Urban Traffic Simulation from Sparse Road Observations via</text>
+<text x="52" y="1500" font-size="9" fill="#888">Hunter Sawyer, Jesse Roberts et al.</text>
+<text x="740" y="1486" font-size="9" fill="#555" text-anchor="end" font-weight="700">Medium</text>
+<rect x="40" y="1518" width="4" height="36" fill="#1a1a1a"/>
+<text x="52" y="1532" font-size="11" fill="#1a1a1a" font-weight="700">Interpretable Crisis Behavior Analysis Using Mobility and Social Media</text>
+<text x="52" y="1546" font-size="9" fill="#888">Muhammad Hamza Arshad Majeed, Sidahmed Benabderrahmane et al.</text>
+<text x="740" y="1532" font-size="9" fill="#1a1a1a" text-anchor="end" font-weight="700">High</text>
+<rect x="40" y="1564" width="4" height="36" fill="#1a1a1a"/>
+<text x="52" y="1578" font-size="11" fill="#1a1a1a" font-weight="700">The NetMob26 Dataset: A High-Resolution Multi-Source View of Public</text>
+<text x="52" y="1592" font-size="9" fill="#888">Felipe Domingos, Humberto T. Marques-Neto et al.</text>
+<text x="740" y="1578" font-size="9" fill="#1a1a1a" text-anchor="end" font-weight="700">High</text>
+<rect x="40" y="1610" width="4" height="36" fill="#555"/>
+<text x="52" y="1624" font-size="11" fill="#1a1a1a" font-weight="700">Enhancing the Socioeconomic Understanding of Foundation Models with</text>
+<text x="52" y="1638" font-size="9" fill="#888">Baoshen Guo, Donghang Li et al.</text>
+<text x="740" y="1624" font-size="9" fill="#555" text-anchor="end" font-weight="700">Medium</text>
+<rect x="40" y="1656" width="4" height="36" fill="#1a1a1a"/>
+<text x="52" y="1670" font-size="11" fill="#1a1a1a" font-weight="700">Thermodynamic Phase Transitions Reveal the Resilience Structure of</text>
+<text x="52" y="1684" font-size="9" fill="#888">Luis E. Olmos</text>
+<text x="740" y="1670" font-size="9" fill="#1a1a1a" text-anchor="end" font-weight="700">High</text>
+<rect x="40" y="1702" width="4" height="36" fill="#555"/>
+<text x="52" y="1716" font-size="11" fill="#1a1a1a" font-weight="700">Fusing Cellular Network Data and Tollbooth Counts for Urban Traffic</text>
+<text x="52" y="1730" font-size="9" fill="#888">Oluwaleke Yusuf, Shaira Tabassum</text>
+<text x="740" y="1716" font-size="9" fill="#555" text-anchor="end" font-weight="700">Medium</text>
+<rect x="0" y="1758" width="800" height="50" fill="#1a1a1a"/>
+<text x="40" y="1778" font-size="9" fill="#666" letter-spacing="2">AUTONOMOUS TRANSIT RESEARCH</text>
+<text x="40" y="1794" font-size="9" fill="#555">twong6531.github.io/citation-site/research.html</text>
+<text x="760" y="1786" font-size="9" fill="#555" text-anchor="end">arXiv · 2026-06-12</text>
+</svg>
