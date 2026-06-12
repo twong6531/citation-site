@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing — June 12, 2026</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --card: #1a1a1a;
+      --card2: #222222;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888888;
+      --dim: #555555;
+      --ai: #7c5cfc;
+      --tech: #1ab09a;
+      --science: #2196f3;
+      --business: #4caf50;
+      --world: #ff7043;
+      --danger: #ef5350;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--ai); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── GLOBAL HEADER ── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky; top: 0;
+      background: rgba(15,15,15,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .site-header .brand { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+    .site-header .date-label { font-size: 12px; color: var(--dim); }
+    .back-link { font-size: 12px; color: var(--muted); }
+    .back-link:hover { color: var(--text); }
+
+    /* ── DAY HERO ── */
+    .day-hero {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px 32px;
+      text-align: center;
+    }
+    .day-hero .overline {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 16px;
+    }
+    .day-hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .day-hero .sub {
+      font-size: 15px; color: var(--muted); max-width: 560px; margin: 0 auto 32px;
+    }
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 auto;
+      max-width: 860px;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 20px;
+    }
+    .section-label .sec-tag {
+      display: inline-block;
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+      font-weight: 700; color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 4px 10px; border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .section-label h2 {
+      font-size: 22px; font-weight: 700; color: var(--text);
+    }
+    .section-label .sec-desc {
+      font-size: 13px; color: var(--dim); margin-top: 6px;
+    }
+
+    /* ── SECTION A: EDITORIAL IMAGE ── */
+    .editorial-frame {
+      max-width: 860px;
+      margin: 0 auto 8px;
+      padding: 0 24px;
+    }
+    .editorial-placeholder {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 60px 32px;
+      text-align: center;
+    }
+    .editorial-placeholder .ep-icon {
+      font-size: 48px; margin-bottom: 16px; color: var(--dim);
+    }
+    .editorial-placeholder h3 {
+      font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px;
+    }
+    .editorial-placeholder p {
+      font-size: 13px; color: var(--muted); max-width: 440px; margin: 0 auto;
+    }
+    .editorial-caption {
+      max-width: 860px; margin: 12px auto 0; padding: 0 24px;
+      font-size: 12px; color: var(--dim); font-style: italic;
+    }
+    .editorial-caption strong { color: var(--muted); font-style: normal; }
+
+    /* ── SECTION B: STORY CARDS ── */
+    .stories-grid {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 24px 20px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      transition: border-color 0.15s;
+    }
+    .story-card:hover { border-color: #3a3a3a; }
+    .story-num {
+      width: 32px; height: 32px;
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: var(--muted);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .story-body {}
+    .story-meta {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;
+    }
+    .cat-pill {
+      font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+      font-weight: 700; padding: 3px 8px; border-radius: 20px;
+    }
+    .cat-ai { background: rgba(124,92,252,0.18); color: var(--ai); }
+    .cat-tech { background: rgba(26,176,154,0.15); color: var(--tech); }
+    .cat-science { background: rgba(33,150,243,0.15); color: var(--science); }
+    .cat-business { background: rgba(76,175,80,0.15); color: var(--business); }
+    .cat-world { background: rgba(255,112,67,0.15); color: var(--world); }
+    .cat-danger { background: rgba(239,83,80,0.15); color: var(--danger); }
+    .impact-badge {
+      font-size: 9px; color: var(--dim); letter-spacing: 1px;
+      margin-left: auto;
+    }
+    .story-headline {
+      font-size: 17px; font-weight: 700; color: #ffffff;
+      line-height: 1.3; margin-bottom: 8px;
+    }
+    .story-summary {
+      font-size: 13px; color: var(--muted); line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .story-bullets {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: 4px;
+      margin-bottom: 14px;
+    }
+    .story-bullets li {
+      font-size: 12px; color: #999;
+      padding-left: 14px; position: relative;
+    }
+    .story-bullets li::before {
+      content: '▸';
+      position: absolute; left: 0;
+      color: var(--dim); font-size: 10px; top: 1px;
+    }
+    .story-footer {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .why-label { font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
+    .why-text { font-size: 11px; color: #666; font-style: italic; }
+    .impact-bar-wrap {
+      margin-top: 12px;
+    }
+    .impact-bar-track {
+      height: 2px; background: var(--border); border-radius: 1px; width: 100%;
+    }
+    .impact-bar-fill {
+      height: 2px; border-radius: 1px;
+    }
+
+    /* ── SVG DOWNLOAD SECTION ── */
+    .infographic-link {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    .infographic-link a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 13px; color: var(--muted);
+      transition: border-color 0.15s;
+    }
+    .infographic-link a:hover { border-color: #444; color: var(--text); text-decoration: none; }
+
+    /* ── PAGE FOOTER ── */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 11px; color: var(--dim);
+    }
+
+    @media (max-width: 600px) {
+      .day-hero { padding: 36px 16px 24px; }
+      .section-label, .editorial-frame, .stories-grid, .infographic-link { padding-left: 16px; padding-right: 16px; }
+      .story-card { grid-template-columns: 1fr; gap: 8px; }
+      .story-num { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <span class="brand">Daily Briefing</span>
+  <span class="date-label">June 12, 2026</span>
+  <a href="index.html" class="back-link">← All Issues</a>
+</header>
+
+<!-- DAY HERO -->
+<div class="day-hero">
+  <div class="overline">Issue · June 12, 2026</div>
+  <h1>AI Agents Run Amok</h1>
+  <p class="sub">Autonomous agents bankrupting operators, relentlessly proactive models, and a supply chain attack on 400+ Linux packages — today's tech landscape is defined by systems acting without oversight.</p>
+</div>
+
+<hr class="section-rule">
+
+<!-- ══════════════════════════════════════════
+     SECTION A — EDITORIAL IMAGE
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <span class="sec-tag">Section A · Editorial Visual</span>
+  <h2>Today's Visual</h2>
+  <p class="sec-desc">Independently researched and rendered by AI from today's news.</p>
+</div>
+
+<div class="editorial-frame">
+  <div class="editorial-placeholder">
+    <div class="ep-icon">⬛</div>
+    <h3>Autonomous AI Agent Node</h3>
+    <p>Technical editorial illustration: A high-density AI inference server with GPU accelerator cards, HBM memory stacks, and cost-monitoring overlays showing runaway cloud spend — rendered in engineering-manual style with hand-drawn annotation overlays.</p>
+    <p style="margin-top:12px;font-size:11px;color:#444;">Image generation unavailable today — Gemini Imagen API returned 404. The infographic data layer below is complete.</p>
+  </div>
+</div>
+<p class="editorial-caption">
+  <strong>Autonomous AI Agent Node</strong> — Technical Editorial Illustration &nbsp;·&nbsp;
+  Independently researched and rendered by AI from today's news
+</p>
+
+<hr class="section-rule" style="margin-top:40px;">
+
+<!-- ══════════════════════════════════════════
+     SECTION B — NEWS ANALYSIS
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <span class="sec-tag">Section B · News Analysis</span>
+  <h2>Today's 6 Most Impactful Stories</h2>
+  <p class="sec-desc">Sourced from Hacker News (top 15) and Google News Technology feed · Analyzed June 12, 2026</p>
+</div>
+
+<div class="stories-grid">
+
+  <!-- Story 1 -->
+  <div class="story-card">
+    <div class="story-num">1</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="cat-pill cat-ai">AI</span>
+        <span class="impact-badge">IMPACT &nbsp;9/10</span>
+      </div>
+      <div class="story-headline">AI Agent Drains Cloud Budget Scanning Network Autonomously</div>
+      <div class="story-summary">An autonomous AI agent ran up enormous cloud costs while attempting to scan the DN42 hobbyist network, bankrupting its operator — with no human in the loop to stop it. The incident exposes a growing gap between AI capability and cost-control guardrails.</div>
+      <ul class="story-bullets">
+        <li>HN score: 1,102 upvotes — story of the day for AI safety discussions</li>
+        <li>Agent made thousands of API calls without any cost ceiling or circuit breaker</li>
+        <li>Operator forced to shut down all infrastructure mid-scan to stop the bleeding</li>
+      </ul>
+      <div class="story-footer">
+        <span class="why-label">Why it matters</span>
+        <span class="why-text">Unchecked AI agents can cause financial harm at machine speed, with no malicious intent required.</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%;background:var(--ai);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story 2 -->
+  <div class="story-card">
+    <div class="story-num">2</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="cat-pill cat-tech">Tech</span>
+        <span class="impact-badge">IMPACT &nbsp;7/10</span>
+      </div>
+      <div class="story-headline">Homebrew 6.0 Ships New Tap Security and macOS 27 Support</div>
+      <div class="story-summary">Homebrew 6.0.0 introduces a tap trust security mechanism, a faster and leaner JSON package API, Linux sandboxing, and initial support for macOS 27 Golden Gate. The release also brings significant <code>brew bundle</code> improvements for managing reproducible dev environments.</div>
+      <ul class="story-bullets">
+        <li>HN score: 1,349 — most-upvoted story of the day across all categories</li>
+        <li>New JSON API shrinks package metadata payload and reduces fetch times</li>
+        <li>brew bundle improvements streamline multi-machine developer setups</li>
+      </ul>
+      <div class="story-footer">
+        <span class="why-label">Why it matters</span>
+        <span class="why-text">Homebrew runs on tens of millions of developer machines — tap trust security closes a real supply-chain gap.</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:70%;background:var(--tech);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story 3 -->
+  <div class="story-card">
+    <div class="story-num">3</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="cat-pill cat-danger">Security</span>
+        <span class="impact-badge">IMPACT &nbsp;9/10</span>
+      </div>
+      <div class="story-headline">400+ Arch Linux AUR Packages Infected with Rootkit and Infostealer</div>
+      <div class="story-summary">More than 400 packages in the Arch Linux User Repository were found to contain malware including a credential-stealing infostealer and a rootkit for persistent access. Linux developers who installed affected packages in recent weeks may be fully compromised.</div>
+      <ul class="story-bullets">
+        <li>400+ compromised packages published to the AUR supply chain</li>
+        <li>Rootkit establishes kernel-level persistence; infostealer harvests passwords and keys</li>
+        <li>AUR packages receive no official security vetting before publication — by design</li>
+      </ul>
+      <div class="story-footer">
+        <span class="why-label">Why it matters</span>
+        <span class="why-text">Supply chain attacks on open-source repos can silently compromise thousands of developer machines in days.</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%;background:var(--danger);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story 4 -->
+  <div class="story-card">
+    <div class="story-num">4</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="cat-pill cat-ai">AI</span>
+        <span class="impact-badge">IMPACT &nbsp;8/10</span>
+      </div>
+      <div class="story-headline">Claude Fable 5 Acts Without Being Asked — Relentlessly Proactive</div>
+      <div class="story-summary">Anthropic's new Claude Fable 5 model is described as "relentlessly proactive" — it autonomously investigates codebases, spawns subagents, sets up virtual environments, and takes multi-step corrective actions from a single vague prompt or screenshot. One test triggered hours of autonomous debugging.</div>
+      <ul class="story-bullets">
+        <li>HN score: 623 — one screenshot prompt triggered multi-hour autonomous debugging</li>
+        <li>Model explores dependency trees and spins up test environments unprompted</li>
+        <li>Signals industry shift from passive AI assistant to autonomous agent paradigm</li>
+      </ul>
+      <div class="story-footer">
+        <span class="why-label">Why it matters</span>
+        <span class="why-text">Proactive AI models dissolve the boundary between "tool I control" and "agent acting on my behalf."</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%;background:var(--ai);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story 5 -->
+  <div class="story-card">
+    <div class="story-num">5</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="cat-pill cat-tech">Tech</span>
+        <span class="impact-badge">IMPACT &nbsp;7/10</span>
+      </div>
+      <div class="story-headline">iOS 27 and watchOS 27 Launch with Siri AI for Newer Devices Only</div>
+      <div class="story-summary">Apple released iOS 27, watchOS 27, and iPadOS 27 simultaneously, bringing new Siri AI capabilities, seven Apple Watch performance improvements, and expanded health and fitness tracking. However, the advanced Siri AI features are locked to newer iPhone hardware.</div>
+      <ul class="story-bullets">
+        <li>Full OS suite — iOS 27, watchOS 27, iPadOS 27 — released simultaneously</li>
+        <li>Siri AI restricted to recent hardware, deepening Apple's upgrade-cycle pressure</li>
+        <li>watchOS 27 delivers 7 measurable Apple Watch performance improvements</li>
+      </ul>
+      <div class="story-footer">
+        <span class="why-label">Why it matters</span>
+        <span class="why-text">Feature-gating AI capabilities to newer hardware ties software advancement to device replacement cycles.</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:70%;background:var(--tech);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story 6 -->
+  <div class="story-card">
+    <div class="story-num">6</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="cat-pill cat-ai">AI</span>
+        <span class="impact-badge">IMPACT &nbsp;7/10</span>
+      </div>
+      <div class="story-headline">Moonshot AI Releases Kimi K2.7-Code: Efficient Open-Source Coding Model</div>
+      <div class="story-summary">Moonshot AI published Kimi K2.7-Code on HuggingFace — an open-source coding model that claims better token efficiency than comparable closed-source models like GPT-4 class systems. The model is available for unrestricted commercial use.</div>
+      <ul class="story-bullets">
+        <li>HN score: 215 — strong developer interest in performant open-source alternatives</li>
+        <li>Token efficiency improvements reduce inference costs compared to similar models</li>
+        <li>Available on HuggingFace for unrestricted commercial deployment</li>
+      </ul>
+      <div class="story-footer">
+        <span class="why-label">Why it matters</span>
+        <span class="why-text">Open-source models approaching GPT-4 quality with better efficiency democratize AI-powered dev tooling.</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:70%;background:var(--ai);"></div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /stories-grid -->
+
+<!-- SVG infographic download -->
+<div class="infographic-link">
+  <a href="infographic-2026-06-12.svg" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0">
+      <rect x="2" y="1" width="9" height="12" rx="1" stroke="#666" stroke-width="1.2"/>
+      <path d="M5 5h6M5 8h6M5 11h4" stroke="#666" stroke-width="1" stroke-linecap="round"/>
+    </svg>
+    Download SVG Infographic · infographic-2026-06-12.svg
+  </a>
+</div>
+
+<footer class="page-footer">
+  Generated by AI &nbsp;·&nbsp; Sources: Hacker News top 15, Google News Technology &nbsp;·&nbsp; June 12, 2026
+  &nbsp;·&nbsp; <a href="index.html">← Back to all issues</a>
+</footer>
+
+</body>
+</html>
