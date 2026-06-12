@@ -7,16 +7,16 @@
     "content_plan": "pending",
     "articles": "pending",
     "infographics": "pending",
-    "video_scripts": "pending",
+    "video_scripts": "completed",
     "qc": "pending",
     "publishing": "pending"
   },
   "queue_items": 5,
   "alerts": [
     "CRITICAL: approved.json empty for 5 consecutive days (since 2026-06-07). Publishing Agent has been blocked every day. Human must add slugs to approved.json to unblock the publishing pipeline.",
-    "CRITICAL: drafts/articles/ directory is empty — long-form articles have never been produced despite being queued daily since 2026-06-07. Article-writing agent appears unresponsive or missing from pipeline.",
+    "CRITICAL: drafts/articles/ directory is empty \u2014 long-form articles have never been produced despite being queued daily since 2026-06-07. Article-writing agent appears unresponsive or missing from pipeline.",
     "WARNING: BRT vs Light Rail infographic queued for 3rd consecutive day (since 2026-06-07). Infographic agent has not produced this item despite repeated prioritization.",
-    "INFO: 7 video scripts in drafts/scripts/ — backlog is growing. 2 passed QC (apple-gemini, transit-desert-pomdp), 5 QC unknown. None approved for publishing.",
-    "INFO: SpaceX trading debut + Tesla merger talks trending today — tesla-spacex-merger-transit-implications-2026 is time-sensitive, should be produced and published same day."
+    "INFO: 7 video scripts in drafts/scripts/ \u2014 backlog is growing. 2 passed QC (apple-gemini, transit-desert-pomdp), 5 QC unknown. None approved for publishing.",
+    "INFO: SpaceX trading debut + Tesla merger talks trending today \u2014 tesla-spacex-merger-transit-implications-2026 is time-sensitive, should be produced and published same day."
   ]
 }
