@@ -1,0 +1,92 @@
+{
+  "date": "2026-06-12",
+  "generated_at": "2026-06-12T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Tesla-SpaceX Merger and the Future of Urban Transit",
+      "angle": "SpaceX president is floating a Tesla merger as the company begins trading (top HN today). Connect the dots: if Musk consolidates Tesla robotaxis, Boring Company tunnels, Starlink rural connectivity, and SpaceX logistics under one roof, what does a vertically-integrated mobility empire mean for public transit? Examine regulatory risks, competition with city bus networks, and whether private micro-transit can substitute for public infrastructure in low-density corridors.",
+      "rationale": "HOT TODAY — SpaceX trading debut + Tesla merger float is the biggest mobility/tech story. Directly bridges our AI, infrastructure policy, and urban mobility pillars. Unique angle that transit-focused outlets haven't taken yet. High search volume expected.",
+      "target_length": "long",
+      "slug": "tesla-spacex-merger-transit-implications-2026",
+      "output_path": "drafts/articles/tesla-spacex-merger-transit-implications-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail: The Real Cost Breakdown",
+      "angle": "Side-by-side infrastructure cost per mile, build timeline, ridership capacity, mode preference surveys, and equity outcomes across 10 U.S. corridors (LA Orange Line BRT, Houston Silver Line, Denver RTD lines, etc.). Visualize why cities keep choosing BRT despite consistent rider preference data favoring rail — and what that tradeoff actually costs over 30 years.",
+      "rationale": "RETRY #3 — queued since 2026-06-07, never produced. Critical content gap. Infographic format last published 2026-06-09. High evergreen value, strong SEO, aligns directly with site's transit-policy niche. Must execute today.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "When AI Agents Go Wrong: Lessons for Automated Transit Operations",
+      "angle": "HN #1 today: 'AI agent bankrupted their operator while trying to scan DN42.' Apply this failure mode to transit: signal priority AI, dispatch automation, and predictive maintenance systems are already live in major cities. Survey documented cases of algorithmic failures in transit control (NYC MTA ATIS outages, LA Metro scheduling errors), map the liability gap, and propose a minimum human-oversight standard for transit AI deployments.",
+      "rationale": "Top HN story today creates perfect hook for transit-specific analysis. Connects AI risk (trending) to transit operations (our niche). Timely, original, addresses gap in public discourse — transit agencies are adopting AI faster than safety frameworks are being written. Strong research/academic framing.",
+      "target_length": "medium",
+      "slug": "ai-agent-risk-transit-automation-2026",
+      "output_path": "drafts/articles/ai-agent-risk-transit-automation-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "article",
+      "topic": "Free Transit Economics: What Cities Get Wrong",
+      "angle": "With transit budgets under sustained fiscal pressure, examine the evidence base for fare-free systems — Luxembourg (national), Tallinn, Kansas City, Olympia WA. Which cities saw ridership gains? Where did the math actually work? Why fiscal hawks keep killing programs that pencil out on induced demand, reduced fare collection overhead, and equity metrics. Include 2025-2026 rollback cases.",
+      "rationale": "RETRY #3 — queued since 2026-06-07 and never written as a long-form article. articles/ directory remains empty. This is a chronic production failure. Topic has high evergreen value and consistent search demand. No overlap with any published content.",
+      "target_length": "long",
+      "slug": "free-transit-economics-2026",
+      "output_path": "drafts/articles/free-transit-economics-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "Why Your Transit App Is Terrible on Purpose",
+      "angle": "Ryanair dark UX patterns are trending on HN today — apply the same lens to transit agency apps (MTA, LA Metro, Muni, CTA). Examine how confusing fare calculators, hidden real-time data, forced sign-ups, and buried accessibility features are not accidents but revenue-protection choices. Propose what a rider-first transit app UX charter would look like, and spotlight the handful of agencies doing it right (Amsterdam GVB, Berlin BVG).",
+      "rationale": "Trending HN story (Ryanair dark UX) gives strong timely hook for this original transit-application angle. We have 7 scripts in queue already — this is the only new one justified today because of the direct news hook. Accessible, shareable, different format from existing scripts.",
+      "target_length": "medium",
+      "slug": "transit-app-dark-ux-2026-script",
+      "output_path": "drafts/scripts/transit-app-dark-ux-2026-script.md"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "original_queue_date": "2026-06-07",
+      "retry_count": 3,
+      "reason": "Never produced — infographic agent may not be running"
+    },
+    {
+      "slug": "free-transit-economics-2026",
+      "original_queue_date": "2026-06-07",
+      "retry_count": 3,
+      "reason": "Never produced — articles/ directory empty for 7+ days, article-writing agent appears blocked"
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail (published 2026-06-06)",
+    "transit-oriented development (published 2026-06-06, game 2026-06-10)",
+    "transit desert POMDP (published 2026-06-09, script queued)",
+    "Southern California transit brief (published 2026-06-09, 2026-06-10, 2026-06-11)",
+    "Apple Gemini AI partnership (script exists in drafts)",
+    "slime mold network optimization (script exists in drafts)",
+    "US cities transit gap (script exists in drafts)",
+    "dopamine and urban design (script exists in drafts)",
+    "electric axial flux motors transit (script exists in drafts)",
+    "AI signal priority transit (queued yesterday as separate angle — merged into today rank 3)",
+    "Pokemon Go military drone data (script produced 2026-06-11)",
+    "Meta face recognition (published 2026-06-05)"
+  ],
+  "trend_signals": [
+    "SpaceX begins trading + Tesla merger talks — vertically-integrated mobility empire forming",
+    "AI agent bankrupted its operator (DN42 scan incident) — autonomous system liability in focus",
+    "Ryanair dark UX patterns trending — hostile design critique cycle active",
+    "Claude Fable 5 / Anthropic guardrail controversy — AI trust and transparency debate",
+    "Kimi K2.7-Code open-source release — open-source AI coding model competition heating up"
+  ],
+  "pending_backlog_note": "7 video scripts in drafts/scripts/ awaiting QC or approval. approved.json empty for 5 consecutive days. Publishing pipeline blocked. Human must add slugs to approved.json to unblock."
+}

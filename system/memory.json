@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-11",
+  "last_updated": "2026-06-12",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -22,7 +22,10 @@
     { "date": "2026-06-09", "type": "research_infographic", "url": "docs/research-infographic-2026-06-09.svg", "topic": "Research Infographic" },
     { "date": "2026-06-10", "type": "research", "url": "docs/research-2026-06-10.html", "topic": "Transit Research Digest" },
     { "date": "2026-06-10", "type": "transit", "url": "docs/transit-2026-06-10.html", "topic": "SoCal Transit Brief" },
-    { "date": "2026-06-10", "type": "interactive", "url": "docs/transit-game.html", "topic": "TOD Builder Game" }
+    { "date": "2026-06-10", "type": "interactive", "url": "docs/transit-game.html", "topic": "TOD Builder Game" },
+    { "date": "2026-06-11", "type": "news", "url": "docs/2026-06-11.html", "topic": "Daily News Digest" },
+    { "date": "2026-06-11", "type": "research", "url": "docs/research-2026-06-11.html", "topic": "Transit Research Digest" },
+    { "date": "2026-06-11", "type": "transit", "url": "docs/transit-2026-06-11.html", "topic": "SoCal Transit Brief" }
   ],
   "drafts_pending_approval": [
     { "slug": "apple-gemini-2026-script", "path": "drafts/scripts/apple-gemini-2026-script.md", "qc": "passed", "date": "2026-06-09" },
@@ -30,7 +33,8 @@
     { "slug": "us-cities-transit-gap-script", "path": "drafts/scripts/us-cities-transit-gap-script.md", "qc": "unknown", "date": "2026-06-09" },
     { "slug": "slime-mold-transit-script", "path": "drafts/scripts/slime-mold-transit-script.md", "qc": "unknown", "date": "2026-06-09" },
     { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "unknown", "date": "2026-06-09" },
-    { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "unknown", "date": "2026-06-10" }
+    { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "unknown", "date": "2026-06-10" },
+    { "slug": "pokemon-go-drones-urban-data-script", "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md", "qc": "unknown", "date": "2026-06-11" }
   ],
   "topic_performance": {
     "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
@@ -55,16 +59,22 @@
     "US cities transit gap",
     "dopamine and urban design",
     "electric axial flux motors transit",
-    "TOD Builder interactive game"
+    "TOD Builder interactive game",
+    "Pokemon Go military drone urban data pipeline"
   ],
   "failed_jobs": [
-    { "date": "2026-06-10", "job": "publishing", "reason": "approved.json empty — no human approvals received for 4th consecutive day" }
+    { "date": "2026-06-10", "job": "publishing", "reason": "approved.json empty — no human approvals received for 4th consecutive day" },
+    { "date": "2026-06-11", "job": "publishing", "reason": "approved.json empty — no human approvals received for 5th consecutive day" },
+    { "date": "2026-06-11", "job": "article_writing", "reason": "drafts/articles/ still empty after queue items ranked for 5+ days — article-writing agent appears unresponsive" },
+    { "date": "2026-06-11", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 infographic not produced for 3rd consecutive day" }
   ],
   "content_gaps": [
-    "approved.json empty since 2026-06-07 — Publishing Agent blocked 4 consecutive days, no human approvals received",
-    "BRT expansion deep-dive queued 2026-06-07, still never produced as article — now rank #2 queue item 2026-06-11",
-    "Free transit explainer queued 2026-06-07, still never produced — now rank #1 queue item 2026-06-11",
-    "Global transit infrastructure longevity / data journalism angle uncovered",
-    "Long-form articles directory empty — no articles/ content produced in 7+ days"
+    "approved.json empty since 2026-06-07 — Publishing Agent blocked 5 consecutive days, no human approvals received",
+    "BRT expansion infographic queued since 2026-06-07, never produced — rank #2 today (3rd retry)",
+    "Free transit long-form article queued since 2026-06-07, never written — rank #4 today (3rd retry)",
+    "articles/ directory empty — no long-form articles produced ever",
+    "Tesla/SpaceX merger urban transit angle — fresh opportunity today (rank #1)",
+    "AI agent risk in transit automation — fresh opportunity today (rank #3)",
+    "7 video scripts piling up in drafts/scripts/, none approved for publishing"
   ]
 }
