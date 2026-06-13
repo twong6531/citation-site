@@ -7,17 +7,20 @@
     "content_plan": "pending",
     "articles": "pending",
     "infographics": "pending",
-    "video_scripts": "pending",
+    "video_scripts": "completed",
     "qc": "pending",
     "publishing": "blocked_no_approved_items"
   },
   "queue_items": 5,
   "alerts": [
     "CRITICAL DAY 7: approved.json has been empty since 2026-06-07. Publishing Agent blocked for 7 consecutive days. Human must add item slugs to approved.json to unblock the pipeline.",
-    "CRITICAL: drafts/articles/ directory remains empty after 8+ days of queuing articles. Article-writing agent has a 0% success rate. Today queues 2 new article topics plus 1 retry — monitoring for first-ever article production.",
+    "CRITICAL: drafts/articles/ directory remains empty after 8+ days of queuing articles. Article-writing agent has a 0% success rate. Today queues 2 new article topics plus 1 retry \u2014 monitoring for first-ever article production.",
     "WARNING RETRY #4: brt-vs-light-rail-cost-2026 infographic has been queued every day since 2026-06-07 and never produced. If not produced today (2026-06-13), escalate to human: infographic pipeline may need manual intervention.",
     "WARNING: Video script backlog has grown to 8 scripts (transit-app-dark-ux-2026 added 2026-06-12). None approved. At current rate, backlog will exceed 10 scripts by 2026-06-15.",
-    "INFO: Encyclopedia content pipeline is healthy — 19+ articles published 2026-06-12 across multiple topic categories. This pipeline is working. Consider redirecting encyclopedia agent capacity toward long-form drafts.",
+    "INFO: Encyclopedia content pipeline is healthy \u2014 19+ articles published 2026-06-12 across multiple topic categories. This pipeline is working. Consider redirecting encyclopedia agent capacity toward long-form drafts.",
     "INFO: Today's two top stories (rare-earth-free motors, US government AI model restrictions) are time-sensitive news hooks. Article production today would capture peak search traffic."
+  ],
+  "scripts_produced_today": [
+    "tesla-spacex-transit-empire-script"
   ]
 }
