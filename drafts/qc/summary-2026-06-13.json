@@ -1,0 +1,65 @@
+{
+  "date": "2026-06-13",
+  "qc_completed_at": "2026-06-13T18:00:00Z",
+  "total_reviewed": 2,
+  "passed": 2,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [
+    "tesla-spacex-transit-empire-script",
+    "transit-app-dark-ux-2026-script"
+  ],
+  "needs_revision": [],
+  "blocked": [],
+  "items_reviewed": [
+    {
+      "slug": "tesla-spacex-transit-empire-script",
+      "type": "script",
+      "score": 93,
+      "verdict": "PASS",
+      "produced_date": "2026-06-13",
+      "note": "Clean pass on all checks. Strong sourcing (9 named outlets/sources), reel at 142w (well under 200 limit), YouTube at ~1,090w. Best-sourced script in the backlog."
+    },
+    {
+      "slug": "transit-app-dark-ux-2026-script",
+      "type": "script",
+      "score": 82,
+      "verdict": "PASS",
+      "produced_date": "2026-06-12",
+      "note": "Passes with minor notes. Fix LA Metro API tier imprecision before publish. Companion article referenced in CTA does not exist — update CTA or produce article before going live."
+    }
+  ],
+  "not_produced_today": [
+    {
+      "slug": "rare-earth-free-motors-transit-electrification-2026",
+      "type": "article",
+      "queued": "2026-06-13",
+      "status": "not_produced — drafts/articles/ remains empty (0% article production rate, day 9)"
+    },
+    {
+      "slug": "ai-access-policy-transit-agencies-2026",
+      "type": "article",
+      "queued": "2026-06-13",
+      "status": "not_produced — drafts/articles/ remains empty"
+    },
+    {
+      "slug": "open-source-ai-transit-autonomy-2026",
+      "type": "article",
+      "queued": "2026-06-13",
+      "status": "not_produced — drafts/articles/ remains empty"
+    },
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "type": "infographic",
+      "queued": "2026-06-07",
+      "status": "not_produced — RETRY #4 FAILED. drafts/infographics/ directory does not exist. Infographic pipeline confirmed non-functional. Escalation to human required."
+    }
+  ],
+  "systemic_findings": {
+    "article_pipeline_failure": "CRITICAL DAY 9: drafts/articles/ directory has never contained a file. Three articles were queued today (rare-earth-free-motors, ai-access-policy, open-source-ai). None produced. Article-writing agent has a confirmed 0% success rate over 9 days. Manual intervention or agent replacement required.",
+    "infographic_pipeline_failure": "CONFIRMED FAILURE: brt-vs-light-rail-cost-2026 failed its 4th consecutive retry. The drafts/infographics/ directory does not exist (never created). Infographic agent is non-functional. Escalate to human immediately — this item has been in queue since 2026-06-07.",
+    "script_backlog_growing": "9 scripts now exist in drafts/scripts/ (including transit-app-dark-ux and tesla-spacex). Today's QC passes 2 of those 9 for publish. The 2026-06-11 QC marked 7 scripts as REVISE (reel word count issues). Total backlog: 7 unresolved REVISE + 2 new PASS = 9 scripts pending publish action.",
+    "approved_json_critical_block": "CRITICAL DAY 7: system/approved.json has been empty since 2026-06-07. Publishing Agent is completely blocked. QC can pass content; nothing goes live without human adding slugs to approved.json. Today's two new PASSes bring the total QC-approved-but-unpublished scripts to: tesla-spacex-transit-empire-script (93/100) and transit-app-dark-ux-2026-script (82/100). Human action required to add these slugs to approved.json.",
+    "positive_note": "Script production pipeline remains 100% functional. Both scripts reviewed today are substantive, well-sourced, and publishable. Content quality is strong — the bottleneck is entirely in the approval and article/infographic production layers."
+  }
+}

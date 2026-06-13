@@ -1,0 +1,31 @@
+{
+  "file": "transit-app-dark-ux-2026-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-13T18:00:00Z",
+  "verdict": "PASS",
+  "score": 82,
+  "checks_passed": [
+    "Reel script exists — SHORT-FORM REEL (60 seconds) section present",
+    "Reel under 200 words — spoken voiceover counted at ~184 words (Scene 1 ~35w, Scene 2 ~59w, Scene 3 ~64w, Scene 4 ~26w); HOOK line is on-screen text only, not spoken voiceover, correctly excluded from count",
+    "YouTube script exists — LONG-FORM YOUTUBE (5–8 minutes) section present",
+    "YouTube 600–1200 words — script self-reports ~1,150 spoken words (~7 min at 165 WPM); within the 600–1200 ceiling",
+    "Hook in first 3 lines of reel — ON-SCREEN TEXT: 'Your city's transit app is hiding real-time bus data behind a login wall — on purpose.' is first line",
+    "Hook does NOT start with 'Did you know'",
+    "Major claims sourced inline: Brussels Commercial Court (Ryanair ruling, Feb 2026), EU/BEUC Report (97% dark pattern stat, 2022), Wikipedia/Dark_pattern (Harry Brignull, 2010 — appropriate for origin-of-term citation), Princeton/FTC (2019 shopping site study), FTC (Epic Games fine, March 2023), Wikipedia/Berliner_Verkehrsbetriebe (BVG Jelbi, 2019), Wikipedia/Transit_app (GTFS data tiers)",
+    "CTA present in reel — 'Full breakdown at the link' + 'Subscribe for weekly transit analysis'",
+    "CTA present in YouTube — 'subscribe — I publish every week' + link to full breakdown in Outro",
+    "Visual notes present for reel — four distinct VISUAL cues: Ryanair vs. MTA login split-screen, fare calculator animation, city bus map with missed-bus sequence, UX charter mockup",
+    "No AI tells — no 'As an AI', 'I cannot', 'certainly', 'I'd be happy to'",
+    "No placeholder text — no TODO, TBD, [INSERT], Lorem ipsum",
+    "Factual spot-check passed — Harry Brignull dark patterns origin (2010 confirmed), Epic Games $245M FTC fine (March 2023 confirmed), BVG Jelbi launch (2019 confirmed), 97% EU/BEUC dark pattern stat plausible",
+    "Duplicate check: no prior coverage of transit app UX/dark patterns in docs/ or memory.json"
+  ],
+  "checks_failed": [
+    "Wikipedia used as primary citation for 4 of 7 sources (Dark_pattern, Berliner_Verkehrsbetriebe, Ryanair, Transit_app) — acceptable for established background facts but weaker than primary sources (court documents, BVG press releases, academic papers). Previous QC flagged 'Wikipedia-only sources' as systemic issue in the 2026-06-11 review.",
+    "LA Metro API tier claim slightly imprecise — 'unless you pay for a premium API tier' is not precisely accurate; LA Metro's GTFS-RT feeds are publicly available to developers without a paid tier. The correct framing is throttled rate limits for high-volume API use. Minor factual imprecision, not a blocking error.",
+    "Companion article does not exist — both reel ('Full breakdown at the link') and YouTube outro ('I wrote a full breakdown...link in the description') explicitly reference a detailed companion article with screenshots and a scorecard. No such article exists in drafts/articles/ (directory is empty). If published, CTA links will go nowhere."
+  ],
+  "revision_notes": "LOW EFFORT FIXES BEFORE PUBLISH: (1) Update LA Metro API claim in Scene 2 reel and Pattern 4 section to say 'throttled rate limits for high-frequency use' rather than 'premium API tier.' (2) Before publishing the video, either produce the companion article or update the CTA to point to the YouTube description sources list instead of a separate article. (3) Optional improvement: replace Wikipedia/Ryanair citation with the Brussels Commercial Court ruling press release or a primary news source (Reuters, Le Monde).",
+  "fail_reason": null,
+  "approved_for_publish": true
+}

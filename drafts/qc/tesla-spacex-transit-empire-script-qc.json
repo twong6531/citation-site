@@ -1,0 +1,29 @@
+{
+  "file": "tesla-spacex-transit-empire-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-13T18:00:00Z",
+  "verdict": "PASS",
+  "score": 93,
+  "checks_passed": [
+    "Reel script exists — SHORT-FORM REEL (60 seconds) section present",
+    "Reel under 200 words — spoken voiceover measured at ~142 words (Scene 1 ~34w, Scene 2 ~53w, Scene 3 ~36w, Scene 4 ~19w); caption counted separately and not toward limit",
+    "YouTube script exists — LONG-FORM YOUTUBE (5–8 minutes) section present",
+    "YouTube 600–1200 words — estimated 1,090 spoken words across Hook + Intro + Section 1 + Section 2 + Section 3 + Outro; within range",
+    "Hook in first 3 lines of reel — ON-SCREEN TEXT: '$75 BILLION. One day. Largest IPO in human history.' is line 1",
+    "Hook does NOT start with 'Did you know'",
+    "Major claims sourced inline: CNBC (SpaceX IPO price/close), Fortune (merger/$3.4T valuation), Mass Transit Magazine (SEPTA cuts), CBS News Chicago (CTA gap/$200M), GovTech (national $6.6B shortfall), CBO (federal relief context), ProPublica (Boring Company oversight), California Policy Center (antitrust framework), The Boring Company (Loop facts)",
+    "Sources are high-quality: named journalists/outlets, dated 2026 — not Wikipedia-only",
+    "CTA present in reel — 'Subscribe and read the full breakdown — link in bio'",
+    "CTA present in YouTube — 'subscribe. I cover this beat weekly with data and no hype' in Outro",
+    "Visual notes present for reel — four distinct VISUAL cues: stock ticker, Boring Company map, empty bus vs. tunnel pod, channel logo",
+    "No AI tells — no 'As an AI', 'I cannot', 'certainly', 'I'd be happy to'",
+    "No placeholder text — no TODO, TBD, [INSERT], Lorem ipsum",
+    "Factual spot-check passed — SpaceX IPO ($75B, SPCX ticker), CTA 40% cuts, SEPTA 32 routes cut, $6.6B national gap, Las Vegas Loop oversight gap all corroborated by cited sources and consistent with pipeline trend signals for 2026-06-13",
+    "Quote card labeled explicitly as '[framing graphic, not a real quote]' — appropriate disclosure",
+    "Duplicate check: no overlap with published content (tesla-spacex-merger-transit-implications-2026 was never produced as article; this video format is distinct)"
+  ],
+  "checks_failed": [],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true
+}

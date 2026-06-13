@@ -8,7 +8,7 @@
     "articles": "pending",
     "infographics": "pending",
     "video_scripts": "completed",
-    "qc": "pending",
+    "qc": "completed",
     "publishing": "blocked_no_approved_items"
   },
   "queue_items": 5,
