@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<style>
+  text { font-family: "Helvetica Neue", Arial, sans-serif; }
+</style>
+<rect width="800" height="1600" fill="#F7F7F5"/>
+<!-- Top bar -->
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<!-- Header -->
+<text x="400" y="38" text-anchor="middle" font-size="11" fill="#888888" letter-spacing="4" font-weight="600">DAILY BRIEFING</text>
+<text x="400" y="78" text-anchor="middle" font-size="30" fill="#111111" font-weight="700">AI SOVEREIGNTY CRISIS</text>
+<text x="400" y="104" text-anchor="middle" font-size="13" fill="#888888">June 13, 2026</text>
+<line x1="40" y1="122" x2="760" y2="122" stroke="#CCCCCC" stroke-width="1"/>
+
+<rect x="32" y="140" width="736" height="212" rx="4" fill="#FFFFFF" stroke="#E8E8E6" stroke-width="1"/>
+<text x="52" y="168" font-size="13" fill="#AAAAAA" font-weight="600">01</text>
+<rect x="74" y="154" width="70" height="20" rx="10" fill="#6C47FF"/>
+<text x="109" y="167" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">AI</text>
+<text x="154" y="168" font-size="16">🚨</text>
+<text x="748" y="167" text-anchor="end" font-size="11" fill="#6C47FF" font-weight="700">IMPACT 10/10</text>
+<text x="52" y="190" font-size="16" fill="#111111" font-weight="700">US Orders Anthropic To Suspend Top AI Models</text>
+<text x="52" y="218" font-size="11.5" fill="#555555">The US government issued an emergency directive requiring Anthropic to disable Fable</text>
+<text x="52" y="234" font-size="11.5" fill="#555555">5 and Mythos 5 for all customers, citing national security concerns over a discovered</text>
+<text x="52" y="250" font-size="11.5" fill="#555555">jailbreaking technique. Anthropic received the directive at 5:21pm ET and disputes</text>
+<text x="52" y="274" font-size="10.5" fill="#333333">• Directive received at 5:21pm ET on June 13, 2026 with no specific threat details</text>
+<text x="52" y="288" font-size="10.5" fill="#333333">• Fable 5 red-teamed for thousands of hours before launch with no universal</text>
+<text x="52" y="302" font-size="10.5" fill="#333333">jailbreak found</text>
+<text x="52" y="316" font-size="10.5" fill="#333333">• Access to all other Anthropic models remains unaffected by the order</text>
+<rect x="52" y="338" width="680" height="4" rx="2" fill="#EEEEEE"/>
+<rect x="52" y="338" width="680" height="4" rx="2" fill="#6C47FF"/>
+<rect x="32" y="360" width="736" height="212" rx="4" fill="#FFFFFF" stroke="#E8E8E6" stroke-width="1"/>
+<text x="52" y="388" font-size="13" fill="#AAAAAA" font-weight="600">02</text>
+<rect x="74" y="374" width="70" height="20" rx="10" fill="#0077CC"/>
+<text x="109" y="387" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">Science</text>
+<text x="154" y="388" font-size="16">🧬</text>
+<text x="748" y="387" text-anchor="end" font-size="11" fill="#0077CC" font-weight="700">IMPACT 9/10</text>
+<text x="52" y="410" font-size="16" fill="#111111" font-weight="700">CRISPR Technique Shreds Undruggable Cancer Cells</text>
+<text x="52" y="438" font-size="11.5" fill="#555555">Researchers have developed a CRISPR-based technique that selectively destroys cancer</text>
+<text x="52" y="454" font-size="11.5" fill="#555555">cells, including tumor types previously considered impossible to treat with existing</text>
+<text x="52" y="470" font-size="11.5" fill="#555555">drugs. The approach uses gene-editing precision to target cancer DNA while leaving</text>
+<text x="52" y="494" font-size="10.5" fill="#333333">• Targets cancer types previously labeled 'undruggable' with no existing therapies</text>
+<text x="52" y="508" font-size="10.5" fill="#333333">• CRISPR molecular scissors programmed to recognize cancer-specific DNA sequences</text>
+<text x="52" y="522" font-size="10.5" fill="#333333">• Preclinical results show selective destruction with minimal off-target effects</text>
+<rect x="52" y="558" width="680" height="4" rx="2" fill="#EEEEEE"/>
+<rect x="52" y="558" width="612" height="4" rx="2" fill="#0077CC"/>
+<rect x="32" y="580" width="736" height="212" rx="4" fill="#FFFFFF" stroke="#E8E8E6" stroke-width="1"/>
+<text x="52" y="608" font-size="13" fill="#AAAAAA" font-weight="600">03</text>
+<rect x="74" y="594" width="70" height="20" rx="10" fill="#6C47FF"/>
+<text x="109" y="607" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">AI</text>
+<text x="154" y="608" font-size="16">🔓</text>
+<text x="748" y="607" text-anchor="end" font-size="11" fill="#6C47FF" font-weight="700">IMPACT 8/10</text>
+<text x="52" y="630" font-size="16" fill="#111111" font-weight="700">Open Source AI Movement Demands Global Access</text>
+<text x="52" y="658" font-size="11.5" fill="#555555">A widely-shared manifesto arguing that open source AI must prevail over closed</text>
+<text x="52" y="674" font-size="11.5" fill="#555555">commercial systems gained over 1,266 upvotes on Hacker News, arriving the same day</text>
+<text x="52" y="690" font-size="11.5" fill="#555555">the US government shut down Anthropic's top models. The piece frames centralized AI</text>
+<text x="52" y="714" font-size="10.5" fill="#333333">• 1,266 Hacker News upvotes placing it in the day's top 3 stories</text>
+<text x="52" y="728" font-size="10.5" fill="#333333">• Argument intensified by simultaneous Anthropic government suspension news</text>
+<text x="52" y="742" font-size="10.5" fill="#333333">• Advocates for open weights, open training, and decentralized AI governance</text>
+<rect x="52" y="778" width="680" height="4" rx="2" fill="#EEEEEE"/>
+<rect x="52" y="778" width="544" height="4" rx="2" fill="#6C47FF"/>
+<rect x="32" y="800" width="736" height="212" rx="4" fill="#FFFFFF" stroke="#E8E8E6" stroke-width="1"/>
+<text x="52" y="828" font-size="13" fill="#AAAAAA" font-weight="600">04</text>
+<rect x="74" y="814" width="70" height="20" rx="10" fill="#00897B"/>
+<text x="109" y="827" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">Tech</text>
+<text x="154" y="828" font-size="16">⚡</text>
+<text x="748" y="827" text-anchor="end" font-size="11" fill="#00897B" font-weight="700">IMPACT 8/10</text>
+<text x="52" y="850" font-size="16" fill="#111111" font-weight="700">Renault Builds EV Motors With Zero Rare Earths</text>
+<text x="52" y="878" font-size="11.5" fill="#555555">Renault Group has pioneered electric motors using wound-rotor synchronous technology,</text>
+<text x="52" y="894" font-size="11.5" fill="#555555">eliminating the need for rare earth minerals like neodymium that dominate</text>
+<text x="52" y="910" font-size="11.5" fill="#555555">conventional EV motor designs. The innovation severs EV manufacturing's strategic</text>
+<text x="52" y="934" font-size="10.5" fill="#333333">• Copper wound-rotor design replaces neodymium permanent magnets entirely</text>
+<text x="52" y="948" font-size="10.5" fill="#333333">• Renault is first major automaker to deploy rare-earth-free motors at production</text>
+<text x="52" y="962" font-size="10.5" fill="#333333">scale</text>
+<text x="52" y="976" font-size="10.5" fill="#333333">• China controls over 85% of global rare earth processing, making this a major</text>
+<text x="52" y="990" font-size="10.5" fill="#333333">supply chain shift</text>
+<rect x="52" y="998" width="680" height="4" rx="2" fill="#EEEEEE"/>
+<rect x="52" y="998" width="544" height="4" rx="2" fill="#00897B"/>
+<rect x="32" y="1020" width="736" height="212" rx="4" fill="#FFFFFF" stroke="#E8E8E6" stroke-width="1"/>
+<text x="52" y="1048" font-size="13" fill="#AAAAAA" font-weight="600">05</text>
+<rect x="74" y="1034" width="70" height="20" rx="10" fill="#00897B"/>
+<text x="109" y="1047" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">Tech</text>
+<text x="154" y="1048" font-size="16">🔐</text>
+<text x="748" y="1047" text-anchor="end" font-size="11" fill="#00897B" font-weight="700">IMPACT 7/10</text>
+<text x="52" y="1070" font-size="16" fill="#111111" font-weight="700">Arch Linux Malware Hits Over 1,500 Packages</text>
+<text x="52" y="1098" font-size="11.5" fill="#555555">A major supply chain attack compromised more than 1,500 packages in the Arch Linux</text>
+<text x="52" y="1114" font-size="11.5" fill="#555555">AUR community repository, one of the largest such incidents in Linux distribution</text>
+<text x="52" y="1130" font-size="11.5" fill="#555555">history. The Arch team states the malware incident is now under control.</text>
+<text x="52" y="1154" font-size="10.5" fill="#333333">• More than 1,500 AUR packages confirmed compromised in the attack</text>
+<text x="52" y="1168" font-size="10.5" fill="#333333">• AUR serves millions of Arch Linux users worldwide as the primary community repo</text>
+<text x="52" y="1182" font-size="10.5" fill="#333333">• Arch Linux team declared the incident under control after emergency response</text>
+<rect x="52" y="1218" width="680" height="4" rx="2" fill="#EEEEEE"/>
+<rect x="52" y="1218" width="476" height="4" rx="2" fill="#00897B"/>
+<rect x="32" y="1240" width="736" height="212" rx="4" fill="#FFFFFF" stroke="#E8E8E6" stroke-width="1"/>
+<text x="52" y="1268" font-size="13" fill="#AAAAAA" font-weight="600">06</text>
+<rect x="74" y="1254" width="70" height="20" rx="10" fill="#2E7D32"/>
+<text x="109" y="1267" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">Business</text>
+<text x="154" y="1268" font-size="16">📦</text>
+<text x="748" y="1267" text-anchor="end" font-size="11" fill="#2E7D32" font-weight="700">IMPACT 6/10</text>
+<text x="52" y="1290" font-size="16" fill="#111111" font-weight="700">AI Startup Shuts Open Source Repo After $7.3M Raise</text>
+<text x="52" y="1318" font-size="11.5" fill="#555555">TensorZero, an AI model optimization platform, archived its open source GitHub</text>
+<text x="52" y="1334" font-size="11.5" fill="#555555">repository overnight just after securing $7.3M in seed funding, shocking the</text>
+<text x="52" y="1350" font-size="11.5" fill="#555555">developer community. The move reignited debate about startups using open source to</text>
+<text x="52" y="1374" font-size="10.5" fill="#333333">• $7.3 million seed round raised before the repository was suddenly archived</text>
+<text x="52" y="1388" font-size="10.5" fill="#333333">• Repository closed within 24 hours of the funding announcement going public</text>
+<text x="52" y="1402" font-size="10.5" fill="#333333">• Story garnered 117 upvotes on Hacker News as community backlash spread</text>
+<rect x="52" y="1438" width="680" height="4" rx="2" fill="#EEEEEE"/>
+<rect x="52" y="1438" width="408" height="4" rx="2" fill="#2E7D32"/>
+<line x1="40" y1="1480" x2="760" y2="1480" stroke="#CCCCCC" stroke-width="1"/>
+<text x="400" y="1504" text-anchor="middle" font-size="11" fill="#AAAAAA">Generated by AI · June 13, 2026</text>
+<rect x="0" y="1524" width="800" height="3" fill="#111111"/>
+</svg>

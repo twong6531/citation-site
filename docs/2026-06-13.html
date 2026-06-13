@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing — June 13, 2026</title>
+  <style>
+    :root {
+      --bg: #0F0F10;
+      --card: #1A1A1E;
+      --border: #2A2A30;
+      --text: #E8E8EA;
+      --muted: #888890;
+      --accent: #6C47FF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .top-bar { height: 4px; background: linear-gradient(90deg, #6C47FF 0%, #0077CC 50%, #00897B 100%); }
+    .site-header {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .site-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+    .site-header .date-line { font-size: 13px; color: var(--muted); }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px 60px; }
+
+    /* SECTION A — EDITORIAL IMAGE */
+    .section-a {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .section-subtitle { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .image-placeholder {
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 64px 24px;
+      text-align: center;
+      color: var(--muted);
+    }
+    .image-placeholder .vis-subject {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .image-placeholder .vis-context {
+      font-size: 13px;
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto 20px;
+    }
+    .image-placeholder .vis-note {
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #555;
+    }
+    img.editorial-img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .img-caption {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .img-note { font-size: 11px; color: #555; text-align: center; }
+
+    /* SECTION B — NEWS ANALYSIS */
+    .section-b { padding-top: 48px; }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .story-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .story-num { font-size: 12px; color: var(--muted); font-weight: 700; }
+    .cat-pill {
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+    .story-emoji { font-size: 18px; }
+    .impact-badge { font-size: 11px; font-weight: 700; margin-left: auto; }
+    .story-headline {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+    .story-summary {
+      font-size: 14px;
+      color: #AAACB0;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .story-bullets {
+      margin: 0 0 14px 18px;
+      font-size: 13px;
+      color: #CCCED2;
+      line-height: 1.6;
+    }
+    .story-bullets li { margin-bottom: 4px; }
+    .impact-bar-bg {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+    .impact-bar-fill { height: 100%; border-radius: 2px; }
+    .why-matters { font-size: 12px; color: var(--muted); font-style: italic; }
+    .infographic-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .infographic-link:hover { border-color: var(--accent); }
+    .page-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .bottom-bar { height: 3px; background: #111; margin-top: 24px; }
+    a.back-link {
+      display: inline-block;
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    a.back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+<div class="top-bar"></div>
+<header class="site-header">
+  <div class="label">Daily Briefing</div>
+  <h1>AI SOVEREIGNTY CRISIS</h1>
+  <div class="date-line">June 13, 2026</div>
+</header>
+<div class="container">
+  <a class="back-link" href="index.html">← Back to all briefings</a>
+
+  <!-- SECTION A: EDITORIAL IMAGE -->
+  <section class="section-a">
+    <div class="section-label">Section A — Today's Visual</div>
+    <div class="section-title">TODAY'S VISUAL &mdash; June 13, 2026</div>
+    <div class="section-subtitle">Independently researched and rendered by AI from today's news</div>
+    <div class="image-placeholder">
+      <div class="vis-subject">A Wound-Rotor Synchronous Electric Motor Assembly Without Rare Earths</div>
+      <div class="vis-context">The Renault wound-rotor synchronous motor features a rotor made entirely of copper wire windings arranged in a precise radial star pattern, fully replacing the typical neodymium magnet block. The rotor is approximately 30cm in diameter; cross-sections reveal dozens of tightly-wound copper coils embedded in steel laminate slots, surrounded by a stator housing with circumferential aluminum cooling fins. The copper windings catch studio light with a warm metallic sheen, contrasting against silver-grey laminate steel and black insulating varnish.</div>
+      <div class="vis-note">Technical Editorial Illustration &mdash; Image generation unavailable today</div>
+    </div>
+    <p class="img-caption" style="margin-top:14px">a wound-rotor synchronous electric motor assembly without rare earths &mdash; Technical Editorial Illustration</p>
+    <p class="img-note">Independently researched and rendered by AI from today's news</p>
+  </section>
+
+  <!-- SECTION B: NEWS ANALYSIS -->
+  <section class="section-b">
+    <div class="section-label">Section B — News Analysis</div>
+    <div class="section-title" style="margin-bottom:28px">TODAY'S 6 MOST IMPACTFUL STORIES</div>
+    
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">01</span>
+        <span class="cat-pill" style="background:#6C47FF">AI</span>
+        <span class="story-emoji">🚨</span>
+        <span class="impact-badge" style="color:#6C47FF">IMPACT 10/10</span>
+      </div>
+      <h2 class="story-headline">US Orders Anthropic To Suspend Top AI Models</h2>
+      <p class="story-summary">The US government issued an emergency directive requiring Anthropic to disable Fable 5 and Mythos 5 for all customers, citing national security concerns over a discovered jailbreaking technique. Anthropic received the directive at 5:21pm ET and disputes the severity of the vulnerability.</p>
+      <ul class="story-bullets"><li>Directive received at 5:21pm ET on June 13, 2026 with no specific threat details</li>
+<li>Fable 5 red-teamed for thousands of hours before launch with no universal jailbreak found</li>
+<li>Access to all other Anthropic models remains unaffected by the order</li></ul>
+      <div class="impact-bar-bg">
+        <div class="impact-bar-fill" style="width:100%;background:#6C47FF"></div>
+      </div>
+      <p class="why-matters"><strong>Why it matters:</strong> First government-mandated shutdown of a deployed commercial AI system sets a historic precedent for state control over AI infrastructure.</p>
+    </div>
+
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">02</span>
+        <span class="cat-pill" style="background:#0077CC">Science</span>
+        <span class="story-emoji">🧬</span>
+        <span class="impact-badge" style="color:#0077CC">IMPACT 9/10</span>
+      </div>
+      <h2 class="story-headline">CRISPR Technique Shreds Undruggable Cancer Cells</h2>
+      <p class="story-summary">Researchers have developed a CRISPR-based technique that selectively destroys cancer cells, including tumor types previously considered impossible to treat with existing drugs. The approach uses gene-editing precision to target cancer DNA while leaving healthy cells intact.</p>
+      <ul class="story-bullets"><li>Targets cancer types previously labeled 'undruggable' with no existing therapies</li>
+<li>CRISPR molecular scissors programmed to recognize cancer-specific DNA sequences</li>
+<li>Preclinical results show selective destruction with minimal off-target effects</li></ul>
+      <div class="impact-bar-bg">
+        <div class="impact-bar-fill" style="width:90%;background:#0077CC"></div>
+      </div>
+      <p class="why-matters"><strong>Why it matters:</strong> Could open treatment pathways for cancers that currently have no drug-based options, potentially affecting millions of patients globally.</p>
+    </div>
+
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">03</span>
+        <span class="cat-pill" style="background:#6C47FF">AI</span>
+        <span class="story-emoji">🔓</span>
+        <span class="impact-badge" style="color:#6C47FF">IMPACT 8/10</span>
+      </div>
+      <h2 class="story-headline">Open Source AI Movement Demands Global Access</h2>
+      <p class="story-summary">A widely-shared manifesto arguing that open source AI must prevail over closed commercial systems gained over 1,266 upvotes on Hacker News, arriving the same day the US government shut down Anthropic's top models. The piece frames centralized AI control as an existential risk to technological freedom.</p>
+      <ul class="story-bullets"><li>1,266 Hacker News upvotes placing it in the day's top 3 stories</li>
+<li>Argument intensified by simultaneous Anthropic government suspension news</li>
+<li>Advocates for open weights, open training, and decentralized AI governance</li></ul>
+      <div class="impact-bar-bg">
+        <div class="impact-bar-fill" style="width:80%;background:#6C47FF"></div>
+      </div>
+      <p class="why-matters"><strong>Why it matters:</strong> The debate over AI openness became urgently concrete today as a government directive demonstrated the fragility of centralized proprietary AI access.</p>
+    </div>
+
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">04</span>
+        <span class="cat-pill" style="background:#00897B">Tech</span>
+        <span class="story-emoji">⚡</span>
+        <span class="impact-badge" style="color:#00897B">IMPACT 8/10</span>
+      </div>
+      <h2 class="story-headline">Renault Builds EV Motors With Zero Rare Earths</h2>
+      <p class="story-summary">Renault Group has pioneered electric motors using wound-rotor synchronous technology, eliminating the need for rare earth minerals like neodymium that dominate conventional EV motor designs. The innovation severs EV manufacturing's strategic dependence on Chinese rare earth supply chains.</p>
+      <ul class="story-bullets"><li>Copper wound-rotor design replaces neodymium permanent magnets entirely</li>
+<li>Renault is first major automaker to deploy rare-earth-free motors at production scale</li>
+<li>China controls over 85% of global rare earth processing, making this a major supply chain shift</li></ul>
+      <div class="impact-bar-bg">
+        <div class="impact-bar-fill" style="width:80%;background:#00897B"></div>
+      </div>
+      <p class="why-matters"><strong>Why it matters:</strong> Breaking rare earth dependency could reshape global EV supply chains and reduce geopolitical leverage over the electrification transition.</p>
+    </div>
+
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">05</span>
+        <span class="cat-pill" style="background:#00897B">Tech</span>
+        <span class="story-emoji">🔐</span>
+        <span class="impact-badge" style="color:#00897B">IMPACT 7/10</span>
+      </div>
+      <h2 class="story-headline">Arch Linux Malware Hits Over 1,500 Packages</h2>
+      <p class="story-summary">A major supply chain attack compromised more than 1,500 packages in the Arch Linux AUR community repository, one of the largest such incidents in Linux distribution history. The Arch team states the malware incident is now under control.</p>
+      <ul class="story-bullets"><li>More than 1,500 AUR packages confirmed compromised in the attack</li>
+<li>AUR serves millions of Arch Linux users worldwide as the primary community repo</li>
+<li>Arch Linux team declared the incident under control after emergency response</li></ul>
+      <div class="impact-bar-bg">
+        <div class="impact-bar-fill" style="width:70%;background:#00897B"></div>
+      </div>
+      <p class="why-matters"><strong>Why it matters:</strong> One of the largest Linux supply chain attacks on record exposes critical vulnerabilities in community-maintained open source software distribution.</p>
+    </div>
+
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">06</span>
+        <span class="cat-pill" style="background:#2E7D32">Business</span>
+        <span class="story-emoji">📦</span>
+        <span class="impact-badge" style="color:#2E7D32">IMPACT 6/10</span>
+      </div>
+      <h2 class="story-headline">AI Startup Shuts Open Source Repo After $7.3M Raise</h2>
+      <p class="story-summary">TensorZero, an AI model optimization platform, archived its open source GitHub repository overnight just after securing $7.3M in seed funding, shocking the developer community. The move reignited debate about startups using open source to build audiences before closing code upon monetization.</p>
+      <ul class="story-bullets"><li>$7.3 million seed round raised before the repository was suddenly archived</li>
+<li>Repository closed within 24 hours of the funding announcement going public</li>
+<li>Story garnered 117 upvotes on Hacker News as community backlash spread</li></ul>
+      <div class="impact-bar-bg">
+        <div class="impact-bar-fill" style="width:60%;background:#2E7D32"></div>
+      </div>
+      <p class="why-matters"><strong>Why it matters:</strong> Illustrates the recurring tension between open source community trust and VC-backed startup monetization strategies in AI tooling.</p>
+    </div>
+
+    <a class="infographic-link" href="infographic-2026-06-13.svg" target="_blank">
+      ↗ Download Full SVG Infographic
+    </a>
+  </section>
+
+  <footer class="page-footer">
+    Generated by AI &middot; June 13, 2026 &middot; Data from Hacker News
+    <div class="bottom-bar"></div>
+  </footer>
+</div>
+</body>
+</html>
