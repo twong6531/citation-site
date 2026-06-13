@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research — June 13, 2026 | Transit Research Digest</title>
+<style>
+  :root {
+    --bg: #0D0D0D;
+    --surface: #161616;
+    --surface2: #1E1E1E;
+    --border: #2A2A2A;
+    --text: #E8E8E3;
+    --muted: #888;
+    --accent: #F0F0E8;
+    --green: #4CAF50;
+    --highlight: #2A2A1A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--text); }
+  a:hover { color: #FFF; }
+
+  /* NAVIGATION */
+  .site-nav { background: #000; border-bottom: 1px solid var(--border); padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .site-nav .logo { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-decoration: none; font-weight: 600; }
+  .site-nav .nav-links a { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-decoration: none; margin-left: 24px; }
+  .site-nav .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto; }
+  .hero-label { font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 12px; }
+  .hero h1 { font-size: 42px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+  .hero-date { font-size: 12px; color: var(--muted); letter-spacing: 2px; margin-bottom: 24px; }
+  .hero-summary { font-size: 16px; color: #BBB; line-height: 1.7; max-width: 800px; border-left: 3px solid var(--border); padding-left: 20px; }
+
+  /* MAIN LAYOUT */
+  .main-content { max-width: 1200px; margin: 0 auto; padding: 40px; }
+
+  /* SECTION HEADERS */
+  .section-header { font-size: 10px; letter-spacing: 3px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; margin-top: 48px; }
+
+  /* POTD */
+  .potd-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--text); padding: 28px; margin-bottom: 16px; }
+  .potd-label { font-size: 9px; letter-spacing: 3px; color: var(--muted); margin-bottom: 10px; }
+  .potd-card h2 { font-size: 22px; margin-bottom: 8px; }
+  .potd-card .potd-authors { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .potd-card .potd-reason { font-size: 14px; color: #AAA; line-height: 1.6; }
+
+  /* REPORT GRID */
+  .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .report-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .report-card h3 { font-size: 10px; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+  .report-card p { font-size: 14px; color: #BBB; line-height: 1.7; }
+
+  /* THEMES */
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .theme-item { background: var(--surface); border: 1px solid var(--border); padding: 20px; }
+  .theme-bar { height: 3px; background: var(--text); margin-bottom: 14px; }
+  .theme-item p { font-size: 13px; color: var(--text); line-height: 1.5; font-weight: 600; }
+
+  /* CONTRARIAN */
+  .contrarian-box { background: var(--highlight); border: 1px solid #3A3A1A; padding: 24px; margin-bottom: 24px; }
+  .contrarian-box h3 { font-size: 10px; letter-spacing: 2px; color: #AA9; margin-bottom: 12px; }
+  .contrarian-box p { font-size: 14px; color: #CCC; line-height: 1.7; }
+
+  /* TAKEAWAYS */
+  .takeaways-list { list-style: none; }
+  .takeaways-list li { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: #BBB; line-height: 1.6; }
+  .takeaway-num { background: var(--text); color: var(--bg); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+
+  /* PAPERS */
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px; margin-bottom: 16px; transition: border-color 0.2s; }
+  .paper-card:hover { border-color: #444; }
+  .paper-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .paper-num { font-size: 28px; font-weight: 700; color: var(--border); }
+  .paper-meta { display: flex; flex-direction: column; gap: 4px; }
+  .paper-source { font-size: 10px; letter-spacing: 2px; color: var(--muted); }
+  .confidence-badge { font-size: 10px; padding: 2px 8px; border-radius: 2px; color: #000; font-weight: 700; letter-spacing: 1px; width: fit-content; }
+  .paper-title { font-size: 18px; margin-bottom: 6px; line-height: 1.3; }
+  .paper-title a { text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .one-sentence { font-size: 14px; color: #AAA; font-style: italic; border-left: 2px solid var(--border); padding-left: 14px; margin-bottom: 20px; }
+  .paper-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .paper-col h4 { font-size: 9px; letter-spacing: 2px; color: var(--muted); margin-bottom: 8px; margin-top: 16px; }
+  .paper-col h4:first-child { margin-top: 0; }
+  .paper-col p, .paper-col ul { font-size: 13px; color: #999; line-height: 1.6; }
+  .paper-col ul { padding-left: 16px; }
+  .paper-col li { margin-bottom: 4px; }
+
+  /* SVG INFOGRAPHIC */
+  .infographic-section { background: var(--surface); border: 1px solid var(--border); padding: 32px; margin-top: 48px; text-align: center; }
+  .infographic-section img, .infographic-section object { max-width: 100%; border: 1px solid var(--border); }
+  .infographic-section .download-link { display: inline-block; margin-top: 16px; font-size: 11px; letter-spacing: 2px; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 8px 20px; }
+  .infographic-section .download-link:hover { color: var(--text); border-color: var(--text); }
+
+  /* FOOTER */
+  .site-footer { background: #000; border-top: 1px solid var(--border); padding: 40px; margin-top: 80px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; }
+  .footer-left { font-size: 11px; color: var(--muted); line-height: 2; }
+  .footer-right { font-size: 11px; color: var(--muted); text-align: right; }
+  .footer-right a { color: var(--muted); text-decoration: none; }
+  .footer-right a:hover { color: var(--text); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 30px; }
+    .hero h1 { font-size: 28px; }
+    .main-content { padding: 20px; }
+    .report-grid { grid-template-columns: 1fr; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .paper-grid { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="../index.html">TRANSIT RESEARCH DIGEST</a>
+  <div class="nav-links">
+    <a href="research.html">ARCHIVE</a>
+    <a href="../index.html">HOME</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">DAILY RESEARCH BRIEFING</div>
+  <h1>Urban Mobility Research</h1>
+  <div class="hero-date">JUNE 13, 2026 &nbsp;·&nbsp; 10 PAPERS ANALYZED</div>
+  <div class="hero-summary">Today&#x27;s transit research reveals a field at an inflection point: data science and machine learning are rapidly moving from theoretical tools to deployed solutions, while equity and resilience emerge as the central planning values for the next decade. Across 10 papers spanning bibliometrics, case studies, and network theory, a consistent finding emerges—interconnected, data-informed, and socially aware transit systems outperform those optimized along a single dimension. The contrast between Global North studies (Paris ride-sharing correlations, Hong Kong network resilience) and Global South applications (Bengaluru TOD, Central American BRT equity) highlights a growing methodological sophistication that is finally reaching underserved contexts.</div>
+</div>
+
+<div class="main-content">
+
+  <!-- PAPER OF THE DAY -->
+  <div class="section-header">PAPER OF THE DAY</div>
+  <div class="potd-card">
+    <div class="potd-label">EDITOR'S SELECTION — HIGHEST RESEARCH IMPACT</div>
+    <h2>#10 — Interconnectedness Enhances Network Resilience of Multimodal Public Transportation</h2>
+    <div class="potd-authors">Xu &amp; Chopra &nbsp;·&nbsp; Nature Communications 2023</div>
+    <div class="potd-reason">Xu &amp; Chopra&#x27;s Nature Communications paper (83 citations) provides the field&#x27;s most methodologically rigorous framework for transit resilience, establishing that interconnection is more valuable than hardening—a finding directly actionable for every agency facing climate disruption planning.</div>
+  </div>
+
+  <!-- REPORT -->
+  <div class="section-header">RESEARCH ANALYSIS</div>
+  <div class="report-grid">
+    <div class="report-card">
+      <h3>LONG-TERM IMPLICATIONS</h3>
+      <p>By 2035, the transit agencies that survive constrained budgets will be those that have built data infrastructure first—digital twins, real-time analytics, and ML-driven dispatch systems will separate high-performing networks from stagnant ones. The social equity measurement frameworks emerging from Global South BRT studies will likely become standard regulatory requirements in developed countries as environmental justice mandates expand. Climate-driven disruptions will accelerate the adoption of resilience-by-design approaches, fundamentally shifting capital investment from single-mode hardening to multimodal network integration.</p>
+    </div>
+    <div class="report-card">
+      <h3>CONTRARIAN INSIGHTS</h3>
+      <p>Ride-sharing services in Paris actually supplement public transit in underserved off-peak areas rather than competing with it—conventional wisdom holds that TNCs uniformly cannibalize transit ridership, but the spatial analysis reveals a complementary relationship in coverage gaps. Meanwhile, the Hong Kong resilience study shows that maximizing intermodal connections has diminishing returns—the first few connections add the most resilience benefit, meaning agencies should prioritize strategic integration over comprehensive coverage.</p>
+    </div>
+  </div>
+
+  <div class="section-header">EMERGING THEMES</div>
+  <div class="themes-grid"><div class="theme-item"><div class="theme-bar"></div><p>Machine learning and digital twins transforming transit operations and planning</p></div><div class="theme-item"><div class="theme-bar"></div><p>Social equity as measurable KPI in transit project assessment</p></div><div class="theme-item"><div class="theme-bar"></div><p>Multimodal network resilience via interconnection over hardening</p></div></div>
+
+  <div class="section-header">ACTIONABLE TAKEAWAYS</div>
+  <ul class="takeaways-list"><li><span class="takeaway-num">1</span>Deploy ML-based real-time bus tracking (Kalman filter + SVM) to reduce passenger uncertainty and enable demand-responsive fleet management</li><li><span class="takeaway-num">2</span>Run GIS equity assessments before and after BRT corridor selection to verify that routes actually serve low-income communities and not just high-ridership corridors</li><li><span class="takeaway-num">3</span>Redesign transit networks using safe-to-fail interconnection principles: build operational redundancy between modes rather than hardening individual lines against disruption</li></ul>
+
+  <!-- ALL PAPERS -->
+  <div class="section-header">ALL PAPERS — FULL ANALYSIS</div>
+  
+<article class="paper-card" id="paper-1">
+  <div class="paper-header">
+    <span class="paper-num">#01</span>
+    <div class="paper-meta">
+      <span class="paper-source">Sustainability 2025</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.3390/su17041480" target="_blank" rel="noopener">Sustainable Urban Mobility Bibliometric Analysis</a></h3>
+  <p class="paper-authors">E. İnce</p>
+  <div class="paper-summary">
+    <p class="one-sentence">This paper presents a bibliometric analysis of recent research on sustainable urban mobility, identifying key themes, emerging terms, and leading countries in the field.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>It provides a comprehensive overview of the current research landscape in sustainable urban mobility, helping researchers and policymakers understand where the field is heading and identify under-researched areas. The identification of emerging terms like walkability and public health highlights evolving priorities for urban development.</p>
+      <h4>Key Insights</h4>
+      <ul><li>Sustainable transportation, smart mobility, and technology integration are dominant research themes.</li><li>Walkability, SUMO simulation, and public health are identified as emerging research areas.</li><li>China leads globally in publication volume related to sustainable urban mobility.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>Bibliometric analysis of 2000 articles published between 2018-2023 across 617 journals.</p>
+      <h4>Results</h4>
+      <p>Key themes, emerging terms, and global publication trends in sustainable urban mobility research were identified, with China leading in output.</p>
+      <h4>Limitations</h4>
+      <p>As a bibliometric analysis, it primarily describes the research landscape and does not delve into the qualitative content or impact of individual studies.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Researchers should consider focusing on emerging areas like walkability and public health. Policymakers can leverage identified themes to guide future policy development and investment in sustainable transport.</p>
+      <h4>Who Should Care</h4>
+      <p>Transit researchers, urban planners, policymakers, academics in sustainable development, funding agencies.</p>
+      <h4>vs. Prior Work</h4>
+      <p>This study provides an up-to-date, comprehensive mapping of the research field, identifying recent shifts and emerging trends that may not be captured by older reviews, thus offering a current snapshot of the domain.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-2">
+  <div class="paper-header">
+    <span class="paper-num">#02</span>
+    <div class="paper-meta">
+      <span class="paper-source">JSCET 2025</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.24191/jscet.v4i1.m_000011" target="_blank" rel="noopener">Global TOD Strategies Comparative Analysis</a></h3>
+  <p class="paper-authors">N. Ali et al.</p>
+  <div class="paper-summary">
+    <p class="one-sentence">This comparative analysis of global Transit-Oriented Development (TOD) strategies emphasizes the need for context-sensitive frameworks that balance technology, social equity, and sustainability.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>It highlights that successful TOD implementation is not a one-size-fits-all approach, requiring careful consideration of local contexts. The paper underscores the importance of integrating social equity and sustainability alongside technological innovation in TOD planning, moving beyond purely economic considerations.</p>
+      <h4>Key Insights</h4>
+      <ul><li>TOD strategies require context-sensitive frameworks for effective implementation across diverse urban settings.</li><li>Successful TOD balances technological innovation, social equity, and environmental sustainability.</li><li>Global TOD practices offer valuable lessons but direct replication without local adaptation is often insufficient.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>Comparative analysis of TOD strategies across six cities globally.</p>
+      <h4>Results</h4>
+      <p>The study found that effective TOD requires context-sensitive frameworks integrating technology, social equity, and sustainability rather than uniform approaches.</p>
+      <h4>Limitations</h4>
+      <p>The generalizability of findings might be limited by the specific selection and number of cities analyzed in the comparative study.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Urban planners and policymakers should develop TOD strategies tailored to local conditions, prioritizing a balanced approach that includes social and environmental considerations alongside economic growth.</p>
+      <h4>Who Should Care</h4>
+      <p>Urban planners, transit agencies, policymakers, real estate developers, academics in urban studies and sustainable development.</p>
+      <h4>vs. Prior Work</h4>
+      <p>This research moves beyond simply describing TOD benefits to analyze the nuances of successful implementation across diverse global contexts, advocating for more adaptive and holistic approaches that integrate social and environmental factors.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-3">
+  <div class="paper-header">
+    <span class="paper-num">#03</span>
+    <div class="paper-meta">
+      <span class="paper-source">Urban Planning and Transport Research 2025</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.1080/21650020.2025.2550959" target="_blank" rel="noopener">Bengaluru TOD: Urban Mobility and Quality of Life</a></h3>
+  <p class="paper-authors">Udachan &amp; Patil</p>
+  <div class="paper-summary">
+    <p class="one-sentence">This study of Bengaluru&#x27;s Hebbal-Silk Board corridor examines how Transit-Oriented Development (TOD) can enhance urban mobility and quality of life, while addressing challenges like affordability and coordination.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>It provides a specific, localized case study from a rapidly growing Indian city, demonstrating the potential benefits of TOD in reducing travel times and improving non-motorized transport. It also highlights critical implementation hurdles common in developing urban contexts, such as affordability and inter-agency coordination.</p>
+      <h4>Key Insights</h4>
+      <ul><li>TOD implementation in Bengaluru can reduce travel times, increase ridership, and improve non-motorized transport (NMT) infrastructure.</li><li>Key challenges for TOD in Bengaluru include affordability, inclusivity, and inter-agency coordination.</li><li>Localized TOD studies are crucial for understanding context-specific benefits and obstacles in rapidly urbanizing regions.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>Case study of the Hebbal-Silk Board corridor in Bengaluru, India.</p>
+      <h4>Results</h4>
+      <p>The study identified potential benefits of TOD, including reduced travel times and improved NMT, but also significant challenges related to affordability, inclusivity, and inter-agency coordination.</p>
+      <h4>Limitations</h4>
+      <p>As a single-city case study, its findings might not be directly generalizable to all urban contexts without further research.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Urban planners in Bengaluru (and similar cities) should focus on integrated planning to address affordability and inclusivity, and establish strong inter-agency coordination mechanisms for successful TOD projects.</p>
+      <h4>Who Should Care</h4>
+      <p>Urban planners, local government officials, transit agencies in India and other developing countries, researchers in TOD.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Adds a specific, contemporary case study from a major Indian city, contributing empirical evidence to the global TOD discourse and highlighting unique challenges in rapidly urbanizing environments, particularly concerning social equity.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-4">
+  <div class="paper-header">
+    <span class="paper-num">#04</span>
+    <div class="paper-meta">
+      <span class="paper-source">ESTJ 2024</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.51594/estj.v5i11.1729" target="_blank" rel="noopener">Optimizing Urban Mobility with Multi-Modal Solutions</a></h3>
+  <p class="paper-authors">Owoade et al.</p>
+  <div class="paper-summary">
+    <p class="one-sentence">This review explores multimodal transportation systems, identifying AI, IoT, and blockchain as key enhancers for success through infrastructure integration, data sharing, and real-time planning.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>It provides a comprehensive overview of how integrating various transport modes, supported by advanced technologies, can significantly improve urban mobility. The paper emphasizes the foundational role of data and seamless integration for effective multimodal systems, offering a roadmap for future development.</p>
+      <h4>Key Insights</h4>
+      <ul><li>Multimodal systems effectively combine various transport modes (buses, trains, bikes, ride-sharing) for optimized urban mobility.</li><li>AI, IoT, and blockchain are crucial technologies for enhancing multimodal transportation efficiency and user experience.</li><li>Key success factors include integrated infrastructure, robust data-sharing platforms, and real-time journey planning capabilities.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>Literature review of multimodal transportation systems and their technological enhancements.</p>
+      <h4>Results</h4>
+      <p>The review identified key components, enhancing technologies (AI, IoT, blockchain), and success factors for optimal urban multimodal mobility, emphasizing data and integration.</p>
+      <h4>Limitations</h4>
+      <p>As a review paper, it synthesizes existing knowledge rather than presenting new empirical data or specific case studies of implementation challenges.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Transit agencies and urban planners should invest in digital infrastructure, secure data-sharing agreements, and AI-powered real-time planning tools to create seamless and efficient multimodal experiences.</p>
+      <h4>Who Should Care</h4>
+      <p>Transit agencies, urban planners, technology developers, smart city initiatives, researchers in transportation engineering and intelligent systems.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Synthesizes current understanding of multimodal transport with a strong focus on the role of emerging technologies (AI, IoT, blockchain) as enablers, providing a forward-looking perspective on system optimization.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-5">
+  <div class="paper-header">
+    <span class="paper-num">#05</span>
+    <div class="paper-meta">
+      <span class="paper-source">Sustainability 2024</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.3390/su16093766" target="_blank" rel="noopener">Accessibility Assessment in Central American BRT</a></h3>
+  <p class="paper-authors">Grande-Ayala</p>
+  <div class="paper-summary">
+    <p class="one-sentence">Comparative GIS analysis of BRT projects in Guatemala City, San Salvador, and Tegucigalpa shows Guatemala City&#x27;s BRT most effectively reduced access times to health and education facilities while narrowing inequality.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>Provides rare empirical evidence from the Global South—Central America specifically—demonstrating how BRT corridor placement directly determines whether transit investments reduce or reinforce inequality. The GIS methodology is replicable and open-source, making it accessible to resource-constrained planners.</p>
+      <h4>Key Insights</h4>
+      <ul><li>Guatemala City&#x27;s BRT reduced access times to health clinics and educational facilities most significantly of the three cities studied.</li><li>BRT impact on social equity varies substantially depending on corridor alignment relative to low-income neighborhoods.</li><li>Open-source GIS equity indicators can systematically assess social sustainability of transit projects in data-scarce environments.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>Comparative before-and-after analysis of three BRT projects using GIS-modeled equity and spatial efficiency indicators, including network analysis of access times to basic urban facilities.</p>
+      <h4>Results</h4>
+      <p>Guatemala City&#x27;s BRT showed the largest reduction in access time to health clinics and schools and the greatest narrowing of the spatial inequality gap; San Salvador and Tegucigalpa showed more modest gains.</p>
+      <h4>Limitations</h4>
+      <p>Study focuses on accessibility equity and does not measure ridership, environmental impact, or economic effects. Findings from capital cities may not generalize to secondary cities.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Planners should align BRT corridors specifically through underserved communities and conduct GIS equity assessments before and after construction to validate social impact.</p>
+      <h4>Who Should Care</h4>
+      <p>Transit agencies in developing countries, social equity advocates, urban planners, international development organizations funding transit infrastructure.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Fills a major gap in BRT research by applying social sustainability metrics to Central America—a region almost entirely absent from mainstream transit literature.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-6">
+  <div class="paper-header">
+    <span class="paper-num">#06</span>
+    <div class="paper-meta">
+      <span class="paper-source">ISML 2024</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.1109/ISML60050.2024.11007439" target="_blank" rel="noopener">Machine Learning-Enabled Smart Transit: Real-Time Bus Tracking</a></h3>
+  <p class="paper-authors">Madana et al.</p>
+  <div class="paper-summary">
+    <p class="one-sentence">This paper proposes a machine learning-enabled system utilizing Kalman filters, SVM, and regression models with Google Maps API to provide real-time bus tracking and reduce passenger wait times.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>Real-time tracking significantly improves passenger experience, builds trust in public transit, and allows operators to optimize service delivery, directly addressing a common pain point of unpredictable wait times.</p>
+      <h4>Key Insights</h4>
+      <ul><li>Machine learning models (Kalman filter, SVM, regression) can accurately predict bus arrival times.</li><li>Integration with Google Maps API provides a practical and accessible interface for real-time information.</li><li>Real-time tracking directly contributes to reduced passenger wait times and improved operational efficiency.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>The study employs a combination of machine learning techniques including Kalman filter for state estimation, Support Vector Machines (SVM) for classification, and regression models for prediction, integrated with the Google Maps API for data acquisition and visualization.</p>
+      <h4>Results</h4>
+      <p>The implemented system effectively provides real-time bus tracking, leading to a measurable reduction in passenger wait times and enhanced service predictability.</p>
+      <h4>Limitations</h4>
+      <p>The paper does not specify the geographical scope of the study or the dataset size. Potential limitations could include reliance on Google Maps API accuracy, data privacy concerns, and scalability challenges for very large transit networks.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Transit agencies can deploy similar ML-powered systems to offer real-time bus tracking, enhancing passenger satisfaction and optimizing fleet management.</p>
+      <h4>Who Should Care</h4>
+      <p>Transit operators, urban planners, software developers for transit applications, and researchers in smart city technologies.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Builds upon existing bus tracking methods by integrating multiple ML techniques for enhanced accuracy and leverages a widely accessible platform (Google Maps API) for practical deployment, moving beyond simpler GPS-based tracking.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-7">
+  <div class="paper-header">
+    <span class="paper-num">#07</span>
+    <div class="paper-meta">
+      <span class="paper-source">ICCA 2024</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.1109/ICCA62237.2024.10927758" target="_blank" rel="noopener">Deep Learning Analysis of Public Transit and Ride-Sharing in Paris</a></h3>
+  <p class="paper-authors">Nassar et al.</p>
+  <div class="paper-summary">
+    <p class="one-sentence">This study uses deep learning, specifically a CNN, to analyze the correlation between public transit and ride-sharing services in Paris, finding that ride-sharing often supplements transit in underserved areas during off-peak times while competing downtown during peak hours.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>Understanding the complex relationship between public transit and ride-sharing is crucial for integrated urban mobility planning, helping cities leverage both modes effectively rather than viewing them as purely competitive.</p>
+      <h4>Key Insights</h4>
+      <ul><li>A CNN model achieved 93.31% accuracy in predicting the correlation between Uber and public transit usage.</li><li>Ride-sharing services tend to supplement public transit in off-peak hours and in geographically underserved areas.</li><li>Conversely, ride-sharing primarily competes with public transit in downtown areas during peak hours.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>The research employs a deep learning approach, specifically a Convolutional Neural Network (CNN), to analyze extensive public transit and ride-sharing (Uber) data from Paris to identify usage patterns and correlations.</p>
+      <h4>Results</h4>
+      <p>The CNN model accurately identified distinct spatial and temporal correlations, demonstrating that ride-sharing serves a complementary role by filling service gaps in certain contexts and a competitive role in others.</p>
+      <h4>Limitations</h4>
+      <p>The study is specific to Paris, and findings may not be directly generalizable to all cities due to varying urban structures, transit network densities, and ride-sharing market penetration.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Urban planners and transit agencies can use these insights to strategically integrate ride-sharing into the mobility ecosystem, potentially subsidizing it for first/last-mile connections in underserved areas or regulating it in peak downtown zones.</p>
+      <h4>Who Should Care</h4>
+      <p>Urban mobility planners, transit agencies, ride-sharing companies, policymakers, and researchers in urban analytics and transportation economics.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Advances the understanding of transit-ride-sharing dynamics by using deep learning for high-accuracy correlation prediction, providing nuanced spatial and temporal insights beyond simple aggregate competition analyses.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-8">
+  <div class="paper-header">
+    <span class="paper-num">#08</span>
+    <div class="paper-meta">
+      <span class="paper-source">IJARBSS 2024</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://doi.org/10.6007/ijarbss/v14-i10/22936" target="_blank" rel="noopener">Sustainable Urban Mobility, Non-Motorized Transport and Electric Transit in Tourism</a></h3>
+  <p class="paper-authors">Badrol Kamar et al.</p>
+  <div class="paper-summary">
+    <p class="one-sentence">This systematic literature review synthesizes existing research on sustainable urban mobility, non-motorized transport, and electric transit specifically within the context of tourism-dependent cities.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>Tourism-dependent cities face unique challenges in balancing economic growth with environmental sustainability; promoting green transport options is critical for reducing their carbon footprint and enhancing visitor experience.</p>
+      <h4>Key Insights</h4>
+      <ul><li>Sustainable urban mobility is increasingly vital for tourism-dependent cities to manage environmental impact.</li><li>Non-motorized transport (walking, cycling) plays a significant role in enhancing visitor experience and local sustainability.</li><li>Electric transit options offer promising avenues for reducing emissions in urban tourism environments.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>A systematic literature review (SLR) was conducted to identify, evaluate, and synthesize relevant studies on sustainable transport modes (non-motorized, electric transit) within tourism-dependent urban settings.</p>
+      <h4>Results</h4>
+      <p>The review highlights a growing body of research advocating for and demonstrating the benefits of green transport solutions in tourist cities, identifying key themes and gaps in the literature.</p>
+      <h4>Limitations</h4>
+      <p>As an SLR, its findings are dependent on the quality and scope of the reviewed literature. It does not present new empirical data but rather synthesizes existing knowledge.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Policymakers and urban planners in tourism-heavy cities should prioritize investments in non-motorized infrastructure and electric public transport to achieve sustainability goals and improve visitor experience.</p>
+      <h4>Who Should Care</h4>
+      <p>Urban planners, tourism boards, environmental policymakers, sustainable transport advocates, and researchers focusing on tourism and urban sustainability.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Provides a dedicated and comprehensive review specifically on sustainable transport in tourism-dependent cities, a niche area that often requires tailored solutions compared to general urban mobility.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-9">
+  <div class="paper-header">
+    <span class="paper-num">#09</span>
+    <div class="paper-meta">
+      <span class="paper-source">ICAD 2024</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://arxiv.org/abs/2404.02172" target="_blank" rel="noopener">Unveiling Urban Mobility Patterns: Data-Driven Analysis of Public Transit</a></h3>
+  <p class="paper-authors">Yusuf et al.</p>
+  <div class="paper-summary">
+    <p class="one-sentence">Historical public transit data enriched with geospatial metadata reveals urban mobility patterns that can power digital twin models for proactive service gap identification and infrastructure demand forecasting.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>Digital twins of transit systems require high-quality, well-characterized training data. This paper provides a framework for preprocessing and understanding what historical transit data contains—essential groundwork before ML models can be reliably deployed.</p>
+      <h4>Key Insights</h4>
+      <ul><li>Historical transit data contains rich geospatial and temporal signal that standard analytics often underutilizes.</li><li>Data preprocessing quality determines the accuracy of downstream ML models in transit digital twins.</li><li>Digital twins can identify service gaps and predict infrastructure demand before problems become critical.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>Data preprocessing and exploratory analysis framework applied to historical public transit records, with temporal and geospatial metadata enrichment for ML/DL model readiness assessment.</p>
+      <h4>Results</h4>
+      <p>The analysis reveals distinct time-of-day and spatial usage patterns; data quality gaps identified that would affect predictive accuracy of digital twins.</p>
+      <h4>Limitations</h4>
+      <p>Digital twin implementation is not fully realized—the paper is a precursor study on data characterization, not a deployed operational system.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Transit agencies should invest in data infrastructure (sensor quality, record-keeping standards) before expecting ML-based optimization tools to perform reliably.</p>
+      <h4>Who Should Care</h4>
+      <p>Transit data scientists, smart city technology providers, transit agency CIOs, urban planners building digital infrastructure.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Bridges the gap between raw transit data collection and operational AI applications, providing the data-readiness assessment framework that most ML transit papers skip.</p>
+    </div>
+  </div>
+</article>
+
+<article class="paper-card" id="paper-10">
+  <div class="paper-header">
+    <span class="paper-num">#10</span>
+    <div class="paper-meta">
+      <span class="paper-source">Nature Communications 2023</span>
+      <span class="confidence-badge" style="background:#4CAF50">High Confidence</span>
+    </div>
+  </div>
+  <h3 class="paper-title"><a href="https://www.nature.com/articles/s41467-023-39999-w" target="_blank" rel="noopener">Interconnectedness Enhances Network Resilience of Multimodal Public Transportation</a></h3>
+  <p class="paper-authors">Xu &amp; Chopra</p>
+  <div class="paper-summary">
+    <p class="one-sentence">Analysis of Hong Kong&#x27;s multimodal transit network shows that interconnectedness between transit modes—not hardening individual lines—is the primary driver of system-wide resilience to disruptions.</p>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-col">
+      <h4>Why It Matters</h4>
+      <p>Published in Nature Communications with 83 citations, this is the most rigorously peer-reviewed transit resilience study in recent years. The finding that safe-to-fail design via interconnection outperforms intervention-based hardening fundamentally shifts how agencies should approach climate-resilience planning.</p>
+      <h4>Key Insights</h4>
+      <ul><li>Interconnected multimodal transit networks show superior resilience compared to isolated high-capacity single-mode systems.</li><li>Safe-to-fail design—accepting disruptions while maintaining system-wide function—outperforms intervention-based approaches that try to prevent individual failures.</li><li>There are diminishing returns to intermodal transfer improvements: the first connections between modes add the most resilience benefit.</li></ul>
+    </div>
+    <div class="paper-col">
+      <h4>Methodology</h4>
+      <p>Graph-theoretic network analysis of Hong Kong&#x27;s multimodal transit system (MTR, buses, ferries, trams) using topological vulnerability metrics, attack tolerance simulations, and post-disruption interoperability analysis.</p>
+      <h4>Results</h4>
+      <p>Interconnected transit systems reduce topological vulnerabilities, increase attack tolerance, and enable faster post-disruption recovery. Integrating vulnerable systems into larger networks improves overall robustness.</p>
+      <h4>Limitations</h4>
+      <p>Study is specific to Hong Kong, one of the world&#x27;s most transit-dependent cities. Findings may differ in cities with lower transit mode share or less dense networks.</p>
+    </div>
+    <div class="paper-col">
+      <h4>Practical Implications</h4>
+      <p>Transit planners should prioritize building physical and operational connections between transit modes over hardening individual lines; integration is more cost-effective than infrastructure reinforcement.</p>
+      <h4>Who Should Care</h4>
+      <p>Transit agency executives, infrastructure resilience planners, city emergency management officials, researchers in complex network theory and climate adaptation.</p>
+      <h4>vs. Prior Work</h4>
+      <p>Establishes a theoretically grounded resilience-by-design framework that complements decades of resilience-by-intervention literature, offering a fundamentally different planning paradigm.</p>
+    </div>
+  </div>
+</article>
+
+  <!-- SVG INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-header" style="text-align:left">DATA INFOGRAPHIC</div>
+    <img src="research-infographic-2026-06-13.svg" alt="Transit Research Infographic June 13, 2026" style="max-width:800px;width:100%;"/>
+    <br>
+    <a class="download-link" href="research-infographic-2026-06-13.svg" download>DOWNLOAD SVG INFOGRAPHIC</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      TRANSIT RESEARCH DIGEST<br>
+      June 13, 2026<br>
+      Autonomous research agent · Semantic Scholar + Gemini 2.5 Flash<br>
+      10 papers analyzed
+    </div>
+    <div class="footer-right">
+      <a href="research.html">Research Archive</a><br>
+      <a href="../index.html">Back to Home</a><br>
+      <a href="research.html">Previous Issues</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

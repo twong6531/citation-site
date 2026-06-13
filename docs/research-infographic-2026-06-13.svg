@@ -1,0 +1,109 @@
+<svg viewBox="0 0 800 1604" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Arial, sans-serif">
+  <rect width="800" height="1900" fill="#F7F7F5"/>
+  <rect x="0" y="0" width="800" height="100" fill="#1A1A1A"/>
+  <text x="40" y="38" font-size="11" fill="#999" letter-spacing="3" font-weight="500">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="68" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">URBAN MOBILITY RESEARCH</text>
+  <text x="40" y="90" font-size="11" fill="#999" letter-spacing="2">JUNE 13, 2026 — 10 PAPERS ANALYZED</text>
+  <text x="40" y="135" font-size="10" fill="#888" letter-spacing="2" font-weight="600">EXECUTIVE SUMMARY</text>
+  <line x1="40" y1="142" x2="760" y2="142" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="40" y="162" font-size="13" fill="#333">Today's transit research reveals a field at an inflection point: data science and</text>
+  <text x="40" y="180" font-size="13" fill="#333">machine learning are rapidly moving from theoretical tools to deployed solutions, while</text>
+  <text x="40" y="198" font-size="13" fill="#333">equity and resilience emerge as the central planning values for the next decade. Across</text>
+  <text x="40" y="216" font-size="13" fill="#333">10 papers spanning bibliometrics, case studies, and network theory, a consistent finding</text>
+  <text x="40" y="234" font-size="13" fill="#333">emerges—interconnected, data-informed, and socially aware transit systems outperform</text>
+  <text x="40" y="277" font-size="10" fill="#888" letter-spacing="2" font-weight="600">KEY FINDINGS</text>
+  <line x1="40" y1="284" x2="760" y2="284" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="40" y="321" font-size="36" fill="#E8E8E3" font-weight="700">01</text>
+  <text x="100" y="317" font-size="12" fill="#1A1A1A" font-weight="700" letter-spacing="1">INTERCONNECTION BEATS HARDENING</text>
+  <text x="100" y="335" font-size="12" fill="#555">Hong Kong data shows multimodal network connections reduce disruption impact</text>
+  <text x="100" y="352" font-size="12" fill="#555">more cost-effectively than reinforcing individual lines</text>
+  <text x="40" y="409" font-size="36" fill="#E8E8E3" font-weight="700">02</text>
+  <text x="100" y="405" font-size="12" fill="#1A1A1A" font-weight="700" letter-spacing="1">BRT EQUITY VARIES BY CORRIDOR</text>
+  <text x="100" y="423" font-size="12" fill="#555">Guatemala City BRT narrowed inequality gap; San Salvador and Tegucigalpa saw</text>
+  <text x="100" y="440" font-size="12" fill="#555">minimal equity gains—route alignment is decisive</text>
+  <text x="40" y="497" font-size="36" fill="#E8E8E3" font-weight="700">03</text>
+  <text x="100" y="493" font-size="12" fill="#1A1A1A" font-weight="700" letter-spacing="1">RIDE-SHARING IS A COMPLEMENT, NOT RIVAL</text>
+  <text x="100" y="511" font-size="12" fill="#555">CNN analysis of Paris shows TNCs fill transit gaps in underserved areas</text>
+  <text x="100" y="528" font-size="12" fill="#555">off-peak; compete only downtown at peak</text>
+  <rect x="40" y="573" width="720" height="120" fill="#1A1A1A" rx="2"/>
+  <text x="60" y="595" font-size="9" fill="#888" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <text x="60" y="617" font-size="13" fill="#FFFFFF" font-weight="700">#10 — Interconnectedness Enhances Network Resilience of Multimodal Public </text>
+  <text x="60" y="635" font-size="11" fill="#AAA">Xu & Chopra · Nature Communications 2023 · 83 citations</text>
+  <text x="60" y="655" font-size="11" fill="#CCC">Xu & Chopra's Nature Communications paper (83 citations) provides the field's most</text>
+  <text x="60" y="672" font-size="11" fill="#CCC">methodologically rigorous framework for transit resilience, establishing that</text>
+  <text x="60" y="689" font-size="11" fill="#CCC">interconnection is more valuable than hardening—a finding directly actionable for every</text>
+  <text x="40" y="713" font-size="10" fill="#888" letter-spacing="2" font-weight="600">EMERGING THEMES</text>
+  <line x1="40" y1="720" x2="760" y2="720" stroke="#DDDDDD" stroke-width="1"/>
+  <rect x="40" y="728" width="220" height="4" fill="#1A1A1A"/>
+  <text x="40" y="751" font-size="12" fill="#1A1A1A" font-weight="600">Machine learning and</text>
+  <text x="40" y="768" font-size="12" fill="#1A1A1A" font-weight="600">digital twins transforming</text>
+  <text x="40" y="785" font-size="12" fill="#1A1A1A" font-weight="600">transit operations and</text>
+  <text x="40" y="802" font-size="12" fill="#1A1A1A" font-weight="600">planning</text>
+  <rect x="280" y="728" width="220" height="4" fill="#1A1A1A"/>
+  <text x="280" y="751" font-size="12" fill="#1A1A1A" font-weight="600">Social equity as</text>
+  <text x="280" y="768" font-size="12" fill="#1A1A1A" font-weight="600">measurable KPI in transit</text>
+  <text x="280" y="785" font-size="12" fill="#1A1A1A" font-weight="600">project assessment</text>
+  <rect x="520" y="728" width="220" height="4" fill="#1A1A1A"/>
+  <text x="520" y="751" font-size="12" fill="#1A1A1A" font-weight="600">Multimodal network</text>
+  <text x="520" y="768" font-size="12" fill="#1A1A1A" font-weight="600">resilience via</text>
+  <text x="520" y="785" font-size="12" fill="#1A1A1A" font-weight="600">interconnection over</text>
+  <text x="520" y="802" font-size="12" fill="#1A1A1A" font-weight="600">hardening</text>
+  <text x="40" y="823" font-size="10" fill="#888" letter-spacing="2" font-weight="600">CONFIDENCE DISTRIBUTION — 10 PAPERS</text>
+  <line x1="40" y1="830" x2="760" y2="830" stroke="#DDDDDD" stroke-width="1"/>
+  <rect x="40" y="845" width="680" height="44" fill="#1A1A1A"/>
+  <text x="48" y="873" font-size="13" fill="#FFF" font-weight="700">HIGH 10/10</text>
+  <rect x="720" y="845" width="0" height="44" fill="#777"/>
+  <rect x="720" y="845" width="0" height="44" fill="#DDD"/>
+  <text x="40" y="934" font-size="10" fill="#888" letter-spacing="2" font-weight="600">ACTIONABLE TAKEAWAYS</text>
+  <line x1="40" y1="941" x2="760" y2="941" stroke="#DDDDDD" stroke-width="1"/>
+  <circle cx="52" cy="962" r="10" fill="#1A1A1A"/>
+  <text x="52" y="967" font-size="11" fill="#FFF" text-anchor="middle" font-weight="700">1</text>
+  <text x="72" y="959" font-size="12" fill="#1A1A1A">Deploy ML-based real-time bus tracking (Kalman filter + SVM) to reduce passenger</text>
+  <text x="72" y="977" font-size="12" fill="#1A1A1A">uncertainty and enable demand-responsive fleet management</text>
+  <circle cx="52" cy="1044" r="10" fill="#1A1A1A"/>
+  <text x="52" y="1049" font-size="11" fill="#FFF" text-anchor="middle" font-weight="700">2</text>
+  <text x="72" y="1041" font-size="12" fill="#1A1A1A">Run GIS equity assessments before and after BRT corridor selection to verify that</text>
+  <text x="72" y="1059" font-size="12" fill="#1A1A1A">routes actually serve low-income communities and not just high-ridership corridors</text>
+  <circle cx="52" cy="1126" r="10" fill="#1A1A1A"/>
+  <text x="52" y="1131" font-size="11" fill="#FFF" text-anchor="middle" font-weight="700">3</text>
+  <text x="72" y="1123" font-size="12" fill="#1A1A1A">Redesign transit networks using safe-to-fail interconnection principles: build</text>
+  <text x="72" y="1141" font-size="12" fill="#1A1A1A">operational redundancy between modes rather than hardening individual lines</text>
+  <text x="72" y="1159" font-size="12" fill="#1A1A1A">against disruption</text>
+  <text x="40" y="1222" font-size="10" fill="#888" letter-spacing="2" font-weight="600">PAPERS IN THIS EDITION</text>
+  <line x1="40" y1="1229" x2="760" y2="1229" stroke="#DDDDDD" stroke-width="1"/>
+  <text x="40" y="1242" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#01 SUSTAINABILITY 2025</text>
+  <text x="40" y="1258" font-size="11" fill="#1A1A1A" font-weight="600">Sustainable Urban Mobility Bibliometric Analysis</text>
+  <text x="40" y="1273" font-size="10" fill="#777">This paper presents a bibliometric analysis of recent research on su…</text>
+  <text x="415" y="1242" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#02 JSCET 2025</text>
+  <text x="415" y="1258" font-size="11" fill="#1A1A1A" font-weight="600">Global TOD Strategies Comparative Analysis</text>
+  <text x="415" y="1273" font-size="10" fill="#777">This comparative analysis of global Transit-Oriented Development (TO…</text>
+  <text x="40" y="1300" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#03 URBAN PLANNING AND TRANSPORT RESEARCH 2025</text>
+  <text x="40" y="1316" font-size="11" fill="#1A1A1A" font-weight="600">Bengaluru TOD: Urban Mobility and Quality of Life</text>
+  <text x="40" y="1331" font-size="10" fill="#777">This study of Bengaluru's Hebbal-Silk Board corridor examines how Tr…</text>
+  <text x="415" y="1300" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#04 ESTJ 2024</text>
+  <text x="415" y="1316" font-size="11" fill="#1A1A1A" font-weight="600">Optimizing Urban Mobility with Multi-Modal Solutions</text>
+  <text x="415" y="1331" font-size="10" fill="#777">This review explores multimodal transportation systems, identifying …</text>
+  <text x="40" y="1358" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#05 SUSTAINABILITY 2024</text>
+  <text x="40" y="1374" font-size="11" fill="#1A1A1A" font-weight="600">Accessibility Assessment in Central American BRT</text>
+  <text x="40" y="1389" font-size="10" fill="#777">Comparative GIS analysis of BRT projects in Guatemala City, San Salv…</text>
+  <text x="415" y="1358" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#06 ISML 2024</text>
+  <text x="415" y="1374" font-size="11" fill="#1A1A1A" font-weight="600">Machine Learning-Enabled Smart Transit: Real-Time Bu…</text>
+  <text x="415" y="1389" font-size="10" fill="#777">This paper proposes a machine learning-enabled system utilizing Kalm…</text>
+  <text x="40" y="1416" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#07 ICCA 2024</text>
+  <text x="40" y="1432" font-size="11" fill="#1A1A1A" font-weight="600">Deep Learning Analysis of Public Transit and Ride-Sh…</text>
+  <text x="40" y="1447" font-size="10" fill="#777">This study uses deep learning, specifically a CNN, to analyze the co…</text>
+  <text x="415" y="1416" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#08 IJARBSS 2024</text>
+  <text x="415" y="1432" font-size="11" fill="#1A1A1A" font-weight="600">Sustainable Urban Mobility, Non-Motorized Transport …</text>
+  <text x="415" y="1447" font-size="10" fill="#777">This systematic literature review synthesizes existing research on s…</text>
+  <text x="40" y="1474" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#09 ICAD 2024</text>
+  <text x="40" y="1490" font-size="11" fill="#1A1A1A" font-weight="600">Unveiling Urban Mobility Patterns: Data-Driven Analy…</text>
+  <text x="40" y="1505" font-size="10" fill="#777">Historical public transit data enriched with geospatial metadata rev…</text>
+  <text x="415" y="1474" font-size="9" fill="#999" font-weight="700" letter-spacing="1">#10 NATURE COMMUNICATIONS 2023</text>
+  <text x="415" y="1490" font-size="11" fill="#1A1A1A" font-weight="600">Interconnectedness Enhances Network Resilience of Mu…</text>
+  <text x="415" y="1505" font-size="10" fill="#777">Analysis of Hong Kong's multimodal transit network shows that interc…</text>
+  <rect x="0" y="1552" width="800" height="52" fill="#1A1A1A"/>
+  <text x="40" y="1572" font-size="10" fill="#666">TRANSIT RESEARCH DIGEST — June 13, 2026</text>
+  <text x="40" y="1590" font-size="10" fill="#555">twong6531.github.io/citation-site/research.html</text>
+  <text x="760" y="1572" font-size="10" fill="#666" text-anchor="end">10 PAPERS · SEMANTIC SCHOLAR · GEMINI 2.5 FLASH</text>
+  <text x="760" y="1590" font-size="10" fill="#555" text-anchor="end">AUTONOMOUS TRANSIT RESEARCH AGENT</text>
+</svg>
