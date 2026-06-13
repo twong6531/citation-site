@@ -1,0 +1,116 @@
+{
+  "date": "2026-06-13",
+  "generated_at": "2026-06-13T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Rare-Earth-Free Electric Motors and the Future of Transit Electrification",
+      "angle": "Today's #6 HN story — 'Electric motors with no rare earths' — has direct, underreported implications for transit. EV bus fleets and light rail traction systems are among the largest buyers of rare-earth permanent magnets (neodymium, dysprosium). China controls 85%+ of global rare earth refining; supply chain disruptions routinely stall fleet electrification programs. Examine the technology (switched reluctance, ferrite-based, wound-rotor designs), where transit agencies are in their electrification timelines, and what rare-earth independence would mean for procurement costs and geopolitical resilience. Include LA Metro, Chicago CTA, and NYCT zero-emission bus programs as case studies.",
+      "rationale": "Time-sensitive news hook from HN today. Directly bridges transit electrification (core niche) with supply chain geopolitics (trending). No overlap with existing content — we covered electric axial flux motors but not rare-earth-free technology. Strong evergreen value beyond the news cycle. Articles have not been produced despite repeated queuing — this is RETRY DAY 1 with the strongest news hook yet.",
+      "target_length": "long",
+      "slug": "rare-earth-free-motors-transit-electrification-2026",
+      "output_path": "drafts/articles/rare-earth-free-motors-transit-electrification-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail: The Real Cost Breakdown",
+      "angle": "Side-by-side infrastructure cost per mile, build timeline, ridership capacity, mode preference surveys, and equity outcomes across 10 U.S. corridors (LA Orange Line BRT, Houston Silver Line, Denver RTD lines, Boston Silver Line, Kansas City MAX). Visualize why cities keep choosing BRT despite consistent rider preference data favoring rail — and what that tradeoff actually costs over 30 years. Include capital vs. operating cost split, land acquisition, and emissions per passenger-mile.",
+      "rationale": "RETRY #4 — queued since 2026-06-07, never produced. This is the most-retried item in queue history. Infographic agent MUST execute today. Content gap is now 7 days old. Aligns directly with the newly published encyclopedia articles on BRT and light rail (docs/how-bus-rapid-transit-brt-differs-from-regular-bus-service.html), creating a natural cross-link opportunity. High evergreen SEO value.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "article",
+      "topic": "US Government AI Model Access Restrictions: What Transit Agencies Need to Know",
+      "angle": "HN today: 'Statement on US government directive to suspend access to Fable 5 and Mythos 5.' Transit agencies — particularly large metro systems — have deployed AI tools for demand forecasting, signal priority optimization, predictive maintenance, and natural language trip planning. If federal policy begins restricting which AI models public-sector entities can access, what happens to agency tech stacks built on commercial AI APIs? Examine current AI adoption across WMATA, SEPTA, LA Metro, and MTA; map the vendor lock-in risk; and explore open-source alternatives (GTFS-RT + local LLMs) as a compliance hedge.",
+      "rationale": "Today's most significant AI policy story with a direct transit-sector angle that no outlet has taken. Connects AI policy (trending daily) to public infrastructure operations (our core niche). Time-sensitive — directive is news today. 'Electric motors + AI policy' gives us two strong news-driven pieces today, covering both the hardware and software layers of transit modernization.",
+      "target_length": "long",
+      "slug": "ai-access-policy-transit-agencies-2026",
+      "output_path": "drafts/articles/ai-access-policy-transit-agencies-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "video_script",
+      "topic": "Elon Musk's Transit Empire: What a Tesla-SpaceX Merger Means for Public Transit",
+      "angle": "Yesterday's rank #1 article topic was not produced — converting to video script format since scripts have been successfully generated. SpaceX IPO trading + Tesla merger float: if Boring Company tunnels, Tesla robotaxis, Starlink rural connectivity, and SpaceX logistics consolidate under one roof, what does a vertically-integrated private mobility empire mean for city bus networks? Script should be punchy, 5-7 minutes, with clear narrative beats: the empire thesis, the public transit threat model, the regulatory gap, and why cities need to plan now.",
+      "rationale": "Converted from yesterday's rank #1 article (never produced) to video script format — scripts have a 100% production success rate vs. 0% for articles. News hook remains fresh (SpaceX is actively trading). The Tesla/SpaceX angle is uniquely compelling and differentiates from standard transit content.",
+      "target_length": "medium",
+      "slug": "tesla-spacex-transit-empire-script",
+      "output_path": "drafts/scripts/tesla-spacex-transit-empire-script.md"
+    },
+    {
+      "rank": 5,
+      "type": "research",
+      "topic": "Open Source AI and Transit Agency Technology Autonomy",
+      "angle": "HN today: 'Open source AI must win.' Combined with the government AI access restriction story (rank #3), this creates a natural research brief framing: transit agencies that have adopted proprietary AI are now caught between federal restrictions and vendor lock-in. Survey the open-source AI landscape for transit applications — OpenTripPlanner, GTFS tools, R5 routing engine, emerging LLM wrappers for NLP trip planning. Map which agencies are most exposed and which have already built on open-source stacks. Propose a framework for evaluating build-vs-buy decisions in public transit AI procurement.",
+      "rationale": "Pairs naturally with rank #3 article as a deeper technical companion piece. The 'open source AI' discourse is trending strongly today (multiple HN stories). Research brief format is achievable and doesn't require the article-writing pipeline. Fills the research slot that has been consistently produced (research digests have appeared daily).",
+      "target_length": "medium",
+      "slug": "open-source-ai-transit-autonomy-2026",
+      "output_path": "drafts/articles/open-source-ai-transit-autonomy-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "original_queue_date": "2026-06-07",
+      "retry_count": 4,
+      "reason": "Never produced in 7 days — infographic agent must execute today or escalate to human"
+    },
+    {
+      "slug": "free-transit-economics-2026",
+      "original_queue_date": "2026-06-07",
+      "retry_count": 4,
+      "reason": "Article writing pipeline has 0% success rate — rotating to research brief format tomorrow if not produced today. NOTE: Free fare transit encyclopedia article (docs/free-fare-transit-case-studies-and-tradeoffs.html) was published 2026-06-12 but this long-form economics analysis is a distinct, deeper piece."
+    },
+    {
+      "slug": "tesla-spacex-merger-transit-implications-2026",
+      "original_queue_date": "2026-06-12",
+      "retry_count": 1,
+      "reason": "Not produced as article — converted to video script format (rank #4 today)"
+    },
+    {
+      "slug": "ai-agent-risk-transit-automation-2026",
+      "original_queue_date": "2026-06-12",
+      "retry_count": 1,
+      "reason": "Not produced as article — news hook has aged 1 day. Merged conceptually into today's rank #3 (AI access policy) which has fresher news hook. Will re-evaluate tomorrow."
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail (published 2026-06-06)",
+    "transit-oriented development (published 2026-06-06, game 2026-06-10)",
+    "transit desert POMDP (published 2026-06-09, script in drafts)",
+    "Southern California transit brief (published 2026-06-09, 2026-06-10, 2026-06-11, 2026-06-12)",
+    "Apple Gemini AI partnership (script exists in drafts)",
+    "slime mold network optimization (script exists in drafts)",
+    "US cities transit gap (script exists in drafts)",
+    "dopamine and urban design (script exists in drafts)",
+    "electric axial flux motors transit (script exists in drafts — different from rare-earth-free motors)",
+    "Pokemon Go military drone data pipeline (script exists in drafts)",
+    "transit app dark UX (script added 2026-06-12)",
+    "bus bunching mechanics (encyclopedia article published 2026-06-12)",
+    "fare structure design (encyclopedia article published 2026-06-12)",
+    "federal transit grants (encyclopedia article published 2026-06-12)",
+    "free fare transit case studies (encyclopedia article published 2026-06-12)",
+    "public-private partnerships transit (encyclopedia article published 2026-06-12)",
+    "how agencies use data to optimize routes (encyclopedia article published 2026-06-12)",
+    "bonds and debt financing (encyclopedia article published 2026-06-12)",
+    "congestion pricing as transit funding source (encyclopedia article published 2026-06-12)"
+  ],
+  "trend_signals": [
+    "US government directive restricting access to AI models (Fable 5 / Mythos 5) — federal AI policy tightening",
+    "Rare-earth-free electric motor technology breakthrough — supply chain implications for EV transit fleets",
+    "Open source AI vs. proprietary model debate intensifying — transit agency vendor lock-in risk",
+    "Arch Linux supply chain attack (1,500+ packages) — software security in critical infrastructure",
+    "AI OSS startup funding collapse pattern — sustainability of AI tooling transit agencies depend on"
+  ],
+  "pipeline_alerts": [
+    "CRITICAL DAY 7: approved.json empty — Publishing Agent blocked for 7 consecutive days. Human must add slugs to approved array.",
+    "CRITICAL: drafts/articles/ directory still empty — article-writing agent has 0% success rate over 8 days. Today's queue includes 3 article slots; monitoring closely.",
+    "WARNING: Video script backlog now at 8 scripts (transit-app-dark-ux added 2026-06-12). None approved. Backlog will exceed 10 scripts by end of week.",
+    "INFO: Encyclopedia content production is working well — 20+ articles published in last 48h. Redirect encyclopedia momentum to long-form drafts."
+  ]
+}

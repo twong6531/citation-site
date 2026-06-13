@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-12",
+  "last_updated": "2026-06-13",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -25,7 +25,29 @@
     { "date": "2026-06-10", "type": "interactive", "url": "docs/transit-game.html", "topic": "TOD Builder Game" },
     { "date": "2026-06-11", "type": "news", "url": "docs/2026-06-11.html", "topic": "Daily News Digest" },
     { "date": "2026-06-11", "type": "research", "url": "docs/research-2026-06-11.html", "topic": "Transit Research Digest" },
-    { "date": "2026-06-11", "type": "transit", "url": "docs/transit-2026-06-11.html", "topic": "SoCal Transit Brief" }
+    { "date": "2026-06-11", "type": "transit", "url": "docs/transit-2026-06-11.html", "topic": "SoCal Transit Brief" },
+    { "date": "2026-06-12", "type": "transit", "url": "docs/transit-2026-06-12.html", "topic": "SoCal Transit Brief" },
+    { "date": "2026-06-12", "type": "research", "url": "docs/research-2026-06-12.html", "topic": "Transit Research Digest" },
+    { "date": "2026-06-12", "type": "encyclopedia", "url": "docs/encyclopedia.html", "topic": "Encyclopedia Index — Infrastructure & Engineering section added" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/bonds-and-debt-financing-for-capital-projects.html", "topic": "Bonds and Debt Financing for Capital Projects" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/child-and-youth-transit-access.html", "topic": "Child and Youth Transit Access" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/congestion-pricing-revenue-as-a-transit-funding-source.html", "topic": "Congestion Pricing Revenue as Transit Funding Source" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/disability-access-and-ada-compliance-in-transit-systems.html", "topic": "Disability Access and ADA Compliance" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/emergency-evacuation-planning-for-transit-systems.html", "topic": "Emergency Evacuation Planning for Transit Systems" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/environmental-justice-and-transit-investment-decisions.html", "topic": "Environmental Justice and Transit Investment Decisions" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/federal-transit-grants-how-they-work-and-who-qualifies.html", "topic": "Federal Transit Grants: How They Work and Who Qualifies" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/free-fare-transit-case-studies-and-tradeoffs.html", "topic": "Free Fare Transit: Case Studies and Tradeoffs" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/gender-and-transit-safety-designing-for-all-riders.html", "topic": "Gender and Transit Safety: Designing for All Riders" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/grade-crossing-safety-for-light-rail-and-commuter-rail.html", "topic": "Grade Crossing Safety for Light Rail and Commuter Rail" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-agencies-approach-homelessness-as-a-safety-issue.html", "topic": "How Agencies Approach Homelessness as a Safety Issue" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-agencies-handle-medical-emergencies-on-transit.html", "topic": "How Agencies Handle Medical Emergencies on Transit" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-agencies-use-data-to-optimize-routes.html", "topic": "How Agencies Use Data to Optimize Routes" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-bus-bunching-happens-and-how-agencies-fix-it.html", "topic": "How Bus Bunching Happens and How Agencies Fix It" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-fare-structures-are-designed-flat-vs-zone-vs-distance-based.html", "topic": "How Fare Structures Are Designed" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-low-income-riders-are-affected-by-fare-increases.html", "topic": "How Low-Income Riders Are Affected by Fare Increases" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-public-private-partnerships-work-in-transit.html", "topic": "How Public-Private Partnerships Work in Transit" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-transit-access-correlates-with-economic-mobility.html", "topic": "How Transit Access Correlates with Economic Mobility" },
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-transit-agencies-are-funded-federal-state-local-breakdown.html", "topic": "How Transit Agencies Are Funded" }
   ],
   "drafts_pending_approval": [
     { "slug": "apple-gemini-2026-script", "path": "drafts/scripts/apple-gemini-2026-script.md", "qc": "passed", "date": "2026-06-09" },
@@ -34,7 +56,8 @@
     { "slug": "slime-mold-transit-script", "path": "drafts/scripts/slime-mold-transit-script.md", "qc": "unknown", "date": "2026-06-09" },
     { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "unknown", "date": "2026-06-09" },
     { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "unknown", "date": "2026-06-10" },
-    { "slug": "pokemon-go-drones-urban-data-script", "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md", "qc": "unknown", "date": "2026-06-11" }
+    { "slug": "pokemon-go-drones-urban-data-script", "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md", "qc": "unknown", "date": "2026-06-11" },
+    { "slug": "transit-app-dark-ux-2026-script", "path": "drafts/scripts/transit-app-dark-ux-2026-script.md", "qc": "unknown", "date": "2026-06-12" }
   ],
   "topic_performance": {
     "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
@@ -60,21 +83,42 @@
     "dopamine and urban design",
     "electric axial flux motors transit",
     "TOD Builder interactive game",
-    "Pokemon Go military drone urban data pipeline"
+    "Pokemon Go military drone urban data pipeline",
+    "transit app dark UX patterns",
+    "bonds and debt financing transit capital",
+    "child and youth transit access",
+    "congestion pricing transit funding",
+    "disability access ADA compliance transit",
+    "emergency evacuation planning transit",
+    "environmental justice transit investment",
+    "federal transit grants",
+    "free fare transit case studies tradeoffs",
+    "gender transit safety",
+    "grade crossing safety light rail commuter rail",
+    "homelessness transit safety",
+    "medical emergencies on transit",
+    "data optimization transit routes",
+    "bus bunching prevention",
+    "fare structure design",
+    "low-income riders fare increases",
+    "public-private partnerships transit",
+    "transit access economic mobility",
+    "transit agency funding breakdown"
   ],
   "failed_jobs": [
     { "date": "2026-06-10", "job": "publishing", "reason": "approved.json empty — no human approvals received for 4th consecutive day" },
     { "date": "2026-06-11", "job": "publishing", "reason": "approved.json empty — no human approvals received for 5th consecutive day" },
     { "date": "2026-06-11", "job": "article_writing", "reason": "drafts/articles/ still empty after queue items ranked for 5+ days — article-writing agent appears unresponsive" },
-    { "date": "2026-06-11", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 infographic not produced for 3rd consecutive day" }
+    { "date": "2026-06-11", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 infographic not produced for 3rd consecutive day" },
+    { "date": "2026-06-12", "job": "publishing", "reason": "approved.json empty — no human approvals received for 6th consecutive day" },
+    { "date": "2026-06-12", "job": "article_writing", "reason": "drafts/articles/ still empty — tesla-spacex, ai-agent-risk, free-transit-economics not produced. 0% article success rate over 8 days." },
+    { "date": "2026-06-12", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 4th consecutive day — retry #4 queued 2026-06-13" }
   ],
   "content_gaps": [
-    "approved.json empty since 2026-06-07 — Publishing Agent blocked 5 consecutive days, no human approvals received",
-    "BRT expansion infographic queued since 2026-06-07, never produced — rank #2 today (3rd retry)",
-    "Free transit long-form article queued since 2026-06-07, never written — rank #4 today (3rd retry)",
-    "articles/ directory empty — no long-form articles produced ever",
-    "Tesla/SpaceX merger urban transit angle — fresh opportunity today (rank #1)",
-    "AI agent risk in transit automation — fresh opportunity today (rank #3)",
-    "7 video scripts piling up in drafts/scripts/, none approved for publishing"
+    "approved.json empty since 2026-06-07 — Publishing Agent blocked 7 consecutive days",
+    "BRT vs Light Rail infographic queued since 2026-06-07, never produced — retry #4 today",
+    "Long-form article economics piece never produced (distinct from encyclopedia articles) — 8+ days queued",
+    "articles/ directory empty — no long-form articles produced in entire site history",
+    "8 video scripts in drafts/scripts/, none approved — backlog growing daily"
   ]
 }
