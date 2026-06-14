@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- Header section -->
+  <text x="400" y="38" text-anchor="middle" font-size="11" fill="#999999" font-weight="500" letter-spacing="3">DAILY BRIEFING</text>
+  <text x="400" y="82" text-anchor="middle" font-size="28" fill="#111111" font-weight="700">AI Models Surge, Ocean Crisis</text>
+  <text x="400" y="108" text-anchor="middle" font-size="13" fill="#999999">June 14, 2026 · Top Stories</text>
+
+  <!-- Header divider -->
+  <line x1="40" y1="124" x2="760" y2="124" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 1: GLM 5.2 -->
+  <!-- Card number + category pill -->
+  <text x="40" y="165" font-size="11" fill="#BBBBBB" font-weight="600">01</text>
+  <rect x="62" y="150" width="28" height="18" rx="3" fill="#6C47FF"/>
+  <text x="76" y="163" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700">AI</text>
+  <text x="100" y="164" font-size="10" fill="#6C47FF" font-weight="600">IMPACT 9/10</text>
+
+  <!-- Impact bar -->
+  <rect x="40" y="172" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="172" width="648" height="3" fill="#6C47FF" rx="1"/>
+
+  <text x="40" y="198" font-size="16" fill="#111111" font-weight="700">ZhipuAI Releases GLM 5.2 Frontier Model</text>
+  <text x="40" y="218" font-size="12" fill="#555555">ZhipuAI released GLM 5.2, a new large language model surpassing multiple benchmarks.</text>
+  <text x="40" y="234" font-size="12" fill="#555555">Chinese AI development continues at the frontier level, challenging US labs directly.</text>
+  <text x="40" y="256" font-size="11" fill="#333333">→ 699 upvotes on Hacker News in first hours of release</text>
+  <text x="40" y="272" font-size="11" fill="#333333">→ GLM 5.2 benchmarks beat Qwen3.7 and several competing models</text>
+  <text x="40" y="288" font-size="11" fill="#333333">→ Rio de Janeiro's city AI model Rio3.5 also beats Qwen3.7 separately</text>
+
+  <line x1="40" y1="308" x2="760" y2="308" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 2: AMOC -->
+  <text x="40" y="335" font-size="11" fill="#BBBBBB" font-weight="600">02</text>
+  <rect x="62" y="320" width="54" height="18" rx="3" fill="#0077CC"/>
+  <text x="89" y="333" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700">SCIENCE</text>
+  <text x="126" y="334" font-size="10" fill="#0077CC" font-weight="600">IMPACT 9/10</text>
+
+  <rect x="40" y="342" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="342" width="648" height="3" fill="#0077CC" rx="1"/>
+
+  <text x="40" y="368" font-size="16" fill="#111111" font-weight="700">AMOC Cold Blob Signals Possible Climate Tipping</text>
+  <text x="40" y="388" font-size="12" fill="#555555">A growing cold blob south of Greenland may indicate the AMOC ocean circulation is weakening.</text>
+  <text x="40" y="404" font-size="12" fill="#555555">Collapse of AMOC would dramatically alter weather patterns across Europe and North America.</text>
+  <text x="40" y="426" font-size="11" fill="#333333">→ Cold blob spans 1,000+ km in the North Atlantic south of Greenland</text>
+  <text x="40" y="442" font-size="11" fill="#333333">→ AMOC has weakened ~15% since the mid-20th century per prior studies</text>
+  <text x="40" y="458" font-size="11" fill="#333333">→ Collapse could lower European temperatures by 5–10°C over decades</text>
+
+  <line x1="40" y1="478" x2="760" y2="478" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 3: Honda -->
+  <text x="40" y="505" font-size="11" fill="#BBBBBB" font-weight="600">03</text>
+  <rect x="62" y="490" width="32" height="18" rx="3" fill="#00897B"/>
+  <text x="78" y="503" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700">TECH</text>
+  <text x="104" y="504" font-size="10" fill="#00897B" font-weight="600">IMPACT 8/10</text>
+
+  <rect x="40" y="512" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="512" width="576" height="3" fill="#00897B" rx="1"/>
+
+  <text x="40" y="538" font-size="16" fill="#111111" font-weight="700">Honda Civic Headunit Hacked via USB Key</text>
+  <text x="40" y="558" font-size="12" fill="#555555">Security researcher reverse-engineered the 2021 Honda Civic's Android-based infotainment system.</text>
+  <text x="40" y="574" font-size="12" fill="#555555">Publicly-known AOSP test key allows custom firmware installs via USB — no root required.</text>
+  <text x="40" y="596" font-size="11" fill="#333333">→ Affects 2021 Honda Civic headunit running modified AOSP Android</text>
+  <text x="40" y="612" font-size="11" fill="#333333">→ Publicly-known AOSP test key left in res/keys used for firmware verification</text>
+  <text x="40" y="628" font-size="11" fill="#333333">→ USB drive with signed update file sufficient — no dealership access needed</text>
+
+  <line x1="40" y1="648" x2="760" y2="648" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 4: UK Social Media Ban -->
+  <text x="40" y="675" font-size="11" fill="#BBBBBB" font-weight="600">04</text>
+  <rect x="62" y="660" width="38" height="18" rx="3" fill="#E65100"/>
+  <text x="81" y="673" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700">WORLD</text>
+  <text x="110" y="674" font-size="10" fill="#E65100" font-weight="600">IMPACT 8/10</text>
+
+  <rect x="40" y="682" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="682" width="576" height="3" fill="#E65100" rx="1"/>
+
+  <text x="40" y="708" font-size="16" fill="#111111" font-weight="700">UK Announces Social Media Ban Under-16s</text>
+  <text x="40" y="728" font-size="12" fill="#555555">UK government to announce landmark legislation banning children under 16 from social media.</text>
+  <text x="40" y="744" font-size="12" fill="#555555">Makes UK one of the first major democracies with such sweeping youth internet restrictions.</text>
+  <text x="40" y="766" font-size="11" fill="#333333">→ Ban applies to all social media platforms for users under 16 years old</text>
+  <text x="40" y="782" font-size="11" fill="#333333">→ UK joins Australia which enacted similar legislation in late 2024</text>
+  <text x="40" y="798" font-size="11" fill="#333333">→ Platforms face significant fines for non-compliance under proposed law</text>
+
+  <line x1="40" y1="818" x2="760" y2="818" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 5: Apple Siri -->
+  <text x="40" y="845" font-size="11" fill="#BBBBBB" font-weight="600">05</text>
+  <rect x="62" y="830" width="32" height="18" rx="3" fill="#00897B"/>
+  <text x="78" y="843" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700">TECH</text>
+  <text x="104" y="844" font-size="10" fill="#00897B" font-weight="600">IMPACT 8/10</text>
+
+  <rect x="40" y="852" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="852" width="576" height="3" fill="#00897B" rx="1"/>
+
+  <text x="40" y="878" font-size="16" fill="#111111" font-weight="700">Apple's Siri AI Overhaul Arrives in iOS 27</text>
+  <text x="40" y="898" font-size="12" fill="#555555">Apple launched its long-promised major Siri upgrade with iOS 27, bringing enhanced AI capabilities.</text>
+  <text x="40" y="914" font-size="12" fill="#555555">Represents Apple's most significant bet on on-device AI to compete with ChatGPT and Gemini.</text>
+  <text x="40" y="936" font-size="11" fill="#333333">→ iOS 27 introduces redesigned Siri with on-device large language model capabilities</text>
+  <text x="40" y="952" font-size="11" fill="#333333">→ New dedicated Home Screen app added as part of the AI integration rollout</text>
+  <text x="40" y="968" font-size="11" fill="#333333">→ Siri update: CNN notes "the real challenge begins" — execution determines success</text>
+
+  <line x1="40" y1="988" x2="760" y2="988" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 6: NVIDIA GPU -->
+  <text x="40" y="1015" font-size="11" fill="#BBBBBB" font-weight="600">06</text>
+  <rect x="62" y="1000" width="62" height="18" rx="3" fill="#2E7D32"/>
+  <text x="93" y="1013" text-anchor="middle" font-size="9" fill="#FFFFFF" font-weight="700">BUSINESS</text>
+  <text x="134" y="1014" font-size="10" fill="#2E7D32" font-weight="600">IMPACT 7/10</text>
+
+  <rect x="40" y="1022" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="1022" width="504" height="3" fill="#2E7D32" rx="1"/>
+
+  <text x="40" y="1048" font-size="16" fill="#111111" font-weight="700">NVIDIA AI GPU Hits $13,250 After 50% Surge</text>
+  <text x="40" y="1068" font-size="12" fill="#555555">NVIDIA's RTX PRO 6000 Blackwell GPU with 96 GB VRAM has surpassed $13,250 in price.</text>
+  <text x="40" y="1084" font-size="12" fill="#555555">50%+ price increase from initial MSRP reflects explosive demand for AI inference hardware.</text>
+  <text x="40" y="1106" font-size="11" fill="#333333">→ RTX PRO 6000 Blackwell features 96 GB GDDR7 VRAM for large AI model inference</text>
+  <text x="40" y="1122" font-size="11" fill="#333333">→ Price surged over 50% to $13,250 from original launch MSRP</text>
+  <text x="40" y="1138" font-size="11" fill="#333333">→ Demand driven by local AI inference for models requiring very large context windows</text>
+
+  <line x1="40" y1="1158" x2="760" y2="1158" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Legend / Category Key -->
+  <text x="40" y="1190" font-size="10" fill="#AAAAAA" font-weight="600" letter-spacing="2">CATEGORIES</text>
+  <rect x="40" y="1200" width="16" height="10" rx="2" fill="#6C47FF"/>
+  <text x="62" y="1210" font-size="10" fill="#555555">AI</text>
+  <rect x="90" y="1200" width="16" height="10" rx="2" fill="#0077CC"/>
+  <text x="112" y="1210" font-size="10" fill="#555555">Science</text>
+  <rect x="165" y="1200" width="16" height="10" rx="2" fill="#00897B"/>
+  <text x="187" y="1210" font-size="10" fill="#555555">Tech</text>
+  <rect x="220" y="1200" width="16" height="10" rx="2" fill="#2E7D32"/>
+  <text x="242" y="1210" font-size="10" fill="#555555">Business</text>
+  <rect x="305" y="1200" width="16" height="10" rx="2" fill="#E65100"/>
+  <text x="327" y="1210" font-size="10" fill="#555555">World</text>
+
+  <!-- Footer -->
+  <text x="40" y="1250" font-size="11" fill="#AAAAAA">Generated by AI · Sources: Hacker News, Google News · June 14, 2026</text>
+  <text x="760" y="1250" text-anchor="end" font-size="11" fill="#AAAAAA">twong6531.github.io/citation-site</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>

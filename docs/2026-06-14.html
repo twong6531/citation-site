@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing — June 14, 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0A0A0F;
+      color: #E8E8F0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #7B9FFF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-nav {
+      background: #111118;
+      border-bottom: 1px solid #222230;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a { color: #888; font-size: 13px; }
+    .site-nav a:hover { color: #E8E8F0; text-decoration: none; }
+    .site-nav .brand { color: #E8E8F0; font-weight: 700; font-size: 15px; margin-right: auto; }
+
+    .page-header {
+      background: #111118;
+      border-bottom: 1px solid #222230;
+      padding: 48px 40px 40px;
+      text-align: center;
+    }
+    .page-header .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #555568;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .page-header .date {
+      font-size: 14px;
+      color: #666680;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ============================================================
+       SECTION A — EDITORIAL ILLUSTRATION
+    ============================================================ */
+    .section-a {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid #1E1E2E;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #444460;
+      border: 1px solid #2A2A40;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .section-a h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .section-a .day-label {
+      font-size: 14px;
+      color: #555570;
+      margin-bottom: 32px;
+    }
+    .editorial-image-wrap {
+      background: #FFFFFF;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 32px rgba(0,0,0,0.5);
+    }
+    .editorial-image-wrap svg,
+    .editorial-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .image-caption {
+      padding: 16px 0 0;
+    }
+    .image-caption .subject {
+      font-size: 15px;
+      font-weight: 700;
+      color: #CCCCDD;
+    }
+    .image-caption .subtitle {
+      font-size: 12px;
+      color: #555570;
+      margin-top: 4px;
+    }
+    .image-caption .note {
+      font-size: 11px;
+      color: #3A3A55;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ============================================================
+       SECTION B — NEWS ANALYSIS
+    ============================================================ */
+    .section-b {
+      padding: 56px 0 48px;
+    }
+    .section-b h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .section-b .subtitle {
+      font-size: 14px;
+      color: #555570;
+      margin-bottom: 36px;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 700px) {
+      .stories-grid { grid-template-columns: 1fr; }
+    }
+
+    .story-card {
+      background: #111118;
+      border: 1px solid #1E1E2E;
+      border-radius: 6px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .story-card.cat-ai::before { background: #6C47FF; }
+    .story-card.cat-science::before { background: #0077CC; }
+    .story-card.cat-tech::before { background: #00897B; }
+    .story-card.cat-business::before { background: #2E7D32; }
+    .story-card.cat-world::before { background: #E65100; }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .card-num {
+      font-size: 10px;
+      color: #333350;
+      font-weight: 700;
+    }
+    .cat-pill {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+    .cat-pill.ai { background: #6C47FF22; color: #9B7FFF; border: 1px solid #6C47FF44; }
+    .cat-pill.science { background: #0077CC22; color: #4DB8FF; border: 1px solid #0077CC44; }
+    .cat-pill.tech { background: #00897B22; color: #4ECDC4; border: 1px solid #00897B44; }
+    .cat-pill.business { background: #2E7D3222; color: #66BB6A; border: 1px solid #2E7D3244; }
+    .cat-pill.world { background: #E6510022; color: #FF8A50; border: 1px solid #E6510044; }
+
+    .impact-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+    .impact-bar-bg {
+      width: 50px;
+      height: 3px;
+      background: #1E1E2E;
+      border-radius: 2px;
+    }
+    .impact-bar-fill {
+      height: 3px;
+      border-radius: 2px;
+    }
+    .impact-score {
+      font-size: 10px;
+      color: #444460;
+    }
+
+    .card-emoji { font-size: 24px; margin-bottom: 10px; display: block; }
+    .card-headline {
+      font-size: 15px;
+      font-weight: 700;
+      color: #DDDDEE;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .card-topic {
+      font-size: 10px;
+      color: #444460;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .card-summary {
+      font-size: 12px;
+      color: #888899;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .card-bullets {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    .card-bullets li {
+      font-size: 11px;
+      color: #666678;
+      padding: 3px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+    .card-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #333350;
+    }
+    .card-matters {
+      font-size: 11px;
+      color: #555568;
+      font-style: italic;
+      border-top: 1px solid #1A1A28;
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+
+    .infographic-link {
+      background: #111118;
+      border: 1px solid #1E1E2E;
+      border-radius: 6px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+    .infographic-link span { font-size: 13px; color: #666680; }
+    .infographic-link a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #7B9FFF;
+      border: 1px solid #2A3A6A;
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+    .infographic-link a:hover { background: #1A2244; text-decoration: none; }
+
+    footer {
+      background: #0A0A0F;
+      border-top: 1px solid #1A1A28;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    footer p { font-size: 12px; color: #333348; }
+    footer a { color: #3A3A58; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/citation-site/" class="brand">citation-site</a>
+  <a href="/citation-site/">← All Briefings</a>
+  <a href="/citation-site/infographic-2026-06-14.svg">SVG Infographic</a>
+</nav>
+
+<div class="page-header">
+  <div class="label">DAILY BRIEFING</div>
+  <h1>AI Models Surge, Ocean Crisis</h1>
+  <div class="date">June 14, 2026</div>
+</div>
+
+<!-- ============================================================
+     SECTION A — EDITORIAL ILLUSTRATION
+============================================================ -->
+<div class="section-a">
+  <div class="container">
+    <div class="section-label">TODAY'S VISUAL</div>
+    <h2>Today's Visual — June 14, 2026</h2>
+    <div class="day-label">Independently researched and rendered from today's news</div>
+
+    <div class="editorial-image-wrap">
+      <!-- Editorial SVG illustration (Imagen fallback) -->
+      <object type="image/svg+xml" data="imagen-2026-06-14.svg" style="width:100%;display:block;">
+        <img src="imagen-2026-06-14.svg" alt="AMOC: Atlantic Ocean Conveyor Belt — Technical Editorial Illustration" style="width:100%;display:block;">
+      </object>
+    </div>
+    <div class="image-caption">
+      <div class="subject">Atlantic Meridional Overturning Circulation (AMOC) — Technical Editorial Illustration</div>
+      <div class="subtitle">Cold blob anomaly south of Greenland signals potential AMOC weakening · North Atlantic Ocean current system</div>
+      <div class="note">Independently researched and rendered by AI from today's news · Source: NOAA, Wikipedia, CNN Climate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SECTION B — NEWS ANALYSIS
+============================================================ -->
+<div class="section-b">
+  <div class="container">
+    <div class="section-label">NEWS ANALYSIS</div>
+    <h2>Today's Top Stories</h2>
+    <div class="subtitle">6 most impactful stories · Ranked by significance</div>
+
+    <div class="stories-grid">
+
+      <!-- Story 1: GLM 5.2 -->
+      <div class="story-card cat-ai">
+        <div class="card-meta">
+          <span class="card-num">01</span>
+          <span class="cat-pill ai">AI</span>
+          <div class="impact-wrap">
+            <div class="impact-bar-bg">
+              <div class="impact-bar-fill" style="width:90%;background:#6C47FF;"></div>
+            </div>
+            <span class="impact-score">9/10</span>
+          </div>
+        </div>
+        <span class="card-emoji">🤖</span>
+        <div class="card-topic">AI Model Race</div>
+        <div class="card-headline">ZhipuAI Releases GLM 5.2 Frontier Model</div>
+        <div class="card-summary">ZhipuAI has released GLM 5.2, a new large language model that surpasses multiple benchmarks and challenges leading models from US labs. The release marks continued advancement of Chinese AI development at the frontier level.</div>
+        <ul class="card-bullets">
+          <li>699 upvotes on Hacker News in first hours of release</li>
+          <li>Benchmarks show GLM 5.2 beating Qwen3.7 and competing models</li>
+          <li>Rio de Janeiro's city AI model Rio3.5 also beats Qwen3.7 separately</li>
+        </ul>
+        <div class="card-matters">The rapid pace of Chinese AI model releases challenges US dominance in frontier AI and reshapes global AI competition.</div>
+      </div>
+
+      <!-- Story 2: AMOC -->
+      <div class="story-card cat-science">
+        <div class="card-meta">
+          <span class="card-num">02</span>
+          <span class="cat-pill science">SCIENCE</span>
+          <div class="impact-wrap">
+            <div class="impact-bar-bg">
+              <div class="impact-bar-fill" style="width:90%;background:#0077CC;"></div>
+            </div>
+            <span class="impact-score">9/10</span>
+          </div>
+        </div>
+        <span class="card-emoji">🌊</span>
+        <div class="card-topic">AMOC Ocean Circulation</div>
+        <div class="card-headline">AMOC Cold Blob Signals Possible Climate Tipping</div>
+        <div class="card-summary">Scientists are warning that a growing cold blob of anomalously cold water south of Greenland in the North Atlantic may indicate the AMOC ocean circulation system is weakening. A collapse of AMOC would dramatically alter weather patterns across Europe and North America.</div>
+        <ul class="card-bullets">
+          <li>Cold blob spans approximately 1,000+ km in the North Atlantic south of Greenland</li>
+          <li>AMOC has weakened ~15% since the mid-20th century per prior studies</li>
+          <li>Collapse could lower European temperatures by 5–10°C over decades</li>
+        </ul>
+        <div class="card-matters">AMOC collapse is considered an irreversible climate tipping point that would devastate agriculture and coastal regions across two continents.</div>
+      </div>
+
+      <!-- Story 3: Honda -->
+      <div class="story-card cat-tech">
+        <div class="card-meta">
+          <span class="card-num">03</span>
+          <span class="cat-pill tech">TECH</span>
+          <div class="impact-wrap">
+            <div class="impact-bar-bg">
+              <div class="impact-bar-fill" style="width:80%;background:#00897B;"></div>
+            </div>
+            <span class="impact-score">8/10</span>
+          </div>
+        </div>
+        <span class="card-emoji">🚗</span>
+        <div class="card-topic">Automotive Security</div>
+        <div class="card-headline">Honda Civic Headunit Hacked via USB Key</div>
+        <div class="card-summary">A security researcher found that the 2021 Honda Civic infotainment system uses a publicly-known AOSP test key for firmware signing, allowing anyone to install custom software via a formatted USB drive. The vulnerability means millions of Honda vehicles could have their infotainment systems modified without dealership access.</div>
+        <ul class="card-bullets">
+          <li>Affects 2021 Honda Civic headunit running modified Android Open Source Project (AOSP)</li>
+          <li>Publicly-known AOSP test key left in res/keys used for firmware verification</li>
+          <li>No conventional root access required — USB drive with signed update file is sufficient</li>
+        </ul>
+        <div class="card-matters">Automotive software security affects millions of drivers; this vulnerability exposes the risks of using generic Android test keys in production vehicles.</div>
+      </div>
+
+      <!-- Story 4: UK Social Media -->
+      <div class="story-card cat-world">
+        <div class="card-meta">
+          <span class="card-num">04</span>
+          <span class="cat-pill world">WORLD</span>
+          <div class="impact-wrap">
+            <div class="impact-bar-bg">
+              <div class="impact-bar-fill" style="width:80%;background:#E65100;"></div>
+            </div>
+            <span class="impact-score">8/10</span>
+          </div>
+        </div>
+        <span class="card-emoji">🚫</span>
+        <div class="card-topic">Youth Digital Policy</div>
+        <div class="card-headline">UK Announces Social Media Ban Under-16s</div>
+        <div class="card-summary">The UK government is set to announce landmark legislation banning children under 16 from accessing social media platforms. The move makes the UK one of the first major democracies to enact such a sweeping restriction on youth internet access.</div>
+        <ul class="card-bullets">
+          <li>Ban applies to all social media platforms for users under 16 years old</li>
+          <li>UK joins Australia which enacted similar legislation in late 2024</li>
+          <li>Platforms face significant fines for non-compliance under the proposed law</li>
+        </ul>
+        <div class="card-matters">Government-mandated age restrictions on social media set a global precedent that could reshape how platforms verify user age worldwide.</div>
+      </div>
+
+      <!-- Story 5: Apple Siri -->
+      <div class="story-card cat-tech">
+        <div class="card-meta">
+          <span class="card-num">05</span>
+          <span class="cat-pill tech">TECH</span>
+          <div class="impact-wrap">
+            <div class="impact-bar-bg">
+              <div class="impact-bar-fill" style="width:80%;background:#00897B;"></div>
+            </div>
+            <span class="impact-score">8/10</span>
+          </div>
+        </div>
+        <span class="card-emoji">🍎</span>
+        <div class="card-topic">Mobile AI Assistant</div>
+        <div class="card-headline">Apple's Siri AI Overhaul Arrives in iOS 27</div>
+        <div class="card-summary">Apple has launched its long-promised major Siri upgrade with iOS 27, bringing dramatically enhanced AI capabilities to the iPhone assistant after years of criticism. The update represents Apple's most significant bet on on-device AI to compete with ChatGPT and Google Gemini.</div>
+        <ul class="card-bullets">
+          <li>iOS 27 introduces redesigned Siri with on-device large language model capabilities</li>
+          <li>New dedicated Home Screen app added as part of the AI integration rollout</li>
+          <li>CNN notes "the real challenge begins" — execution will determine market outcome</li>
+        </ul>
+        <div class="card-matters">Apple's AI execution will determine whether the iPhone remains the dominant mobile platform as users increasingly judge devices by their AI assistants.</div>
+      </div>
+
+      <!-- Story 6: NVIDIA GPU -->
+      <div class="story-card cat-business">
+        <div class="card-meta">
+          <span class="card-num">06</span>
+          <span class="cat-pill business">BUSINESS</span>
+          <div class="impact-wrap">
+            <div class="impact-bar-bg">
+              <div class="impact-bar-fill" style="width:70%;background:#2E7D32;"></div>
+            </div>
+            <span class="impact-score">7/10</span>
+          </div>
+        </div>
+        <span class="card-emoji">💻</span>
+        <div class="card-topic">AI Hardware Prices</div>
+        <div class="card-headline">NVIDIA AI GPU Hits $13,250 After 50% Surge</div>
+        <div class="card-summary">NVIDIA's professional RTX PRO 6000 Blackwell GPU with 96 GB of VRAM has surpassed $13,250 in price, representing a 50%+ increase from its initial launch pricing. The surge reflects explosive demand for high-memory AI inference hardware.</div>
+        <ul class="card-bullets">
+          <li>RTX PRO 6000 Blackwell features 96 GB GDDR7 VRAM for large AI model inference</li>
+          <li>Price surged over 50% to $13,250 from original launch MSRP</li>
+          <li>Demand driven by local AI inference for models requiring very large context windows</li>
+        </ul>
+        <div class="card-matters">Skyrocketing AI hardware prices create barriers to entry for researchers and startups while signaling unprecedented demand for local AI compute.</div>
+      </div>
+
+    </div><!-- end .stories-grid -->
+
+    <div class="infographic-link">
+      <span>📊 Full text infographic (SVG) — all 6 stories in diagrammatic layout</span>
+      <a href="infographic-2026-06-14.svg">Download SVG →</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>Generated by AI · Sources: Hacker News, Google News · <a href="/citation-site/">citation-site</a> · June 14, 2026</p>
+</footer>
+
+</body>
+</html>
