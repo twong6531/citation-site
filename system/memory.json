@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-13",
+  "last_updated": "2026-06-14",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -47,7 +47,13 @@
     { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-low-income-riders-are-affected-by-fare-increases.html", "topic": "How Low-Income Riders Are Affected by Fare Increases" },
     { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-public-private-partnerships-work-in-transit.html", "topic": "How Public-Private Partnerships Work in Transit" },
     { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-transit-access-correlates-with-economic-mobility.html", "topic": "How Transit Access Correlates with Economic Mobility" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-transit-agencies-are-funded-federal-state-local-breakdown.html", "topic": "How Transit Agencies Are Funded" }
+    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-transit-agencies-are-funded-federal-state-local-breakdown.html", "topic": "How Transit Agencies Are Funded" },
+    { "date": "2026-06-13", "type": "news", "url": "docs/2026-06-13.html", "topic": "Daily News Digest" },
+    { "date": "2026-06-13", "type": "research", "url": "docs/research-2026-06-13.html", "topic": "Transit Research Digest" },
+    { "date": "2026-06-13", "type": "transit", "url": "docs/transit-2026-06-13.html", "topic": "SoCal Transit Brief" },
+    { "date": "2026-06-13", "type": "infographic", "url": "docs/infographic-2026-06-13.svg", "topic": "Editorial Infographic" },
+    { "date": "2026-06-13", "type": "research_infographic", "url": "docs/research-infographic-2026-06-13.svg", "topic": "Research Infographic" },
+    { "date": "2026-06-13", "type": "video_script", "url": "drafts/scripts/tesla-spacex-transit-empire-script.md", "topic": "Tesla/SpaceX Transit Empire (draft, pending approval)" }
   ],
   "drafts_pending_approval": [
     { "slug": "apple-gemini-2026-script", "path": "drafts/scripts/apple-gemini-2026-script.md", "qc": "passed", "date": "2026-06-09" },
@@ -57,7 +63,8 @@
     { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "unknown", "date": "2026-06-09" },
     { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "unknown", "date": "2026-06-10" },
     { "slug": "pokemon-go-drones-urban-data-script", "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md", "qc": "unknown", "date": "2026-06-11" },
-    { "slug": "transit-app-dark-ux-2026-script", "path": "drafts/scripts/transit-app-dark-ux-2026-script.md", "qc": "unknown", "date": "2026-06-12" }
+    { "slug": "transit-app-dark-ux-2026-script", "path": "drafts/scripts/transit-app-dark-ux-2026-script.md", "qc": "unknown", "date": "2026-06-12" },
+    { "slug": "tesla-spacex-transit-empire-script", "path": "drafts/scripts/tesla-spacex-transit-empire-script.md", "qc": "unknown", "date": "2026-06-13" }
   ],
   "topic_performance": {
     "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
@@ -85,6 +92,7 @@
     "TOD Builder interactive game",
     "Pokemon Go military drone urban data pipeline",
     "transit app dark UX patterns",
+    "Tesla SpaceX transit empire",
     "bonds and debt financing transit capital",
     "child and youth transit access",
     "congestion pricing transit funding",
@@ -112,13 +120,16 @@
     { "date": "2026-06-11", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 infographic not produced for 3rd consecutive day" },
     { "date": "2026-06-12", "job": "publishing", "reason": "approved.json empty — no human approvals received for 6th consecutive day" },
     { "date": "2026-06-12", "job": "article_writing", "reason": "drafts/articles/ still empty — tesla-spacex, ai-agent-risk, free-transit-economics not produced. 0% article success rate over 8 days." },
-    { "date": "2026-06-12", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 4th consecutive day — retry #4 queued 2026-06-13" }
+    { "date": "2026-06-12", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 4th consecutive day — retry #4 queued 2026-06-13" },
+    { "date": "2026-06-13", "job": "publishing", "reason": "approved.json empty — no human approvals received for 8th consecutive day (ESCALATION: pipeline blocked since 2026-06-07)" },
+    { "date": "2026-06-13", "job": "article_writing", "reason": "drafts/articles/ still empty — 0% article success rate for 9+ days. World Cup transit article not produced." },
+    { "date": "2026-06-13", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 5th consecutive day — retry #5 queued 2026-06-14. ESCALATION: manual intervention may be required." }
   ],
   "content_gaps": [
-    "approved.json empty since 2026-06-07 — Publishing Agent blocked 7 consecutive days",
-    "BRT vs Light Rail infographic queued since 2026-06-07, never produced — retry #4 today",
-    "Long-form article economics piece never produced (distinct from encyclopedia articles) — 8+ days queued",
-    "articles/ directory empty — no long-form articles produced in entire site history",
-    "8 video scripts in drafts/scripts/, none approved — backlog growing daily"
+    "approved.json empty since 2026-06-07 — Publishing Agent blocked 8 consecutive days — REQUIRES HUMAN ACTION",
+    "BRT vs Light Rail infographic queued since 2026-06-07, never produced — retry #5 today — ESCALATION",
+    "Long-form article drafts never produced (distinct from encyclopedia articles) — 9+ days queued — ESCALATION",
+    "drafts/articles/ directory empty — no long-form articles produced in entire site history",
+    "9 video scripts in drafts/scripts/, none approved — backlog exceeded warning threshold"
   ]
 }

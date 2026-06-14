@@ -1,0 +1,23 @@
+{
+  "date": "2026-06-14",
+  "generated_at": "2026-06-14T06:00:00Z",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 8: approved.json has been empty since 2026-06-07. Publishing Agent blocked for 8 consecutive days. Human must add slugs to approved.json to unblock. No content has gone live in 8 days despite daily production.",
+    "CRITICAL: drafts/articles/ directory remains empty after 9+ days of queuing articles. Article-writing agent has a 0% success rate across the entire site history. Two new articles queued today (world-cup-2026-transit-host-cities, first-last-mile-transit-problem). Manual check required.",
+    "ESCALATION RETRY #5: brt-vs-light-rail-cost-2026 infographic has been queued every day since 2026-06-07 and never produced. If not produced today, the infographic pipeline needs manual intervention — agent may be broken.",
+    "WARNING: Video script backlog has grown to 9 scripts. At current approval rate (0%), backlog will exceed 10 scripts by 2026-06-15. Recommend pausing script production until existing scripts are reviewed.",
+    "INFO: Top news hook today — Census Bureau banned noise infusion from statistical products (HN #1). Transit planning angle queued as research brief (census-noise-ban-transit-planning-2026). Time-sensitive — should be published within 48 hours to capture search traffic.",
+    "INFO: World Cup 2026 is actively happening in US cities. Transit surge story (world-cup-2026-transit-host-cities) is the most timely content opportunity in site history — window closes when group stage ends."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "date": "2026-06-14",
+  "generated_at": "2026-06-14T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 and American Transit: How Host Cities Are (and Aren't) Prepared",
+      "angle": "The 2026 FIFA World Cup kicked off this month with matches across 11 US cities. Examine how transit agencies in Los Angeles, New York, Dallas, Seattle, Miami, and others planned (or failed to plan) for sudden ridership surges — covering special service expansions, fare policy, coordination failures, and what lessons will remain after the tournament ends.",
+      "rationale": "Highest-timeliness news hook of the week. World Cup 2026 is actively happening in US cities right now. Streetsblog covered World Cup fan travel today. This is a direct hook to real-world transit stress-testing that no other piece in our archive touches. High search-traffic window while matches continue.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-host-cities",
+      "output_path": "drafts/articles/world-cup-2026-transit-host-cities.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail: True Costs and Tradeoffs in 2026",
+      "angle": "Side-by-side visual comparison of capital costs, operating costs, capacity, speed, rider experience, and political feasibility for Bus Rapid Transit vs Light Rail Transit. Include real-world examples: LA Metro BRT, Houston BRT, Portland MAX, Denver RTD.",
+      "rationale": "RETRY #5. This infographic has been queued since 2026-06-07 and never produced. It is the single longest-running gap in the production pipeline. Must be produced today. The topic is evergreen and foundational — every transit policy discussion references this tradeoff.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "docs/infographic-brt-vs-light-rail-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Census Data Blackout: What the Federal Noise Infusion Ban Means for Transit Planning",
+      "angle": "The Census Bureau just banned noise infusion from statistical products (top Hacker News story today). Transit agencies rely on Census ACS data for route planning, Title VI equity analysis, and FTA grant applications. Analyze what data products are affected, how planners currently use them, and what workarounds or risks emerge from this policy shift.",
+      "rationale": "Direct hook from today's top HN story. Noise infusion ban is a policy change with concrete downstream consequences for transit planning — a niche audience (transit planners, data analysts, equity advocates) will search this intersection. Nobody else will have covered this angle today.",
+      "target_length": "medium",
+      "slug": "census-noise-ban-transit-planning-2026",
+      "output_path": "drafts/articles/census-noise-ban-transit-planning-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "The First and Last Mile Problem: Why Transit Fails at the Edges",
+      "angle": "Explain why the 'first/last mile' gap — the distance between where transit ends and where people need to go — is the single biggest barrier to transit adoption in American cities. Cover: walking radius research, bike/scooter integration programs, demand-responsive feeders, and the suburban design problem. Include examples from LA, Houston, and Minneapolis.",
+      "rationale": "Evergreen foundational topic not covered in our archive. Highly searchable. The Streetsblog sprawl-and-youth-opportunity story today, and the greenways-funding-shortfall story, both point to this gap in coverage. Pairs naturally with existing TOD and transit desert content.",
+      "target_length": "long",
+      "slug": "first-last-mile-transit-problem",
+      "output_path": "drafts/articles/first-last-mile-transit-problem.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "The Hidden Math of Fare Evasion: Why Crackdowns Often Cost More Than They Collect",
+      "angle": "Walk through the actual economics of fare evasion enforcement — enforcement officer salaries, court costs, reduced ridership from hostile enforcement, vs. actual fare recovery rates. Compare NYC, DC Metro, and LA Metro approaches. Build to the policy question: is proof-of-payment or honor-system cheaper than paid barriers?",
+      "rationale": "New script topic not yet in the backlog. Fare evasion is politically charged and widely searched — 'fare evasion crackdown' stories appear weekly. The economics angle is counterintuitive (crackdowns can be net negative) which drives shares and engagement. Complements existing fare structure article in docs/.",
+      "target_length": "medium",
+      "slug": "fare-evasion-economics-script",
+      "output_path": "drafts/scripts/fare-evasion-economics-script.md"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "retry_number": 5,
+      "first_queued": "2026-06-07",
+      "note": "Infographic pipeline issue — this is the only item that has been continuously re-queued and never produced. If not produced today, escalate: infographic agent may require manual restart."
+    }
+  ],
+  "skip_topics": [
+    "Southern California transit brief (covered 2026-06-08 through 2026-06-13 — six consecutive daily briefs)",
+    "Transit-oriented development (covered 2026-06-06)",
+    "Federal transit grants (covered 2026-06-12)",
+    "Bus bunching (covered 2026-06-12)",
+    "Data optimization for transit routes (covered 2026-06-12)",
+    "Transit agency funding breakdown (covered 2026-06-12)",
+    "Environmental justice and transit (covered 2026-06-12)",
+    "Disability access ADA compliance (covered 2026-06-12)",
+    "Homelessness transit safety (covered 2026-06-12)",
+    "Apple Gemini AI partnership (covered 2026-06-09, script in backlog)",
+    "Transit desert POMDP AI (covered 2026-06-09, script in backlog)",
+    "Electric axial flux motors (covered 2026-06-10, script in backlog)",
+    "Tesla SpaceX transit empire (script produced 2026-06-13)",
+    "Slime mold network optimization (script in backlog)"
+  ],
+  "trend_signals": [
+    "World Cup 2026 fan travel straining US city transit (Streetsblog, active this week)",
+    "Census Bureau bans noise infusion from statistical products — data quality and planning implications (Hacker News #1 today)",
+    "Sprawl continues to hamstring youth opportunity and job access (Streetsblog research roundup)",
+    "Urban greenway/active transportation funding shortfalls in major cities (Streetsblog NYC)",
+    "New Jersey traffic calming: mayors taking unilateral action on street design without state approval (Streetsblog NJ)"
+  ],
+  "pipeline_alerts": [
+    "CRITICAL DAY 8: approved.json empty since 2026-06-07. Publishing pipeline blocked for 8 consecutive days. No content has gone live in 8 days despite daily production.",
+    "CRITICAL: drafts/articles/ directory has been empty for entire site history. Article agent has 0% success rate across 9+ days of queuing.",
+    "ESCALATION: brt-vs-light-rail-cost-2026 infographic on retry #5 today. If not produced, manual intervention required.",
+    "INFO: Video script backlog now at 9 scripts (tesla-spacex added yesterday). Recommend pausing new video scripts until backlog clears — today's script (fare-evasion-economics) added due to topic uniqueness.",
+    "INFO: Encyclopedia content pipeline and daily transit brief pipeline both healthy. All other pipeline stages (articles, approvals) blocked."
+  ]
+}
