@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — June 14, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E4;
+    --muted: #888888;
+    --accent: #C8FF00;
+    --accent2: #00C8FF;
+    --red: #FF4444;
+    --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; line-height: 1.6; }
+  a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* HEADER */
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-header .label { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+  .site-header h1 { font-size: 28px; font-weight: 700; margin-top: 4px; }
+  .site-header .meta { text-align: right; font-size: 12px; color: var(--muted); }
+  .site-header .meta strong { color: var(--accent); display: block; font-size: 14px; }
+
+  .back-link { padding: 12px 40px; background: var(--surface2); border-bottom: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  .back-link a { color: var(--muted); }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px 80px; }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    margin: 48px 0 20px;
+  }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 28px 32px;
+    margin-top: 40px;
+    border-radius: 2px;
+  }
+  .exec-summary h2 { font-size: 20px; margin-bottom: 16px; color: var(--accent); }
+  .exec-summary p { color: #CCCCCC; margin-bottom: 12px; }
+
+  /* THEMES GRID */
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .theme-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 2px;
+  }
+  .theme-card h3 { font-size: 11px; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px; }
+  .theme-card p { font-size: 13px; color: #AAAAAA; }
+
+  /* INFOGRAPHIC SECTION */
+  .infographic-section { margin-top: 40px; }
+  .infographic-section img, .infographic-section object {
+    width: 100%; border: 1px solid var(--border); border-radius: 2px;
+  }
+  .infographic-embed { background: #F7F7F5; border: 1px solid var(--border); border-radius: 2px; padding: 0; overflow: hidden; }
+  .infographic-embed svg { display: block; width: 100%; }
+  .infographic-caption {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; font-size: 12px; color: var(--muted);
+  }
+  .infographic-caption a { color: var(--accent2); font-size: 11px; }
+
+  /* PAPER CARDS */
+  .paper-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    border-radius: 2px;
+    position: relative;
+  }
+  .paper-card:hover { border-color: #444; }
+  .paper-card .paper-number {
+    position: absolute; top: 28px; right: 32px;
+    font-size: 48px; font-weight: 700; color: #2A2A2A; line-height: 1;
+  }
+  .paper-meta { font-size: 11px; color: var(--muted); margin-bottom: 10px; letter-spacing: 0.5px; }
+  .paper-meta .venue { color: var(--accent2); }
+  .paper-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; max-width: 85%; }
+  .paper-card .authors { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner {
+    font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px;
+    padding: 12px 16px; background: rgba(200,255,0,0.05); border-left: 3px solid var(--accent);
+  }
+  .paper-card .abstract { font-size: 13px; color: #AAAAAA; margin-bottom: 16px; line-height: 1.65; }
+
+  .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .analysis-block { background: var(--surface2); padding: 16px 18px; border-radius: 2px; }
+  .analysis-block h4 { font-size: 10px; letter-spacing: 2px; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; }
+  .analysis-block p, .analysis-block li { font-size: 13px; color: #AAAAAA; }
+  .analysis-block ul { padding-left: 16px; }
+  .analysis-block ul li { margin-bottom: 4px; }
+  .analysis-block.full-width { grid-column: 1 / -1; }
+
+  .confidence-badge {
+    display: inline-block;
+    font-size: 10px; letter-spacing: 1.5px; font-weight: 700;
+    padding: 3px 10px; border-radius: 2px; margin-left: 12px; vertical-align: middle;
+  }
+  .conf-high { background: rgba(200,255,0,0.15); color: var(--accent); border: 1px solid rgba(200,255,0,0.3); }
+  .conf-med { background: rgba(0,200,255,0.1); color: var(--accent2); border: 1px solid rgba(0,200,255,0.2); }
+  .conf-low { background: rgba(255,68,68,0.1); color: var(--red); border: 1px solid rgba(255,68,68,0.2); }
+
+  /* EDITORIAL IMAGE SECTION */
+  .editorial-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-top: 40px;
+    overflow: hidden;
+  }
+  .editorial-header {
+    padding: 20px 28px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  .editorial-header .section-tag { font-size: 10px; letter-spacing: 3px; color: var(--muted); }
+  .editorial-header h2 { font-size: 18px; margin-top: 4px; }
+  .editorial-body { padding: 28px; }
+  .editorial-body .no-image {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 13px; border: 1px dashed var(--border); border-radius: 2px;
+  }
+  .editorial-caption {
+    padding: 16px 28px;
+    border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--muted);
+  }
+
+  /* INSIGHTS */
+  .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .insight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 22px;
+    border-radius: 2px;
+  }
+  .insight-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .insight-card p { font-size: 13px; color: #AAAAAA; }
+
+  .contrarian-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--red);
+    padding: 24px 28px;
+    border-radius: 2px;
+    margin-top: 16px;
+  }
+  .contrarian-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: #FF8888; }
+  .contrarian-box p { font-size: 13px; color: #AAAAAA; }
+
+  /* TAKEAWAYS */
+  .takeaway-list { list-style: none; }
+  .takeaway-list li {
+    padding: 16px 20px 16px 56px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .takeaway-list li:last-child { border-bottom: none; }
+  .takeaway-list li::before {
+    content: attr(data-n);
+    position: absolute; left: 16px; top: 16px;
+    font-size: 20px; font-weight: 700; color: var(--border);
+  }
+  .takeaway-list li strong { color: var(--accent); display: block; margin-bottom: 4px; }
+  .takeaway-list li span { color: #AAAAAA; font-size: 13px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  footer .brand { font-weight: 700; color: var(--text); }
+
+  @media (max-width: 768px) {
+    .site-header { flex-direction: column; text-align: center; gap: 16px; }
+    .themes-grid, .analysis-grid, .insights-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <div class="label">Transit Research Digest</div>
+    <h1>June 14, 2026</h1>
+  </div>
+  <div class="meta">
+    <strong>8 PAPERS ANALYZED</strong>
+    Autonomous research run · arXiv preprints<br>
+    Gemini analysis unavailable — self-analyzed
+  </div>
+</header>
+
+<div class="back-link">
+  <a href="index.html">← Back to Index</a> &nbsp;·&nbsp;
+  <a href="research.html">Research Archive</a>
+</div>
+
+<div class="container">
+
+  <!-- ====================================================
+       SECTION A: EDITORIAL ILLUSTRATION
+       ==================================================== -->
+  <div class="section-label">TODAY'S TRANSIT ILLUSTRATION</div>
+
+  <div class="editorial-section">
+    <div class="editorial-header">
+      <div class="section-tag">TECHNICAL EDITORIAL ILLUSTRATION</div>
+      <h2>Bus Rapid Transit Station Platform with Real-Time Arrival Boards</h2>
+    </div>
+    <div class="editorial-body">
+      <div class="no-image">
+        <p style="font-size:16px;color:#555;margin-bottom:8px;">⬛ Imagen generation unavailable today</p>
+        <p>Gemini Imagen API quota exhausted (key: AQ.Ab8RN6…). Image would depict a BRT station platform showing raised boarding decks, off-board fare payment kiosks, real-time arrival LED boards, and signal-priority infrastructure at intersection. Technical pen annotation style with cutaway cross-sections and material callouts.</p>
+        <p style="margin-top:12px;font-size:11px;color:#444;">Visual subject sourced from today's papers: headway bunching analysis (2606.12855) directly concerns BRT and fixed-line bus operations.</p>
+      </div>
+    </div>
+    <div class="editorial-caption">
+      BRT Station Platform with Real-Time Arrival Boards — Technical Editorial Illustration · Independently researched from today's papers
+    </div>
+  </div>
+
+  <!-- ====================================================
+       SECTION B: RESEARCH ANALYSIS
+       ==================================================== -->
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="exec-summary">
+    <h2>Executive Summary</h2>
+    <p>This week's transit research converges on a striking theme: <strong>the tools to make transit more equitable and reliable already exist — they're just not being deployed</strong>. Three papers published in the last 10 days address fundamental operational and planning challenges with new mathematical rigor, producing results that are ready for immediate application.</p>
+    <p>The most significant paper is Khoroshevskaya &amp; Perukari's risk-aware transit desert planner (2606.08371), which demonstrates that the "chicken-and-egg" problem in underserved areas — you can't measure demand until service exists, but agencies won't fund service without measured demand — is solvable using demographic priors and adaptive Bayesian updating. Tested across 25 cities, the approach remediates over half of transit-desert census tracts in five years even under severely miscalibrated demand assumptions.</p>
+    <p>Simultaneously, Yuhas et al. (2606.12855) establish for the first time that worst-case bus headways are computable, not just estimable — a dynamic program yields provably tight bounds applicable to any holding policy. And Jaber et al. (2606.08849) show that when Paris's RER B suffers major disruption, coordinated multimodal responses dominate single-mode fallbacks across every KPI simultaneously: cost, continuity, equity, and emissions.</p>
+    <p>The broader picture: transit research is maturing from descriptive analysis toward prescriptive, decision-ready tools with quantified uncertainty.</p>
+  </div>
+
+  <!-- INFOGRAPHIC -->
+  <div class="section-label">DATA INFOGRAPHIC</div>
+  <div class="infographic-section">
+    <div class="infographic-embed">
+      <object type="image/svg+xml" data="research-infographic-2026-06-14.svg" style="width:100%;min-height:400px;">
+        <img src="research-infographic-2026-06-14.svg" alt="Transit Research Infographic June 14, 2026" style="width:100%">
+      </object>
+    </div>
+    <div class="infographic-caption">
+      <span>Swiss-design data infographic · 8 papers · June 14, 2026</span>
+      <a href="research-infographic-2026-06-14.svg" download>⬇ Download SVG</a>
+    </div>
+  </div>
+
+  <!-- PAPER ANALYSES -->
+  <div class="section-label">PAPER ANALYSES — 8 PAPERS</div>
+
+  <!-- PAPER 1 -->
+  <div class="paper-card">
+    <div class="paper-number">01</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2606.12855</span> &nbsp;·&nbsp; June 11, 2026 &nbsp;·&nbsp; eess.SY
+    </div>
+    <h3>Computing Headway Bounds under Worst-Case Bunching in Fixed-Line Transit Systems <span class="confidence-badge conf-high">HIGH</span></h3>
+    <div class="authors">Michael Yuhas, George Gunter, Jose Paulo Talusan, Aron Laszka, Dan Freudberg, Abhishek Dubey · Vanderbilt University / University of Houston</div>
+    <div class="one-liner">For the first time, worst-case headways under arbitrary holding policies are not guessed — they're proven tight with a dynamic program.</div>
+    <div class="abstract">Vehicle bunching causes the lead bus to absorb most demand while followers run empty, wasting resources and stranding waiting passengers. This paper shifts the question from "how do we minimize average bunching?" to "what is the provable worst case?" The authors develop a dynamic programming formulation over bounded dwell and travel times, computing maximum and minimum possible headways for any route configuration and holding policy. Validated on Nashville's transit network.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>Dynamic programming over deterministic bounded travel/dwell time intervals. Control points modeled as holding decisions; bound tightness proved via adversarial event sequences.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>Tight upper/lower headway bounds achievable for arbitrary holding policies</li>
+          <li>Stop placement and vehicle count shown to jointly affect worst-case bounds</li>
+          <li>Applied to real Nashville routes — practical utility confirmed</li>
+        </ul>
+      </div>
+      <div class="analysis-block">
+        <h4>Limitations</h4>
+        <p>Single-route analysis; multi-route interactions not modeled. Bounded travel times are an abstraction — stochastic disruptions (accidents, weather) may exceed bounds in practice.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Practical Implications</h4>
+        <ul>
+          <li>Transit planners can now guarantee headway performance, not just target it</li>
+          <li>Enables adversarial stress-testing before route changes are deployed</li>
+          <li>Framework applicable to any fixed-line transit system globally</li>
+        </ul>
+      </div>
+      <div class="analysis-block full-width">
+        <h4>Who Should Care</h4>
+        <p><strong>Transit operations teams</strong> evaluating holding policies; <strong>software vendors</strong> building real-time bus management systems; <strong>regulators</strong> setting service-level guarantees; <strong>researchers</strong> studying vehicle platoon dynamics.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER 2 -->
+  <div class="paper-card">
+    <div class="paper-number">02</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2606.08849</span> &nbsp;·&nbsp; June 7, 2026 &nbsp;·&nbsp; cs.AI
+    </div>
+    <h3>A Resilience-as-a-Service Assessment Framework for Coordinated Disruption Response in Interdependent Urban Transit Systems <span class="confidence-badge conf-high">HIGH</span></h3>
+    <div class="authors">Sara Jaber, S. M. Hassan Mahdavi, Neila Bhouri, Mostafa Ameli</div>
+    <div class="one-liner">Coordinated multimodal disruption response on Paris RER B dominates every alternative — cost, equity, emissions, and continuity simultaneously.</div>
+    <div class="abstract">When a major rail line fails, transit operators face urgent decisions under uncertainty, yet they typically lack a framework to compare response strategies across multiple performance dimensions at once. This paper proposes a KPI-driven, time-indexed framework combining an optimization model with agent-based behavioral simulation. Critically, it accounts for secondary degradation: when buses are diverted to help a disrupted rail corridor, those buses' original routes also degrade. Implemented for the Paris RER B.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>Optimization model + agent-based simulation. KPIs assessed: vulnerability, adaptability, robustness, resilience loss, responsiveness, cost performance, emissions, equity. Time-indexed across disruption phases.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>Coordinated strategy outperforms all single-mode alternatives across all 8 KPIs</li>
+          <li>Single-mode fallbacks improve some dimensions but trade off others</li>
+          <li>Sensitivity analysis identifies disruption severity thresholds where coordination matters most</li>
+        </ul>
+      </div>
+      <div class="analysis-block">
+        <h4>Limitations</h4>
+        <p>Implemented for one network (Paris RER B); generalizability to less dense or polycentric networks untested. Agent behavioral model calibrated on historical data — may not capture novel disruption types.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Practical Implications</h4>
+        <ul>
+          <li>Transit agencies should pre-plan coordinated responses, not single-mode contingencies</li>
+          <li>"Helper line" degradation must be modeled — ignoring it underestimates disruption cost</li>
+          <li>Equity should be a primary KPI, not a secondary consideration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER 3 -->
+  <div class="paper-card">
+    <div class="paper-number">03</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2606.08371</span> &nbsp;·&nbsp; June 6, 2026 &nbsp;·&nbsp; cs.CY
+    </div>
+    <h3>Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty <span class="confidence-badge conf-high">HIGH</span></h3>
+    <div class="authors">Polina Khoroshevskaya, Ashish Kumar Perukari</div>
+    <div class="one-liner">The chicken-and-egg problem of transit deserts is solved: a POMDP planner expands service to underserved areas without pre-existing ridership data, and it works.</div>
+    <div class="abstract">Transit deserts — areas with latent demand but no service — affect tens of millions of residents across the Americas. Agencies won't extend service without ridership proof; ridership can't exist without service. This paper breaks the deadlock by formulating transit desert remediation as a Partially Observable Markov Decision Process (POMDP) with Conditional Value-at-Risk (CVaR) constraints for financial tail risk. Demographic, land-use, and employment data set a prior; observed ridership from early deployments updates it. A myopic belief-aware planner evaluated across 25 cities remediates 53.6% of transit-desert census tracts in 5 years — +5 points over static optimization.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>POMDP formulation with CVaR financial tail-risk constraints. Bayesian demand updating from ridership observations. Evaluated on 25 US/Americas cities with unified cost model (OPEX, CAPEX, fares, subsidy).</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>53.6% median tract remediation across 25 cities in 5 years</li>
+          <li>+5.0 pp improvement over static optimization (16 of 25 cities)</li>
+          <li>Gains persist under 50% demand miscalibration</li>
+          <li>Population density + existing transit density explain 41% of per-tract cost variance</li>
+        </ul>
+      </div>
+      <div class="analysis-block">
+        <h4>Limitations</h4>
+        <p>Myopic planning horizon; non-myopic formulation might yield higher remediation rates. Evaluated primarily on Americas cities — applicability to very-low-density or informal-transit contexts unknown.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Comparison to Prior Work</h4>
+        <p>Prior work defined transit deserts and mapped them but didn't prescribe planning. This is among the first papers to operationalize demand-uncertain transit expansion with formal financial risk constraints.</p>
+      </div>
+      <div class="analysis-block full-width">
+        <h4>Who Should Care</h4>
+        <p><strong>Urban planners and transit agencies</strong> in low-service areas; <strong>elected officials</strong> managing transit subsidy budgets; <strong>equity advocates</strong> working to extend mobility access; <strong>researchers</strong> in sequential decision-making under uncertainty.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER 4 -->
+  <div class="paper-card">
+    <div class="paper-number">04</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2606.08207</span> &nbsp;·&nbsp; June 6, 2026 &nbsp;·&nbsp; econ.GN
+    </div>
+    <h3>Opportunity-Normalized Residence-Workplace Matching and the Scale-Sensitive Structure of Urban Commuting <span class="confidence-badge conf-high">HIGH</span></h3>
+    <div class="authors">Mingzhi Xiao, Yuki Takayama</div>
+    <div class="one-liner">People consistently commute shorter distances than urban form would permit — and this reveals a hidden layer of city structure invisible to standard analyses.</div>
+    <div class="abstract">Comparing where people live vs. work is standard urban analysis. But this paper asks a different question: given all the residence-workplace combinations that theoretically exist, what fraction of shorter-distance matchings actually occur? By normalizing observed commuting distributions by opportunity distributions, the authors find a universal pattern across 9 British cities: realized commutes are far more concentrated at short distances than geography alone would suggest. A city-specific distance-decay coefficient captures this. London's complex polycentric structure reveals the pattern holds within sub-systems even when it appears flat at the city level.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>Opportunity-normalized matching: compare observed commute distance distribution vs. distribution of all within-city residence-workplace pairs. Output Area-level UK data; validated on NYC and Chicago.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>Realized commutes systematically shorter than opportunity-based distribution predicts</li>
+          <li>Log-log distance-decay approximately linear in most cities</li>
+          <li>London's city-level flatness disaggregates into strong subsystem decay patterns</li>
+        </ul>
+      </div>
+      <div class="analysis-block">
+        <h4>Practical Implications</h4>
+        <p>Transit planners should use opportunity-normalized metrics when evaluating service adequacy. A city that appears job-rich relative to residences may still have mismatched spatial structure that limits short-distance transit utility.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Limitations</h4>
+        <p>Descriptive rather than causal. Does not directly model transit access as mediator of commute-length decisions. UK-centric data; US validation is supplementary only.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER 5 -->
+  <div class="paper-card">
+    <div class="paper-number">05</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2606.09532</span> &nbsp;·&nbsp; June 8, 2026 &nbsp;·&nbsp; cs.CY
+    </div>
+    <h3>Interpretable Crisis Behavior Analysis Using Mobility and Social Media Data <span class="confidence-badge conf-high">HIGH</span></h3>
+    <div class="authors">Muhammad Hamza Arshad Majeed, Sidahmed Benabderrahmane, Talal Rahwan</div>
+    <div class="one-liner">During crises, mobility changes and social media sentiment are tightly coupled in predictable ways — rules stable enough to brief emergency managers in advance.</div>
+    <div class="abstract">Crises fundamentally alter how people move and communicate, yet mobility and emotional data have been studied in isolation. This paper builds a pipeline integrating both, using Formal Concept Analysis to identify co-occurrence patterns and mine association rules. Two case studies: LA wildfires (2025) and UAE COVID (2020–2021, 671 days). Traffic stress, fear/anger sentiment, and governance discourse cluster into tight cross-domain behavioral patterns with 100% confidence in some wildfire rules. COVID yielded 40 predictive rules with 2–7 day lead horizons.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>Formal Concept Analysis + association rule mining on binarized mobility + social sentiment signals. Chronological holdout validation. Policy translation layer for operational briefings.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>Wildfire rules: 100% confidence, lift up to 2.5 within 33-day window</li>
+          <li>COVID rules: 88% holdout pass rate, 2–7 day predictive lead for 40 rules</li>
+          <li>Cross-domain behavioral structure exists and is consistent across crises</li>
+        </ul>
+      </div>
+      <div class="analysis-block">
+        <h4>Practical Implications</h4>
+        <p>Emergency managers and transit operators can pre-position responses using mobility-sentiment signals: traffic stress plus social fear reliably predicts subsequent demand pattern shifts in both wildfire and pandemic settings.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Limitations</h4>
+        <p>Two case studies in specific geographies (US, UAE); behavioral rules may not generalize to different cultural or regulatory contexts. Binarization of signals loses nuance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER 6 -->
+  <div class="paper-card">
+    <div class="paper-number">06</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2605.00108</span> &nbsp;·&nbsp; April 30, 2026 &nbsp;·&nbsp; cs.CY
+    </div>
+    <h3>Urban Science Beyond Samples: Up-to-Date Street Network Models and Indicators for Every Urban Area in the World <span class="confidence-badge conf-high">HIGH</span></h3>
+    <div class="authors">Geoff Boeing (USC)</div>
+    <div class="one-liner">Global, consistent, current street network data for 10,351 cities is now publicly available — ending the era of convenience-sample urban research.</div>
+    <div class="abstract">Urban transport research has long been constrained by availability: researchers study cities with accessible data. Boeing's paper releases a complete global dataset: 180 million OpenStreetMap nodes and 360 million edges processed for all 10,351 urban areas in 189 countries using 2025 GHSL boundaries. Code, models, and indicators are open and reusable. This enables global analyses and provides baselines for under-resourced regions that have never had systematic street network data available.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>OSMnx pipeline ingesting OpenStreetMap data (180M nodes, 360M edges) with 2025 Global Human Settlement Layer boundaries. Standard network indicators computed and made publicly available.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>Complete coverage: 10,351 urban areas, 189 countries</li>
+          <li>Linkable to hundreds of other urban attributes via GHSL</li>
+          <li>Fully reproducible, open-access workflow</li>
+        </ul>
+      </div>
+      <div class="analysis-block">
+        <h4>Practical Implications</h4>
+        <p>Transit agencies in any country can now benchmark their street network indicators against global peers. Researchers can conduct truly global comparative studies. No more "available cities" bias in urban transport research.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Limitations</h4>
+        <p>OSM data quality varies by region; under-mapped areas may have incomplete networks. Static snapshot — urban networks change. Does not include transit-specific data (GTFS).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER 7 -->
+  <div class="paper-card">
+    <div class="paper-number">07</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2606.00614</span> &nbsp;·&nbsp; May 30, 2026 &nbsp;·&nbsp; econ.GN
+    </div>
+    <h3>Mitigation of Spatial Economic Impact Propagation of Highway Disruptions by Redundant Networks <span class="confidence-badge conf-med">MED</span></h3>
+    <div class="authors">Tomoki Ishikura</div>
+    <div class="one-liner">Highway redundancy in rural Japan reduces economic ripple damage far beyond the directly disrupted zone — the benefit is larger than travel time savings alone suggest.</div>
+    <div class="abstract">Transportation disruptions create economic ripple effects far beyond their immediate area. Rural regions with sparse networks are most vulnerable. Using a Spatial Computable General Equilibrium (SCGE) model combined with road network connectivity analysis, this paper quantifies the economic value of parallel highway infrastructure in Japan's Chugoku region. Counterfactual simulations show that redundant routing reduces economic vulnerability more broadly than travel-time savings alone suggest — economy-wide effects dominate local effects.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>Spatial CGE model + road network graph. Counterfactual: remove parallel highway, simulate disruption scenarios. Compare economic impact with and without redundant infrastructure.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>Economic vulnerability reduction extends far beyond directly disrupted areas</li>
+          <li>Rural areas disproportionately vulnerable without redundant networks</li>
+          <li>Economy-wide effects of redundancy exceed local travel-time savings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPER 8 -->
+  <div class="paper-card">
+    <div class="paper-number">08</div>
+    <div class="paper-meta">
+      <span class="venue">arXiv · 2606.12752</span> &nbsp;·&nbsp; June 10, 2026 &nbsp;·&nbsp; cs.CY
+    </div>
+    <h3>Beyond Resilience — A Conceptual Framework for Civic Ascent <span class="confidence-badge conf-med">MED</span></h3>
+    <div class="authors">Alexandros Washburn, Carlo Lipizzi</div>
+    <div class="one-liner">Cities don't just recover from shocks — some emerge stronger. "Civic ascent" proposes a new standard for measuring whether cities truly improved after disruption.</div>
+    <div class="abstract">The standard resilience metric asks: did the city return to baseline? But this paper argues that baseline restoration is an inadequate goal. "Civic ascent" is defined as the condition in which a city emerges from a shock with higher functional capacity than before. Drawing on urban ecology, complexity science, and case examples, the authors develop a conceptual framework identifying what civic ascent looks like in practice and why it differs from conventional resilience measurement in transit and urban contexts.</div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <h4>Methodology</h4>
+        <p>Conceptual/theoretical. Framework development from literature synthesis and case study analysis. Draws on complexity science, urban ecology, ethology of agent-environment systems.</p>
+      </div>
+      <div class="analysis-block">
+        <h4>Practical Implications</h4>
+        <p>Transit agencies and city planners should evaluate post-disruption outcomes against a "better than before" standard, not merely "returned to normal." Disruption is an opportunity for permanent improvement if the right indicators are tracked from the start.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">EMERGING THEMES</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>ADAPTIVE PLANNING UNDER UNCERTAINTY</h3>
+      <p>Across multiple papers, Bayesian updating and belief-aware decision-making consistently outperform static optimization in transit contexts. The ability to revise plans as new data arrives — ridership observations, disruption conditions, demand signals — is the decisive capability.</p>
+    </div>
+    <div class="theme-card">
+      <h3>MULTI-DIMENSIONAL EQUITY ACCOUNTING</h3>
+      <p>Papers like Jaber et al. (2606.08849) measure equity as a first-class KPI alongside cost and performance. Single-optimization approaches inevitably trade off equity for efficiency; multi-KPI frameworks reveal whether a strategy is genuinely better or merely shifting harm.</p>
+    </div>
+    <div class="theme-card">
+      <h3>GLOBAL OPEN DATA ENABLING NEW SCIENCE</h3>
+      <p>Boeing's global street dataset represents a categorical shift: researchers no longer need to study the cities with accessible data. The bias toward well-documented, high-income urban areas in transit research may soon be addressable systematically.</p>
+    </div>
+  </div>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="section-label">CONTRARIAN INSIGHTS</div>
+  <div class="contrarian-box">
+    <h4>The transit demand chicken-and-egg problem is a policy fiction, not a technical constraint</h4>
+    <p>Transit agencies have long defended inaction in underserved areas by arguing they can't demonstrate ridership without existing service. Khoroshevskaya &amp; Perukari demonstrate that demographic, land-use, and employment data are entirely sufficient to build a prior distribution over latent demand — and that this prior is robust to 50% miscalibration. The barrier was never informational. It was political.</p>
+  </div>
+  <div class="contrarian-box" style="margin-top:12px;border-left-color:#FFAA00;">
+    <h4>Resilience as "return to baseline" may be actively harmful</h4>
+    <p>Washburn &amp; Lipizzi argue that recovery-focused resilience metrics may entrench pre-existing deficiencies. A transit system that "recovers" to its pre-disruption state has restored all its prior inequities, coverage gaps, and inefficiencies. If civic ascent is the goal, disruption should trigger net functional improvement — which requires different metrics and political mandates from the start of a crisis, not after.</p>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">ACTIONABLE TAKEAWAYS</div>
+  <ul class="takeaway-list">
+    <li data-n="1">
+      <strong>Transit operators: replace average-case headway targets with worst-case bounds</strong>
+      <span>Yuhas et al.'s dynamic program gives you provably tight bounds. If your holding policy can't meet worst-case targets you can now identify and demonstrate, you can redesign it before deployment — not after a passenger complaint.</span>
+    </li>
+    <li data-n="2">
+      <strong>City planners: use demographic priors to start in transit deserts</strong>
+      <span>You don't need pre-existing ridership data to justify new service. Khoroshevskaya &amp; Perukari's model shows that land-use and employment data alone are sufficient to outperform static planning from day one, across 25 cities.</span>
+    </li>
+    <li data-n="3">
+      <strong>Disruption response teams: pre-plan coordinated multimodal contingencies</strong>
+      <span>Single-mode fallbacks are dominated strategies. The Paris RER B data shows coordination beats any single-mode alternative on every KPI. If you haven't pre-built the coordination protocols, you won't use them during the disruption.</span>
+    </li>
+    <li data-n="4">
+      <strong>Researchers: access Boeing's global street network dataset immediately</strong>
+      <span>If your research is limited to cities with accessible data, you're systematically biased. 10,351 urban areas, 189 countries, 2025 boundaries — this dataset eliminates the convenience-sample problem that has plagued urban transport research for decades.</span>
+    </li>
+    <li data-n="5">
+      <strong>Emergency managers: integrate mobility + sentiment monitoring during crises</strong>
+      <span>Majeed et al. demonstrate 2–7 day predictive lead times using fused mobility/social sentiment signals. The patterns are stable and interpretable enough for operational briefings, not just academic interest.</span>
+    </li>
+  </ul>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <div class="section-label">LONG-TERM IMPLICATIONS</div>
+  <div class="insights-grid">
+    <div class="insight-card">
+      <h4>AI-Assisted Transit Planning as Standard Practice</h4>
+      <p>The convergence of POMDP planning, agent-based simulation, and Bayesian demand inference points toward a future where transit planning decisions are supported by computationally rigorous uncertainty quantification, not just historical demand surveys. The tools exist today; adoption is the remaining barrier.</p>
+    </div>
+    <div class="insight-card">
+      <h4>From Recovery to Improvement as the Post-Disruption Standard</h4>
+      <p>Civic ascent and multi-KPI resilience frameworks suggest a 10-year shift in how disruption outcomes are measured. As climate disruptions increase frequency, transit systems that merely recover will fall further behind. Agencies that build "improvement triggers" into disruption response protocols will accumulate structural advantages.</p>
+    </div>
+    <div class="insight-card">
+      <h4>Global Equity Research at Scale</h4>
+      <p>Boeing's 2025 global dataset removes the last major barrier to worldwide comparative urban transport research. Within five years, expect systematic identification of structural network inadequacies in low-income urban areas that were previously invisible to researchers lacking local data access.</p>
+    </div>
+    <div class="insight-card">
+      <h4>Real-Time Behavioral Prediction for Transit</h4>
+      <p>Mobility-sentiment fusion with predictive lead times suggests a path toward anticipatory transit operations during crises: rerouting and capacity adjustment guided by behavioral signals days before demand peaks, rather than reactive response after congestion materializes.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:2px;">
+    <p style="font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:2px;">LONG-TERM IMPLICATIONS — CONTINUED</p>
+    <p style="color:#AAAAAA;font-size:14px;">The period from 2025–2027 appears to be a critical inflection point for transit research: computational methods (POMDP, dynamic programming, agent-based simulation) are maturing into forms directly deployable by operational agencies. If practitioners and researchers can bridge this gap — particularly in equity-focused and underserved-area contexts — the 2030s could see measurably better transit access in areas that have been systematically underserved for decades.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    <div class="brand">Transit Research Digest</div>
+    <div>Autonomous analysis · June 14, 2026 · 8 papers from arXiv</div>
+    <div style="margin-top:4px;">Analysis performed by self (Gemini API quota exhausted). Sources: arXiv preprint server.</div>
+  </div>
+  <div style="text-align:right;">
+    <a href="research.html" style="color:var(--accent2);">Research Archive →</a><br>
+    <a href="index.html" style="color:var(--muted);font-size:11px;">← Back to Index</a>
+  </div>
+</footer>
+
+</body>
+</html>

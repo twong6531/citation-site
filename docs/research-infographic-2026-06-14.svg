@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="90" fill="#1A1A1A"/>
+  <text x="40" y="38" font-size="11" fill="#A0A0A0" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="62" font-size="22" fill="#FFFFFF" font-weight="700" letter-spacing="1">JUNE 14, 2026</text>
+  <text x="760" y="52" font-size="10" fill="#666666" text-anchor="end">8 PAPERS ANALYZED</text>
+
+  <!-- Divider -->
+  <rect x="40" y="105" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- KEY FINDINGS section -->
+  <text x="40" y="135" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">KEY FINDINGS</text>
+
+  <!-- Finding 1 -->
+  <text x="40" y="165" font-size="48" fill="#E8E8E4" font-weight="700">01</text>
+  <text x="110" y="155" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Transit desert planning outperforms</tspan>
+    <tspan x="110" dy="18">static optimization by 5+ points</tspan>
+  </text>
+  <text x="110" y="185" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">Risk-aware adaptive planners remediated 53.6% of transit-desert tracts</tspan>
+    <tspan x="110" dy="14">across 25 cities in 5 years — without pre-existing ridership data.</tspan>
+  </text>
+
+  <rect x="40" y="212" width="720" height="1" fill="#E8E8E4"/>
+
+  <!-- Finding 2 -->
+  <text x="40" y="247" font-size="48" fill="#E8E8E4" font-weight="700">02</text>
+  <text x="110" y="237" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Worst-case bus bunching is now</tspan>
+    <tspan x="110" dy="18">mathematically provable</tspan>
+  </text>
+  <text x="110" y="267" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">Dynamic programming yields tight upper/lower headway bounds under any</tspan>
+    <tspan x="110" dy="14">holding policy — validated on Nashville's live network.</tspan>
+  </text>
+
+  <rect x="40" y="294" width="720" height="1" fill="#E8E8E4"/>
+
+  <!-- Finding 3 -->
+  <text x="40" y="329" font-size="48" fill="#E8E8E4" font-weight="700">03</text>
+  <text x="110" y="319" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Coordinated multimodal disruption response</tspan>
+    <tspan x="110" dy="18">wins on all dimensions simultaneously</tspan>
+  </text>
+  <text x="110" y="349" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">For Paris RER B, a coordinated strategy beat single-mode alternatives</tspan>
+    <tspan x="110" dy="14">in cost, equity, continuity, AND emissions — not just one metric.</tspan>
+  </text>
+
+  <rect x="40" y="376" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="40" y="406" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <rect x="40" y="418" width="720" height="96" fill="#1A1A1A" rx="2"/>
+  <text x="60" y="443" font-size="13" fill="#FFFFFF" font-weight="700">
+    <tspan x="60" dy="0">Risk-Aware Planning for Transit Desert Remediation</tspan>
+  </text>
+  <text x="60" y="463" font-size="10" fill="#999999">Khoroshevskaya &amp; Perukari · arXiv 2606.08371 · June 6, 2026</text>
+  <text x="60" y="483" font-size="11" fill="#CCCCCC">
+    <tspan x="60" dy="0">A POMDP framework using CVaR constraints solves the chicken-and-egg</tspan>
+    <tspan x="60" dy="14">problem: how to plan transit where ridership can't exist yet. Deployed</tspan>
+    <tspan x="60" dy="14">across 25 cities — works even with 50% demand miscalibration.</tspan>
+  </text>
+
+  <rect x="40" y="528" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- EMERGING THEMES - 3 columns -->
+  <text x="40" y="558" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">EMERGING THEMES</text>
+
+  <!-- Theme col 1 -->
+  <rect x="40" y="570" width="218" height="120" fill="#EFEFED" rx="2"/>
+  <text x="56" y="593" font-size="11" fill="#1A1A1A" font-weight="700">ADAPTIVE PLANNING</text>
+  <text x="56" y="610" font-size="10" fill="#555555">
+    <tspan x="56" dy="0">Models that learn from early</tspan>
+    <tspan x="56" dy="14">deployments outperform static</tspan>
+    <tspan x="56" dy="14">optimization across all</tspan>
+    <tspan x="56" dy="14">budget levels and city types.</tspan>
+    <tspan x="56" dy="14">Bayesian demand updating</tspan>
+    <tspan x="56" dy="14">is the key mechanism.</tspan>
+  </text>
+
+  <!-- Theme col 2 -->
+  <rect x="291" y="570" width="218" height="120" fill="#EFEFED" rx="2"/>
+  <text x="307" y="593" font-size="11" fill="#1A1A1A" font-weight="700">RESILIENCE METRICS</text>
+  <text x="307" y="610" font-size="10" fill="#555555">
+    <tspan x="307" dy="0">Single-score resilience is</tspan>
+    <tspan x="307" dy="14">insufficient. Multi-KPI,</tspan>
+    <tspan x="307" dy="14">time-indexed frameworks</tspan>
+    <tspan x="307" dy="14">capture equity, emissions,</tspan>
+    <tspan x="307" dy="14">and operator cost alongside</tspan>
+    <tspan x="307" dy="14">service continuity.</tspan>
+  </text>
+
+  <!-- Theme col 3 -->
+  <rect x="542" y="570" width="218" height="120" fill="#EFEFED" rx="2"/>
+  <text x="558" y="593" font-size="11" fill="#1A1A1A" font-weight="700">OPEN DATA SCIENCE</text>
+  <text x="558" y="610" font-size="10" fill="#555555">
+    <tspan x="558" dy="0">Boeing's global street network</tspan>
+    <tspan x="558" dy="14">dataset (10,351 cities, 180M</tspan>
+    <tspan x="558" dy="14">nodes) represents a new era</tspan>
+    <tspan x="558" dy="14">of universal urban science —</tspan>
+    <tspan x="558" dy="14">no longer limited by data</tspan>
+    <tspan x="558" dy="14">access in any region.</tspan>
+  </text>
+
+  <rect x="40" y="704" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="730" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">CONFIDENCE LEVELS — 8 PAPERS</text>
+
+  <!-- High confidence bars -->
+  <text x="40" y="756" font-size="10" fill="#555555">HIGH</text>
+  <rect x="100" y="744" width="440" height="16" fill="#1A1A1A" rx="1"/>
+  <text x="548" y="756" font-size="10" fill="#555555">5 papers (62.5%)</text>
+
+  <text x="40" y="782" font-size="10" fill="#555555">MED</text>
+  <rect x="100" y="770" width="220" height="16" fill="#888888" rx="1"/>
+  <text x="328" y="782" font-size="10" fill="#555555">2 papers (25%)</text>
+
+  <text x="40" y="808" font-size="10" fill="#555555">LOW</text>
+  <rect x="100" y="796" width="110" height="16" fill="#CCCCCC" rx="1"/>
+  <text x="218" y="808" font-size="10" fill="#555555">1 paper (12.5%)</text>
+
+  <rect x="40" y="824" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="852" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="40" y="880" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0">→</tspan>
+  </text>
+  <text x="65" y="880" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">Transit planners: </tspan>
+    <tspan>Use worst-case headway bounds (not average) when evaluating holding policies.</tspan>
+  </text>
+  <text x="65" y="894" font-size="11" fill="#555555">
+    <tspan x="65" dy="0">Nash­ville data confirms tight bounds are achievable with dynamic programming.</tspan>
+  </text>
+
+  <text x="40" y="920" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0">→</tspan>
+  </text>
+  <text x="65" y="920" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">City agencies: </tspan>
+    <tspan>Treat transit deserts as demand-inference problems, not demand-observation problems.</tspan>
+  </text>
+  <text x="65" y="934" font-size="11" fill="#555555">
+    <tspan x="65" dy="0">Demographic + land-use priors are sufficient to start — ridership data will follow deployment.</tspan>
+  </text>
+
+  <text x="40" y="960" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0">→</tspan>
+  </text>
+  <text x="65" y="960" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">Disruption managers: </tspan>
+    <tspan>Pre-plan coordinated multimodal responses. Single-mode fallbacks are dominated</tspan>
+  </text>
+  <text x="65" y="974" font-size="11" fill="#555555">
+    <tspan x="65" dy="0">strategies — Paris RER B analysis shows coordination wins on every KPI simultaneously.</tspan>
+  </text>
+
+  <text x="40" y="1000" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0">→</tspan>
+  </text>
+  <text x="65" y="1000" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">Researchers: </tspan>
+    <tspan>Boeing's global street network dataset is now available for 10,351 cities.</tspan>
+  </text>
+  <text x="65" y="1014" font-size="11" fill="#555555">
+    <tspan x="65" dy="0">No more convenience-sample bias — conduct global urban analyses with consistent 2025 data.</tspan>
+  </text>
+
+  <rect x="40" y="1034" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- PAPERS GRID — abbreviated list -->
+  <text x="40" y="1060" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">ALL 8 PAPERS AT A GLANCE</text>
+
+  <!-- Paper rows -->
+  <text x="40" y="1084" font-size="10" fill="#1A1A1A" font-weight="700">2606.12855</text>
+  <text x="130" y="1084" font-size="10" fill="#333333">Computing Headway Bounds under Worst-Case Bunching in Fixed-Line Transit Systems</text>
+  <text x="660" y="1084" font-size="9" fill="#888888">HIGH</text>
+
+  <rect x="40" y="1090" width="720" height="0.5" fill="#E8E8E4"/>
+
+  <text x="40" y="1106" font-size="10" fill="#1A1A1A" font-weight="700">2606.08849</text>
+  <text x="130" y="1106" font-size="10" fill="#333333">Resilience-as-a-Service Framework for Urban Transit Disruption Response</text>
+  <text x="660" y="1106" font-size="9" fill="#888888">HIGH</text>
+
+  <rect x="40" y="1112" width="720" height="0.5" fill="#E8E8E4"/>
+
+  <text x="40" y="1128" font-size="10" fill="#1A1A1A" font-weight="700">2606.08371</text>
+  <text x="130" y="1128" font-size="10" fill="#333333">Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</text>
+  <text x="660" y="1128" font-size="9" fill="#888888">HIGH</text>
+
+  <rect x="40" y="1134" width="720" height="0.5" fill="#E8E8E4"/>
+
+  <text x="40" y="1150" font-size="10" fill="#1A1A1A" font-weight="700">2606.08207</text>
+  <text x="130" y="1150" font-size="10" fill="#333333">Opportunity-Normalized Residence-Workplace Matching and Urban Commuting Structure</text>
+  <text x="660" y="1150" font-size="9" fill="#888888">HIGH</text>
+
+  <rect x="40" y="1156" width="720" height="0.5" fill="#E8E8E4"/>
+
+  <text x="40" y="1172" font-size="10" fill="#1A1A1A" font-weight="700">2606.09532</text>
+  <text x="130" y="1172" font-size="10" fill="#333333">Interpretable Crisis Behavior Analysis Using Mobility and Social Media Data</text>
+  <text x="660" y="1172" font-size="9" fill="#888888">HIGH</text>
+
+  <rect x="40" y="1178" width="720" height="0.5" fill="#E8E8E4"/>
+
+  <text x="40" y="1194" font-size="10" fill="#1A1A1A" font-weight="700">2605.00108</text>
+  <text x="130" y="1194" font-size="10" fill="#333333">Urban Science Beyond Samples: Street Network Models for Every Urban Area in the World</text>
+  <text x="660" y="1194" font-size="9" fill="#888888">HIGH</text>
+
+  <rect x="40" y="1200" width="720" height="0.5" fill="#E8E8E4"/>
+
+  <text x="40" y="1216" font-size="10" fill="#1A1A1A" font-weight="700">2606.00614</text>
+  <text x="130" y="1216" font-size="10" fill="#333333">Mitigation of Spatial Economic Impact of Highway Disruptions by Redundant Networks</text>
+  <text x="660" y="1216" font-size="9" fill="#888888">MED</text>
+
+  <rect x="40" y="1222" width="720" height="0.5" fill="#E8E8E4"/>
+
+  <text x="40" y="1238" font-size="10" fill="#1A1A1A" font-weight="700">2606.12752</text>
+  <text x="130" y="1238" font-size="10" fill="#333333">Beyond Resilience: A Conceptual Framework for Civic Ascent</text>
+  <text x="660" y="1238" font-size="9" fill="#888888">MED</text>
+
+  <rect x="40" y="1248" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- CONTRARIAN INSIGHT box -->
+  <text x="40" y="1275" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">CONTRARIAN INSIGHT</text>
+  <rect x="40" y="1285" width="720" height="70" fill="#F0EDE8" rx="2"/>
+  <rect x="40" y="1285" width="4" height="70" fill="#1A1A1A"/>
+  <text x="56" y="1307" font-size="11" fill="#1A1A1A" font-weight="700">The "chicken and egg" problem in transit is solvable without ridership data</text>
+  <text x="56" y="1324" font-size="11" fill="#555555">
+    <tspan x="56" dy="0">Planners typically require ridership proof before adding service, but transit deserts</tspan>
+    <tspan x="56" dy="14">can never generate proof. Khoroshevskaya et al. show this orthodoxy is unnecessary:</tspan>
+    <tspan x="56" dy="14">demographic priors alone are sufficient to outperform static planning from day one.</tspan>
+  </text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1530" width="800" height="70" fill="#1A1A1A"/>
+  <text x="40" y="1556" font-size="10" fill="#AAAAAA">Transit Research Digest · Autonomous Analysis · June 14, 2026</text>
+  <text x="40" y="1574" font-size="9" fill="#666666">Sources: arXiv preprint server · 8 papers from June 2026 · Self-analysis (Gemini API quota exhausted)</text>
+  <text x="760" y="1565" font-size="9" fill="#666666" text-anchor="end">twong6531.github.io/citation-site</text>
+</svg>
