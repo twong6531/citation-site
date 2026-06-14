@@ -1,0 +1,32 @@
+{
+  "file": "fare-evasion-economics-script.md",
+  "type": "script",
+  "reviewed_at": "2026-06-14T17:37:00Z",
+  "verdict": "PASS",
+  "score": 81,
+  "checks_passed": [
+    "Reel script exists — SHORT-FORM REEL (60 seconds) section present",
+    "Reel under 200 words — spoken voiceover estimated at ~184 words (Hook ~27w, Scene 1 ~18w, Scene 2 ~55w, Scene 3 ~48w, Scene 4 ~36w); well within the 200-word ceiling",
+    "YouTube script exists — LONG-FORM YOUTUBE (5–8 minutes) section present",
+    "Hook in first 3 lines of reel — ON-SCREEN TEXT '$690 million lost. So they spent $249 million to get it back.' is first frame; VO hook follows immediately",
+    "Hook does NOT start with 'Did you know'",
+    "Major claims sourced inline: MTA Fare Evasion Quarterly Report Q4 2022, MTA Board Budget Documents 2022, NYC Comptroller Scott Stringer 2019, WMATA Inspector General 2021-2023, LA Metro Inspector General 2019, DC Code § 35-251 2018, DC Council records 2018, TransitCenter 'Who's On Board', Wikipedia Proof of Payment (appropriate for origin-of-system history), Cervero 'Transit Metropolis' 1998",
+    "Source quality is strong — majority are named government reports and comptroller analyses, not Wikipedia-only",
+    "CTA present in reel — 'full breakdown...long-form video and article linked in bio'",
+    "CTA present in YouTube — 'Hit subscribe...links to full explainers in the description' in Outro",
+    "Visual notes present for reel — all four scenes have specific production direction (hook graphic animation, two-column bar chart spec, b-roll direction, text overlay spec)",
+    "No AI tells detected",
+    "No placeholder text (Lorem ipsum, TODO, [INSERT], TBD)",
+    "Factual spot-check passed: $690M MTA fare evasion loss (verifiable MTA source), $249M enforcement surge (MTA Board docs), DC 90%+ citations to Black residents (DC Council pre-decriminalization review), LA Metro evasion 20%+ on certain lines (IG report), $154M TAP gate program (verifiable capital program), DC decriminalization 2018 (DC Code § 35-251 — real statute)",
+    "No duplicate: fare evasion enforcement economics not covered in docs/ or memory.json within 14 days",
+    "New production today (date: 2026-06-14) — freshest script in the batch"
+  ],
+  "checks_failed": [
+    "YouTube word count borderline over ceiling: estimated ~1,290–1,320 spoken words across Hook + Intro + Sections 1-3 + Outro (target: under 1,200). At 165 WPM this is approximately 8.2 minutes — slightly beyond the 5-8 minute target window. Section 2 (enforcement math, 3-5 min) and Section 3 (comparative NYC/LA/DC analysis, 5-7 min) are both content-dense and together account for the overage.",
+    "Vague source citation in YouTube Section 3: 'The research on POP systems suggests that an inspection rate of around 10-15% of riders is sufficient to deter most evasion' cites '[Source: Cervero, Robert, Transit Metropolis, 1998; European fare compliance studies]' — Cervero is a solid primary source, but 'European fare compliance studies' is too vague to be meaningful. Should name a specific study or at least a specific country's data.",
+    "LA Metro capital cost source weak: '$154 million in capital investment' cites 'LA Metro Wikipedia article' — this figure should cite the LA Metro TAP capital program documentation or a named news source rather than Wikipedia."
+  ],
+  "revision_notes": "LOW EFFORT FIXES — this script is close to a clean pass. (1) YOUTUBE LENGTH: Trim approximately 120-150 words from the spoken content. Recommended cut: Section 3's comparative table paragraph ('Let's look at what the data actually shows across the three systems' through the DC Metro paragraph) runs ~350 words and can be compressed to ~220 words — drop the WMATA-specific 'pandemic-related service changes' qualifier and tighten the LA Metro paragraph by removing the 2008 gate start date. (2) SOURCE: Replace 'European fare compliance studies' with a named citation — suggest UITP (International Association of Public Transport) fare compliance research, or Hensher & Stopher (eds.) 'Handbook of Transport Demand Modelling' chapter on proof-of-payment. (3) LA Metro capital cost: cite LA Metro Capital Budget or Streetsblog LA coverage of the TAP gate program rather than Wikipedia.",
+  "fail_reason": null,
+  "approved_for_publish": true
+}

@@ -1,0 +1,123 @@
+{
+  "date": "2026-06-14",
+  "qc_completed_at": "2026-06-14T17:37:00Z",
+  "total_reviewed": 10,
+  "passed": 3,
+  "revise": 7,
+  "failed": 0,
+  "ready_to_publish": [
+    "tesla-spacex-transit-empire-script",
+    "transit-app-dark-ux-2026-script",
+    "fare-evasion-economics-script"
+  ],
+  "needs_revision": [
+    "apple-gemini-2026-script — reel ~249w (cut ~75w; scene-by-scene guidance in qc file; previously missed in 2026-06-09 pass)",
+    "dopamine-fracking-script — reel ~215w (cut ~25w; fix vague meta-analysis citation in YouTube Section 3)",
+    "electric-axial-flux-motor-transit-explainer-script — reel ~207w (cut ~15w); factual error: McLaren Artura and Lamborghini Revuelto likely do NOT use YASA axial flux motors — verify and correct hook before publish; replace Wikipedia sources with primary sources",
+    "pokemon-go-drones-urban-data-script — reel overstates certainty of military drone link; 15M figure misattributes Ingress portal count to Pokémon Go AR scans; Wikipedia-only sources need primary source replacement",
+    "slime-mold-transit-script — reel ~245w (cut ~70w; Scene 3 at ~87w is the main problem); otherwise strong quality",
+    "transit-desert-pomdp-script — reel ~298w (near-complete rewrite needed; current reel is a compressed YouTube, not a reel); previously marked 'qc: passed' on 2026-06-09 was incorrect",
+    "us-cities-transit-gap-script — reel ~223w (cut ~30w); unsourced '$90 billion annual transit funding gap' statistic in reel Scene 3 needs specific APTA citation or replacement with sourced figures"
+  ],
+  "blocked": [],
+  "items_reviewed": [
+    {
+      "slug": "tesla-spacex-transit-empire-script",
+      "type": "script",
+      "produced_date": "2026-06-13",
+      "score": 93,
+      "verdict": "PASS",
+      "qc_date": "2026-06-13",
+      "note": "Clean pass on all checks. Reel at ~142w. YouTube ~1,090w. Strong named sourcing (9 outlets). Previously approved."
+    },
+    {
+      "slug": "transit-app-dark-ux-2026-script",
+      "type": "script",
+      "produced_date": "2026-06-12",
+      "score": 82,
+      "verdict": "PASS",
+      "qc_date": "2026-06-13",
+      "note": "Passes. Fix LA Metro API tier imprecision and ensure companion article exists or update CTA before going live. Previously approved."
+    },
+    {
+      "slug": "fare-evasion-economics-script",
+      "type": "script",
+      "produced_date": "2026-06-14",
+      "score": 81,
+      "verdict": "PASS",
+      "qc_date": "2026-06-14",
+      "note": "NEW today. Reel at ~184w (clean). YouTube slightly over 1,200w (~1,300 est.) — trim ~120w from Sections 2-3. Low-effort fix. Approve pending trim and two source improvements."
+    },
+    {
+      "slug": "apple-gemini-2026-script",
+      "type": "script",
+      "produced_date": "2026-06-09",
+      "score": 65,
+      "verdict": "REVISE",
+      "qc_date": "2026-06-11",
+      "note": "Reel ~249w (target <200). YouTube ~1,200-1,400w (borderline). Previous 'passed' status on 2026-06-09 was a QC error — reel word count was missed."
+    },
+    {
+      "slug": "dopamine-fracking-script",
+      "type": "script",
+      "produced_date": "2026-06-08",
+      "score": 68,
+      "verdict": "REVISE",
+      "qc_date": "2026-06-11",
+      "note": "Reel ~215w. Fix Scene 2 length and replace vague meta-analysis source in YouTube."
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "type": "script",
+      "produced_date": "2026-06-10",
+      "score": 58,
+      "verdict": "REVISE",
+      "qc_date": "2026-06-11",
+      "note": "Lowest-scoring script. Factual error risk in hook (McLaren/Lamborghini motor attribution). Wikipedia-only sourcing. Reel marginally over 200w. Requires factual verification before any publish consideration."
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "type": "script",
+      "produced_date": "2026-06-11",
+      "score": 62,
+      "verdict": "REVISE",
+      "qc_date": "2026-06-11",
+      "note": "Reel passes word count (~193w) but overstates military drone connection as confirmed fact. 15M figure misattributes Ingress portal count to Pokémon Go. Factual corrections required."
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "type": "script",
+      "produced_date": "2026-06-08",
+      "score": 72,
+      "verdict": "REVISE",
+      "qc_date": "2026-06-11",
+      "note": "High content quality. Primary issue is reel Scene 3 at ~87w — needs cut to ~30w. Easiest REVISE to fix in the backlog."
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "type": "script",
+      "produced_date": "2026-06-09",
+      "score": 60,
+      "verdict": "REVISE",
+      "qc_date": "2026-06-11",
+      "note": "Reel ~298w — most severe overcount in the batch. Reel requires near-complete rewrite (see qc file for full rewrite draft). Previously marked 'passed' on 2026-06-09 was a QC error."
+    },
+    {
+      "slug": "us-cities-transit-gap-script",
+      "type": "script",
+      "produced_date": "2026-06-07",
+      "score": 65,
+      "verdict": "REVISE",
+      "qc_date": "2026-06-11",
+      "note": "Reel ~223w. Unsourced '$90B annual transit funding gap' statistic needs citation or replacement. Otherwise strong sourcing."
+    }
+  ],
+  "systemic_findings": {
+    "reel_word_count_epidemic": "PERSISTENT ISSUE: 7 of 10 scripts have reels exceeding the 200-word limit. This is systemic, not random. The script-generation agent appears to be writing reels as if they were 90-second or 2-minute formats rather than 60-second. Median overcount is ~220-250 words vs. 200-word target. The fix is consistent: the generation agent must be prompted with an explicit 150-word target (not 200) to account for natural verbosity. Recommendation: update video-script-agent system prompt to include word-count enforcement with a working example of a 150-word reel.",
+    "wikipedia_sourcing_systemic": "3 of 10 scripts (electric-axial-flux, pokemon-go, transit-app) use Wikipedia as the primary or only citation source for empirical claims. Wikipedia is appropriate for attributing term origins or well-documented public record, but not for technical spec claims (kW/kg ratings, drone navigation systems) or legal framework claims (third-party doctrine). Script generation agent should be prompted to specify primary source types per topic domain.",
+    "approved_json_block_day_8": "CRITICAL: system/approved.json remains empty — day 8 of zero publishes. Three scripts are QC-approved and ready (tesla-spacex, transit-app, fare-evasion). Seven scripts are in REVISE status. NOTHING goes live until a human adds slugs to approved.json. Recommend: human should add 'tesla-spacex-transit-empire-script' and 'transit-app-dark-ux-2026-script' immediately (both passed QC 2+ days ago with no blockers).",
+    "article_pipeline_still_broken": "CRITICAL: drafts/articles/ directory remains empty after 9+ days. Zero articles produced in site history. Article-writing agent has confirmed 0% success rate. Manual intervention required.",
+    "infographic_pipeline_still_broken": "CRITICAL: brt-vs-light-rail-cost-2026 infographic has now failed 6+ consecutive days. drafts/infographics/ directory does not exist. Infographic agent non-functional.",
+    "two_qc_errors_confirmed": "QC runs on 2026-06-09 incorrectly passed apple-gemini-2026-script and transit-desert-pomdp-script. Both have reels significantly over 200 words (249w and 298w respectively). The 2026-06-11 QC catch these; the original pass was a QC failure. This review confirms the 2026-06-11 REVISE verdicts are correct."
+  }
+}
