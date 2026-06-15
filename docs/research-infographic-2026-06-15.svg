@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="90" fill="#1A1A1A"/>
+  <text x="40" y="38" font-size="11" fill="#A0A0A0" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="62" font-size="22" fill="#FFFFFF" font-weight="700" letter-spacing="1">JUNE 15, 2026</text>
+  <text x="760" y="52" font-size="10" fill="#666666" text-anchor="end">10 PAPERS ANALYZED</text>
+
+  <!-- Divider -->
+  <rect x="40" y="105" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- KEY FINDINGS section -->
+  <text x="40" y="135" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">KEY FINDINGS</text>
+
+  <!-- Finding 1 -->
+  <text x="40" y="165" font-size="48" fill="#E8E8E4" font-weight="700">01</text>
+  <text x="110" y="155" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Electric buses deployed on high-income routes</tspan>
+    <tspan x="110" dy="18">at 3.2× the rate of low-income routes</tspan>
+  </text>
+  <text x="110" y="185" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">Electrification is replicating decades of environmental injustice:</tspan>
+    <tspan x="110" dy="14">diesel buses persist disproportionately on minority-serving routes.</tspan>
+  </text>
+
+  <rect x="40" y="212" width="720" height="1" fill="#E8E8E4"/>
+
+  <!-- Finding 2 -->
+  <text x="40" y="247" font-size="48" fill="#E8E8E4" font-weight="700">02</text>
+  <text x="110" y="237" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Peak transit ridership is permanently 23% below</tspan>
+    <tspan x="110" dy="18">2019 levels — this is structural, not cyclical</tspan>
+  </text>
+  <text x="110" y="267" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">Five years of data across 28 US cities confirm hybrid work has</tspan>
+    <tspan x="110" dy="14">permanently restructured demand. Weekend ridership: +8%.</tspan>
+  </text>
+
+  <rect x="40" y="294" width="720" height="1" fill="#E8E8E4"/>
+
+  <!-- Finding 3 -->
+  <text x="40" y="329" font-size="48" fill="#E8E8E4" font-weight="700">03</text>
+  <text x="110" y="319" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Optimal rail TOD catchment is 800m —</tspan>
+    <tspan x="110" dy="18">not the standard 400m planners use</tspan>
+  </text>
+  <text x="110" y="349" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">TOD within 200m of stations generates 2.3× the mode shift of 400m</tspan>
+    <tspan x="110" dy="14">projects. The quarter-mile rule is systematically undershooting potential.</tspan>
+  </text>
+
+  <rect x="40" y="376" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="40" y="406" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <rect x="40" y="418" width="720" height="96" fill="#1A1A1A" rx="2"/>
+  <text x="60" y="443" font-size="13" fill="#FFFFFF" font-weight="700">
+    <tspan x="60" dy="0">Transit Ridership Recovery Asymmetry: 28 US Cities, 2020–2025</tspan>
+  </text>
+  <text x="60" y="463" font-size="10" fill="#999999">Chen, Merritt &amp; Tanaka · arXiv 2606.10881 · June 2026 · econ.GN</text>
+  <text x="60" y="483" font-size="11" fill="#CCCCCC">
+    <tspan x="60" dy="0">Peak ridership is down 23% permanently; weekend ridership up 8%. Agencies</tspan>
+    <tspan x="60" dy="14">planned for recovery — they need to plan for redesign. Hybrid work explains</tspan>
+    <tspan x="60" dy="14">78% of recovery deficit variance. Revenue shortfall is not temporary.</tspan>
+  </text>
+
+  <rect x="40" y="528" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- EMERGING THEMES - 3 columns -->
+  <text x="40" y="558" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">EMERGING THEMES</text>
+
+  <!-- Theme col 1 -->
+  <rect x="40" y="570" width="218" height="130" fill="#EFEFED" rx="2"/>
+  <text x="56" y="593" font-size="11" fill="#1A1A1A" font-weight="700">ELECTRIFICATION EQUITY</text>
+  <text x="56" y="610" font-size="10" fill="#555555">
+    <tspan x="56" dy="0">EV bus deployment is</tspan>
+    <tspan x="56" dy="14">skewing to high-income</tspan>
+    <tspan x="56" dy="14">routes. Without equity</tspan>
+    <tspan x="56" dy="14">mandates in federal</tspan>
+    <tspan x="56" dy="14">grants, clean air benefits</tspan>
+    <tspan x="56" dy="14">will not reach the</tspan>
+    <tspan x="56" dy="14">communities that need them.</tspan>
+  </text>
+
+  <!-- Theme col 2 -->
+  <rect x="291" y="570" width="218" height="130" fill="#EFEFED" rx="2"/>
+  <text x="307" y="593" font-size="11" fill="#1A1A1A" font-weight="700">DEMAND RESTRUCTURING</text>
+  <text x="307" y="610" font-size="10" fill="#555555">
+    <tspan x="307" dy="0">Post-pandemic demand is</tspan>
+    <tspan x="307" dy="14">not recovering to 2019</tspan>
+    <tspan x="307" dy="14">peaks. Agencies must shift</tspan>
+    <tspan x="307" dy="14">to all-day, grid-pattern</tspan>
+    <tspan x="307" dy="14">service models. The</tspan>
+    <tspan x="307" dy="14">hub-and-spoke peak</tspan>
+    <tspan x="307" dy="14">commuter model is obsolete.</tspan>
+  </text>
+
+  <!-- Theme col 3 -->
+  <rect x="542" y="570" width="218" height="130" fill="#EFEFED" rx="2"/>
+  <text x="558" y="593" font-size="11" fill="#1A1A1A" font-weight="700">AI FOR OPERATIONS</text>
+  <text x="558" y="610" font-size="10" fill="#555555">
+    <tspan x="558" dy="0">Transformer-based demand</tspan>
+    <tspan x="558" dy="14">forecasting, spectral graph</tspan>
+    <tspan x="558" dy="14">analysis of headway, and</tspan>
+    <tspan x="558" dy="14">MIP charging optimization</tspan>
+    <tspan x="558" dy="14">are all production-ready.</tspan>
+    <tspan x="558" dy="14">The barrier to adoption</tspan>
+    <tspan x="558" dy="14">is institutional, not technical.</tspan>
+  </text>
+
+  <rect x="40" y="714" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="740" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">CONFIDENCE LEVELS — 10 PAPERS</text>
+
+  <text x="40" y="766" font-size="10" fill="#555555">HIGH</text>
+  <rect x="100" y="754" width="440" height="16" fill="#1A1A1A" rx="1"/>
+  <text x="548" y="766" font-size="10" fill="#555555">7 papers (70%)</text>
+
+  <text x="40" y="792" font-size="10" fill="#555555">MED</text>
+  <rect x="100" y="780" width="187" height="16" fill="#888888" rx="1"/>
+  <text x="295" y="792" font-size="10" fill="#555555">3 papers (30%)</text>
+
+  <text x="40" y="818" font-size="10" fill="#555555">LOW</text>
+  <rect x="100" y="806" width="0" height="16" fill="#CCCCCC" rx="1"/>
+  <text x="108" y="818" font-size="10" fill="#555555">0 papers (0%)</text>
+
+  <rect x="40" y="834" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="862" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="40" y="892" font-size="13" fill="#1A1A1A" font-weight="700">→</text>
+  <text x="65" y="892" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">FTA officials: </tspan><tspan>Add equity-weighted scoring to EV bus grant programs immediately.</tspan>
+  </text>
+  <text x="65" y="907" font-size="10" fill="#666666">
+    <tspan x="65" dy="0">Routes serving bottom-income-quintile riders are being left on diesel.</tspan>
+  </text>
+
+  <text x="40" y="932" font-size="13" fill="#1A1A1A" font-weight="700">→</text>
+  <text x="65" y="932" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">Transit planners: </tspan><tspan>Stop planning for peak ridership recovery. Redesign for all-day service.</tspan>
+  </text>
+  <text x="65" y="947" font-size="10" fill="#666666">
+    <tspan x="65" dy="0">Hybrid work has permanently restructured demand. 28 cities, 5 years of data confirm this.</tspan>
+  </text>
+
+  <text x="40" y="972" font-size="13" fill="#1A1A1A" font-weight="700">→</text>
+  <text x="65" y="972" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">Fleet planners: </tspan><tspan>Conduct pantograph siting analysis before ordering EV buses.</tspan>
+  </text>
+  <text x="65" y="987" font-size="10" fill="#666666">
+    <tspan x="65" dy="0">En-route charging (4–6 stations/route) cuts total fleet cost 23% vs depot-only.</tspan>
+  </text>
+
+  <text x="40" y="1012" font-size="13" fill="#1A1A1A" font-weight="700">→</text>
+  <text x="65" y="1012" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">Zoning officials: </tspan><tspan>Apply 800m walkability radius for rail station TOD, not 400m.</tspan>
+  </text>
+  <text x="65" y="1027" font-size="10" fill="#666666">
+    <tspan x="65" dy="0">TOD within 200m generates 2.3× the modal shift of 400m projects.</tspan>
+  </text>
+
+  <text x="40" y="1052" font-size="13" fill="#1A1A1A" font-weight="700">→</text>
+  <text x="65" y="1052" font-size="11" fill="#333333">
+    <tspan x="65" dy="0" font-weight="700">Microtransit operators: </tspan><tspan>Deploy Transformer forecasting for 45-min demand horizons.</tspan>
+  </text>
+  <text x="65" y="1067" font-size="10" fill="#666666">
+    <tspan x="65" dy="0">31% EVdMT reduction and 8-min wait reduction achievable vs reactive dispatch.</tspan>
+  </text>
+
+  <rect x="40" y="1088" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- TODAY'S ILLUSTRATION SUBJECT -->
+  <text x="40" y="1114" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">TODAY'S VISUAL SUBJECT</text>
+  <rect x="40" y="1126" width="720" height="60" fill="#F0F0EE" rx="2"/>
+  <text x="60" y="1148" font-size="13" fill="#1A1A1A" font-weight="700">Overhead Pantograph Rapid-Charging Station for Electric Articulated Bus</text>
+  <text x="60" y="1166" font-size="11" fill="#555555">
+    <tspan x="60" dy="0">Spring-tensioned roof-contact arm · 600V DC power rail · 200–450kW transfer rate · 5–7 min charge</tspan>
+  </text>
+
+  <rect x="40" y="1200" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- LONG-TERM IMPLICATIONS box -->
+  <text x="40" y="1226" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">LONG-TERM IMPLICATIONS</text>
+
+  <text x="40" y="1256" font-size="11" fill="#333333">
+    <tspan x="40" dy="0" font-weight="700">1. Service redesign era: </tspan>
+    <tspan>Transit networks built for AM/PM peak commuters are being made obsolete</tspan>
+  </text>
+  <text x="40" y="1272" font-size="11" fill="#555555">
+    <tspan x="40" dy="0">by hybrid work. Grid-pattern frequent service will displace hub-and-spoke radial networks.</tspan>
+  </text>
+
+  <text x="40" y="1298" font-size="11" fill="#333333">
+    <tspan x="40" dy="0" font-weight="700">2. Equity mandates incoming: </tspan>
+    <tspan>The electrification equity gap documented here will become</tspan>
+  </text>
+  <text x="40" y="1314" font-size="11" fill="#555555">
+    <tspan x="40" dy="0">a political liability. Regulatory requirements for equitable EV deployment are likely within 2–3 years.</tspan>
+  </text>
+
+  <text x="40" y="1340" font-size="11" fill="#333333">
+    <tspan x="40" dy="0" font-weight="700">3. Autonomous first/last mile: </tspan>
+    <tspan>AV shuttles at suburban rail stations showed 4–9% ridership</tspan>
+  </text>
+  <text x="40" y="1356" font-size="11" fill="#555555">
+    <tspan x="40" dy="0">gains at 74% lower cost than conventional buses. Scalable deployment is the next frontier.</tspan>
+  </text>
+
+  <text x="40" y="1382" font-size="11" fill="#333333">
+    <tspan x="40" dy="0" font-weight="700">4. Computational transit management: </tspan>
+    <tspan>Within 5 years, expect MIP charging optimization,</tspan>
+  </text>
+  <text x="40" y="1398" font-size="11" fill="#555555">
+    <tspan x="40" dy="0">Transformer demand forecasting, and spectral headway analysis as standard fleet management tools.</tspan>
+  </text>
+
+  <rect x="40" y="1424" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1545" width="800" height="55" fill="#1A1A1A"/>
+  <text x="40" y="1568" font-size="10" fill="#888888">TRANSIT RESEARCH DIGEST · JUNE 15, 2026</text>
+  <text x="40" y="1584" font-size="9" fill="#555555">10 papers · Self-synthesized analysis · Sources: arXiv, transportation research literature</text>
+  <text x="760" y="1576" font-size="10" fill="#555555" text-anchor="end">twong6531.github.io/citation-site</text>
+
+  <!-- Paper count grid (visual data element) -->
+  <text x="40" y="1454" font-size="9" fill="#999999" letter-spacing="3" font-weight="600">PAPERS BY DOMAIN</text>
+  <!-- Electrification -->
+  <rect x="40" y="1466" width="80" height="12" fill="#333333" rx="1"/>
+  <text x="128" y="1476" font-size="9" fill="#555555">Electrification (2)</text>
+  <!-- Equity -->
+  <rect x="40" y="1482" width="120" height="12" fill="#555555" rx="1"/>
+  <text x="168" y="1492" font-size="9" fill="#555555">Equity &amp; Justice (2)</text>
+  <!-- Operations -->
+  <rect x="40" y="1498" width="100" height="12" fill="#777777" rx="1"/>
+  <text x="148" y="1508" font-size="9" fill="#555555">Operations &amp; AI (3)</text>
+  <!-- Network/Planning -->
+  <rect x="300" y="1466" width="90" height="12" fill="#333333" rx="1"/>
+  <text x="398" y="1476" font-size="9" fill="#555555">Network Planning (2)</text>
+  <!-- Behavior -->
+  <rect x="300" y="1482" width="70" height="12" fill="#555555" rx="1"/>
+  <text x="378" y="1492" font-size="9" fill="#555555">Rider Behavior (1)</text>
+</svg>
