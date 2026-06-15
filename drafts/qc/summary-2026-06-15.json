@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-15",
+  "qc_completed_at": "2026-06-15T17:35:00Z",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "no_new_content_reason": "Zero new items produced today. Article pipeline continues to fail (drafts/articles/ directory does not exist — DAY 11 of zero articles). Infographic pipeline continues to fail (drafts/infographics/ directory does not exist — brt-vs-light-rail-cost-2026 has been queued 7 consecutive days without being produced). Video scripts on HOLD per queue — backlog of 10 scripts (3 PASS, 7 REVISE) must be cleared before new scripts are produced.",
+  "backlog_status": {
+    "as_of": "2026-06-14",
+    "ready_to_publish": [
+      "tesla-spacex-transit-empire-script (PASS, score 93, produced 2026-06-13)",
+      "transit-app-dark-ux-2026-script (PASS, score 82, produced 2026-06-12)",
+      "fare-evasion-economics-script (PASS, score 81, produced 2026-06-14)"
+    ],
+    "needs_revision": [
+      "apple-gemini-2026-script — reel ~249w, must cut ~75w to reach <200w",
+      "dopamine-fracking-script — reel ~215w, cut ~25w; fix vague meta-analysis citation in YouTube Section 3",
+      "electric-axial-flux-motor-transit-explainer-script — reel ~207w (cut ~15w); factual error: McLaren/Lamborghini motor attribution unverified; replace Wikipedia sources",
+      "pokemon-go-drones-urban-data-script — reel overstates military drone link as confirmed fact; 15M figure misattributes Ingress portal count to Pokémon Go; Wikipedia-only sourcing",
+      "slime-mold-transit-script — reel ~245w; Scene 3 at ~87w needs cut to ~30w; otherwise strong quality",
+      "transit-desert-pomdp-script — reel ~298w, near-complete rewrite needed; prior 'passed' status on 2026-06-09 was QC error",
+      "us-cities-transit-gap-script — reel ~223w; '$90B annual transit funding gap' statistic needs APTA citation or replacement"
+    ]
+  },
+  "critical_alerts": [
+    "DAY 11: approved.json empty — zero content published since 2026-06-07. Three QC-PASS scripts are ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script. Human must add slugs to system/approved.json.",
+    "DAY 11: Article pipeline broken — drafts/articles/ has never been created. Congress transit reauthorization bill, World Cup transit, and Floc Duo Rail articles all queued but unproduced. Article agent is non-functional.",
+    "DAY 7: Infographic pipeline broken — brt-vs-light-rail-cost-2026 queued 7 consecutive days, never produced. drafts/infographics/ directory does not exist. Infographic agent is non-functional.",
+    "World Cup 2026 transit article is NOW time-critical — group stage is live, traffic window is closing. Queued for 2nd consecutive day with no production."
+  ],
+  "systemic_findings_carried_forward": {
+    "reel_word_count_epidemic": "Persistent: 7 of 10 scripts exceed 200-word reel limit. Script agent needs explicit 150-word target in prompt (not 200) to account for verbosity.",
+    "wikipedia_sourcing": "3 of 10 scripts rely on Wikipedia for technical or empirical claims. Agent must be directed to primary sources by topic domain.",
+    "approved_json_blocked": "system/approved.json has been empty since 2026-06-07. Publishing Agent cannot go live. Requires manual human action.",
+    "article_and_infographic_agents_broken": "Both article and infographic agents have 0% success rate across entire site history (11+ days). Require manual diagnostic and intervention."
+  }
+}
