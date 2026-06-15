@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing — June 15, 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0A0A0F;
+      color: #E8E8F0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #7B9FFF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-nav {
+      background: #111118;
+      border-bottom: 1px solid #222230;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a { color: #888; font-size: 13px; }
+    .site-nav a:hover { color: #E8E8F0; text-decoration: none; }
+    .site-nav .brand { color: #E8E8F0; font-weight: 700; font-size: 15px; margin-right: auto; }
+
+    .page-header {
+      background: #111118;
+      border-bottom: 1px solid #222230;
+      padding: 48px 40px 40px;
+      text-align: center;
+    }
+    .page-header .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #555568;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .page-header .date {
+      font-size: 14px;
+      color: #666680;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* SECTION A — EDITORIAL ILLUSTRATION */
+    .section-a {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid #1E1E2E;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #444460;
+      border: 1px solid #2A2A40;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .section-a h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .section-a .day-label {
+      font-size: 14px;
+      color: #555570;
+      margin-bottom: 32px;
+    }
+    .editorial-image-wrap {
+      background: #FFFFFF;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 32px rgba(0,0,0,0.5);
+    }
+    .editorial-image-wrap svg,
+    .editorial-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .no-image-placeholder {
+      background: #111118;
+      border: 2px dashed #2A2A40;
+      border-radius: 4px;
+      padding: 60px 40px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .no-image-placeholder .placeholder-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .no-image-placeholder p {
+      color: #444460;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .no-image-placeholder .subject-preview {
+      color: #6C47FF;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .image-caption {
+      padding: 16px 0 0;
+    }
+    .image-caption .subject {
+      font-size: 15px;
+      font-weight: 700;
+      color: #CCCCDD;
+    }
+    .image-caption .subtitle {
+      font-size: 12px;
+      color: #555570;
+      margin-top: 4px;
+    }
+    .image-caption .note {
+      font-size: 11px;
+      color: #3A3A55;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* SECTION B — NEWS ANALYSIS */
+    .section-b {
+      padding: 56px 0 48px;
+    }
+    .section-b h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .section-b .subtitle {
+      font-size: 14px;
+      color: #555570;
+      margin-bottom: 36px;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 700px) {
+      .stories-grid { grid-template-columns: 1fr; }
+    }
+
+    .story-card {
+      background: #111118;
+      border: 1px solid #1E1E2E;
+      border-radius: 6px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .story-card.cat-ai::before { background: #6C47FF; }
+    .story-card.cat-science::before { background: #0077CC; }
+    .story-card.cat-tech::before { background: #00897B; }
+    .story-card.cat-business::before { background: #2E7D32; }
+    .story-card.cat-world::before { background: #E65100; }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .card-num {
+      font-size: 10px;
+      color: #333350;
+      font-weight: 700;
+    }
+    .cat-pill {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+    .cat-pill.ai { background: #6C47FF22; color: #9B7FFF; border: 1px solid #6C47FF44; }
+    .cat-pill.science { background: #0077CC22; color: #4DB8FF; border: 1px solid #0077CC44; }
+    .cat-pill.tech { background: #00897B22; color: #4ECDC4; border: 1px solid #00897B44; }
+    .cat-pill.business { background: #2E7D3222; color: #66BB6A; border: 1px solid #2E7D3244; }
+    .cat-pill.world { background: #E6510022; color: #FF8A50; border: 1px solid #E6510044; }
+
+    .impact-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+    .impact-bar-bg {
+      width: 50px;
+      height: 3px;
+      background: #1E1E2E;
+      border-radius: 2px;
+    }
+    .impact-bar-fill {
+      height: 3px;
+      border-radius: 2px;
+    }
+    .impact-score {
+      font-size: 10px;
+      color: #444460;
+    }
+
+    .card-emoji { font-size: 24px; margin-bottom: 10px; display: block; }
+    .card-headline {
+      font-size: 15px;
+      font-weight: 700;
+      color: #DDDDEE;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .card-topic {
+      font-size: 10px;
+      color: #444460;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .card-summary {
+      font-size: 12px;
+      color: #888899;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .card-bullets {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    .card-bullets li {
+      font-size: 11px;
+      color: #666678;
+      padding: 3px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+    .card-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #333350;
+    }
+    .card-matters {
+      font-size: 11px;
+      color: #555568;
+      font-style: italic;
+      border-top: 1px solid #1A1A28;
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+
+    .infographic-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #111118;
+      border: 1px solid #222230;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .infographic-link .icon { font-size: 28px; }
+    .infographic-link .text h3 { font-size: 14px; font-weight: 700; color: #CCCCDD; }
+    .infographic-link .text p { font-size: 12px; color: #555570; }
+    .infographic-link a {
+      margin-left: auto;
+      font-size: 12px;
+      font-weight: 600;
+      color: #6C47FF;
+      border: 1px solid #6C47FF44;
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+    .infographic-link a:hover { background: #6C47FF22; text-decoration: none; }
+
+    .page-footer {
+      background: #111118;
+      border-top: 1px solid #1E1E2E;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .page-footer p {
+      font-size: 12px;
+      color: #333350;
+      margin-bottom: 8px;
+    }
+    .page-footer a { color: #444460; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="brand">Daily Briefing</span>
+  <a href="index.html">Archive</a>
+  <a href="california-hsr.html">CA HSR</a>
+  <a href="transit-oriented-development.html">TOD</a>
+</nav>
+
+<div class="page-header">
+  <div class="label">DAILY BRIEFING</div>
+  <h1>AI Acquisition Wave</h1>
+  <div class="date">June 15, 2026</div>
+</div>
+
+<!-- ======================================================
+     SECTION A — TODAY'S VISUAL
+====================================================== -->
+<div class="section-a">
+  <div class="container">
+    <div class="section-label">TODAY'S VISUAL</div>
+    <h2>Editorial Illustration</h2>
+    <div class="day-label">June 15, 2026 — psilocybin mushroom caps with neural network overlay</div>
+
+    <div class="no-image-placeholder">
+      <div class="placeholder-icon">🍄</div>
+      <div class="subject-preview">psilocybin mushroom caps with neural network overlay</div>
+      <p>Psilocybe cubensis mushrooms with distinctively golden-brown convex caps and pale stipes, arranged on a laboratory surface. The caps display characteristic umbo centers and smooth, hygrophanous surfaces. Overlaid with a schematic neural connectivity diagram showing synaptic pathways affected by psilocybin — specifically the serotonin 5-HT2A receptor binding sites in the prefrontal cortex and default mode network disruption patterns. Scale bar showing 3-5cm cap diameter.</p>
+    </div>
+
+    <div class="image-caption">
+      <div class="subject">psilocybin mushroom caps with neural network overlay</div>
+      <div class="subtitle">— Technical Editorial Illustration</div>
+      <div class="note">Independently researched and rendered by AI from today's news. Image generation unavailable — illustrated above as editorial concept note.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     SECTION B — NEWS ANALYSIS
+====================================================== -->
+<div class="section-b">
+  <div class="container">
+    <div class="section-label">NEWS ANALYSIS</div>
+    <h2>Today's Top Stories</h2>
+    <div class="subtitle">6 stories ranked by impact — June 15, 2026</div>
+
+    <div class="stories-grid">
+      
+    <div class="story-card cat-business">
+      <div class="card-meta">
+        <span class="card-num">#01</span>
+        <span class="cat-pill business">Business</span>
+        <span class="card-topic">AI M&amp;A</span>
+        <div class="impact-wrap">
+          <div class="impact-bar-bg">
+            <div class="impact-bar-fill" style="width:45px;background:#2E7D32;"></div>
+          </div>
+          <span class="impact-score">9/10</span>
+        </div>
+      </div>
+      <span class="card-emoji">💼</span>
+      <div class="card-headline">Salesforce Acquires Intercom for $3.6 Billion</div>
+      <div class="card-summary">Salesforce has signed a definitive agreement to acquire Fin, the AI-powered customer service platform formerly known as Intercom, for $3.6 billion. The deal marks one of the largest AI customer service acquisitions of 2026, consolidating AI-native support tooling into Salesforce's CRM ecosystem.</div>
+      <ul class="card-bullets"><li>Acquisition valued at $3.6 billion, among the largest AI SaaS deals of 2026</li><li>Fin (formerly Intercom) serves thousands of enterprise customers with AI-first support</li><li>Deal expands Salesforce's Einstein AI suite with autonomous customer service agents</li></ul>
+      <div class="card-matters">This signals consolidation of AI customer service startups into legacy CRM platforms, reshaping the competitive landscape for enterprise software.</div>
+    </div>
+    <div class="story-card cat-science">
+      <div class="card-meta">
+        <span class="card-num">#02</span>
+        <span class="cat-pill science">Science</span>
+        <span class="card-topic">Psychedelic Medicine</span>
+        <div class="impact-wrap">
+          <div class="impact-bar-bg">
+            <div class="impact-bar-fill" style="width:45px;background:#0077CC;"></div>
+          </div>
+          <span class="impact-score">9/10</span>
+        </div>
+      </div>
+      <span class="card-emoji">🍄</span>
+      <div class="card-headline">Psilocybin Shows Functional Improvement in Advanced Alzheimer's</div>
+      <div class="card-summary">A case report in Frontiers in Neuroscience documents transient multi-domain functional improvement in a patient with advanced Alzheimer's disease following high-dose psilocybin mushroom administration. The finding adds to growing evidence for psychedelic-assisted therapies targeting neurodegenerative conditions.</div>
+      <ul class="card-bullets"><li>Patient showed multidomain cognitive and functional improvement after high-dose psilocybin</li><li>Published in peer-reviewed Frontiers in Neuroscience journal in June 2026</li><li>Psilocybin activates 5-HT2A receptors, promoting neuroplasticity and disrupting rigid neural patterns</li></ul>
+      <div class="card-matters">With 55 million Alzheimer's patients worldwide and no disease-modifying cure, this case opens a radical new therapeutic avenue that could reshape dementia care.</div>
+    </div>
+    <div class="story-card cat-ai">
+      <div class="card-meta">
+        <span class="card-num">#03</span>
+        <span class="cat-pill ai">AI</span>
+        <span class="card-topic">Edge AI</span>
+        <div class="impact-wrap">
+          <div class="impact-bar-bg">
+            <div class="impact-bar-fill" style="width:40px;background:#6C47FF;"></div>
+          </div>
+          <span class="impact-score">8/10</span>
+        </div>
+      </div>
+      <span class="card-emoji">🍎</span>
+      <div class="card-headline">Apple Releases On-Device Foundation Models Platform</div>
+      <div class="card-summary">Apple has published documentation for its Foundation Models platform, enabling developers to run powerful AI models directly on Apple devices without cloud dependencies. This marks a significant push toward private, on-device AI inference across the Apple ecosystem.</div>
+      <ul class="card-bullets"><li>Models run entirely on-device — no data sent to cloud servers</li><li>Documentation hosted on platform.claude.com, indicating Claude integration partnership</li><li>Scored 321 points on Hacker News within hours of release</li></ul>
+      <div class="card-matters">On-device AI protects user privacy while enabling always-available intelligence, potentially obsoleting cloud-based AI APIs for common tasks.</div>
+    </div>
+    <div class="story-card cat-ai">
+      <div class="card-meta">
+        <span class="card-num">#04</span>
+        <span class="cat-pill ai">AI</span>
+        <span class="card-topic">AI Safety Strategy</span>
+        <div class="impact-wrap">
+          <div class="impact-bar-bg">
+            <div class="impact-bar-fill" style="width:35px;background:#6C47FF;"></div>
+          </div>
+          <span class="impact-score">7/10</span>
+        </div>
+      </div>
+      <span class="card-emoji">🛡️</span>
+      <div class="card-headline">Anthropic's AI Safety Strategy Is a Business Superpower</div>
+      <div class="card-summary">Stratechery's Ben Thompson argues that Anthropic's commitment to AI safety is not a handicap but a strategic competitive moat — attracting enterprise customers, top researchers, and regulatory goodwill simultaneously. The analysis positions safety-first AI development as the dominant business strategy of the 2020s.</div>
+      <ul class="card-bullets"><li>Safety-focused positioning attracts regulated industries: finance, healthcare, government</li><li>Anthropic raised over $7 billion in 2024-2025 partly on safety credibility</li><li>Stratechery analysis scored 154 on Hacker News, sparking debate on AI strategy</li></ul>
+      <div class="card-matters">If safety becomes a durable competitive advantage, it could redirect billions in AI investment toward responsible development rather than raw capability races.</div>
+    </div>
+    <div class="story-card cat-tech">
+      <div class="card-meta">
+        <span class="card-num">#05</span>
+        <span class="cat-pill tech">Tech</span>
+        <span class="card-topic">DRM Failure</span>
+        <div class="impact-wrap">
+          <div class="impact-bar-bg">
+            <div class="impact-bar-fill" style="width:35px;background:#00897B;"></div>
+          </div>
+          <span class="impact-score">7/10</span>
+        </div>
+      </div>
+      <span class="card-emoji">📚</span>
+      <div class="card-headline">Adobe DRM Silently Breaking Valid Kobo ePubs</div>
+      <div class="card-summary">Developer André Klein discovered that Kobo e-readers are rejecting perfectly valid ePub files not due to device or file issues, but because Adobe's content server — which authenticates DRM licenses — is silently failing or blocking certain ebooks. The post went viral on Hacker News with 779 points.</div>
+      <ul class="card-bullets"><li>779 Hacker News points — top trending story of the day</li><li>Root cause: Adobe DRM license server failures, not ePub file corruption</li><li>Affects Kobo users globally who purchased DRM-protected ebooks</li></ul>
+      <div class="card-matters">This exposes the systemic fragility of DRM-locked digital ownership — customers who paid for books can lose access when a third-party server fails.</div>
+    </div>
+    <div class="story-card cat-ai">
+      <div class="card-meta">
+        <span class="card-num">#06</span>
+        <span class="cat-pill ai">AI</span>
+        <span class="card-topic">LLM Routing</span>
+        <div class="impact-wrap">
+          <div class="impact-bar-bg">
+            <div class="impact-bar-fill" style="width:35px;background:#6C47FF;"></div>
+          </div>
+          <span class="impact-score">7/10</span>
+        </div>
+      </div>
+      <span class="card-emoji">🔀</span>
+      <div class="card-headline">OpenRouter Launches Fusion: Unified AI Model API</div>
+      <div class="card-summary">OpenRouter has released Fusion, a new API that intelligently routes requests across multiple LLM providers — OpenAI, Anthropic, Google, and others — with a single unified interface. Fusion dynamically selects the best model for each query based on cost, latency, and capability.</div>
+      <ul class="card-bullets"><li>Single API endpoint routes to 100+ LLMs across major providers</li><li>Dynamic model selection optimizes for cost and performance per request</li><li>Scored 129 on Hacker News, reflecting strong developer community interest</li></ul>
+      <div class="card-matters">Fusion abstracts away vendor lock-in for AI APIs, giving developers flexibility to switch models without rewriting code as the LLM landscape evolves.</div>
+    </div>
+    </div>
+
+    <div class="infographic-link">
+      <div class="icon">📊</div>
+      <div class="text">
+        <h3>Text Infographic</h3>
+        <p>Typographic data visualization of today's briefing</p>
+      </div>
+      <a href="infographic-2026-06-15.svg" target="_blank">View SVG →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <p>Daily Briefing — Generated by AI · June 15, 2026</p>
+  <p><a href="index.html">← Back to archive</a></p>
+</footer>
+
+</body>
+</html>
