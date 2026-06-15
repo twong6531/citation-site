@@ -1,0 +1,24 @@
+{
+  "date": "2026-06-15",
+  "generated_at": "2026-06-15T06:00:00Z",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold",
+    "qc": "pending",
+    "publishing": "blocked_no_approved_items"
+  },
+  "queue_items": 4,
+  "alerts": [
+    "CRITICAL DAY 10: approved.json has been empty since 2026-06-07. Publishing Agent blocked for 10 consecutive days. 3 QC-passed video scripts are sitting ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). Human must add slugs to approved.json to unblock. No content has gone live in 10 days despite daily production.",
+    "CRITICAL RETRY #6: brt-vs-light-rail-cost-2026 infographic has been queued every day since 2026-06-07 and has never been produced. If it is not produced today, this constitutes a pipeline failure requiring manual diagnostic of the infographic-writing agent.",
+    "CRITICAL: drafts/articles/ directory remains empty across entire site history — 0% article production rate. Long-form articles have been queued daily for 10+ days without any output. Article-writing agent may be broken or not receiving the queue.",
+    "WARNING: Video script production is on HOLD today. Backlog stands at 10 scripts (3 QC-passed, 7 need revision). No new scripts should be produced until human reviews and approves existing backlog.",
+    "TIME-SENSITIVE: World Cup 2026 transit story (world-cup-2026-transit-host-cities) queued for the 2nd consecutive day. Group stage is live now — every day of delay is lost organic search traffic. This is the most time-sensitive opportunity in site history.",
+    "TOP NEWS HOOK TODAY: Congress Transportation Reauthorization Bill — Urban Institute reports drastic underfunding of transit and rail. Direct hit on site niche. Queued as #1 priority long-form article.",
+    "NEW TODAY: UK unveils Floc Duo Rail — driverless solar-powered urban transit system. International innovation angle. Queued as #4 explainer."
+  ]
+}

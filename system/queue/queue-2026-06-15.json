@@ -1,0 +1,120 @@
+{
+  "date": "2026-06-15",
+  "generated_at": "2026-06-15T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Congress Transportation Reauthorization Bill — Drastic Transit Underfunding",
+      "angle": "Urban Institute analysis shows the reauthorization bill would devastate transit and rail project funding — what programs get cut, which agencies lose most, and what this means for riders and infrastructure investment",
+      "rationale": "Breaking story from Urban Institute, direct hit on our niche (transit funding/infrastructure policy). Not in covered_topics. Timely policy moment — reauthorization debates define transit funding for 5 years. High SEO value on a fast-moving news hook.",
+      "target_length": "long",
+      "slug": "congress-transit-reauthorization-2026",
+      "output_path": "drafts/articles/congress-transit-reauthorization-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail: True Cost Comparison 2026",
+      "angle": "Side-by-side visual breakdown — capital cost per mile, operating cost per passenger-mile, ridership potential, build time, flexibility tradeoffs. US and international benchmarks.",
+      "rationale": "RETRY #6. Queued every day since 2026-06-07. Has never been produced. This is the single most persistent failure in the pipeline. Must be produced today. Output path is drafts/infographics/ (create directory if needed).",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "World Cup 2026 Transit Surge: How US Host Cities Are Managing Record Ridership",
+      "angle": "Group stage is live now. LA, NYC, Dallas, Miami host matches. How are transit agencies preparing for and responding to surge demand? What's working, what's failing, ridership data if available.",
+      "rationale": "RETRY from 2026-06-14 queue. World Cup is actively happening — window closes when knockout rounds move to fewer venues. Most time-sensitive organic search opportunity in site history. Every day of delay loses traffic.",
+      "target_length": "medium",
+      "slug": "world-cup-2026-transit-host-cities",
+      "output_path": "drafts/articles/world-cup-2026-transit-host-cities.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "UK's Floc Duo Rail: The Driverless Solar-Powered Transit System",
+      "angle": "What is it, how does it work, is it viable at scale? Contrast with conventional light rail and autonomous bus. Good international innovation hook — positions site as covering global transit tech.",
+      "rationale": "Fresh news today (Travel and Tour World). Driverless + solar = two hot search terms. Complements existing autonomous vehicle coverage without repeating it. Short explainer — quick turnaround.",
+      "target_length": "short",
+      "slug": "floc-duo-rail-uk-solar-driverless",
+      "output_path": "drafts/articles/floc-duo-rail-uk-solar-driverless.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "HOLD — Do not produce new video script today",
+      "angle": "Video script backlog has reached 10 scripts (9 existing + fare-evasion-economics). 3 are ready to publish (tesla-spacex, transit-app-dark-ux, fare-evasion-economics). 7 need revision. No new scripts until human reviews and approves backlog.",
+      "rationale": "Pipeline discipline: more unreviewed scripts worsen the backlog problem. Redirect effort to articles and infographics where the gap is critical.",
+      "target_length": "short",
+      "slug": "HOLD-video-scripts",
+      "output_path": "HOLD"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "retry_count": 6,
+      "first_queued": "2026-06-07",
+      "last_attempt": "2026-06-14",
+      "status": "never_produced",
+      "escalation": "CRITICAL — 6 consecutive failures. If not produced today, infographic pipeline needs manual diagnostic."
+    },
+    {
+      "slug": "world-cup-2026-transit-host-cities",
+      "retry_count": 2,
+      "first_queued": "2026-06-14",
+      "last_attempt": "2026-06-14",
+      "status": "never_produced",
+      "escalation": "TIME-SENSITIVE — World Cup group stage is live. Delay = lost traffic."
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity automation",
+    "autonomous vehicles",
+    "AI industry shifts",
+    "Meta face recognition",
+    "Apple Gemini AI partnership",
+    "transit desert remediation POMDP",
+    "Southern California transit systems",
+    "slime mold network optimization",
+    "US cities transit gap",
+    "dopamine and urban design",
+    "electric axial flux motors transit",
+    "TOD Builder interactive game",
+    "Pokemon Go military drone urban data",
+    "transit app dark UX patterns",
+    "Tesla SpaceX transit empire",
+    "fare evasion economics",
+    "bonds and debt financing transit",
+    "child and youth transit access",
+    "congestion pricing transit funding",
+    "disability access ADA compliance",
+    "emergency evacuation planning transit",
+    "environmental justice transit investment",
+    "federal transit grants",
+    "free fare transit case studies",
+    "gender transit safety",
+    "grade crossing safety light rail",
+    "homelessness transit safety",
+    "medical emergencies on transit",
+    "data optimization transit routes",
+    "bus bunching prevention",
+    "fare structure design",
+    "low-income riders fare increases",
+    "public-private partnerships transit",
+    "transit access economic mobility",
+    "transit agency funding breakdown"
+  ],
+  "trend_signals": [
+    "Congress transit reauthorization bill — Urban Institute flags drastic underfunding of transit and rail",
+    "Apple Foundation Models — on-device AI, potential transit app integration angle",
+    "Salesforce acquires Intercom for $3.6B — AI-powered customer service in transit apps",
+    "Circuit $17M Series B — sustainable microtransit startup funding surge",
+    "UK Floc Duo Rail — driverless solar-powered urban transit system unveiled"
+  ]
+}

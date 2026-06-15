@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-14",
+  "last_updated": "2026-06-15",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -53,18 +53,26 @@
     { "date": "2026-06-13", "type": "transit", "url": "docs/transit-2026-06-13.html", "topic": "SoCal Transit Brief" },
     { "date": "2026-06-13", "type": "infographic", "url": "docs/infographic-2026-06-13.svg", "topic": "Editorial Infographic" },
     { "date": "2026-06-13", "type": "research_infographic", "url": "docs/research-infographic-2026-06-13.svg", "topic": "Research Infographic" },
-    { "date": "2026-06-13", "type": "video_script", "url": "drafts/scripts/tesla-spacex-transit-empire-script.md", "topic": "Tesla/SpaceX Transit Empire (draft, pending approval)" }
+    { "date": "2026-06-13", "type": "video_script", "url": "drafts/scripts/tesla-spacex-transit-empire-script.md", "topic": "Tesla/SpaceX Transit Empire (draft, QC passed)" },
+    { "date": "2026-06-14", "type": "news", "url": "docs/2026-06-14.html", "topic": "Daily News Digest" },
+    { "date": "2026-06-14", "type": "transit", "url": "docs/transit-2026-06-14.html", "topic": "SoCal Transit Brief" },
+    { "date": "2026-06-14", "type": "research", "url": "docs/research-2026-06-14.html", "topic": "Transit Research Digest" },
+    { "date": "2026-06-14", "type": "infographic", "url": "docs/infographic-2026-06-14.svg", "topic": "Editorial Infographic" },
+    { "date": "2026-06-14", "type": "research_infographic", "url": "docs/research-infographic-2026-06-14.svg", "topic": "Research Infographic" },
+    { "date": "2026-06-14", "type": "imagen", "url": "docs/imagen-2026-06-14.svg", "topic": "Editorial Imagen" },
+    { "date": "2026-06-14", "type": "video_script", "url": "drafts/scripts/fare-evasion-economics-script.md", "topic": "Fare Evasion Economics (draft, QC passed — minor trim needed)" }
   ],
   "drafts_pending_approval": [
-    { "slug": "apple-gemini-2026-script", "path": "drafts/scripts/apple-gemini-2026-script.md", "qc": "passed", "date": "2026-06-09" },
-    { "slug": "transit-desert-pomdp-script", "path": "drafts/scripts/transit-desert-pomdp-script.md", "qc": "passed", "date": "2026-06-09" },
-    { "slug": "us-cities-transit-gap-script", "path": "drafts/scripts/us-cities-transit-gap-script.md", "qc": "unknown", "date": "2026-06-09" },
-    { "slug": "slime-mold-transit-script", "path": "drafts/scripts/slime-mold-transit-script.md", "qc": "unknown", "date": "2026-06-09" },
-    { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "unknown", "date": "2026-06-09" },
-    { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "unknown", "date": "2026-06-10" },
-    { "slug": "pokemon-go-drones-urban-data-script", "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md", "qc": "unknown", "date": "2026-06-11" },
-    { "slug": "transit-app-dark-ux-2026-script", "path": "drafts/scripts/transit-app-dark-ux-2026-script.md", "qc": "unknown", "date": "2026-06-12" },
-    { "slug": "tesla-spacex-transit-empire-script", "path": "drafts/scripts/tesla-spacex-transit-empire-script.md", "qc": "unknown", "date": "2026-06-13" }
+    { "slug": "apple-gemini-2026-script", "path": "drafts/scripts/apple-gemini-2026-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~249w — cut ~75w. Scene-by-scene guidance in QC file." },
+    { "slug": "transit-desert-pomdp-script", "path": "drafts/scripts/transit-desert-pomdp-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~298w — near-complete rewrite needed. Prior 'passed' verdict on 2026-06-09 was incorrect." },
+    { "slug": "us-cities-transit-gap-script", "path": "drafts/scripts/us-cities-transit-gap-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~223w — cut ~30w; unsourced $90B statistic needs APTA citation." },
+    { "slug": "slime-mold-transit-script", "path": "drafts/scripts/slime-mold-transit-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~245w — cut ~70w; Scene 3 at ~87w is main problem. Otherwise strong." },
+    { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~215w — cut ~25w; fix vague meta-analysis citation in YouTube Section 3." },
+    { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "needs_revision", "date": "2026-06-10", "note": "Factual error: McLaren Artura/Lamborghini Revuelto YASA motor claim unverified. Replace Wikipedia sources with primary." },
+    { "slug": "pokemon-go-drones-urban-data-script", "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md", "qc": "needs_revision", "date": "2026-06-11", "note": "Overstates military drone link certainty; 15M figure misattributes Ingress portal count. Needs primary sources." },
+    { "slug": "transit-app-dark-ux-2026-script", "path": "drafts/scripts/transit-app-dark-ux-2026-script.md", "qc": "passed", "date": "2026-06-12", "note": "Fix LA Metro API tier imprecision. Ensure companion article exists or update CTA before going live." },
+    { "slug": "tesla-spacex-transit-empire-script", "path": "drafts/scripts/tesla-spacex-transit-empire-script.md", "qc": "passed", "date": "2026-06-13", "note": "Clean pass. Reel ~142w. 9 named sources. Ready to publish." },
+    { "slug": "fare-evasion-economics-script", "path": "drafts/scripts/fare-evasion-economics-script.md", "qc": "passed", "date": "2026-06-14", "note": "Trim ~120w from YouTube Sections 2-3. Two source improvements needed. Low-effort fix before publish." }
   ],
   "topic_performance": {
     "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
@@ -93,6 +101,7 @@
     "Pokemon Go military drone urban data pipeline",
     "transit app dark UX patterns",
     "Tesla SpaceX transit empire",
+    "fare evasion economics",
     "bonds and debt financing transit capital",
     "child and youth transit access",
     "congestion pricing transit funding",
@@ -123,13 +132,16 @@
     { "date": "2026-06-12", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 4th consecutive day — retry #4 queued 2026-06-13" },
     { "date": "2026-06-13", "job": "publishing", "reason": "approved.json empty — no human approvals received for 8th consecutive day (ESCALATION: pipeline blocked since 2026-06-07)" },
     { "date": "2026-06-13", "job": "article_writing", "reason": "drafts/articles/ still empty — 0% article success rate for 9+ days. World Cup transit article not produced." },
-    { "date": "2026-06-13", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 5th consecutive day — retry #5 queued 2026-06-14. ESCALATION: manual intervention may be required." }
+    { "date": "2026-06-13", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 5th consecutive day — retry #5 queued 2026-06-14. ESCALATION: manual intervention may be required." },
+    { "date": "2026-06-14", "job": "publishing", "reason": "approved.json empty — no human approvals received for 9th consecutive day. 3 QC-passed scripts ready to publish (tesla-spacex, transit-app-dark-ux, fare-evasion-economics). REQUIRES HUMAN ACTION." },
+    { "date": "2026-06-14", "job": "article_writing", "reason": "drafts/articles/ still empty — congress-transit-reauthorization and world-cup-2026-transit-host-cities not produced. 0% article success rate persists across entire site history." },
+    { "date": "2026-06-14", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 6th consecutive day — retry #6 queued 2026-06-15. CRITICAL: if not produced today, infographic pipeline needs manual diagnostic." }
   ],
   "content_gaps": [
-    "approved.json empty since 2026-06-07 — Publishing Agent blocked 8 consecutive days — REQUIRES HUMAN ACTION",
-    "BRT vs Light Rail infographic queued since 2026-06-07, never produced — retry #5 today — ESCALATION",
-    "Long-form article drafts never produced (distinct from encyclopedia articles) — 9+ days queued — ESCALATION",
-    "drafts/articles/ directory empty — no long-form articles produced in entire site history",
-    "9 video scripts in drafts/scripts/, none approved — backlog exceeded warning threshold"
+    "CRITICAL DAY 9: approved.json empty since 2026-06-07. Publishing Agent blocked 9 consecutive days. 3 QC-passed scripts ready (tesla-spacex, transit-app-dark-ux, fare-evasion-economics). REQUIRES HUMAN ACTION — add slugs to approved.json.",
+    "CRITICAL: BRT vs Light Rail infographic queued since 2026-06-07, never produced — retry #6 today. If not produced, infographic agent needs manual diagnostic.",
+    "CRITICAL: Long-form article drafts (drafts/articles/) empty across entire site history — 0% article production rate. Article-writing agent may be broken or misconfigured.",
+    "WARNING: Video script backlog at 10 scripts — 3 QC-passed, 7 need revision. Recommend PAUSE on new script production until human reviews and approves backlog.",
+    "TIME-SENSITIVE: World Cup 2026 transit story window is closing — group stage ends this week. Must produce now."
   ]
 }
