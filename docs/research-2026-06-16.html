@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — June 16, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E6;
+    --muted: #888888;
+    --accent: #E8FF00;
+    --accent2: #4488FF;
+    --highlight: #FF6B35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand { font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--accent); letter-spacing: 1px; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 20px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; letter-spacing: 1px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 40px; }
+
+  .executive-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .executive-summary h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .executive-summary p { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  /* Theme grid */
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 11px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .theme-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* Paper cards */
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  .paper-card .paper-num { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-card h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+  .paper-card .abstract-toggle { font-size: 12px; color: var(--accent2); cursor: pointer; margin-bottom: 16px; display: inline-block; }
+  .paper-card .section-head { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 20px; margin-bottom: 8px; }
+  .paper-card p, .paper-card li { font-size: 14px; color: #BBBBBB; line-height: 1.65; }
+  .paper-card ul { padding-left: 20px; }
+  .paper-card ul li { margin-bottom: 6px; }
+  .paper-card .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .paper-card .tag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 1px; }
+  .paper-card .tag.high { border-color: #44FF88; color: #44FF88; }
+  .paper-card .tag.medium { border-color: #FFAA44; color: #FFAA44; }
+  .paper-card .tag.low { border-color: #FF4444; color: #FF4444; }
+
+  /* Takeaways */
+  .takeaways { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface2); border-left: 3px solid var(--accent); padding: 20px 24px; }
+  .takeaway h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .takeaway p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* Contrarian */
+  .contrarian-block { background: var(--surface); border: 1px solid #FF6B35; padding: 28px 32px; margin-bottom: 48px; }
+  .contrarian-block h2 { font-size: 10px; letter-spacing: 4px; color: #FF6B35; text-transform: uppercase; margin-bottom: 20px; }
+  .contrarian-block .insight { margin-bottom: 20px; padding-left: 16px; border-left: 2px solid #FF6B35; }
+  .contrarian-block .insight p { font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  /* SVG Section */
+  .infographic-section { margin-bottom: 48px; }
+  .svg-wrapper { background: #F7F7F5; padding: 24px; border: 1px solid var(--border); }
+  .svg-wrapper svg { width: 100%; height: auto; }
+  .download-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent2); border: 1px solid var(--accent2); padding: 8px 16px; }
+
+  /* Long-term */
+  .long-term { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 48px; }
+  .long-term h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .long-term p { font-size: 15px; line-height: 1.75; color: #CCCCCC; }
+
+  /* Footer */
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 32px 20px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand">Transit Research Digest</span>
+  <a href="research.html" class="back-link">← Archive Index</a>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Transit Research Digest · June 16, 2026</div>
+  <h1>AI, Electrification &amp; Equity: The New Transit Frontier</h1>
+  <div class="meta">
+    <span><span class="badge">10 PAPERS</span></span>
+    <span>arXiv · Self-Analysis</span>
+    <span>Swarm routing · LLM planners · EV fleet ops · Accessibility gaps</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>Today's research reveals a field in fundamental transition. Artificial intelligence is reshaping every layer of public transit—from LLM-powered personalized trip planners (ChatPlanner) to biomimetic swarm-algorithm bus dispatching inspired by slime mold, to reinforcement learning for predicting MTA incident durations. Simultaneously, a continental-scale routing breakthrough (T-REX) achieves sub-10ms query times across Europe's entire network, while mixed-fleet electric bus optimization confronts the grid realities of the energy transition. Critically, the research also surfaces persistent failures: network analysis of London Underground and NYC Subway reveals stark accessibility gaps concentrated in lower-income neighborhoods, and cross-city mobility data shows urban deprivation forces residents of poor neighborhoods to travel disproportionately far to access basic services. The ride-hailing vs. transit relationship is also evolving—Shanghai's maturing TNC market shows complementarity growing while substitution declines. The convergence of AI, electrification, and network science offers transit agencies unprecedented tools; the question now is whether those tools will reduce or amplify existing mobility inequalities.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>AI-Native Transit Operations</h3>
+      <p>LLMs, reinforcement learning, and swarm algorithms are entering core transit operations—routing, planning, fleet dispatch, and incident forecasting—moving AI from analytics to real-time control.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Equity &amp; Accessibility as Infrastructure</h3>
+      <p>Multiple papers treat mobility access as a structural justice issue: deprivation bubble-breaking, subway accessibility networks, and air quality–ridership linkages all frame transit as equity infrastructure.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Electrification Operations Science</h3>
+      <p>Electric bus fleet management under dynamic grid pricing is emerging as its own optimization discipline, requiring integration of energy markets, route constraints, and mixed fleet composition.</p>
+    </div>
+  </div>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">Paper Analyses</div>
+  <div class="papers-grid">
+
+    <!-- Paper 1 -->
+    <div class="paper-card featured">
+      <div class="paper-num">Paper 01 · Paper of the Day · arXiv 2606.06189</div>
+      <h3><a href="https://arxiv.org/abs/2606.06189v1" target="_blank">A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</a></h3>
+      <div class="authors">Lindsay Burke, Maxfield Comstock, Jason Graham, Ruth Malenda, Simon Garnier, Petras Swissler · 2026</div>
+      <div class="one-liner">Decentralized bus swarms guided by slime-mold mathematics beat fixed routes by up to 101% in rural areas and cut walking time by 75%+ everywhere.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Demand-responsive transit has long promised flexibility but consistently delivered high costs and poor reliability at scale. This paper takes a radically different approach—eliminating central dispatchers entirely in favor of buses that continuously bid on passengers through a cooperative protocol, routing themselves like the nutrient-seeking tendrils of Physarum polycephalum slime mold. The results across suburban, urban, and semi-rural test environments are striking enough to challenge assumptions about how transit networks should be designed.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>The slime-mold routing algorithm works by having buses continuously evaluate network state and re-route toward demand concentrations, analogous to how slime mold thickens pathways toward food sources</li>
+        <li>Dynamic transfers—where passengers switch between vehicles mid-journey based on real-time swarm state—further optimize network efficiency beyond simple point-to-point dispatch</li>
+        <li>Rural environments see the most dramatic gains (101% delivery rate improvement) because fixed routes are most inefficient in sparse-demand settings</li>
+        <li>Over 75% reduction in walking time across all scenarios suggests the system naturally surfaces passengers closer to origin and destination</li>
+        <li>The distributed design avoids single points of failure common in centralized dispatch systems</li>
+        <li>OpenStreetMap networks are used directly, making the approach deployable to any geography without proprietary mapping</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Simulation using map networks pulled from OpenStreetMap across suburban, urban, and semi-rural scenarios. Buses operate a continual cooperative bidding process for passenger allocation. Dynamic transfers are introduced as an additional optimization layer. Results compared against fixed-network baselines on passenger delivery rates and walking times.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Simulation only—no real-world pilot data. Does not address how passengers would interact with a system that has no fixed stops or schedules. Operational complexity of vehicle maintenance, driver breaks, and labor regulations is not addressed. Privacy implications of continuous location tracking required by such a system are unexplored.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies with low-density rural or suburban corridors struggling with fixed-route economics should examine this approach seriously. The 101% improvement in semi-rural delivery rates suggests that demand-responsive swarms could make transit viable in areas where fixed routes have effectively failed. The cooperative bidding mechanism could be implemented over existing AVL infrastructure.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Rural and suburban transit agencies, demand-responsive transit operators, transit researchers, smart city planners, and anyone evaluating microtransit alternatives.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">OPERATIONS</span>
+        <span class="tag">AI / ALGORITHMS</span>
+        <span class="tag">DRT</span>
+      </div>
+    </div>
+
+    <!-- Paper 2 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 02 · arXiv 2606.15315</div>
+      <h3><a href="https://arxiv.org/abs/2606.15315v1" target="_blank">ChatPlanner: A Large Language Model Framework for Personalized Public Transit Routing</a></h3>
+      <div class="authors">Tingting Yang, Chenhao Xue, Jun Chen · 2026</div>
+      <div class="one-liner">LLMs with retrieval-augmented generation can extract nuanced personal travel preferences from natural language and embed them directly into routing algorithms—opening transit planning to non-expert users.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Current transit apps optimize for time or transfers, ignoring the rich preferences users actually have: avoiding crowded cars, preferring routes with seating, minimizing outdoor walking in bad weather. ChatPlanner creates a bridge between natural language expression of those preferences and the mathematical objective functions of routing algorithms—a genuinely new paradigm for transit user interfaces.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Fine-tuning enforces required output structure and learns general preference patterns; RAG provides query-specific context to resolve imprecise or conversational expressions</li>
+        <li>The combination of both fine-tuning and RAG achieves the highest accuracy—neither alone is sufficient</li>
+        <li>Eight user personas and five contexts were designed to create diverse training scenarios capturing real-world preference variation</li>
+        <li>ChatPlanner identifies valuable solutions that existing planners overlook because those planners optimize on dimensions that don't match user priorities</li>
+        <li>This framework positions LLMs not as chatbots but as semantic translators between user intent and algorithmic parameters</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Fine-tuned LLMs with RAG framework. Three experiments: feasibility validation, routing information and preference extraction accuracy, and solution set quality. Eight personas × five contexts dataset. Under review at Transportation Research Part C.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>User study with controlled personas may not capture the full diversity of real-world preference expression. Computational overhead of LLM inference could be prohibitive for real-time mobile applications. Preference extraction accuracy on ambiguous or contradictory user input is not fully characterized.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Trip-planning apps could offer conversational interfaces that let users describe their ideal trip in plain language. Accessibility for non-technical users—including elderly riders and those with disabilities—could dramatically improve. This approach could also underpin personalized alerts and recommendations beyond routing.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">AI / LLM</span>
+        <span class="tag">ROUTING</span>
+        <span class="tag">USER EXPERIENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 3 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 03 · arXiv 2605.18778</div>
+      <h3><a href="https://arxiv.org/abs/2605.18778v1" target="_blank">T-REX: Fast and Dynamic Journey Planning for Continental-Scale Public Transit Networks</a></h3>
+      <div class="authors">Jonas Sauer, Patrick Steil, Sascha Witt · 2026</div>
+      <div class="one-liner">A new multi-level routing algorithm answers European-scale transit queries in under 10 milliseconds—80× faster than current methods—with only two minutes of preprocessing.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Routing at continental scale has been a fundamental computational barrier for real-time transit applications. T-REX breaks that barrier by applying hierarchical overlay principles to trip-based routing, making it feasible to deploy interactive real-time journey planning across an entire continent's transit network—something previously requiring massive precomputation or accepting unacceptable latency.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>T-REX focuses pruning on transfers between trips rather than the trips themselves, dramatically reducing search space</li>
+        <li>A redesigned query algorithm improves memory efficiency and throughput simultaneously</li>
+        <li>80× speedup over non-preprocessing algorithms makes continental-scale real-time planning practical</li>
+        <li>Only two minutes of preprocessing and seconds for real-time update incorporation—far below competing algorithms</li>
+        <li>Pareto-optimizes on both arrival time and number of transfers, preserving solution quality</li>
+        <li>Memory footprint is described as moderate, enabling deployment on commodity hardware</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Multi-level overlay approach applied to Trip-Based Public Transit Routing (TB). Multi-level network partitioning to identify relevant long-distance transfers. Evaluated on European continental transit network. Query timing and correctness benchmarked against TB and other state-of-the-art algorithms.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Does not address real-time disruptions beyond schedule updates (e.g., vehicle breakdowns, bridge closures requiring rerouting). The partition quality affects performance—optimal partitioning for irregular European networks may differ from the tested configuration. Accessibility constraints (wheelchair routing) are not addressed in the Pareto-optimization.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>This algorithm is directly deployable in commercial journey planning systems. It enables true real-time routing across national and international rail networks without dedicated server farms. Open-data GTFS feeds can be processed with this approach, democratizing continental routing for smaller operators and researchers.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">ALGORITHMS</span>
+        <span class="tag">ROUTING</span>
+        <span class="tag">SCALE</span>
+      </div>
+    </div>
+
+    <!-- Paper 4 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 04 · arXiv 2601.08753</div>
+      <h3><a href="https://arxiv.org/abs/2601.08753v1" target="_blank">Grid-Aware Charging and Operational Optimization for Mixed-Fleet Public Transit</a></h3>
+      <div class="authors">Rishav Sen, Amutheezan Sivagnanam, Aron Laszka, Ayan Mukhopadhyay, Abhishek Dubey · 2026</div>
+      <div class="one-liner">Mixed-integer linear programming that jointly optimizes electric bus charging schedules and trip assignments around dynamic electricity prices yields significant cost savings for transit agencies mid-electrification.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most transit agencies are in a transitional phase with mixed fleets of electric and diesel buses. Optimizing this hybrid operationally is genuinely hard: electricity prices vary by hour, battery range constrains route assignment, and seating capacity adds further complexity. This paper provides a rigorous mathematical framework for a problem that will define transit operations economics for the next decade.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Dynamic electricity pricing creates optimization opportunities that naive fixed-schedule charging entirely misses</li>
+        <li>The MILP formulation jointly solves charging and trip assignment—separating them produces suboptimal solutions</li>
+        <li>A hierarchical decomposition approach addresses the computational intractability that emerges even with small fleets</li>
+        <li>Real-world Chattanooga data grounds the results in actual transit operating conditions</li>
+        <li>Vehicle capacity and route constraints are integrated, not treated as post-processing</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mixed-integer linear programming (MILP) with hierarchical decomposition for computational tractability. Validated on real-world data from Chattanooga, Tennessee transit system. Factors include dynamic electricity pricing, vehicle capacity, seating constraints, and route assignment.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>MILP scalability remains a concern for larger fleets—the hierarchical approach helps but may not scale to major metropolitan systems. Does not account for battery degradation dynamics or weather-dependent range variation. Grid infrastructure constraints (charger locations, power capacity) are assumed to be fixed.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies electrifying their fleets should implement time-of-use pricing-aware scheduling from day one. The cost savings quantified in Chattanooga likely scale with fleet size and electricity price volatility. This framework should be integrated with agency scheduling software rather than treated as a standalone optimization tool.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">ELECTRIFICATION</span>
+        <span class="tag">OPERATIONS</span>
+        <span class="tag">OPTIMIZATION</span>
+      </div>
+    </div>
+
+    <!-- Paper 5 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 05 · arXiv 2511.07467</div>
+      <h3><a href="https://arxiv.org/abs/2511.07467v1" target="_blank">Analyzing the Impact of Service Frequency and On-time Performance on Transit Ridership in Miami-Dade County</a></h3>
+      <div class="authors">Duanya Lyu, Xiang Yan · 2025</div>
+      <div class="one-liner">Post-COVID ridership recovery hinges on the interaction between frequency and reliability—improving on-time performance on high-frequency routes is the single most effective investment for ridership growth.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Transit agencies are still navigating post-pandemic ridership recovery while operating with constrained budgets. This study uses real operational data (APC + GTFS-RT) and a rigorous panel model to disentangle two of the most controllable service quality dimensions—frequency and reliability—providing agency planners with direct actionable evidence rather than theoretical estimates.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Frequency consistently influences ridership over the entire study period (pre- and post-COVID)</li>
+        <li>On-time performance (OTP) becomes an increasingly important determinant specifically in the post-COVID recovery period</li>
+        <li>The interaction between frequency and OTP is significant: reliability improvements are most effective on routes that already have high frequency</li>
+        <li>Strategy should vary by time of day: punctuality matters most during AM peak; frequency matters most during midday and PM peak</li>
+        <li>Ridership recovered to pre-pandemic levels by late 2022 in Miami-Dade, but with significant route-level variation</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Two-way fixed effects (2FE) panel models using route-level APC data and GTFS-RT performance metrics from Miami-Dade County. Study periods: January 2018–December 2019 (pre-COVID) and July 2021–July 2023 (post-COVID recovery).</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-system study (Miami-Dade) limits generalizability to other climate contexts and network structures. OTP measurement via GTFS-RT may not fully capture passenger-perceived reliability. Does not control for land use changes or demographic shifts during the study period.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">RIDERSHIP</span>
+        <span class="tag">SERVICE QUALITY</span>
+        <span class="tag">POST-COVID</span>
+      </div>
+    </div>
+
+    <!-- Paper 6 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 06 · arXiv 2510.19745</div>
+      <h3><a href="https://arxiv.org/abs/2510.19745v3" target="_blank">Substitution or Complement? Uncovering the Interplay between Ride-hailing Services and Public Transit</a></h3>
+      <div class="authors">Zhicheng Jin, Xiaotong Sun, Li Zhen, Weihua Gu, Huizhao Tu · 2025</div>
+      <div class="one-liner">In a maturing TNC market, ride-hailing is becoming more complementary to public transit than substitutive—but the relationship is highly nonlinear and depends critically on proximity to metro stations.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>The dominant narrative that ride-hailing undermines transit ridership needs updating. This study, with 96,716 ride-hailing vehicles in Shanghai, captures the dynamics of a market where TNC saturation has shifted the competitive landscape. Understanding this shift matters enormously for how cities regulate TNCs and design transit networks that work with rather than against them.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Complementary TNC-transit ratio grew by 9.22% while substitutive ratio fell by 9.06% compared to earlier literature</li>
+        <li>First-mile and last-mile complementarity patterns are distinct—they serve different parts of the transit journey</li>
+        <li>Distance to nearest metro station shows strongly nonlinear effects on the TNC-transit relationship</li>
+        <li>Bus stop density is also a significant nonlinear predictor—areas with moderate bus coverage may see different dynamics than sparse or dense areas</li>
+        <li>CatBoost + SHAP analysis reveals interactions that linear models would miss entirely</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Analysis of 96,716 ride-hailing vehicles during September 2022 in Shanghai. Enhanced data-driven framework classifies trips into first-mile complementary, last-mile complementary, substitutive, and independent categories. CatBoost (categorical gradient boosting) with SHAP (Shapley additive explanations) for nonlinear factor analysis.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single city (Shanghai) with a specific urban form and regulatory environment—results may not transfer to less dense or differently regulated TNC markets. September 2022 snapshot may not reflect seasonal or post-COVID dynamics. The classification methodology has inherent ambiguities for trips that partially serve transit.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+        <span class="tag">RIDE-HAILING</span>
+        <span class="tag">INTERMODAL</span>
+        <span class="tag">POLICY</span>
+      </div>
+    </div>
+
+    <!-- Paper 7 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 07 · arXiv 2603.29782</div>
+      <h3><a href="https://arxiv.org/abs/2603.29782v1" target="_blank">Urban mobility enables deprivation bubble breaking in Indian and Mexican cities</a></h3>
+      <div class="authors">Yuan Liao, Federico Delussu, Sílvia de Sojo, Laura Alessandretti, Antonio Desiderio · 2026</div>
+      <div class="one-liner">Residents of deprived urban neighborhoods travel significantly farther than gravity models predict to access opportunities in better-off areas—mobility is a compensatory mechanism for spatial inequality.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Traditional urban deprivation metrics measure neighborhood conditions statically. This paper shows that mobility fundamentally changes how deprivation is experienced: residents of poor areas systematically compensate for local amenity deficits by traveling more. This has profound implications for transit planning—cuts to mobility services may disproportionately harm residents who depend on travel to access what their neighborhoods lack.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Residents of deprived areas exhibit "bubble breaking"—travel to less deprived areas—that significantly exceeds gravity model predictions</li>
+        <li>High local amenity diversity enables residents to meet needs locally; high amenity density in neighboring areas drives cross-boundary travel</li>
+        <li>64 cities across India and Mexico were analyzed using mobile phone mobility data + satellite-derived deprivation indices</li>
+        <li>This residual bubble breaking (beyond what gravity models explain) reflects genuine compensatory mobility for local amenity deficits</li>
+        <li>Standard residence-based deprivation measures miss this entire dimension of urban inequality</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mobile phone mobility networks combined with satellite-derived deprivation indices across 64 cities in India and Mexico. Gravity model baselines establish expected mobility; residual bubble breaking is the systematic excess. Regression analysis of local amenity diversity and density as mediating factors.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Mobile phone data may undersample lowest-income residents (those without smartphones). The analysis captures revealed mobility patterns but cannot directly measure whether bubble-breaking trips succeed in meeting needs. India and Mexico may differ substantially from North American or European urban contexts.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">EQUITY</span>
+        <span class="tag">URBAN FORM</span>
+        <span class="tag">GLOBAL SOUTH</span>
+      </div>
+    </div>
+
+    <!-- Paper 8 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 08 · arXiv 2512.03766</div>
+      <h3><a href="https://arxiv.org/abs/2512.03766v1" target="_blank">Inaccessibility in Public Transit Networks</a></h3>
+      <div class="authors">Katherine Betz · 2025</div>
+      <div class="one-liner">Network analysis of London Underground and NYC Subway reveals stark geographic and socioeconomic clustering in accessible station distribution—wealthier and more touristic areas are dramatically better served.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Despite decades of ADA and accessibility legislation, large subway systems remain structurally inaccessible for wheelchair users and others requiring step-free access. This paper applies network science to quantify the problem rigorously, revealing that the spatial distribution of accessible stations follows predictable socioeconomic and touristic patterns—providing a systematic basis for prioritizing future investments.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Network models with accessible stations as nodes reveal significant structural gaps in both systems</li>
+        <li>Centrality measures identify stations that serve as critical accessible hubs—disruption of these would isolate large populations from the accessible network</li>
+        <li>Neighborhood wealth and tourism activity are significant predictors of accessible station presence</li>
+        <li>Both NYC and London show pronounced spatial clustering of accessible stations rather than network-wide distribution</li>
+        <li>The graph-theoretic approach offers a replicable methodology applicable to any transit network globally</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Network analysis constructing graphs where nodes are accessible stations and edges represent adjacency along transit lines. Clustering analysis, spatial distribution mapping, centrality measures. Correlation with socioeconomic and tourism-related variables at neighborhood level.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-author study with potential scope limitations. The paper focuses on wheelchair/step-free accessibility but does not address visual impairment, hearing impairment, or cognitive accessibility. Temporal dynamics (accessibility improvements over time) are not tracked. Does not address the frequency of accessible service at accessible stations.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+        <span class="tag">ACCESSIBILITY</span>
+        <span class="tag">EQUITY</span>
+        <span class="tag">NETWORK SCIENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 9 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 09 · arXiv 2601.19937</div>
+      <h3><a href="https://arxiv.org/abs/2601.19937v2" target="_blank">Critical Transit Infrastructure in Smart Cities and Urban Air Quality: A Multi-City Seasonal Comparison of Ridership and PM2.5</a></h3>
+      <div class="authors">Sean Elliott, Sohini Roy · 2026</div>
+      <div class="one-liner">Linking transit ridership with PM2.5 air quality data across four US cities shows the relationship is not uniform—city-specific context dominates any apparent system-wide transit-air quality signal.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Transit advocates frequently claim that higher ridership improves air quality, but this claim lacks empirical precision at the city level. This study builds a reproducible multi-city dataset linking actual ridership to EPA air quality monitoring, revealing that simple relationships don't hold across diverse urban contexts—a corrective message for smart city analytics.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>NYC, Chicago, Las Vegas, and Phoenix show pronounced structural differences in transit scale and intensity</li>
+        <li>Both ridership and PM2.5 show consistent seasonal shifts that vary by urban context</li>
+        <li>Apparent mobility-PM2.5 relationships are not uniform across cities or seasons</li>
+        <li>Baseline city effects strongly confound simple regression relationships</li>
+        <li>The paper establishes a scalable framework for ongoing smart-city environmental monitoring</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Multi-source monitoring dataset integrating agency-reported transit ridership with EPA AQS PM2.5 data for NYC, Chicago, Las Vegas, and Phoenix. Two seasonal snapshots: March and October 2024. Lightweight regression specifications for descriptive sensitivity analysis.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Only four cities and two seasonal snapshots—limited statistical power for cross-city inference. The paper explicitly frames regressions as descriptive sensitivity analysis rather than causal inference. Many confounders (industry mix, geography, vehicle age) are not controlled. PM2.5 monitoring station coverage varies significantly across cities.</p>
+
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+        <span class="tag">AIR QUALITY</span>
+        <span class="tag">SMART CITY</span>
+        <span class="tag">DATA INFRASTRUCTURE</span>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 10 · arXiv 2511.00808</div>
+      <h3><a href="https://arxiv.org/abs/2511.00808v1" target="_blank">Do Math Reasoning LLMs Help Predict the Impact of Public Transit Events?</a></h3>
+      <div class="authors">Bowen Fang, Ruijian Zha, Xuan Di · 2025</div>
+      <div class="one-liner">Adapting reinforcement learning with verifiable rewards (RLVR) to predict NYC MTA incident duration achieves a 35% improvement in 5-minute accuracy—but general-purpose LLMs beat math-specialized models at real-world text.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Predicting how long a transit service disruption will last is critical for operations centers deciding whether to hold trains, reroute buses, or issue passenger alerts. This paper shows that noisy, real-world text from MTA service alerts is a tractable domain for RLVR training, with implications for automated operations management beyond transit.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>General-purpose instruction-tuned LLMs significantly outperform math-specialized reasoning models on ambiguous real-world transit text</li>
+        <li>Binary reward functions are unstable and degrade performance for continuous forecasting tasks</li>
+        <li>Tolerance-based shaped rewards (allowing partial credit within an error margin) are critical for stable RLVR training on continuous targets</li>
+        <li>35% relative improvement in 5-minute accuracy over the strongest baseline demonstrates RLVR's potential for real-world noisy forecasting</li>
+        <li>Classical regressors still outperform on overall MAE/MSE—RLVR excels specifically at close-enough predictions within tight time windows</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>RLVR training with tolerance-based shaped reward function on NYC MTA service alert dataset. Comparison against supervised fine-tuning baselines, math-reasoning LLMs, and classical regressors. Primary metric: accuracy within 5-minute window (Acc@5) plus MAE and MSE.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Limited to NYC MTA service alerts—domain specificity may limit generalizability. The 35% improvement in Acc@5 is impressive but the paper acknowledges classical regressors still win on aggregate error. Training data volume and alert quality vary significantly across transit agencies.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+        <span class="tag">AI / LLM</span>
+        <span class="tag">OPERATIONS</span>
+        <span class="tag">INCIDENT MANAGEMENT</span>
+      </div>
+    </div>
+
+  </div><!-- end papers-grid -->
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="contrarian-block">
+    <h2>Contrarian Insights</h2>
+    <div class="insight">
+      <p><strong>Fixed routes may be the exception, not the rule:</strong> The slime-mold swarm paper's results suggest that fixed-route, fixed-schedule transit is not the natural or optimal state for most transit environments—it may be primarily a technology artifact of the pre-computation era. As real-time routing and autonomous vehicles reduce operational overhead, we may look back on fixed routes the way we now look at party telephone lines: a reasonable solution to the constraints of the time, but not the final form.</p>
+    </div>
+    <div class="insight">
+      <p><strong>Ride-hailing regulation is fighting yesterday's battle:</strong> Cities that are still attempting to cap or restrict ride-hailing services to protect transit ridership may be misreading the current moment. The Shanghai data suggests that as TNC markets mature, they shift toward complementarity—becoming first/last-mile feeder networks rather than transit substitutes. The regulatory energy may be better directed at ensuring TNC operators share real-time trip data that enables integrated multimodal planning.</p>
+    </div>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways">
+    <div class="takeaway">
+      <h4>Pilot demand-responsive transit in your lowest-density corridors first</h4>
+      <p>The swarm DRT framework yields 101% ridership improvement in semi-rural settings—the highest ROI for agencies with underperforming fixed routes. Start with one or two corridors where existing service is sparse and costly, use OpenStreetMap-compatible dispatch software, and measure delivery rates against the fixed-route baseline.</p>
+    </div>
+    <div class="takeaway">
+      <h4>Post-COVID recovery strategy: reliability before expansion</h4>
+      <p>Miami-Dade's two-way fixed effects model is clear—the interaction of frequency and on-time performance is the dominant driver of ridership recovery. Agencies that are choosing between adding new routes and improving schedule adherence on existing high-frequency lines should choose the latter first. Focus punctuality investments on AM peak.</p>
+    </div>
+    <div class="takeaway">
+      <h4>Electrification savings require dynamic pricing awareness from day one</h4>
+      <p>Transit agencies that are now procuring electric buses should simultaneously negotiate time-of-use electricity rates with utilities and deploy MILP-based charging schedulers. The cost savings from Chattanooga's mixed-fleet optimization are a floor—larger fleets and more volatile pricing will see greater gains.</p>
+    </div>
+    <div class="takeaway">
+      <h4>Map your accessible station network as a network—not a list</h4>
+      <p>The London/NYC accessibility network analysis reveals that the structure of the accessible network matters as much as the count of accessible stations. Use graph centrality analysis to identify accessible hub stations whose loss would fragment the network, and prioritize protecting those before adding new accessible stations at the periphery.</p>
+    </div>
+  </div>
+
+  <!-- LONG TERM IMPLICATIONS -->
+  <div class="long-term">
+    <h2>Long-Term Implications</h2>
+    <p>The convergence of AI-native operations, fleet electrification, and data-driven equity analysis points toward a fundamental restructuring of public transit over the next decade. Fixed-route, fixed-schedule systems will increasingly yield to adaptive, demand-responsive networks optimized in real time—but only where agencies build the digital infrastructure and institutional capacity to manage them. The continental-scale routing breakthrough (T-REX) signals that the computational barriers to unified multimodal planning are falling; what remains are the institutional and data-sharing barriers between agencies. Most urgently, the equity findings from this collection—deprivation bubble breaking in the Global South, accessibility network gaps in wealthy cities—remind us that technological improvements alone cannot close mobility gaps that are rooted in spatial inequality and decades of underinvestment. The next generation of transit innovation must be designed explicitly for equity, not retrofitted for it afterward.</p>
+  </div>
+
+  <!-- SVG INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-label">Data Infographic</div>
+    <div class="svg-wrapper">
+      <svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+        <rect width="800" height="1600" fill="#F7F7F5"/>
+        <rect x="0" y="0" width="800" height="120" fill="#1A1A1A"/>
+        <text x="40" y="44" font-size="11" fill="#888888" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+        <text x="40" y="76" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">URBAN MOBILITY</text>
+        <text x="40" y="100" font-size="14" fill="#CCCCCC" letter-spacing="1">JUNE 16, 2026 · 10 PAPERS ANALYZED</text>
+        <rect x="680" y="20" width="80" height="80" fill="#E8FF00"/>
+        <text x="720" y="56" font-size="10" fill="#1A1A1A" text-anchor="middle" font-weight="700">ISSUE</text>
+        <text x="720" y="76" font-size="24" fill="#1A1A1A" text-anchor="middle" font-weight="900">16</text>
+        <text x="720" y="92" font-size="10" fill="#1A1A1A" text-anchor="middle">JUN 2026</text>
+        <rect x="40" y="138" width="720" height="2" fill="#1A1A1A"/>
+        <text x="40" y="168" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">EXECUTIVE SUMMARY</text>
+        <text x="40" y="194" font-size="13" fill="#222222">
+          <tspan x="40" dy="0">Today's research reveals a field in transition: AI is reshaping every layer of public</tspan>
+          <tspan x="40" dy="18">transit—from LLM-powered trip planners to swarm-algorithm bus fleets. Meanwhile,</tspan>
+          <tspan x="40" dy="18">equity and accessibility gaps persist in legacy networks, and ride-hailing is shifting</tspan>
+          <tspan x="40" dy="18">toward complementarity with transit. The convergence of AI optimization, electrification,</tspan>
+          <tspan x="40" dy="18">and network science offers transit agencies unprecedented tools.</tspan>
+        </text>
+        <rect x="40" y="282" width="720" height="1" fill="#DDDDDD"/>
+        <text x="40" y="312" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">KEY FINDINGS</text>
+        <rect x="40" y="326" width="48" height="48" fill="#E8FF00"/>
+        <text x="64" y="358" font-size="28" fill="#1A1A1A" text-anchor="middle" font-weight="900">01</text>
+        <text x="104" y="346" font-size="14" fill="#1A1A1A" font-weight="700">Swarm Transit Beats Fixed Routes by 28–101%</text>
+        <text x="104" y="366" font-size="12" fill="#555555">
+          <tspan x="104" dy="0">Slime-mold-inspired demand-responsive routing dramatically</tspan>
+          <tspan x="104" dy="16">outperforms fixed networks across all urban density types.</tspan>
+        </text>
+        <rect x="40" y="410" width="48" height="48" fill="#1A1A1A"/>
+        <text x="64" y="442" font-size="28" fill="#FFFFFF" text-anchor="middle" font-weight="900">02</text>
+        <text x="104" y="430" font-size="14" fill="#1A1A1A" font-weight="700">Ride-hailing Is Becoming More Complementary Than Rival</text>
+        <text x="104" y="450" font-size="12" fill="#555555">
+          <tspan x="104" dy="0">Shanghai data: complementary TNC ratio grew 9.22%;</tspan>
+          <tspan x="104" dy="16">substitution declined 9.06% as TNC markets saturated.</tspan>
+        </text>
+        <rect x="40" y="494" width="48" height="48" fill="#E8FF00"/>
+        <text x="64" y="526" font-size="28" fill="#1A1A1A" text-anchor="middle" font-weight="900">03</text>
+        <text x="104" y="514" font-size="14" fill="#1A1A1A" font-weight="700">Continental Trip Planning Now Under 10ms</text>
+        <text x="104" y="534" font-size="12" fill="#555555">
+          <tspan x="104" dy="0">T-REX answers European-scale transit queries in &lt;10ms,</tspan>
+          <tspan x="104" dy="16">an 80× speedup enabling true real-time continental routing.</tspan>
+        </text>
+        <rect x="40" y="568" width="720" height="1" fill="#DDDDDD"/>
+        <text x="40" y="598" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">PAPER OF THE DAY</text>
+        <rect x="40" y="610" width="720" height="100" fill="#1A1A1A" rx="2"/>
+        <rect x="40" y="610" width="6" height="100" fill="#E8FF00"/>
+        <text x="62" y="636" font-size="11" fill="#888888" letter-spacing="2">HIGHEST IMPACT · arXiv 2606.06189</text>
+        <text x="62" y="658" font-size="15" fill="#FFFFFF" font-weight="700">
+          <tspan x="62" dy="0">A Swarm Approach to Public Transit Using</tspan>
+          <tspan x="62" dy="20">On-demand Routing in a Slime-Mold-Inspired Framework</tspan>
+        </text>
+        <text x="62" y="700" font-size="11" fill="#AAAAAA">Burke, Comstock, Graham, Malenda, Garnier, Swissler · 2026</text>
+        <rect x="40" y="730" width="720" height="1" fill="#DDDDDD"/>
+        <text x="40" y="760" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">EMERGING THEMES</text>
+        <rect x="40" y="774" width="224" height="140" fill="#F0F0EE" rx="2"/>
+        <text x="52" y="796" font-size="11" fill="#888888" letter-spacing="1" font-weight="700">AI-NATIVE TRANSIT</text>
+        <text x="52" y="814" font-size="11" fill="#333333">
+          <tspan x="52" dy="0">LLMs, reinforcement</tspan>
+          <tspan x="52" dy="16">learning, and swarm</tspan>
+          <tspan x="52" dy="16">algorithms are entering</tspan>
+          <tspan x="52" dy="16">core transit operations:</tspan>
+          <tspan x="52" dy="16">routing, planning, and</tspan>
+          <tspan x="52" dy="16">incident forecasting.</tspan>
+        </text>
+        <rect x="288" y="774" width="224" height="140" fill="#F0F0EE" rx="2"/>
+        <text x="300" y="796" font-size="11" fill="#888888" letter-spacing="1" font-weight="700">EQUITY &amp; ACCESS</text>
+        <text x="300" y="814" font-size="11" fill="#333333">
+          <tspan x="300" dy="0">Mobility as social equity</tspan>
+          <tspan x="300" dy="16">lever: deprivation bubble</tspan>
+          <tspan x="300" dy="16">breaking, accessibility</tspan>
+          <tspan x="300" dy="16">network gaps in NYC/</tspan>
+          <tspan x="300" dy="16">London, air quality &amp;</tspan>
+          <tspan x="300" dy="16">ridership linkages.</tspan>
+        </text>
+        <rect x="536" y="774" width="224" height="140" fill="#1A1A1A" rx="2"/>
+        <text x="548" y="796" font-size="11" fill="#E8FF00" letter-spacing="1" font-weight="700">ELECTRIFICATION OPS</text>
+        <text x="548" y="814" font-size="11" fill="#CCCCCC">
+          <tspan x="548" dy="0">Mixed EV/diesel fleet</tspan>
+          <tspan x="548" dy="16">optimization under</tspan>
+          <tspan x="548" dy="16">dynamic grid pricing</tspan>
+          <tspan x="548" dy="16">represents a new ops</tspan>
+          <tspan x="548" dy="16">paradigm for agencies</tspan>
+          <tspan x="548" dy="16">transitioning fleets.</tspan>
+        </text>
+        <rect x="40" y="934" width="720" height="1" fill="#DDDDDD"/>
+        <text x="40" y="964" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">CONFIDENCE DISTRIBUTION</text>
+        <text x="40" y="990" font-size="11" fill="#333333">HIGH</text>
+        <rect x="100" y="976" width="480" height="18" fill="#E8FF00" rx="1"/>
+        <text x="592" y="990" font-size="11" fill="#555555">48% · 5 papers</text>
+        <text x="40" y="1018" font-size="11" fill="#333333">MEDIUM</text>
+        <rect x="100" y="1004" width="336" height="18" fill="#1A1A1A" rx="1"/>
+        <text x="448" y="1018" font-size="11" fill="#555555">30% · 3 papers</text>
+        <text x="40" y="1046" font-size="11" fill="#333333">LOW</text>
+        <rect x="100" y="1032" width="168" height="18" fill="#AAAAAA" rx="1"/>
+        <text x="280" y="1046" font-size="11" fill="#555555">17% · 2 papers</text>
+        <rect x="40" y="1066" width="720" height="1" fill="#DDDDDD"/>
+        <text x="40" y="1096" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">ACTIONABLE TAKEAWAYS</text>
+        <rect x="40" y="1108" width="4" height="52" fill="#E8FF00"/>
+        <text x="56" y="1124" font-size="13" fill="#1A1A1A" font-weight="700">Pilot demand-responsive transit in low-density corridors first</text>
+        <text x="56" y="1144" font-size="11" fill="#555555">
+          <tspan x="56" dy="0">Swarm DRT yields 101% ridership improvement in semi-rural areas</tspan>
+          <tspan x="56" dy="16">— the highest ROI for agencies replacing underperforming routes.</tspan>
+        </text>
+        <rect x="40" y="1176" width="4" height="52" fill="#1A1A1A"/>
+        <text x="56" y="1192" font-size="13" fill="#1A1A1A" font-weight="700">Post-COVID: prioritize reliability on high-frequency routes</text>
+        <text x="56" y="1212" font-size="11" fill="#555555">
+          <tspan x="56" dy="0">Miami-Dade 2FE model: reliability × frequency interaction is the</tspan>
+          <tspan x="56" dy="16">strongest ridership recovery driver — invest in OTP before expansion.</tspan>
+        </text>
+        <rect x="40" y="1244" width="4" height="52" fill="#E8FF00"/>
+        <text x="56" y="1260" font-size="13" fill="#1A1A1A" font-weight="700">Design EV charging schedules around grid pricing windows</text>
+        <text x="56" y="1280" font-size="11" fill="#555555">
+          <tspan x="56" dy="0">MILP optimization aware of time-of-use pricing delivers significant</tspan>
+          <tspan x="56" dy="16">cost savings vs. fixed-schedule charging as fleets electrify.</tspan>
+        </text>
+        <rect x="40" y="1312" width="4" height="52" fill="#1A1A1A"/>
+        <text x="56" y="1328" font-size="13" fill="#1A1A1A" font-weight="700">Analyze accessible stations as a network, not a checklist</text>
+        <text x="56" y="1348" font-size="11" fill="#555555">
+          <tspan x="56" dy="0">Graph centrality reveals critical accessible hubs — protecting them</tspan>
+          <tspan x="56" dy="16">matters more than adding peripheral accessible stations.</tspan>
+        </text>
+        <rect x="40" y="1384" width="720" height="1" fill="#DDDDDD"/>
+        <text x="40" y="1414" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">LONG-TERM IMPLICATIONS</text>
+        <text x="40" y="1438" font-size="12" fill="#333333">
+          <tspan x="40" dy="0">The convergence of AI, electrification, and network science points toward fundamental</tspan>
+          <tspan x="40" dy="18">restructuring of transit. Fixed-route systems will yield to adaptive networks — but only</tspan>
+          <tspan x="40" dy="18">where agencies build digital infrastructure to manage them. The next decade determines</tspan>
+          <tspan x="40" dy="18">whether AI transit tools reduce or amplify existing mobility inequalities.</tspan>
+        </text>
+        <rect x="0" y="1558" width="800" height="42" fill="#1A1A1A"/>
+        <text x="40" y="1584" font-size="10" fill="#888888">TRANSIT RESEARCH DIGEST · twong6531.github.io/citation-site · June 16, 2026</text>
+        <text x="760" y="1584" font-size="10" fill="#E8FF00" text-anchor="end">◀ INDEX</text>
+      </svg>
+    </div>
+    <a href="research-infographic-2026-06-16.svg" class="download-link" download>↓ Download SVG Infographic</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Transit Research Digest · June 16, 2026 · 10 papers analyzed · Sources: arXiv &amp; Semantic Scholar</p>
+  <p style="margin-top: 8px;"><a href="research.html">← Back to Archive Index</a></p>
+</footer>
+
+</body>
+</html>

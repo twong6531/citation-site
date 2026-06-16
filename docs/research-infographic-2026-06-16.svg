@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="120" fill="#1A1A1A"/>
+  <text x="40" y="44" font-size="11" fill="#888888" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="76" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">URBAN MOBILITY</text>
+  <text x="40" y="100" font-size="14" fill="#CCCCCC" letter-spacing="1">JUNE 16, 2026 · 10 PAPERS ANALYZED</text>
+  <rect x="680" y="20" width="80" height="80" fill="#E8FF00"/>
+  <text x="720" y="56" font-size="10" fill="#1A1A1A" text-anchor="middle" font-weight="700">ISSUE</text>
+  <text x="720" y="76" font-size="24" fill="#1A1A1A" text-anchor="middle" font-weight="900">16</text>
+  <text x="720" y="92" font-size="10" fill="#1A1A1A" text-anchor="middle">JUN 2026</text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="138" width="720" height="2" fill="#1A1A1A"/>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <text x="40" y="168" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">EXECUTIVE SUMMARY</text>
+  <text x="40" y="194" font-size="13" fill="#222222" font-weight="400">
+    <tspan x="40" dy="0">Today's research reveals a field in transition: artificial intelligence is reshaping every</tspan>
+    <tspan x="40" dy="18">layer of public transit—from LLM-powered trip planners to swarm-algorithm bus fleets.</tspan>
+    <tspan x="40" dy="18">Meanwhile, equity and accessibility gaps persist in legacy networks, and the relationship</tspan>
+    <tspan x="40" dy="18">between ride-hailing and transit is shifting toward complementarity. The convergence of</tspan>
+    <tspan x="40" dy="18">AI optimization, electrification, and network science offers transit agencies unprecedented</tspan>
+    <tspan x="40" dy="18">tools—but implementation challenges remain formidable.</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="288" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- KEY FINDINGS -->
+  <text x="40" y="318" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">KEY FINDINGS</text>
+
+  <!-- Finding 1 -->
+  <rect x="40" y="332" width="48" height="48" fill="#E8FF00"/>
+  <text x="64" y="364" font-size="28" fill="#1A1A1A" text-anchor="middle" font-weight="900">01</text>
+  <text x="104" y="352" font-size="14" fill="#1A1A1A" font-weight="700">Swarm Transit Outperforms Fixed Routes by 28–101%</text>
+  <text x="104" y="372" font-size="12" fill="#555555">
+    <tspan x="104" dy="0">Slime-mold-inspired demand-responsive routing dramatically</tspan>
+    <tspan x="104" dy="16">outperforms fixed networks across all urban density types.</tspan>
+  </text>
+
+  <!-- Finding 2 -->
+  <rect x="40" y="416" width="48" height="48" fill="#1A1A1A"/>
+  <text x="64" y="448" font-size="28" fill="#FFFFFF" text-anchor="middle" font-weight="900">02</text>
+  <text x="104" y="436" font-size="14" fill="#1A1A1A" font-weight="700">Ride-hailing Is Becoming More Complementary Than Rival</text>
+  <text x="104" y="456" font-size="12" fill="#555555">
+    <tspan x="104" dy="0">Shanghai data shows complementary TNC-transit ratio grew 9.22%</tspan>
+    <tspan x="104" dy="16">while substitution declined 9.06% as TNC markets saturated.</tspan>
+  </text>
+
+  <!-- Finding 3 -->
+  <rect x="40" y="500" width="48" height="48" fill="#E8FF00"/>
+  <text x="64" y="532" font-size="28" fill="#1A1A1A" text-anchor="middle" font-weight="900">03</text>
+  <text x="104" y="520" font-size="14" fill="#1A1A1A" font-weight="700">Continental Trip Planning Now Under 10ms Query Time</text>
+  <text x="104" y="540" font-size="12" fill="#555555">
+    <tspan x="104" dy="0">T-REX algorithm answers European-scale transit queries in &lt;10ms,</tspan>
+    <tspan x="104" dy="16">a 80× speedup enabling true real-time continental routing.</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="574" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="40" y="604" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">PAPER OF THE DAY</text>
+  <rect x="40" y="616" width="720" height="100" fill="#1A1A1A" rx="2"/>
+  <rect x="40" y="616" width="6" height="100" fill="#E8FF00"/>
+  <text x="62" y="642" font-size="11" fill="#888888" letter-spacing="2">HIGHEST IMPACT · arXiv 2606.06189</text>
+  <text x="62" y="664" font-size="15" fill="#FFFFFF" font-weight="700">
+    <tspan x="62" dy="0">A Swarm Approach to Public Transit Using</tspan>
+    <tspan x="62" dy="20">On-demand Routing in a Slime-Mold-Inspired Framework</tspan>
+  </text>
+  <text x="62" y="706" font-size="11" fill="#AAAAAA">Burke, Comstock, Graham, Malenda, Garnier, Swissler · 2026</text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="736" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="766" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">EMERGING THEMES</text>
+
+  <!-- Theme columns -->
+  <rect x="40" y="780" width="224" height="140" fill="#F0F0EE" rx="2"/>
+  <text x="52" y="802" font-size="11" fill="#888888" letter-spacing="1" font-weight="700">AI-NATIVE TRANSIT</text>
+  <text x="52" y="820" font-size="11" fill="#333333">
+    <tspan x="52" dy="0">LLMs, reinforcement</tspan>
+    <tspan x="52" dy="16">learning, and swarm</tspan>
+    <tspan x="52" dy="16">algorithms are entering</tspan>
+    <tspan x="52" dy="16">core transit operations:</tspan>
+    <tspan x="52" dy="16">routing, planning, and</tspan>
+    <tspan x="52" dy="16">incident forecasting.</tspan>
+  </text>
+
+  <rect x="288" y="780" width="224" height="140" fill="#F0F0EE" rx="2"/>
+  <text x="300" y="802" font-size="11" fill="#888888" letter-spacing="1" font-weight="700">EQUITY &amp; ACCESS</text>
+  <text x="300" y="820" font-size="11" fill="#333333">
+    <tspan x="300" dy="0">Mobility as social equity</tspan>
+    <tspan x="300" dy="16">lever: deprivation bubble</tspan>
+    <tspan x="300" dy="16">breaking, accessibility</tspan>
+    <tspan x="300" dy="16">network gaps in NYC/</tspan>
+    <tspan x="300" dy="16">London, air quality &amp;</tspan>
+    <tspan x="300" dy="16">ridership linkages.</tspan>
+  </text>
+
+  <rect x="536" y="780" width="224" height="140" fill="#1A1A1A" rx="2"/>
+  <text x="548" y="802" font-size="11" fill="#E8FF00" letter-spacing="1" font-weight="700">ELECTRIFICATION OPS</text>
+  <text x="548" y="820" font-size="11" fill="#CCCCCC">
+    <tspan x="548" dy="0">Mixed EV/diesel fleet</tspan>
+    <tspan x="548" dy="16">optimization under</tspan>
+    <tspan x="548" dy="16">dynamic grid pricing</tspan>
+    <tspan x="548" dy="16">represents a new ops</tspan>
+    <tspan x="548" dy="16">paradigm for agencies</tspan>
+    <tspan x="548" dy="16">transitioning fleets.</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="940" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="970" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">RESEARCH CONFIDENCE DISTRIBUTION</text>
+
+  <!-- High confidence bar -->
+  <text x="40" y="996" font-size="11" fill="#333333">HIGH</text>
+  <rect x="100" y="982" width="480" height="18" fill="#E8FF00" rx="1"/>
+  <text x="592" y="996" font-size="11" fill="#555555">48%  · 5 papers</text>
+
+  <!-- Medium confidence bar -->
+  <text x="40" y="1024" font-size="11" fill="#333333">MEDIUM</text>
+  <rect x="100" y="1010" width="336" height="18" fill="#1A1A1A" rx="1"/>
+  <text x="448" y="1024" font-size="11" fill="#555555">35%  · 3 papers</text>
+
+  <!-- Low confidence bar -->
+  <text x="40" y="1052" font-size="11" fill="#333333">LOW</text>
+  <rect x="100" y="1038" width="168" height="18" fill="#AAAAAA" rx="1"/>
+  <text x="280" y="1052" font-size="11" fill="#555555">17%  · 2 papers</text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="1072" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="1102" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">ACTIONABLE TAKEAWAYS</text>
+
+  <rect x="40" y="1114" width="4" height="52" fill="#E8FF00"/>
+  <text x="56" y="1130" font-size="13" fill="#1A1A1A" font-weight="700">Pilot demand-responsive transit in low-density corridors first</text>
+  <text x="56" y="1150" font-size="11" fill="#555555">
+    <tspan x="56" dy="0">Swarm DRT yields 101% ridership improvement in semi-rural areas — the highest ROI</tspan>
+    <tspan x="56" dy="16">for agencies seeking to replace costly fixed-route underperformers.</tspan>
+  </text>
+
+  <rect x="40" y="1182" width="4" height="52" fill="#1A1A1A"/>
+  <text x="56" y="1198" font-size="13" fill="#1A1A1A" font-weight="700">Post-COVID: prioritize on-time performance on frequent routes</text>
+  <text x="56" y="1218" font-size="11" fill="#555555">
+    <tspan x="56" dy="0">Miami-Dade data shows reliability x frequency interaction is the strongest driver</tspan>
+    <tspan x="56" dy="16">of ridership recovery — invest in schedule adherence before service expansion.</tspan>
+  </text>
+
+  <rect x="40" y="1250" width="4" height="52" fill="#E8FF00"/>
+  <text x="56" y="1266" font-size="13" fill="#1A1A1A" font-weight="700">Design electric bus charging around dynamic grid pricing windows</text>
+  <text x="56" y="1286" font-size="11" fill="#555555">
+    <tspan x="56" dy="0">MILP-based scheduling that responds to time-of-use pricing delivers significant</tspan>
+    <tspan x="56" dy="16">cost savings vs. fixed-schedule charging — critical as fleets electrify.</tspan>
+  </text>
+
+  <rect x="40" y="1318" width="4" height="52" fill="#1A1A1A"/>
+  <text x="56" y="1334" font-size="13" fill="#1A1A1A" font-weight="700">Embrace LLM-based trip planning as accessibility multiplier</text>
+  <text x="56" y="1354" font-size="11" fill="#555555">
+    <tspan x="56" dy="0">Natural language interfaces democratize complex multimodal routing,</tspan>
+    <tspan x="56" dy="16">especially for riders with non-standard preferences or mobility constraints.</tspan>
+  </text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="1390" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- LONG TERM IMPLICATIONS -->
+  <text x="40" y="1420" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">LONG-TERM IMPLICATIONS</text>
+  <text x="40" y="1444" font-size="12" fill="#333333">
+    <tspan x="40" dy="0">The convergence of AI-native operations, fleet electrification, and data-driven equity</tspan>
+    <tspan x="40" dy="18">analysis points toward a fundamental restructuring of public transit. Fixed-route, fixed-</tspan>
+    <tspan x="40" dy="18">schedule systems will increasingly yield to adaptive, demand-responsive networks—but</tspan>
+    <tspan x="40" dy="18">only where agencies build the digital infrastructure and institutional capacity to manage</tspan>
+    <tspan x="40" dy="18">them. Accessibility gaps, if not actively addressed through network design, risk widening</tspan>
+    <tspan x="40" dy="18">even as overall system performance improves. The next decade will determine whether AI</tspan>
+    <tspan x="40" dy="18">transit tools reduce or amplify existing mobility inequalities.</tspan>
+  </text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1558" width="800" height="42" fill="#1A1A1A"/>
+  <text x="40" y="1584" font-size="10" fill="#888888">TRANSIT RESEARCH DIGEST · twong6531.github.io/citation-site · June 16, 2026 · 10 papers · Self-analyzed</text>
+  <text x="760" y="1584" font-size="10" fill="#E8FF00" text-anchor="end">◀ INDEX</text>
+</svg>
