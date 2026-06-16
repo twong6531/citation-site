@@ -1,0 +1,100 @@
+{
+  "date": "2026-06-16",
+  "generated_at": "2026-06-16T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 Transit Crisis: What the Opening Night Disaster Reveals About American Public Transit",
+      "angle": "NJ Transit moved 21,000 fans after the first match but thousands were stranded for hours; multiple host cities are struggling in real time. The stress test exposes exactly what site niche covers — infrastructure underfunding, transit deserts, last-mile failures, and the consequences of car-centric city design.",
+      "rationale": "This is the most time-sensitive, highest-traffic opportunity in site history. Dozens of national outlets are covering transit chaos at MetLife Stadium, NYC gridlock, Boston T scrambles, Seattle preparations, and NJ Transit's near-collapse on opening night. Every day of delay is lost organic search traffic. World Cup group stage is live NOW. Directly hits every topic in site niche: transit operations, infrastructure funding, equity, last-mile access. Has been queued 3 consecutive days without production.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-stress-test",
+      "output_path": "drafts/articles/world-cup-2026-transit-stress-test.html",
+      "key_hooks": [
+        "NJ Transit moved 21,000 fans after game 1 but rideshare users stranded for hours (NJ.com)",
+        "Travel disaster stranded NJ fans for hours — opening night (NJ.com, June 15)",
+        "NJ Transit added 600-person ferries as backup (NJ.com, June 11)",
+        "FIFA sold out shuttle bus tickets to France vs. Senegal match (Gothamist, June 16)",
+        "Houston World Cup officials want to make city more walkable (Houston Public Media)",
+        "DoorDash partnered with NJ Transit to boost visibility during World Cup (Jersey Digs)",
+        "Boston T learned from game 1, prepping for next test (NBC Boston)",
+        "Seattle bracing for 750K visitors with massive traffic plan (FOX 13)",
+        "Philadelphia leads host cities on affordability with $2.90 train fares"
+      ]
+    },
+    {
+      "rank": 2,
+      "type": "research",
+      "topic": "Congress Transportation Reauthorization 2026: What Is at Stake for Transit",
+      "angle": "The current surface transportation authorization expires in 2026 — what the Urban Institute's underfunding analysis means for formula grants, state of good repair, and the 5-year outlook for transit systems across the US. What does reauthorization typically change, and who wins and loses?",
+      "rationale": "Transportation reauthorization happens once every ~5 years and sets the structural framework for all federal transit investment. This is a one-shot coverage window. Has been queued as a priority for 3 consecutive days without production. Directly in site niche (infrastructure policy, transit funding). Urban Institute report signal identified by yesterday's briefing.",
+      "target_length": "long",
+      "slug": "congress-transportation-reauthorization-2026",
+      "output_path": "drafts/articles/congress-transportation-reauthorization-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "infographic",
+      "topic": "BRT vs. Light Rail: True Cost Comparison 2026",
+      "angle": "Capital costs per mile, operating costs per rider, ridership outcomes, land value uplift, and typical build timelines — a data-driven visual comparison for transit advocates, planners, and the general public. Use 2024-2026 US project data where available.",
+      "rationale": "RETRY #7 — this infographic has been queued every single day since 2026-06-07 and has never been produced. If not produced today this constitutes a confirmed pipeline failure requiring manual diagnostic of the infographic-writing agent. The topic is perennially high-value: BRT vs LRT comparisons are among the most searched transit planning questions.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg",
+      "retry_number": 7,
+      "first_queued": "2026-06-07"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "UK Mass Transit Taskforce: What It Is and What US Cities Could Learn",
+      "angle": "The UK government established a Mass Transit Taskforce in May 2026 — what are its mandates, which UK cities are affected, and what specific policy or planning lessons could translate to American transit planning contexts?",
+      "rationale": "Differentiates the site from US-only transit coverage with a comparative international policy angle. Fresh signal (May 2026). Fits the site's infrastructure policy niche. Readers engaged with California HSR piece (high engagement) — UK angle appeals to same policy-wonk audience.",
+      "target_length": "medium",
+      "slug": "uk-mass-transit-taskforce-2026",
+      "output_path": "drafts/articles/uk-mass-transit-taskforce-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "research",
+      "topic": "SidewalkBench: How AI Is Learning to Navigate Urban Pedestrian Environments",
+      "angle": "A new arXiv paper (June 2026) introduces a GPU-accelerated simulation benchmark for visual navigation on urban sidewalks. What does this mean for transit accessibility, last-mile robotics, autonomous shuttles, and disability technology?",
+      "rationale": "Fresh arXiv paper (today) at the intersection of AI, urban mobility, and accessibility. Distinctive tech-forward angle that differentiates the site from pure transit policy coverage. Connects to prior audience interest in AI/urban tech topics. Short brief — low production cost.",
+      "target_length": "short",
+      "slug": "sidewalkbench-ai-urban-pedestrian-navigation",
+      "output_path": "drafts/articles/sidewalkbench-ai-urban-pedestrian-navigation.html"
+    }
+  ],
+  "retries": [
+    {
+      "item": "brt-vs-light-rail-cost-2026",
+      "original_date": "2026-06-07",
+      "retry_number": 7,
+      "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg",
+      "note": "CRITICAL: 7 consecutive failures. If not produced today, flag for manual diagnostic."
+    }
+  ],
+  "skip_topics": [
+    "Tesla SpaceX transit empire (covered 2026-06-13)",
+    "fare evasion economics (covered 2026-06-14)",
+    "transit app dark UX patterns (covered 2026-06-12)",
+    "SoCal transit brief daily (covered 2026-06-15 — resume tomorrow)",
+    "transit research digest daily (covered 2026-06-15 — resume tomorrow)",
+    "editorial infographic daily (covered 2026-06-15 — resume tomorrow)",
+    "bus bunching prevention (encyclopedia 2026-06-12)",
+    "free fare transit (encyclopedia 2026-06-12)",
+    "environmental justice transit (encyclopedia 2026-06-12)",
+    "transit-oriented development (2026-06-06)",
+    "California high-speed rail (2026-06-06)"
+  ],
+  "trend_signals": [
+    "World Cup 2026 transit chaos — NJ Transit, NYC gridlock, MetLife Stadium opening night disaster (top story June 15-16)",
+    "Congress Transportation Reauthorization 2026 — Urban Institute underfunding report, 5-year federal funding framework at stake",
+    "UK Mass Transit Taskforce — UK government initiative to strengthen urban transport infrastructure (May 2026)",
+    "SidewalkBench — new arXiv benchmark for AI visual navigation on urban sidewalks (June 2026)",
+    "UN Decade of Sustainable Transport (2026–2035) — long-term global policy framework launched February 2026"
+  ],
+  "video_script_status": "HOLD — 10 scripts in backlog (3 QC-passed, 7 need revision). No new scripts until human reviews and approves existing backlog.",
+  "publishing_block_status": "CRITICAL DAY 11 — approved.json empty since 2026-06-07. 3 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics. Human action required."
+}

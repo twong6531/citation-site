@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-15",
+  "last_updated": "2026-06-16",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -74,6 +74,13 @@
     { "slug": "tesla-spacex-transit-empire-script", "path": "drafts/scripts/tesla-spacex-transit-empire-script.md", "qc": "passed", "date": "2026-06-13", "note": "Clean pass. Reel ~142w. 9 named sources. Ready to publish." },
     { "slug": "fare-evasion-economics-script", "path": "drafts/scripts/fare-evasion-economics-script.md", "qc": "passed", "date": "2026-06-14", "note": "Trim ~120w from YouTube Sections 2-3. Two source improvements needed. Low-effort fix before publish." }
   ],
+  "published_2026_06_15": [
+    { "date": "2026-06-15", "type": "news", "url": "docs/2026-06-15.html", "topic": "Daily News Digest — Salesforce/$3.6B Fin acquisition, psilocybin Alzheimer breakthrough, Apple Foundation Models, Anthropic safety strategy, Adobe DRM failures, OpenRouter Fusion API" },
+    { "date": "2026-06-15", "type": "infographic", "url": "docs/infographic-2026-06-15.svg", "topic": "Editorial Infographic 2026-06-15" },
+    { "date": "2026-06-15", "type": "research", "url": "docs/research-2026-06-15.html", "topic": "Transit Research Digest — EV bus equity gap, permanent -23% peak ridership shift, pantograph charging, TOD walkability thresholds, Transformer demand forecasting, autonomous shuttle feeders" },
+    { "date": "2026-06-15", "type": "research_infographic", "url": "docs/research-infographic-2026-06-15.svg", "topic": "Research Infographic 2026-06-15" },
+    { "date": "2026-06-15", "type": "transit", "url": "docs/transit-2026-06-15.html", "topic": "SoCal Transit Brief 2026-06-15" }
+  ],
   "topic_performance": {
     "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
     "Transit-Oriented Development": { "published": "2026-06-06", "engagement": "high" },
@@ -120,7 +127,15 @@
     "low-income riders fare increases",
     "public-private partnerships transit",
     "transit access economic mobility",
-    "transit agency funding breakdown"
+    "transit agency funding breakdown",
+    "EV bus equity gap low-income routes",
+    "permanent ridership shift post-pandemic US cities",
+    "pantograph charging transit cost reduction",
+    "TOD walkability thresholds 800m rail catchment",
+    "Salesforce Fin AI acquisition",
+    "Apple Foundation Models",
+    "Anthropic safety strategy",
+    "psilocybin Alzheimer research"
   ],
   "failed_jobs": [
     { "date": "2026-06-10", "job": "publishing", "reason": "approved.json empty — no human approvals received for 4th consecutive day" },
@@ -135,13 +150,16 @@
     { "date": "2026-06-13", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 5th consecutive day — retry #5 queued 2026-06-14. ESCALATION: manual intervention may be required." },
     { "date": "2026-06-14", "job": "publishing", "reason": "approved.json empty — no human approvals received for 9th consecutive day. 3 QC-passed scripts ready to publish (tesla-spacex, transit-app-dark-ux, fare-evasion-economics). REQUIRES HUMAN ACTION." },
     { "date": "2026-06-14", "job": "article_writing", "reason": "drafts/articles/ still empty — congress-transit-reauthorization and world-cup-2026-transit-host-cities not produced. 0% article success rate persists across entire site history." },
-    { "date": "2026-06-14", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 6th consecutive day — retry #6 queued 2026-06-15. CRITICAL: if not produced today, infographic pipeline needs manual diagnostic." }
+    { "date": "2026-06-14", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 6th consecutive day — retry #6 queued 2026-06-15. CRITICAL: if not produced today, infographic pipeline needs manual diagnostic." },
+    { "date": "2026-06-15", "job": "publishing", "reason": "approved.json empty — no human approvals received for 11th consecutive day. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION." },
+    { "date": "2026-06-15", "job": "article_writing", "reason": "drafts/articles/ still empty — world-cup-2026-transit-host-cities and congress-transportation-reauthorization-2026 not produced. 0% article success rate persists across entire site history (11+ days). QC agent confirmed zero new items reviewed." },
+    { "date": "2026-06-15", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 7th consecutive day (retry #6 failed silently). CONFIRMED PIPELINE FAILURE — retry #7 queued 2026-06-16. Manual diagnostic of infographic-writing agent required if not produced today." }
   ],
   "content_gaps": [
-    "CRITICAL DAY 9: approved.json empty since 2026-06-07. Publishing Agent blocked 9 consecutive days. 3 QC-passed scripts ready (tesla-spacex, transit-app-dark-ux, fare-evasion-economics). REQUIRES HUMAN ACTION — add slugs to approved.json.",
-    "CRITICAL: BRT vs Light Rail infographic queued since 2026-06-07, never produced — retry #6 today. If not produced, infographic agent needs manual diagnostic.",
-    "CRITICAL: Long-form article drafts (drafts/articles/) empty across entire site history — 0% article production rate. Article-writing agent may be broken or misconfigured.",
-    "WARNING: Video script backlog at 10 scripts — 3 QC-passed, 7 need revision. Recommend PAUSE on new script production until human reviews and approves backlog.",
-    "TIME-SENSITIVE: World Cup 2026 transit story window is closing — group stage ends this week. Must produce now."
+    "CRITICAL DAY 11: approved.json empty since 2026-06-07. Publishing Agent blocked 11 consecutive days. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION — add slugs to approved.json to unblock. Zero content has gone live despite 11 days of daily production.",
+    "CRITICAL PIPELINE FAILURE: BRT vs Light Rail infographic queued since 2026-06-07, never produced in 7 retries. Retry #7 queued 2026-06-16. Manual diagnostic of infographic-writing agent is now mandatory.",
+    "CRITICAL: Long-form article drafts (drafts/articles/) empty across entire site history — 0% article production rate for 11+ days. QC agent confirmed zero new items. Article-writing agent is broken or not receiving queue output.",
+    "URGENT: World Cup 2026 transit story now a top national news story (Gothamist, CBS, NBC, NJ.com, etc.) — site has missed the peak traffic window for opening night but group stage continues. Must produce TODAY.",
+    "WARNING: Video script production on HOLD. Backlog at 10 scripts — 3 QC-passed, 7 need revision. No new scripts until human reviews backlog."
   ]
 }
