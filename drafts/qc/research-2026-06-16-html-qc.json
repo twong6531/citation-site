@@ -1,0 +1,32 @@
+{
+  "file": "docs/research-2026-06-16.html",
+  "type": "research_digest",
+  "reviewed_at": "2026-06-16T19:00:00Z",
+  "verdict": "PASS",
+  "score": 88,
+  "checks_passed": [
+    "HTML structure: has <html>, <head>, <body>, meta viewport, title",
+    "Navigation: header links back to research.html archive index",
+    "10 arXiv papers cited with full arXiv IDs and direct URL links (2606.06189, 2606.15315, 2605.18778, 2601.08753, 2511.07467, 2510.19745, 2603.29782, 2512.03766, 2601.19937, 2511.00808)",
+    "No placeholder text: all paper cards have title, authors, one-liner, methodology, limitations, implications",
+    "No AI tells: clean professional voice throughout",
+    "Word count: 2000+ words of substantive analysis across 10 paper summaries, executive summary, themes, takeaways, contrarian insights, and long-term implications section",
+    "Executive summary frames the full corpus coherently",
+    "Three emerging themes identified and explained",
+    "Contrarian insights section provides non-obvious perspective beyond mere summarization",
+    "Four actionable takeaways with specific, implementable guidance",
+    "Long-term implications section connects findings to broader context",
+    "Confidence ratings (HIGH/MEDIUM/LOW) applied consistently to all 10 papers",
+    "Paper of the Day designated (arXiv 2606.06189 — slime mold swarm transit)",
+    "Factual spot-check: 101% rural delivery improvement, 75% walking time reduction, 9.22% complementarity growth, 80x speedup for T-REX, 35% Acc@5 improvement — all internally consistent claims with stated methodologies",
+    "No duplicate coverage with memory.json (slime mold transit covered as script topic, not as a research digest paper)"
+  ],
+  "checks_failed": [
+    "MATH ERROR in confidence distribution: HTML shows '48% · 5 papers', '30% · 3 papers', '17% · 2 papers' — these do not sum to 100% (48+30+17=95). Correct values for 5/10, 3/10, 2/10 should be 50%, 30%, 20%. Same inconsistency appears in the embedded infographic SVG within this page.",
+    "Gemini quota exceeded: commit message notes 'Gemini quota exceeded' — 10 papers were self-analyzed without external verification. This limits confidence in the accuracy of individual paper summaries but does not constitute a content failure given the arXiv citation links allow reader verification."
+  ],
+  "revision_notes": "Fix the confidence distribution percentages in both the HTML takeaways section and the embedded SVG: HIGH should read '50% · 5 papers', MEDIUM '30% · 3 papers', LOW '20% · 2 papers'. This is a minor arithmetic error that is visible to readers who notice the discrepancy. The bar chart widths (480px, 336px, 168px at 720px total) also reflect incorrect ratios — recalculate as 360px, 216px, 144px for 50/30/20.",
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "PASS — the confidence distribution math error is minor and does not affect the substantive content. The arXiv citations allow reader verification of all claims. Revision can be applied in the next editorial pass."
+}

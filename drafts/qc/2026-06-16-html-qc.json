@@ -1,0 +1,27 @@
+{
+  "file": "docs/2026-06-16.html",
+  "type": "daily_news_digest",
+  "reviewed_at": "2026-06-16T19:00:00Z",
+  "verdict": "REVISE",
+  "score": 72,
+  "checks_passed": [
+    "HTML structure: has <html>, <head>, <body>, meta viewport, title",
+    "Navigation: footer links back to index.html",
+    "No AI tells: no 'As an AI', 'certainly', 'I cannot', etc.",
+    "No placeholder text in story content (Lorem ipsum, TODO, TBD)",
+    "Six stories present — estimated 650+ words of substantive content",
+    "Impact scores, category labels, and story bullets all populated",
+    "Story headlines are factual and distinct from one another",
+    "Factual spot-check: Tenstorrent/$10B backed by Bezos/LG is widely reported; Iroh 1.0 P2P network is a real project; Chrome Manifest V3 is documented; x86 emulator story matches known Microsoft engineering anecdotes",
+    "No duplicate topics found in memory.json coverage_topics or last-14-day published items"
+  ],
+  "checks_failed": [
+    "PLACEHOLDER LIVE ON PUBLISHED PAGE: The editorial illustration section contains visible 'Pending Generation' placeholder text, including the raw Imagen API error message and the unrendered illustration brief. This content is live in docs/ and visible to site visitors. The visual-placeholder div shows: 'The Imagen API returned a quota/availability error for this session.' This is a reader-facing quality failure.",
+    "SOURCES: No per-story source URLs or citations. Footer says only 'News sourced from Hacker News top stories'. Individual story cards have no source links. Readers cannot verify any of the 6 claims independently. The research digest and SoCal brief both include direct source URLs — the same standard should apply here.",
+    "FACTUAL CONCERN — Story 2 'Feds Alarmed by Fable 5 AI Without Jailbreak': Claim states 'Multiple US federal agencies flagged the incident as a significant AI safety concern.' This is stated as fact with no sourcing. This specific, verifiable claim about government action needs a source URL. If it is a real report, cite it. If it is speculative extrapolation, revise the framing."
+  ],
+  "revision_notes": "1. Remove the placeholder image section entirely or replace with a static placeholder SVG that does not expose the API error or illustration brief to readers. The visual-placeholder div and its contents (vp-icon, 'Pending Generation', error message text, subject brief) should not be reader-facing. 2. Add source attribution links to each story card — at minimum one URL per story to the originating Hacker News thread or the upstream news source. 3. Revise the Feds/Fable 5 claim to either cite the specific federal agency report or soften the language to 'cybersecurity researchers raised concerns' if no government source is citable.",
+  "fail_reason": null,
+  "approved_for_publish": false,
+  "note": "File is already live in docs/ — this QC report documents post-publication findings. The placeholder error is visible to current site visitors."
+}

@@ -1,0 +1,27 @@
+{
+  "file": "docs/research-infographic-2026-06-16.svg",
+  "type": "research_infographic",
+  "reviewed_at": "2026-06-16T19:00:00Z",
+  "verdict": "PASS",
+  "score": 80,
+  "checks_passed": [
+    "Valid SVG: file begins with <?xml declaration> then <svg> with viewBox and xmlns",
+    "Has viewBox attribute: viewBox=\"0 0 800 1600\"",
+    "Meaningful text content: executive summary, 3 key findings, paper of the day, 3 emerging themes, confidence distribution chart, 4 actionable takeaways, long-term implications, footer",
+    "No placeholder text",
+    "Date, issue number, paper count, and site attribution present",
+    "Paper of the Day call-out correctly identifies arXiv 2606.06189",
+    "Three key findings (swarm DRT, TNC complementarity, T-REX speed) are the strongest results from the corpus — correct editorial selection",
+    "Confidence distribution bar chart present and labeled",
+    "All text is self-contained — SVG is readable as a standalone document",
+    "Footer attribution line correctly references the site URL"
+  ],
+  "checks_failed": [
+    "INCONSISTENCY with HTML companion: Standalone SVG shows MEDIUM as '35% · 3 papers' (48+35+17=100) while HTML shows '30% · 3 papers' (48+30+17=95). Neither matches the correct math: 5/10=50%, 3/10=30%, 2/10=20%. The two companion files disagree with each other on the same statistic.",
+    "MINOR: Bar widths reflect the wrong percentages. At 720px total: HIGH bar is 480px (66.7%), MEDIUM is 336px (46.7%), LOW is 168px (23.3%) — none correspond to either the labeled percentages or the correct paper-count ratios."
+  ],
+  "revision_notes": "Align confidence percentages between the standalone SVG and the HTML companion. Correct percentages: HIGH 50% (5 papers, bar 360px), MEDIUM 30% (3 papers, bar 216px), LOW 20% (2 papers, bar 144px). This is a data accuracy issue for a data visualization — higher priority than the same error in prose.",
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "PASS — the bar chart math error is a presentation inconsistency, not a content fabrication. Core research findings are accurately represented. The infographic is already live in docs/."
+}

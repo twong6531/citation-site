@@ -1,0 +1,94 @@
+{
+  "date": "2026-06-16",
+  "reviewed_at": "2026-06-16T19:00:00Z",
+  "total_reviewed": 5,
+  "passed": 4,
+  "revise": 1,
+  "failed": 0,
+  "note_on_scope": "Today's QC found ZERO items in the standard draft pipeline (drafts/articles/, drafts/scripts/, drafts/infographics/). The five files reviewed were all produced in docs/ (published directly). All five queued priority items from the content plan were NOT produced — see pipeline_failures below. QC criteria were adapted for the docs/ content types.",
+  "ready_to_publish": [
+    "docs/infographic-2026-06-16.svg — Editorial infographic, score 82, PASS",
+    "docs/research-2026-06-16.html — Transit Research Digest, score 88, PASS",
+    "docs/research-infographic-2026-06-16.svg — Research infographic, score 80, PASS",
+    "docs/transit-2026-06-16.html — SoCal Transit Brief, score 91, PASS"
+  ],
+  "needs_revision": [
+    {
+      "slug": "2026-06-16.html",
+      "score": 72,
+      "verdict": "REVISE",
+      "critical_issue": "Imagen API placeholder error message ('Pending Generation', API error text, and the full illustration brief) is live and visible to site readers in the published docs/2026-06-16.html. Remove the placeholder section or replace with a static fallback before next user session.",
+      "secondary_issue": "No per-story source URLs — all 6 stories lack individual citations. Add source links to each story card.",
+      "tertiary_issue": "Fable 5 AI / federal agencies claim needs a source URL or softer framing."
+    }
+  ],
+  "blocked": [],
+  "pipeline_failures": {
+    "article_pipeline": {
+      "status": "CONFIRMED BROKEN — DAY 12",
+      "details": "drafts/articles/ directory does not exist. Zero articles produced across the entire history of the site. Today's queued items not produced:",
+      "unproduced_items": [
+        {
+          "slug": "world-cup-2026-transit-stress-test",
+          "priority": 1,
+          "urgency": "CRITICAL — top national transit story, group stage live now, organic traffic window closing daily",
+          "consecutive_days_queued": 4
+        },
+        {
+          "slug": "congress-transportation-reauthorization-2026",
+          "priority": 2,
+          "urgency": "HIGH — one-shot coverage window, queued 4 consecutive days",
+          "consecutive_days_queued": 4
+        },
+        {
+          "slug": "uk-mass-transit-taskforce-2026",
+          "priority": 4,
+          "urgency": "MEDIUM",
+          "consecutive_days_queued": 1
+        },
+        {
+          "slug": "sidewalkbench-ai-urban-pedestrian-navigation",
+          "priority": 5,
+          "urgency": "LOW-MEDIUM — fresh arXiv paper, time-sensitive but lower traffic potential",
+          "consecutive_days_queued": 1
+        }
+      ]
+    },
+    "infographic_pipeline": {
+      "status": "CONFIRMED BROKEN — RETRY 7 FAILED",
+      "details": "brt-vs-light-rail-cost-2026 infographic has been queued every day since 2026-06-07 and was not produced today (retry #7). docs/infographic-brt-vs-light-rail-cost-2026.svg does not exist. Per queue instructions, this constitutes a confirmed pipeline failure requiring manual diagnostic of the infographic-writing agent.",
+      "unproduced_items": [
+        {
+          "slug": "brt-vs-light-rail-cost-2026",
+          "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg",
+          "first_queued": "2026-06-07",
+          "retry_number": 7,
+          "status": "CONFIRMED PIPELINE FAILURE"
+        }
+      ]
+    },
+    "publishing_pipeline": {
+      "status": "BLOCKED — DAY 12",
+      "details": "approved.json has been empty since 2026-06-07. Publishing Agent skipped again today (commit: 'Publishing skipped 2026-06-16: approved.json empty (day 12)'). Three QC-passed scripts are ready to publish immediately. Zero content has gone live despite 12 days of daily production.",
+      "ready_to_add_to_approved_json": [
+        "tesla-spacex-transit-empire-script (clean pass, 142w reel, 9 named sources)",
+        "transit-app-dark-ux-2026-script (passed, minor LA Metro API tier note)",
+        "fare-evasion-economics-script (passed, trim ~120w from YouTube sections 2-3)"
+      ]
+    }
+  },
+  "qc_findings_by_file": {
+    "docs/2026-06-16.html": {"verdict": "REVISE", "score": 72, "qc_file": "drafts/qc/2026-06-16-html-qc.json"},
+    "docs/infographic-2026-06-16.svg": {"verdict": "PASS", "score": 82, "qc_file": "drafts/qc/infographic-2026-06-16-svg-qc.json"},
+    "docs/research-2026-06-16.html": {"verdict": "PASS", "score": 88, "qc_file": "drafts/qc/research-2026-06-16-html-qc.json"},
+    "docs/research-infographic-2026-06-16.svg": {"verdict": "PASS", "score": 80, "qc_file": "drafts/qc/research-infographic-2026-06-16-svg-qc.json"},
+    "docs/transit-2026-06-16.html": {"verdict": "PASS", "score": 91, "qc_file": "drafts/qc/transit-2026-06-16-html-qc.json"}
+  },
+  "escalations": [
+    "CRITICAL — HUMAN ACTION REQUIRED: approved.json has been empty for 12 consecutive days. Add tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics to system/approved.json to unblock publishing.",
+    "CRITICAL — MANUAL DIAGNOSTIC REQUIRED: Article-writing agent has produced zero articles in 12+ days. The drafts/articles/ directory has never had a file written to it. Agent is either not deployed, misconfigured, or not receiving queue output.",
+    "CRITICAL — MANUAL DIAGNOSTIC REQUIRED: Infographic-writing agent has failed 7 consecutive retries on brt-vs-light-rail-cost-2026. The docs/infographic-brt-vs-light-rail-cost-2026.svg file has never been created. Same failure mode as article-writing agent.",
+    "LIVE SITE QUALITY ISSUE: docs/2026-06-16.html contains a visible Imagen API error/placeholder section that is readable by site visitors right now. Should be fixed or removed in the next deploy.",
+    "URGENT CONTENT MISS: World Cup 2026 transit crisis is the #1 national transit story (Day 4 of group stage). The site has covered it in the SoCal brief but has no standalone long-form article. Every additional day without the world-cup-2026-transit-stress-test article is lost organic search traffic during a peak window."
+  ]
+}

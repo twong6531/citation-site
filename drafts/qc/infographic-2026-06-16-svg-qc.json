@@ -1,0 +1,24 @@
+{
+  "file": "docs/infographic-2026-06-16.svg",
+  "type": "editorial_infographic",
+  "reviewed_at": "2026-06-16T19:00:00Z",
+  "verdict": "PASS",
+  "score": 82,
+  "checks_passed": [
+    "Valid SVG: file starts with <svg> tag with xmlns attribute",
+    "Has viewBox attribute: viewBox=\"0 0 800 1358\"",
+    "Meaningful text content: 6 story entries with headlines, bullet points, impact scores, and category labels",
+    "No placeholder text",
+    "Consistent with companion HTML (same 6 stories, same headlines)",
+    "Story 5 truncation ('Jim Kell...' and 'multiple processo...') is a display-length issue, not a content quality failure — SVG layout constraints",
+    "Color coding consistent with HTML companion (E65100, 6C47FF, 00897B, 2E7D32)",
+    "Date, title, and attribution present in header and footer"
+  ],
+  "checks_failed": [
+    "MINOR: Two SVG text elements are truncated with ellipsis in the SVG source itself ('Jim Kell…' and 'multiple processo…') — the truncation is hard-coded, not a rendering issue. Readers cannot access the full text even on desktop SVG viewers. Low severity: these are supporting bullet points, not headlines."
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "PASS with minor note. SVG is a typographic summary companion — truncations are acceptable given space constraints. No revision required before continued publication."
+}
