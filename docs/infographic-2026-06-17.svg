@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1326" width="800" height="1326">
+<rect width="800" height="1326" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="400" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#888888" text-anchor="middle" letter-spacing="3" font-weight="500">DAILY BRIEFING</text>
+<text x="400" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" fill="#111111" text-anchor="middle" font-weight="700">Open-Weight AI Model Race</text>
+<text x="400" y="95" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#999999" text-anchor="middle">June 17, 2026</text>
+<line x1="40" y1="115" x2="760" y2="115" stroke="#DDDDDD" stroke-width="1"/>
+<rect x="40" y="132" width="720" height="187" fill="#FFFFFF" rx="3"/>
+<text x="56" y="160" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">01</text>
+<rect x="80" y="146" width="30" height="18" rx="9" fill="#6C47FF"/>
+<text x="95.0" y="158" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">AI</text>
+<text x="130" y="159" font-size="14">🧠</text>
+<text x="750" y="159" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#6C47FF" text-anchor="end" font-weight="700">8/10</text>
+<text x="56" y="186" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">GLM-5.2 Tops Open-Weight AI Models</text>
+<text x="56" y="206" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Z.ai&#39;s GLM-5.2 became the leading open-weights model on the Artificial Analysis Intelligence</text>
+<text x="56" y="222" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Index, scoring 51 versus 44 for rivals MiniMax-M3 and DeepSeek V4 Pro. The model keeps the</text>
+<circle cx="60" cy="251" r="2" fill="#6C47FF"/>
+<text x="68" y="255" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Scores 51 on Intelligence Index v4.1, up 11 points from GLM-5.1, ahead of MiniMax-M3 and …</text>
+<circle cx="60" cy="269" r="2" fill="#6C47FF"/>
+<text x="68" y="273" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">744B total / 40B active parameters, unchanged from GLM-5.1, with biggest gains on CritPt …</text>
+<circle cx="60" cy="287" r="2" fill="#6C47FF"/>
+<text x="68" y="291" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Priced at $1.4/$4.4/$0.26 per 1M input/output/cache-hit tokens on the first-party API</text>
+<line x1="40" y1="319" x2="760" y2="319" stroke="#EEEEEE" stroke-width="1"/>
+<text x="56" y="355" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">02</text>
+<rect x="80" y="341" width="30" height="18" rx="9" fill="#6C47FF"/>
+<text x="95.0" y="353" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">AI</text>
+<text x="130" y="354" font-size="14">💻</text>
+<text x="750" y="354" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#6C47FF" text-anchor="end" font-weight="700">7/10</text>
+<text x="56" y="381" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Local AI Coding Finally Rivals Frontier Models</text>
+<text x="56" y="401" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">A developer running Google&#39;s Gemma-4 family on a 2022 M2 Mac reports local agentic coding</text>
+<text x="56" y="417" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">now performs at roughly 75% of frontier-model accuracy and speed. The shift marks a turning</text>
+<circle cx="60" cy="446" r="2" fill="#6C47FF"/>
+<text x="68" y="450" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Gemma-4-26b-a4b and gemma-4-12b-qat run fully offline on a 2022 Mac with 64GB RAM</text>
+<circle cx="60" cy="464" r="2" fill="#6C47FF"/>
+<text x="68" y="468" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Local agentic coding loops now hit ~75% of frontier-model accuracy/speed, up from near-un…</text>
+<circle cx="60" cy="482" r="2" fill="#6C47FF"/>
+<text x="68" y="486" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Workflow uses LM Studio for inference and the Pi agent harness, run sandboxed in Docker f…</text>
+<line x1="40" y1="514" x2="760" y2="514" stroke="#EEEEEE" stroke-width="1"/>
+<rect x="40" y="522" width="720" height="187" fill="#FFFFFF" rx="3"/>
+<text x="56" y="550" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">03</text>
+<rect x="80" y="536" width="44" height="18" rx="9" fill="#00897B"/>
+<text x="102.0" y="548" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">Tech</text>
+<text x="144" y="549" font-size="14">🔒</text>
+<text x="750" y="549" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#00897B" text-anchor="end" font-weight="700">6/10</text>
+<text x="56" y="576" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">GrapheneOS Ported to Android 17 Already</text>
+<text x="56" y="596" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">The privacy-focused GrapheneOS team announced a full port to Android 17 on the day of its</text>
+<text x="56" y="612" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">official release, with public testing starting within 24 hours. The project has already</text>
+<circle cx="60" cy="641" r="2" fill="#00897B"/>
+<text x="68" y="645" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Ported and tested on Pixel 6a, 7, 7a, 8, 10a, 10, and 10 Pro Fold within hours of Android…</text>
+<circle cx="60" cy="659" r="2" fill="#00897B"/>
+<text x="68" y="663" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Public code push happened same-day; initial public release scheduled for the following day</text>
+<circle cx="60" cy="677" r="2" fill="#00897B"/>
+<text x="68" y="681" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Final Android 16 QPR2 release also shipped the same week before the jump to 17</text>
+<line x1="40" y1="709" x2="760" y2="709" stroke="#EEEEEE" stroke-width="1"/>
+<text x="56" y="745" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">04</text>
+<rect x="80" y="731" width="72" height="18" rx="9" fill="#2E7D32"/>
+<text x="116.0" y="743" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">Business</text>
+<text x="172" y="744" font-size="14">📉</text>
+<text x="750" y="744" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#2E7D32" text-anchor="end" font-weight="700">7/10</text>
+<text x="56" y="771" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">60% of Consumers Call &#39;AI&#39; Branding a Turnoff</text>
+<text x="56" y="791" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">A new survey finds 60% of US consumers say the word &#39;AI&#39; in marketing material makes them</text>
+<text x="56" y="807" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">less likely to trust or buy a product. The backlash suggests companies touting AI features</text>
+<circle cx="60" cy="836" r="2" fill="#2E7D32"/>
+<text x="68" y="840" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">60% of US consumers say &#39;AI&#39; in brand messaging is a turnoff, per the survey</text>
+<circle cx="60" cy="854" r="2" fill="#2E7D32"/>
+<text x="68" y="858" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Finding appears in a broader 2026 &#39;Future of the Web&#39; industry report</text>
+<circle cx="60" cy="872" r="2" fill="#2E7D32"/>
+<text x="68" y="876" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Marks a reversal from 2023-2024, when AI branding was treated as a selling point</text>
+<line x1="40" y1="904" x2="760" y2="904" stroke="#EEEEEE" stroke-width="1"/>
+<rect x="40" y="912" width="720" height="187" fill="#FFFFFF" rx="3"/>
+<text x="56" y="940" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">05</text>
+<rect x="80" y="926" width="44" height="18" rx="9" fill="#E65100"/>
+<text x="102.0" y="938" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">World</text>
+<text x="144" y="939" font-size="14">🚨</text>
+<text x="750" y="939" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#E65100" text-anchor="end" font-weight="700">8/10</text>
+<text x="56" y="966" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">FBI Issues Urgent Warning on Kali365 Attacks</text>
+<text x="56" y="986" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">The FBI issued an urgent security warning about a campaign dubbed &#39;Kali365&#39; targeting users</text>
+<text x="56" y="1002" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">of Microsoft Teams, Outlook, and OneDrive. The alert urges organizations relying on</text>
+<circle cx="60" cy="1031" r="2" fill="#E65100"/>
+<text x="68" y="1035" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Warning covers three core Microsoft 365 apps: Teams, Outlook, and OneDrive</text>
+<circle cx="60" cy="1049" r="2" fill="#E65100"/>
+<text x="68" y="1053" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">FBI alert labeled &#39;urgent&#39;, signaling active, ongoing exploitation rather than a theoreti…</text>
+<circle cx="60" cy="1067" r="2" fill="#E65100"/>
+<text x="68" y="1071" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Affects organizations across the hundreds of millions of Microsoft 365 seats worldwide</text>
+<line x1="40" y1="1099" x2="760" y2="1099" stroke="#EEEEEE" stroke-width="1"/>
+<text x="56" y="1135" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">06</text>
+<rect x="80" y="1121" width="44" height="18" rx="9" fill="#00897B"/>
+<text x="102.0" y="1133" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">Tech</text>
+<text x="144" y="1134" font-size="14">🚗</text>
+<text x="750" y="1134" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#00897B" text-anchor="end" font-weight="700">6/10</text>
+<text x="56" y="1161" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Volkswagen App Locks Out GrapheneOS Phones</text>
+<text x="56" y="1181" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Volkswagen&#39;s companion app has started blocking users running GrapheneOS, the privacy-</text>
+<text x="56" y="1197" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">hardened Android fork, preventing them from accessing connected-car features. The move has</text>
+<circle cx="60" cy="1226" r="2" fill="#00897B"/>
+<text x="68" y="1230" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">VW&#39;s app now fails Play Integrity/attestation checks specifically for GrapheneOS devices</text>
+<circle cx="60" cy="1244" r="2" fill="#00897B"/>
+<text x="68" y="1248" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Locks out connected-car features for users who chose a privacy-hardened OS over stock And…</text>
+<circle cx="60" cy="1262" r="2" fill="#00897B"/>
+<text x="68" y="1266" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Discussion thread on GrapheneOS forums has run to 3+ pages of user reports</text>
+<line x1="40" y1="1302" x2="760" y2="1302" stroke="#EEEEEE" stroke-width="1"/>
+<text x="400" y="1320" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" text-anchor="middle">Generated by AI · June 17, 2026</text>
+<rect x="0" y="1323" width="800" height="3" fill="#111111"/>
+</svg>
