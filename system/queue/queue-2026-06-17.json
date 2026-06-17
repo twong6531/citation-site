@@ -1,0 +1,103 @@
+{
+  "date": "2026-06-17",
+  "generated_at": "2026-06-17T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 Transit Crisis: What the Opening Night Disaster Reveals About American Public Transit",
+      "angle": "NJ Transit moved 21,000 fans after the first match but thousands were stranded for hours; multiple host cities are struggling in real time. The stress test exposes exactly what site niche covers — infrastructure underfunding, transit deserts, last-mile failures, and the consequences of car-centric city design.",
+      "rationale": "RETRY — queued 4 consecutive days (rank #1 every time since 2026-06-13), never produced. drafts/articles/ directory did not even exist until this run created it, confirming the article-writing agent has never successfully written to it. Group stage is still live; window is closing fast.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-stress-test",
+      "output_path": "drafts/articles/world-cup-2026-transit-stress-test.html"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "topic": "Congress Transportation Reauthorization 2026: What Is at Stake for Transit",
+      "angle": "The current surface transportation authorization expires in 2026 — what the Urban Institute's underfunding analysis means for formula grants, state of good repair, and the 5-year outlook for transit systems across the US.",
+      "rationale": "RETRY — queued 4 consecutive days, never produced. One-shot policy coverage window (reauthorization happens every ~5 years). Directly in site niche.",
+      "target_length": "long",
+      "slug": "congress-transportation-reauthorization-2026",
+      "output_path": "drafts/articles/congress-transportation-reauthorization-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "infographic",
+      "topic": "BRT vs. Light Rail: True Cost Comparison 2026",
+      "angle": "Capital costs per mile, operating costs per rider, ridership outcomes, land value uplift, and typical build timelines — a data-driven visual comparison using 2024-2026 US project data.",
+      "rationale": "RETRY #8 — queued every day since 2026-06-07, never produced in 7 prior attempts. Confirmed pipeline failure; manual diagnostic of the infographic-writing agent is overdue. Queuing once more per standing instructions but escalating to human via briefing/notification.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg",
+      "retry_number": 8,
+      "first_queued": "2026-06-07"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "UK Mass Transit Taskforce: What It Is and What US Cities Could Learn",
+      "angle": "The UK government established a Mass Transit Taskforce in May 2026 — what are its mandates, which UK cities are affected, and what specific policy or planning lessons could translate to American transit planning contexts?",
+      "rationale": "Carried over — not yet produced. International comparative angle differentiates the site; fits infrastructure policy niche.",
+      "target_length": "medium",
+      "slug": "uk-mass-transit-taskforce-2026",
+      "output_path": "drafts/articles/uk-mass-transit-taskforce-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "research",
+      "topic": "SidewalkBench: How AI Is Learning to Navigate Urban Pedestrian Environments",
+      "angle": "A GPU-accelerated simulation benchmark for visual navigation on urban sidewalks. What does this mean for transit accessibility, last-mile robotics, autonomous shuttles, and disability technology?",
+      "rationale": "Carried over from yesterday, not yet produced. Short, low production cost, fresh AI x mobility angle.",
+      "target_length": "short",
+      "slug": "sidewalkbench-ai-urban-pedestrian-navigation",
+      "output_path": "drafts/articles/sidewalkbench-ai-urban-pedestrian-navigation.html"
+    }
+  ],
+  "retries": [
+    {
+      "item": "brt-vs-light-rail-cost-2026",
+      "original_date": "2026-06-07",
+      "retry_number": 8,
+      "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg",
+      "note": "CRITICAL: 8th consecutive day queued, 7 confirmed failures. Manual diagnostic of infographic-writing agent required."
+    },
+    {
+      "item": "world-cup-2026-transit-stress-test",
+      "original_date": "2026-06-13",
+      "retry_number": 4,
+      "output_path": "drafts/articles/world-cup-2026-transit-stress-test.html",
+      "note": "drafts/articles/ never existed before this run. Article pipeline appears fully non-functional."
+    },
+    {
+      "item": "congress-transportation-reauthorization-2026",
+      "original_date": "2026-06-13",
+      "retry_number": 4,
+      "output_path": "drafts/articles/congress-transportation-reauthorization-2026.html",
+      "note": "Same pipeline failure as above."
+    }
+  ],
+  "skip_topics": [
+    "Tesla SpaceX transit empire (covered 2026-06-13)",
+    "fare evasion economics (covered 2026-06-14)",
+    "transit app dark UX patterns (covered 2026-06-12)",
+    "SoCal transit brief daily (covered through 2026-06-16)",
+    "transit research digest daily (covered through 2026-06-16)",
+    "editorial infographic daily (covered through 2026-06-16)",
+    "bus bunching prevention (encyclopedia 2026-06-12)",
+    "free fare transit (encyclopedia 2026-06-12)",
+    "environmental justice transit (encyclopedia 2026-06-12)",
+    "transit-oriented development (2026-06-06)",
+    "California high-speed rail (2026-06-06)"
+  ],
+  "trend_signals": [
+    "World Cup 2026 group stage transit strain continues across host cities",
+    "GLM-5.2 open-weights model now leading on Artificial Analysis benchmarks (HN top story)",
+    "Consumer backlash to 'AI' branding — 60% of US consumers say it's a turnoff (HN)",
+    "GrapheneOS ported to Android 17 — mobile privacy/security angle",
+    "No fresh transit-specific arXiv papers today; closest hit was a robotics human-in-the-loop framework, not directly on-topic"
+  ],
+  "video_script_status": "HOLD — 10 scripts in backlog (3 QC-passed, 7 need revision). No new scripts until human reviews and approves existing backlog.",
+  "publishing_block_status": "CRITICAL DAY 13 — approved.json empty since 2026-06-07. 3 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics. Human action required."
+}

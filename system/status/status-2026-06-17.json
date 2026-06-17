@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-17",
+  "generated_at": "2026-06-17T06:00:00Z",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 13 — approved.json empty since 2026-06-07. 13 consecutive days blocked. 3 QC-passed scripts ready NOW: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics. Human must add slugs to approved.json. Zero content has gone live in 13 days of production.",
+    "CONFIRMED PIPELINE FAILURE — brt-vs-light-rail-cost-2026 infographic: 7 consecutive failures, retry #8 queued today. Manual diagnostic of the infographic-writing agent is overdue.",
+    "CRITICAL PIPELINE FAILURE — drafts/articles/ directory did not exist on disk before this run (created today). Confirms the article-writing agent has never successfully written output in the site's history. World Cup and reauthorization articles queued 4+ days running, never produced.",
+    "LIVE SITE QUALITY ISSUE — docs/2026-06-16.html has a visible Imagen API error placeholder live on the published site (QC score 72/100, REVISE). Not yet fixed.",
+    "VIDEO SCRIPTS ON HOLD: 10 scripts in backlog (3 QC-passed, 7 need revision). No new scripts until human reviews existing backlog and adds approved items to approved.json."
+  ]
+}
