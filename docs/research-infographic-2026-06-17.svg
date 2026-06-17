@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 17, 2026 &#8212; 14 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">Invest in AI/ML Capabilities: Transit agencies should explore integrating</text>
+<text x="90" y="241" class="body">advanced ML models (Graph Transformers) for real-time prediction and consider</text>
+<text x="90" y="257" class="body">LLM-powered interfaces for personalized passenger services.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Develop High-Resolution Data Strategies: Prioritize collecting and integrating</text>
+<text x="90" y="319" class="body">multi-source, high-resolution operational and contextual data to enable</text>
+<text x="90" y="335" class="body">sophisticated analysis and predictive modeling.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Prioritize Equity in Planning: Implement planning frameworks that explicitly</text>
+<text x="90" y="397" class="body">consider social equity, user-specific constraints, and risk management in</text>
+<text x="90" y="413" class="body">underserved areas, rather than solely optimizing for efficiency.</text>
+<line x1="40" y1="454" x2="760" y2="454" class="ruleLight"/>
+<text x="40" y="484" class="label">PAPER OF THE DAY</text>
+<text x="40" y="512" class="h2">Public transit gains and spatially uneven travel demand</text>
+<text x="40" y="534" class="h2">changes after NYC congestion pricing</text>
+<text x="40" y="556" class="small">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao</text>
+<text x="40" y="578" class="body">This paper evaluates the impact of NYC&#x27;s 2025 congestion pricing on system-wide urban</text>
+<text x="40" y="594" class="body">mobility, finding increased bus and subway ridership but with uneven spatial patterns</text>
+<text x="40" y="610" class="body">using time series foundation models.</text>
+<text x="40" y="634" class="body">Why it matters: It&#x27;s the first empirical analysis of a major US congestion pricing</text>
+<text x="40" y="650" class="body">program, offering crucial insights into its real-world effects on public transit and</text>
+<text x="40" y="666" class="body">urban travel demand, informing future policy decisions.</text>
+<line x1="40" y1="702" x2="760" y2="702" class="ruleLight"/>
+<text x="40" y="742" class="label">EMERGING THEMES</text>
+<rect x="40" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="782" class="body">AI/ML for Predictive and</text>
+<text x="52" y="798" class="body">Generative Tasks</text>
+<rect x="300" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="782" class="body">Data-Driven Decision Making</text>
+<rect x="560" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="782" class="body">Equity and Justice in</text>
+<text x="572" y="798" class="body">Transit Planning</text>
+<line x1="40" y1="834" x2="760" y2="834" class="ruleLight"/>
+<text x="40" y="874" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="916" class="body">High</text>
+<rect x="110" y="904" width="600.0" height="18" fill="#1A1A1A"/>
+<text x="720.0" y="917" class="small">9</text>
+<text x="40" y="946" class="body">Medium</text>
+<rect x="110" y="934" width="333.33333333333337" height="18" fill="#1A1A1A"/>
+<text x="453.33333333333337" y="947" class="small">5</text>
+<text x="40" y="976" class="body">Low</text>
+<rect x="110" y="964" width="0.0" height="18" fill="#1A1A1A"/>
+<text x="120.0" y="977" class="small">0</text>
+<line x1="40" y1="1014" x2="760" y2="1014" class="ruleLight"/>
+<text x="40" y="1054" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1082" class="body" font-weight="bold">1.</text>
+<text x="60" y="1082" class="body">Invest in AI/ML Capabilities: Transit agencies should explore integrating advanced ML</text>
+<text x="60" y="1098" class="body">models (Graph Transformers) for real-time prediction and consider LLM-powered interfaces</text>
+<text x="60" y="1114" class="body">for personalized passenger services.</text>
+<text x="40" y="1138" class="body" font-weight="bold">2.</text>
+<text x="60" y="1138" class="body">Develop High-Resolution Data Strategies: Prioritize collecting and integrating multi-</text>
+<text x="60" y="1154" class="body">source, high-resolution operational and contextual data to enable sophisticated analysis</text>
+<text x="60" y="1170" class="body">and predictive modeling.</text>
+<text x="40" y="1194" class="body" font-weight="bold">3.</text>
+<text x="60" y="1194" class="body">Prioritize Equity in Planning: Implement planning frameworks that explicitly consider</text>
+<text x="60" y="1210" class="body">social equity, user-specific constraints, and risk management in underserved areas,</text>
+<text x="60" y="1226" class="body">rather than solely optimizing for efficiency.</text>
+<text x="40" y="1250" class="body" font-weight="bold">4.</text>
+<text x="60" y="1250" class="body">Adopt Advanced Policy Evaluation Tools: Utilize time series foundation models for robust</text>
+<text x="60" y="1266" class="body">counterfactual analysis when evaluating major policy changes like congestion pricing to</text>
+<text x="60" y="1282" class="body">understand true impacts.</text>
+<text x="40" y="1306" class="body" font-weight="bold">5.</text>
+<text x="60" y="1306" class="body">Re-evaluate Network Design Methodologies: Explore graph-theoretic and optimization-based</text>
+<text x="60" y="1322" class="body">approaches (like spanning trees) for strategic network redesign, aiming to optimize for</text>
+<text x="60" y="1338" class="body">relevant metrics beyond simple coverage.</text>
+<line x1="40" y1="1382" x2="760" y2="1382" class="rule"/>
+<text x="40" y="1412" class="small">Generated autonomously from arXiv preprints &#8212; June 17, 2026</text>
+<text x="40" y="1428" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
