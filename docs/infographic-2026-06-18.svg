@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1296" width="800" height="1296">
+<rect width="800" height="1296" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="400" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#888888" text-anchor="middle" letter-spacing="3" font-weight="500">DAILY BRIEFING</text>
+<text x="400" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" fill="#111111" text-anchor="middle" font-weight="700">AI Expands Into Medicine</text>
+<text x="400" y="95" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#999999" text-anchor="middle">June 18, 2026</text>
+<line x1="40" y1="115" x2="760" y2="115" stroke="#DDDDDD" stroke-width="1"/>
+<rect x="40" y="132" width="720" height="187" fill="#FFFFFF" rx="3"/>
+<text x="56" y="160" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">01</text>
+<rect x="80" y="146" width="30" height="18" rx="9" fill="#6C47FF"/>
+<text x="95.0" y="158" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">AI</text>
+<text x="132" y="159" font-size="14">🩺</text>
+<text x="750" y="159" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#6C47FF" text-anchor="end" font-weight="700">9/10</text>
+<text x="56" y="186" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Midjourney Pivots Into Medical AI Imaging</text>
+<text x="56" y="206" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Midjourney, known for generative art, announced &quot;Midjourney Medical,&quot; a venture applying its</text>
+<text x="56" y="222" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">image generation models to clinical and diagnostic imaging. The move signals generative AI</text>
+<circle cx="60" cy="242" r="2" fill="#6C47FF"/>
+<text x="68" y="246" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Midjourney has over 100 million registered users on its core platform</text>
+<circle cx="60" cy="260" r="2" fill="#6C47FF"/>
+<text x="68" y="264" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">The new &quot;Midjourney Medical&quot; division targets clinical and diagnostic imaging workflows</text>
+<circle cx="60" cy="278" r="2" fill="#6C47FF"/>
+<text x="68" y="282" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">The post topped Hacker News with 1,067 points, the day&#39;s highest-scoring story</text>
+<line x1="40" y1="319" x2="760" y2="319" stroke="#EEEEEE" stroke-width="1"/>
+<text x="56" y="350" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">02</text>
+<rect x="80" y="336" width="44" height="18" rx="9" fill="#00897B"/>
+<text x="102.0" y="348" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">Tech</text>
+<text x="146" y="349" font-size="14">⚠️</text>
+<text x="750" y="349" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#00897B" text-anchor="end" font-weight="700">9/10</text>
+<text x="56" y="376" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">10,000 GitHub Repos Caught Spreading Trojans</text>
+<text x="56" y="396" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">A security investigation found roughly 10,000 GitHub repositories actively distributing</text>
+<text x="56" y="412" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Trojan malware disguised as legitimate code. The discovery exposes a large-scale software</text>
+<circle cx="60" cy="432" r="2" fill="#00897B"/>
+<text x="68" y="436" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Researchers identified approximately 10,000 malicious repositories on GitHub</text>
+<circle cx="60" cy="450" r="2" fill="#00897B"/>
+<text x="68" y="454" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">The malware is classified as Trojan-type, hiding inside seemingly normal code</text>
+<circle cx="60" cy="468" r="2" fill="#00897B"/>
+<text x="68" y="472" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">The story reached 145 points on Hacker News within hours of posting</text>
+<line x1="40" y1="509" x2="760" y2="509" stroke="#EEEEEE" stroke-width="1"/>
+<rect x="40" y="512" width="720" height="187" fill="#FFFFFF" rx="3"/>
+<text x="56" y="540" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">03</text>
+<rect x="80" y="526" width="72" height="18" rx="9" fill="#0077CC"/>
+<text x="116.0" y="538" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">Science</text>
+<text x="174" y="539" font-size="14">💊</text>
+<text x="750" y="539" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#0077CC" text-anchor="end" font-weight="700">8/10</text>
+<text x="56" y="566" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Drug Repurposing Cuts Treatment Costs by 90%</text>
+<text x="56" y="586" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Hospitals and universities are repurposing existing approved drugs for new diseases,</text>
+<text x="56" y="602" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">slashing development costs by up to 90% compared to discovering new compounds. The approach</text>
+<circle cx="60" cy="622" r="2" fill="#0077CC"/>
+<text x="68" y="626" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Repurposing existing drugs cuts development costs by up to 90%</text>
+<circle cx="60" cy="640" r="2" fill="#0077CC"/>
+<text x="68" y="644" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Initiative led jointly by hospitals and university research labs</text>
+<circle cx="60" cy="658" r="2" fill="#0077CC"/>
+<text x="68" y="662" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Approach reuses already-approved compounds instead of novel drug discovery</text>
+<line x1="40" y1="699" x2="760" y2="699" stroke="#EEEEEE" stroke-width="1"/>
+<text x="56" y="730" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">04</text>
+<rect x="80" y="716" width="30" height="18" rx="9" fill="#6C47FF"/>
+<text x="95.0" y="728" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">AI</text>
+<text x="132" y="729" font-size="14">👁️</text>
+<text x="750" y="729" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#6C47FF" text-anchor="end" font-weight="700">7/10</text>
+<text x="56" y="756" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">DeepSeek Adds Vision to Its Chat Models</text>
+<text x="56" y="776" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">DeepSeek rolled out vision capabilities on its chat platform, letting users upload images</text>
+<text x="56" y="792" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">for the AI to analyze and discuss. The update makes DeepSeek&#39;s free models multimodal,</text>
+<circle cx="60" cy="812" r="2" fill="#6C47FF"/>
+<text x="68" y="816" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">DeepSeek&#39;s chat.deepseek.com now accepts image uploads for analysis</text>
+<circle cx="60" cy="830" r="2" fill="#6C47FF"/>
+<text x="68" y="834" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">The story collected 316 points on Hacker News the same day</text>
+<circle cx="60" cy="848" r="2" fill="#6C47FF"/>
+<text x="68" y="852" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Update positions DeepSeek alongside multimodal rivals like GPT and Gemini</text>
+<line x1="40" y1="889" x2="760" y2="889" stroke="#EEEEEE" stroke-width="1"/>
+<rect x="40" y="892" width="720" height="187" fill="#FFFFFF" rx="3"/>
+<text x="56" y="920" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">05</text>
+<rect x="80" y="906" width="44" height="18" rx="9" fill="#00897B"/>
+<text x="102.0" y="918" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">Tech</text>
+<text x="146" y="919" font-size="14">🐌</text>
+<text x="750" y="919" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#00897B" text-anchor="end" font-weight="700">6/10</text>
+<text x="56" y="946" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">New Outlook Lags 10 Seconds Behind Classic</text>
+<text x="56" y="966" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Reports show Microsoft&#39;s redesigned Outlook takes roughly 10 seconds to complete tasks that</text>
+<text x="56" y="982" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">the legacy Outlook Classic performs instantly. The slowdown renews complaints that</text>
+<circle cx="60" cy="1002" r="2" fill="#00897B"/>
+<text x="68" y="1006" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">New Outlook takes about 10 seconds for actions Classic does instantly</text>
+<circle cx="60" cy="1020" r="2" fill="#00897B"/>
+<text x="68" y="1024" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Report published windowslatest.com on June 15, 2026</text>
+<circle cx="60" cy="1038" r="2" fill="#00897B"/>
+<text x="68" y="1042" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Story gathered 218 points on Hacker News from frustrated users</text>
+<line x1="40" y1="1079" x2="760" y2="1079" stroke="#EEEEEE" stroke-width="1"/>
+<text x="56" y="1110" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#CCCCCC" font-weight="700">06</text>
+<rect x="80" y="1096" width="30" height="18" rx="9" fill="#6C47FF"/>
+<text x="95.0" y="1108" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.5">AI</text>
+<text x="132" y="1109" font-size="14">💻</text>
+<text x="750" y="1109" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#6C47FF" text-anchor="end" font-weight="700">7/10</text>
+<text x="56" y="1136" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#111111" font-weight="700">Local Qwen Models Prove Useful, Not Inferior</text>
+<text x="56" y="1156" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">Developer Alex Ellis published a detailed report showing locally-run Qwen 27B and 35B-A3B</text>
+<text x="56" y="1172" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#666666">models deliver real value in agentic coding workflows for a small software business, rather</text>
+<circle cx="60" cy="1192" r="2" fill="#6C47FF"/>
+<text x="68" y="1196" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Tested Qwen 27B and 35B-A3B models in real agentic coding workflows</text>
+<circle cx="60" cy="1210" r="2" fill="#6C47FF"/>
+<text x="68" y="1214" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Report drawn from production use at a small software business, not a hobby test</text>
+<circle cx="60" cy="1228" r="2" fill="#6C47FF"/>
+<text x="68" y="1232" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#444444">Gathered 346 points on Hacker News, the day&#39;s second-highest story</text>
+<line x1="40" y1="1269" x2="760" y2="1269" stroke="#EEEEEE" stroke-width="1"/>
+<text x="400" y="1290" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" text-anchor="middle">Generated by AI · June 18, 2026</text>
+<rect x="0" y="1293" width="800" height="3" fill="#111111"/>
+</svg>

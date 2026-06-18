@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing &mdash; June 18, 2026</title>
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --card: #1a1a22;
+      --border: #2a2a36;
+      --text: #e8e8f0;
+      --muted: #8888aa;
+      --accent: #6C47FF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .site-header {
+      background: #0a0a0e;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .brand { font-size: 13px; letter-spacing: 3px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+    .site-header .date { font-size: 13px; color: var(--muted); }
+    .hero {
+      background: linear-gradient(135deg, #0f0f13 0%, #1a0f2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .hero .label { font-size: 11px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; font-weight: 600; }
+    .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #ffffff; margin-bottom: 12px; line-height: 1.15; }
+    .hero .date-label { font-size: 14px; color: var(--muted); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    /* Section A: Visual */
+    .section-visual {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase;
+      font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .visual-placeholder {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 60px 40px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .visual-placeholder .vp-icon { font-size: 48px; margin-bottom: 20px; opacity: 0.4; }
+    .visual-placeholder h3 { font-size: 18px; color: var(--text); margin-bottom: 10px; font-weight: 600; }
+    .visual-placeholder p { color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 500px; margin: 0 auto 20px; }
+    .visual-placeholder .subject {
+      font-size: 13px; color: var(--accent); font-style: italic;
+      border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px;
+      text-align: left; background: rgba(108,71,255,0.05);
+    }
+    .visual-caption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; font-style: italic; }
+    .visual-note { font-size: 11px; color: #555566; text-align: center; margin-top: 6px; }
+
+    /* Section B: News */
+    .section-news { padding: 60px 0; }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .story-card:hover { border-color: #3a3a50; }
+    .story-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .story-num { font-size: 11px; color: #444455; font-weight: 700; letter-spacing: 1px; }
+    .category-pill {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; color: white;
+    }
+    .story-emoji { font-size: 16px; }
+    .impact-score { font-size: 11px; font-weight: 700; margin-left: auto; }
+    .story-headline { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 10px; line-height: 1.3; }
+    .story-summary { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+    .story-bullets {
+      list-style: none; margin-bottom: 14px;
+    }
+    .story-bullets li {
+      font-size: 13px; color: #aaaacc; padding: 4px 0 4px 20px; position: relative;
+    }
+    .story-bullets li::before { content: '▸'; position: absolute; left: 0; color: #4444aa; }
+    .why-matters { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+    .impact-bar-container {
+      height: 3px; background: #222233; border-radius: 2px; margin-bottom: 12px;
+    }
+    .impact-bar { height: 3px; border-radius: 2px; transition: width 0.3s; }
+    .main-topic {
+      font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      border: 1px solid; border-radius: 4px; padding: 3px 8px; display: inline-block;
+    }
+    .infographic-link {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px; margin-top: 32px;
+      color: var(--text); text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .infographic-link:hover { border-color: var(--accent); }
+    .infographic-link .link-icon { font-size: 24px; }
+    .infographic-link .link-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .infographic-link .link-text p { font-size: 12px; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">Daily Briefing</span>
+    <span class="date">June 18, 2026</span>
+  </header>
+
+  <div class="hero">
+    <div class="label">Today's Intelligence Report</div>
+    <h1>AI Expands Into Medicine</h1>
+    <div class="date-label">June 18, 2026</div>
+  </div>
+
+  <div class="container">
+
+    <!-- SECTION A: EDITORIAL VISUAL -->
+    <section class="section-visual">
+      <div class="section-label">Today's Visual &mdash; June 18, 2026</div>
+
+      <div class="visual-placeholder">
+        <div class="vp-icon">🎨</div>
+        <h3>Editorial Illustration &mdash; Pending Generation</h3>
+        <p>The AI-generated editorial illustration for today's visual subject could not be rendered. The Imagen API is restricted to paid Google Cloud billing accounts for this session.</p>
+        <div class="subject">
+          <strong>Visual Subject:</strong> a glowing MRI brain scan being generated pixel-by-pixel by an AI diffusion model<br><br>
+          <strong>Visual Context:</strong> A cross-sectional brain MRI rendered in grayscale, with a visible diffusion-model noise pattern resolving into anatomical detail across one hemisphere while the other remains sharp and complete. Faint neural-network node-and-edge lines float over the scan like a translucent overlay, connecting to small data readouts at the margins.
+        </div>
+      </div>
+      <p class="visual-caption">a glowing MRI brain scan being generated pixel-by-pixel by an AI diffusion model &mdash; Technical Editorial Illustration</p>
+      <p class="visual-note">Independently researched and rendered by AI from today's news</p>
+    </section>
+
+    <!-- SECTION B: NEWS ANALYSIS -->
+    <section class="section-news">
+      <div class="section-label">News Analysis &mdash; 6 Stories</div>
+
+      <a href="#" class="back-link" onclick="history.back();return false;">&larr; Back to index</a>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">01</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">🩺</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 9/10</span>
+        </div>
+        <h2 class="story-headline">Midjourney Pivots Into Medical AI Imaging</h2>
+        <p class="story-summary">Midjourney, known for generative art, announced "Midjourney Medical," a venture applying its image generation models to clinical and diagnostic imaging. The move signals generative AI companies expanding from creative tools into high-stakes healthcare applications.</p>
+        <ul class="story-bullets"><li>Midjourney has over 100 million registered users on its core platform</li><li>The new "Midjourney Medical" division targets clinical and diagnostic imaging workflows</li><li>The post topped Hacker News with 1,067 points, the day's highest-scoring story</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> A leading generative-art company entering medical imaging could accelerate AI diagnostics adoption while raising new questions about clinical validation and regulatory oversight.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:90%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">Medical AI Imaging</span>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">02</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">⚠️</span>
+          <span class="impact-score" style="color:#00897B">Impact 9/10</span>
+        </div>
+        <h2 class="story-headline">10,000 GitHub Repos Caught Spreading Trojans</h2>
+        <p class="story-summary">A security investigation found roughly 10,000 GitHub repositories actively distributing Trojan malware disguised as legitimate code. The discovery exposes a large-scale software supply-chain attack targeting developers who clone or fork public repos.</p>
+        <ul class="story-bullets"><li>Researchers identified approximately 10,000 malicious repositories on GitHub</li><li>The malware is classified as Trojan-type, hiding inside seemingly normal code</li><li>The story reached 145 points on Hacker News within hours of posting</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> At this scale, the campaign turns routine code reuse into a major attack vector, putting developers and downstream software supply chains at risk.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:90%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">Supply Chain Malware</span>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">03</span>
+          <span class="category-pill" style="background:#0077CC">Science</span>
+          <span class="story-emoji">💊</span>
+          <span class="impact-score" style="color:#0077CC">Impact 8/10</span>
+        </div>
+        <h2 class="story-headline">Drug Repurposing Cuts Treatment Costs by 90%</h2>
+        <p class="story-summary">Hospitals and universities are repurposing existing approved drugs for new diseases, slashing development costs by up to 90% compared to discovering new compounds. The approach skips years of early-stage trials by reusing drugs with known safety profiles.</p>
+        <ul class="story-bullets"><li>Repurposing existing drugs cuts development costs by up to 90%</li><li>Initiative led jointly by hospitals and university research labs</li><li>Approach reuses already-approved compounds instead of novel drug discovery</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Cheaper repurposing pathways could bring new treatments to patients far faster and more affordably than traditional decade-long drug development.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:80%; background:#0077CC"></div>
+        </div>
+        <span class="main-topic" style="border-color:#0077CC;color:#0077CC">Drug Repurposing</span>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">04</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">👁️</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">DeepSeek Adds Vision to Its Chat Models</h2>
+        <p class="story-summary">DeepSeek rolled out vision capabilities on its chat platform, letting users upload images for the AI to analyze and discuss. The update makes DeepSeek's free models multimodal, matching a feature already standard among top Western AI labs.</p>
+        <ul class="story-bullets"><li>DeepSeek's chat.deepseek.com now accepts image uploads for analysis</li><li>The story collected 316 points on Hacker News the same day</li><li>Update positions DeepSeek alongside multimodal rivals like GPT and Gemini</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Free multimodal access from a major open competitor pressures paid AI vision products to justify their cost.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">Multimodal AI</span>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">05</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🐌</span>
+          <span class="impact-score" style="color:#00897B">Impact 6/10</span>
+        </div>
+        <h2 class="story-headline">New Outlook Lags 10 Seconds Behind Classic</h2>
+        <p class="story-summary">Reports show Microsoft's redesigned Outlook takes roughly 10 seconds to complete tasks that the legacy Outlook Classic performs instantly. The slowdown renews complaints that Microsoft's web-based app rewrites sacrifice performance for new features.</p>
+        <ul class="story-bullets"><li>New Outlook takes about 10 seconds for actions Classic does instantly</li><li>Report published windowslatest.com on June 15, 2026</li><li>Story gathered 218 points on Hacker News from frustrated users</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Performance regressions in software used by hundreds of millions of office workers translate into real daily productivity losses.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:60%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">Software Performance</span>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">06</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">💻</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">Local Qwen Models Prove Useful, Not Inferior</h2>
+        <p class="story-summary">Developer Alex Ellis published a detailed report showing locally-run Qwen 27B and 35B-A3B models deliver real value in agentic coding workflows for a small software business, rather than being a lesser substitute for cloud models like Claude Opus. The piece pushes back on unsubstantiated claims that local models already match frontier cloud AI.</p>
+        <ul class="story-bullets"><li>Tested Qwen 27B and 35B-A3B models in real agentic coding workflows</li><li>Report drawn from production use at a small software business, not a hobby test</li><li>Gathered 346 points on Hacker News, the day's second-highest story</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Evidence-based local-vs-cloud comparisons help businesses make grounded infrastructure decisions instead of following AI hype cycles.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">Local AI Models</span>
+      </div>
+
+      <a href="infographic-2026-06-18.svg" class="infographic-link" target="_blank">
+        <span class="link-icon">📊</span>
+        <div class="link-text">
+          <h4>Download Data Infographic (SVG)</h4>
+          <p>Typographic summary of today's 6 top stories &mdash; June 18, 2026</p>
+        </div>
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by AI &middot; <a href="index.html">&larr; Return to index</a> &middot; June 18, 2026</p>
+    <p style="margin-top:8px">News sourced from Hacker News top stories</p>
+  </footer>
+</body>
+</html>
