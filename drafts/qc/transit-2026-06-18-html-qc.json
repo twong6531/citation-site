@@ -1,0 +1,22 @@
+{
+  "file": "docs/transit-2026-06-18.html",
+  "type": "socal_transit_brief",
+  "reviewed_at": "2026-06-18T19:00:00Z",
+  "verdict": "PASS",
+  "score": 93,
+  "checks_passed": [
+    "Word count: ~4,275 words across 12 stories, well over the floor",
+    "Sources: 12 named, linked sources (Metro.net, Police1, LAist, Smart Cities Dive, Voice of OC, Davis Vanguard, TechCrunch, Amtrak Media, Fox LA, CBS News, US News) plus a consolidated footer source list — best-sourced item reviewed today",
+    "No placeholder text, no AI tells",
+    "HTML structure complete; nav links to transit.html archive and index.html",
+    "Specific, verifiable stats throughout (9.5% YoY ridership, 62% D Line YoY, 2,400 DPS applicants, $1.75 shuttle fare, $231.3B vs $126.3B HSR cost dispute, etc.) consistent with known SoCal transit reporting patterns",
+    "Agency status board and emerging-themes synthesis sections add real analytical value beyond a link list",
+    "Cross-story 'Connects to' references are internally consistent and don't point to nonexistent topic numbers",
+    "No duplicate topics versus memory.json — extends prior SoCal transit brief coverage without repeating it"
+  ],
+  "checks_failed": [],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "Highest-scoring item reviewed today. No defects found."
+}

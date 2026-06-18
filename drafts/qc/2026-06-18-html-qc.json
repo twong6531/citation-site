@@ -1,0 +1,26 @@
+{
+  "file": "docs/2026-06-18.html",
+  "type": "daily_news_digest",
+  "reviewed_at": "2026-06-18T19:00:00Z",
+  "verdict": "REVISE",
+  "score": 70,
+  "checks_passed": [
+    "HTML structure: has <html>, <head>, <body>, meta viewport, title",
+    "Navigation: footer links back to index.html",
+    "No AI tells: no 'As an AI', 'certainly', 'I cannot', etc.",
+    "No placeholder text in story content (Lorem ipsum, TODO, TBD)",
+    "Six stories present, ~1650 words total — well over a minimal threshold",
+    "Impact scores, category labels, and story bullets all populated",
+    "Factual spot-check: Midjourney Medical, GitHub Trojan-repo campaign, DeepSeek vision rollout, and the Alex Ellis Qwen agentic-coding report are all consistent with widely-reported HN-style stories; no internally implausible figures",
+    "No duplicate topics found versus memory.json covered_topics / last-14-day published items"
+  ],
+  "checks_failed": [
+    "PLACEHOLDER LIVE ON PUBLISHED PAGE (recurring, 3rd time): The editorial illustration section again shows a raw Imagen API error ('The Imagen API returned a quota/availability error for this session') plus the full unrendered illustration brief, visible to site readers. This exact failure mode was flagged on 2026-06-16 and is still unresolved 2 days later — it is now a recurring regression, not a one-off.",
+    "SOURCES: No per-story citation links. Footer only says 'News sourced from Hacker News top stories' — none of the 6 story cards link to the originating HN thread or upstream source, so readers cannot verify any claim. Same gap flagged on 2026-06-16.",
+    "FACTUAL CONCERN — Story 5 cites 'Report published windowslatest.com on June 15, 2026' inline in a bullet, which is inconsistent with the rest of the page (no other story names a source this way) and is not a clickable link, so it functions as unverifiable text rather than a citation."
+  ],
+  "revision_notes": "1. Fix the Imagen placeholder for good — replace with a static neutral SVG/fallback image, or strip the visual section entirely when generation fails, rather than rendering raw API error text and the illustration brief to readers. This is the 3rd occurrence of the same defect; needs a code-level fix in the daily-news agent's template, not a per-day patch. 2. Add a real source link (the HN thread URL, or the underlying article URL where named, e.g. windowslatest.com for Story 5) to every story card. 3. Make Story 5's inline source mention ('windowslatest.com') an actual hyperlink for consistency with site standards elsewhere.",
+  "fail_reason": null,
+  "approved_for_publish": false,
+  "note": "File is already live in docs/ — this QC report documents post-publication findings, consistent with the standing practice of reviewing direct-to-docs/ daily content. The Imagen placeholder defect is now a confirmed recurring regression (06-16, 06-18)."
+}

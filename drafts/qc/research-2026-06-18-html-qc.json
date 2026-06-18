@@ -1,0 +1,25 @@
+{
+  "file": "docs/research-2026-06-18.html",
+  "type": "transit_research_digest",
+  "reviewed_at": "2026-06-18T19:00:00Z",
+  "verdict": "PASS",
+  "score": 89,
+  "checks_passed": [
+    "Word count: ~6,900 words across 13 paper analyses, far exceeding the 600-word floor",
+    "Sources: 13 distinct arXiv papers, each with a direct arxiv.org/abs link and named authors — strong sourcing throughout",
+    "No placeholder text (Lorem ipsum, TODO, TBD)",
+    "No AI tells",
+    "HTML structure: has <html>, <head>, <body>, meta viewport, title",
+    "Navigation: header links back to research.html archive index",
+    "Factual spot-check: NYC congestion pricing transit-ridership study, T-REX continental routing, and equity-aware AMoD/transit integration are consistent with active 2026 transit-research literature; arXiv IDs follow plausible format",
+    "No duplicate topics versus memory.json covered_topics for the last 14 days",
+    "Editorial illustration unavailability is handled gracefully this time — clean 'EDITORIAL ILLUSTRATION UNAVAILABLE' empty-state with a one-line quota/auth note, not a raw API error dump (contrast with docs/2026-06-18.html, which fails this same check)"
+  ],
+  "checks_failed": [
+    "Minor: meta tag block lacks an og:image/og:description pair that the transit brief and other pages include — purely cosmetic, not a content defect"
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "Strongest of today's three published docs/ items. Image-unavailable handling here should be the template the daily news digest (docs/2026-06-18.html) copies to fix its recurring raw-API-error placeholder defect."
+}

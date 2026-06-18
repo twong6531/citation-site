@@ -1,0 +1,20 @@
+{
+  "file": "docs/infographic-2026-06-18.svg",
+  "type": "infographic",
+  "reviewed_at": "2026-06-18T19:00:00Z",
+  "verdict": "PASS",
+  "score": 83,
+  "checks_passed": [
+    "Valid SVG, starts with <svg",
+    "Has viewBox attribute (0 0 800 1296)",
+    "Meaningful text content — 64 <text> elements summarizing today's 6 news stories",
+    "Linked from docs/2026-06-18.html with a working relative href"
+  ],
+  "checks_failed": [
+    "No PNG companion exists — SVG-only fallback, consistent with every prior day's infographic in this pipeline, not treated as a new defect"
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "Consistent with the established pattern and quality bar of prior daily infographics."
+}

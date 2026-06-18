@@ -1,0 +1,61 @@
+{
+  "date": "2026-06-18",
+  "reviewed_at": "2026-06-18T19:00:00Z",
+  "total_reviewed": 5,
+  "passed": 4,
+  "revise": 1,
+  "failed": 0,
+  "note_on_scope": "Zero items in the standard draft pipeline (drafts/articles/, drafts/scripts/, drafts/infographics/) — only a HOLD marker file (drafts/scripts/HOLD-no-new-script.md) was written there today, documenting that script production is intentionally paused. All five reviewable items were produced and published directly to docs/, consistent with this site's established (non-standard) pipeline. QC criteria were adapted for the docs/ content types per precedent set on 2026-06-16.",
+  "ready_to_publish": [
+    "docs/research-2026-06-18.html — Transit Research Digest, score 89, PASS",
+    "docs/transit-2026-06-18.html — SoCal Transit Intelligence, score 93, PASS",
+    "docs/infographic-2026-06-18.svg — Editorial infographic, score 83, PASS",
+    "docs/research-infographic-2026-06-18.svg — Research infographic, score 81, PASS"
+  ],
+  "needs_revision": [
+    {
+      "slug": "2026-06-18.html",
+      "score": 70,
+      "verdict": "REVISE",
+      "critical_issue": "Live Imagen API error placeholder visible on the published page — this is the 3rd occurrence of the exact same defect (06-16, then again 06-18, with apparently no fix attempted on 06-17 since the file wasn't produced that day). This is now a confirmed recurring regression in the daily-news agent's template, not an intermittent quota issue, especially since the research digest on the SAME day (06-18) handled the same Imagen outage gracefully with a clean empty-state.",
+      "secondary_issue": "No per-story source links anywhere on the page — also a repeat of the 06-16 finding, unresolved.",
+      "tertiary_issue": "Story 5's inline source mention ('windowslatest.com') is plain text, not a link."
+    }
+  ],
+  "blocked": [],
+  "pipeline_failures": {
+    "article_pipeline": {
+      "status": "CONFIRMED BROKEN — DAY 14+",
+      "details": "drafts/articles/ remains empty. Zero articles produced across the site's entire history. World Cup transit and congressional reauthorization stories still not produced.",
+      "unproduced_items": [
+        { "slug": "world-cup-2026-transit-stress-test", "urgency": "CRITICAL — narrowing traffic window, tournament already underway per today's transit brief" },
+        { "slug": "congress-transportation-reauthorization-2026", "urgency": "HIGH" }
+      ]
+    },
+    "infographic_pipeline": {
+      "status": "CONFIRMED BROKEN — RETRY 9",
+      "details": "brt-vs-light-rail-cost-2026 infographic queued since 2026-06-07, 8 consecutive failures, retry #9 was queued today per status.json. docs/infographic-brt-vs-light-rail-cost-2026.svg still does not exist."
+    },
+    "publishing_pipeline": {
+      "status": "BLOCKED — DAY 14",
+      "details": "approved.json has been empty since 2026-06-07. 3 QC-passed scripts (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics) remain ready and unpublished. No new publishing action taken today by QC — this is a human/approval-process issue, not a content-quality issue, and is already extensively tracked in system/memory.json failed_jobs and content_gaps."
+    },
+    "video_script_pipeline": {
+      "status": "ON HOLD (by design)",
+      "details": "Video Script Agent correctly held production today per its own HOLD marker, pending human review of the 10-script backlog. No new script QC needed today; existing 10 scripts already have QC files from prior days (3 passed, 7 need revision) and were not re-reviewed since they are unchanged."
+    }
+  },
+  "qc_findings_by_file": {
+    "docs/2026-06-18.html": { "verdict": "REVISE", "score": 70, "qc_file": "drafts/qc/2026-06-18-html-qc.json" },
+    "docs/research-2026-06-18.html": { "verdict": "PASS", "score": 89, "qc_file": "drafts/qc/research-2026-06-18-html-qc.json" },
+    "docs/transit-2026-06-18.html": { "verdict": "PASS", "score": 93, "qc_file": "drafts/qc/transit-2026-06-18-html-qc.json" },
+    "docs/infographic-2026-06-18.svg": { "verdict": "PASS", "score": 83, "qc_file": "drafts/qc/infographic-2026-06-18-svg-qc.json" },
+    "docs/research-infographic-2026-06-18.svg": { "verdict": "PASS", "score": 81, "qc_file": "drafts/qc/research-infographic-2026-06-18-svg-qc.json" }
+  },
+  "escalations": [
+    "CONFIRMED RECURRING DEFECT (not new, but now repeat-confirmed): The daily news digest's Imagen-unavailable placeholder leaks raw API error text to readers on docs/2026-06-18.html. This happened before on 06-16 and was never fixed. docs/research-2026-06-18.html shows the SAME Imagen outage handled correctly the same day with a clean fallback — the daily-news agent should be updated to use the same fallback pattern as the research agent. This is a code/template fix, not a one-off content edit.",
+    "CRITICAL — HUMAN ACTION REQUIRED (day 14, unchanged from prior days): approved.json still empty since 2026-06-07. 3 QC-passed scripts ready to publish. Zero content has gone live in 14 days despite continuous daily production.",
+    "CRITICAL — MANUAL DIAGNOSTIC STILL REQUIRED (unchanged): Article-writing agent has never produced a file in drafts/articles/ in the site's history. World Cup transit coverage gap is now urgent given the tournament is confirmed live and running in today's transit brief.",
+    "CRITICAL — MANUAL DIAGNOSTIC STILL REQUIRED (unchanged): Infographic-writing agent has now failed 9 consecutive retries on brt-vs-light-rail-cost-2026."
+  ]
+}
