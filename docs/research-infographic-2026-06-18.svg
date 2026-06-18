@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 18, 2026 &#8212; 13 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">Agencies pursuing or defending congestion pricing should proactively pair it</text>
+<text x="90" y="241" class="body">with targeted equity interventions in neighborhoods showing weaker adaptation,</text>
+<text x="90" y="257" class="body">not just tout aggregate ridership gains.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">When planning transit-desert remediation under tight-to-moderate budgets,</text>
+<text x="90" y="319" class="body">sequential belief-updating investment plans outperform static optimization by</text>
+<text x="90" y="335" class="body">a meaningful margin (~5-10 points) — agencies should consider phased, data-</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">For immigrant-heavy service areas, invest in reducing transit access time</text>
+<text x="90" y="397" class="body">(last-mile connections, feeder frequency) rather than fare discounts — it&#x27;s</text>
+<text x="90" y="413" class="body">roughly three times more effective at sustaining transit mode share.</text>
+<line x1="40" y1="454" x2="760" y2="454" class="ruleLight"/>
+<text x="40" y="484" class="label">PAPER OF THE DAY</text>
+<text x="40" y="512" class="h2">T-REX: Fast and Dynamic Journey Planning for Continental-</text>
+<text x="40" y="534" class="h2">Scale Public Transit Networks</text>
+<text x="40" y="568" class="small">Jonas Sauer, Patrick Steil, Sascha Witt</text>
+<text x="40" y="590" class="body">T-REX applies multi-level overlay partitioning to Trip-Based Transit Routing, pruning</text>
+<text x="40" y="606" class="body">irrelevant local transfers to answer Pareto-optimal journey queries on a full European</text>
+<text x="40" y="622" class="body">transit network in under 10 milliseconds — a 20-80x speedup over prior algorithms — while</text>
+<text x="40" y="652" class="body">Why it matters: Continental-scale, real-time journey planning is a genuine hard computer-science</text>
+<line x1="40" y1="702" x2="760" y2="702" class="ruleLight"/>
+<text x="40" y="742" class="label">EMERGING THEMES</text>
+<rect x="40" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="782" class="body">Uncertainty-aware and</text>
+<text x="52" y="798" class="body">data-driven planning</text>
+<rect x="300" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="782" class="body">LLMs entering core</text>
+<text x="312" y="798" class="body">transit infrastructure</text>
+<rect x="560" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="782" class="body">Equity</text>
+<text x="572" y="798" class="body">operationalized, not</text>
+<line x1="40" y1="834" x2="760" y2="834" class="ruleLight"/>
+<text x="40" y="874" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="916" class="body">High</text>
+<rect x="110" y="904" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="180.0" y="917" class="small">1</text>
+<text x="40" y="946" class="body">Medium</text>
+<rect x="110" y="934" width="600.0" height="18" fill="#1A1A1A"/>
+<text x="720.0" y="947" class="small">10</text>
+<text x="40" y="976" class="body">Low</text>
+<rect x="110" y="964" width="120.0" height="18" fill="#1A1A1A"/>
+<text x="240.0" y="977" class="small">2</text>
+<line x1="40" y1="1014" x2="760" y2="1014" class="ruleLight"/>
+<text x="40" y="1054" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1082" class="body" font-weight="bold">1.</text>
+<text x="60" y="1082" class="body">Agencies pursuing or defending congestion pricing should proactively pair it with</text>
+<text x="60" y="1098" class="body">targeted equity interventions in neighborhoods showing weaker adaptation, not just tout</text>
+<text x="60" y="1114" class="body">aggregate ridership gains.</text>
+<text x="40" y="1138" class="body" font-weight="bold">2.</text>
+<text x="60" y="1138" class="body">When planning transit-desert remediation under tight-to-moderate budgets, sequential</text>
+<text x="60" y="1154" class="body">belief-updating investment plans outperform static optimization by a meaningful margin</text>
+<text x="60" y="1170" class="body">(~5-10 points) — agencies should consider phased, data-updating rollouts over one-shot</text>
+<text x="40" y="1194" class="body" font-weight="bold">3.</text>
+<text x="60" y="1194" class="body">For immigrant-heavy service areas, invest in reducing transit access time (last-mile</text>
+<text x="60" y="1210" class="body">connections, feeder frequency) rather than fare discounts — it&#x27;s roughly three times</text>
+<text x="60" y="1226" class="body">more effective at sustaining transit mode share.</text>
+<text x="40" y="1250" class="body" font-weight="bold">4.</text>
+<text x="60" y="1250" class="body">GTFS-consuming tools and agencies should consider adopting the DayTypes abstraction to</text>
+<text x="60" y="1266" class="body">simplify schedule-change detection and vehicle scheduling rather than re-deriving</text>
+<text x="60" y="1282" class="body">recurring patterns ad hoc.</text>
+<line x1="40" y1="1382" x2="760" y2="1382" class="rule"/>
+<text x="40" y="1412" class="small">Generated autonomously from arXiv preprints &#8212; June 18, 2026</text>
+<text x="40" y="1428" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
