@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-17",
+  "last_updated": "2026-06-18",
   "published": [
     { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
     { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
@@ -88,6 +88,12 @@
     { "date": "2026-06-16", "type": "research_infographic", "url": "docs/research-infographic-2026-06-16.svg", "topic": "Research Infographic 2026-06-16 (QC: 80 PASS)" },
     { "date": "2026-06-16", "type": "transit", "url": "docs/transit-2026-06-16.html", "topic": "SoCal Transit Brief 2026-06-16 (QC: 91 PASS)" }
   ],
+  "published_2026_06_17": [
+    { "date": "2026-06-17", "type": "news", "url": "docs/2026-06-17.html", "topic": "Daily News Digest 2026-06-17" },
+    { "date": "2026-06-17", "type": "infographic", "url": "docs/infographic-2026-06-17.svg", "topic": "Editorial Infographic 2026-06-17" },
+    { "date": "2026-06-17", "type": "research", "url": "docs/research-2026-06-17.html", "topic": "Transit Research Digest 2026-06-17" },
+    { "date": "2026-06-17", "type": "research_infographic", "url": "docs/research-infographic-2026-06-17.svg", "topic": "Research Infographic 2026-06-17" }
+  ],
   "topic_performance": {
     "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
     "Transit-Oriented Development": { "published": "2026-06-06", "engagement": "high" },
@@ -164,7 +170,12 @@
     { "date": "2026-06-16", "job": "publishing", "reason": "approved.json empty — no human approvals received for 12th consecutive day" },
     { "date": "2026-06-16", "job": "article_writing", "reason": "drafts/articles/ directory has never had a file written to it — confirmed by QC agent. 12+ consecutive days of 0% article production. World Cup and reauthorization stories not produced." },
     { "date": "2026-06-16", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced — retry #7 confirmed failed. docs/infographic-brt-vs-light-rail-cost-2026.svg never created." },
-    { "date": "2026-06-16", "job": "news_digest_qc", "reason": "docs/2026-06-16.html scored 72/100 (REVISE) — live Imagen API error placeholder visible to readers; missing per-story sources" }
+    { "date": "2026-06-16", "job": "news_digest_qc", "reason": "docs/2026-06-16.html scored 72/100 (REVISE) — live Imagen API error placeholder visible to readers; missing per-story sources" },
+    { "date": "2026-06-17", "job": "publishing", "reason": "approved.json empty — no human approvals received for 13th consecutive day" },
+    { "date": "2026-06-17", "job": "article_writing", "reason": "drafts/articles/ still empty — 14+ consecutive days of 0% article production. World Cup and reauthorization stories still not produced." },
+    { "date": "2026-06-17", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced — retry #8 confirmed failed." },
+    { "date": "2026-06-17", "job": "transit_brief", "reason": "docs/transit-2026-06-17.html not produced — breaks the prior 9-day daily streak (06-08 through 06-16). First miss for this job type." },
+    { "date": "2026-06-17", "job": "imagen", "reason": "docs/imagen-2026-06-17.svg not produced — imagen was only produced once before (06-14), so pattern is inconsistent rather than a clear regression." }
   ],
   "content_gaps": [
     "CRITICAL DAY 13: approved.json empty since 2026-06-07. Publishing Agent blocked 13 consecutive days. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION — add slugs to approved.json to unblock. Zero content has gone live despite 13 days of daily production.",
@@ -172,6 +183,10 @@
     "CRITICAL: Long-form article drafts (drafts/articles/) empty across entire site history — 0% article production rate for 13+ days.",
     "URGENT: World Cup 2026 transit story still not produced after 4+ days queued as #1 priority — group stage traffic window narrowing further.",
     "LIVE SITE QUALITY ISSUE: docs/2026-06-16.html still has a visible Imagen API error placeholder live on the published site (carried over from QC flag, not yet fixed).",
-    "WARNING: Video script production on HOLD. Backlog at 10 scripts — 3 QC-passed, 7 need revision. No new scripts until human reviews backlog."
+    "WARNING: Video script production on HOLD. Backlog at 10 scripts — 3 QC-passed, 7 need revision. No new scripts until human reviews backlog.",
+    "CRITICAL DAY 14: approved.json still empty since 2026-06-07. 14 consecutive days blocked. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION.",
+    "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic — 8 consecutive failures since 2026-06-07, retry #9 queued 2026-06-18.",
+    "CRITICAL: drafts/articles/ has never had a file written to it in 14+ days. World Cup 2026 host-city story is now the most time-sensitive unproduced item given the narrowing pre-tournament window.",
+    "NEW: docs/transit-2026-06-17.html (SoCal daily transit brief) was not produced, breaking the prior 9-day streak — worth checking whether this is a one-off miss or a new pipeline failure."
   ]
 }

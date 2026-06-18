@@ -1,0 +1,102 @@
+{
+  "date": "2026-06-18",
+  "generated_at": "2026-06-18T14:05:33Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 host-city transit strain",
+      "angle": "With group-stage matches weeks away, compare how the 11 US host cities' transit systems are (or aren't) prepared to move millions of fans without cars — contrast LA/NYC rail capacity against car-dependent host metros like Dallas and Kansas City.",
+      "rationale": "Queued as #1 priority for 5+ consecutive days (since 2026-06-13) and never produced — drafts/articles/ remains empty after 14 days. The narrowing window before the tournament makes this the most time-sensitive gap in the backlog.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-host-cities",
+      "output_path": "drafts/articles/world-cup-2026-transit-host-cities.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs. light rail capital and operating cost comparison",
+      "angle": "Side-by-side cost-per-mile and cost-per-rider infographic for bus rapid transit vs. light rail, using FTA capital cost database figures.",
+      "rationale": "Queued since 2026-06-07; 8 consecutive retry failures (retry #9 now). Carrying forward as a flagged retry rather than dropping it, since BRT-vs-rail funding debates remain a core niche topic with zero coverage so far.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "video_script",
+      "topic": "Why your transit agency's app is designed to confuse you",
+      "angle": "HOLD per memory.json — 10 scripts already in backlog (3 QC-passed, 7 needing revision) with zero approvals in 14 days. Do not generate a new script; instead flag the 3 ready-to-publish scripts (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics) for the publishing bottleneck.",
+      "rationale": "Video script production is intentionally paused until the human reviews the existing backlog and approved.json receives entries — adding a new script would worsen the backlog, not the bottleneck.",
+      "target_length": "short",
+      "slug": "video-scripts-on-hold-2026-06-18",
+      "output_path": "drafts/scripts/HOLD-no-new-script.md"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Autonomous mixed-reality testbeds for transit vehicle safety validation",
+      "angle": "Explain how mixed-reality (MR) testbeds let agencies validate autonomous shuttle/bus safety behavior before public deployment, tying to today's arXiv submission on MR testbeds for autonomous vehicles.",
+      "rationale": "Direct match to today's arXiv scan (\"A Mixed-Reality Testbed for Autonomous Vehicles\") and extends the site's recurring autonomous-shuttle-feeder coverage thread from 2026-06-15.",
+      "target_length": "medium",
+      "slug": "mixed-reality-testbeds-autonomous-transit-safety",
+      "output_path": "drafts/articles/mixed-reality-testbeds-autonomous-transit-safety.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "Congressional surface transportation reauthorization 2026",
+      "angle": "Plain-language breakdown of what's at stake in the next federal transportation reauthorization bill for transit formula funding, and why agencies are watching the timeline closely.",
+      "rationale": "Queued repeatedly in prior backlogs (congress-transit-reauthorization) alongside the World Cup story but never produced; pairs naturally with rank #1 since both concern near-term federal/event-driven transit pressure.",
+      "target_length": "medium",
+      "slug": "congress-transportation-reauthorization-2026",
+      "output_path": "drafts/articles/congress-transportation-reauthorization-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "item": "brt-vs-light-rail-cost-2026",
+      "consecutive_failures": 8,
+      "first_queued": "2026-06-07",
+      "note": "Retry #9 today. Manual diagnostic of infographic-writing agent recommended given 8 straight failures — see escalation in briefing."
+    },
+    {
+      "item": "world-cup-2026-transit-host-cities",
+      "consecutive_failures": 5,
+      "first_queued": "2026-06-13",
+      "note": "Article-writing agent has never successfully written to drafts/articles/ in site history (14+ days). Retry #6 today."
+    },
+    {
+      "item": "transit-2026-06-18 (SoCal daily brief)",
+      "consecutive_failures": 1,
+      "first_queued": "2026-06-17",
+      "note": "transit-2026-06-17.html was not produced yesterday, breaking the prior 9-day daily streak (06-08 through 06-16). Investigate transit-brief agent."
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity automation",
+    "Southern California transit systems",
+    "slime mold network optimization",
+    "US cities transit gap",
+    "dopamine and urban design",
+    "electric axial flux motors transit",
+    "Pokemon Go military drone urban data pipeline",
+    "transit app dark UX patterns",
+    "Tesla SpaceX transit empire",
+    "fare evasion economics",
+    "EV bus equity gap",
+    "permanent ridership shift post-pandemic",
+    "pantograph charging transit cost",
+    "TOD walkability thresholds",
+    "swarm transit routing"
+  ],
+  "trend_signals": [
+    "AI agent memory/persistence layers (HN: persistent agent memory on Elasticsearch)",
+    "Vision-capable open models (DeepSeek Vision release)",
+    "Drug repurposing / lower-cost healthcare delivery models",
+    "Software supply-chain malware on GitHub (10k trojanized repos)",
+    "Mixed-reality testbeds for autonomous vehicle validation (arXiv)"
+  ]
+}
