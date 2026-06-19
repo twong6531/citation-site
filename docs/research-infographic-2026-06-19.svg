@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 19, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">Static congestion tolls capture roughly 80-90% of optimal dynamic-toll</text>
+<text x="90" y="241" class="body">revenue while costing only 8-20% more in system delay &#8212; full real-time</text>
+<text x="90" y="257" class="body">dynamic tolling may not be worth the added complexity for most cities.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Transit&#x27;s social-mixing &quot;bridging effect&quot; holds reliably only in the</text>
+<text x="90" y="319" class="body">largest metro areas; in smaller cities it vanishes once catchment</text>
+<text x="90" y="335" class="body">composition and centrality are controlled for.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Simpler, momentum-based RL reward functions beat standard delay/queue</text>
+<text x="90" y="397" class="body">rewards for adaptive signal control on both throughput and emissions &#8212;</text>
+<text x="90" y="413" class="body">reward design matters as much as the algorithm.</text>
+<line x1="40" y1="454" x2="760" y2="454" class="ruleLight"/>
+<text x="40" y="484" class="label">PAPER OF THE DAY</text>
+<text x="40" y="512" class="h2">Simple vs. Optimal Congestion Pricing</text>
+<text x="40" y="568" class="small">Devansh Jalota, Xuan Di, Adam N. Elmachtoub</text>
+<text x="40" y="590" class="body">Compares static and fully dynamic congestion tolls in two canonical traffic models with a</text>
+<text x="40" y="606" class="body">transit outside option, showing static tolls reach 80-90% of dynamic-optimal revenue while</text>
+<text x="40" y="622" class="body">costing at most 8-20% more in system delay, validated on real NYC and SF Bay Area data.</text>
+<text x="40" y="652" class="body">Why it matters: nearly every real deployment, including NYC&#x27;s, uses simple tolls &#8212; this</text>
+<line x1="40" y1="702" x2="760" y2="702" class="ruleLight"/>
+<text x="40" y="742" class="label">EMERGING THEMES</text>
+<rect x="40" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="782" class="body">Signal control becomes</text>
+<text x="52" y="798" class="body">the agentic-AI testbed</text>
+<rect x="300" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="782" class="body">Pricing theory catches</text>
+<text x="312" y="798" class="body">up to pricing practice</text>
+<rect x="560" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="782" class="body">Transit equity is</text>
+<text x="572" y="798" class="body">conditional, not universal</text>
+<line x1="40" y1="834" x2="760" y2="834" class="ruleLight"/>
+<text x="40" y="874" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="916" class="body">High</text>
+<rect x="110" y="904" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="180.0" y="917" class="small">1</text>
+<text x="40" y="946" class="body">Medium</text>
+<rect x="110" y="934" width="600.0" height="18" fill="#1A1A1A"/>
+<text x="720.0" y="947" class="small">10</text>
+<text x="40" y="976" class="body">Low</text>
+<rect x="110" y="964" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="180.0" y="977" class="small">1</text>
+<line x1="40" y1="1014" x2="760" y2="1014" class="ruleLight"/>
+<text x="40" y="1054" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1082" class="body" font-weight="bold">1.</text>
+<text x="60" y="1082" class="body">Cities weighing congestion pricing can deploy static, time-of-day tolls as a credible</text>
+<text x="60" y="1098" class="body">MVP and expect to capture most of the achievable revenue and welfare benefit before</text>
+<text x="60" y="1114" class="body">investing in costly dynamic tolling systems.</text>
+<text x="40" y="1138" class="body" font-weight="bold">2.</text>
+<text x="60" y="1138" class="body">Agencies pursuing social-integration goals should target investment at lower-diversity,</text>
+<text x="60" y="1154" class="body">lower-density POIs that are currently transit-poor, not already-diverse hubs.</text>
+<text x="40" y="1178" class="body" font-weight="bold">3.</text>
+<text x="60" y="1178" class="body">Micro-transit planners should adopt global-budget column-generation zoning instead of</text>
+<text x="60" y="1194" class="body">fixed-zone-count heuristics &#8212; it produces materially better plans at city scale.</text>
+<text x="40" y="1218" class="body" font-weight="bold">4.</text>
+<text x="60" y="1218" class="body">SUMO-based rail and mixed-autonomy studies should check for queue-spillback and</text>
+<text x="60" y="1234" class="body">teleportation artifacts, which existing mesoscopic and GTFS-to-track pipelines mishandle.</text>
+<text x="40" y="1258" class="body" font-weight="bold">5.</text>
+<text x="60" y="1258" class="body">Before adopting RL/LLM signal control, benchmark reward functions for throughput and</text>
+<text x="60" y="1274" class="body">fairness/emissions &#8212; naive delay/queue rewards underperform on both axes.</text>
+<line x1="40" y1="1382" x2="760" y2="1382" class="rule"/>
+<text x="40" y="1412" class="small">Generated autonomously from arXiv preprints &#8212; June 19, 2026</text>
+<text x="40" y="1428" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>

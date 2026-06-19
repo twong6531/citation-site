@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — June 19, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E6;
+    --muted: #888888;
+    --accent: #E8FF00;
+    --accent2: #4488FF;
+    --highlight: #FF6B35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand { font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--accent); letter-spacing: 1px; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 20px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; letter-spacing: 1px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 40px; }
+
+  .editorial-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+  .editorial-header { padding: 20px 28px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .editorial-header .section-tag { font-size: 10px; letter-spacing: 3px; color: var(--muted); }
+  .editorial-header h2 { font-size: 18px; margin-top: 4px; }
+  .editorial-body { padding: 28px; text-align: center; }
+  .editorial-body img { max-width: 100%; border-radius: 2px; }
+  .editorial-body .no-image {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 13px; border: 1px dashed var(--border); border-radius: 2px;
+  }
+  .editorial-caption { padding: 16px 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  .executive-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .executive-summary h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .executive-summary p { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 12px; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; line-height: 1.5; }
+
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  .paper-card .paper-num { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-card h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+  .paper-card .section-head { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 20px; margin-bottom: 8px; }
+  .paper-card p, .paper-card li { font-size: 14px; color: #BBBBBB; line-height: 1.65; }
+  .paper-card ul { padding-left: 20px; }
+  .paper-card ul li { margin-bottom: 6px; }
+  .paper-card .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .paper-card .tag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 1px; }
+  .paper-card .tag.high { border-color: #44FF88; color: #44FF88; }
+  .paper-card .tag.medium { border-color: #FFAA44; color: #FFAA44; }
+  .paper-card .tag.low { border-color: #FF4444; color: #FF4444; }
+
+  .takeaways { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface2); border-left: 3px solid var(--accent); padding: 20px 24px; }
+  .takeaway p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .contrarian-block { background: var(--surface); border: 1px solid #FF6B35; padding: 28px 32px; margin-bottom: 48px; }
+  .contrarian-block h2 { font-size: 10px; letter-spacing: 4px; color: #FF6B35; text-transform: uppercase; margin-bottom: 20px; }
+  .contrarian-block .insight { margin-bottom: 20px; padding-left: 16px; border-left: 2px solid #FF6B35; }
+  .contrarian-block .insight p { font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  .infographic-section { margin-bottom: 48px; }
+  .svg-wrapper { background: #F7F7F5; padding: 24px; border: 1px solid var(--border); }
+  .svg-wrapper svg { width: 100%; height: auto; }
+  .download-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent2); border: 1px solid var(--accent2); padding: 8px 16px; }
+
+  .long-term { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 48px; }
+  .long-term h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .long-term p { font-size: 15px; line-height: 1.75; color: #CCCCCC; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 32px 20px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand">Transit Research Digest</span>
+  <a href="research.html" class="back-link">← Archive Index</a>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Transit Research Digest · June 19, 2026</div>
+  <h1>Traffic Signals Get an Agentic-AI Makeover While Congestion-Pricing Theory Catches Up to Practice</h1>
+  <div class="meta">
+    <span><span class="badge">12 PAPERS</span></span>
+    <span>arXiv · Self-Analysis (Gemini unavailable today)</span>
+    <span>Congestion pricing theory · LLM traffic-signal agents · Transit social-mixing equity · Micro-transit zoning</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- EDITORIAL IMAGE SECTION -->
+  <div class="editorial-section">
+    <div class="editorial-header">
+      <div class="section-tag">TODAY'S TRANSIT ILLUSTRATION</div>
+      <h2>a Manhattan congestion-pricing tolling gantry at the 60th Street cordon boundary of the Congestion Relief Zone</h2>
+    </div>
+    <div class="editorial-body">
+      <div class="no-image">
+        ◻ EDITORIAL ILLUSTRATION UNAVAILABLE<br>
+        <span style="font-size:11px;margin-top:8px;display:block;">Gemini Imagen API auth/quota unavailable today (401 service-blocked on Bearer auth, 404 model-not-found on key-param auth) — image generation skipped</span>
+        <span style="font-size:11px;color:#555;margin-top:4px;display:block;">Subject: a steel overhead gantry truss spanning a Manhattan avenue at the 60th Street cordon, fitted with TransCore license-plate scanners, infrared cameras, and E-ZPass antennas, with taxis and MTA buses passing beneath</span>
+      </div>
+    </div>
+    <div class="editorial-caption">
+      <span>a Manhattan congestion-pricing tolling gantry at the 60th Street cordon boundary — Technical Editorial Illustration</span>
+      <span>Independently researched and rendered from today's papers</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>Today's batch clusters around three currents: a heavy wave of traffic-signal-control research where LLM agents (TrafficClaw, DGLight, Decoupled Intelligence) and reward-function redesign (momentum-based rewards, pedestrian fairness) are pushing adaptive signal control past pure delay-minimization RL; a long-overdue theoretical reckoning with congestion-pricing practice, where "Simple vs. Optimal Congestion Pricing" finally quantifies how much welfare and revenue cities like New York are leaving on the table by using static tolls instead of fully dynamic ones (not much, it turns out); and a more cautious, context-dependent treatment of transit equity, where transit's much-touted role in social mixing and educational access turns out to hold strongly in big metros and weakly — or not at all — in smaller cities and delay-prone regional networks. Underneath all three currents is a shared methodological shift: simulation infrastructure (SUMO mesoscopic models, GTFS-to-rail pipelines) is being rebuilt to be more theoretically faithful, because the policy and AI-agent conclusions built on top of it are only as good as the traffic models underneath.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>Traffic-signal control becomes the agentic-AI testbed</h3>
+    </div>
+    <div class="theme-card">
+      <h3>Congestion-pricing theory catches up to congestion-pricing practice</h3>
+    </div>
+    <div class="theme-card">
+      <h3>Transit equity is conditional, not universal</h3>
+    </div>
+  </div>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">Paper Analyses</div>
+  <div class="papers-grid">
+
+    <!-- Paper 01 - PAPER OF THE DAY -->
+    <div class="paper-card featured">
+      <div class="paper-num">Paper 01 · Paper of the Day · arXiv 2602.21495v2</div>
+      <h3><a href="http://arxiv.org/abs/2602.21495v2" target="_blank">Simple vs. Optimal Congestion Pricing</a></h3>
+      <div class="authors">Devansh Jalota, Xuan Di, Adam N. Elmachtoub</div>
+      <div class="one-liner">Comparing static and fully dynamic congestion tolls in two canonical traffic models with a transit outside option, this paper shows static tolls capture roughly 80-90% of optimal dynamic-toll revenue while costing only 8-20% more in system delay, validated on real NYC and San Francisco Bay Area data.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Nearly every real-world congestion-pricing deployment, including NYC's, uses simple static or time-of-day tolls rather than the theoretically optimal dynamic tolls studied in most economics literature; this paper finally quantifies how much welfare and revenue is actually being left on the table, giving policymakers a defensible, evidence-based answer to "why not go dynamic?"</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Worst-case revenue-optimal static tolls achieve at least half of dynamic-optimal revenue and at most twice the minimum system cost, with tighter bounds in Vickrey's bottleneck model than in the MFD-based city-scale model</li>
+        <li>Empirically, static tolls reach 80-90% of dynamic-optimal revenue while incurring only 8-20% higher total system cost than the true minimum, using SF Bay Area and NYC data</li>
+        <li>The paper newly characterizes revenue-optimal static AND dynamic tolling policies jointly with a public-transit outside option — a combination prior work hadn't solved</li>
+        <li>The gap between simple and optimal tolling shrinks further when accounting for a transit alternative, since transit absorbs some diverted demand regardless of toll sophistication</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Theoretical worst-case bounds derived in Vickrey's bottleneck model (single corridor) and its macroscopic fundamental diagram (MFD) extension (city-scale), both with a public-transit outside option, followed by numerical validation against real-world travel-demand datasets from the SF Bay Area and NYC.</p>
+
+      <div class="section-head">Results</div>
+      <p>Static tolls are provably and empirically close to optimal across both models and both real-world datasets; the welfare/revenue loss from using simple tolls is modest and well within the range cities have already accepted in practice.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>The bottleneck and MFD models abstract away network topology, multiple corridors, and heterogeneous traveler values of time; the comparison also assumes static tolls are well-calibrated (near worst-case-optimal), not arbitrary flat tolls.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities can justify adopting or sticking with simple static cordon tolls — as NYC has — without building costly real-time dynamic tolling infrastructure, since the marginal welfare/revenue gain from full dynamic optimization is bounded and often small in practice.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transportation economists, city DOTs and MTAs evaluating congestion-pricing designs, policymakers defending program design choices, transit agencies relying on toll revenue</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends classical bottleneck-model congestion-pricing theory, which mostly characterizes fully dynamic optimal tolls, by rigorously bounding the performance gap to practically deployed static tolls — the first to do so jointly with a transit outside option in both a corridor and a city-scale MFD setting.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 02 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 02 · arXiv 2605.09467v1</div>
+      <h3><a href="http://arxiv.org/abs/2605.09467v1" target="_blank">Evaluating Transit Accessibility to Education and Effects of Operational Delays in Japanese Regional Cities: A Case Study of Matsumoto City</a></h3>
+      <div class="authors">Itsuki Sato, Kiyoshi Takami, Giancarlos Parady</div>
+      <div class="one-liner">Using GTFS schedule data plus a five-day workweek of real operational-delay measurements for a regional Japanese city, this study finds only 67-81% of children can reach a high school within reasonable travel-time thresholds by transit, walking, or cycling, with delays disproportionately hurting suburban-to-center commutes.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Many countries are consolidating rural and regional schools while relying on public transit for student access; this paper shows that using scheduled timetables alone overstates accessibility, since real-world delays meaningfully change which students can reach school on time.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>78% of children under 15 can reach at least one high school within a 90-minute round trip under scheduled service; only 67% within 60 minutes</li>
+        <li>Extending the threshold to 120 minutes barely improves coverage (to 81%), showing diminishing returns from longer time budgets</li>
+        <li>Delays are concentrated on bus routes connecting the central station to suburban areas, disproportionately hurting students furthest from the center</li>
+        <li>In some areas, delays paradoxically improve accessibility by altering transfer timing — an idiosyncratic effect planners should anticipate rather than assume delays are uniformly bad</li>
+        <li>Sensitivity analysis on travel-time thresholds shows accessibility gains plateau quickly, suggesting fixed time-budget policy targets may be more useful than continuous optimization</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>GTFS-based accessibility modeling under scheduled timetables, compared against a five-day workweek of actual bus operational-delay measurements, plus a sensitivity analysis sweeping travel-time thresholds.</p>
+
+      <div class="section-head">Results</div>
+      <p>A significant share of school-age children fall outside reasonable transit-accessible catchments even under ideal scheduled conditions; real delays further erode accessibility unevenly across the city, concentrated on peripheral bus corridors.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single regional Japanese city case study; the five-day delay sample may not capture seasonal or weather-driven delay variation; accessibility is defined purely by travel time, not affordability or safety.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>School-consolidation and transit-planning decisions should incorporate measured operational delay data, not just scheduled timetables, and consider mitigations like bus priority lanes or dedicated school routes on the most delay-prone corridors.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Regional and rural transit planners, school-district transportation offices, education-access researchers, GTFS tooling developers</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on transit-accessibility literature that typically uses scheduled GTFS only, adding a rare empirical real-delay layer and a Japanese regional-city context underrepresented relative to the dominant US/European case studies.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 03 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 03 · arXiv 2604.14348v2</div>
+      <h3><a href="http://arxiv.org/abs/2604.14348v2" target="_blank">Where diverse populations gather: Transit accessibility and the spatial structure of social mixing</a></h3>
+      <div class="authors">Yuan Liao</div>
+      <div class="one-liner">Using 2024 mobile-phone GPS data across nine Swedish and three US cities, this study finds transit accessibility predicts visitor diversity at points of interest, but the association is robust mainly in the largest metros — in smaller Swedish cities the effect disappears once catchment composition and centrality are controlled for.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>"Transit promotes social mixing" is a common planning assumption; this is one of the first large-scale, multi-city tests of that claim, and it shows the effect is real but conditional on city scale — a nuance that matters for how aggressively smaller cities should invest in transit as integration policy.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Transit catchment diversity positively predicts venue visitor diversity, but the association is statistically robust mainly in the largest metro areas (NYC, DC, Atlanta), not smaller Swedish cities</li>
+        <li>Transit-diversity hotspots are not concentrated at already-diverse venues; they appear at lower-diversity, lower-commercial-density POIs that are farther from transit in US cities but more central in Swedish cities</li>
+        <li>This pattern is consistent with transit playing a "bridging" role — connecting diverse populations specifically to places lacking other access pathways — rather than simply correlating with already-cosmopolitan locations</li>
+        <li>Country-level differences in where transit-diversity hotspots form suggest the mechanism is shaped by underlying urban form, not a universal constant</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Visitor diversity indices computed from 2024 mobile-phone GPS data and visitors' home-neighborhood birth-background composition, regressed against transit catchment diversity across POIs in 9 Swedish and 3 US cities, controlling for geographic catchment composition, centrality, and venue density.</p>
+
+      <div class="section-head">Results</div>
+      <p>Positive but city-size-dependent association between transit accessibility and social mixing; the effect attenuates to insignificance in smaller cities after controls; the bridging effect concentrates in lower-diversity, lower-density venues.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Correlational, not causal; relies on mobile-phone GPS proxies for home neighborhood and birth background, which carries inference uncertainty; limited to Sweden and three US metros, so generalizability elsewhere is unverified.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Large-metro transit agencies have a stronger evidentiary basis for framing transit investment as a social-integration tool than small or mid-size cities do; integration-focused investment should target underserved, lower-diversity venues rather than already-diverse hubs.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban planners focused on social cohesion and integration, transit equity researchers, city governments justifying transit investment on social (not just mobility) grounds</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Moves beyond residential/activity-space segregation literature (which examines where people live and go) to directly measure social mixing at the venue level and tie it explicitly to transit infrastructure, with a cross-national comparison rare in this literature.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 04 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 04 · arXiv 2603.07821v1</div>
+      <h3><a href="http://arxiv.org/abs/2603.07821v1" target="_blank">Column Generation for the Micro-Transit Zoning Problem</a></h3>
+      <div class="authors">Hins Hu, Rishav Sen, Jose Paolo Talusan, Abhishek Dubey, Aron Laszka, Samitha Samaranayake</div>
+      <div class="one-liner">A column-generation framework that replaces fixed-zone-count micro-transit zoning with a global service budget produces higher-quality, more scalable zone plans across major US cities than prior two-step enumerate-then-select approaches.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Micro-transit (demand-responsive shuttles) is one of the most promising tools for serving low-density and disadvantaged areas affordably, but its real-world impact depends heavily on how well its service zones are drawn — a problem this paper meaningfully improves the toolset for.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Generalizes the Micro-Transit Zoning Problem (MZP) from a fixed-zone-count constraint to a global operating budget, better matching how agencies actually plan service</li>
+        <li>Column generation, with several pricing heuristics for speed, scales to major US cities where prior enumerate-then-select methods become impractical</li>
+        <li>The reformulation finds higher-quality zoning solutions than existing two-step approaches across all tested cities</li>
+        <li>Micro-transit's social-impact case rests on lower vehicle-miles-per-passenger and flexible scheduling — this paper operationalizes those properties directly into the optimization objective</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mixed-integer/column-generation optimization formulation of zone design under a global budget constraint, with custom pricing heuristics, benchmarked against existing enumerate-then-select MZP baselines across numerical experiments in multiple major US cities.</p>
+
+      <div class="section-head">Results</div>
+      <p>The column-generation approach produces higher-quality zoning solutions more efficiently and scales better than existing methods when budget — rather than a fixed zone count — is the binding constraint.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Numerical experiments validate computational performance and solution quality on benchmark instances rather than live operational deployment; results may be sensitive to how demand and travel-time data are estimated for each candidate zone.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies designing or expanding micro-transit programs should adopt budget-constrained, column-generation-based zoning tools rather than legacy fixed-zone-count heuristics, particularly when scaling to city-wide deployments.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Micro-transit/demand-responsive-transit program planners, transportation operations researchers, transit agencies serving low-density or disadvantaged service areas</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Directly extends the two-step enumerate-and-select MZP literature by changing the fundamental constraint structure (budget vs. zone count) and introducing a column-generation solution method new to this specific problem.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 05 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 05 · arXiv 2606.03282v1</div>
+      <h3><a href="http://arxiv.org/abs/2606.03282v1" target="_blank">GROSS: German Rail Open-Source SUMO Scenario</a></h3>
+      <div class="authors">Juri Penell, Damian Dailisan</div>
+      <div class="one-liner">GROSS is an open pipeline that fuses OpenStreetMap rail infrastructure with GTFS schedules to generate realistic, nation-scale SUMO rail simulations for Germany, cutting simulation teleportation artifacts by up to 76.8x versus naive geometry-only conversions.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Rail simulation has lagged road-traffic simulation in open tooling despite rail's outsized importance to public transport and its sensitivity to network-wide disruption; this gives researchers and agencies a credible, open, country-scale rail simulation foundation to build on.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Existing geometry-only stop-to-track matching creates routing anomalies and unstable simulations dominated by "teleportation" artifacts (SUMO's failure mode for unsolvable routing)</li>
+        <li>GROSS's topology-aware stop mapping via a hierarchical station model plus targeted repair reduces average teleportations per vehicle by 1.7-76.8x depending on region</li>
+        <li>The pipeline enables end-to-end generation of a Germany-wide scenario with 35,925 trips, validated against operator-reported delay statistics</li>
+        <li>Remaining long delays in the simulation highlight gaps in timetable metadata and rail dispatch modeling that even a much-improved pipeline can't fully resolve</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Open pipeline combining OpenStreetMap railway infrastructure with GTFS schedules, using a hierarchical station model for topology-aware stop-to-track mapping, station-level routing with validation/repair, tested across multiple German regions and a nationwide scenario.</p>
+
+      <div class="section-head">Results</div>
+      <p>Dramatic reduction (1.7-76.8x) in teleportation artifacts and shortened delays versus the vanilla SUMO conversion pipeline; successful generation of a full Germany-wide 35,925-trip rail scenario.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Remaining long delays point to unresolved timetable-metadata and dispatch-modeling gaps; validated specifically against German rail data, so portability to other countries' GTFS/OSM data quality levels is untested.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Researchers and agencies building rail disruption, delay-propagation, or resilience studies should adopt GROSS's topology-aware mapping approach instead of geometry-only stop matching, which this paper shows produces materially biased simulation results.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Rail simulation researchers, SUMO and transportation-modeling tool developers, national rail operators studying delay propagation and resilience</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Addresses a specific, previously underserved gap — open, nation-scale rail SUMO scenarios — relative to the road-traffic-centric bulk of open SUMO tooling, and improves on naive GTFS-to-SUMO conversion approaches used in prior ad hoc rail studies.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 06 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 06 · arXiv 2606.09282v1</div>
+      <h3><a href="http://arxiv.org/abs/2606.09282v1" target="_blank">Revisiting mesoscopic traffic flow simulation in SUMO: Limitations, analysis, and an alternative</a></h3>
+      <div class="authors">Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</div>
+      <div class="one-liner">SUMO's widely used mesoscopic traffic model violates core principles of Lighthill-Whitham-Richards (LWR) kinematic wave theory, systematically underestimating congestion magnitude; the authors propose a corrected link-transmission-model implementation that fixes this.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Mesoscopic simulation is the workhorse compromise between slow microscopic and coarse macroscopic traffic models used widely in research and agency planning tools — if it's silently underestimating congestion, a lot of downstream policy and infrastructure analysis built on SUMO mesoscopic runs may be biased optimistic.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>SUMO's mesoscopic model (Eissfeldt, 2004) incompletely models queue dynamics and only partially implements "backward traveling spaces," meaning queue spillback isn't properly captured</li>
+        <li>Two case studies show this produces unrealistic congestion onset/recovery patterns and generally underestimates congestion magnitude</li>
+        <li>The proposed alternative is a proper mesoscopic discrete-time link-transmission model that explicitly follows LWR kinematic wave theory and incorporates backward traveling spaces</li>
+        <li>The corrected model's link-density outputs are consistent with both kinematic wave theory and microscopic SUMO simulation, providing a theoretically grounded validation</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Theoretical critique of SUMO's existing mesoscopic model against LWR principles, followed by a proposed discrete-time link transmission model implementation, validated against kinematic wave theory and microscopic SUMO simulation in two case-study scenarios.</p>
+
+      <div class="section-head">Results</div>
+      <p>The existing SUMO mesoscopic model underestimates congestion magnitude and produces unrealistic onset/recovery dynamics; the proposed model produces link-density outputs consistent with theory and microsimulation.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Validated on two case-study scenarios rather than a broad benchmark suite; adoption requires changes to a widely used open-source tool's core traffic model, which carries practical migration costs for existing SUMO-based studies.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Researchers and agencies relying on SUMO mesoscopic simulation for congestion or policy analysis (e.g., congestion-pricing impact studies) should be aware their congestion estimates may be biased low, and consider the proposed corrected model for studies sensitive to queue-spillback dynamics.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Traffic simulation researchers, SUMO maintainers and power users, transportation agencies using SUMO for policy impact assessment</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Directly challenges and seeks to replace the two-decade-old Eissfeldt (2004) mesoscopic model that has been SUMO's mesoscopic default, grounding the critique and fix explicitly in LWR theory rather than purely empirical tuning.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 07 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 07 · arXiv 2604.17456v2</div>
+      <h3><a href="http://arxiv.org/abs/2604.17456v2" target="_blank">TrafficClaw: A Generalizable LLM Agent in the Unified Physical Environment for Urban Traffic Control</a></h3>
+      <div class="authors">Siqi Lai, Pan Zhang, Yuping Zhou, Jindong Han, Yansong Ning, Hao Liu</div>
+      <div class="one-liner">TrafficClaw is an LLM-based agent that operates across coupled urban traffic subsystems — signals, freeways, transit, taxis — using persistent memory and multi-stage agentic reinforcement learning, demonstrating cross-subsystem coordination across three metropolitan regions and six traffic-control tasks.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most LLM-agent traffic work targets isolated subsystems (just signals, or just routing); TrafficClaw is an early attempt at system-level coordination across the genuinely coupled infrastructure that real cities operate, which is closer to how traffic actually behaves.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Frames urban traffic control as a "physically grounded" agentic problem distinct from web/code/game environments because local interventions propagate through tightly coupled dynamics</li>
+        <li>Combines executable spatiotemporal reasoning with persistent memory for long-horizon adaptation across signals, freeways, transit, and taxis</li>
+        <li>Uses multi-stage agentic reinforcement learning for coordinated, system-level optimization rather than per-subsystem RL</li>
+        <li>Demonstrates generalization, robustness, and cross-subsystem coordination across three metro regions and six distinct traffic-control tasks</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>LLM-based agent architecture operating within a unified simulated traffic environment exposing coupled urban dynamics; multi-stage agentic RL training; evaluation across three metropolitan regions and six traffic-control tasks.</p>
+
+      <div class="section-head">Results</div>
+      <p>Strong generalization and cross-subsystem coordination relative to isolated optimization/RL/LLM baselines designed for single subsystems.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Evaluated within a simulated/unified environment rather than live deployment; "generalization" claims for LLM agents in physically grounded multi-subsystem settings warrant independent replication given how sensitive such results can be to environment design.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Agencies and researchers building next-generation traffic management systems should evaluate system-level, cross-subsystem agentic architectures rather than continuing to optimize signals, transit, and taxi dispatch in isolation, since coupling effects are shown to matter.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>ITS (Intelligent Transportation Systems) researchers, city traffic management agencies, LLM-agent and agentic-RL researchers working on physically grounded domains</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Distinguishes itself from prior optimization/RL/LLM approaches that are "largely designed for isolated subsystems" by explicitly modeling and exploiting the coupling between signals, freeways, transit, and taxis.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 08 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 08 · arXiv 2604.25259v1</div>
+      <h3><a href="http://arxiv.org/abs/2604.25259v1" target="_blank">DGLight: DQN-Guided GRPO Fine-Tuning of Large Language Models for Traffic Signal Control</a></h3>
+      <div class="authors">Chenbo Yu</div>
+      <div class="one-liner">DGLight fine-tunes a large language model for traffic signal control by using a frozen DQN critic to score and optimize LLM-generated actions via GRPO, producing interpretable reasoning traces alongside signal decisions that outperform other LLM-based controllers and transfer to unseen cities.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Pure RL traffic-signal controllers are effective but uninterpretable black boxes; DGLight's approach of having an LLM reason in natural language while being grounded by a critic offers a path to controllers operators can actually audit and trust.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Trains a CoLight-based Deep Q-Network critic first, then uses it frozen to score candidate LLM actions and optimize the policy via GRPO (Group Relative Policy Optimization)</li>
+        <li>Learns from dense per-state critic supervision rather than raw cumulative environment rewards, which the work argues improves training signal quality</li>
+        <li>Outperforms other LLM-based traffic-signal-control methods on Jinan and Hangzhou benchmarks and remains competitive with strong pure-RL baselines</li>
+        <li>Transfers well to city datasets not used to fit the critic, and produces human-readable reasoning traces aligned with the chosen signal phase</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Two-stage training: first train a DQN critic on structured intersection states, then freeze the critic and use it to score a pretrained LLM's candidate actions, optimizing the LLM policy with GRPO.</p>
+
+      <div class="section-head">Results</div>
+      <p>Strongest among compared LLM-based traffic-signal-control methods, competitive with strong RL baselines, with demonstrated cross-city transfer and interpretable reasoning output.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Dissertation-level work from a single author; benchmark scope (Jinan, Hangzhou) is standard in this literature but limited; "interpretability" is demonstrated qualitatively via examples rather than systematically evaluated.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Agencies wary of deploying opaque RL signal controllers could consider critic-grounded LLM approaches like DGLight as a more auditable middle ground, provided further validation on more diverse networks.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Traffic signal control researchers, agencies seeking explainable adaptive signal control, RL/LLM hybrid-method researchers</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on CoLight (a well-known multi-intersection DQN method) and GRPO (popularized in LLM post-training) by combining them specifically for signal control, differentiating from pure-RL approaches and from other LLM-based controllers that lack a grounding critic.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 09 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 09 · arXiv 2605.27685v1</div>
+      <h3><a href="http://arxiv.org/abs/2605.27685v1" target="_blank">Decoupled Intelligence: A Multi-Agent LLM Framework for Controllable Traffic Scenario Generation in SUMO</a></h3>
+      <div class="authors">Shuyang Li, Ruimin Ke</div>
+      <div class="one-liner">A multi-agent LLM framework decouples SUMO traffic-simulation workflows into specialized Planner, Builder, Demand, Runner, and Analyst roles coordinated via a state-persistent Model Context Protocol orchestrator, significantly improving task success and parameter accuracy over single-agent baselines.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Building and running traffic simulations is itself a major bottleneck for transportation research and planning; automating that workflow reliably, not just the analysis after the fact, could meaningfully speed up how quickly cities can evaluate "what-if" scenarios.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Decouples the simulation pipeline into role-specialized agents (Planner, Builder, Demand, Runner, Analyst) rather than one monolithic agent handling the entire workflow</li>
+        <li>Introduces a state-persistent Orchestrator using the Model Context Protocol (MCP) to maintain data handover and environmental consistency across distributed agent actions</li>
+        <li>Role-ablation studies show the multi-agent decomposition meaningfully improves task success rates and parameter accuracy versus single-agent baselines</li>
+        <li>Demonstrates real-world network extraction and traffic-optimization case studies, bridging natural-language intent to low-level SUMO simulation execution</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Multi-agent LLM architecture with specialized roles coordinated by an MCP-based stateful orchestrator; evaluated via role-ablation studies and real-world case studies on network extraction and traffic optimization.</p>
+
+      <div class="section-head">Results</div>
+      <p>Significantly higher task success rates and parameter accuracy than single-agent baselines, validated via ablations and case studies.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Evaluation appears to be a single-framework demonstration without comparison against alternative multi-agent decompositions; "significant improvement" claims are not benchmarked against a broad standardized suite.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Simulation tooling vendors and transportation research groups could adopt role-decomposed, orchestrated multi-agent LLM architectures to make SUMO scenario-building more accessible to non-experts via natural language.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Traffic simulation researchers, ITS software/tooling developers, transportation planners who want to lower the barrier to running custom SUMO studies</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Differentiates from monolithic single-agent LLM-simulation approaches, which the paper argues suffer reasoning failures and parameter inconsistency, by introducing explicit role decoupling and persistent state management via MCP.</p>
+
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 10 · arXiv 2605.10170v1</div>
+      <h3><a href="http://arxiv.org/abs/2605.10170v1" target="_blank">Balancing Efficiency and Fairness in Traffic Light Control through Deep Reinforcement Learning</a></h3>
+      <div class="authors">Matteo Cederle, Giacomo Scatto, Gian Antonio Susto</div>
+      <div class="one-liner">A deep RL traffic-signal agent that explicitly integrates fairness between vehicles and pedestrians, dynamically balancing both flows based on real-time demand, reduces congestion while ensuring more equitable service than vehicle-only-focused systems.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most adaptive signal-control research optimizes purely for vehicle throughput, implicitly treating pedestrian wait time as a free externality; this work pushes pedestrian equity into the core optimization objective, which matters directly for walkability and accessibility.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Traditional and most RL-based traffic-signal systems focus solely on vehicular traffic, neglecting pedestrian fairness</li>
+        <li>The proposed DRL agent dynamically balances vehicle and pedestrian flows based on real-time demand rather than fixed phase splits</li>
+        <li>Experimental results show reduced congestion while achieving more equitable service for both vehicles and pedestrians simultaneously</li>
+        <li>Positions fairness as a first-class, explicitly engineered objective within smart-city traffic management rather than a post-hoc check</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Deep reinforcement learning agent for traffic signal control with an explicit fairness-aware reward covering both vehicular and pedestrian traffic, evaluated experimentally against systems lacking pedestrian-fairness considerations.</p>
+
+      <div class="section-head">Results</div>
+      <p>Reduced congestion and improved equitable service across both road-user categories relative to vehicle-centric baselines.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Available summary suggests simulation-based evaluation without extensive detail on benchmark scale or diversity; fairness-metric definitions and their sensitivity to demand imbalance are not detailed.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Smart-city traffic-management deployments should explicitly incorporate pedestrian demand and fairness metrics into adaptive signal-control objectives, not just vehicle throughput, to support more inclusive urban mobility.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Traffic signal control researchers, pedestrian-safety and walkability advocates, smart-city program managers</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Differentiates from the dominant vehicle-throughput-focused DRL signal-control literature by explicitly modeling and balancing pedestrian fairness as a co-equal objective.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 11 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 11 · arXiv 2605.29693v1</div>
+      <h3><a href="http://arxiv.org/abs/2605.29693v1" target="_blank">Momentum Based Reward Design for Low Emission Traffic Signal Control</a></h3>
+      <div class="authors">Chinmay Mundane, Amith Manoharan, Arun Singh</div>
+      <div class="one-liner">A Momentum-Based Reward Function for DRL traffic-signal control, which rewards vehicles for continuing to move rather than just penalizing congestion, produces better throughput-emissions tradeoffs and more stable learning than standard delay/queue-based rewards or classical controllers like Max Pressure.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Reward design is an underrated lever in RL traffic-signal research that's often treated as a minor implementation detail; this paper shows it can matter as much as the algorithm itself, with direct implications for real-world emissions outcomes.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Existing delay/queue-based rewards often produce short-sighted or unstable signal-control policies</li>
+        <li>The proposed Momentum-Based Reward Function (MBRF) encourages continuous vehicle movement instead of just penalizing standing congestion</li>
+        <li>Evaluated in SUMO using waiting time, queue length, throughput, and CO2 emissions as metrics</li>
+        <li>MBRF produces better throughput-emissions tradeoffs and more stable learning than delay/queue rewards and classical controllers (Max Pressure, Longest Queue First)</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Deep reinforcement learning traffic-signal controller trained with a novel momentum-based reward function, evaluated in SUMO against delay/queue-based reward baselines and classical controllers (Max Pressure, LQF) using standard traffic and emissions metrics.</p>
+
+      <div class="section-head">Results</div>
+      <p>Better throughput-CO2 emissions tradeoffs and more stable training dynamics than both standard RL reward formulations and classical signal-control algorithms.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Evaluated in simulation only; emissions estimates depend on SUMO's emissions model fidelity; generalization to highly heterogeneous real-world intersections not yet tested.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Researchers and vendors building adaptive signal-control RL systems should benchmark reward-function design choices, not just network architecture, and consider momentum-style rewards specifically when emissions reduction is a stated policy goal.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Traffic signal control and RL researchers, environmental policy teams targeting transportation emissions, smart-city traffic agencies</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Directly challenges the default delay/queue-based reward convention common across DRL traffic-signal literature, and benchmarks against established classical baselines (Max Pressure, LQF) rather than only other RL methods.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 12 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 12 · arXiv 2605.07743v1</div>
+      <h3><a href="http://arxiv.org/abs/2605.07743v1" target="_blank">Efficient MILP-based Urban Network Traffic Control in Mixed Autonomy with Dynamic Saturation Rates</a></h3>
+      <div class="authors">Muhammad Haris, Claudio Roncoli</div>
+      <div class="one-liner">A mixed-autonomy urban traffic control strategy that uses a dynamic, queue-responsive saturation rate — rather than a fixed one — for connected and automated vehicles, reformulated from a non-convex QP into a real-time-solvable MILP, outperforms existing multi-commodity store-and-forward control approaches in microsimulation.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>As connected and automated vehicles (CAVs) gradually mix into existing human-driven traffic, control strategies that assume fixed, autonomy-blind saturation rates will increasingly misallocate green time; this is a concrete, real-time-feasible fix.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Prior control strategies don't explicitly account for how CAV vs. human-driven vehicle (HDV) behavior differences affect traffic-flow saturation rates</li>
+        <li>Proposes a dynamic, queue-responsive saturation rate within an extended multi-commodity store-and-forward model for mixed-autonomy networks</li>
+        <li>Integrates CAV routing via infrastructure connectivity together with signal-timing optimization at every signalized intersection</li>
+        <li>Reformulates a non-convex QP — accounting for queue evolution, spillback, green time, and CAV routing — into a sequence of convex subproblems and ultimately a Mixed Integer Linear Program for real-time tractability</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Extended multi-commodity store-and-forward traffic model for mixed-autonomy networks; non-convex QP formulation transformed via convex under/over-estimators into an MILP; validated through microscopic traffic simulations.</p>
+
+      <div class="section-head">Results</div>
+      <p>Outperforms the existing multi-commodity approach in microsimulation, demonstrating efficiency and robustness for real-time mixed-autonomy traffic optimization.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Validated in microsimulation rather than field deployment; performance depends on the accuracy of assumed CAV penetration rates and connectivity assumptions that may not hold during transitional, low-CAV-adoption periods.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities beginning to see CAV penetration should plan for traffic-control systems with autonomy-aware, dynamic saturation modeling rather than static signal-timing plans calibrated only for human drivers.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Traffic control engineers, CAV/connected-infrastructure researchers, cities piloting connected-vehicle corridors</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends the multi-commodity store-and-forward traffic-control literature, which the authors note has not previously modeled autonomy-driven variation in saturation rates explicitly, and improves real-time tractability via a novel convexification approach.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="contrarian-block">
+    <h2>Contrarian Insights</h2>
+    <div class="insight">
+      <p>Static congestion tolls capture roughly 80-90% of optimal dynamic-toll revenue while costing only 8-20% more in system delay — the real-time dynamic tolling infrastructure that congestion-pricing economics has long idealized may simply not be worth building for most cities.</p>
+    </div>
+    <div class="insight">
+      <p>Transit's much-cited "bridging" effect on social mixing disappears in smaller Swedish cities once catchment composition and centrality are controlled for — the equity case for transit as integration policy is strongest precisely where transit is already most developed (large metros), not where it might be most needed.</p>
+    </div>
+    <div class="insight">
+      <p>A deliberately simpler momentum-based reward function beats sophisticated delay/queue-based rewards for adaptive traffic-signal RL on both throughput and emissions — in this batch of papers, reward-function design repeatedly outperforms architectural or algorithmic sophistication.</p>
+    </div>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways">
+    <div class="takeaway">
+      <p><strong>1.</strong> Cities weighing congestion pricing can deploy static, time-of-day tolls as a credible MVP and expect to capture most of the achievable revenue and welfare benefit before investing in costly dynamic tolling systems.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>2.</strong> Agencies pursuing social-integration goals should target investment at lower-diversity, lower-density POIs that are currently transit-poor, rather than reinforcing already-diverse hubs.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>3.</strong> Micro-transit planners should adopt global-budget column-generation zoning instead of fixed-zone-count heuristics — it produces materially better plans at city scale.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>4.</strong> SUMO-based rail and mixed-autonomy studies should specifically check for queue-spillback and teleportation artifacts, which existing mesoscopic and GTFS-to-track pipelines are shown to mishandle by significant margins.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>5.</strong> Before adopting RL- or LLM-based adaptive signal control, agencies should benchmark candidate reward functions for both throughput and fairness/emissions outcomes — naive delay/queue rewards underperform on both axes.</p>
+    </div>
+  </div>
+
+  <!-- LONG TERM IMPLICATIONS -->
+  <div class="long-term">
+    <h2>Long-Term Implications</h2>
+    <p>The convergence of LLM agents (TrafficClaw, DGLight, Decoupled Intelligence) into physically grounded, closed-loop traffic and transit control systems suggests an emerging "agentic transportation operations" layer — but nearly all of it is still validated only in simulation (SUMO) or single-city studies, meaning a verification and safety-certification gap between proof-of-concept and deployment is likely to dominate near-term research and policy debate, much as it did for autonomous vehicles in the 2010s. Meanwhile, congestion-pricing theory is finally catching up to congestion-pricing practice: cities adopted static tolls pragmatically years before anyone rigorously quantified what they were giving up by not going dynamic, and the answer — not much — should reduce pressure on agencies to over-engineer pricing infrastructure. And the equity findings this round (transit's social-mixing bridging effect, school accessibility under real delays) point toward a maturing consensus that transit's social value is real but highly context-dependent, which argues for city-specific equity diagnostics rather than universal transit-equity assumptions carried over from large-metro research into smaller cities and regional networks.</p>
+  </div>
+
+  <!-- INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-label">Data Infographic</div>
+    <div class="svg-wrapper">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 19, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">Static congestion tolls capture roughly 80-90% of optimal dynamic-toll</text>
+<text x="90" y="241" class="body">revenue while costing only 8-20% more in system delay &#8212; full real-time</text>
+<text x="90" y="257" class="body">dynamic tolling may not be worth the added complexity for most cities.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Transit&#x27;s social-mixing &quot;bridging effect&quot; holds reliably only in the</text>
+<text x="90" y="319" class="body">largest metro areas; in smaller cities it vanishes once catchment</text>
+<text x="90" y="335" class="body">composition and centrality are controlled for.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Simpler, momentum-based RL reward functions beat standard delay/queue</text>
+<text x="90" y="397" class="body">rewards for adaptive signal control on both throughput and emissions &#8212;</text>
+<text x="90" y="413" class="body">reward design matters as much as the algorithm.</text>
+<line x1="40" y1="454" x2="760" y2="454" class="ruleLight"/>
+<text x="40" y="484" class="label">PAPER OF THE DAY</text>
+<text x="40" y="512" class="h2">Simple vs. Optimal Congestion Pricing</text>
+<text x="40" y="568" class="small">Devansh Jalota, Xuan Di, Adam N. Elmachtoub</text>
+<text x="40" y="590" class="body">Compares static and fully dynamic congestion tolls in two canonical traffic models with a</text>
+<text x="40" y="606" class="body">transit outside option, showing static tolls reach 80-90% of dynamic-optimal revenue while</text>
+<text x="40" y="622" class="body">costing at most 8-20% more in system delay, validated on real NYC and SF Bay Area data.</text>
+<text x="40" y="652" class="body">Why it matters: nearly every real deployment, including NYC&#x27;s, uses simple tolls &#8212; this</text>
+<line x1="40" y1="702" x2="760" y2="702" class="ruleLight"/>
+<text x="40" y="742" class="label">EMERGING THEMES</text>
+<rect x="40" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="782" class="body">Signal control becomes</text>
+<text x="52" y="798" class="body">the agentic-AI testbed</text>
+<rect x="300" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="782" class="body">Pricing theory catches</text>
+<text x="312" y="798" class="body">up to pricing practice</text>
+<rect x="560" y="772" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="782" class="body">Transit equity is</text>
+<text x="572" y="798" class="body">conditional, not universal</text>
+<line x1="40" y1="834" x2="760" y2="834" class="ruleLight"/>
+<text x="40" y="874" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="916" class="body">High</text>
+<rect x="110" y="904" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="180.0" y="917" class="small">1</text>
+<text x="40" y="946" class="body">Medium</text>
+<rect x="110" y="934" width="600.0" height="18" fill="#1A1A1A"/>
+<text x="720.0" y="947" class="small">10</text>
+<text x="40" y="976" class="body">Low</text>
+<rect x="110" y="964" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="180.0" y="977" class="small">1</text>
+<line x1="40" y1="1014" x2="760" y2="1014" class="ruleLight"/>
+<text x="40" y="1054" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1082" class="body" font-weight="bold">1.</text>
+<text x="60" y="1082" class="body">Cities weighing congestion pricing can deploy static, time-of-day tolls as a credible</text>
+<text x="60" y="1098" class="body">MVP and expect to capture most of the achievable revenue and welfare benefit before</text>
+<text x="60" y="1114" class="body">investing in costly dynamic tolling systems.</text>
+<text x="40" y="1138" class="body" font-weight="bold">2.</text>
+<text x="60" y="1138" class="body">Agencies pursuing social-integration goals should target investment at lower-diversity,</text>
+<text x="60" y="1154" class="body">lower-density POIs that are currently transit-poor, not already-diverse hubs.</text>
+<text x="40" y="1178" class="body" font-weight="bold">3.</text>
+<text x="60" y="1178" class="body">Micro-transit planners should adopt global-budget column-generation zoning instead of</text>
+<text x="60" y="1194" class="body">fixed-zone-count heuristics &#8212; it produces materially better plans at city scale.</text>
+<text x="40" y="1218" class="body" font-weight="bold">4.</text>
+<text x="60" y="1218" class="body">SUMO-based rail and mixed-autonomy studies should check for queue-spillback and</text>
+<text x="60" y="1234" class="body">teleportation artifacts, which existing mesoscopic and GTFS-to-track pipelines mishandle.</text>
+<text x="40" y="1258" class="body" font-weight="bold">5.</text>
+<text x="60" y="1258" class="body">Before adopting RL/LLM signal control, benchmark reward functions for throughput and</text>
+<text x="60" y="1274" class="body">fairness/emissions &#8212; naive delay/queue rewards underperform on both axes.</text>
+<line x1="40" y1="1382" x2="760" y2="1382" class="rule"/>
+<text x="40" y="1412" class="small">Generated autonomously from arXiv preprints &#8212; June 19, 2026</text>
+<text x="40" y="1428" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
+    </div>
+    <a href="research-infographic-2026-06-19.svg" class="download-link" download>↓ Download SVG Infographic</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Transit Research Digest · June 19, 2026 · 12 papers analyzed · Source: arXiv (Semantic Scholar rate-limited today)</p>
+  <p style="margin-top: 8px;"><a href="research.html">← Back to Archive Index</a></p>
+</footer>
+
+</body>
+</html>
