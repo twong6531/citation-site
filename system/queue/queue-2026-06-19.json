@@ -1,0 +1,89 @@
+{
+  "date": "2026-06-19",
+  "generated_at": "2026-06-19T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "infographic",
+      "topic": "BRT vs. Light Rail: True Cost Comparison 2026",
+      "angle": "Capital costs per mile, operating costs per rider, ridership outcomes, land value uplift, and typical build timelines — a data-driven visual comparison using 2024-2026 US project data.",
+      "rationale": "RETRY #10 — queued daily since 2026-06-07, never produced in 9 prior attempts. This is the longest-running unresolved production failure on the site. Queuing again per standing instructions, but this now requires a manual diagnostic of the infographic-writing agent rather than another automated retry.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg",
+      "retry_number": 10,
+      "first_queued": "2026-06-07"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "topic": "World Cup 2026 Transit Crisis: What the Opening Night Disaster Reveals About American Public Transit",
+      "angle": "NJ Transit moved 21,000 fans after the first match but thousands were stranded for hours; multiple host cities are struggling in real time. The stress test exposes exactly what the site niche covers — infrastructure underfunding, transit deserts, last-mile failures, and the consequences of car-centric city design.",
+      "rationale": "RETRY — queued as rank #1 every day since 2026-06-13 (6 consecutive days), never produced. drafts/articles/ has never had a file written to it in the site's history (0% production rate, 15+ days). Group stage window is closing fast — this is now the most time-sensitive unproduced item on the site.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-stress-test",
+      "output_path": "drafts/articles/world-cup-2026-transit-stress-test.html"
+    },
+    {
+      "rank": 3,
+      "type": "article",
+      "topic": "Congress Transportation Reauthorization 2026: What Is at Stake for Transit",
+      "angle": "The current surface transportation authorization expires in 2026 — what the Urban Institute's underfunding analysis means for formula grants, state of good repair, and the 5-year outlook for transit systems across the US.",
+      "rationale": "RETRY — queued for 6+ consecutive days, never produced. One-shot policy coverage window (reauthorization happens every ~5 years). Directly in site niche.",
+      "target_length": "long",
+      "slug": "congress-transportation-reauthorization-2026",
+      "output_path": "drafts/articles/congress-transportation-reauthorization-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Latency-Resilient VLM Planners for Urban Navigation",
+      "angle": "New arXiv work ('Slow Brain, Fast Planner') on vision-language-model-augmented navigation under latency constraints — translate the technical contribution into what it means for autonomous shuttle feeders and AI-assisted paratransit routing, tying back to the site's prior AI-transit coverage.",
+      "rationale": "Fresh trend signal from today's arXiv scan, directly adjacent to AI + urban mobility niche, not yet covered (covered_topics has no VLM/navigation-latency entry).",
+      "target_length": "medium",
+      "slug": "vlm-latency-resilient-urban-navigation",
+      "output_path": "drafts/articles/research/vlm-latency-resilient-urban-navigation.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "UK Mass Transit Taskforce: What It Is and What US Cities Could Learn",
+      "angle": "The UK government established a Mass Transit Taskforce in May 2026 — what are its mandates, which UK cities are affected, and what specific policy or planning lessons could translate to American transit planning contexts?",
+      "rationale": "Carried over from prior queues — not yet produced. International comparative angle differentiates the site; fits infrastructure policy niche.",
+      "target_length": "medium",
+      "slug": "uk-mass-transit-taskforce-2026",
+      "output_path": "drafts/articles/uk-mass-transit-taskforce-2026.html"
+    }
+  ],
+  "retries": [
+    { "slug": "brt-vs-light-rail-cost-2026", "type": "infographic", "attempts": 10, "first_queued": "2026-06-07" },
+    { "slug": "world-cup-2026-transit-stress-test", "type": "article", "attempts": 7, "first_queued": "2026-06-12" },
+    { "slug": "congress-transportation-reauthorization-2026", "type": "article", "attempts": 7, "first_queued": "2026-06-12" }
+  ],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity automation",
+    "AI industry shifts",
+    "Southern California transit systems",
+    "transit desert remediation",
+    "slime mold network optimization",
+    "US cities transit gap",
+    "fare evasion economics",
+    "tesla spacex transit empire",
+    "transit app dark UX patterns",
+    "EV bus equity gap",
+    "permanent ridership shift post-pandemic",
+    "pantograph charging",
+    "TOD walkability thresholds",
+    "swarm transit routing"
+  ],
+  "trend_signals": [
+    "Latency-resilient VLM-augmented urban navigation (arXiv, new)",
+    "Trojan malware distributed via GitHub repos (HN, security/dev relevance only)",
+    "DuckDB / ClickHouse data-infra internals (HN, off-niche)",
+    "Project Valhalla JDK 28 (HN, off-niche)",
+    "World Cup 2026 host-city transit strain (carried over, still unproduced)"
+  ],
+  "notes": "Google News Technology RSS returned empty on this run (no titles parsed) — likely a transient fetch issue, not a content gap. No tech-news-driven priority was added today as a result; worth rechecking tomorrow's scan."
+}
