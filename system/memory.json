@@ -1,115 +1,593 @@
 {
-  "last_updated": "2026-06-19",
+  "last_updated": "2026-06-19T18:00:00Z",
   "published": [
-    { "date": "2026-06-05", "type": "news", "url": "docs/2026-06-05.html", "topic": "Meta Face Recognition" },
-    { "date": "2026-06-05", "type": "research", "url": "docs/research-2026-06-05.html", "topic": "Transit Equity Automation" },
-    { "date": "2026-06-06", "type": "news", "url": "docs/2026-06-06.html", "topic": "AI Industry Shifts" },
-    { "date": "2026-06-06", "type": "research", "url": "docs/research-2026-06-06.html", "topic": "Transit Equity Automation" },
-    { "date": "2026-06-06", "type": "explainer", "url": "docs/california-hsr.html", "topic": "California HSR Failure" },
-    { "date": "2026-06-06", "type": "explainer", "url": "docs/transit-oriented-development.html", "topic": "Transit-Oriented Development" },
-    { "date": "2026-06-07", "type": "news", "url": "docs/2026-06-07.html", "topic": "Daily News Digest" },
-    { "date": "2026-06-07", "type": "research", "url": "docs/research-2026-06-07.html", "topic": "Research Digest" },
-    { "date": "2026-06-07", "type": "infographic", "url": "docs/infographic-2026-06-07.svg", "topic": "Infographic" },
-    { "date": "2026-06-08", "type": "news", "url": "docs/2026-06-08.html", "topic": "Daily News Digest" },
-    { "date": "2026-06-08", "type": "research", "url": "docs/research-2026-06-08.html", "topic": "Transit Research Digest" },
-    { "date": "2026-06-08", "type": "transit", "url": "docs/transit-2026-06-08.html", "topic": "Transit Deep Dive" },
-    { "date": "2026-06-08", "type": "infographic", "url": "docs/infographic-2026-06-08.svg", "topic": "Infographic" },
-    { "date": "2026-06-08", "type": "research_infographic", "url": "docs/research-infographic-2026-06-08.svg", "topic": "Research Infographic" },
-    { "date": "2026-06-09", "type": "news", "url": "docs/2026-06-09.html", "topic": "Daily News Digest" },
-    { "date": "2026-06-09", "type": "research", "url": "docs/research-2026-06-09.html", "topic": "AI-Driven Transit Desert Remediation (POMDP + CVaR)" },
-    { "date": "2026-06-09", "type": "transit", "url": "docs/transit-2026-06-09.html", "topic": "Southern California Transit Brief" },
-    { "date": "2026-06-09", "type": "infographic", "url": "docs/infographic-2026-06-09.svg", "topic": "Infographic" },
-    { "date": "2026-06-09", "type": "research_infographic", "url": "docs/research-infographic-2026-06-09.svg", "topic": "Research Infographic" },
-    { "date": "2026-06-10", "type": "research", "url": "docs/research-2026-06-10.html", "topic": "Transit Research Digest" },
-    { "date": "2026-06-10", "type": "transit", "url": "docs/transit-2026-06-10.html", "topic": "SoCal Transit Brief" },
-    { "date": "2026-06-10", "type": "interactive", "url": "docs/transit-game.html", "topic": "TOD Builder Game" },
-    { "date": "2026-06-11", "type": "news", "url": "docs/2026-06-11.html", "topic": "Daily News Digest" },
-    { "date": "2026-06-11", "type": "research", "url": "docs/research-2026-06-11.html", "topic": "Transit Research Digest" },
-    { "date": "2026-06-11", "type": "transit", "url": "docs/transit-2026-06-11.html", "topic": "SoCal Transit Brief" },
-    { "date": "2026-06-12", "type": "transit", "url": "docs/transit-2026-06-12.html", "topic": "SoCal Transit Brief" },
-    { "date": "2026-06-12", "type": "research", "url": "docs/research-2026-06-12.html", "topic": "Transit Research Digest" },
-    { "date": "2026-06-12", "type": "encyclopedia", "url": "docs/encyclopedia.html", "topic": "Encyclopedia Index — Infrastructure & Engineering section added" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/bonds-and-debt-financing-for-capital-projects.html", "topic": "Bonds and Debt Financing for Capital Projects" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/child-and-youth-transit-access.html", "topic": "Child and Youth Transit Access" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/congestion-pricing-revenue-as-a-transit-funding-source.html", "topic": "Congestion Pricing Revenue as Transit Funding Source" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/disability-access-and-ada-compliance-in-transit-systems.html", "topic": "Disability Access and ADA Compliance" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/emergency-evacuation-planning-for-transit-systems.html", "topic": "Emergency Evacuation Planning for Transit Systems" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/environmental-justice-and-transit-investment-decisions.html", "topic": "Environmental Justice and Transit Investment Decisions" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/federal-transit-grants-how-they-work-and-who-qualifies.html", "topic": "Federal Transit Grants: How They Work and Who Qualifies" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/free-fare-transit-case-studies-and-tradeoffs.html", "topic": "Free Fare Transit: Case Studies and Tradeoffs" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/gender-and-transit-safety-designing-for-all-riders.html", "topic": "Gender and Transit Safety: Designing for All Riders" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/grade-crossing-safety-for-light-rail-and-commuter-rail.html", "topic": "Grade Crossing Safety for Light Rail and Commuter Rail" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-agencies-approach-homelessness-as-a-safety-issue.html", "topic": "How Agencies Approach Homelessness as a Safety Issue" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-agencies-handle-medical-emergencies-on-transit.html", "topic": "How Agencies Handle Medical Emergencies on Transit" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-agencies-use-data-to-optimize-routes.html", "topic": "How Agencies Use Data to Optimize Routes" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-bus-bunching-happens-and-how-agencies-fix-it.html", "topic": "How Bus Bunching Happens and How Agencies Fix It" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-fare-structures-are-designed-flat-vs-zone-vs-distance-based.html", "topic": "How Fare Structures Are Designed" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-low-income-riders-are-affected-by-fare-increases.html", "topic": "How Low-Income Riders Are Affected by Fare Increases" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-public-private-partnerships-work-in-transit.html", "topic": "How Public-Private Partnerships Work in Transit" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-transit-access-correlates-with-economic-mobility.html", "topic": "How Transit Access Correlates with Economic Mobility" },
-    { "date": "2026-06-12", "type": "encyclopedia_article", "url": "docs/how-transit-agencies-are-funded-federal-state-local-breakdown.html", "topic": "How Transit Agencies Are Funded" },
-    { "date": "2026-06-13", "type": "news", "url": "docs/2026-06-13.html", "topic": "Daily News Digest" },
-    { "date": "2026-06-13", "type": "research", "url": "docs/research-2026-06-13.html", "topic": "Transit Research Digest" },
-    { "date": "2026-06-13", "type": "transit", "url": "docs/transit-2026-06-13.html", "topic": "SoCal Transit Brief" },
-    { "date": "2026-06-13", "type": "infographic", "url": "docs/infographic-2026-06-13.svg", "topic": "Editorial Infographic" },
-    { "date": "2026-06-13", "type": "research_infographic", "url": "docs/research-infographic-2026-06-13.svg", "topic": "Research Infographic" },
-    { "date": "2026-06-13", "type": "video_script", "url": "drafts/scripts/tesla-spacex-transit-empire-script.md", "topic": "Tesla/SpaceX Transit Empire (draft, QC passed)" },
-    { "date": "2026-06-14", "type": "news", "url": "docs/2026-06-14.html", "topic": "Daily News Digest" },
-    { "date": "2026-06-14", "type": "transit", "url": "docs/transit-2026-06-14.html", "topic": "SoCal Transit Brief" },
-    { "date": "2026-06-14", "type": "research", "url": "docs/research-2026-06-14.html", "topic": "Transit Research Digest" },
-    { "date": "2026-06-14", "type": "infographic", "url": "docs/infographic-2026-06-14.svg", "topic": "Editorial Infographic" },
-    { "date": "2026-06-14", "type": "research_infographic", "url": "docs/research-infographic-2026-06-14.svg", "topic": "Research Infographic" },
-    { "date": "2026-06-14", "type": "imagen", "url": "docs/imagen-2026-06-14.svg", "topic": "Editorial Imagen" },
-    { "date": "2026-06-14", "type": "video_script", "url": "drafts/scripts/fare-evasion-economics-script.md", "topic": "Fare Evasion Economics (draft, QC passed — minor trim needed)" }
+    {
+      "date": "2026-06-05",
+      "type": "news",
+      "url": "docs/2026-06-05.html",
+      "topic": "Meta Face Recognition"
+    },
+    {
+      "date": "2026-06-05",
+      "type": "research",
+      "url": "docs/research-2026-06-05.html",
+      "topic": "Transit Equity Automation"
+    },
+    {
+      "date": "2026-06-06",
+      "type": "news",
+      "url": "docs/2026-06-06.html",
+      "topic": "AI Industry Shifts"
+    },
+    {
+      "date": "2026-06-06",
+      "type": "research",
+      "url": "docs/research-2026-06-06.html",
+      "topic": "Transit Equity Automation"
+    },
+    {
+      "date": "2026-06-06",
+      "type": "explainer",
+      "url": "docs/california-hsr.html",
+      "topic": "California HSR Failure"
+    },
+    {
+      "date": "2026-06-06",
+      "type": "explainer",
+      "url": "docs/transit-oriented-development.html",
+      "topic": "Transit-Oriented Development"
+    },
+    {
+      "date": "2026-06-07",
+      "type": "news",
+      "url": "docs/2026-06-07.html",
+      "topic": "Daily News Digest"
+    },
+    {
+      "date": "2026-06-07",
+      "type": "research",
+      "url": "docs/research-2026-06-07.html",
+      "topic": "Research Digest"
+    },
+    {
+      "date": "2026-06-07",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-07.svg",
+      "topic": "Infographic"
+    },
+    {
+      "date": "2026-06-08",
+      "type": "news",
+      "url": "docs/2026-06-08.html",
+      "topic": "Daily News Digest"
+    },
+    {
+      "date": "2026-06-08",
+      "type": "research",
+      "url": "docs/research-2026-06-08.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-08",
+      "type": "transit",
+      "url": "docs/transit-2026-06-08.html",
+      "topic": "Transit Deep Dive"
+    },
+    {
+      "date": "2026-06-08",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-08.svg",
+      "topic": "Infographic"
+    },
+    {
+      "date": "2026-06-08",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-08.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-09",
+      "type": "news",
+      "url": "docs/2026-06-09.html",
+      "topic": "Daily News Digest"
+    },
+    {
+      "date": "2026-06-09",
+      "type": "research",
+      "url": "docs/research-2026-06-09.html",
+      "topic": "AI-Driven Transit Desert Remediation (POMDP + CVaR)"
+    },
+    {
+      "date": "2026-06-09",
+      "type": "transit",
+      "url": "docs/transit-2026-06-09.html",
+      "topic": "Southern California Transit Brief"
+    },
+    {
+      "date": "2026-06-09",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-09.svg",
+      "topic": "Infographic"
+    },
+    {
+      "date": "2026-06-09",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-09.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-10",
+      "type": "research",
+      "url": "docs/research-2026-06-10.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-10",
+      "type": "transit",
+      "url": "docs/transit-2026-06-10.html",
+      "topic": "SoCal Transit Brief"
+    },
+    {
+      "date": "2026-06-10",
+      "type": "interactive",
+      "url": "docs/transit-game.html",
+      "topic": "TOD Builder Game"
+    },
+    {
+      "date": "2026-06-11",
+      "type": "news",
+      "url": "docs/2026-06-11.html",
+      "topic": "Daily News Digest"
+    },
+    {
+      "date": "2026-06-11",
+      "type": "research",
+      "url": "docs/research-2026-06-11.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-11",
+      "type": "transit",
+      "url": "docs/transit-2026-06-11.html",
+      "topic": "SoCal Transit Brief"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "transit",
+      "url": "docs/transit-2026-06-12.html",
+      "topic": "SoCal Transit Brief"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "research",
+      "url": "docs/research-2026-06-12.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia",
+      "url": "docs/encyclopedia.html",
+      "topic": "Encyclopedia Index \u2014 Infrastructure & Engineering section added"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/bonds-and-debt-financing-for-capital-projects.html",
+      "topic": "Bonds and Debt Financing for Capital Projects"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/child-and-youth-transit-access.html",
+      "topic": "Child and Youth Transit Access"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/congestion-pricing-revenue-as-a-transit-funding-source.html",
+      "topic": "Congestion Pricing Revenue as Transit Funding Source"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/disability-access-and-ada-compliance-in-transit-systems.html",
+      "topic": "Disability Access and ADA Compliance"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/emergency-evacuation-planning-for-transit-systems.html",
+      "topic": "Emergency Evacuation Planning for Transit Systems"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/environmental-justice-and-transit-investment-decisions.html",
+      "topic": "Environmental Justice and Transit Investment Decisions"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/federal-transit-grants-how-they-work-and-who-qualifies.html",
+      "topic": "Federal Transit Grants: How They Work and Who Qualifies"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/free-fare-transit-case-studies-and-tradeoffs.html",
+      "topic": "Free Fare Transit: Case Studies and Tradeoffs"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/gender-and-transit-safety-designing-for-all-riders.html",
+      "topic": "Gender and Transit Safety: Designing for All Riders"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/grade-crossing-safety-for-light-rail-and-commuter-rail.html",
+      "topic": "Grade Crossing Safety for Light Rail and Commuter Rail"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-agencies-approach-homelessness-as-a-safety-issue.html",
+      "topic": "How Agencies Approach Homelessness as a Safety Issue"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-agencies-handle-medical-emergencies-on-transit.html",
+      "topic": "How Agencies Handle Medical Emergencies on Transit"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-agencies-use-data-to-optimize-routes.html",
+      "topic": "How Agencies Use Data to Optimize Routes"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-bus-bunching-happens-and-how-agencies-fix-it.html",
+      "topic": "How Bus Bunching Happens and How Agencies Fix It"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-fare-structures-are-designed-flat-vs-zone-vs-distance-based.html",
+      "topic": "How Fare Structures Are Designed"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-low-income-riders-are-affected-by-fare-increases.html",
+      "topic": "How Low-Income Riders Are Affected by Fare Increases"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-public-private-partnerships-work-in-transit.html",
+      "topic": "How Public-Private Partnerships Work in Transit"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-transit-access-correlates-with-economic-mobility.html",
+      "topic": "How Transit Access Correlates with Economic Mobility"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "encyclopedia_article",
+      "url": "docs/how-transit-agencies-are-funded-federal-state-local-breakdown.html",
+      "topic": "How Transit Agencies Are Funded"
+    },
+    {
+      "date": "2026-06-13",
+      "type": "news",
+      "url": "docs/2026-06-13.html",
+      "topic": "Daily News Digest"
+    },
+    {
+      "date": "2026-06-13",
+      "type": "research",
+      "url": "docs/research-2026-06-13.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-13",
+      "type": "transit",
+      "url": "docs/transit-2026-06-13.html",
+      "topic": "SoCal Transit Brief"
+    },
+    {
+      "date": "2026-06-13",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-13.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-13",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-13.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-13",
+      "type": "video_script",
+      "url": "drafts/scripts/tesla-spacex-transit-empire-script.md",
+      "topic": "Tesla/SpaceX Transit Empire (draft, QC passed)"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "news",
+      "url": "docs/2026-06-14.html",
+      "topic": "Daily News Digest"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "transit",
+      "url": "docs/transit-2026-06-14.html",
+      "topic": "SoCal Transit Brief"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "research",
+      "url": "docs/research-2026-06-14.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-14.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-14.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "imagen",
+      "url": "docs/imagen-2026-06-14.svg",
+      "topic": "Editorial Imagen"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "video_script",
+      "url": "drafts/scripts/fare-evasion-economics-script.md",
+      "topic": "Fare Evasion Economics (draft, QC passed \u2014 minor trim needed)"
+    }
   ],
   "drafts_pending_approval": [
-    { "slug": "apple-gemini-2026-script", "path": "drafts/scripts/apple-gemini-2026-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~249w — cut ~75w. Scene-by-scene guidance in QC file." },
-    { "slug": "transit-desert-pomdp-script", "path": "drafts/scripts/transit-desert-pomdp-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~298w — near-complete rewrite needed. Prior 'passed' verdict on 2026-06-09 was incorrect." },
-    { "slug": "us-cities-transit-gap-script", "path": "drafts/scripts/us-cities-transit-gap-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~223w — cut ~30w; unsourced $90B statistic needs APTA citation." },
-    { "slug": "slime-mold-transit-script", "path": "drafts/scripts/slime-mold-transit-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~245w — cut ~70w; Scene 3 at ~87w is main problem. Otherwise strong." },
-    { "slug": "dopamine-fracking-script", "path": "drafts/scripts/dopamine-fracking-script.md", "qc": "needs_revision", "date": "2026-06-09", "note": "Reel ~215w — cut ~25w; fix vague meta-analysis citation in YouTube Section 3." },
-    { "slug": "electric-axial-flux-motor-transit-explainer-script", "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md", "qc": "needs_revision", "date": "2026-06-10", "note": "Factual error: McLaren Artura/Lamborghini Revuelto YASA motor claim unverified. Replace Wikipedia sources with primary." },
-    { "slug": "pokemon-go-drones-urban-data-script", "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md", "qc": "needs_revision", "date": "2026-06-11", "note": "Overstates military drone link certainty; 15M figure misattributes Ingress portal count. Needs primary sources." },
-    { "slug": "transit-app-dark-ux-2026-script", "path": "drafts/scripts/transit-app-dark-ux-2026-script.md", "qc": "passed", "date": "2026-06-12", "note": "Fix LA Metro API tier imprecision. Ensure companion article exists or update CTA before going live." },
-    { "slug": "tesla-spacex-transit-empire-script", "path": "drafts/scripts/tesla-spacex-transit-empire-script.md", "qc": "passed", "date": "2026-06-13", "note": "Clean pass. Reel ~142w. 9 named sources. Ready to publish." },
-    { "slug": "fare-evasion-economics-script", "path": "drafts/scripts/fare-evasion-economics-script.md", "qc": "passed", "date": "2026-06-14", "note": "Trim ~120w from YouTube Sections 2-3. Two source improvements needed. Low-effort fix before publish." }
+    {
+      "slug": "apple-gemini-2026-script",
+      "path": "drafts/scripts/apple-gemini-2026-script.md",
+      "qc": "needs_revision",
+      "date": "2026-06-09",
+      "note": "Reel ~249w \u2014 cut ~75w. Scene-by-scene guidance in QC file."
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "path": "drafts/scripts/transit-desert-pomdp-script.md",
+      "qc": "needs_revision",
+      "date": "2026-06-09",
+      "note": "Reel ~298w \u2014 near-complete rewrite needed. Prior 'passed' verdict on 2026-06-09 was incorrect."
+    },
+    {
+      "slug": "us-cities-transit-gap-script",
+      "path": "drafts/scripts/us-cities-transit-gap-script.md",
+      "qc": "needs_revision",
+      "date": "2026-06-09",
+      "note": "Reel ~223w \u2014 cut ~30w; unsourced $90B statistic needs APTA citation."
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "path": "drafts/scripts/slime-mold-transit-script.md",
+      "qc": "needs_revision",
+      "date": "2026-06-09",
+      "note": "Reel ~245w \u2014 cut ~70w; Scene 3 at ~87w is main problem. Otherwise strong."
+    },
+    {
+      "slug": "dopamine-fracking-script",
+      "path": "drafts/scripts/dopamine-fracking-script.md",
+      "qc": "needs_revision",
+      "date": "2026-06-09",
+      "note": "Reel ~215w \u2014 cut ~25w; fix vague meta-analysis citation in YouTube Section 3."
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "path": "drafts/scripts/electric-axial-flux-motor-transit-explainer-script.md",
+      "qc": "needs_revision",
+      "date": "2026-06-10",
+      "note": "Factual error: McLaren Artura/Lamborghini Revuelto YASA motor claim unverified. Replace Wikipedia sources with primary."
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "path": "drafts/scripts/pokemon-go-drones-urban-data-script.md",
+      "qc": "needs_revision",
+      "date": "2026-06-11",
+      "note": "Overstates military drone link certainty; 15M figure misattributes Ingress portal count. Needs primary sources."
+    },
+    {
+      "slug": "transit-app-dark-ux-2026-script",
+      "path": "drafts/scripts/transit-app-dark-ux-2026-script.md",
+      "qc": "passed",
+      "date": "2026-06-12",
+      "note": "Fix LA Metro API tier imprecision. Ensure companion article exists or update CTA before going live."
+    },
+    {
+      "slug": "tesla-spacex-transit-empire-script",
+      "path": "drafts/scripts/tesla-spacex-transit-empire-script.md",
+      "qc": "passed",
+      "date": "2026-06-13",
+      "note": "Clean pass. Reel ~142w. 9 named sources. Ready to publish."
+    },
+    {
+      "slug": "fare-evasion-economics-script",
+      "path": "drafts/scripts/fare-evasion-economics-script.md",
+      "qc": "passed",
+      "date": "2026-06-14",
+      "note": "Trim ~120w from YouTube Sections 2-3. Two source improvements needed. Low-effort fix before publish."
+    }
   ],
   "published_2026_06_15": [
-    { "date": "2026-06-15", "type": "news", "url": "docs/2026-06-15.html", "topic": "Daily News Digest — Salesforce/$3.6B Fin acquisition, psilocybin Alzheimer breakthrough, Apple Foundation Models, Anthropic safety strategy, Adobe DRM failures, OpenRouter Fusion API" },
-    { "date": "2026-06-15", "type": "infographic", "url": "docs/infographic-2026-06-15.svg", "topic": "Editorial Infographic 2026-06-15" },
-    { "date": "2026-06-15", "type": "research", "url": "docs/research-2026-06-15.html", "topic": "Transit Research Digest — EV bus equity gap, permanent -23% peak ridership shift, pantograph charging, TOD walkability thresholds, Transformer demand forecasting, autonomous shuttle feeders" },
-    { "date": "2026-06-15", "type": "research_infographic", "url": "docs/research-infographic-2026-06-15.svg", "topic": "Research Infographic 2026-06-15" },
-    { "date": "2026-06-15", "type": "transit", "url": "docs/transit-2026-06-15.html", "topic": "SoCal Transit Brief 2026-06-15" }
+    {
+      "date": "2026-06-15",
+      "type": "news",
+      "url": "docs/2026-06-15.html",
+      "topic": "Daily News Digest \u2014 Salesforce/$3.6B Fin acquisition, psilocybin Alzheimer breakthrough, Apple Foundation Models, Anthropic safety strategy, Adobe DRM failures, OpenRouter Fusion API"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-15.svg",
+      "topic": "Editorial Infographic 2026-06-15"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "research",
+      "url": "docs/research-2026-06-15.html",
+      "topic": "Transit Research Digest \u2014 EV bus equity gap, permanent -23% peak ridership shift, pantograph charging, TOD walkability thresholds, Transformer demand forecasting, autonomous shuttle feeders"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-15.svg",
+      "topic": "Research Infographic 2026-06-15"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "transit",
+      "url": "docs/transit-2026-06-15.html",
+      "topic": "SoCal Transit Brief 2026-06-15"
+    }
   ],
   "published_2026_06_16": [
-    { "date": "2026-06-16", "type": "news", "url": "docs/2026-06-16.html", "topic": "Daily News Digest (QC: 72/100 REVISE — live Imagen API error placeholder, missing per-story sources)" },
-    { "date": "2026-06-16", "type": "infographic", "url": "docs/infographic-2026-06-16.svg", "topic": "Editorial Infographic 2026-06-16 (QC: 82 PASS)" },
-    { "date": "2026-06-16", "type": "research", "url": "docs/research-2026-06-16.html", "topic": "AI, Electrification & Equity: The New Transit Frontier — swarm transit routing 28-101% ridership gains (QC: 88 PASS)" },
-    { "date": "2026-06-16", "type": "research_infographic", "url": "docs/research-infographic-2026-06-16.svg", "topic": "Research Infographic 2026-06-16 (QC: 80 PASS)" },
-    { "date": "2026-06-16", "type": "transit", "url": "docs/transit-2026-06-16.html", "topic": "SoCal Transit Brief 2026-06-16 (QC: 91 PASS)" }
+    {
+      "date": "2026-06-16",
+      "type": "news",
+      "url": "docs/2026-06-16.html",
+      "topic": "Daily News Digest (QC: 72/100 REVISE \u2014 live Imagen API error placeholder, missing per-story sources)"
+    },
+    {
+      "date": "2026-06-16",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-16.svg",
+      "topic": "Editorial Infographic 2026-06-16 (QC: 82 PASS)"
+    },
+    {
+      "date": "2026-06-16",
+      "type": "research",
+      "url": "docs/research-2026-06-16.html",
+      "topic": "AI, Electrification & Equity: The New Transit Frontier \u2014 swarm transit routing 28-101% ridership gains (QC: 88 PASS)"
+    },
+    {
+      "date": "2026-06-16",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-16.svg",
+      "topic": "Research Infographic 2026-06-16 (QC: 80 PASS)"
+    },
+    {
+      "date": "2026-06-16",
+      "type": "transit",
+      "url": "docs/transit-2026-06-16.html",
+      "topic": "SoCal Transit Brief 2026-06-16 (QC: 91 PASS)"
+    }
   ],
   "published_2026_06_17": [
-    { "date": "2026-06-17", "type": "news", "url": "docs/2026-06-17.html", "topic": "Daily News Digest 2026-06-17" },
-    { "date": "2026-06-17", "type": "infographic", "url": "docs/infographic-2026-06-17.svg", "topic": "Editorial Infographic 2026-06-17" },
-    { "date": "2026-06-17", "type": "research", "url": "docs/research-2026-06-17.html", "topic": "Transit Research Digest 2026-06-17" },
-    { "date": "2026-06-17", "type": "research_infographic", "url": "docs/research-infographic-2026-06-17.svg", "topic": "Research Infographic 2026-06-17" }
+    {
+      "date": "2026-06-17",
+      "type": "news",
+      "url": "docs/2026-06-17.html",
+      "topic": "Daily News Digest 2026-06-17"
+    },
+    {
+      "date": "2026-06-17",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-17.svg",
+      "topic": "Editorial Infographic 2026-06-17"
+    },
+    {
+      "date": "2026-06-17",
+      "type": "research",
+      "url": "docs/research-2026-06-17.html",
+      "topic": "Transit Research Digest 2026-06-17"
+    },
+    {
+      "date": "2026-06-17",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-17.svg",
+      "topic": "Research Infographic 2026-06-17"
+    }
   ],
   "published_2026_06_18": [
-    { "date": "2026-06-18", "type": "news", "url": "docs/2026-06-18.html", "topic": "Daily News Digest 2026-06-18 + editorial imagen" },
-    { "date": "2026-06-18", "type": "infographic", "url": "docs/infographic-2026-06-18.svg", "topic": "Editorial Infographic 2026-06-18" },
-    { "date": "2026-06-18", "type": "research", "url": "docs/research-2026-06-18.html", "topic": "Transit Research Digest 2026-06-18" },
-    { "date": "2026-06-18", "type": "research_infographic", "url": "docs/research-infographic-2026-06-18.svg", "topic": "Research Infographic 2026-06-18" },
-    { "date": "2026-06-18", "type": "transit", "url": "docs/transit-2026-06-18.html", "topic": "SoCal Transit Brief 2026-06-18 (streak miss from 06-17 recovered)" }
+    {
+      "date": "2026-06-18",
+      "type": "news",
+      "url": "docs/2026-06-18.html",
+      "topic": "Daily News Digest 2026-06-18 + editorial imagen"
+    },
+    {
+      "date": "2026-06-18",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-18.svg",
+      "topic": "Editorial Infographic 2026-06-18"
+    },
+    {
+      "date": "2026-06-18",
+      "type": "research",
+      "url": "docs/research-2026-06-18.html",
+      "topic": "Transit Research Digest 2026-06-18"
+    },
+    {
+      "date": "2026-06-18",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-18.svg",
+      "topic": "Research Infographic 2026-06-18"
+    },
+    {
+      "date": "2026-06-18",
+      "type": "transit",
+      "url": "docs/transit-2026-06-18.html",
+      "topic": "SoCal Transit Brief 2026-06-18 (streak miss from 06-17 recovered)"
+    }
   ],
   "topic_performance": {
-    "California HSR Failure": { "published": "2026-06-06", "engagement": "high" },
-    "Transit-Oriented Development": { "published": "2026-06-06", "engagement": "high" },
-    "TOD Builder Interactive Game": { "published": "2026-06-10", "engagement": "unknown" },
-    "AI Industry Shifts": { "published": "2026-06-06", "engagement": "medium" },
-    "Southern California Transit": { "published": "2026-06-09", "engagement": "unknown" },
-    "AI-Driven Transit Desert Remediation": { "published": "2026-06-09", "engagement": "unknown" }
+    "California HSR Failure": {
+      "published": "2026-06-06",
+      "engagement": "high"
+    },
+    "Transit-Oriented Development": {
+      "published": "2026-06-06",
+      "engagement": "high"
+    },
+    "TOD Builder Interactive Game": {
+      "published": "2026-06-10",
+      "engagement": "unknown"
+    },
+    "AI Industry Shifts": {
+      "published": "2026-06-06",
+      "engagement": "medium"
+    },
+    "Southern California Transit": {
+      "published": "2026-06-09",
+      "engagement": "unknown"
+    },
+    "AI-Driven Transit Desert Remediation": {
+      "published": "2026-06-09",
+      "engagement": "unknown"
+    }
   },
-  "niche_focus": ["transit", "urban mobility", "infrastructure policy", "AI & technology"],
+  "niche_focus": [
+    "transit",
+    "urban mobility",
+    "infrastructure policy",
+    "AI & technology"
+  ],
   "covered_topics": [
     "California high-speed rail",
     "transit-oriented development",
@@ -158,51 +636,173 @@
     "psilocybin Alzheimer research"
   ],
   "failed_jobs": [
-    { "date": "2026-06-10", "job": "publishing", "reason": "approved.json empty — no human approvals received for 4th consecutive day" },
-    { "date": "2026-06-11", "job": "publishing", "reason": "approved.json empty — no human approvals received for 5th consecutive day" },
-    { "date": "2026-06-11", "job": "article_writing", "reason": "drafts/articles/ still empty after queue items ranked for 5+ days — article-writing agent appears unresponsive" },
-    { "date": "2026-06-11", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 infographic not produced for 3rd consecutive day" },
-    { "date": "2026-06-12", "job": "publishing", "reason": "approved.json empty — no human approvals received for 6th consecutive day" },
-    { "date": "2026-06-12", "job": "article_writing", "reason": "drafts/articles/ still empty — tesla-spacex, ai-agent-risk, free-transit-economics not produced. 0% article success rate over 8 days." },
-    { "date": "2026-06-12", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 4th consecutive day — retry #4 queued 2026-06-13" },
-    { "date": "2026-06-13", "job": "publishing", "reason": "approved.json empty — no human approvals received for 8th consecutive day (ESCALATION: pipeline blocked since 2026-06-07)" },
-    { "date": "2026-06-13", "job": "article_writing", "reason": "drafts/articles/ still empty — 0% article success rate for 9+ days. World Cup transit article not produced." },
-    { "date": "2026-06-13", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 5th consecutive day — retry #5 queued 2026-06-14. ESCALATION: manual intervention may be required." },
-    { "date": "2026-06-14", "job": "publishing", "reason": "approved.json empty — no human approvals received for 9th consecutive day. 3 QC-passed scripts ready to publish (tesla-spacex, transit-app-dark-ux, fare-evasion-economics). REQUIRES HUMAN ACTION." },
-    { "date": "2026-06-14", "job": "article_writing", "reason": "drafts/articles/ still empty — congress-transit-reauthorization and world-cup-2026-transit-host-cities not produced. 0% article success rate persists across entire site history." },
-    { "date": "2026-06-14", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 6th consecutive day — retry #6 queued 2026-06-15. CRITICAL: if not produced today, infographic pipeline needs manual diagnostic." },
-    { "date": "2026-06-15", "job": "publishing", "reason": "approved.json empty — no human approvals received for 11th consecutive day. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION." },
-    { "date": "2026-06-15", "job": "article_writing", "reason": "drafts/articles/ still empty — world-cup-2026-transit-host-cities and congress-transportation-reauthorization-2026 not produced. 0% article success rate persists across entire site history (11+ days). QC agent confirmed zero new items reviewed." },
-    { "date": "2026-06-15", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced for 7th consecutive day (retry #6 failed silently). CONFIRMED PIPELINE FAILURE — retry #7 queued 2026-06-16. Manual diagnostic of infographic-writing agent required if not produced today." },
-    { "date": "2026-06-16", "job": "publishing", "reason": "approved.json empty — no human approvals received for 12th consecutive day" },
-    { "date": "2026-06-16", "job": "article_writing", "reason": "drafts/articles/ directory has never had a file written to it — confirmed by QC agent. 12+ consecutive days of 0% article production. World Cup and reauthorization stories not produced." },
-    { "date": "2026-06-16", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced — retry #7 confirmed failed. docs/infographic-brt-vs-light-rail-cost-2026.svg never created." },
-    { "date": "2026-06-16", "job": "news_digest_qc", "reason": "docs/2026-06-16.html scored 72/100 (REVISE) — live Imagen API error placeholder visible to readers; missing per-story sources" },
-    { "date": "2026-06-17", "job": "publishing", "reason": "approved.json empty — no human approvals received for 13th consecutive day" },
-    { "date": "2026-06-17", "job": "article_writing", "reason": "drafts/articles/ still empty — 14+ consecutive days of 0% article production. World Cup and reauthorization stories still not produced." },
-    { "date": "2026-06-17", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced — retry #8 confirmed failed." },
-    { "date": "2026-06-17", "job": "transit_brief", "reason": "docs/transit-2026-06-17.html not produced — breaks the prior 9-day daily streak (06-08 through 06-16). First miss for this job type." },
-    { "date": "2026-06-17", "job": "imagen", "reason": "docs/imagen-2026-06-17.svg not produced — imagen was only produced once before (06-14), so pattern is inconsistent rather than a clear regression." },
-    { "date": "2026-06-18", "job": "publishing", "reason": "approved.json empty — no human approvals received for 14th consecutive day. 3 QC-passed scripts still ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). Publishing explicitly skipped this run ('no items met approval+QC gate')." },
-    { "date": "2026-06-18", "job": "video_scripts", "reason": "Video script production placed on HOLD by the pipeline itself ('Video scripts on hold 2026-06-18 - flag publishing bottleneck') — backlog of 10 scripts unconsumed, no new scripts written." },
-    { "date": "2026-06-18", "job": "article_writing", "reason": "drafts/articles/ still empty — 15th consecutive day of 0% article production. World Cup and reauthorization stories still not produced." },
-    { "date": "2026-06-18", "job": "infographic_writing", "reason": "brt-vs-light-rail-cost-2026 not produced — retry #9 confirmed failed." }
+    {
+      "date": "2026-06-10",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 4th consecutive day"
+    },
+    {
+      "date": "2026-06-11",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 5th consecutive day"
+    },
+    {
+      "date": "2026-06-11",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty after queue items ranked for 5+ days \u2014 article-writing agent appears unresponsive"
+    },
+    {
+      "date": "2026-06-11",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 infographic not produced for 3rd consecutive day"
+    },
+    {
+      "date": "2026-06-12",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 6th consecutive day"
+    },
+    {
+      "date": "2026-06-12",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty \u2014 tesla-spacex, ai-agent-risk, free-transit-economics not produced. 0% article success rate over 8 days."
+    },
+    {
+      "date": "2026-06-12",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced for 4th consecutive day \u2014 retry #4 queued 2026-06-13"
+    },
+    {
+      "date": "2026-06-13",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 8th consecutive day (ESCALATION: pipeline blocked since 2026-06-07)"
+    },
+    {
+      "date": "2026-06-13",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty \u2014 0% article success rate for 9+ days. World Cup transit article not produced."
+    },
+    {
+      "date": "2026-06-13",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced for 5th consecutive day \u2014 retry #5 queued 2026-06-14. ESCALATION: manual intervention may be required."
+    },
+    {
+      "date": "2026-06-14",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 9th consecutive day. 3 QC-passed scripts ready to publish (tesla-spacex, transit-app-dark-ux, fare-evasion-economics). REQUIRES HUMAN ACTION."
+    },
+    {
+      "date": "2026-06-14",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty \u2014 congress-transit-reauthorization and world-cup-2026-transit-host-cities not produced. 0% article success rate persists across entire site history."
+    },
+    {
+      "date": "2026-06-14",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced for 6th consecutive day \u2014 retry #6 queued 2026-06-15. CRITICAL: if not produced today, infographic pipeline needs manual diagnostic."
+    },
+    {
+      "date": "2026-06-15",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 11th consecutive day. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION."
+    },
+    {
+      "date": "2026-06-15",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty \u2014 world-cup-2026-transit-host-cities and congress-transportation-reauthorization-2026 not produced. 0% article success rate persists across entire site history (11+ days). QC agent confirmed zero new items reviewed."
+    },
+    {
+      "date": "2026-06-15",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced for 7th consecutive day (retry #6 failed silently). CONFIRMED PIPELINE FAILURE \u2014 retry #7 queued 2026-06-16. Manual diagnostic of infographic-writing agent required if not produced today."
+    },
+    {
+      "date": "2026-06-16",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 12th consecutive day"
+    },
+    {
+      "date": "2026-06-16",
+      "job": "article_writing",
+      "reason": "drafts/articles/ directory has never had a file written to it \u2014 confirmed by QC agent. 12+ consecutive days of 0% article production. World Cup and reauthorization stories not produced."
+    },
+    {
+      "date": "2026-06-16",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced \u2014 retry #7 confirmed failed. docs/infographic-brt-vs-light-rail-cost-2026.svg never created."
+    },
+    {
+      "date": "2026-06-16",
+      "job": "news_digest_qc",
+      "reason": "docs/2026-06-16.html scored 72/100 (REVISE) \u2014 live Imagen API error placeholder visible to readers; missing per-story sources"
+    },
+    {
+      "date": "2026-06-17",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 13th consecutive day"
+    },
+    {
+      "date": "2026-06-17",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty \u2014 14+ consecutive days of 0% article production. World Cup and reauthorization stories still not produced."
+    },
+    {
+      "date": "2026-06-17",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced \u2014 retry #8 confirmed failed."
+    },
+    {
+      "date": "2026-06-17",
+      "job": "transit_brief",
+      "reason": "docs/transit-2026-06-17.html not produced \u2014 breaks the prior 9-day daily streak (06-08 through 06-16). First miss for this job type."
+    },
+    {
+      "date": "2026-06-17",
+      "job": "imagen",
+      "reason": "docs/imagen-2026-06-17.svg not produced \u2014 imagen was only produced once before (06-14), so pattern is inconsistent rather than a clear regression."
+    },
+    {
+      "date": "2026-06-18",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 14th consecutive day. 3 QC-passed scripts still ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). Publishing explicitly skipped this run ('no items met approval+QC gate')."
+    },
+    {
+      "date": "2026-06-18",
+      "job": "video_scripts",
+      "reason": "Video script production placed on HOLD by the pipeline itself ('Video scripts on hold 2026-06-18 - flag publishing bottleneck') \u2014 backlog of 10 scripts unconsumed, no new scripts written."
+    },
+    {
+      "date": "2026-06-18",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty \u2014 15th consecutive day of 0% article production. World Cup and reauthorization stories still not produced."
+    },
+    {
+      "date": "2026-06-18",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced \u2014 retry #9 confirmed failed."
+    },
+    {
+      "date": "2026-06-19",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 16th consecutive day. 3 QC-passed scripts still ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). Publishing explicitly skipped this run (no items met approval+QC gate)."
+    }
   ],
   "content_gaps": [
-    "CRITICAL DAY 13: approved.json empty since 2026-06-07. Publishing Agent blocked 13 consecutive days. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION — add slugs to approved.json to unblock. Zero content has gone live despite 13 days of daily production.",
-    "CRITICAL PIPELINE FAILURE: BRT vs Light Rail infographic queued since 2026-06-07, never produced in 7 retries (retry #8 queued 2026-06-17). drafts/articles/ directory did not exist at all until this run created it — confirms article-writing agent has never run successfully. Manual diagnostic of both agents is now mandatory; further automated retries are unlikely to succeed without human intervention.",
-    "CRITICAL: Long-form article drafts (drafts/articles/) empty across entire site history — 0% article production rate for 13+ days.",
-    "URGENT: World Cup 2026 transit story still not produced after 4+ days queued as #1 priority — group stage traffic window narrowing further.",
+    "CRITICAL DAY 13: approved.json empty since 2026-06-07. Publishing Agent blocked 13 consecutive days. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION \u2014 add slugs to approved.json to unblock. Zero content has gone live despite 13 days of daily production.",
+    "CRITICAL PIPELINE FAILURE: BRT vs Light Rail infographic queued since 2026-06-07, never produced in 7 retries (retry #8 queued 2026-06-17). drafts/articles/ directory did not exist at all until this run created it \u2014 confirms article-writing agent has never run successfully. Manual diagnostic of both agents is now mandatory; further automated retries are unlikely to succeed without human intervention.",
+    "CRITICAL: Long-form article drafts (drafts/articles/) empty across entire site history \u2014 0% article production rate for 13+ days.",
+    "URGENT: World Cup 2026 transit story still not produced after 4+ days queued as #1 priority \u2014 group stage traffic window narrowing further.",
     "LIVE SITE QUALITY ISSUE: docs/2026-06-16.html still has a visible Imagen API error placeholder live on the published site (carried over from QC flag, not yet fixed).",
-    "WARNING: Video script production on HOLD. Backlog at 10 scripts — 3 QC-passed, 7 need revision. No new scripts until human reviews backlog.",
+    "WARNING: Video script production on HOLD. Backlog at 10 scripts \u2014 3 QC-passed, 7 need revision. No new scripts until human reviews backlog.",
     "CRITICAL DAY 14: approved.json still empty since 2026-06-07. 14 consecutive days blocked. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION.",
-    "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic — 8 consecutive failures since 2026-06-07, retry #9 queued 2026-06-18.",
+    "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic \u2014 8 consecutive failures since 2026-06-07, retry #9 queued 2026-06-18.",
     "CRITICAL: drafts/articles/ has never had a file written to it in 14+ days. World Cup 2026 host-city story is now the most time-sensitive unproduced item given the narrowing pre-tournament window.",
-    "NEW: docs/transit-2026-06-17.html (SoCal daily transit brief) was not produced, breaking the prior 9-day streak — worth checking whether this is a one-off miss or a new pipeline failure.",
+    "NEW: docs/transit-2026-06-17.html (SoCal daily transit brief) was not produced, breaking the prior 9-day streak \u2014 worth checking whether this is a one-off miss or a new pipeline failure.",
     "RESOLVED: docs/transit-2026-06-18.html was produced, so the 06-17 transit-brief miss was a one-off, not a new regression.",
-    "CRITICAL DAY 15: approved.json still empty since 2026-06-07. 15 consecutive days blocked — publishing job is now explicitly self-reporting 'skipped, no items met approval+QC gate' rather than silently failing. 3 QC-passed scripts still ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION — add slugs to approved.json.",
-    "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic — 9 consecutive failures since 2026-06-07, retry #10 queued 2026-06-19.",
+    "CRITICAL DAY 15: approved.json still empty since 2026-06-07. 15 consecutive days blocked \u2014 publishing job is now explicitly self-reporting 'skipped, no items met approval+QC gate' rather than silently failing. 3 QC-passed scripts still ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION \u2014 add slugs to approved.json.",
+    "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic \u2014 9 consecutive failures since 2026-06-07, retry #10 queued 2026-06-19.",
     "CRITICAL: drafts/articles/ has never had a single file written to it in 15+ days across the site's entire history. World Cup 2026 host-city story is the most time-sensitive unproduced item.",
-    "VIDEO SCRIPTS ON HOLD: pipeline itself paused new script production on 2026-06-18 pending human review of the 10-script backlog (3 passed QC, 7 need revision)."
+    "VIDEO SCRIPTS ON HOLD: pipeline itself paused new script production on 2026-06-18 pending human review of the 10-script backlog (3 passed QC, 7 need revision).",
+    "CRITICAL DAY 16: approved.json still empty since 2026-06-07. 16 consecutive days blocked. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION \u2014 add slugs to approved.json to unblock. Zero content has gone live despite 16 days of daily production."
   ]
 }
