@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-20",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "notes": "No new files were produced in drafts/articles/, drafts/scripts/, or drafts/infographics/ on 2026-06-20. Per system/status/status-2026-06-20.json, the 'articles' and 'infographics' jobs are still 'pending' and 'video_scripts' is 'hold' (no new script queued since 2026-06-18). drafts/articles/ and drafts/infographics/ directories do not exist anywhere in the repo. The existing 10-script backlog in drafts/scripts/ was already QC'd on prior dates (see individual *-qc.json files) and is unchanged today, so it was not re-reviewed. Today's docs/ outputs (briefing, research, transit brief, infographics for 2026-06-20) were committed directly to docs/ outside the drafts/ -> QC -> approved.json gate and are therefore out of this QC pass's scope."
+}
