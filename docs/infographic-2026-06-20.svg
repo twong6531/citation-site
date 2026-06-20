@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" width="800" height="1400" font-family="Helvetica Neue, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="1400" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#000000"/>
+<text x="40" y="36" font-size="12" letter-spacing="2" fill="#888888" font-weight="bold">DAILY BRIEFING</text>
+<text x="40" y="80" font-size="28" font-weight="bold" fill="#111111">AI Hallucination Reckoning</text>
+<text x="40" y="106" font-size="13" fill="#888888">June 20, 2026</text>
+<line x1="40" y1="124" x2="760" y2="124" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="174" font-size="22" font-weight="bold" fill="#CCCCCC">01</text>
+<rect x="80" y="156" width="58" height="22" rx="11" fill="#E65100"/>
+<text x="109.0" y="171" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">WORLD</text>
+<text x="730" y="174" font-size="22" text-anchor="end">⚖️</text>
+<text x="40" y="206" font-size="17" font-weight="bold" fill="#111111">US-Iran Nuclear Talks Stall as Lebanon Burns</text>
+<text x="40" y="230" font-size="12" fill="#555555">US-Iran nuclear negotiations have stalled as Israel-Hezbollah fighting rages on in Lebanon.</text>
+<text x="40" y="246" font-size="12" fill="#555555">Diplomats warn the active conflict is hardening positions on both sides just as talks</text>
+<text x="40" y="280" font-size="11" fill="#777777">&#8226; Nuclear talks stalled amid continued fighting in Lebanon</text>
+<text x="40" y="295" font-size="11" fill="#777777">&#8226; UK formally condemned an Israeli minister&#x27;s inflammatory remarks</text>
+<text x="40" y="310" font-size="11" fill="#777777">&#8226; No new negotiation date has been set by either side</text>
+<text x="40" y="338" font-size="10" fill="#999999" letter-spacing="1">IMPACT</text>
+<rect x="100" y="329" width="500" height="10" fill="#E5E5E0"/>
+<rect x="100" y="329" width="450.0" height="10" fill="#E65100"/>
+<text x="612" y="338" font-size="11" font-weight="bold" fill="#111111">9/10</text>
+<line x1="40" y1="326" x2="760" y2="326" stroke="#E5E5E0" stroke-width="1"/>
+<text x="40" y="364" font-size="22" font-weight="bold" fill="#CCCCCC">02</text>
+<rect x="80" y="346" width="34" height="22" rx="11" fill="#6C47FF"/>
+<text x="97.0" y="361" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AI</text>
+<text x="730" y="364" font-size="22" text-anchor="end">🧠</text>
+<text x="40" y="396" font-size="17" font-weight="bold" fill="#111111">GPT-5.5 Hallucinates 3x More Than Open Rival</text>
+<text x="40" y="420" font-size="12" fill="#555555">Benchmark testing found GPT-5.5 hallucinates on 86% of unanswerable questions, nearly 3x the</text>
+<text x="40" y="436" font-size="12" fill="#555555">28% rate of the much smaller, MIT-licensed GLM-5.2. The gap suggests raw parameter scaling</text>
+<text x="40" y="470" font-size="11" fill="#777777">&#8226; GLM-5.2 (753B params, ~40B active) hit a 28% hallucination rate vs GPT-5.5&#x27;s 86%</text>
+<text x="40" y="485" font-size="11" fill="#777777">&#8226; GLM-5.2 scored within 4 points of GPT-5.5 on the AA Intelligence Index</text>
+<text x="40" y="500" font-size="11" fill="#777777">&#8226; DeepSeek V4 Pro reasoned for 3m26s to give a confidently wrong answer GLM-5.2 solved correctly in 12 seconds</text>
+<text x="40" y="528" font-size="10" fill="#999999" letter-spacing="1">IMPACT</text>
+<rect x="100" y="519" width="500" height="10" fill="#E5E5E0"/>
+<rect x="100" y="519" width="400.0" height="10" fill="#6C47FF"/>
+<text x="612" y="528" font-size="11" font-weight="bold" fill="#111111">8/10</text>
+<line x1="40" y1="516" x2="760" y2="516" stroke="#E5E5E0" stroke-width="1"/>
+<text x="40" y="554" font-size="22" font-weight="bold" fill="#CCCCCC">03</text>
+<rect x="80" y="536" width="52" height="22" rx="11" fill="#00897B"/>
+<text x="106.0" y="551" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">TECH</text>
+<text x="730" y="554" font-size="22" text-anchor="end">🛰️</text>
+<text x="40" y="586" font-size="17" font-weight="bold" fill="#111111">Lithuania Crowdsources Shahed Drone Detection</text>
+<text x="40" y="610" font-size="12" fill="#555555">A Lithuanian startup and volunteers launched Drone Radaras, an open-source network that</text>
+<text x="40" y="626" font-size="12" fill="#555555">links data from civilians&#x27; phones to spot Shahed-type loitering drones. The tool responds to</text>
+<text x="40" y="660" font-size="11" fill="#777777">&#8226; Shahed-136 drones carry a 50-90 kg warhead and fly over 185 km/h</text>
+<text x="40" y="675" font-size="11" fill="#777777">&#8226; Russia has built roughly 26,000 Geran-2 (Shahed) drones at its Alabuga plant</text>
+<text x="40" y="690" font-size="11" fill="#777777">&#8226; The detection network pools volunteer phone sensors into one open-source feed</text>
+<text x="40" y="718" font-size="10" fill="#999999" letter-spacing="1">IMPACT</text>
+<rect x="100" y="709" width="500" height="10" fill="#E5E5E0"/>
+<rect x="100" y="709" width="350.0" height="10" fill="#00897B"/>
+<text x="612" y="718" font-size="11" font-weight="bold" fill="#111111">7/10</text>
+<line x1="40" y1="706" x2="760" y2="706" stroke="#E5E5E0" stroke-width="1"/>
+<text x="40" y="744" font-size="22" font-weight="bold" fill="#CCCCCC">04</text>
+<rect x="80" y="726" width="58" height="22" rx="11" fill="#E65100"/>
+<text x="109.0" y="741" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">WORLD</text>
+<text x="730" y="744" font-size="22" text-anchor="end">✈️</text>
+<text x="40" y="776" font-size="17" font-weight="bold" fill="#111111">Trump Unveils Air Force One From Qatar Gift</text>
+<text x="40" y="800" font-size="12" fill="#555555">The Trump administration unveiled a new Air Force One converted from a luxury Boeing jet</text>
+<text x="40" y="816" font-size="12" fill="#555555">gifted by Qatar. The retrofit revives ethics questions about a sitting president accepting a</text>
+<text x="40" y="850" font-size="11" fill="#777777">&#8226; The jet originated as a luxury aircraft gifted by the Qatari government</text>
+<text x="40" y="865" font-size="11" fill="#777777">&#8226; It has been retrofitted for presidential use as the new Air Force One</text>
+<text x="40" y="880" font-size="11" fill="#777777">&#8226; The unveiling renews scrutiny over foreign-gift ethics rules</text>
+<text x="40" y="908" font-size="10" fill="#999999" letter-spacing="1">IMPACT</text>
+<rect x="100" y="899" width="500" height="10" fill="#E5E5E0"/>
+<rect x="100" y="899" width="300.0" height="10" fill="#E65100"/>
+<text x="612" y="908" font-size="11" font-weight="bold" fill="#111111">6/10</text>
+<line x1="40" y1="896" x2="760" y2="896" stroke="#E5E5E0" stroke-width="1"/>
+<text x="40" y="934" font-size="22" font-weight="bold" fill="#CCCCCC">05</text>
+<rect x="80" y="916" width="82" height="22" rx="11" fill="#2E7D32"/>
+<text x="121.0" y="931" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">BUSINESS</text>
+<text x="730" y="934" font-size="22" text-anchor="end">🏦</text>
+<text x="40" y="966" font-size="17" font-weight="bold" fill="#111111">Fed&#x27;s Warsh Era Signals a New Policy Vibe</text>
+<text x="40" y="990" font-size="12" fill="#555555">Markets are adjusting to a noticeably different tone from the Federal Reserve under new</text>
+<text x="40" y="1006" font-size="12" fill="#555555">Chair Kevin Warsh. Investors describe early signals as a meaningful shift from the prior</text>
+<text x="40" y="1040" font-size="11" fill="#777777">&#8226; Warsh succeeded the prior Fed chair in the role this year</text>
+<text x="40" y="1055" font-size="11" fill="#777777">&#8226; Analysts flag a clear tonal shift in early communications</text>
+<text x="40" y="1070" font-size="11" fill="#777777">&#8226; Investors are repricing rate-path expectations around the new leadership</text>
+<text x="40" y="1098" font-size="10" fill="#999999" letter-spacing="1">IMPACT</text>
+<rect x="100" y="1089" width="500" height="10" fill="#E5E5E0"/>
+<rect x="100" y="1089" width="300.0" height="10" fill="#2E7D32"/>
+<text x="612" y="1098" font-size="11" font-weight="bold" fill="#111111">6/10</text>
+<line x1="40" y1="1086" x2="760" y2="1086" stroke="#E5E5E0" stroke-width="1"/>
+<text x="40" y="1124" font-size="22" font-weight="bold" fill="#CCCCCC">06</text>
+<rect x="80" y="1106" width="82" height="22" rx="11" fill="#2E7D32"/>
+<text x="121.0" y="1121" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">BUSINESS</text>
+<text x="730" y="1124" font-size="22" text-anchor="end">🥽</text>
+<text x="40" y="1156" font-size="17" font-weight="bold" fill="#111111">Snap Stock Slumps on AR Glasses Bet</text>
+<text x="40" y="1180" font-size="12" fill="#555555">Snap shares fell sharply after signs of weak demand and high costs tied to its premium AR</text>
+<text x="40" y="1196" font-size="12" fill="#555555">glasses push. The slump raises doubts about whether consumer AR hardware can become a viable</text>
+<text x="40" y="1230" font-size="11" fill="#777777">&#8226; Snap&#x27;s stock dropped following its premium AR glasses launch</text>
+<text x="40" y="1245" font-size="11" fill="#777777">&#8226; Analysts cite soft early demand for the high-end hardware</text>
+<text x="40" y="1260" font-size="11" fill="#777777">&#8226; The slump adds to doubts about consumer AR&#x27;s near-term viability</text>
+<text x="40" y="1288" font-size="10" fill="#999999" letter-spacing="1">IMPACT</text>
+<rect x="100" y="1279" width="500" height="10" fill="#E5E5E0"/>
+<rect x="100" y="1279" width="250.0" height="10" fill="#2E7D32"/>
+<text x="612" y="1288" font-size="11" font-weight="bold" fill="#111111">5/10</text>
+<line x1="40" y1="1276" x2="760" y2="1276" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="1308" font-size="11" fill="#999999">Generated by AI</text>
+<text x="760" y="1308" font-size="11" fill="#999999" text-anchor="end">June 20, 2026</text>
+<rect x="0" y="1334" width="800" height="3" fill="#000000"/>
+</svg>
