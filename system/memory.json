@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-19T18:00:00Z",
+  "last_updated": "2026-06-20T14:05:25Z",
   "published": [
     {
       "date": "2026-06-05",
@@ -556,6 +556,38 @@
       "topic": "SoCal Transit Brief 2026-06-18 (streak miss from 06-17 recovered)"
     }
   ],
+  "published_2026_06_19": [
+    {
+      "date": "2026-06-19",
+      "type": "news",
+      "url": "docs/2026-06-19.html",
+      "topic": "Daily News Digest 2026-06-19"
+    },
+    {
+      "date": "2026-06-19",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-19.svg",
+      "topic": "Editorial Infographic 2026-06-19"
+    },
+    {
+      "date": "2026-06-19",
+      "type": "research",
+      "url": "docs/research-2026-06-19.html",
+      "topic": "Transit Research Digest 2026-06-19 (Gemini unavailable, self-analysis)"
+    },
+    {
+      "date": "2026-06-19",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-19.svg",
+      "topic": "Research Infographic 2026-06-19"
+    },
+    {
+      "date": "2026-06-19",
+      "type": "transit",
+      "url": "docs/transit-2026-06-19.html",
+      "topic": "SoCal Transit Brief 2026-06-19"
+    }
+  ],
   "topic_performance": {
     "California HSR Failure": {
       "published": "2026-06-06",
@@ -785,6 +817,21 @@
       "date": "2026-06-19",
       "job": "publishing",
       "reason": "approved.json empty \u2014 no human approvals received for 16th consecutive day. 3 QC-passed scripts still ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). Publishing explicitly skipped this run (no items met approval+QC gate)."
+    },
+    {
+      "date": "2026-06-20",
+      "job": "publishing",
+      "reason": "approved.json still empty \u2014 no human approvals received for 17th consecutive day since 2026-06-07. 3 QC-passed scripts still ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics)."
+    },
+    {
+      "date": "2026-06-20",
+      "job": "article_writing",
+      "reason": "drafts/articles/ still empty \u2014 17+ consecutive days of 0% article production. World Cup 2026 transit stress-test and reauthorization stories still not produced; World Cup group stage window keeps narrowing."
+    },
+    {
+      "date": "2026-06-20",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced \u2014 retry #10 confirmed failed, retry #11 queued."
     }
   ],
   "content_gaps": [
@@ -803,6 +850,9 @@
     "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic \u2014 9 consecutive failures since 2026-06-07, retry #10 queued 2026-06-19.",
     "CRITICAL: drafts/articles/ has never had a single file written to it in 15+ days across the site's entire history. World Cup 2026 host-city story is the most time-sensitive unproduced item.",
     "VIDEO SCRIPTS ON HOLD: pipeline itself paused new script production on 2026-06-18 pending human review of the 10-script backlog (3 passed QC, 7 need revision).",
-    "CRITICAL DAY 16: approved.json still empty since 2026-06-07. 16 consecutive days blocked. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION \u2014 add slugs to approved.json to unblock. Zero content has gone live despite 16 days of daily production."
+    "CRITICAL DAY 16: approved.json still empty since 2026-06-07. 16 consecutive days blocked. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION \u2014 add slugs to approved.json to unblock. Zero content has gone live despite 16 days of daily production.",
+    "CRITICAL DAY 17: approved.json still empty since 2026-06-07. 17 consecutive days blocked. 3 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics). REQUIRES IMMEDIATE HUMAN ACTION \u2014 add slugs to approved.json to unblock. Zero content has gone live despite 17 days of daily production.",
+    "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic \u2014 10 consecutive failures since 2026-06-07, retry #11 queued 2026-06-20.",
+    "CRITICAL: drafts/articles/ has never had a single file written to it in 17+ days across the site's entire history. World Cup 2026 host-city story remains the most time-sensitive unproduced item as the tournament's group stage progresses."
   ]
 }
