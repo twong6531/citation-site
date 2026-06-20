@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 20, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">Free public transit fare policy may do more for social justice in autonomous</text>
+<text x="90" y="241" class="body">mobility-on-demand systems than regulating or capping the AMoD service itself.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Average on-time performance, the metric agencies obsess over, is a weak</text>
+<text x="90" y="319" class="body">predictor of rider satisfaction; a single bad moment plus a bad ending</text>
+<text x="90" y="335" class="body">dominates the memory of an entire trip.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Congestion pricing's transit ridership gains spread well beyond the tolled</text>
+<text x="90" y="397" class="body">zone, while its travel-demand reduction stays geographically concentrated,</text>
+<text x="90" y="413" class="body">meaning the costs and benefits of the policy land on different neighborhoods.</text>
+<line x1="40" y1="467" x2="760" y2="467" class="ruleLight"/>
+<text x="40" y="509" class="label">PAPER OF THE DAY</text>
+<text x="40" y="537" class="h2">Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</text>
+<text x="40" y="565" class="small">Polina Khoroshevskaya, Ashish Kumar Perukari</text>
+<text x="40" y="587" class="body">Framing transit-desert remediation as a partially observable Markov decision process with</text>
+<text x="40" y="603" class="body">financial risk constraints, this study shows a belief-aware planner remediates more transit</text>
+<text x="40" y="619" class="body">deserts at lower financial risk than static optimization across 25 US cities.</text>
+<text x="40" y="635" class="body">Why it matters: It tackles transit's foundational chicken-and-egg problem (no service means no</text>
+<text x="40" y="651" class="body">ridership data means no justification for service) with a rigorous, deployable POMDP framework,</text>
+<line x1="40" y1="677" x2="760" y2="677" class="ruleLight"/>
+<text x="40" y="697" class="label">EMERGING THEMES</text>
+<rect x="40" y="719" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="727" class="body">Foundation models and LLMs</text>
+<text x="52" y="743" class="body">are migrating from generic</text>
+<text x="52" y="759" class="body">NLP/forecasting use cases</text>
+<rect x="300" y="719" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="727" class="body">Equity and justice are</text>
+<text x="312" y="743" class="body">increasingly built into</text>
+<text x="312" y="759" class="body">the optimization objective</text>
+<rect x="560" y="719" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="727" class="body">Resilience research is</text>
+<text x="572" y="743" class="body">shifting from single-mode</text>
+<text x="572" y="759" class="body">hardening toward</text>
+<line x1="40" y1="777" x2="760" y2="777" class="ruleLight"/>
+<text x="40" y="797" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="851" class="body">High</text>
+<rect x="110" y="839" width="200.0" height="18" fill="#1A1A1A"/>
+<text x="310.0" y="852" class="small">4</text>
+<text x="40" y="881" class="body">Medium</text>
+<rect x="110" y="869" width="350.0" height="18" fill="#1A1A1A"/>
+<text x="460.0" y="882" class="small">7</text>
+<text x="40" y="911" class="body">Low</text>
+<rect x="110" y="899" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="170.0" y="912" class="small">1</text>
+<line x1="40" y1="937" x2="760" y2="937" class="ruleLight"/>
+<text x="40" y="977" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1005" class="body" font-weight="bold">1.</text>
+<text x="60" y="1005" class="body">Agencies piloting congestion pricing should plan for transit capacity increases beyond the</text>
+<text x="60" y="1021" class="body">cordon boundary, not just within it, since ridership gains diffuse outward.</text>
+<text x="40" y="1045" class="body" font-weight="bold">2.</text>
+<text x="60" y="1045" class="body">Customer experience teams should target the single worst moment and trip endings in service</text>
+<text x="60" y="1061" class="body">design reviews rather than chasing uniform average improvements.</text>
+<text x="40" y="1085" class="body" font-weight="bold">3.</text>
+<text x="60" y="1085" class="body">Cities planning AMoD/robotaxi regulation should model free or subsidized transit fares as an</text>
+<text x="60" y="1101" class="body">equity lever before reaching for AMoD price caps or budget limits, which this research shows</text>
+<text x="40" y="1125" class="body" font-weight="bold">4.</text>
+<text x="60" y="1125" class="body">Transit agencies investing in AI/ML forecasting tools should first invest in the underlying</text>
+<text x="60" y="1141" class="body">data-architecture problem (fragmented AFC/APC/AVL/GTFS pipelines), since model quality is</text>
+<text x="40" y="1165" class="body" font-weight="bold">5.</text>
+<text x="60" y="1165" class="body">Service planners addressing transit deserts can adopt risk-aware, belief-updating sequential</text>
+<text x="60" y="1181" class="body">planning instead of waiting for ridership data that will never exist without service.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 20, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
