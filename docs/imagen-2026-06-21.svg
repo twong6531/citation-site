@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+
+  <!-- Title box -->
+  <rect x="30" y="30" width="420" height="60" fill="none" stroke="#111" stroke-width="2.5" rx="2"/>
+  <text x="240" y="58" text-anchor="middle" font-size="15" fill="#111" font-weight="700" letter-spacing="1">NEGOTIATION TABLE, SWITZERLAND</text>
+  <text x="240" y="78" text-anchor="middle" font-size="11" fill="#555">Technical Editorial Illustration · June 21, 2026</text>
+
+  <!-- Room outline / perspective -->
+  <rect x="80" y="140" width="920" height="820" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Window behind table with mountain skyline -->
+  <rect x="640" y="180" width="320" height="220" fill="#F4F8FB" stroke="#777" stroke-width="2"/>
+  <polygon points="660,360 730,250 790,320 860,230 940,360" fill="none" stroke="#5588AA" stroke-width="2"/>
+  <text x="800" y="200" text-anchor="middle" font-size="10" fill="#5588AA" font-weight="700">SWISS ALPINE SKYLINE</text>
+  <line x1="800" y1="205" x2="800" y2="240" stroke="#5588AA" stroke-width="1"/>
+
+  <!-- Table (top-down/perspective ellipse) -->
+  <ellipse cx="500" cy="640" rx="380" ry="160" fill="#EFE3D3" stroke="#7A5230" stroke-width="3"/>
+  <ellipse cx="500" cy="640" rx="340" ry="130" fill="none" stroke="#9C7A52" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="500" y="650" text-anchor="middle" font-size="11" fill="#5A3A1E" font-weight="700">MAHOGANY TABLE</text>
+  <text x="500" y="664" text-anchor="middle" font-size="9" fill="#7A5230">L: 6.2m · polished veneer finish</text>
+
+  <!-- US flag stand -->
+  <rect x="330" y="560" width="6" height="50" fill="#222"/>
+  <rect x="336" y="558" width="34" height="22" fill="#1A3E73" stroke="#111" stroke-width="1"/>
+  <text x="300" y="540" font-size="10" fill="#111" font-weight="700">U.S. DELEGATION FLAG</text>
+  <line x1="340" y1="545" x2="345" y2="560" stroke="#111" stroke-width="1"/>
+
+  <!-- Iran flag stand -->
+  <rect x="650" y="560" width="6" height="50" fill="#222"/>
+  <rect x="656" y="558" width="34" height="22" fill="#2E7D32" stroke="#111" stroke-width="1"/>
+  <text x="700" y="540" font-size="10" fill="#111" font-weight="700">IRANIAN DELEGATION FLAG</text>
+  <line x1="670" y1="545" x2="665" y2="560" stroke="#111" stroke-width="1"/>
+
+  <!-- Chairs - one side -->
+  <g fill="none" stroke="#444" stroke-width="2">
+    <rect x="280" y="700" width="50" height="70" rx="6"/>
+    <rect x="380" y="730" width="50" height="70" rx="6"/>
+    <rect x="480" y="745" width="50" height="70" rx="6"/>
+  </g>
+  <text x="220" y="770" font-size="10" fill="#444" font-weight="700">DELEGATION SEATING</text>
+  <line x1="270" y1="760" x2="290" y2="735" stroke="#444" stroke-width="1"/>
+
+  <!-- Chairs - other side -->
+  <g fill="none" stroke="#444" stroke-width="2">
+    <rect x="580" y="495" width="50" height="65" rx="6"/>
+    <rect x="680" y="475" width="50" height="65" rx="6"/>
+    <rect x="780" y="490" width="50" height="65" rx="6"/>
+  </g>
+
+  <!-- Water glasses -->
+  <circle cx="450" cy="630" r="6" fill="none" stroke="#5588AA" stroke-width="1.5"/>
+  <circle cx="600" cy="630" r="6" fill="none" stroke="#5588AA" stroke-width="1.5"/>
+  <text x="450" y="610" font-size="8" fill="#5588AA">WATER GLASS</text>
+
+  <!-- Name placards -->
+  <rect x="420" y="660" width="60" height="14" fill="#FFF" stroke="#777" stroke-width="1"/>
+  <rect x="560" y="660" width="60" height="14" fill="#FFF" stroke="#777" stroke-width="1"/>
+  <text x="450" y="700" font-size="8" fill="#777" text-anchor="middle">NAME PLACARD</text>
+  <line x1="450" y1="690" x2="450" y2="675" stroke="#777" stroke-width="1"/>
+
+  <!-- Leather folders -->
+  <rect x="500" y="615" width="44" height="30" fill="#3A2A1E" stroke="#111" stroke-width="1"/>
+  <text x="522" y="600" font-size="8" fill="#111" text-anchor="middle">BRIEFING FOLDER</text>
+
+  <!-- Arrow showing dialogue / negotiation flow -->
+  <path d="M 380 600 C 460 540 540 540 620 600" fill="none" stroke="#111" stroke-width="2" stroke-dasharray="2,3"/>
+  <polygon points="625,605 612,592 614,610" fill="#111"/>
+  <polygon points="375,595 388,592 386,610" fill="#111"/>
+  <text x="500" y="530" text-anchor="middle" font-size="10" fill="#111" font-weight="700">NEGOTIATION DIALOGUE</text>
+
+  <!-- Scale marker -->
+  <line x1="100" y1="900" x2="300" y2="900" stroke="#111" stroke-width="1.5"/>
+  <line x1="100" y1="894" x2="100" y2="906" stroke="#111" stroke-width="1.5"/>
+  <line x1="300" y1="894" x2="300" y2="906" stroke="#111" stroke-width="1.5"/>
+  <text x="200" y="918" text-anchor="middle" font-size="10" fill="#111">approx. 2.0 m</text>
+
+  <!-- Bottom annotation block -->
+  <rect x="60" y="980" width="960" height="70" fill="none" stroke="#111" stroke-width="1.5"/>
+  <text x="80" y="1003" font-size="11" fill="#111" font-weight="700">U.S. &amp; IRANIAN DELEGATIONS — SWITZERLAND, JUNE 2026</text>
+  <text x="80" y="1020" font-size="10" fill="#555">Talks resumed on Tehran's nuclear program as Strait of Hormuz traffic shows early signs of normalizing.</text>
+  <text x="80" y="1036" font-size="10" fill="#555">Three Indian tankers reemerged in the strait, the first concrete signal of de-escalation after weeks of disruption.</text>
+
+</svg>
