@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-21",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "notes": "No new files were produced in drafts/articles/, drafts/scripts/, or drafts/infographics/ on 2026-06-21. Per system/status/status-2026-06-21.json, the 'articles' and 'infographics' jobs are 'pending' and 'video_scripts' remains on 'hold' (no new script queued since 2026-06-18). drafts/articles/ and drafts/infographics/ directories do not exist anywhere in the repo (confirmed 18+ day pipeline failure noted in today's status alerts). The existing 11-file backlog in drafts/scripts/ (10 scripts + HOLD notice) was already QC'd on prior dates (see individual *-qc.json files, all dated 2026-06-13 through 2026-06-18) and is unchanged today, so it was not re-reviewed. Today's docs/ outputs (briefing, research, transit brief, infographics for 2026-06-21) were committed directly to docs/ outside the drafts/ -> QC -> approved.json gate and are therefore out of this QC pass's scope. NOTE: 3 QC-passed scripts (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics) remain ready for publish but are blocked solely on approved.json being empty since 2026-06-07 (18 consecutive days) - this is a human/publishing bottleneck, not a QC issue."
+}
