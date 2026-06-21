@@ -1,0 +1,84 @@
+{
+  "date": "2026-06-21",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 transit host-city stress test",
+      "angle": "How host-city transit systems (LA, NY/NJ, SF Bay Area, Dallas, etc.) are bracing for World Cup crowd loads versus their actual daily capacity — gap between marketing promises and headway/fleet reality",
+      "rationale": "Queued as the #1 priority for 18+ consecutive days with 0% article production. Time-sensitive window is closing fast as the tournament's group stage progresses — this is now the single most urgent item in the entire backlog.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-host-cities",
+      "output_path": "drafts/articles/world-cup-2026-transit-host-cities.html"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "topic": "Congress transportation reauthorization 2026",
+      "angle": "What's actually in the surface transportation reauthorization bill for transit funding formulas, and what agencies stand to gain or lose",
+      "rationale": "Second item stuck in the same 18-day, 0%-success article backlog. Policy relevance window narrows as the bill moves through committee.",
+      "target_length": "long",
+      "slug": "congress-transportation-reauthorization-2026",
+      "output_path": "drafts/articles/congress-transportation-reauthorization-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail cost comparison 2026",
+      "angle": "Capital and operating cost per mile, ridership-per-dollar, and build-time comparison between BRT and light rail",
+      "rationale": "Retry #12 since 2026-06-07 (11 consecutive prior failures). Recommend a manual diagnostic of the infographic-writing agent rather than a 12th blind retry — flagged again in alerts below.",
+      "target_length": "short",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Latency-resilient VLM-augmented urban navigation",
+      "angle": "New arXiv research on 'slow brain, fast planner' vision-language-model navigation architectures — implications for AI-assisted paratransit routing and transit-desert remediation",
+      "rationale": "Freshest relevant signal from today's arXiv scan; extends the existing AI-driven transit-desert research thread (POMDP/CVaR, swarm routing) without repeating a covered topic.",
+      "target_length": "medium",
+      "slug": "vlm-urban-navigation-transit-implications",
+      "output_path": "drafts/articles/vlm-urban-navigation-transit-implications.html"
+    }
+  ],
+  "retries": [
+    {
+      "type": "infographic",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "attempt": 12,
+      "first_queued": "2026-06-07",
+      "note": "11 consecutive failures. Escalate to manual diagnostic if retry #12 also fails."
+    },
+    {
+      "type": "publishing",
+      "note": "approved.json empty since 2026-06-07 (day 18). 3 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics. No retry possible — blocked on human action."
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity automation",
+    "Southern California transit systems",
+    "slime mold network optimization",
+    "US cities transit gap",
+    "dopamine and urban design",
+    "electric axial flux motors transit",
+    "Tesla SpaceX transit empire",
+    "fare evasion economics",
+    "EV bus equity gap low-income routes",
+    "permanent ridership shift post-pandemic US cities",
+    "pantograph charging transit cost reduction",
+    "TOD walkability thresholds 800m rail catchment",
+    "Anthropic safety strategy",
+    "Apple Foundation Models"
+  ],
+  "trend_signals": [
+    "Latency-resilient VLM urban navigation (arXiv)",
+    "AI agent / multi-model tooling (Qwen3, DGX Spark) — broader AI infra interest",
+    "IPv6 adoption milestones — infrastructure measurement angle",
+    "Voxel/simulation engines — low relevance, skip",
+    "Google News tech feed returned empty this run — treat as a gap, not a signal"
+  ]
+}
