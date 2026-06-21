@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest &#8212; June 21, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E6;
+    --muted: #888888;
+    --accent: #E8FF00;
+    --accent2: #4488FF;
+    --highlight: #FF6B35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand { font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--accent); letter-spacing: 1px; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 20px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; letter-spacing: 1px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 40px; }
+
+  .editorial-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+  .editorial-header { padding: 20px 28px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .editorial-header .section-tag { font-size: 10px; letter-spacing: 3px; color: var(--muted); }
+  .editorial-header h2 { font-size: 18px; margin-top: 4px; }
+  .editorial-body { padding: 28px; text-align: center; }
+  .editorial-body img { max-width: 100%; border-radius: 2px; }
+  .editorial-body .no-image {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 13px; border: 1px dashed var(--border); border-radius: 2px;
+  }
+  .editorial-caption { padding: 16px 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  .executive-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .executive-summary h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .executive-summary p { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 12px; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; line-height: 1.5; }
+
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  .paper-card .paper-num { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-card h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+  .paper-card .section-head { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 20px; margin-bottom: 8px; }
+  .paper-card p, .paper-card li { font-size: 14px; color: #BBBBBB; line-height: 1.65; }
+  .paper-card ul { padding-left: 20px; }
+  .paper-card ul li { margin-bottom: 6px; }
+  .paper-card .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .paper-card .tag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 1px; }
+  .paper-card .tag.high { border-color: #44FF88; color: #44FF88; }
+  .paper-card .tag.medium { border-color: #FFAA44; color: #FFAA44; }
+  .paper-card .tag.low { border-color: #FF4444; color: #FF4444; }
+
+  .takeaways { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface2); border-left: 3px solid var(--accent); padding: 20px 24px; }
+  .takeaway p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .contrarian-block { background: var(--surface); border: 1px solid #FF6B35; padding: 28px 32px; margin-bottom: 48px; }
+  .contrarian-block h2 { font-size: 10px; letter-spacing: 4px; color: #FF6B35; text-transform: uppercase; margin-bottom: 20px; }
+  .contrarian-block .insight { margin-bottom: 20px; padding-left: 16px; border-left: 2px solid #FF6B35; }
+  .contrarian-block .insight p { font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  .infographic-section { margin-bottom: 48px; }
+  .svg-wrapper { background: #F7F7F5; padding: 24px; border: 1px solid var(--border); }
+  .svg-wrapper svg { width: 100%; height: auto; }
+  .download-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent2); border: 1px solid var(--accent2); padding: 8px 16px; }
+
+  .long-term { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 48px; }
+  .long-term h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .long-term p { font-size: 15px; line-height: 1.75; color: #CCCCCC; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 32px 20px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand">Transit Research Digest</span>
+  <a href="research.html" class="back-link">&#8592; Archive Index</a>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Transit Research Digest &#183; June 21, 2026</div>
+  <h1>Bio-Inspired Swarm Routing and Fare-Free Policy Experiments Suggest Transit's Next Gains Are Behavioral, Not Just Structural</h1>
+  <div class="meta">
+    <span><span class="badge">12 PAPERS</span></span>
+    <span>arXiv only &#183; Self-Analysis (Gemini quota exhausted today)</span>
+    <span>Slime-mold-inspired DRT swarms &#183; Free fares &amp; women's workforce participation &#183; Congestion pricing equity &#183; Continental-scale journey planning</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- EDITORIAL IMAGE SECTION -->
+  <div class="editorial-section">
+    <div class="editorial-header">
+      <div class="section-tag">TODAY'S TRANSIT ILLUSTRATION</div>
+      <h2>a slime-mold-inspired demand-responsive transit swarm &#8212; minibuses dynamically rerouting along a branching, pheromone-trail-like network across a suburban street grid</h2>
+    </div>
+    <div class="editorial-body">
+      <div class="no-image">
+        &#9723; EDITORIAL ILLUSTRATION UNAVAILABLE<br>
+        <span style="font-size:11px;margin-top:8px;display:block;">Gemini Imagen API unavailable today (401 service-blocked on Bearer auth, 429 quota-exhausted on key-param auth for gemini-2.0-flash, 404 model-not-found on key-param auth for imagen-3.0-generate-001) &#8212; image generation skipped</span>
+        <span style="font-size:11px;color:#555;margin-top:4px;display:block;">Subject: a slime-mold-inspired demand-responsive transit swarm &#8212; minibuses dynamically rerouting along a branching, pheromone-trail-like network across a suburban street grid. The routing algorithm mimics Physarum polycephalum, an acellular slime mold whose plasmodium forms a network of interlaced tubular structures that thicken along efficient paths to food and retract from dead ends through cytoplasmic streaming. In the transit application, each minibus acts like a node in this branching network, continuously bidding to pick up passengers and dynamically transferring riders between vehicles rather than following a fixed timetable, with the network's shape reconfiguring in real time the way a slime mold reorganizes its tubes around new food sources.</span>
+      </div>
+    </div>
+    <div class="editorial-caption">
+      <span>a slime-mold-inspired demand-responsive transit swarm &#8212; Technical Editorial Illustration</span>
+      <span>Independently researched and rendered from today's papers</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>Today's twelve papers pull transit research in two directions at once: deep optimization sophistication in routing and network design (a slime-mold-inspired demand-responsive swarm, continental-scale journey planning in single-digit milliseconds, exact line-planning algorithms that price in lost demand) on one side, and an increasingly behavioral, equity-driven understanding of who actually benefits from transit on the other (free bus fares lifting women's workforce participation in India, transit's quiet role in cross-class social mixing, congestion pricing's uneven neighborhood effects). A third, connecting thread is that as cities lean on AI and bio-inspired algorithms to squeeze more performance out of existing networks, several papers caution that efficiency metrics divorced from rider experience or distributional equity can mislead investment decisions.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>Bio-inspired and AI-driven routing algorithms (slime-mold swarms, graph transformers, LLM trip planners) are converging on the same goal: decentralized, adaptive coordination that beats static, centrally-scheduled networks.</h3>
+    </div>
+    <div class="theme-card">
+      <h3>Quantitative equity research is moving from describing disparities to prescribing operational fixes: free fares, justice-informed AMoD objectives, and transit's bridging role in social mixing are reframed as policy levers, not just outcomes to measure.</h3>
+    </div>
+    <div class="theme-card">
+      <h3>Trip planning and network science are scaling up: continental-size journey planners answering in milliseconds and multilayer network frameworks point toward unifying disparate transit modeling traditions into one coherent toolkit.</h3>
+    </div>
+  </div>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">Paper Analyses</div>
+  <div class="papers-grid">
+
+    <!-- Paper 01 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 01 &#183; arXiv (2606.17530)</div>
+      <h3><a href="http://arxiv.org/abs/2606.17530v1" target="_blank">Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</a></h3>
+      <div class="authors">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao</div>
+      <div class="one-liner">Using time-series foundation models to build calibrated counterfactual demand forecasts, this study finds NYC's first cordon congestion-pricing program lifted bus and subway ridership system-wide while overall travel demand fell only modestly and unevenly by neighborhood.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>This is the first uncertainty-aware empirical evaluation of America's inaugural congestion-pricing program, giving other US cities considering similar tolls a concrete evidence base instead of relying on London/Stockholm/Singapore analogies.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Time-series foundation models generate calibrated probabilistic counterfactual demand forecasts when no clean control group exists</li>
+        <li>Bus and subway ridership rose significantly above the no-policy baseline after the January 2025 launch</li>
+        <li>Reductions in overall travel demand concentrated inside the Congestion Relief Zone, while transit ridership gains extended beyond Manhattan's core</li>
+        <li>Socio-demographic analysis reveals uneven neighborhood-level adaptation to the policy</li>
+        <li>The forecasting framework is reusable for evaluating other system-wide interventions lacking natural experiments</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Probabilistic counterfactual forecasting with pretrained time-series foundation models applied to bus, subway, and aggregate trip-volume data, cross-referenced against neighborhood socio-demographics.</p>
+
+      <div class="section-head">Results</div>
+      <p>Statistically significant post-policy increases in bus and subway ridership relative to forecasted no-policy demand; modest net decline in total travel demand, geographically concentrated and unevenly distributed by neighborhood.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Counterfactual forecasts are model-derived rather than observed, so findings inherit whatever bias the foundation model carries; only about a year of post-policy data is available so far.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies in cordon-pricing candidate cities (Boston, Chicago, LA) can use this framework to project mode-shift before committing political capital, while equity offices can flag at-risk neighborhoods early.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>City DOTs and transit agencies considering congestion pricing, transportation economists, equity and accessibility planners</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Earlier congestion-pricing evaluations (London, Stockholm, Singapore) relied on cleaner control groups or simpler before/after comparisons; this is among the first to apply foundation-model counterfactuals to a US case with this spatial granularity.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 02 - PAPER OF THE DAY -->
+    <div class="paper-card featured">
+      <div class="paper-num">Paper 02 &#183; Paper of the Day &#183; arXiv (2606.06189)</div>
+      <h3><a href="http://arxiv.org/abs/2606.06189v1" target="_blank">A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</a></h3>
+      <div class="authors">Lindsay Burke, Maxfield Comstock, Jason Graham, Ruth Malenda, Simon Garnier, Petras Swissler</div>
+      <div class="one-liner">A demand-responsive transit swarm that routes buses using a slime-mold-inspired cooperative bidding algorithm increases passenger delivery rates by 28&#8211;101% over fixed-route networks and cuts walking time by more than 75% across suburban, urban, and semi-rural simulations.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Demand-responsive transit usually struggles with high operating costs and unreliable service; this paper shows a biologically-inspired decentralized control scheme can outperform both fixed routes and centrally-scheduled DRT without adding fleet size.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Routing modeled on Physarum polycephalum's foraging behavior, where the slime mold builds and prunes a branching tubular network to find efficient paths between food sources</li>
+        <li>Passenger allocation and dynamic transfers are handled via continual cooperative bidding among buses, rather than central dispatch</li>
+        <li>Simulated across suburban, urban, and semi-rural OpenStreetMap-derived networks</li>
+        <li>Passenger delivery rates improved 28% (suburban), 49% (urban), and 101% (semi-rural) over a fixed-route baseline</li>
+        <li>Walking time fell more than 75% in all three scenarios</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Agent-based simulation of a distributed, slime-mold-inspired routing algorithm with dynamic transfers, benchmarked against fixed-route networks across three OpenStreetMap-derived geographies.</p>
+
+      <div class="section-head">Results</div>
+      <p>28&#8211;101% increase in passenger delivery rate and &gt;75% reduction in walking time relative to fixed-route networks, with the largest gains in the sparsest (semi-rural) network.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Results are simulation-based rather than field-tested; cooperative bidding's computational and communication overhead at city scale is not yet characterized.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies serving low-density or paratransit-dependent areas could pilot swarm-based dynamic routing as a lower-cost alternative to either fixed routes or centrally-scheduled DRT.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Paratransit and rural transit operators, DRT software vendors, transportation researchers studying bio-inspired algorithms</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most DRT research relies on centralized optimization solvers that scale poorly; this is a novel application of swarm intelligence and slime-mold foraging algorithms to multi-vehicle transit routing.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 03 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 03 &#183; arXiv (2605.25617)</div>
+      <h3><a href="http://arxiv.org/abs/2605.25617v1" target="_blank">Justice-informed Planning of Intermodal Autonomous Mobility-on-Demand Systems under Operational Constraints</a></h3>
+      <div class="authors">Giacomo Ganassoli, Francesco Mazzeo, Cecilia Pasquale, Silvia Siri, Mauro Salazar</div>
+      <div class="one-liner">Modeling Manhattan-scale robotaxi-plus-transit operations, this paper shows that pairing free public transit with autonomous mobility-on-demand achieves near-total social justice without sacrificing system efficiency, while monetary budget caps alone barely move the needle.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>As cities weigh robotaxi expansion against transit funding, this is rare quantitative evidence that 'free transit + AMoD' beats 'subsidized AMoD' for equity, reframing the policy debate from fleet regulation toward transit fare policy.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Network flow models characterize intermodal AMoD operations (robotaxis plus public transit and active modes) from a mesoscopic planning perspective</li>
+        <li>Optimization is run for both utilitarian efficiency and explicit justice-informed objectives</li>
+        <li>Case study built on real-world Manhattan, New York network data</li>
+        <li>Monetary budget limits alone significantly cap the social-justice potential of AMoD systems run as transportation network companies</li>
+        <li>Granting free public transit gets sufficiency levels nearly as high as a fully free intermodal AMoD system</li>
+        <li>Justice-informed operations can be achieved without compromising standard efficiency metrics</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mesoscopic network flow optimization models for intermodal AMoD systems, comparing utilitarian and justice-informed objective functions on a real-world Manhattan case study.</p>
+
+      <div class="section-head">Results</div>
+      <p>Budget constraints alone barely improve justice outcomes; combining free public transit with intermodal AMoD nearly matches the justice outcomes of a fully free system, with no loss in efficiency.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Manhattan's dense transit network may not generalize to sprawling or transit-poor cities where AMoD has less to complement.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Policymakers debating robotaxi regulation should weigh transit fare subsidies as a more powerful equity lever than capping AMoD fares or trip allowances.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>City transportation policy offices, AMoD/robotaxi regulators, transit equity researchers</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on a growing AMoD optimization literature that has mostly optimized for efficiency; distinctive for directly comparing justice-informed objectives against monetary-budget-constrained alternatives in the same framework.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 04 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 04 &#183; arXiv (2605.18778)</div>
+      <h3><a href="http://arxiv.org/abs/2605.18778v1" target="_blank">T-REX: Fast and Dynamic Journey Planning for Continental-Scale Public Transit Networks</a></h3>
+      <div class="authors">Jonas Sauer, Patrick Steil, Sascha Witt</div>
+      <div class="one-liner">T-REX answers Pareto-optimal journey-planning queries on a full European-scale transit network in under 10 milliseconds, 20&#8211;80x faster than prior algorithms, by pruning irrelevant local transfers using a multi-level partition.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Real-time, continental-scale trip planning has been a major bottleneck for unifying national and cross-border transit apps; this algorithm makes interactive multi-country journey planning practical for the first time.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Applies multi-level overlay principles to Trip-Based Public Transit Routing (TB)</li>
+        <li>Uses a multi-level network partition to precompute which transfers matter for long-distance travel</li>
+        <li>Prunes irrelevant local transfers during queries based on this precomputed relevance</li>
+        <li>Pareto-optimizes arrival time and number of trips used, matching state-of-the-art correctness guarantees</li>
+        <li>Achieves sub-10ms queries on a full European network, with two-minute precomputation and real-time update support in seconds</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Multi-level overlay applied to Trip-Based Routing, evaluated on a full European transit network against prior overlay-based and non-preprocessed algorithms.</p>
+
+      <div class="section-head">Results</div>
+      <p>20x speedup over standard Trip-Based routing and 80x over algorithms without preprocessing; moderate memory footprint; two-minute precomputation; real-time schedule updates incorporated within seconds.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Benchmarked primarily on the European network; performance on far larger or more fragmented networks (e.g., global multi-continent integration) is untested.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>National and pan-European trip-planning apps could move from batch or cached query systems to fully interactive, real-time journey planning, including live disruption updates.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Trip-planning app developers, national rail/transit data integrators, algorithms researchers in public transit routing</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on RAPTOR/Trip-Based routing literature; distinctive for combining a better network partition with transfer-focused (rather than trip-focused) search and redesigned memory layout for a 20&#8211;80x speedup.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 05 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 05 &#183; arXiv (2604.14758)</div>
+      <h3><a href="http://arxiv.org/abs/2604.14758v1" target="_blank">Ticket to ride: Impact of free public transport on women's workforce participation in India</a></h3>
+      <div class="authors">Udayan Rathore, Ashish Singh</div>
+      <div class="one-liner">Free bus schemes for women across five Indian states increased women's paid work participation and employment duration, with the largest gains among early adopters and women in the most patriarchal, mobility-restricted districts.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>It offers causal evidence that transit fare policy alone, not job training or financial subsidies, can move a stubborn structural barrier &#8212; female labor force participation &#8212; in a major economy.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Quasi-natural experiment using free women's bus schemes introduced across five Indian states</li>
+        <li>Two rounds of the nationally representative Time Use Survey analyzed with triple-difference estimation plus an event-study framework</li>
+        <li>Scheme increased both women's paid work participation and duration of employment</li>
+        <li>Effects concentrated among early-adopter states (Punjab, Tamil Nadu) with historically different baseline participation levels</li>
+        <li>Disproportionately larger effects for women in more patriarchal districts with higher mobility restrictions</li>
+        <li>Effects operate by easing non-financial binding constraints on mobility, not by changing financial incentives</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Quasi-natural experiment using triple-difference estimation and event-study analysis on Time Use Survey data, comparing states before/after free bus scheme rollout.</p>
+
+      <div class="section-head">Results</div>
+      <p>Statistically significant increases in women's paid work participation and employment duration, concentrated in early-adopter states and most pronounced in high mobility-restriction districts.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Relies on quasi-experimental rather than randomized design; effect heterogeneity across states with different implementation quality is not fully disentangled.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>State and national governments designing women's economic empowerment policy should consider free or subsidized transit fares as a high-leverage, relatively low-cost intervention compared to training or cash transfer programs.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Labor economists, gender and development policy researchers, transit agencies designing fare policy</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior research on transit and labor outcomes mostly studied general populations or men; this is among the first to isolate the causal effect of a gender-targeted fare policy at this scale.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 06 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 06 &#183; arXiv (2604.14348)</div>
+      <h3><a href="http://arxiv.org/abs/2604.14348v2" target="_blank">Where diverse populations gather: Transit accessibility and the spatial structure of social mixing</a></h3>
+      <div class="authors">Yuan Liao</div>
+      <div class="one-liner">Mobile phone GPS data across nine Swedish and three US cities shows transit-accessible venues attract more socially diverse visitors, but this bridging effect only holds reliably in the largest metro areas and concentrates in lower-diversity, lower-commercial-density venues.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>It reframes transit infrastructure as a tool for social integration, not just mobility, while cautioning that the effect is city-size and venue-type dependent rather than universal.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Visitor diversity computed from birth-background composition of visitors' home neighborhoods, using 2024 mobile phone GPS data</li>
+        <li>Studied in nine Swedish cities plus New York, Washington DC, and Atlanta</li>
+        <li>Transit catchment diversity positively predicts visitor diversity, but the association is robust only in the largest metro areas</li>
+        <li>In smaller Swedish cities, the effect disappears once geographic catchment composition, centrality, and venue density are controlled</li>
+        <li>Transit-diversity hotspots concentrate in lower-diversity, lower-commercial-density venues, not already-diverse hubs</li>
+        <li>Findings consistent with transit playing a "bridging" role specifically where alternative pathways to diverse venues are limited</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mobile-phone GPS mobility data combined with visitor-diversity indices based on birth-background composition, analyzed across twelve cities in Sweden and the US.</p>
+
+      <div class="section-head">Results</div>
+      <p>Transit accessibility positively associates with visitor diversity in large metros (NYC, DC, Atlanta); the relationship attenuates to insignificance in smaller Swedish cities after controlling for catchment composition and centrality.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Diversity proxy based on birth background may not capture other socially relevant dimensions (income, age); cross-sectional design limits causal claims.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Large-metro planners aiming for social integration goals can prioritize transit access to lower-diversity, lower-density venues to maximize bridging effects, but should not expect the same payoff in smaller cities.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban sociologists, social-integration policy researchers, transit equity planners in large metro areas</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most segregation research studies residential or activity-space segregation; this is among the first to link transit accessibility specifically to venue-level visitor diversity at this cross-city scale.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 07 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 07 &#183; arXiv (2604.00699)</div>
+      <h3><a href="http://arxiv.org/abs/2604.00699v1" target="_blank">Public transport in the 15-minute city</a></h3>
+      <div class="authors">Zs&#243;fia Z&#225;dor, Gerg&#337; Pint&#233;r, M&#225;t&#233; Mizs&#225;k, Bence Kov&#225;cs, Imre Felde, Bal&#225;zs Lengyel</div>
+      <div class="one-liner">Incorporating public transport into the 15-minute city framework substantially boosts amenity access for residents of Helsinki, Madrid, and Budapest, but radial high-speed transit lines alone improve social mixing in the urban periphery without improving access to amenities there.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>The 15-minute city concept is usually framed around walking and cycling; this paper shows that ignoring transit undercounts true access, especially for amenity-poor peripheral neighborhoods, while also showing transit's benefits aren't interchangeable across access and mixing goals.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Proposes an open-data framework incorporating public transport into the 15-minute city model</li>
+        <li>Compared across Helsinki, Madrid, and Budapest</li>
+        <li>Multimodal mobility (active + transit) substantially increases amenity access and socio-spatial integration within a 15-minute reach</li>
+        <li>Urban periphery benefits significantly in social mixing potential from radial or high-speed transit lines</li>
+        <li>Those same radial lines do not, by themselves, improve amenity access in the periphery</li>
+        <li>Findings argue for optimizing polycentric transit networks to complement, not substitute for, active-mobility-based access</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Open-data based 15-minute-city access modeling incorporating multimodal (active + transit) accessibility, compared across three European capital cities.</p>
+
+      <div class="section-head">Results</div>
+      <p>Multimodal accessibility substantially outperforms active-mobility-only access models; radial/high-speed transit lines significantly improve peripheral social mixing without proportionally improving peripheral amenity access.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Limited to three European capitals with relatively mature transit systems; transferability to car-dependent or sprawling cities elsewhere is untested.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities pursuing 15-minute-city policy should evaluate transit and amenity-access policy separately from social-mixing goals, since a single network intervention does not solve both.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban planners implementing 15-minute-city policy, transit network designers, social-integration researchers</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most 15-minute-city literature focuses on walking/cycling access only; this is among the first to integrate public transport explicitly and to disaggregate access from social-mixing outcomes.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 08 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 08 &#183; arXiv (2605.15817)</div>
+      <h3><a href="http://arxiv.org/abs/2605.15817v1" target="_blank">Which Moments Matter? Heuristics of Remembered Travel Experience in Public Transport</a></h3>
+      <div class="authors">Esther Bosch, Klas Ihme, Stefan Bohmann</div>
+      <div class="one-liner">Analyzing 2,576 real-world transit trips across three German cities, this study finds rider satisfaction is best predicted by a 'Minimum-End' heuristic combining the worst moment of a trip and how it ended, not by the trip's average experience.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Agencies pour resources into average on-time performance, but this research suggests fixing the single worst moment of a journey and improving how trips end would move customer satisfaction scores far more than uniform service improvements.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Used smartphone-based experience sampling to collect ratings every five minutes during 2,576 real trips across three German cities</li>
+        <li>Tested mean experience, peak-end, minimum-end, final-moment, and trip-duration heuristics against post-trip satisfaction</li>
+        <li>Minimum-End heuristic (most negative moment + final experience) best predicted retrospective satisfaction</li>
+        <li>Mean-experience, peak-end, final-moment-alone, and duration-based models all performed substantially worse</li>
+        <li>Both negative extremes and trip endings independently shape remembered evaluations, not an overall average</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Smartphone-based experience sampling collecting on-trip ratings every five minutes plus post-trip evaluations, analyzed with multilevel regression models comparing five competing temporal-aggregation heuristics.</p>
+
+      <div class="section-head">Results</div>
+      <p>Minimum-End heuristic substantially outperforms mean-experience, peak-end, final-moment-only, and duration-based models in predicting post-trip satisfaction.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Sample drawn from three German cities only; cultural and system differences may shift which heuristic dominates elsewhere.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Agencies should prioritize eliminating worst-moment failures (e.g. a single crowded, hot, or delayed segment) and improving trip endings (arrival cleanliness, wayfinding) over chasing average on-time metrics to move customer satisfaction.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Customer experience teams at transit agencies, behavioral researchers, marketing/satisfaction survey designers</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends 'peak-end rule' literature from psychology (Kahneman et al.) into the transit domain, and is among the first to test it against a richer set of competing heuristics with high-frequency real-trip data.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 09 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 09 &#183; arXiv (2603.21130)</div>
+      <h3><a href="http://arxiv.org/abs/2603.21130v1" target="_blank">Multilayer public transport networks</a></h3>
+      <div class="authors">Tina &#352;filigoj, Renzo Massobrio, Oded Cats</div>
+      <div class="one-liner">This survey argues that monolayer network-science models are insufficient for modern transit research and proposes a unified taxonomy and research agenda for multilayer network approaches to transit modeling, planning, and operations.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>As transit research increasingly relies on network-science tools, scattered and inconsistent terminology across studies limits comparability; this paper offers a common framework other researchers in this digest are implicitly already using.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Reviews 15 years of network-science applications in public transport research</li>
+        <li>Identifies that real-world multimodal systems are poorly captured by monolayer network models</li>
+        <li>Systematically reviews and taxonomizes existing multilayer-network approaches to transit modeling</li>
+        <li>Surveys how layers (e.g., bus, rail, walking) are coupled in existing literature</li>
+        <li>Proposes a research agenda for the next decade of multilayer transit network science</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Systematic literature review and taxonomy development covering multilayer network theory applications to public transport modeling, planning, and operations.</p>
+
+      <div class="section-head">Results</div>
+      <p>Documents fragmented terminology and inconsistent modeling approaches across the multilayer transit literature; proposes a unifying formal framework and research agenda.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Primarily a literature synthesis rather than new empirical or algorithmic contribution; proposed agenda is aspirational and untested.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Researchers building network-science models of multimodal transit (several other papers in this digest included) can adopt the proposed taxonomy to make results more comparable across studies.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Network-science transit researchers, multimodal planning academics, graduate students entering the field</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Synthesizes a previously scattered literature into one coherent framework, rather than introducing a single new model or result.</p>
+
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 10 &#183; arXiv (2604.15564)</div>
+      <h3><a href="http://arxiv.org/abs/2604.15564v1" target="_blank">Mobility Behaviour of Immigrants in Canada: Analyzing Mode Choice Using GPS Panel Data and Mixed Logit Models</a></h3>
+      <div class="authors">Tareq Alsaleh, Bilal Farooq, Zachary Patterson</div>
+      <div class="one-liner">GPS panel data from over 80,000 trips shows new immigrants in Canada have markedly lower sensitivity to travel time than Canadian-born residents, but as immigrants integrate economically and socially, they shift away from transit toward car use.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>It complicates a common assumption that immigrants are reliably "captive" transit riders, showing that integration itself erodes transit use, with direct implications for ridership forecasting in immigrant-receiving cities.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Panel dataset of 80,000+ trip observations from 100 participants via a custom mobile app</li>
+        <li>Joint revealed-preference/stated-preference framework estimating multinomial and mixed logit mode-choice models</li>
+        <li>New immigrants' value of travel time is roughly 66% lower than Canadian-born residents (immigrant-to-Canadian-born ratio of 0.34)</li>
+        <li>A one-standard-deviation increase in a composite integration index (economic, social, civic, health) decreases transit choice probability by about five percentage points</li>
+        <li>Reductions in access time are roughly three times more effective than fare reductions at shifting immigrants toward transit</li>
+        <li>Out-of-sample cross-validation achieved 80&#8211;82% prediction accuracy across model specifications</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Joint revealed-preference and stated-preference GPS panel survey analyzed with multinomial and mixed logit mode-choice models, validated via five-fold cross-validation.</p>
+
+      <div class="section-head">Results</div>
+      <p>Immigrants show substantially lower travel-time sensitivity than Canadian-born residents; higher integration is associated with reduced transit use and greater car reliance; access-time improvements outperform fare cuts for retaining immigrant transit riders.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Sample limited to 100 participants in one country context; self-selection into the custom app study may not represent the broader immigrant population.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies in immigrant-receiving cities should prioritize first/last-mile access improvements over fare discounts to retain immigrant ridership as integration progresses.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Immigrant settlement and integration policy researchers, transit demand forecasters, agencies in high-immigration metro areas</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most mode-choice literature treats immigrants as a static demographic category; this is distinctive for tracking how a composite integration index dynamically predicts mode-choice shifts over time.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 11 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 11 &#183; arXiv (2604.18013)</div>
+      <h3><a href="http://arxiv.org/abs/2604.18013v1" target="_blank">An Exact Algorithm for Public Transport Line Planning Considering Passenger and Operational Costs and Lost Demand</a></h3>
+      <div class="authors">Siv Marie Cartland Hansen, Rowan Hoogervorst, Otto Anker Nielsen, Richard Martin Lusby, Evelien van der Hurk</div>
+      <div class="one-liner">A new exact line-planning algorithm that accounts for lost demand and a minimum attractive service level achieves significant speed-ups and tighter bounds than directly solving the full mixed-integer model, while using capacity more efficiently than fixed-demand approaches.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most line-planning models assume demand is fixed regardless of service quality; this is a more realistic formulation that better matches how riders actually respond to frequency and travel-time tradeoffs, with a tractable solution method for real networks.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Line planning model minimizes weighted passenger travel time (in-vehicle, frequency-dependent waiting, transfers) plus operating cost</li>
+        <li>Requires a minimum service level for demand to be captured, rather than assuming all demand materializes regardless of service quality</li>
+        <li>Capacity constraints balance expected demand against frequency on each line</li>
+        <li>Iterative exact algorithm dynamically expands a reduced problem representation with additional frequencies and paths</li>
+        <li>Evaluated on four networks of varying complexity, achieving speed-ups and tighter bounds versus direct CPLEX solves</li>
+        <li>Accounting for lost demand leads to more efficient overall resource use</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mixed-integer programming formulation for line planning with capacity and minimum-service-level constraints, solved via an iterative exact algorithm with dynamic problem expansion, benchmarked against direct CPLEX solves on four networks.</p>
+
+      <div class="section-head">Results</div>
+      <p>Significant speed-ups and tighter optimization bounds compared to solving the full model directly, particularly when passenger and operator costs are evenly weighted; lost-demand modeling improves overall resource efficiency.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Tested on four networks of varying but bounded complexity; scalability to very large national networks is not demonstrated.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit planning departments can use this method to set service levels and frequencies that avoid both over-provision (wasted capacity) and under-provision (unrealized demand) more precisely than fixed-demand models.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Service planning departments, operations research transit modelers, network design consultants</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most line-planning literature assumes fixed demand; this paper's lost-demand and minimum-service-level constraints are a more behaviorally realistic extension solved with a more tractable exact method than direct MIP solving.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 12 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 12 &#183; arXiv (2606.15315)</div>
+      <h3><a href="http://arxiv.org/abs/2606.15315v1" target="_blank">ChatPlanner: A Large Language Model Framework for Personalized Public Transit Routing</a></h3>
+      <div class="authors">Tingting Yang, Chenhao Xue, Jun Chen</div>
+      <div class="one-liner">ChatPlanner fine-tunes an LLM with retrieval-augmented generation so riders can describe trip preferences in plain language and get routes that actually reflect what they asked for.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most trip planners only optimize time or transfers; ChatPlanner is an early concrete demonstration that natural-language preference capture (e.g. 'avoid stairs,' 'minimize walking in the heat') can be wired directly into a transit routing objective function.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Fine-tuned LLM + RAG extracts routing parameters and nuanced preferences from conversational queries</li>
+        <li>Eight rider personas and five contexts were built to create scoring standards for both fine-tuning and retrieval</li>
+        <li>Fine-tuning alone enforces output structure and generalizes preference patterns; RAG alone resolves ambiguous, query-specific phrasing</li>
+        <li>Combining both methods produced the highest accuracy for preference extraction and routing</li>
+        <li>Case studies show ChatPlanner surfaces alternative routes that conventional planners overlook entirely</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Fine-tuned LLM combined with retrieval-augmented generation, evaluated through three experiments: feasibility, parameter/preference extraction accuracy, and route solution-set quality.</p>
+
+      <div class="section-head">Results</div>
+      <p>ChatPlanner reliably generates feasible routes; the fine-tuned+RAG combination outperforms either approach alone on extraction accuracy and surfaces preference-sensitive alternatives missed by standard planners.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Evaluated on constructed personas and case studies rather than live deployment with real riders; persona/context taxonomy may not generalize to all rider populations or transit networks.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit apps (Transit, Citymapper, agency trip planners) could integrate conversational preference capture to serve riders with mobility, comfort, or accessibility constraints that fixed filters don't cover.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit app developers, accessibility advocates, agencies modernizing trip-planning tools</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior personalized routing work used fixed preference sliders or weighted multi-objective optimization; ChatPlanner is among the first to push natural-language preference understanding directly into the routing objective rather than a pre-filter.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="contrarian-block">
+    <h2>Contrarian Insights</h2>
+    <div class="insight">
+      <p>A decentralized swarm of buses bidding for passengers like foraging slime mold delivers up to 101% more passenger throughput than a fixed-route network &#8212; suggesting some of the most effective transit innovations may come from biology, not transportation engineering.</p>
+    </div>
+    <div class="insight">
+      <p>Free transit fares moved more women into paid work in India than typical labor-market interventions, implying that mobility access &#8212; not training programs or financial subsidies &#8212; was the binding constraint on female workforce participation.</p>
+    </div>
+    <div class="insight">
+      <p>Radial transit lines into the urban periphery can significantly boost social mixing potential there without improving residents' actual access to amenities &#8212; equity and accessibility are not automatically the same outcome.</p>
+    </div>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways">
+    <div class="takeaway">
+      <p><strong>1.</strong> Agencies exploring demand-responsive transit in low-density areas should pilot decentralized, swarm-style dynamic routing rather than centralized dispatch &#8212; gains compound with sparser, more suburban geographies.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>2.</strong> Cities weighing fare policy as an equity lever should test free or steeply discounted fares for specific demographics (e.g., women, students) before assuming broad fare-capping is the most efficient tool.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>3.</strong> Transit agencies building or upgrading journey-planning apps should benchmark continental-scale algorithms like T-REX before accepting multi-second query times as inevitable on dense networks.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>4.</strong> Planners designing 15-minute-city policy should treat public transport access and active-mobility access as complementary, not substitutable, since transit lines alone don't equalize amenity access in peripheral neighborhoods.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>5.</strong> Service planners introducing LLM-based trip planning tools should pilot fine-tuning plus retrieval-augmented generation together, since each method alone leaves accuracy gaps the other fills.</p>
+    </div>
+  </div>
+
+  <!-- LONG TERM IMPLICATIONS -->
+  <div class="long-term">
+    <h2>Long-Term Implications</h2>
+    <p>As bio-inspired and AI-native algorithms mature, expect the boundary between 'fixed-route' and 'demand-responsive' transit to blur further, with hybrid swarm-coordinated minibus fleets supplementing fixed rail and BRT trunk lines in lower-density corridors. At the same time, the equity research in this batch suggests that the next wave of transit policy wins may come less from infrastructure spending and more from fare and access policy experiments (free fares, justice-informed AMoD objectives) that are cheap to test and fast to show results &#8212; a meaningfully different ROI profile than rail capital projects, and one that finance offices and equity advocates should both be tracking.</p>
+  </div>
+
+  <!-- INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-label">Data Infographic</div>
+    <div class="svg-wrapper">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 21, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">A slime-mold-inspired demand-responsive bus swarm increased passenger</text>
+<text x="90" y="241" class="body">delivery 28&#8211;101% and cut walking time over 75% versus fixed routes.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Free bus fares for women across five Indian states raised paid-work</text>
+<text x="90" y="319" class="body">participation, with the largest gains in the most mobility-restricted,</text>
+<text x="90" y="335" class="body">patriarchal districts.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">NYC's congestion pricing lifted bus and subway ridership well beyond the</text>
+<text x="90" y="397" class="body">tolled zone, while its travel-demand reduction stayed concentrated inside</text>
+<text x="90" y="413" class="body">it &#8212; an uneven distribution of costs and benefits.</text>
+<line x1="40" y1="467" x2="760" y2="467" class="ruleLight"/>
+<text x="40" y="509" class="label">PAPER OF THE DAY</text>
+<text x="40" y="537" class="h2">A Swarm Approach to Public Transit Using On-demand Routing in a</text>
+<text x="40" y="557" class="h2">Slime-Mold-Inspired Framework</text>
+<text x="40" y="583" class="small">Lindsay Burke, Maxfield Comstock, Jason Graham, Ruth Malenda, Simon Garnier, Petras Swissler</text>
+<text x="40" y="605" class="body">A demand-responsive transit swarm that routes buses using a slime-mold-inspired cooperative</text>
+<text x="40" y="621" class="body">bidding algorithm increases passenger delivery rates by 28&#8211;101% over fixed-route networks</text>
+<text x="40" y="637" class="body">and cuts walking time by more than 75% across suburban, urban, and semi-rural simulations.</text>
+<text x="40" y="653" class="body">Why it matters: it shows decentralized, biologically-inspired control can beat both fixed routes</text>
+<text x="40" y="669" class="body">and centrally-scheduled demand-responsive transit without adding fleet size.</text>
+<line x1="40" y1="687" x2="760" y2="687" class="ruleLight"/>
+<text x="40" y="707" class="label">EMERGING THEMES</text>
+<rect x="40" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="737" class="body">Bio-inspired and AI-driven</text>
+<text x="52" y="753" class="body">routing converges on adaptive,</text>
+<text x="52" y="769" class="body">decentralized coordination</text>
+<rect x="300" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="737" class="body">Equity research shifts from</text>
+<text x="312" y="753" class="body">describing disparities to</text>
+<text x="312" y="769" class="body">prescribing fare/access levers</text>
+<rect x="560" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="737" class="body">Trip planning and network</text>
+<text x="572" y="753" class="body">science scale toward unified,</text>
+<text x="572" y="769" class="body">continental-size toolkits</text>
+<line x1="40" y1="787" x2="760" y2="787" class="ruleLight"/>
+<text x="40" y="807" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="861" class="body">High</text>
+<rect x="110" y="849" width="200.0" height="18" fill="#1A1A1A"/>
+<text x="310.0" y="862" class="small">4</text>
+<text x="40" y="891" class="body">Medium</text>
+<rect x="110" y="879" width="350.0" height="18" fill="#1A1A1A"/>
+<text x="460.0" y="892" class="small">7</text>
+<text x="40" y="921" class="body">Low</text>
+<rect x="110" y="909" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="170.0" y="922" class="small">1</text>
+<line x1="40" y1="947" x2="760" y2="947" class="ruleLight"/>
+<text x="40" y="987" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1015" class="body" font-weight="bold">1.</text>
+<text x="60" y="1015" class="body">Agencies exploring demand-responsive transit in low-density areas should pilot decentralized,</text>
+<text x="60" y="1031" class="body">swarm-style dynamic routing rather than centralized dispatch.</text>
+<text x="40" y="1055" class="body" font-weight="bold">2.</text>
+<text x="60" y="1055" class="body">Cities weighing fare policy as an equity lever should test free or steeply discounted fares for</text>
+<text x="60" y="1071" class="body">specific demographics before assuming broad fare-capping is most efficient.</text>
+<text x="40" y="1095" class="body" font-weight="bold">3.</text>
+<text x="60" y="1095" class="body">Trip-planning teams should benchmark continental-scale algorithms like T-REX before accepting</text>
+<text x="60" y="1111" class="body">multi-second query times as inevitable on dense networks.</text>
+<text x="40" y="1135" class="body" font-weight="bold">4.</text>
+<text x="60" y="1135" class="body">15-minute-city planners should treat transit access and active-mobility access as complementary,</text>
+<text x="60" y="1151" class="body">not substitutable, since transit lines alone don't equalize peripheral amenity access.</text>
+<text x="40" y="1175" class="body" font-weight="bold">5.</text>
+<text x="60" y="1175" class="body">Teams piloting LLM trip planners should combine fine-tuning with retrieval-augmented generation,</text>
+<text x="60" y="1191" class="body">since each method alone leaves accuracy gaps the other fills.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 21, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
+    </div>
+    <a href="research-infographic-2026-06-21.svg" class="download-link" download>&#8595; Download SVG Infographic</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Transit Research Digest &#183; June 21, 2026 &#183; 12 papers analyzed &#183; Source: arXiv (Semantic Scholar rate-limited, Gemini analysis/imagen unavailable today)</p>
+  <p style="margin-top: 8px;"><a href="research.html">&#8592; Back to Archive Index</a></p>
+</footer>
+
+</body>
+</html>

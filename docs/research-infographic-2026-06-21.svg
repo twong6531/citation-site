@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 21, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">A slime-mold-inspired demand-responsive bus swarm increased passenger</text>
+<text x="90" y="241" class="body">delivery 28&#8211;101% and cut walking time over 75% versus fixed routes.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Free bus fares for women across five Indian states raised paid-work</text>
+<text x="90" y="319" class="body">participation, with the largest gains in the most mobility-restricted,</text>
+<text x="90" y="335" class="body">patriarchal districts.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">NYC's congestion pricing lifted bus and subway ridership well beyond the</text>
+<text x="90" y="397" class="body">tolled zone, while its travel-demand reduction stayed concentrated inside</text>
+<text x="90" y="413" class="body">it &#8212; an uneven distribution of costs and benefits.</text>
+<line x1="40" y1="467" x2="760" y2="467" class="ruleLight"/>
+<text x="40" y="509" class="label">PAPER OF THE DAY</text>
+<text x="40" y="537" class="h2">A Swarm Approach to Public Transit Using On-demand Routing in a</text>
+<text x="40" y="557" class="h2">Slime-Mold-Inspired Framework</text>
+<text x="40" y="583" class="small">Lindsay Burke, Maxfield Comstock, Jason Graham, Ruth Malenda, Simon Garnier, Petras Swissler</text>
+<text x="40" y="605" class="body">A demand-responsive transit swarm that routes buses using a slime-mold-inspired cooperative</text>
+<text x="40" y="621" class="body">bidding algorithm increases passenger delivery rates by 28&#8211;101% over fixed-route networks</text>
+<text x="40" y="637" class="body">and cuts walking time by more than 75% across suburban, urban, and semi-rural simulations.</text>
+<text x="40" y="653" class="body">Why it matters: it shows decentralized, biologically-inspired control can beat both fixed routes</text>
+<text x="40" y="669" class="body">and centrally-scheduled demand-responsive transit without adding fleet size.</text>
+<line x1="40" y1="687" x2="760" y2="687" class="ruleLight"/>
+<text x="40" y="707" class="label">EMERGING THEMES</text>
+<rect x="40" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="737" class="body">Bio-inspired and AI-driven</text>
+<text x="52" y="753" class="body">routing converges on adaptive,</text>
+<text x="52" y="769" class="body">decentralized coordination</text>
+<rect x="300" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="737" class="body">Equity research shifts from</text>
+<text x="312" y="753" class="body">describing disparities to</text>
+<text x="312" y="769" class="body">prescribing fare/access levers</text>
+<rect x="560" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="737" class="body">Trip planning and network</text>
+<text x="572" y="753" class="body">science scale toward unified,</text>
+<text x="572" y="769" class="body">continental-size toolkits</text>
+<line x1="40" y1="787" x2="760" y2="787" class="ruleLight"/>
+<text x="40" y="807" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="861" class="body">High</text>
+<rect x="110" y="849" width="200.0" height="18" fill="#1A1A1A"/>
+<text x="310.0" y="862" class="small">4</text>
+<text x="40" y="891" class="body">Medium</text>
+<rect x="110" y="879" width="350.0" height="18" fill="#1A1A1A"/>
+<text x="460.0" y="892" class="small">7</text>
+<text x="40" y="921" class="body">Low</text>
+<rect x="110" y="909" width="60.0" height="18" fill="#1A1A1A"/>
+<text x="170.0" y="922" class="small">1</text>
+<line x1="40" y1="947" x2="760" y2="947" class="ruleLight"/>
+<text x="40" y="987" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1015" class="body" font-weight="bold">1.</text>
+<text x="60" y="1015" class="body">Agencies exploring demand-responsive transit in low-density areas should pilot decentralized,</text>
+<text x="60" y="1031" class="body">swarm-style dynamic routing rather than centralized dispatch.</text>
+<text x="40" y="1055" class="body" font-weight="bold">2.</text>
+<text x="60" y="1055" class="body">Cities weighing fare policy as an equity lever should test free or steeply discounted fares for</text>
+<text x="60" y="1071" class="body">specific demographics before assuming broad fare-capping is most efficient.</text>
+<text x="40" y="1095" class="body" font-weight="bold">3.</text>
+<text x="60" y="1095" class="body">Trip-planning teams should benchmark continental-scale algorithms like T-REX before accepting</text>
+<text x="60" y="1111" class="body">multi-second query times as inevitable on dense networks.</text>
+<text x="40" y="1135" class="body" font-weight="bold">4.</text>
+<text x="60" y="1135" class="body">15-minute-city planners should treat transit access and active-mobility access as complementary,</text>
+<text x="60" y="1151" class="body">not substitutable, since transit lines alone don't equalize peripheral amenity access.</text>
+<text x="40" y="1175" class="body" font-weight="bold">5.</text>
+<text x="60" y="1175" class="body">Teams piloting LLM trip planners should combine fine-tuning with retrieval-augmented generation,</text>
+<text x="60" y="1191" class="body">since each method alone leaves accuracy gaps the other fills.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 21, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
