@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 22, 2026 &#8212; 13 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">NYC's congestion pricing program lifted bus and subway ridership well beyond</text>
+<text x="90" y="241" class="body">the tolled zone, while its travel-demand cuts stayed concentrated inside it.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">A widely used SUMO mesoscopic traffic model has reportedly underestimated</text>
+<text x="90" y="319" class="body">congestion for two decades due to incomplete queue-spillback physics.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">A risk-aware planner remediated a median of 53.6% of transit-desert tracts</text>
+<text x="90" y="397" class="body">across 25 cities within five years, beating static optimization by 5 points.</text>
+<line x1="40" y1="467" x2="760" y2="467" class="ruleLight"/>
+<text x="40" y="509" class="label">PAPER OF THE DAY</text>
+<text x="40" y="537" class="h2">Revisiting mesoscopic traffic flow simulation in SUMO:</text>
+<text x="40" y="557" class="h2">Limitations, analysis, and an alternative</text>
+<text x="40" y="585" class="small">Ying-Chuan Ni, Alina Akopian, Anastasios Kouvelas, Michail A. Makridis</text>
+<text x="40" y="607" class="body">It is the rare infrastructure paper that quietly undermines a swath of prior published</text>
+<text x="40" y="623" class="body">research: SUMO's mesoscopic traffic model, used in countless transit-priority and signal-</text>
+<text x="40" y="639" class="body">timing studies (including several other papers referenced this week), has apparently been</text>
+<text x="40" y="655" class="body">underestimating congestion for two decades due to a flawed treatment of queue spillback. The</text>
+<line x1="40" y1="687" x2="760" y2="687" class="ruleLight"/>
+<text x="40" y="707" class="label">EMERGING THEMES</text>
+<rect x="40" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="737" class="body">LLMs are colonizing transit</text>
+<text x="52" y="753" class="body">infrastructure, not just</text>
+<text x="52" y="769" class="body">transit chatbots</text>
+<rect x="300" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="737" class="body">From measuring inequity to</text>
+<text x="312" y="753" class="body">optimizing for it</text>
+<rect x="560" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="737" class="body">Foundational tooling is</text>
+<text x="572" y="753" class="body">getting an overdue audit</text>
+<line x1="40" y1="787" x2="760" y2="787" class="ruleLight"/>
+<text x="40" y="807" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="861" class="body">High</text>
+<rect x="110" y="849" width="105.0" height="18" fill="#1A1A1A"/>
+<text x="225.0" y="861" class="small">3</text>
+<text x="40" y="891" class="body">Medium</text>
+<rect x="110" y="879" width="350.0" height="18" fill="#1A1A1A"/>
+<text x="470.0" y="891" class="small">10</text>
+<text x="40" y="921" class="body">Low</text>
+<rect x="110" y="909" width="0.0" height="18" fill="#1A1A1A"/>
+<text x="120.0" y="921" class="small">0</text>
+<line x1="40" y1="947" x2="760" y2="947" class="ruleLight"/>
+<text x="40" y="987" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1015" class="body" font-weight="bold">1.</text>
+<text x="60" y="1015" class="body">Agencies using SUMO mesoscopic simulation for transit-priority or congestion studies should</text>
+<text x="60" y="1031" class="body">re-validate key conclusions against the corrected link-transmission model proposed this</text>
+<text x="60" y="1047" class="body">week.</text>
+<text x="40" y="1087" class="body" font-weight="bold">2.</text>
+<text x="60" y="1087" class="body">Cities considering congestion pricing can now cite a rigorous, uncertainty-aware ridership-</text>
+<text x="60" y="1103" class="body">gain estimate from NYC's first year, but should budget for uneven neighborhood-level</text>
+<text x="60" y="1119" class="body">adaptation rather than assuming uniform benefit.</text>
+<text x="40" y="1159" class="body" font-weight="bold">3.</text>
+<text x="60" y="1159" class="body">Agencies serving immigrant-heavy corridors should prioritize first/last-mile access</text>
+<text x="60" y="1175" class="body">investments over fare discounts when the goal is sustaining transit ridership through the</text>
+<text x="60" y="1191" class="body">integration process.</text>
+<text x="40" y="1231" class="body" font-weight="bold">4.</text>
+<text x="60" y="1231" class="body">Planning departments doing service-change analysis should track the new GTFS 'DayTypes'</text>
+<text x="60" y="1247" class="body">formalization as a potential standard for distinguishing real schedule changes from minor</text>
+<text x="60" y="1263" class="body">timing shifts.</text>
+<text x="40" y="1303" class="body" font-weight="bold">5.</text>
+<text x="60" y="1303" class="body">Transit app teams piloting AI features should look at ChatPlanner's fine-tuning + RAG</text>
+<text x="60" y="1319" class="body">combination as a lower-risk way to add preference-aware routing without rebuilding core</text>
+<text x="60" y="1335" class="body">trip-planning engines.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 22, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
