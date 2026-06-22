@@ -1,0 +1,123 @@
+{
+  "date": "2026-06-22",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 transit host-city stress test",
+      "angle": "How host-city transit systems (LA, NY/NJ, SF Bay Area, Dallas, etc.) are bracing for World Cup crowd loads versus their actual daily capacity — gap between marketing promises and headway/fleet reality",
+      "rationale": "Still queued at #1 after 19+ consecutive days with 0% article production. Time-sensitive window keeps narrowing as the tournament's group stage progresses — this remains the single most urgent unproduced item in the backlog.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-host-cities",
+      "output_path": "drafts/articles/world-cup-2026-transit-host-cities.html"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "topic": "Congress transportation reauthorization 2026",
+      "angle": "What's actually in the surface transportation reauthorization bill for transit funding formulas, and what agencies stand to gain or lose",
+      "rationale": "Second item stuck in the same 19-day, 0%-success article backlog. Policy relevance window narrows as the bill moves through committee.",
+      "target_length": "long",
+      "slug": "congress-transportation-reauthorization-2026",
+      "output_path": "drafts/articles/congress-transportation-reauthorization-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail cost comparison 2026",
+      "angle": "Capital and operating cost per mile, ridership-per-dollar, and build-time comparison between BRT and light rail",
+      "rationale": "Retry #13 since 2026-06-07 (12 consecutive prior failures). A 13th blind retry is unlikely to succeed without a manual diagnostic of the infographic-writing agent — flagged again in alerts below.",
+      "target_length": "short",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Latency-resilient VLM-augmented urban navigation",
+      "angle": "Vision-language-model 'slow brain, fast planner' navigation architectures — implications for AI-assisted paratransit routing and transit-desert remediation, extending the existing POMDP/CVaR and swarm-routing research thread",
+      "rationale": "Same arXiv signal recurred in today's scan; still unproduced from yesterday's queue. Extends an existing research thread without repeating a covered topic.",
+      "target_length": "medium",
+      "slug": "vlm-urban-navigation-transit-implications",
+      "output_path": "drafts/articles/vlm-urban-navigation-transit-implications.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "Publish backlog triage explainer",
+      "angle": "N/A — video script production remains on HOLD per drafts/scripts/HOLD-no-new-script.md until the human reviews the 10-script backlog and approved.json",
+      "rationale": "Listed for visibility only; do not produce a new script while the HOLD is in effect.",
+      "target_length": "short",
+      "slug": "HOLD-no-new-script",
+      "output_path": "drafts/scripts/HOLD-no-new-script.md"
+    }
+  ],
+  "retries": [
+    {
+      "type": "infographic",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "attempt": 13,
+      "first_queued": "2026-06-07",
+      "note": "12 consecutive failures. Escalate to manual diagnostic — automated retries alone have not worked in 12 attempts."
+    },
+    {
+      "type": "publishing",
+      "note": "approved.json empty since 2026-06-07 (day 19). 3 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics. No retry possible — blocked on human action."
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity automation",
+    "autonomous vehicles",
+    "AI industry",
+    "Meta face recognition",
+    "Apple Gemini AI partnership",
+    "transit desert remediation POMDP",
+    "Southern California transit systems",
+    "slime mold network optimization",
+    "US cities transit gap",
+    "dopamine and urban design",
+    "electric axial flux motors transit",
+    "TOD Builder interactive game",
+    "Pokemon Go military drone urban data pipeline",
+    "transit app dark UX patterns",
+    "Tesla SpaceX transit empire",
+    "fare evasion economics",
+    "bonds and debt financing transit capital",
+    "child and youth transit access",
+    "congestion pricing transit funding",
+    "disability access ADA compliance transit",
+    "emergency evacuation planning transit",
+    "environmental justice transit investment",
+    "federal transit grants",
+    "free fare transit case studies tradeoffs",
+    "gender transit safety",
+    "grade crossing safety light rail commuter rail",
+    "homelessness transit safety",
+    "medical emergencies on transit",
+    "data optimization transit routes",
+    "bus bunching prevention",
+    "fare structure design",
+    "low-income riders fare increases",
+    "public-private partnerships transit",
+    "transit access economic mobility",
+    "transit agency funding breakdown",
+    "EV bus equity gap low-income routes",
+    "permanent ridership shift post-pandemic US cities",
+    "pantograph charging transit cost reduction",
+    "TOD walkability thresholds 800m rail catchment",
+    "Salesforce Fin AI acquisition",
+    "Apple Foundation Models",
+    "Anthropic safety strategy",
+    "psilocybin Alzheimer research"
+  ],
+  "trend_signals": [
+    "Zig Software Foundation funding (HN top story)",
+    "GLM 5.2 vs. Claude Opus model comparisons",
+    "Codex local logging/storage bug",
+    "Apertus open sovereign foundation model",
+    "VLM-augmented urban navigation (arXiv, latency-resilient planning)"
+  ]
+}
