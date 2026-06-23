@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-23",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "notes": "No new files were produced in drafts/articles/, drafts/scripts/, or drafts/infographics/ on 2026-06-23. Per system/status/status-2026-06-23.json, 'articles' and 'infographics' jobs remain 'pending' and 'video_scripts' remains on 'hold' (no new script queued since 2026-06-18, per drafts/scripts/HOLD-no-new-script.md). drafts/articles/ and drafts/infographics/ are empty (20+ consecutive days with zero output, per today's status alerts). The existing 11-file backlog in drafts/scripts/ (10 scripts + HOLD notice) was already QC'd on prior dates (see individual *-qc.json files) and is unchanged today (last modified 2026-06-15/06-18), so it was not re-reviewed. Today's docs/ outputs (daily briefing, transit research, SoCal transit brief, two editorial infographics for 2026-06-23) were committed directly to docs/ outside the drafts/ -> QC -> approved.json gate and are therefore out of this QC pass's scope. CARRYOVER ALERT: 3 QC-passed scripts (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics) remain ready for publish but are blocked solely on approved.json being empty since 2026-06-07 (day 20 of the block) - this is a human/publishing bottleneck, not a QC issue."
+}
