@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 23, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">A Car Dependency Index across 18 cities shows car dependency persists even</text>
+<text x="90" y="241" class="body">after controlling for income, and isolated metro lines yield only local gains.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">GPS-based mobility data in Mexico shows source-specific, spatially clustered</text>
+<text x="90" y="319" class="body">coverage bias &#8212; Facebook and multi-app data paint different portraits.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Transit's link to social mixing holds in large metros but fades to</text>
+<text x="90" y="397" class="body">insignificance in smaller Swedish cities once geography is controlled for.</text>
+<line x1="40" y1="467" x2="760" y2="467" class="ruleLight"/>
+<text x="40" y="509" class="label">PAPER OF THE DAY</text>
+<text x="40" y="537" class="h2">Car Dependency in Urban Accessibility</text>
+<text x="40" y="557" class="h2"> </text>
+<text x="40" y="585" class="small">Bruno Campanelli, Francesco Marzolla, Matteo Bruno, Hygor Piaget Monteiro Melo, Vittorio Loreto</text>
+<text x="40" y="607" class="body">A new Car Dependency Index measured across 18 cities in Europe and North America finds that car</text>
+<text x="40" y="623" class="body">dependency persists even after controlling for income. A "what-if" simulation of Rome's planned</text>
+<text x="40" y="639" class="body">Metro C expansion predicts roughly 60,000 fewer commuting vehicles &#8212; but the effect is localized,</text>
+<text x="40" y="655" class="body">reinforcing that systemic, network-level transit expansion is needed to truly dismantle car reliance.</text>
+<line x1="40" y1="687" x2="760" y2="687" class="ruleLight"/>
+<text x="40" y="707" class="label">EMERGING THEMES</text>
+<rect x="40" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="737" class="body">The data underneath transit</text>
+<text x="52" y="753" class="body">research is getting its own</text>
+<text x="52" y="769" class="body">audit</text>
+<rect x="300" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="737" class="body">Equity is moving from a</text>
+<text x="312" y="753" class="body">metric to a constraint</text>
+<rect x="560" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="737" class="body">Transit's social/environmental</text>
+<text x="572" y="753" class="body">externalities now measured</text>
+<line x1="40" y1="787" x2="760" y2="787" class="ruleLight"/>
+<text x="40" y="807" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="861" class="body">High</text>
+<rect x="110" y="849" width="116.7" height="18" fill="#1A1A1A"/>
+<text x="236.7" y="861" class="small">2</text>
+<text x="40" y="891" class="body">Medium</text>
+<rect x="110" y="879" width="525.0" height="18" fill="#1A1A1A"/>
+<text x="645.0" y="891" class="small">9</text>
+<text x="40" y="921" class="body">Low</text>
+<rect x="110" y="909" width="58.3" height="18" fill="#1A1A1A"/>
+<text x="178.3" y="921" class="small">1</text>
+<line x1="40" y1="947" x2="760" y2="947" class="ruleLight"/>
+<text x="40" y="987" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1015" class="body" font-weight="bold">1.</text>
+<text x="60" y="1015" class="body">Cities pursuing single flagship rail extensions should pair them with network-level multimodal</text>
+<text x="60" y="1031" class="body">investment; the Rome simulation suggests isolated lines underdeliver on systemic car-</text>
+<text x="60" y="1047" class="body">dependency reduction.</text>
+<text x="40" y="1087" class="body" font-weight="bold">2.</text>
+<text x="60" y="1087" class="body">Researchers using commercial GPS mobility data in data-scarce regions should explicitly test</text>
+<text x="60" y="1103" class="body">for vendor-specific coverage bias rather than treating any single source as ground truth.</text>
+<text x="40" y="1159" class="body" font-weight="bold">3.</text>
+<text x="60" y="1159" class="body">Agencies piloting fare-free bus programs can cite the NYC simulation's finding that fare-free</text>
+<text x="60" y="1175" class="body">buses meaningfully help lower-income riders with only modest revenue trade-offs.</text>
+<text x="40" y="1231" class="body" font-weight="bold">4.</text>
+<text x="60" y="1231" class="body">Mid-size cities should not assume transit investment automatically increases social mixing as</text>
+<text x="60" y="1247" class="body">it appears to in large metros; targeted venue-level interventions may work better.</text>
+<text x="40" y="1303" class="body" font-weight="bold">5.</text>
+<text x="60" y="1303" class="body">Smart-city dashboards pairing ridership with air-quality metrics should avoid implying a</text>
+<text x="60" y="1319" class="body">universal causal relationship; baseline city effects dominate over any consistent pattern.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv and Semantic Scholar preprints &#8212; June 23, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>

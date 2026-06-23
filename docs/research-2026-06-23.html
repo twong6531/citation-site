@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest &#8212; June 23, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E6;
+    --muted: #888888;
+    --accent: #E8FF00;
+    --accent2: #4488FF;
+    --highlight: #FF6B35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand { font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--accent); letter-spacing: 1px; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 20px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; letter-spacing: 1px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 40px; }
+
+  .editorial-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+  .editorial-header { padding: 20px 28px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .editorial-header .section-tag { font-size: 10px; letter-spacing: 3px; color: var(--muted); }
+  .editorial-header h2 { font-size: 18px; margin-top: 4px; }
+  .editorial-body { padding: 28px; text-align: center; }
+  .editorial-body img { max-width: 100%; border-radius: 2px; }
+  .editorial-body .no-image {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 13px; border: 1px dashed var(--border); border-radius: 2px;
+  }
+  .editorial-caption { padding: 16px 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  .executive-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .executive-summary h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .executive-summary p { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 12px; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; line-height: 1.5; }
+
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  .paper-card .paper-num { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-card h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+  .paper-card .section-head { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 20px; margin-bottom: 8px; }
+  .paper-card p, .paper-card li { font-size: 14px; color: #BBBBBB; line-height: 1.65; }
+  .paper-card ul { padding-left: 20px; }
+  .paper-card ul li { margin-bottom: 6px; }
+  .paper-card .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .paper-card .tag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 1px; }
+  .paper-card .tag.high { border-color: #44FF88; color: #44FF88; }
+  .paper-card .tag.medium { border-color: #FFAA44; color: #FFAA44; }
+  .paper-card .tag.low { border-color: #FF4444; color: #FF4444; }
+
+  .takeaways { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface2); border-left: 3px solid var(--accent); padding: 20px 24px; }
+  .takeaway p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .contrarian-block { background: var(--surface); border: 1px solid #FF6B35; padding: 28px 32px; margin-bottom: 48px; }
+  .contrarian-block h2 { font-size: 10px; letter-spacing: 4px; color: #FF6B35; text-transform: uppercase; margin-bottom: 20px; }
+  .contrarian-block .insight { margin-bottom: 20px; padding-left: 16px; border-left: 2px solid #FF6B35; }
+  .contrarian-block .insight p { font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  .infographic-section { margin-bottom: 48px; }
+  .svg-wrapper { background: #F7F7F5; padding: 24px; border: 1px solid var(--border); }
+  .svg-wrapper svg { width: 100%; height: auto; }
+  .download-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent2); border: 1px solid var(--accent2); padding: 8px 16px; }
+
+  .long-term { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 48px; }
+  .long-term h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .long-term p { font-size: 15px; line-height: 1.75; color: #CCCCCC; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 32px 20px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand">Transit Research Digest</span>
+  <a href="research.html" class="back-link">&#8592; Archive Index</a>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Transit Research Digest &#183; June 23, 2026</div>
+  <h1>A New Car Dependency Index Shows Isolated Metro Lines Barely Dent Driving &#8212; While Mobility Data Itself Turns Out to Be Quietly Biased by Vendor</h1>
+  <div class="meta">
+    <span><span class="badge">12 PAPERS</span></span>
+    <span>arXiv + Semantic Scholar &#183; Self-Analysis (Gemini API rate-limited today)</span>
+    <span>Car dependency indexing &#183; Fare-policy equity simulation &#183; Mobility-data representativeness &#183; Transit-driven social mixing</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- EDITORIAL IMAGE SECTION -->
+  <div class="editorial-section">
+    <div class="editorial-header">
+      <div class="section-tag">TODAY'S TRANSIT ILLUSTRATION</div>
+      <h2>A Rome Metro Line C train arriving at an archaeology-constrained station, platform suspended above excavated Roman-era ruins</h2>
+    </div>
+    <div class="editorial-body">
+      <div class="no-image">
+        &#9723; EDITORIAL ILLUSTRATION UNAVAILABLE<br>
+        <span style="font-size:11px;margin-top:8px;display:block;">Gemini Imagen API unavailable today (404 model-not-found on key-param auth, 401 on Bearer auth) &#8212; image generation skipped</span>
+        <span style="font-size:11px;color:#555;margin-top:4px;display:block;">Subject: a Rome Metro Line C train emerging into an archaeology-constrained station, with the platform suspended above excavated Roman-era brick foundations and pottery fragments visible behind protective glass barriers. Metro C's extension toward central Rome has been delayed for over a decade by mandatory archaeological digs at nearly every new station site &#8212; tunnel-boring shields had to be rerouted around 2nd-century ruins, and several stations were redesigned mid-construction into hybrid transit-museum spaces. It is the literal physical embodiment of today's paper-of-the-day finding: that isolated rail extensions (like Rome's planned metro expansion) produce only localized reductions in car dependency, because a single new line, however dramatic its engineering, cannot substitute for network-level transit coverage.</span>
+      </div>
+    </div>
+    <div class="editorial-caption">
+      <span>A Rome Metro Line C train arriving at an archaeology-constrained station, platform suspended above excavated Roman-era ruins &#8212; Technical Editorial Illustration</span>
+      <span>Independently researched and rendered from today's papers</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>Today's cluster pairs a hard look at car dependency itself with a series of papers questioning whether the data and models underlying transit research are as solid as they appear. A new Car Dependency Index, validated across 18 European and North American cities, finds that car dependency persists even after controlling for income &#8212; and that a simulated metro expansion in Rome would cut roughly 60,000 commuting vehicles but only in a localized way, reinforcing that piecemeal transit investment struggles to dislodge car-centric travel habits. Alongside it, three papers interrogate the foundations of mobility research: GPS-based mobility data shows source-specific, spatially structured coverage bias in Mexico; a new benchmark exposes inconsistent evaluation protocols across vehicle-trajectory generation models; and a Sweden/US study finds that transit's celebrated role in social mixing holds mainly in large metros, fading to insignificance in smaller cities. A second cluster pushes equity directly into algorithmic design &#8212; fare-free bus simulations in NYC, fairness-aware car-sharing network design in Vienna, and multi-agent reinforcement learning for transit subsidy and ride-share pricing all bake equity constraints into the optimization itself rather than measuring inequity after the fact.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>The data underneath transit research is getting its own audit: Papers on GPS mobility-data bias, trajectory-generation benchmarking, and compositional mobility clustering all interrogate whether the inputs to transit models &#8212; not just the models themselves &#8212; are trustworthy.</h3>
+    </div>
+    <div class="theme-card">
+      <h3>Equity is moving from a metric to a constraint: Fare-free bus simulation, fairness-aware car-sharing network design, and multi-agent RL pricing for shared mobility all encode equity directly into the optimization objective rather than evaluating it as an afterthought.</h3>
+    </div>
+    <div class="theme-card">
+      <h3>Transit's social and environmental externalities are getting first-class measurement: New work quantifies how transit accessibility shapes social mixing, how ridership tracks fine-particulate air quality, and how isolated rail investment fails to dent car dependency at scale.</h3>
+    </div>
+  </div>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">Paper Analyses</div>
+  <div class="papers-grid">
+
+    <!-- Paper 01 - PAPER OF THE DAY -->
+    <div class="paper-card featured">
+      <div class="paper-num">Paper 01 &#183; Paper of the Day &#183; arXiv (2604.01019)</div>
+      <h3><a href="https://arxiv.org/abs/2604.01019v1" target="_blank">Car Dependency in Urban Accessibility</a></h3>
+      <div class="authors">Bruno Campanelli, Francesco Marzolla, Matteo Bruno, Hygor Piaget Monteiro Melo, Vittorio Loreto</div>
+      <div class="one-liner">A new Car Dependency Index quantifies the accessibility gap between private and public transport across 18 European and North American cities, and a Rome metro-expansion simulation shows isolated transit investments yield only localized reductions in driving.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>It gives planners a standardized, comparable metric for "how trapped is this city by cars" instead of relying on car-ownership rates alone, and its Rome case study delivers a sobering, quantified warning against expecting single-line transit projects to solve systemic car dependency.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>The Car Dependency Index (CDI) quantifies the accessibility gap between private and public transport at fine spatial resolution across 18 cities.</li>
+        <li>Car dependency remains a primary driver of car ownership even after controlling for household income.</li>
+        <li>Spatial inequalities in car dependency are pronounced within cities, not just between them.</li>
+        <li>A "what-if" simulation of Rome's planned Metro C expansion predicts roughly 60,000 fewer commuting vehicles.</li>
+        <li>The same simulation shows the effect is localized: isolated rail extensions have limited city-wide impact.</li>
+        <li>The authors argue systemic, network-level transit expansion is necessary to meaningfully dismantle car-based travel systems.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>High-resolution geospatial accessibility modeling comparing private-vehicle and public-transport travel times across 18 cities, combined with a counterfactual simulation of Rome's planned metro extension.</p>
+
+      <div class="section-head">Results</div>
+      <p>CDI reveals persistent, income-independent car dependency and pronounced intra-city spatial inequality; the Rome simulation predicts a meaningful but geographically limited reduction in commuting vehicles from a single metro extension.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Limited to 18 cities in Europe and North America, all wealthy-country contexts; the Rome "what-if" simulation is a single case study and may not generalize to cities with different urban form or transit baselines.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>City planners and transit agencies seeking political buy-in for car-free zones or transit expansion can use the CDI as an objective targeting tool, but should pair single-line projects with network-level investment to avoid disappointing mode-shift results.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban planners, transit capital-investment program officers, climate/net-zero policy teams, transportation economists.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Moves beyond car-ownership statistics and simple accessibility ratios used in prior research by combining a standardized cross-city index with an explicit policy counterfactual simulation.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 02 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 02 &#183; arXiv (2606.21897)</div>
+      <h3><a href="https://arxiv.org/abs/2606.21897v1" target="_blank">Simulating Public Transit Fare Policies in NYC: An Efficient, Socioeconomic-Aware Framework</a></h3>
+      <div class="authors">Parker Wischhover, Hossein Amiri, Kiara Ha, Jooyoung Yoo, Lina Li, Andreas Z&#252;fle, Joon-Seok Kim</div>
+      <div class="one-liner">A scalable agent-based simulation of NYC fare policy finds that fare-free bus programs substantially benefit lower-income riders by increasing bus use and cutting fare burden, with modest trade-offs in revenue.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Fare policy debates are usually driven by revenue projections alone; this gives agencies a socioeconomic-aware simulation tool to weigh equity gains against revenue trade-offs before committing politically and financially to a fare change.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Combines a synthetic population, agent-based simulation, multimodal travel-time estimation, and fare-sensitive mode-choice modeling.</li>
+        <li>Pricing changes modestly affect total ridership but significantly alter modal composition.</li>
+        <li>Impacts of fare changes are heterogeneous across income groups, not uniform city-wide.</li>
+        <li>Fare-free bus policy substantially increases bus usage and reduces fare burden for lower-income riders.</li>
+        <li>A sampling-based approach reduces computational cost while preserving city-scale aggregate accuracy.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Agent-based simulation with a synthetic NYC population, multimodal travel-time estimation, and fare-sensitive mode-choice modeling, evaluated under multiple fare scenarios including fare-free buses and distance-based pricing.</p>
+
+      <div class="section-head">Results</div>
+      <p>Fare-free bus policy delivers the largest equity benefit among scenarios tested, with modest revenue trade-offs; distance-based pricing and fare increases reshape mode share more than total ridership.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Synthetic population and mode-choice assumptions may not capture all behavioral nuance; calibrated specifically to NYC, which has unusually dense, multimodal transit options not present in most US cities.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies considering fare-free bus pilots can use this framework's sampling-based simulation approach to model city-scale equity and revenue trade-offs before deployment.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agency fare-policy teams, city budget offices, transportation equity advocates.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends prior fare-elasticity studies, which typically estimate aggregate ridership effects, by explicitly modeling socioeconomic heterogeneity in mode-choice response.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 03 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 03 &#183; arXiv (2606.23616)</div>
+      <h3><a href="https://arxiv.org/abs/2606.23616v1" target="_blank">One country, multiple portraits: representativeness in GPS-based mobility data is source-specific and spatially dependent</a></h3>
+      <div class="authors">Carmen Cabrera, Francisco Rowe, Miguel Gonz&#225;lez-Leonardo, Juan Ignacio Vilchis-Garc&#237;a, Elisa Omodei, Maribel Hern&#225;ndez-Rosales</div>
+      <div class="one-liner">Comparing Facebook and multi-app GPS mobility data against Mexico's census across 2,478 municipalities, the authors find coverage bias differs sharply by data source and is spatially clustered rather than random.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>A huge share of transit and urban-mobility research outside wealthy countries leans on commercial GPS mobility data as a stand-in for ground truth; this shows that choice of vendor alone can systematically distort who and where gets represented.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Facebook-based mobility data provides higher and more evenly distributed coverage than a multi-app aggregator (Veraset).</li>
+        <li>The multi-app aggregator concentrates users in larger, wealthier, more digitally connected places.</li>
+        <li>Coverage bias is spatially structured: neighboring municipalities show similar over- or under-coverage.</li>
+        <li>Explainable ML shows digital access and material resources drive bias in multi-app data, while demographic structure drives bias in Facebook data.</li>
+        <li>A substantial share of spatial variation in coverage bias remains unexplained by observed covariates.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Comparison of population estimates from Facebook and Veraset GPS-based mobility data against the 2020 Mexican Census across 2,478 municipalities, using explainable machine learning and spatial dependence modeling.</p>
+
+      <div class="section-head">Results</div>
+      <p>Coverage bias magnitude and spatial pattern differ substantially by data source, with both digital-access and demographic factors driving disparities, and meaningful unexplained spatial variance remaining.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-country (Mexico) validation; only two commercial data sources compared; explanatory covariates available may not capture all drivers of bias.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Researchers and agencies in data-scarce regions using any single GPS mobility data vendor for transit planning should explicitly test and correct for source-specific coverage bias rather than treating the data as ground truth.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Mobility data scientists, disaster-response and public-health planners using mobile data, transit researchers in the Global South.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior mobility-data validation work largely focused on single-source bias in high-income countries; this is among the first systematic multi-source comparison in a large data-scarce country.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 04 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 04 &#183; arXiv (2604.14348)</div>
+      <h3><a href="https://arxiv.org/abs/2604.14348v2" target="_blank">Where diverse populations gather: Transit accessibility and the spatial structure of social mixing</a></h3>
+      <div class="authors">Yuan Liao</div>
+      <div class="one-liner">Using mobile phone GPS data across nine Swedish cities and three US cities, the study finds transit accessibility predicts visitor diversity at venues, but the relationship holds robustly only in the largest metro areas.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Transit's role as a social equalizer is frequently invoked in large-city contexts (NYC, Stockholm); this shows the effect attenuates to insignificance in smaller cities once geography is controlled for, complicating blanket equity claims used to justify transit investment everywhere.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Transit catchment diversity positively predicts visitor diversity at points of interest in large metros.</li>
+        <li>In smaller Swedish cities, this association attenuates to insignificance once catchment composition, centrality, and venue density are controlled.</li>
+        <li>Transit-diversity hotspots concentrate in lower-diversity, lower-commercial-density venues, not already-diverse ones.</li>
+        <li>In US cities, hotspots are farther from transit; in Sweden, they are more central &#8212; a notable cross-national contrast.</li>
+        <li>Findings are consistent with transit playing a "bridging" role specifically where alternative access pathways are limited.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>2024 mobile phone GPS data analysis computing visitor diversity indices based on visitors' home-neighborhood birth-background composition, across nine Swedish cities and three US cities (New York, Washington DC, Atlanta).</p>
+
+      <div class="section-head">Results</div>
+      <p>Transit-diversity association is robust mainly in large metropolitan areas and concentrates in lower-diversity, lower-commercial venues, with directionally different patterns between Swedish and US cities.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Diversity measured only via birth-background composition, not full socioeconomic diversity; limited to Sweden and three specific US cities; mobile GPS data carries its own representativeness caveats (see Paper 03).</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Mid-size cities should not assume transit investment will automatically boost social mixing the way it appears to in large metros; targeted interventions at low-diversity, transit-accessible venues may be more effective than blanket transit expansion.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban sociologists, transit equity planners, city governments outside major metro areas.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends segregation research, which has focused on residential and activity-space segregation, into the underexplored question of how transit infrastructure shapes social mixing at specific venues.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 05 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 05 &#183; arXiv (2606.23257)</div>
+      <h3><a href="https://arxiv.org/abs/2606.23257v1" target="_blank">Dynamic multi-agent deep reinforcement learning-based pricing and incentivization approach in multimodal transportation networks</a></h3>
+      <div class="authors">Khadidja Kadem, Mostafa Ameli, Carlos Lima Azevedo, Mahdi Zargayouna, Latifa Oukhellou</div>
+      <div class="one-liner">Two competing reinforcement-learning agents &#8212; a public authority allocating transit incentives and a shared-mobility provider setting dynamic fares &#8212; jointly cut commuter costs ~20% and emissions ~10% while nearly doubling public transport profit.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>As ride-hail and micromobility services compete with public transit for the same riders, this offers a concrete decision-support mechanism for coordinating subsidy and pricing rather than letting market forces concentrate shared mobility in already-dense, already-served areas.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Shared mobility demand concentrates in high-density areas, limiting accessibility for other commuter groups.</li>
+        <li>A public-authority RL agent allocates spatio-temporal transit incentives to improve equity, emissions, and efficiency.</li>
+        <li>A shared-mobility-provider RL agent dynamically adjusts fares to maximize revenue.</li>
+        <li>Dynamic incentivization alone reduces congestion peaks, cuts commuter costs ~20%, and cuts emissions ~10%.</li>
+        <li>Combining incentivization with dynamic shared-mobility pricing nearly doubles public transport profit.</li>
+        <li>The two agents demonstrably balance conflicting public/private objectives rather than one dominating the other.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Multi-agent deep reinforcement learning framework with two interacting RL agents (public authority and shared-mobility provider), evaluated via numerical experiments over a three-hour morning peak period.</p>
+
+      <div class="section-head">Results</div>
+      <p>~20% reduction in commuter costs, ~10% reduction in emissions, near-doubling of public transit profit, and more equitable benefit distribution when incentivization and dynamic pricing are combined.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Evaluated only on a simulated three-hour morning-peak scenario; real-world deployment would require coordination across independent private operators with their own incentives to participate.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>City transportation departments regulating ride-hail/micromobility alongside public transit could pilot RL-based dynamic incentive structures rather than static subsidy formulas.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>City DOTs, transit agency planning teams, shared-mobility regulators, transportation economists.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on single-agent dynamic-pricing literature by explicitly modeling the multi-stakeholder, multi-objective conflict between public authorities, private operators, and travelers.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 06 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 06 &#183; arXiv (2604.11732)</div>
+      <h3><a href="https://arxiv.org/abs/2604.11732v1" target="_blank">Fairness-aware Strategic Design of Station-based Electric Car-Sharing Systems</a></h3>
+      <div class="authors">Jue Zhou, Zoha Sherkat-Masoumi, Merve Bodur</div>
+      <div class="one-liner">A Vienna-based bi-objective optimization framework jointly designs station locations, charger capacity, and fleet size for electric car-sharing while explicitly trading off revenue against service-rate equity across user groups.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most car-sharing system design optimizes purely for profitability, which tends to concentrate service in already-affluent neighborhoods; this gives operators and cities a concrete tool to quantify and negotiate the cost of fairness rather than leaving it to ad hoc mandates.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Operationalizes fairness via two paradigms: service-rate disparity and max-min fairness, measured by realized group service rates rather than static accessibility.</li>
+        <li>Uses a multi-day representative-demand setting to capture demand heterogeneity over time.</li>
+        <li>Develops a bi-objective trajectory-based formulation jointly optimizing revenue and service equity.</li>
+        <li>A branch-and-price algorithm solves single-objective variants, embedded in an exact bi-objective procedure to generate the Pareto frontier.</li>
+        <li>A diving-heuristic approach approximates the Pareto frontier for larger, computationally intractable instances.</li>
+        <li>A Vienna case study quantifies concrete trade-offs between revenue, equity, and system design choices.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Bi-objective trajectory-based mixed-integer optimization solved via branch-and-price for exact Pareto frontiers and a diving heuristic for larger instances; validated on a real Vienna-based case study.</p>
+
+      <div class="section-head">Results</div>
+      <p>Produces explicit Pareto frontiers and high-quality approximations showing the quantitative trade-off between profit and equitable service rates across station-based car-sharing designs.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-city validation (Vienna); branch-and-price exact methods may not scale to very large station networks without the heuristic approximation; fairness defined narrowly via service-rate metrics rather than broader access dimensions.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities negotiating car-sharing equity mandates or service-area requirements with private operators can use the Pareto frontier output to set defensible, quantified minimum service-equity targets.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Car-sharing and micromobility operators, city mobility-equity regulators, operations research practitioners in shared mobility.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Distinguishes itself from prior integrated strategic-operational car-sharing design models, which prioritized economic efficiency and treated equity as a static spatial accessibility afterthought.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 07 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 07 &#183; arXiv (2606.21022)</div>
+      <h3><a href="https://arxiv.org/abs/2606.21022v1" target="_blank">Structure-Aware Graph Multi-Task Learning for Dynamic Sparse OD Demand Prediction</a></h3>
+      <div class="authors">Ming Xu, Jiawei Cao</div>
+      <div class="one-liner">SAGMTL decomposes origin-destination demand prediction into separately modeling whether a route is active and how much demand it carries once active, improving prediction on sparse, long-tailed real-world OD flows in Beijing, Chengdu, and Nanjing.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most OD flows between any two points in a city are zero or near-zero most of the time; treating this as one regression task (as most prior models do) wastes model capacity and degrades accuracy precisely on the rare, intermittent trips that matter for planning new service.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Real-world OD flows are dynamically sparse, long-tailed, and have heterogeneous zero-flow patterns.</li>
+        <li>SAGMTL decomposes prediction into structural-state modeling (is this connection active) and flow-intensity estimation (how much demand).</li>
+        <li>A node-edge collaborative representation module jointly captures regional semantics, temporal dynamics, and spatial priors.</li>
+        <li>A multi-constraint objective improves both sparsity awareness and structural consistency.</li>
+        <li>Outperforms state-of-the-art baselines across three real-world urban mobility datasets (Beijing, Chengdu, Nanjing).</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Structure-Aware Graph Multi-Task Learning framework jointly modeling regional activity states, OD connection activity, and edge-level flow intensity, evaluated against state-of-the-art baselines on three Chinese city datasets.</p>
+
+      <div class="section-head">Results</div>
+      <p>Superior overall performance versus baselines, with explicit ablation showing that modeling regional activity, connection states, and flow intensity separately improves robustness on sparse OD prediction.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Validated only on three Chinese cities with dense data-collection infrastructure; may require adaptation for cities with sparser automatic data collection (AVL/APC/smart-card coverage).</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Agencies forecasting demand for new or low-frequency routes could benefit from structure-aware models that separate "will anyone ride this" from "how many will ride this" rather than a single blended prediction.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit demand-forecasting analysts, transportation ML researchers, agencies planning service into low-demand corridors.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Improves on prior OD-prediction approaches that treat the task as a single flow-regression problem, which struggles with low-frequency, intermittent, long-tailed OD interactions.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 08 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 08 &#183; arXiv (2605.08622)</div>
+      <h3><a href="https://arxiv.org/abs/2605.08622v1" target="_blank">Networks of amenities reveal universal homophily and heterophily across global cities</a></h3>
+      <div class="authors">Jianrui Wu, Baiyue He, Alec Kirkley</div>
+      <div class="one-liner">A Bayesian framework quantifying how amenities cluster or mix across roughly 800 global cities finds universal spatial scales of agglomeration and co-agglomeration, with heterophilic amenity mixing concentrated at walkable spatial scales.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Walkability and mixed-use zoning are central to transit-oriented development debates; this provides the first cross-city quantitative evidence that beneficial amenity-mixing patterns are universal at walkable scales rather than city-specific quirks.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>A novel Bayesian framework nonparametrically quantifies the spectrum of amenity mixing patterns across ~800 cities worldwide.</li>
+        <li>Identifies universal spatial scales of homophily (agglomeration) and heterophily (co-agglomeration) among amenity types.</li>
+        <li>Changes in heterophilic mixing more effectively predict neighborhood rental-value changes than amenity diversity alone, per a longitudinal case study.</li>
+        <li>Agglomeration economies depend largely on amenity type, not city-specific or regional context.</li>
+        <li>Heterophilic amenity mixing concentrates at walkable spatial scales, directly tying the finding to TOD-relevant urban design.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Nonparametric Bayesian framework for quantifying amenity mixing patterns applied across roughly 800 global cities, paired with a longitudinal case study linking mixing changes to rental-value changes.</p>
+
+      <div class="section-head">Results</div>
+      <p>Universal, amenity-type-dependent spatial regularities in clustering/mixing, with heterophilic mixing at walkable scales outperforming raw amenity diversity as a predictor of rental-value change.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Cross-sectional global analysis with a single longitudinal case study; causality between amenity mixing and rental values is suggestive rather than established; "amenity type" categories may vary in granularity across different city data sources.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>TOD and zoning planners can use the identified universal walkable-scale mixing patterns as design targets, with more confidence that they'll generalize across city contexts rather than being specific to a handful of well-studied cities.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban planners, TOD and zoning policy teams, real-estate economists, walkability researchers.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Moves beyond city-specific agglomeration-economics case studies to a unified, ~800-city nonparametric framework revealing cross-context universality.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 09 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 09 &#183; arXiv (2606.02287)</div>
+      <h3><a href="https://arxiv.org/abs/2606.02287v1" target="_blank">CityTrajBench: A Unified Benchmark for City-Scale Vehicle Trajectory Generation</a></h3>
+      <div class="authors">Shibo Zhu, Xiaodan Shi, Dayin Chen, Yuntian Chen, Haoran Zhang, Tianhao Wu, Jinyue Yan</div>
+      <div class="one-liner">CityTrajBench standardizes data, preprocessing, and evaluation across statistical, VAE, GAN, diffusion, and flow-matching trajectory-generation models, finding no single model family dominates across all realism and efficiency criteria.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Synthetic trajectory generation underpins transportation simulation and privacy-preserving mobility research; without a shared benchmark, reported performance gains across papers may reflect inconsistent evaluation protocols rather than real model improvements.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Standardizes data ingestion, normalization, feature construction, model adaptation, and multi-level evaluation across trajectory-generation methods.</li>
+        <li>Supports statistical, VAE-based, GAN-based, diffusion-based, and flow-matching-based generators under one protocol.</li>
+        <li>DiffTraj is strongest on trajectory-level geometric fidelity; DiffRNTraj is competitive on structure-sensitive global realism.</li>
+        <li>TrajFlow offers the best overall balance of realism, conditional consistency, and efficiency.</li>
+        <li>A simple Markov baseline remains competitive on coarse-grained trip and local-movement statistics, undercutting claims that complex generative models are always necessary.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Unified benchmark protocol standardizing preprocessing and evaluation, applied to heterogeneous generative model families across three real-world urban vehicle-trajectory datasets, measuring realism, fidelity, conditional consistency, and efficiency.</p>
+
+      <div class="section-head">Results</div>
+      <p>Clear trade-offs across model families with no single dominant model; a simple Markov baseline remains competitive on certain coarse-grained metrics, highlighting that trajectory generation quality is inherently multi-objective.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Limited to three real-world datasets; "realism" and "fidelity" metrics, while standardized, still involve some subjective weighting choices; doesn't address privacy-utility trade-offs explicitly.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Researchers and agencies generating synthetic trajectory data for simulation or privacy-preserving release should select model families based on which specific fidelity dimension matters most for their use case, rather than defaulting to the newest architecture.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transportation simulation researchers, mobility-data privacy engineers, urban-planning ML practitioners.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Addresses fragmentation in prior trajectory-generation literature, where inconsistent datasets and metrics made it unclear whether reported gains came from genuine model improvements or experimental protocol differences.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 10 &#183; arXiv (2606.18044)</div>
+      <h3><a href="https://arxiv.org/abs/2606.18044v1" target="_blank">Model-based clustering of compositional trajectories for the analysis of mobility data</a></h3>
+      <div class="authors">Andrea Panarotto, Manuela Cattelan, Ruggero Bellio</div>
+      <div class="one-liner">A new statistical framework represents individual mobility as compositional trajectories over road-type proportions, explicitly modeling telephonic location uncertainty, then clusters Padova-area residents into interpretable population-level mobility patterns.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Phone-based location data is noisy and uncertain, but most clustering approaches ignore that uncertainty; this gives planners a statistically principled way to extract trustworthy mobility patterns from imperfect telephonic data rather than over-trusting point-location estimates.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Represents mobility as compositional trajectories encoding proportions of compatible road types at each time point, explicitly modeling device-location uncertainty.</li>
+        <li>Develops a state-space framework for compositional time series capturing both measurement error and latent mobility dynamics.</li>
+        <li>Uses mixtures of state-space models for model-based clustering of trajectories with similar evolution.</li>
+        <li>Aggregates individual movements into interpretable population-level mobility patterns.</li>
+        <li>Applied to a real case study of Padova, Italy and its surrounding municipality.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Compositional time-series state-space modeling combined with mixture-model-based clustering, applied to telephonic mobility data from the Padova metropolitan area.</p>
+
+      <div class="section-head">Results</div>
+      <p>Successfully uncovers interpretable, population-level mobility behaviors while explicitly accounting for telephonic measurement uncertainty, providing policy-relevant clustering output.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-region case study (Padova); compositional road-type representation may lose information relative to richer trajectory representations; computational complexity of mixture state-space models may limit scalability to larger regions.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Regional planning agencies relying on telephonic mobility data for travel-demand studies can adopt this uncertainty-aware clustering approach instead of treating noisy location pings as precise ground truth.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Mobility data statisticians, regional transportation planning agencies, telecom-data mobility researchers.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Differs from standard trajectory-clustering methods by explicitly modeling measurement uncertainty inherent to telephonic location data rather than treating positions as exact.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 11 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 11 &#183; Smart and Resilient Transportation (2026)</div>
+      <h3><a href="https://doi.org/10.1108/srt-03-2025-0008" target="_blank">Federated learning driven public transit optimization: a scalable approach for urban mobility in Addis Ababa</a></h3>
+      <div class="authors">N. D. Pritom</div>
+      <div class="one-liner">A federated-learning framework trained across three GTFS-providing agencies in Addis Ababa &#8212; without sharing raw data &#8212; cuts travel time 25%, operational costs 20%, and city-wide congestion indices 22.4% while boosting ridership 30%.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Fragmented, privacy-sensitive transit data across multiple agencies is a common barrier to coordinated optimization in rapidly growing cities; this shows federated learning can deliver centralized-style gains without forcing agencies to pool raw data.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Trains LSTM models locally on each agency's GTFS data for arrival-time prediction, aggregating updates via a central server without sharing raw data.</li>
+        <li>Combines federated LSTM arrival prediction with reinforcement learning for route optimization.</li>
+        <li>Delivers a 25% reduction in travel time and a 20% reduction in operational costs.</li>
+        <li>Increases ridership by 30%, attributed to improved service reliability.</li>
+        <li>Outperforms traditional centralized approaches, improving congestion-prediction accuracy by 12.5% and cutting city-wide congestion indices by 22.4%.</li>
+        <li>Modular architecture is designed for scalability to other data-fragmented developing-city contexts.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Federated learning framework integrating LSTM-based arrival-time prediction and reinforcement-learning-based route optimization, trained across three transit agencies' GTFS data in Addis Ababa without centralizing raw data.</p>
+
+      <div class="section-head">Results</div>
+      <p>Outperforms centralized baseline approaches across travel time, operational cost, ridership, and congestion-prediction accuracy metrics.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-city validation (Addis Ababa); federated learning introduces communication-delay and data-variability challenges across agencies that the paper acknowledges but doesn't fully resolve; results are self-reported by a single-author study.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Rapidly growing cities with multiple, data-siloed transit agencies could adopt federated learning as a privacy-preserving path to coordinated optimization without requiring data-sharing agreements.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agencies in rapidly urbanizing developing-world cities, smart-city technology vendors, privacy-conscious municipal data offices.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends federated-learning applications, previously concentrated in healthcare and finance, into multi-agency public transit optimization &#8212; an underexplored application domain.</p>
+
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 12 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 12 &#183; IEEE Conf. on Technologies for Sustainability (2026)</div>
+      <h3><a href="https://arxiv.org/abs/2601.19937" target="_blank">Critical Transit Infrastructure in Smart Cities and Urban Air Quality: A Multi-City Seasonal Comparison of Ridership and PM2.5</a></h3>
+      <div class="authors">Sean Elliott, Sohini Roy</div>
+      <div class="one-liner">A multi-source monitoring dataset pairing transit ridership with EPA PM2.5 data across NYC, Chicago, Las Vegas, and Phoenix finds mobility-air-quality relationships are not uniform across cities or seasons, and are strongly shaped by baseline city effects.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Transit advocacy often assumes a clean, universal "more ridership equals less pollution" relationship; this shows the real relationship is city-specific and seasonally variable, complicating simple air-quality arguments for transit investment.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Harmonizes heterogeneous ridership feeds (daily and stop-level) into monthly system totals paired with monthly mean PM2.5 across four metro areas.</li>
+        <li>Reports both absolute and per-capita ridership/PM2.5 metrics to enable cross-city comparability.</li>
+        <li>Finds pronounced structural differences in transit scale and intensity across the four cities.</li>
+        <li>Consistent seasonal shifts occur in both ridership and PM2.5, but the relationship between them varies by urban context.</li>
+        <li>Lightweight regression sensitivity analysis shows apparent mobility-PM2.5 relationships are strongly shaped by baseline city effects rather than a universal pattern.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Multi-source monitoring dataset integrating agency-reported transit ridership with U.S. EPA Air Quality System PM2.5 data across two seasonal snapshots (March and October 2024) in four US metro areas, analyzed with descriptive regression sensitivity analysis.</p>
+
+      <div class="section-head">Results</div>
+      <p>No uniform mobility-air-quality relationship emerges across cities or seasons; baseline city effects dominate over any consistent ridership-PM2.5 association.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Only four US cities and two seasonal snapshots; descriptive regression methodology cannot establish causal mobility-air-quality links; PM2.5 has many non-transit sources not controlled for.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Smart-city sustainability dashboards combining ridership and air-quality data should avoid implying a universal causal link and instead present city-specific, season-aware framing.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Smart-city sustainability analysts, public-health researchers studying transportation exposure, transit agencies making air-quality-based advocacy claims.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Pushes back against simplified mobility-emissions narratives in prior smart-city literature by operationalizing a reproducible, multi-city, multi-season comparison framework.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="contrarian-block">
+    <h2>Contrarian Insights</h2>
+    <div class="insight">
+      <p>Today's headline finding cuts against incremental transit politics: a single, dramatic metro extension in Rome would only modestly and locally reduce car dependency, suggesting that the popular strategy of building one flagship line at a time may be structurally incapable of dislodging car-centric travel without simultaneous network-level investment.</p>
+    </div>
+    <div class="insight">
+      <p>Many transit and mobility studies in data-scarce regions quietly assume a single GPS data vendor represents "the population" &#8212; but today's Mexico study shows Facebook and a multi-app aggregator paint substantially different, inconsistently biased pictures of the same municipalities, meaning vendor choice alone could be driving published findings as much as the underlying mobility patterns themselves.</p>
+    </div>
+    <div class="insight">
+      <p>Transit's celebrated role in fostering social mixing &#8212; a frequent equity argument for expansion &#8212; loses statistical significance in smaller Swedish cities once geography is properly controlled for, suggesting big-city research on transit's social benefits may not transfer to the mid-size cities that most often cite it as justification.</p>
+    </div>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways">
+    <div class="takeaway">
+      <p>Cities pursuing single flagship rail extensions should pair them with network-level multimodal investment; the Car Dependency Index study's Rome simulation suggests isolated lines underdeliver on systemic car-dependency reduction.</p>
+    </div>
+    <div class="takeaway">
+      <p>Researchers and agencies relying on commercial GPS mobility data in data-scarce regions should explicitly test for vendor-specific coverage bias rather than treating any single data source as ground truth.</p>
+    </div>
+    <div class="takeaway">
+      <p>Agencies piloting fare-free bus programs can cite the NYC simulation's finding that fare-free buses meaningfully help lower-income riders with only modest revenue trade-offs, useful for budget negotiations.</p>
+    </div>
+    <div class="takeaway">
+      <p>Mid-size cities should not assume transit investment automatically increases social mixing as it appears to in large metros; targeted interventions at specific low-diversity, transit-accessible venues may work better than blanket expansion.</p>
+    </div>
+    <div class="takeaway">
+      <p>Smart-city dashboards pairing ridership with air-quality metrics should avoid implying a universal causal relationship; the four-city PM2.5 study shows baseline city effects dominate over any consistent mobility-pollution pattern.</p>
+    </div>
+  </div>
+
+  <!-- LONG TERM IMPLICATIONS -->
+  <div class="long-term">
+    <h2>Long-Term Implications</h2>
+    <p>As transit research matures, expect growing scrutiny of the data and models that underpin it &#8212; today's papers on GPS mobility-data bias, trajectory-generation benchmarking inconsistency, and uncertainty-aware compositional clustering all signal that "is our data trustworthy" is becoming as central a question as "what does the data show." At the same time, equity is steadily migrating from a post-hoc evaluation criterion into a first-class constraint inside optimization frameworks for fares, car-sharing networks, and shared-mobility pricing, likely setting a template for how FTA and EU transit-funding applications justify capital requests in coming years. The Car Dependency Index findings are a useful corrective for transit advocates: as cities pursue net-zero commitments, single high-visibility rail projects will likely continue to underdeliver on car-dependency reduction unless paired with systemic, network-level transit and land-use change &#8212; a lesson that applies as much to U.S. light-rail extensions as to Rome's archaeology-constrained Metro C.</p>
+  </div>
+
+  <!-- INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-label">Data Infographic</div>
+    <div class="svg-wrapper">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 23, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">A Car Dependency Index across 18 cities shows car dependency persists even</text>
+<text x="90" y="241" class="body">after controlling for income, and isolated metro lines yield only local gains.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">GPS-based mobility data in Mexico shows source-specific, spatially clustered</text>
+<text x="90" y="319" class="body">coverage bias &#8212; Facebook and multi-app data paint different portraits.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Transit's link to social mixing holds in large metros but fades to</text>
+<text x="90" y="397" class="body">insignificance in smaller Swedish cities once geography is controlled for.</text>
+<line x1="40" y1="467" x2="760" y2="467" class="ruleLight"/>
+<text x="40" y="509" class="label">PAPER OF THE DAY</text>
+<text x="40" y="537" class="h2">Car Dependency in Urban Accessibility</text>
+<text x="40" y="557" class="h2"> </text>
+<text x="40" y="585" class="small">Bruno Campanelli, Francesco Marzolla, Matteo Bruno, Hygor Piaget Monteiro Melo, Vittorio Loreto</text>
+<text x="40" y="607" class="body">A new Car Dependency Index measured across 18 cities in Europe and North America finds that car</text>
+<text x="40" y="623" class="body">dependency persists even after controlling for income. A "what-if" simulation of Rome's planned</text>
+<text x="40" y="639" class="body">Metro C expansion predicts roughly 60,000 fewer commuting vehicles &#8212; but the effect is localized,</text>
+<text x="40" y="655" class="body">reinforcing that systemic, network-level transit expansion is needed to truly dismantle car reliance.</text>
+<line x1="40" y1="687" x2="760" y2="687" class="ruleLight"/>
+<text x="40" y="707" class="label">EMERGING THEMES</text>
+<rect x="40" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="737" class="body">The data underneath transit</text>
+<text x="52" y="753" class="body">research is getting its own</text>
+<text x="52" y="769" class="body">audit</text>
+<rect x="300" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="737" class="body">Equity is moving from a</text>
+<text x="312" y="753" class="body">metric to a constraint</text>
+<rect x="560" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="737" class="body">Transit's social/environmental</text>
+<text x="572" y="753" class="body">externalities now measured</text>
+<line x1="40" y1="787" x2="760" y2="787" class="ruleLight"/>
+<text x="40" y="807" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="861" class="body">High</text>
+<rect x="110" y="849" width="116.7" height="18" fill="#1A1A1A"/>
+<text x="236.7" y="861" class="small">2</text>
+<text x="40" y="891" class="body">Medium</text>
+<rect x="110" y="879" width="525.0" height="18" fill="#1A1A1A"/>
+<text x="645.0" y="891" class="small">9</text>
+<text x="40" y="921" class="body">Low</text>
+<rect x="110" y="909" width="58.3" height="18" fill="#1A1A1A"/>
+<text x="178.3" y="921" class="small">1</text>
+<line x1="40" y1="947" x2="760" y2="947" class="ruleLight"/>
+<text x="40" y="987" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1015" class="body" font-weight="bold">1.</text>
+<text x="60" y="1015" class="body">Cities pursuing single flagship rail extensions should pair them with network-level multimodal</text>
+<text x="60" y="1031" class="body">investment; the Rome simulation suggests isolated lines underdeliver on systemic car-</text>
+<text x="60" y="1047" class="body">dependency reduction.</text>
+<text x="40" y="1087" class="body" font-weight="bold">2.</text>
+<text x="60" y="1087" class="body">Researchers using commercial GPS mobility data in data-scarce regions should explicitly test</text>
+<text x="60" y="1103" class="body">for vendor-specific coverage bias rather than treating any single source as ground truth.</text>
+<text x="40" y="1159" class="body" font-weight="bold">3.</text>
+<text x="60" y="1159" class="body">Agencies piloting fare-free bus programs can cite the NYC simulation's finding that fare-free</text>
+<text x="60" y="1175" class="body">buses meaningfully help lower-income riders with only modest revenue trade-offs.</text>
+<text x="40" y="1231" class="body" font-weight="bold">4.</text>
+<text x="60" y="1231" class="body">Mid-size cities should not assume transit investment automatically increases social mixing as</text>
+<text x="60" y="1247" class="body">it appears to in large metros; targeted venue-level interventions may work better.</text>
+<text x="40" y="1303" class="body" font-weight="bold">5.</text>
+<text x="60" y="1303" class="body">Smart-city dashboards pairing ridership with air-quality metrics should avoid implying a</text>
+<text x="60" y="1319" class="body">universal causal relationship; baseline city effects dominate over any consistent pattern.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv and Semantic Scholar preprints &#8212; June 23, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
+    </div>
+    <a href="research-infographic-2026-06-23.svg" class="download-link" download>&#8595; Download SVG Infographic</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Transit Research Digest &#183; June 23, 2026 &#183; 12 papers analyzed &#183; Source: arXiv + Semantic Scholar (Gemini analysis/imagen rate-limited today)</p>
+  <p style="margin-top: 8px;"><a href="research.html">&#8592; Back to Archive Index</a></p>
+</footer>
+
+</body>
+</html>
