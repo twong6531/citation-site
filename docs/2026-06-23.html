@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing &mdash; June 23, 2026</title>
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --card: #1a1a22;
+      --border: #2a2a36;
+      --text: #e8e8f0;
+      --muted: #8888aa;
+      --accent: #6C47FF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .site-header {
+      background: #0a0a0e;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .brand { font-size: 13px; letter-spacing: 3px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+    .site-header .date { font-size: 13px; color: var(--muted); }
+    .hero {
+      background: linear-gradient(135deg, #0f0f13 0%, #1a0f2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .hero .label { font-size: 11px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; font-weight: 600; }
+    .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #ffffff; margin-bottom: 12px; line-height: 1.15; }
+    .hero .date-label { font-size: 14px; color: var(--muted); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    .section-visual {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase;
+      font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .editorial-image-wrap {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .visual-caption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; font-style: italic; }
+    .visual-note { font-size: 11px; color: #555566; text-align: center; margin-top: 6px; }
+
+    .section-news { padding: 60px 0; }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .story-card:hover { border-color: #3a3a50; }
+    .story-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .story-num { font-size: 11px; color: #444455; font-weight: 700; letter-spacing: 1px; }
+    .category-pill {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; color: white;
+    }
+    .story-emoji { font-size: 16px; }
+    .impact-score { font-size: 11px; font-weight: 700; margin-left: auto; }
+    .story-headline { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 10px; line-height: 1.3; }
+    .story-summary { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+    .story-bullets {
+      list-style: none; margin-bottom: 14px;
+    }
+    .story-bullets li {
+      font-size: 13px; color: #aaaacc; padding: 4px 0 4px 20px; position: relative;
+    }
+    .story-bullets li::before { content: '▸'; position: absolute; left: 0; color: #4444aa; }
+    .why-matters { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+    .impact-bar-container {
+      height: 3px; background: #222233; border-radius: 2px; margin-bottom: 12px;
+    }
+    .impact-bar { height: 3px; border-radius: 2px; transition: width 0.3s; }
+    .main-topic {
+      font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      border: 1px solid; border-radius: 4px; padding: 3px 8px; display: inline-block;
+    }
+    .infographic-link {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px; margin-top: 32px;
+      color: var(--text); text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .infographic-link:hover { border-color: var(--accent); }
+    .infographic-link .link-icon { font-size: 24px; }
+    .infographic-link .link-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .infographic-link .link-text p { font-size: 12px; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">Daily Briefing</span>
+    <span class="date">June 23, 2026</span>
+  </header>
+
+  <div class="hero">
+    <div class="label">Today's Intelligence Report</div>
+    <h1>AI&#x27;s Hidden Subsidy Economy</h1>
+    <div class="date-label">June 23, 2026</div>
+  </div>
+
+  <div class="container">
+
+    <!-- SECTION A: EDITORIAL VISUAL -->
+    <section class="section-visual">
+      <div class="section-label">Today's Visual &mdash; June 23, 2026</div>
+
+      <div class="editorial-image-wrap">
+        <object type="image/svg+xml" data="imagen-2026-06-23.svg" style="width:100%;display:block;">
+          <img src="imagen-2026-06-23.svg" alt="a facial recognition camera dome mounted above a stadium turnstile — Technical Editorial Illustration" style="width:100%;display:block;">
+        </object>
+      </div>
+      <p class="visual-caption">A facial recognition camera dome mounted above a stadium turnstile &mdash; Technical Editorial Illustration</p>
+      <p class="visual-note">Independently researched and rendered by AI from today's news</p>
+    </section>
+
+    <!-- SECTION B: NEWS ANALYSIS -->
+    <section class="section-news">
+      <div class="section-label">News Analysis &mdash; 6 Stories</div>
+
+      <a href="#" class="back-link" onclick="history.back();return false;">&larr; Back to index</a>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">01</span>
+          <span class="category-pill" style="background:#2E7D32">Business</span>
+          <span class="story-emoji">💸</span>
+          <span class="impact-score" style="color:#2E7D32">Impact 9/10</span>
+        </div>
+        <h2 class="story-headline">AI Platforms Burn Billions Subsidizing Tokens</h2>
+        <p class="story-summary">Analysis shows Anthropic and OpenAI are pricing tokens far below cost to drive adoption, mirroring the &#x27;first one&#x27;s free&#x27; playbook. SemiAnalysis tests found $200/month subscribers can burn thousands of dollars in real compute cost.</p>
+        <ul class="story-bullets"><li>A $200/month Anthropic plan can consume $8,000 in token costs</li><li>A $200/month OpenAI plan can consume $14,000 in token costs</li><li>Implied subsidy ratios run up to 40x for Anthropic, 70x for OpenAI</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> These subsidy ratios are unsustainable, raising the question of when AI pricing must rise sharply or providers must cut usage limits.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:90%; background:#2E7D32"></div>
+        </div>
+        <span class="main-topic" style="border-color:#2E7D32;color:#2E7D32">AI Pricing Subsidies</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">02</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">🧠</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">Open-Weight GLM-5.2 Tops HN Charts</h2>
+        <p class="story-summary">A guide on running GLM-5.2 locally became one of the day&#x27;s most upvoted posts, signaling strong developer interest in open-weight alternatives to closed frontier models. The release adds to a growing field of self-hostable large language models.</p>
+        <ul class="story-bullets"><li>Post on running GLM-5.2 locally drew 521 upvotes on Hacker News</li><li>Continues 2026 trend of competitive open-weight model releases</li><li>Local deployment lets developers avoid per-token API costs entirely</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Cheap local alternatives undercut the subsidized-token economics dominating the rest of the AI industry today.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">Open-Weight LLM Release</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">03</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">📄</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 6/10</span>
+        </div>
+        <h2 class="story-headline">Baidu and Mistral Both Ship New OCR Models</h2>
+        <p class="story-summary">Baidu released &#x27;Unlimited OCR&#x27; for one-shot long-horizon document parsing while Mistral simultaneously shipped OCR 4, intensifying competition in AI-powered document understanding. Both target enterprise document digitization workloads.</p>
+        <ul class="story-bullets"><li>Baidu&#x27;s Unlimited OCR drew 278 points on Hacker News</li><li>Mistral OCR 4 drew 169 points the same day</li><li>Both models target long-document and layout-heavy parsing tasks</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Document AI is becoming a key enterprise battleground as labs race to digitize paper-based business processes.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:60%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">Document AI Race</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">04</span>
+          <span class="category-pill" style="background:#E65100">World</span>
+          <span class="story-emoji">🏟️</span>
+          <span class="impact-score" style="color:#E65100">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">MSG Kept Dossier on Facial-Recognition Critics</h2>
+        <p class="story-summary">404 Media revealed Madison Square Garden compiled a document tracking activists who criticized its facial recognition program, including specific comments and tweets. The venue has used facial recognition to bar lawyers and critics from entry.</p>
+        <ul class="story-bullets"><li>Dossier titled &#x27;Facial Recognition Activists.docx&#x27; names specific critics</li><li>Document logs activists&#x27; public comments and tweets about the program</li><li>MSG has previously used the system to deny entry to opposing lawyers</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> It shows a private company using biometric surveillance infrastructure to track and respond to its own critics.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#E65100"></div>
+        </div>
+        <span class="main-topic" style="border-color:#E65100;color:#E65100">Surveillance Accountability</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">05</span>
+          <span class="category-pill" style="background:#E65100">World</span>
+          <span class="story-emoji">🔍</span>
+          <span class="impact-score" style="color:#E65100">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">Age Verification Mandates Spark Privacy Backlash</h2>
+        <p class="story-summary">Commentary argues that &#x27;age verification&#x27; laws meant to protect kids online actually require mass surveillance infrastructure more invasive than ad-tech tracking. Critics warn the same push is paving the way for VPN bans.</p>
+        <ul class="story-bullets"><li>UK reporting flags a proposed VPN ban tied to age-verification enforcement</li><li>Piece draws 252 points on Hacker News amid renewed policy debate</li><li>Argument: verification schemes require tracking all users, not just minors</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Age-verification laws are reshaping internet infrastructure in ways that could outlast their stated child-safety goals.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#E65100"></div>
+        </div>
+        <span class="main-topic" style="border-color:#E65100;color:#E65100">Age Verification Policy</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">06</span>
+          <span class="category-pill" style="background:#2E7D32">Business</span>
+          <span class="story-emoji">🔎</span>
+          <span class="impact-score" style="color:#2E7D32">Impact 8/10</span>
+        </div>
+        <h2 class="story-headline">Google&#x27;s Search Dominance Shows Cracks in AI Era</h2>
+        <p class="story-summary">CNBC reports early signs that Google&#x27;s decades-long online search dominance is eroding as AI chat interfaces capture growing shares of user queries. The shift threatens the ad-driven business model underpinning Google&#x27;s core revenue.</p>
+        <ul class="story-bullets"><li>Report cites growing query volume shifting to AI chat interfaces</li><li>Google&#x27;s core ad business remains tied to traditional search traffic</li><li>Coverage follows months of analyst warnings about AI-driven search disruption</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Any erosion in Google&#x27;s search dominance has outsized effects on the open web&#x27;s ad-funded economics.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:80%; background:#2E7D32"></div>
+        </div>
+        <span class="main-topic" style="border-color:#2E7D32;color:#2E7D32">Search Market Disruption</span>
+      </div>
+      <a href="infographic-2026-06-23.svg" class="infographic-link" target="_blank">
+        <span class="link-icon">📊</span>
+        <div class="link-text">
+          <h4>Download Data Infographic (SVG)</h4>
+          <p>Typographic summary of today's 6 top stories &mdash; June 23, 2026</p>
+        </div>
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by AI &middot; <a href="index.html">&larr; Return to index</a> &middot; June 23, 2026</p>
+    <p style="margin-top:8px">News sourced from Hacker News top stories and Google News</p>
+  </footer>
+</body>
+</html>
