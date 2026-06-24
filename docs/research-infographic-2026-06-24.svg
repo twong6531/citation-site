@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 24, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">NYC's deployed congestion-pricing program shows real bus and subway</text>
+<text x="90" y="241" class="body">ridership gains, but the demand shift is spatially uneven across the city.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Free bus schemes for women in India causally raise workforce</text>
+<text x="90" y="319" class="body">participation, with the largest gains in the most mobility-restricted districts.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">A new continental-scale routing algorithm (T-REX) answers transit</text>
+<text x="90" y="397" class="body">queries across all of Europe in under 10 milliseconds.</text>
+<line x1="40" y1="467" x2="760" y2="467" class="ruleLight"/>
+<text x="40" y="509" class="label">PAPER OF THE DAY</text>
+<text x="40" y="537" class="h2">Public transit gains and spatially uneven travel demand</text>
+<text x="40" y="557" class="h2">changes after NYC congestion pricing</text>
+<text x="40" y="585" class="small">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao</text>
+<text x="40" y="607" class="body">Time-series foundation models build calibrated counterfactual demand forecasts for NYC's January</text>
+<text x="40" y="623" class="body">2025 cordon congestion-pricing program. Real post-policy bus and subway ridership gains are found,</text>
+<text x="40" y="639" class="body">but the shift in travel demand is spatially uneven &#8212; some corridors absorb far more change than</text>
+<text x="40" y="655" class="body">others, showing congestion pricing's transit effects can't be modeled as a single city-wide average.</text>
+<line x1="40" y1="687" x2="760" y2="687" class="ruleLight"/>
+<text x="40" y="707" class="label">EMERGING THEMES</text>
+<rect x="40" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="737" class="body">Congestion pricing moves</text>
+<text x="52" y="753" class="body">from theory to live policy</text>
+<text x="52" y="769" class="body">laboratory</text>
+<rect x="300" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="737" class="body">Transit access measured</text>
+<text x="312" y="753" class="body">by life outcomes, not just</text>
+<text x="312" y="769" class="body">trip counts</text>
+<rect x="560" y="729" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="737" class="body">Core transit engineering</text>
+<text x="572" y="753" class="body">keeps quietly scaling up</text>
+<line x1="40" y1="787" x2="760" y2="787" class="ruleLight"/>
+<text x="40" y="807" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="861" class="body">High</text>
+<rect x="110" y="849" width="175.0" height="18" fill="#1A1A1A"/>
+<text x="295.0" y="861" class="small">3</text>
+<text x="40" y="891" class="body">Medium</text>
+<rect x="110" y="879" width="408.3" height="18" fill="#1A1A1A"/>
+<text x="528.3" y="891" class="small">7</text>
+<text x="40" y="921" class="body">Low</text>
+<rect x="110" y="909" width="116.7" height="18" fill="#1A1A1A"/>
+<text x="236.7" y="921" class="small">2</text>
+<line x1="40" y1="947" x2="760" y2="947" class="ruleLight"/>
+<text x="40" y="987" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1015" class="body" font-weight="bold">1.</text>
+<text x="60" y="1015" class="body">Cities evaluating congestion pricing can cite NYC's deployed program as real-world evidence of</text>
+<text x="60" y="1031" class="body">transit ridership gains, but should plan for spatially uneven demand shifts.</text>
+<text x="40" y="1087" class="body" font-weight="bold">2.</text>
+<text x="60" y="1087" class="body">Gender-targeted transit subsidies work primarily by easing non-financial mobility constraints,</text>
+<text x="60" y="1103" class="body">with the largest gains in the most mobility-restricted populations.</text>
+<text x="40" y="1159" class="body" font-weight="bold">3.</text>
+<text x="60" y="1159" class="body">15-minute-city planners should audit whether new radial transit lines actually improve</text>
+<text x="60" y="1175" class="body">peripheral amenity access, not just social-mixing potential.</text>
+<text x="40" y="1231" class="body" font-weight="bold">4.</text>
+<text x="60" y="1231" class="body">Pairing free public transit with AMoD permits is a more effective equity lever than regulating</text>
+<text x="60" y="1247" class="body">AMoD pricing or service areas alone.</text>
+<text x="40" y="1303" class="body" font-weight="bold">5.</text>
+<text x="60" y="1303" class="body">Continental-scale routing platforms should evaluate T-REX-style multi-level overlay routing</text>
+<text x="60" y="1319" class="body">over unindexed or simple trip-based approaches.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 24, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
