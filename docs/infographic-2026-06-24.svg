@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1348" font-family="Helvetica Neue, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="1348" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="40" font-size="13" letter-spacing="2" fill="#888888" font-weight="600">DAILY BRIEFING</text>
+<text x="40" y="78" font-size="28" font-weight="bold" fill="#111111">Open Internet Infrastructure Costs</text>
+<text x="40" y="104" font-size="13" fill="#999999">June 24, 2026</text>
+<line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="168" font-size="13" fill="#BBBBBB" font-weight="bold">01</text>
+<rect x="68" y="154" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="168" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="168" font-size="18" text-anchor="end">🌐</text>
+<text x="40" y="200" font-size="16" font-weight="bold" fill="#111111">Bunny Makes Its DNS Service Free</text>
+<text x="40" y="222" font-size="12" fill="#666666">CDN provider Bunny.net announced it is making its next-generation DNS routing service</text>
+<text x="40" y="238" font-size="12" fill="#666666">completely free for all customers, betting on volume and platform stickiness instead of per-</text>
+<circle cx="44" cy="244" r="2.5" fill="#00897B"/>
+<text x="54" y="248" font-size="11.5" fill="#444444">Bunny DNS becomes free for all current and new customers immediately</text>
+<circle cx="44" cy="261" r="2.5" fill="#00897B"/>
+<text x="54" y="265" font-size="11.5" fill="#444444">Move follows Bunny&#x27;s pattern of free-tier products like Bunny Fonts</text>
+<circle cx="44" cy="278" r="2.5" fill="#00897B"/>
+<text x="54" y="282" font-size="11.5" fill="#444444">Story drew 528 points on Hacker News within hours of posting</text>
+<text x="40" y="311" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="301" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="301" width="120.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="311" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="326" x2="760" y2="326" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="358" font-size="13" fill="#BBBBBB" font-weight="bold">02</text>
+<rect x="68" y="344" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="358" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="358" font-size="18" text-anchor="end">🔓</text>
+<text x="40" y="390" font-size="16" font-weight="bold" fill="#111111">Maintainer: Vulnerability Reports Lost Their Special Status</text>
+<text x="40" y="412" font-size="12" fill="#666666">Filippo Valsorda, former lead of the Go Security team, argues that the traditional bargain</text>
+<text x="40" y="428" font-size="12" fill="#666666">around security disclosures is breaking down now that LLMs can generate vulnerability</text>
+<circle cx="44" cy="434" r="2.5" fill="#00897B"/>
+<text x="54" y="438" font-size="11.5" fill="#444444">Piece reached 346 points on Hacker News</text>
+<circle cx="44" cy="451" r="2.5" fill="#00897B"/>
+<text x="54" y="455" font-size="11.5" fill="#444444">Argument centers on LLMs matching human security researchers&#x27; analysis quality</text>
+<circle cx="44" cy="468" r="2.5" fill="#00897B"/>
+<text x="54" y="472" font-size="11.5" fill="#444444">Author previously led security policy for the Go programming language team</text>
+<text x="40" y="501" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="491" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="491" width="140.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="501" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="516" x2="760" y2="516" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="548" font-size="13" fill="#BBBBBB" font-weight="bold">03</text>
+<rect x="68" y="534" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="548" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="548" font-size="18" text-anchor="end">📝</text>
+<text x="40" y="580" font-size="16" font-weight="bold" fill="#111111">Microsoft Engineer Behind Spellcheck Squiggles Remembered</text>
+<text x="40" y="602" font-size="12" fill="#666666">Microsoft&#x27;s Raymond Chen wrote a tribute to Tony Krueger, the engineer who implemented the</text>
+<text x="40" y="618" font-size="12" fill="#666666">red and green squiggly underlines for spelling and grammar errors in early versions of</text>
+<circle cx="44" cy="624" r="2.5" fill="#00897B"/>
+<text x="54" y="628" font-size="11.5" fill="#444444">Krueger worked on Word versions 1.0 through 6.0 and beyond across two decades</text>
+<circle cx="44" cy="641" r="2.5" fill="#00897B"/>
+<text x="54" y="645" font-size="11.5" fill="#444444">He also ported the game Chip&#x27;s Challenge to Windows for the Windows Entertainment Pack</text>
+<circle cx="44" cy="658" r="2.5" fill="#00897B"/>
+<text x="54" y="662" font-size="11.5" fill="#444444">Tribute post drew 526 points on Hacker News</text>
+<text x="40" y="691" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="681" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="681" width="100.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="691" font-size="11" fill="#111111" font-weight="bold">5/10</text>
+<line x1="40" y1="706" x2="760" y2="706" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="738" font-size="13" fill="#BBBBBB" font-weight="bold">04</text>
+<rect x="68" y="724" width="80" height="20" rx="10" fill="#2E7D32"/>
+<text x="108.0" y="738" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">BUSINESS</text>
+<text x="740" y="738" font-size="18" text-anchor="end">🇭🇪</text>
+<text x="40" y="770" font-size="16" font-weight="bold" fill="#111111">Founder Details €9,600 Cost of Starting a German Company</text>
+<text x="40" y="792" font-size="12" fill="#666666">Entrepreneur Carmine Paolino published a detailed timeline of founding his second company in</text>
+<text x="40" y="808" font-size="12" fill="#666666">Germany, showing 152 days and over 9,600 euros spent on legal, notary, and tax fees without</text>
+<circle cx="44" cy="814" r="2.5" fill="#2E7D32"/>
+<text x="54" y="818" font-size="11.5" fill="#444444">Total cost so far: more than 9,600 euros, including 2,000 euros of frozen share capital</text>
+<circle cx="44" cy="831" r="2.5" fill="#2E7D32"/>
+<text x="54" y="835" font-size="11.5" fill="#444444">Process spanned 152 days from first law-firm call to still-incomplete registration</text>
+<circle cx="44" cy="848" r="2.5" fill="#2E7D32"/>
+<text x="54" y="852" font-size="11.5" fill="#444444">Post drew 294 points on Hacker News, resonating with founders elsewhere in Europe</text>
+<text x="40" y="881" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="871" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="871" width="120.0" height="10" rx="5" fill="#2E7D32"/>
+<text x="310" y="881" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="896" x2="760" y2="896" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="928" font-size="13" fill="#BBBBBB" font-weight="bold">05</text>
+<rect x="68" y="914" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="928" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="928" font-size="18" text-anchor="end">📡</text>
+<text x="40" y="960" font-size="16" font-weight="bold" fill="#111111">Raspberry Pi Pico W Turned Into a USB Wi-Fi Adapter</text>
+<text x="40" y="982" font-size="12" fill="#666666">A developer published firmware that repurposes the $6 Raspberry Pi Pico W microcontroller</text>
+<text x="40" y="998" font-size="12" fill="#666666">board as a USB Wi-Fi adapter for other devices. The project shows the board&#x27;s Wi-Fi chip can</text>
+<circle cx="44" cy="1004" r="2.5" fill="#00897B"/>
+<text x="54" y="1008" font-size="11.5" fill="#444444">Project hosted on GitLab, drew 206 points on Hacker News</text>
+<circle cx="44" cy="1021" r="2.5" fill="#00897B"/>
+<text x="54" y="1025" font-size="11.5" fill="#444444">Uses the Pico W&#x27;s existing Infineon Wi-Fi chip rather than added hardware</text>
+<circle cx="44" cy="1038" r="2.5" fill="#00897B"/>
+<text x="54" y="1042" font-size="11.5" fill="#444444">Offers a sub-$10 path to add wireless connectivity to USB host devices</text>
+<text x="40" y="1071" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1061" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1061" width="80.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="1071" font-size="11" fill="#111111" font-weight="bold">4/10</text>
+<line x1="40" y1="1086" x2="760" y2="1086" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1118" font-size="13" fill="#BBBBBB" font-weight="bold">06</text>
+<rect x="68" y="1104" width="38" height="20" rx="10" fill="#6C47FF"/>
+<text x="87.0" y="1118" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="1118" font-size="18" text-anchor="end">🎨</text>
+<text x="40" y="1150" font-size="16" font-weight="bold" fill="#111111">Krea 2 Technical Report Details New Image Model</text>
+<text x="40" y="1172" font-size="12" fill="#666666">AI image startup Krea published a technical report on Krea 2, its latest generative image</text>
+<text x="40" y="1188" font-size="12" fill="#666666">model, detailing architecture and training choices. The release adds to a crowded field of</text>
+<circle cx="44" cy="1194" r="2.5" fill="#6C47FF"/>
+<text x="54" y="1198" font-size="11.5" fill="#444444">Technical report drew 105 points on Hacker News</text>
+<circle cx="44" cy="1211" r="2.5" fill="#6C47FF"/>
+<text x="54" y="1215" font-size="11.5" fill="#444444">Krea positions the model around fine-grained creative control for designers</text>
+<circle cx="44" cy="1228" r="2.5" fill="#6C47FF"/>
+<text x="54" y="1232" font-size="11.5" fill="#444444">Release follows a wave of competing image-model technical reports in 2026</text>
+<text x="40" y="1261" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1251" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1251" width="100.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="1261" font-size="11" fill="#111111" font-weight="bold">5/10</text>
+<line x1="40" y1="1276" x2="760" y2="1276" stroke="#E5E5E5" stroke-width="1"/>
+<line x1="40" y1="1296" x2="760" y2="1296" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="1324" font-size="12" fill="#999999">Generated by AI &#8226; June 24, 2026</text>
+<rect x="0" y="1345" width="800" height="3" fill="#111111"/>
+</svg>
