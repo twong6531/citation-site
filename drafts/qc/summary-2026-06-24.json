@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-24",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "note": "No new drafts were produced today. drafts/articles/ and drafts/infographics/ are empty (consistent with the 21+ day pipeline failure documented in system/status/status-2026-06-24.json and system/memory.json). drafts/scripts/ received only a HOLD notice (HOLD-no-new-script-2026-06-24.md), reaffirming the video-script hold first declared 2026-06-18 — no new script content to review. All 10 backlog scripts already carry prior QC verdicts (drafts/qc/*-script-qc.json, dated 2026-06-16) and were not re-reviewed since they are unchanged. Outstanding human action remains: add the 3 QC-passed slugs (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script) to system/approved.json, which has been empty since 2026-06-07."
+}
