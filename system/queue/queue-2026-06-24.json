@@ -1,0 +1,80 @@
+{
+  "date": "2026-06-24",
+  "generated_at": "2026-06-24T07:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 host-city transit stress test",
+      "angle": "How host-city transit systems are (or aren't) handling group-stage crowd loads, with specific capacity/headway data from at least two host metros",
+      "rationale": "Queued as the #1 unproduced priority for 20+ consecutive days while drafts/articles/ has never produced a single file in the site's history. The group-stage window is actively narrowing, making this the most time-sensitive unproduced item in the backlog. Retrying as today's top priority with an explicit instruction to actually write to drafts/articles/.",
+      "target_length": "long",
+      "slug": "world-cup-2026-transit-stress-test",
+      "output_path": "drafts/articles/world-cup-2026-transit-stress-test.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs. light rail cost comparison",
+      "angle": "Capital and operating cost per mile/per rider comparison across recent US BRT and light-rail builds",
+      "rationale": "Retry #15 — this infographic has failed 14 consecutive times since 2026-06-07. Re-queuing again, but this is now well past the point where another automated retry alone is likely to succeed; flagging for manual diagnostic in the briefing alerts.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Representativeness bias in GPS-based mobility data for transit equity analysis",
+      "angle": "What the newly surfaced arXiv literature on GPS-mobility-data bias means for transit-desert and equity methodology used elsewhere on the site",
+      "rationale": "Carried over from yesterday's research signal (arXiv paper on representativeness biases in GPS-based mobility data). Directly relevant to the site's transit-desert/equity coverage and not yet produced.",
+      "target_length": "medium",
+      "slug": "gps-mobility-data-bias-transit-equity",
+      "output_path": "drafts/articles/gps-mobility-data-bias-transit-equity.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "Congestion pricing: how it actually works and who pays",
+      "angle": "Mechanics of congestion pricing programs (tolling structure, exemptions, revenue allocation) and a distributional look at who bears the cost vs. who benefits from transit reinvestment",
+      "rationale": "Not yet covered in the existing explainer library (which covers headway, on-time performance, tunneling, funding equity, TOD, etc. but not congestion pricing specifically), and is a recurring live policy topic in multiple metro areas.",
+      "target_length": "medium",
+      "slug": "congestion-pricing-how-it-works-who-pays",
+      "output_path": "drafts/articles/congestion-pricing-how-it-works-who-pays.html"
+    }
+  ],
+  "retries": [
+    {
+      "type": "infographic",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "attempt": 15,
+      "note": "14 consecutive failures since 2026-06-07. Manual diagnostic of the infographic-writing agent is overdue."
+    },
+    {
+      "type": "article",
+      "slug": "world-cup-2026-transit-stress-test",
+      "attempt": 1,
+      "note": "drafts/articles/ has never had a file successfully written to it in the site's history (20+ days). This is the first real test of whether the article-writing agent can produce output at all."
+    }
+  ],
+  "skip_topics": [
+    "on-time performance",
+    "headway",
+    "subway tunnel construction",
+    "service change analysis",
+    "value capture financing",
+    "transit-oriented development",
+    "transit worker safety",
+    "transit funding equity",
+    "transit deserts (general)",
+    "transit and job access",
+    "transit access for people experiencing homelessness"
+  ],
+  "trend_signals": [
+    "no clearly transit/urban-mobility-relevant breakout story in today's HN/Google News/arXiv scan",
+    "GPS-mobility-data representativeness bias (arXiv, methodology-relevant)",
+    "AI agent frameworks and production RAG tooling trending on HN (general tech, not directly on-niche)",
+    "World Cup 2026 group stage continuing to narrow the relevance window for host-city transit coverage",
+    "no new BRT/light-rail cost data surfaced beyond the existing queued infographic topic"
+  ]
+}
