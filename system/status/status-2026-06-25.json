@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-25",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 22 — approved.json empty since 2026-06-07. 22 consecutive days blocked. 3 QC-passed scripts ready NOW: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics. Human must add slugs to approved.json. Zero content has gone live in 22 days of production despite the rest of the pipeline running daily.",
+    "CONFIRMED PIPELINE FAILURE — brt-vs-light-rail-cost-2026 infographic: 15 consecutive failures since 2026-06-07, retry #16 queued today. Manual diagnostic of the infographic-writing agent is significantly overdue.",
+    "CRITICAL PIPELINE FAILURE — drafts/articles/ directory still does not exist; zero files have ever been written there in 22+ days. World Cup transit story re-queued today with a knockout-stage angle since the original group-stage framing window is closing.",
+    "VIDEO SCRIPTS STILL ON HOLD since 2026-06-18: 10 scripts in backlog (3 QC-passed, 7 need revision). Today's queue redirects script-production effort toward clearing one needs_revision backlog item instead of adding a new script."
+  ]
+}

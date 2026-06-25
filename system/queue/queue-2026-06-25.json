@@ -1,0 +1,90 @@
+{
+  "date": "2026-06-25",
+  "generated_at": "2026-06-25T07:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 knockout-stage transit stress test",
+      "angle": "Group stage has now essentially ended (June 11-27 window closing); pivot the angle from group-stage capacity to knockout-stage surge demand at host metros (LA, NYC/NJ, Dallas) as crowds concentrate into fewer simultaneous matches. Use specific headway/capacity data from at least two host-city transit agencies.",
+      "rationale": "drafts/articles/ has never had a single file successfully written in 21+ consecutive days, despite being queued as rank-1 priority for most of that span. The directory still does not exist. This is now the single most chronic production failure in the pipeline and the original group-stage framing is expiring as the tournament moves to knockout rounds -- re-queuing with an updated, still-time-sensitive angle rather than retrying a stale frame.",
+      "target_length": "long",
+      "slug": "world-cup-2026-knockout-transit-stress-test",
+      "output_path": "drafts/articles/world-cup-2026-knockout-transit-stress-test.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs. light rail cost comparison",
+      "angle": "Capital and operating cost per mile/per rider comparison across recent US BRT and light-rail builds",
+      "rationale": "Retry #16 -- 15 consecutive failures since 2026-06-07. Continuing to re-queue per pipeline convention, but this has long passed the threshold where another automated retry is likely to succeed without a manual diagnostic of the infographic-writing agent.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Representativeness bias in GPS-based mobility data for transit equity analysis",
+      "angle": "What the arXiv literature on GPS-mobility-data representativeness bias means for the transit-desert and equity methodology used elsewhere on the site",
+      "rationale": "Carried over unproduced from the last two days' queues. Directly relevant to existing transit-desert/equity coverage on the site.",
+      "target_length": "medium",
+      "slug": "gps-mobility-data-bias-transit-equity",
+      "output_path": "drafts/articles/gps-mobility-data-bias-transit-equity.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "Congestion pricing: how it actually works and who pays",
+      "angle": "Mechanics of congestion pricing programs (tolling structure, exemptions, revenue allocation) and a distributional look at who bears the cost vs. who benefits from transit reinvestment",
+      "rationale": "Not yet covered in the existing encyclopedia/explainer library, which has congestion-pricing-as-funding-source but not a dedicated mechanics explainer. Recurring live policy topic.",
+      "target_length": "medium",
+      "slug": "congestion-pricing-how-it-works-who-pays",
+      "output_path": "drafts/articles/congestion-pricing-how-it-works-who-pays.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "Backlog clearance: revise needs_revision scripts before writing new ones",
+      "angle": "Video script production has been on HOLD since 2026-06-18 with a 10-script backlog (3 QC-passed, 7 needs_revision). Rather than queuing a brand-new script topic, today's priority is reworking the highest-value needs_revision script (us-cities-transit-gap-script, near-passing per QC notes) so the backlog shrinks instead of growing.",
+      "rationale": "New script production while 10 are stuck unconsumed compounds the approval bottleneck rather than addressing it. Clearing one backlog item is higher-value than adding an 11th.",
+      "target_length": "short",
+      "slug": "us-cities-transit-gap-script-revision",
+      "output_path": "drafts/scripts/us-cities-transit-gap-script.md"
+    }
+  ],
+  "retries": [
+    {
+      "type": "infographic",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "attempt": 16,
+      "note": "15 consecutive failures since 2026-06-07. Manual diagnostic of the infographic-writing agent is significantly overdue."
+    },
+    {
+      "type": "article",
+      "slug": "world-cup-2026-knockout-transit-stress-test",
+      "attempt": 2,
+      "note": "drafts/articles/ has never had a file successfully written in the site's history (21+ days). Reframed from group-stage to knockout-stage angle since the original window has nearly closed."
+    }
+  ],
+  "skip_topics": [
+    "on-time performance",
+    "headway",
+    "subway tunnel construction",
+    "service change analysis",
+    "value capture financing",
+    "transit-oriented development",
+    "transit worker safety",
+    "transit funding equity",
+    "transit deserts (general)",
+    "transit and job access",
+    "transit access for people experiencing homelessness"
+  ],
+  "trend_signals": [
+    "no clearly transit/urban-mobility-relevant breakout story in today's HN/Google News/arXiv scan",
+    "GPS-mobility-data representativeness bias (arXiv, methodology-relevant, carried over)",
+    "AI agent/production tooling and AI-model-extraction stories (Anthropic/Alibaba) trending on HN -- general tech, not directly on-niche",
+    "World Cup 2026 group stage closing out, shifting host-city relevance window to knockout-stage logistics",
+    "no new BRT/light-rail cost data surfaced beyond the existing queued infographic topic"
+  ]
+}
