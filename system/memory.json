@@ -434,9 +434,9 @@
     {
       "slug": "us-cities-transit-gap-script",
       "path": "drafts/scripts/us-cities-transit-gap-script.md",
-      "qc": "needs_revision",
-      "date": "2026-06-09",
-      "note": "Reel ~223w \u2014 cut ~30w; unsourced $90B statistic needs APTA citation."
+      "qc": "passed",
+      "date": "2026-06-25",
+      "note": "Revised 2026-06-25: reel trimmed to ~184w (was ~223w) and $90B stat now cites APTA. Both prior REVISE issues confirmed fixed."
     },
     {
       "slug": "slime-mold-transit-script",
