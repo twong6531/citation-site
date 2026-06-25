@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 25, 2026 &#8212; 11 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">NYC's deployed congestion-pricing program shows transit ridership gains that</text>
+<text x="90" y="241" class="body">extend beyond the priced Manhattan core, even as overall demand falls there.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">A fare-free bus simulation finds outsized equity benefits for lower-income NYC</text>
+<text x="90" y="319" class="body">riders, with only modest revenue trade-offs versus distance-based pricing.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">A risk-aware planner remediates a median 53.6% of transit-desert tracts across</text>
+<text x="90" y="397" class="body">25 cities, beating static demographic scoring by 5 points on average.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">Public transit gains and spatially uneven travel demand</text>
+<text x="40" y="568" class="h2">changes after NYC congestion pricing</text>
+<text x="40" y="596" class="small">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao</text>
+<text x="40" y="618" class="body">Using time-series foundation models to build calibrated counterfactual demand forecasts, the study</text>
+<text x="40" y="634" class="body">finds New York's cordon congestion-pricing program produced real bus and subway ridership gains that</text>
+<text x="40" y="650" class="body">extend well beyond the priced zone itself, while overall travel demand fell mainly inside it.</text>
+<text x="40" y="666" class="body">Congestion pricing has been argued almost entirely from pre-deployment models; this is one of the</text>
+<text x="40" y="682" class="body">first papers to evaluate the actual, live NYC program with a methodologically serious</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Congestion pricing moves</text>
+<text x="52" y="782" class="body">from theory to live policy</text>
+<text x="52" y="798" class="body">laboratory</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">Equity planning shifts to</text>
+<text x="312" y="782" class="body">decision-making under</text>
+<text x="312" y="798" class="body">uncertainty</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">Core transit engineering</text>
+<text x="572" y="782" class="body">keeps quietly scaling up</text>
+<line x1="40" y1="816" x2="760" y2="816" class="ruleLight"/>
+<text x="40" y="836" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="882" class="body">High</text>
+<rect x="110" y="870" width="272.7" height="18" fill="#1A1A1A"/>
+<text x="392.7" y="882" class="small">5</text>
+<text x="40" y="912" class="body">Medium</text>
+<rect x="110" y="900" width="327.3" height="18" fill="#1A1A1A"/>
+<text x="447.3" y="912" class="small">6</text>
+<text x="40" y="942" class="body">Low</text>
+<rect x="110" y="930" width="0.0" height="18" fill="#1A1A1A"/>
+<text x="120.0" y="942" class="small">0</text>
+<line x1="40" y1="976" x2="760" y2="976" class="ruleLight"/>
+<text x="40" y="1016" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1044" class="body" font-weight="bold">1.</text>
+<text x="60" y="1044" class="body">Cities evaluating congestion-pricing proposals can cite NYC's deployed program as real-world</text>
+<text x="60" y="1060" class="body">evidence of transit ridership gains beyond the cordon, but should model the demand-reduction</text>
+<text x="40" y="1106" class="body" font-weight="bold">2.</text>
+<text x="60" y="1106" class="body">Transit agencies weighing fare reform should treat fare-free bus programs as the highest-</text>
+<text x="60" y="1122" class="body">equity option per dollar of revenue given up, based on agent-based simulation evidence,</text>
+<text x="40" y="1168" class="body" font-weight="bold">3.</text>
+<text x="60" y="1168" class="body">Agencies planning transit-desert investment should adopt belief-updating, risk-aware</text>
+<text x="60" y="1184" class="body">sequencing instead of static demographic scoring, particularly at moderate budget levels</text>
+<text x="40" y="1230" class="body" font-weight="bold">4.</text>
+<text x="60" y="1230" class="body">City regulators drafting AMoD/robotaxi policy should evaluate pairing free or heavily</text>
+<text x="60" y="1246" class="body">subsidized public transit with AMoD permits as a primary equity lever, rather than</text>
+<text x="40" y="1292" class="body" font-weight="bold">5.</text>
+<text x="60" y="1292" class="body">Operators deploying automated guideway pod systems facing switch-interlocking latency</text>
+<text x="60" y="1308" class="body">requirements should evaluate hierarchical SDN/MEC architectures, which demonstrate lower</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 25, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
