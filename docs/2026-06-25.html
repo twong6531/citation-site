@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing &mdash; June 25, 2026</title>
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --card: #1a1a22;
+      --border: #2a2a36;
+      --text: #e8e8f0;
+      --muted: #8888aa;
+      --accent: #6C47FF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .site-header {
+      background: #0a0a0e;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .brand { font-size: 13px; letter-spacing: 3px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+    .site-header .date { font-size: 13px; color: var(--muted); }
+    .hero {
+      background: linear-gradient(135deg, #0f0f13 0%, #1a0f2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .hero .label { font-size: 11px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; font-weight: 600; }
+    .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #ffffff; margin-bottom: 12px; line-height: 1.15; }
+    .hero .date-label { font-size: 14px; color: var(--muted); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    .section-visual {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase;
+      font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .editorial-image-wrap {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      padding: 40px;
+      text-align: center;
+      color: #333;
+    }
+    .visual-caption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; font-style: italic; }
+    .visual-note { font-size: 11px; color: #555566; text-align: center; margin-top: 6px; }
+
+    .section-news { padding: 60px 0; }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .story-card:hover { border-color: #3a3a50; }
+    .story-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .story-num { font-size: 11px; color: #444455; font-weight: 700; letter-spacing: 1px; }
+    .category-pill {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; color: white;
+    }
+    .story-emoji { font-size: 16px; }
+    .impact-score { font-size: 11px; font-weight: 700; margin-left: auto; }
+    .story-headline { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 10px; line-height: 1.3; }
+    .story-summary { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+    .story-bullets {
+      list-style: none; margin-bottom: 14px;
+    }
+    .story-bullets li {
+      font-size: 13px; color: #aaaacc; padding: 4px 0 4px 20px; position: relative;
+    }
+    .story-bullets li::before { content: '▸'; position: absolute; left: 0; color: #4444aa; }
+    .why-matters { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+    .impact-bar-container {
+      height: 3px; background: #222233; border-radius: 2px; margin-bottom: 12px;
+    }
+    .impact-bar { height: 3px; border-radius: 2px; transition: width 0.3s; }
+    .main-topic {
+      font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      border: 1px solid; border-radius: 4px; padding: 3px 8px; display: inline-block;
+    }
+    .infographic-link {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px; margin-top: 32px;
+      color: var(--text); text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .infographic-link:hover { border-color: var(--accent); }
+    .infographic-link .link-icon { font-size: 24px; }
+    .infographic-link .link-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .infographic-link .link-text p { font-size: 12px; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">Daily Briefing</span>
+    <span class="date">June 25, 2026</span>
+  </header>
+
+  <div class="hero">
+    <div class="label">Today's Intelligence Report</div>
+    <h1>Custom AI Inference Chips</h1>
+    <div class="date-label">June 25, 2026</div>
+  </div>
+
+  <div class="container">
+
+    <!-- SECTION A: EDITORIAL VISUAL -->
+    <section class="section-visual">
+      <div class="section-label">Today's Visual &mdash; June 25, 2026</div>
+
+      <div class="editorial-image-wrap">
+        <p>Editorial illustration unavailable today &mdash; the AI image service could not be reached. Today's briefing focuses on the data infographic and story analysis below.</p>
+      </div>
+      <p class="visual-note">Independently researched and written by AI from today's news</p>
+    </section>
+
+    <!-- SECTION B: NEWS ANALYSIS -->
+    <section class="section-news">
+      <div class="section-label">News Analysis &mdash; 6 Stories</div>
+
+      <a href="#" class="back-link" onclick="history.back();return false;">&larr; Back to index</a>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">01</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">🌶️</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 9/10</span>
+        </div>
+        <h2 class="story-headline">OpenAI Unveils First Custom AI Chip</h2>
+        <p class="story-summary">OpenAI revealed its first custom-designed processor, codenamed Jalapeno, built in partnership with Broadcom specifically to run inference for its AI models. The chip marks OpenAI&#x27;s entry into the custom silicon race already underway at Google, Amazon, and Meta.</p>
+        <ul class="story-bullets"><li>Chip is named Jalapeno and was co-designed with Broadcom</li><li>Designed specifically for inference, not training, workloads</li><li>Story drew 764 points on Hacker News, the day&#x27;s top story</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Custom inference silicon could cut OpenAI&#x27;s reliance on Nvidia GPUs and sharply lower the cost of serving its models at scale.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:90%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">Custom AI Chips</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">02</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">⚖️</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 8/10</span>
+        </div>
+        <h2 class="story-headline">Anthropic Accuses Alibaba of Extracting Claude</h2>
+        <p class="story-summary">Anthropic alleges that Alibaba illicitly extracted capabilities from its Claude AI models, raising fresh questions about model distillation and IP protection in frontier AI. The dispute highlights growing tension between US and Chinese AI labs.</p>
+        <ul class="story-bullets"><li>Anthropic publicly named Alibaba in the allegation</li><li>Story drew 624 points on Hacker News</li><li>Reuters reported the dispute on June 24, 2026</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Allegations of model extraction could accelerate calls for stronger safeguards against distillation attacks on frontier models.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:80%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">AI Model Extraction</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">03</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🎮</span>
+          <span class="impact-score" style="color:#00897B">Impact 6/10</span>
+        </div>
+        <h2 class="story-headline">Half-Life 2 Runs Entirely in a Browser</h2>
+        <p class="story-summary">A developer ported the classic game Half-Life 2 to run fully in a web browser without plugins, showcasing how far browser-based 3D rendering has advanced. The project drew massive engagement from the gaming and web development communities.</p>
+        <ul class="story-bullets"><li>Project hosted at hl2.slqnt.dev, no installation required</li><li>Drew 475 points on Hacker News within hours</li><li>Demonstrates modern WebGL/WebGPU performance for legacy game engines</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> It&#x27;s a vivid demonstration of how powerful in-browser computing has become, blurring the line between native and web applications.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:60%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">Browser-Based Gaming</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">04</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🔐</span>
+          <span class="impact-score" style="color:#00897B">Impact 6/10</span>
+        </div>
+        <h2 class="story-headline">Cloudflare Opens Self-Managed OAuth to All</h2>
+        <p class="story-summary">Cloudflare launched self-managed OAuth client creation for all customers, previously available only to a small number of manually onboarded partners. The change lets developers build SaaS integrations and agentic tools with standard, scoped consent flows.</p>
+        <ul class="story-bullets"><li>Feature was previously limited to manually onboarded integrations only</li><li>Story drew 268 points on Hacker News</li><li>Cloudflare says it helps power roughly 20% of the web</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Broader self-service OAuth access lowers the barrier for building secure third-party integrations on top of major web infrastructure.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:60%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">OAuth Infrastructure</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">05</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🔓</span>
+          <span class="impact-score" style="color:#00897B">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">LastPass Discloses Another Data Breach</h2>
+        <p class="story-summary">Password manager LastPass notified users of yet another data breach, continuing a troubled security history for the company. The disclosure renewed scrutiny of how password managers protect sensitive credential vaults.</p>
+        <ul class="story-bullets"><li>Reported by 9to5Mac on June 23, 2026</li><li>Story drew 247 points on Hacker News</li><li>Marks one of several breach disclosures from the company in recent years</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Repeated breaches at a major password manager undermine trust in a category of tool meant to be a security backbone for millions of users.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">Password Manager Security</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">06</span>
+          <span class="category-pill" style="background:#E65100">World</span>
+          <span class="story-emoji">✊</span>
+          <span class="impact-score" style="color:#E65100">Impact 5/10</span>
+        </div>
+        <h2 class="story-headline">Wikipedia UK Workers Seek Union Recognition</h2>
+        <p class="story-summary">Workers supporting Wikipedia operations in Britain are seeking formal union recognition, a global first for staff connected to the encyclopedia&#x27;s parent organization. The move could set a precedent for labor organizing across nonprofit tech operations.</p>
+        <ul class="story-bullets"><li>Reported as a global first for Wikipedia-linked workers</li><li>Story drew 166 points on Hacker News</li><li>Coverage from utaw.tech detailed the recognition campaign</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Unionization efforts at a nonprofit tech institution could influence labor organizing trends across the broader tech and open-knowledge sector.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:50%; background:#E65100"></div>
+        </div>
+        <span class="main-topic" style="border-color:#E65100;color:#E65100">Tech Labor Organizing</span>
+      </div>
+      <a href="infographic-2026-06-25.svg" class="infographic-link" target="_blank">
+        <span class="link-icon">📊</span>
+        <div class="link-text">
+          <h4>Download Data Infographic (SVG)</h4>
+          <p>Typographic summary of today's 6 top stories &mdash; June 25, 2026</p>
+        </div>
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by AI &middot; <a href="index.html">&larr; Return to index</a> &middot; June 25, 2026</p>
+    <p style="margin-top:8px">News sourced from Hacker News top stories</p>
+  </footer>
+</body>
+</html>

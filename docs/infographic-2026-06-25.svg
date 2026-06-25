@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" font-family="Helvetica Neue, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="1400" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="40" font-size="13" letter-spacing="2" fill="#888888" font-weight="600">DAILY BRIEFING</text>
+<text x="40" y="78" font-size="28" font-weight="bold" fill="#111111">Custom AI Inference Chips</text>
+<text x="40" y="104" font-size="13" fill="#999999">June 25, 2026</text>
+<line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="168" font-size="13" fill="#BBBBBB" font-weight="bold">01</text>
+<rect x="68" y="154" width="52" height="20" rx="10" fill="#6C47FF"/>
+<text x="94.0" y="168" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="168" font-size="18" text-anchor="end">🌶️</text>
+<text x="40" y="200" font-size="16" font-weight="bold" fill="#111111">OpenAI Unveils First Custom AI Chip</text>
+<text x="40" y="222" font-size="12" fill="#666666">OpenAI revealed its first custom-designed processor, codenamed Jalapeno, built in partnership</text>
+<text x="40" y="238" font-size="12" fill="#666666">with Broadcom specifically to run inference for its AI models. The chip marks OpenAI&#x27;s entry</text>
+<circle cx="44" cy="240" r="2.5" fill="#6C47FF"/>
+<text x="54" y="244" font-size="11.5" fill="#444444">Chip is named Jalapeno and was co-designed with Broadcom</text>
+<circle cx="44" cy="257" r="2.5" fill="#6C47FF"/>
+<text x="54" y="261" font-size="11.5" fill="#444444">Designed specifically for inference, not training, workloads</text>
+<circle cx="44" cy="274" r="2.5" fill="#6C47FF"/>
+<text x="54" y="278" font-size="11.5" fill="#444444">Story drew 764 points on Hacker News, the day&#x27;s top story</text>
+<text x="40" y="311" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="301" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="301" width="180.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="311" font-size="11" fill="#111111" font-weight="bold">9/10</text>
+<line x1="40" y1="320" x2="760" y2="320" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="358" font-size="13" fill="#BBBBBB" font-weight="bold">02</text>
+<rect x="68" y="344" width="52" height="20" rx="10" fill="#6C47FF"/>
+<text x="94.0" y="358" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="358" font-size="18" text-anchor="end">⚖️</text>
+<text x="40" y="390" font-size="16" font-weight="bold" fill="#111111">Anthropic Accuses Alibaba of Extracting Claude</text>
+<text x="40" y="412" font-size="12" fill="#666666">Anthropic alleges that Alibaba illicitly extracted capabilities from its Claude AI models,</text>
+<text x="40" y="428" font-size="12" fill="#666666">raising fresh questions about model distillation and IP protection in frontier AI. The dispute</text>
+<circle cx="44" cy="430" r="2.5" fill="#6C47FF"/>
+<text x="54" y="434" font-size="11.5" fill="#444444">Anthropic publicly named Alibaba in the allegation</text>
+<circle cx="44" cy="447" r="2.5" fill="#6C47FF"/>
+<text x="54" y="451" font-size="11.5" fill="#444444">Story drew 624 points on Hacker News</text>
+<circle cx="44" cy="464" r="2.5" fill="#6C47FF"/>
+<text x="54" y="468" font-size="11.5" fill="#444444">Reuters reported the dispute on June 24, 2026</text>
+<text x="40" y="501" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="491" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="491" width="160.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="501" font-size="11" fill="#111111" font-weight="bold">8/10</text>
+<line x1="40" y1="510" x2="760" y2="510" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="548" font-size="13" fill="#BBBBBB" font-weight="bold">03</text>
+<rect x="68" y="534" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="548" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="548" font-size="18" text-anchor="end">🎮</text>
+<text x="40" y="580" font-size="16" font-weight="bold" fill="#111111">Half-Life 2 Runs Entirely in a Browser</text>
+<text x="40" y="602" font-size="12" fill="#666666">A developer ported the classic game Half-Life 2 to run fully in a web browser without plugins,</text>
+<text x="40" y="618" font-size="12" fill="#666666">showcasing how far browser-based 3D rendering has advanced. The project drew massive engagement</text>
+<circle cx="44" cy="620" r="2.5" fill="#00897B"/>
+<text x="54" y="624" font-size="11.5" fill="#444444">Project hosted at hl2.slqnt.dev, no installation required</text>
+<circle cx="44" cy="637" r="2.5" fill="#00897B"/>
+<text x="54" y="641" font-size="11.5" fill="#444444">Drew 475 points on Hacker News within hours</text>
+<circle cx="44" cy="654" r="2.5" fill="#00897B"/>
+<text x="54" y="658" font-size="11.5" fill="#444444">Demonstrates modern WebGL/WebGPU performance for legacy game engines</text>
+<text x="40" y="691" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="681" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="681" width="120.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="691" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="700" x2="760" y2="700" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="738" font-size="13" fill="#BBBBBB" font-weight="bold">04</text>
+<rect x="68" y="724" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="738" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="738" font-size="18" text-anchor="end">🔐</text>
+<text x="40" y="770" font-size="16" font-weight="bold" fill="#111111">Cloudflare Opens Self-Managed OAuth to All</text>
+<text x="40" y="792" font-size="12" fill="#666666">Cloudflare launched self-managed OAuth client creation for all customers, previously available</text>
+<text x="40" y="808" font-size="12" fill="#666666">only to a small number of manually onboarded partners. The change lets developers build SaaS</text>
+<circle cx="44" cy="810" r="2.5" fill="#00897B"/>
+<text x="54" y="814" font-size="11.5" fill="#444444">Feature was previously limited to manually onboarded integrations only</text>
+<circle cx="44" cy="827" r="2.5" fill="#00897B"/>
+<text x="54" y="831" font-size="11.5" fill="#444444">Story drew 268 points on Hacker News</text>
+<circle cx="44" cy="844" r="2.5" fill="#00897B"/>
+<text x="54" y="848" font-size="11.5" fill="#444444">Cloudflare says it helps power roughly 20% of the web</text>
+<text x="40" y="881" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="871" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="871" width="120.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="881" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="890" x2="760" y2="890" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="928" font-size="13" fill="#BBBBBB" font-weight="bold">05</text>
+<rect x="68" y="914" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="928" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="928" font-size="18" text-anchor="end">🔓</text>
+<text x="40" y="960" font-size="16" font-weight="bold" fill="#111111">LastPass Discloses Another Data Breach</text>
+<text x="40" y="982" font-size="12" fill="#666666">Password manager LastPass notified users of yet another data breach, continuing a troubled</text>
+<text x="40" y="998" font-size="12" fill="#666666">security history for the company. The disclosure renewed scrutiny of how password managers</text>
+<circle cx="44" cy="1000" r="2.5" fill="#00897B"/>
+<text x="54" y="1004" font-size="11.5" fill="#444444">Reported by 9to5Mac on June 23, 2026</text>
+<circle cx="44" cy="1017" r="2.5" fill="#00897B"/>
+<text x="54" y="1021" font-size="11.5" fill="#444444">Story drew 247 points on Hacker News</text>
+<circle cx="44" cy="1034" r="2.5" fill="#00897B"/>
+<text x="54" y="1038" font-size="11.5" fill="#444444">Marks one of several breach disclosures from the company in recent years</text>
+<text x="40" y="1071" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1061" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1061" width="140.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="1071" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="1080" x2="760" y2="1080" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1118" font-size="13" fill="#BBBBBB" font-weight="bold">06</text>
+<rect x="68" y="1104" width="52" height="20" rx="10" fill="#E65100"/>
+<text x="94.0" y="1118" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">WORLD</text>
+<text x="740" y="1118" font-size="18" text-anchor="end">✊</text>
+<text x="40" y="1150" font-size="16" font-weight="bold" fill="#111111">Wikipedia UK Workers Seek Union Recognition</text>
+<text x="40" y="1172" font-size="12" fill="#666666">Workers supporting Wikipedia operations in Britain are seeking formal union recognition, a</text>
+<text x="40" y="1188" font-size="12" fill="#666666">global first for staff connected to the encyclopedia&#x27;s parent organization. The move could set</text>
+<circle cx="44" cy="1190" r="2.5" fill="#E65100"/>
+<text x="54" y="1194" font-size="11.5" fill="#444444">Reported as a global first for Wikipedia-linked workers</text>
+<circle cx="44" cy="1207" r="2.5" fill="#E65100"/>
+<text x="54" y="1211" font-size="11.5" fill="#444444">Story drew 166 points on Hacker News</text>
+<circle cx="44" cy="1224" r="2.5" fill="#E65100"/>
+<text x="54" y="1228" font-size="11.5" fill="#444444">Coverage from utaw.tech detailed the recognition campaign</text>
+<text x="40" y="1261" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1251" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1251" width="100.0" height="10" rx="5" fill="#E65100"/>
+<text x="310" y="1261" font-size="11" fill="#111111" font-weight="bold">5/10</text>
+<line x1="40" y1="1270" x2="760" y2="1270" stroke="#E5E5E5" stroke-width="1"/>
+<line x1="40" y1="1294" x2="760" y2="1294" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="1314" font-size="12" fill="#999999">Generated by AI &#183; June 25, 2026</text>
+<rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>
