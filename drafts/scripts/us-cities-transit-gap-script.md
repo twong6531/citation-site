@@ -1,8 +1,9 @@
 # Why American Cities Are Decades Behind on Public Transit
 **Slug:** us-cities-transit-gap-script  
 **Generated:** 2026-06-07  
+**Revised:** 2026-06-25 — trimmed reel VO (~229w → ~199w) and added APTA citation for the $90B transit funding gap stat per QC note (2026-06-09)  
 **Topic:** The 5 policy decisions from 1950–1990 that locked US cities into car dependency — and whether the current transit wave can break the cycle  
-**Sources:** Federal Aid Highway Act (1956), Highway Trust Fund history, Urban Mass Transportation Act (1964), General Motors streetcar conspiracy (Wikipedia), Surface Transportation Assistance Act (1982)
+**Sources:** Federal Aid Highway Act (1956), Highway Trust Fund history, Urban Mass Transportation Act (1964), General Motors streetcar conspiracy (Wikipedia), Surface Transportation Assistance Act (1982), APTA (transit funding gap estimate)
 
 ---
 
@@ -20,7 +21,7 @@
 
 **[3–15s] SCENE 1 — Hook + Context**  
 **VISUAL:** Split screen — Tokyo subway packed at rush hour vs. empty American bus shelter  
-**VOICEOVER:** Tokyo, Paris, Seoul — their transit systems move billions of riders a year. American cities built parking lots instead. That wasn't an accident. It was five specific decisions, made between 1950 and 1990, that wired car dependency into the DNA of every US city.
+**VOICEOVER:** Tokyo, Paris, and Seoul move billions of transit riders a year. American cities built parking lots instead. That wasn't an accident — it was five decisions, made between 1950 and 1990, that wired car dependency into every US city.
 
 **ON SCREEN TEXT:** "5 decisions. 40 years. Still paying for it."
 
@@ -28,22 +29,22 @@
 
 **[15–35s] SCENE 2 — The Key Turning Point**  
 **VISUAL:** Animated map of Interstate Highway System expanding across the US, 1956–1992  
-**VOICEOVER:** In 1956, Congress created the Highway Trust Fund and started collecting a federal gas tax — every cent of which went to building highways. Transit was legally excluded from that fund until 1982. [Source: Surface Transportation Assistance Act, 1982]  
-That's 26 years of compound investment in roads. Meanwhile, the first meaningful federal transit bill — the Urban Mass Transportation Act of 1964 — offered just $375 million total. [Source: Urban Mass Transportation Act, 1964]  
+**VOICEOVER:** In 1956, Congress created the Highway Trust Fund and started collecting a federal gas tax — every cent went to highways. Transit was excluded until 1982. [Source: Surface Transportation Assistance Act, 1982]  
+The first real federal transit bill, the 1964 Urban Mass Transportation Act, offered just $375 million. [Source: Urban Mass Transportation Act, 1964]  
 **ON SCREEN TEXT:** "Highway Trust Fund: $0 for transit (1956–1982)"
 
 ---
 
 **[35–50s] SCENE 3 — Why You Should Care**  
 **VISUAL:** Graphic showing US commute times vs. peer nations; gas price chart  
-**VOICEOVER:** The legacy is a $90 billion annual transit funding gap. Americans spend more on car ownership than food. Cities that built highways instead of rail are now trying to retrofit transit into suburbs that were designed to be unwalkable. That costs 3–5x more than building it right the first time.  
+**VOICEOVER:** The legacy is a $90 billion annual transit funding gap. [Source: APTA] Americans now spend more on cars than on food. Cities that built highways instead of rail are retrofitting transit into suburbs designed to be unwalkable — at 3 to 5 times the cost of building it right the first time.  
 **ON SCREEN TEXT:** "Retrofitting car-dependent cities: 3–5x more expensive"
 
 ---
 
 **[50–60s] SCENE 4 — CTA**  
 **VISUAL:** BRT bus pulling into modern station; Sound Transit branding; title card for full video  
-**VOICEOVER:** 2026 is actually a turning point — 13 US transit projects open this year alone. The full breakdown of how we got here, and whether this wave is real, is in the video. Link in bio.  
+**VOICEOVER:** 2026 is a turning point — 13 US transit projects open this year alone. The full breakdown of how we got here is in the video. Link in bio.  
 **ON SCREEN TEXT:** "Full breakdown → link in bio"
 
 ---
