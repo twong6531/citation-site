@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" font-family="Helvetica Neue, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="1400" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="40" font-size="13" letter-spacing="2" fill="#888888" font-weight="600">DAILY BRIEFING</text>
+<text x="40" y="78" font-size="28" font-weight="bold" fill="#111111">Reading an Ancient Sealed Scroll</text>
+<text x="40" y="104" font-size="13" fill="#999999">June 26, 2026</text>
+<line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="168" font-size="13" fill="#BBBBBB" font-weight="bold">01</text>
+<rect x="68" y="154" width="69" height="20" rx="10" fill="#0077CC"/>
+<text x="102.5" y="168" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">SCIENCE</text>
+<text x="740" y="168" font-size="18" text-anchor="end">📜</text>
+<text x="40" y="200" font-size="16" font-weight="bold" fill="#111111">Entire Herculaneum Scroll Read After 2,000 Years</text>
+<text x="40" y="222" font-size="12" fill="#666666">Researchers virtually unwrapped and read PHerc. 1667 end to end without ever physically opening</text>
+<text x="40" y="238" font-size="12" fill="#666666">it, using X-ray scans and machine learning to recover faint carbonized ink. The scroll turned</text>
+<circle cx="44" cy="240" r="2.5" fill="#0077CC"/>
+<text x="54" y="244" font-size="11.5" fill="#444444">PHerc. 1667 yields 22 columns of Greek text across roughly 1.4 meters of unwrapped papyrus</text>
+<circle cx="44" cy="257" r="2.5" fill="#0077CC"/>
+<text x="54" y="261" font-size="11.5" fill="#444444">Scans were captured at the ESRF synchrotron&#x27;s BM18 beamline in Grenoble, France</text>
+<circle cx="44" cy="274" r="2.5" fill="#0077CC"/>
+<text x="54" y="278" font-size="11.5" fill="#444444">Story drew 1,482 points on Hacker News, the day&#x27;s top story</text>
+<text x="40" y="311" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="301" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="301" width="180.0" height="10" rx="5" fill="#0077CC"/>
+<text x="310" y="311" font-size="11" fill="#111111" font-weight="bold">9/10</text>
+<line x1="40" y1="320" x2="760" y2="320" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="358" font-size="13" fill="#BBBBBB" font-weight="bold">02</text>
+<rect x="68" y="344" width="55" height="20" rx="10" fill="#E65100"/>
+<text x="95.5" y="358" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">WORLD</text>
+<text x="740" y="358" font-size="18" text-anchor="end">🕯️</text>
+<text x="40" y="390" font-size="16" font-weight="bold" fill="#111111">Tech Journalist and Investor Om Malik Dies</text>
+<text x="40" y="412" font-size="12" fill="#666666">Om Malik, founder of GigaOm and an influential early chronicler of the broadband and startup</text>
+<text x="40" y="428" font-size="12" fill="#666666">era, has died. Tributes from across the tech industry recall decades of writing and investing</text>
+<circle cx="44" cy="430" r="2.5" fill="#E65100"/>
+<text x="54" y="434" font-size="11.5" fill="#444444">Story drew 1,114 points on Hacker News</text>
+<circle cx="44" cy="447" r="2.5" fill="#E65100"/>
+<text x="54" y="451" font-size="11.5" fill="#444444">Malik founded GigaOm in 2006 after a career covering telecom and tech journalism</text>
+<circle cx="44" cy="464" r="2.5" fill="#E65100"/>
+<text x="54" y="468" font-size="11.5" fill="#444444">He later became a venture investor at True Ventures, backing early-stage startups</text>
+<text x="40" y="501" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="491" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="491" width="120.0" height="10" rx="5" fill="#E65100"/>
+<text x="310" y="501" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="510" x2="760" y2="510" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="548" font-size="13" fill="#BBBBBB" font-weight="bold">03</text>
+<rect x="68" y="534" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="548" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="548" font-size="18" text-anchor="end">🪪</text>
+<text x="40" y="580" font-size="16" font-weight="bold" fill="#111111">Age Verification Laws Threaten Internet Privacy</text>
+<text x="40" y="602" font-size="12" fill="#666666">A widely discussed essay argues that the spread of age-verification and ID-check requirements</text>
+<text x="40" y="618" font-size="12" fill="#666666">across websites is creating a &#x27;papers, please&#x27; internet that erodes anonymity at scale. The</text>
+<circle cx="44" cy="620" r="2.5" fill="#00897B"/>
+<text x="54" y="624" font-size="11.5" fill="#444444">Story drew 913 points on Hacker News</text>
+<circle cx="44" cy="637" r="2.5" fill="#00897B"/>
+<text x="54" y="641" font-size="11.5" fill="#444444">Argues identity-verification mandates are spreading across many jurisdictions at once</text>
+<circle cx="44" cy="654" r="2.5" fill="#00897B"/>
+<text x="54" y="658" font-size="11.5" fill="#444444">Warns the resulting data collection creates new centralized privacy risks</text>
+<text x="40" y="691" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="681" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="681" width="160.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="691" font-size="11" fill="#111111" font-weight="bold">8/10</text>
+<line x1="40" y1="700" x2="760" y2="700" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="738" font-size="13" fill="#BBBBBB" font-weight="bold">04</text>
+<rect x="68" y="724" width="52" height="20" rx="10" fill="#6C47FF"/>
+<text x="94.0" y="738" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="738" font-size="18" text-anchor="end">🛡️</text>
+<text x="40" y="770" font-size="16" font-weight="bold" fill="#111111">2,000 People Try to Hack One AI Assistant</text>
+<text x="40" y="792" font-size="12" fill="#666666">A developer built an AI email assistant named Fiu and publicly invited people to trick it into</text>
+<text x="40" y="808" font-size="12" fill="#666666">leaking a secrets file. After more than 6,000 attempted attacks from over 2,000 people, the</text>
+<circle cx="44" cy="810" r="2.5" fill="#6C47FF"/>
+<text x="54" y="814" font-size="11.5" fill="#444444">Story drew 270 points on Hacker News</text>
+<circle cx="44" cy="827" r="2.5" fill="#6C47FF"/>
+<text x="54" y="831" font-size="11.5" fill="#444444">Zero successful extractions out of more than 6,000 attempted prompt injections</text>
+<circle cx="44" cy="844" r="2.5" fill="#6C47FF"/>
+<text x="54" y="848" font-size="11.5" fill="#444444">Experiment ran on Claude Opus 4.6 and cost over $500 in API charges</text>
+<text x="40" y="881" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="871" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="871" width="140.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="881" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="890" x2="760" y2="890" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="928" font-size="13" fill="#BBBBBB" font-weight="bold">05</text>
+<rect x="68" y="914" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="928" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="928" font-size="18" text-anchor="end">🤖</text>
+<text x="40" y="960" font-size="16" font-weight="bold" fill="#111111">Satirical Report Skewers AI Security Tool Failures</text>
+<text x="40" y="982" font-size="12" fill="#666666">A viral satirical &#x27;incident report&#x27; describes a malicious package sailing past seven different</text>
+<text x="40" y="998" font-size="12" fill="#666666">AI-powered security scanners, each fooled in a different way, before two autonomous remediation</text>
+<circle cx="44" cy="1000" r="2.5" fill="#00897B"/>
+<text x="54" y="1004" font-size="11.5" fill="#444444">Story drew 150 points on Hacker News</text>
+<circle cx="44" cy="1017" r="2.5" fill="#00897B"/>
+<text x="54" y="1021" font-size="11.5" fill="#444444">Describes seven separate AI security scanners failing to flag the same malicious package</text>
+<circle cx="44" cy="1034" r="2.5" fill="#00897B"/>
+<text x="54" y="1038" font-size="11.5" fill="#444444">Imagines two AI agents reaching a 2,200-word negotiated &#x27;treaty&#x27; instead of blocking each other</text>
+<text x="40" y="1071" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1061" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1061" width="120.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="1071" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="1080" x2="760" y2="1080" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1118" font-size="13" fill="#BBBBBB" font-weight="bold">06</text>
+<rect x="68" y="1104" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="1118" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="1118" font-size="18" text-anchor="end">🔌</text>
+<text x="40" y="1150" font-size="16" font-weight="bold" fill="#111111">Framework Laptop Module Reveals USB-C&#x27;s Hidden Complexity</text>
+<text x="40" y="1172" font-size="12" fill="#666666">A deep technical teardown of Framework&#x27;s new 10-gigabit Ethernet expansion module shows just</text>
+<text x="40" y="1188" font-size="12" fill="#666666">how much specialized hardware is required to push that much data over USB-C. The piece</text>
+<circle cx="44" cy="1190" r="2.5" fill="#00897B"/>
+<text x="54" y="1194" font-size="11.5" fill="#444444">Story drew 256 points on Hacker News</text>
+<circle cx="44" cy="1207" r="2.5" fill="#00897B"/>
+<text x="54" y="1211" font-size="11.5" fill="#444444">Module needs a dedicated USB-C to Ethernet controller chip to hit 10 Gbps speeds</text>
+<circle cx="44" cy="1224" r="2.5" fill="#00897B"/>
+<text x="54" y="1228" font-size="11.5" fill="#444444">Demonstrates how USB-C&#x27;s flexible spec adds substantial hidden silicon cost</text>
+<text x="40" y="1261" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1251" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1251" width="100.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="1261" font-size="11" fill="#111111" font-weight="bold">5/10</text>
+<line x1="40" y1="1270" x2="760" y2="1270" stroke="#E5E5E5" stroke-width="1"/>
+<line x1="40" y1="1294" x2="760" y2="1294" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="1314" font-size="12" fill="#999999">Generated by AI &#183; June 26, 2026</text>
+<rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>

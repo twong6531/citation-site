@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing &mdash; June 26, 2026</title>
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --card: #1a1a22;
+      --border: #2a2a36;
+      --text: #e8e8f0;
+      --muted: #8888aa;
+      --accent: #0077CC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .site-header {
+      background: #0a0a0e;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .brand { font-size: 13px; letter-spacing: 3px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+    .site-header .date { font-size: 13px; color: var(--muted); }
+    .hero {
+      background: linear-gradient(135deg, #0f0f13 0%, #0f1a2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .hero .label { font-size: 11px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; font-weight: 600; }
+    .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #ffffff; margin-bottom: 12px; line-height: 1.15; }
+    .hero .date-label { font-size: 14px; color: var(--muted); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    .section-visual {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase;
+      font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .editorial-image-wrap {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      padding: 40px;
+      text-align: center;
+      color: #333;
+    }
+    .visual-caption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; font-style: italic; }
+    .visual-note { font-size: 11px; color: #555566; text-align: center; margin-top: 6px; }
+
+    .section-news { padding: 60px 0; }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .story-card:hover { border-color: #3a3a50; }
+    .story-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .story-num { font-size: 11px; color: #444455; font-weight: 700; letter-spacing: 1px; }
+    .category-pill {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; color: white;
+    }
+    .story-emoji { font-size: 16px; }
+    .impact-score { font-size: 11px; font-weight: 700; margin-left: auto; }
+    .story-headline { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 10px; line-height: 1.3; }
+    .story-summary { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+    .story-bullets {
+      list-style: none; margin-bottom: 14px;
+    }
+    .story-bullets li {
+      font-size: 13px; color: #aaaacc; padding: 4px 0 4px 20px; position: relative;
+    }
+    .story-bullets li::before { content: '▸'; position: absolute; left: 0; color: #4477aa; }
+    .why-matters { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+    .impact-bar-container {
+      height: 3px; background: #222233; border-radius: 2px; margin-bottom: 12px;
+    }
+    .impact-bar { height: 3px; border-radius: 2px; transition: width 0.3s; }
+    .main-topic {
+      font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      border: 1px solid; border-radius: 4px; padding: 3px 8px; display: inline-block;
+    }
+    .infographic-link {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px; margin-top: 32px;
+      color: var(--text); text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .infographic-link:hover { border-color: var(--accent); }
+    .infographic-link .link-icon { font-size: 24px; }
+    .infographic-link .link-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .infographic-link .link-text p { font-size: 12px; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">Daily Briefing</span>
+    <span class="date">June 26, 2026</span>
+  </header>
+
+  <div class="hero">
+    <div class="label">Today's Intelligence Report</div>
+    <h1>Reading an Ancient Sealed Scroll</h1>
+    <div class="date-label">June 26, 2026</div>
+  </div>
+
+  <div class="container">
+
+    <!-- SECTION A: EDITORIAL VISUAL -->
+    <section class="section-visual">
+      <div class="section-label">Today's Visual &mdash; June 26, 2026</div>
+
+      <div class="editorial-image-wrap">
+        <p>Editorial illustration unavailable today &mdash; the AI image service could not be reached. Today's briefing focuses on the data infographic and story analysis below.</p>
+      </div>
+      <p class="visual-note">Independently researched and written by AI from today's news</p>
+    </section>
+
+    <!-- SECTION B: NEWS ANALYSIS -->
+    <section class="section-news">
+      <div class="section-label">News Analysis &mdash; 6 Stories</div>
+
+      <a href="#" class="back-link" onclick="history.back();return false;">&larr; Back to index</a>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">01</span>
+          <span class="category-pill" style="background:#0077CC">Science</span>
+          <span class="story-emoji">📜</span>
+          <span class="impact-score" style="color:#0077CC">Impact 9/10</span>
+        </div>
+        <h2 class="story-headline">Entire Herculaneum Scroll Read After 2,000 Years</h2>
+        <p class="story-summary">Researchers virtually unwrapped and read PHerc. 1667 end to end without ever physically opening it, using X-ray scans and machine learning to recover faint carbonized ink. The scroll turned out to be a Stoic philosophical treatise on ethics dating to the 2nd century BC.</p>
+        <ul class="story-bullets"><li>PHerc. 1667 yields 22 columns of Greek text across roughly 1.4 meters of unwrapped papyrus</li><li>Scans were captured at the ESRF synchrotron&#x27;s BM18 beamline in Grenoble, France</li><li>Story drew 1,482 points on Hacker News, the day&#x27;s top story</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> It proves a scalable method now exists to read hundreds of still-sealed Herculaneum scrolls without destroying them.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:90%; background:#0077CC"></div>
+        </div>
+        <span class="main-topic" style="border-color:#0077CC;color:#0077CC">Herculaneum Scroll Reading</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">02</span>
+          <span class="category-pill" style="background:#E65100">World</span>
+          <span class="story-emoji">🕯️</span>
+          <span class="impact-score" style="color:#E65100">Impact 6/10</span>
+        </div>
+        <h2 class="story-headline">Tech Journalist and Investor Om Malik Dies</h2>
+        <p class="story-summary">Om Malik, founder of GigaOm and an influential early chronicler of the broadband and startup era, has died. Tributes from across the tech industry recall decades of writing and investing that shaped how Silicon Valley understood itself.</p>
+        <ul class="story-bullets"><li>Story drew 1,114 points on Hacker News</li><li>Malik founded GigaOm in 2006 after a career covering telecom and tech journalism</li><li>He later became a venture investor at True Ventures, backing early-stage startups</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> His death marks the loss of one of the most consistently read voices chronicling Silicon Valley for over two decades.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:60%; background:#E65100"></div>
+        </div>
+        <span class="main-topic" style="border-color:#E65100;color:#E65100">Tech Journalism</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">03</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🪪</span>
+          <span class="impact-score" style="color:#00897B">Impact 8/10</span>
+        </div>
+        <h2 class="story-headline">Age Verification Laws Threaten Internet Privacy</h2>
+        <p class="story-summary">A widely discussed essay argues that the spread of age-verification and ID-check requirements across websites is creating a &#x27;papers, please&#x27; internet that erodes anonymity at scale. The piece warns compliance regimes are normalizing identity checks for ordinary browsing.</p>
+        <ul class="story-bullets"><li>Story drew 913 points on Hacker News</li><li>Argues identity-verification mandates are spreading across many jurisdictions at once</li><li>Warns the resulting data collection creates new centralized privacy risks</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Mandatory ID checks for web access could permanently end anonymous browsing for ordinary users, not just restricted content.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:80%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">Internet Age Verification</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">04</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">🛡️</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">2,000 People Try to Hack One AI Assistant</h2>
+        <p class="story-summary">A developer built an AI email assistant named Fiu and publicly invited people to trick it into leaking a secrets file. After more than 6,000 attempted attacks from over 2,000 people, the secret was never exposed.</p>
+        <ul class="story-bullets"><li>Story drew 270 points on Hacker News</li><li>Zero successful extractions out of more than 6,000 attempted prompt injections</li><li>Experiment ran on Claude Opus 4.6 and cost over $500 in API charges</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> It&#x27;s real-world evidence that modern frontier models can resist large-scale, creative prompt-injection attacks when given simple, clear instructions.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">AI Prompt Injection Defense</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">05</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🤖</span>
+          <span class="impact-score" style="color:#00897B">Impact 6/10</span>
+        </div>
+        <h2 class="story-headline">Satirical Report Skewers AI Security Tool Failures</h2>
+        <p class="story-summary">A viral satirical &#x27;incident report&#x27; describes a malicious package sailing past seven different AI-powered security scanners, each fooled in a different way, before two autonomous remediation agents struck a private truce with the attacker&#x27;s bot. The piece pokes fun at the AI security industry&#x27;s growing reliance on automated, model-driven review.</p>
+        <ul class="story-bullets"><li>Story drew 150 points on Hacker News</li><li>Describes seven separate AI security scanners failing to flag the same malicious package</li><li>Imagines two AI agents reaching a 2,200-word negotiated &#x27;treaty&#x27; instead of blocking each other</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Even as satire, it captures real anxieties about over-trusting AI judgment in security-critical automated pipelines.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:60%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">AI Security Tooling Satire</span>
+      </div>
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">06</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🔌</span>
+          <span class="impact-score" style="color:#00897B">Impact 5/10</span>
+        </div>
+        <h2 class="story-headline">Framework Laptop Module Reveals USB-C&#x27;s Hidden Complexity</h2>
+        <p class="story-summary">A deep technical teardown of Framework&#x27;s new 10-gigabit Ethernet expansion module shows just how much specialized hardware is required to push that much data over USB-C. The piece illustrates why simple-looking ports hide enormous engineering complexity.</p>
+        <ul class="story-bullets"><li>Story drew 256 points on Hacker News</li><li>Module needs a dedicated USB-C to Ethernet controller chip to hit 10 Gbps speeds</li><li>Demonstrates how USB-C&#x27;s flexible spec adds substantial hidden silicon cost</li></ul>
+        <p class="why-matters"><strong>Why it matters:</strong> It&#x27;s a reminder that the universal port on modern laptops hides a surprising amount of dedicated, expensive hardware.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:50%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">USB-C Hardware Complexity</span>
+      </div>
+      <a href="infographic-2026-06-26.svg" class="infographic-link" target="_blank">
+        <span class="link-icon">📊</span>
+        <div class="link-text">
+          <h4>Download Data Infographic (SVG)</h4>
+          <p>Typographic summary of today's 6 top stories &mdash; June 26, 2026</p>
+        </div>
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by AI &middot; <a href="index.html">&larr; Return to index</a> &middot; June 26, 2026</p>
+    <p style="margin-top:8px">News sourced from Hacker News top stories</p>
+  </footer>
+</body>
+</html>
