@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 26, 2026 &#8212; 15 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">Plainclothes fare inspectors detect about 26% more evaders per hour than</text>
+<text x="90" y="241" class="body">uniformed ones in a 21,727-record Swiss causal-ML study, reversing the visible-</text>
+<text x="90" y="257" class="body">deterrence assumption behind most fare enforcement programs.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">A 972-instance benchmark on real Dutch and Swiss rail networks finds the textbook</text>
+<text x="90" y="319" class="body">"exact" line-planning model fails at scale, while a compact approximation wins on</text>
+<text x="90" y="335" class="body">83% of large instances.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Rider satisfaction is best predicted by a Minimum-End heuristic -- the worst moment</text>
+<text x="90" y="397" class="body">plus the ending -- not average experience, across 2,576 real German transit trips,</text>
+<text x="90" y="413" class="body">challenging standard satisfaction-survey design.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">Line Planning at Scale: Models, Methods, and Insights</text>
+<text x="40" y="576" class="small">Rolf van Lieshout, Bart van Rossum</text>
+<text x="40" y="604" class="body">Across 972 test cases on real Dutch and Swiss rail networks, the textbook-standard exact</text>
+<text x="40" y="620" class="body">transfer model for line planning loses to a simpler, compact approximation as soon as networks</text>
+<text x="40" y="636" class="body">get large.</text>
+<text x="40" y="652" class="body">It's the most consequential contrarian finding in the batch for working transit planners: a</text>
+<text x="40" y="668" class="body">972-instance benchmark on real Dutch and Swiss rail networks shows the long-trusted 'exact'</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Causal and counterfactual</text>
+<text x="52" y="782" class="body">rigor is replacing intuition</text>
+<text x="52" y="798" class="body">in transit policy evaluation</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">AI agents are moving from</text>
+<text x="312" y="782" class="body">route recommendation into</text>
+<text x="312" y="798" class="body">operational control —</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">Classical OR transit models</text>
+<text x="572" y="782" class="body">are being stress-tested at</text>
+<text x="572" y="798" class="body">real-world scale and several</text>
+<line x1="40" y1="816" x2="760" y2="816" class="ruleLight"/>
+<text x="40" y="836" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="882" class="body">High</text>
+<rect x="110" y="870" width="160.0" height="18" fill="#1A1A1A"/>
+<text x="280.0" y="882" class="small">4</text>
+<text x="40" y="912" class="body">Medium</text>
+<rect x="110" y="900" width="400.0" height="18" fill="#1A1A1A"/>
+<text x="520.0" y="912" class="small">10</text>
+<text x="40" y="942" class="body">Low</text>
+<rect x="110" y="930" width="40.0" height="18" fill="#1A1A1A"/>
+<text x="160.0" y="942" class="small">1</text>
+<line x1="40" y1="976" x2="760" y2="976" class="ruleLight"/>
+<text x="40" y="1016" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1044" class="body" font-weight="bold">1.</text>
+<text x="60" y="1044" class="body">Fare-enforcement programs should rebalance staffing toward plainclothes inspection for most</text>
+<text x="60" y="1060" class="body">route/time contexts, based on causal evidence of higher detection efficiency, while still</text>
+<text x="40" y="1106" class="body" font-weight="bold">2.</text>
+<text x="60" y="1106" class="body">Agencies procuring AI/agentic fleet-management or V2G aggregation services should require</text>
+<text x="60" y="1122" class="body">auditable tariff-setting and explicit value-sharing terms in contracts before deployment, not</text>
+<text x="40" y="1168" class="body" font-weight="bold">3.</text>
+<text x="60" y="1168" class="body">Customer-experience teams should prioritize eliminating single severe negative moments and</text>
+<text x="60" y="1184" class="body">improving trip endings over averaged service-quality improvements, since remembered</text>
+<text x="40" y="1230" class="body" font-weight="bold">4.</text>
+<text x="60" y="1230" class="body">Large-network line-planning teams should benchmark compact approximate transfer models against</text>
+<text x="60" y="1246" class="body">the canonical exact model before committing to a planning tool, since the 'more accurate' model</text>
+<text x="40" y="1292" class="body" font-weight="bold">5.</text>
+<text x="60" y="1292" class="body">Cities considering congestion pricing or fare-free programs can now point to real NYC evidence</text>
+<text x="60" y="1308" class="body">of broad-based transit ridership gains and disaggregated equity effects, rather than relying</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 26, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
