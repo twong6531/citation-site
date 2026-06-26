@@ -1,0 +1,94 @@
+{
+  "date": "2026-06-26",
+  "generated_at": "2026-06-26T07:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 knockout-stage transit stress test",
+      "angle": "Group stage window (June 11-27) has now fully closed; the tournament is in the knockout rounds with fewer, higher-stakes simultaneous matches concentrating demand on fewer host-metro transit systems on fewer days. Update the surge-demand framing accordingly and cite headway/capacity data from at least two host-city agencies (e.g. LA Metro, NJ Transit/MTA, DART).",
+      "rationale": "drafts/articles/ has never had a single file successfully written in 22+ consecutive days despite being the rank-1 priority for nearly the entire span. This is the most chronic production failure in the pipeline. Re-queuing again with the angle updated to reflect that the tournament has now moved past the group stage entirely -- the framing window is closing further each day this stays unproduced.",
+      "target_length": "long",
+      "slug": "world-cup-2026-knockout-transit-stress-test",
+      "output_path": "drafts/articles/world-cup-2026-knockout-transit-stress-test.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs. light rail cost comparison",
+      "angle": "Capital and operating cost per mile/per rider comparison across recent US BRT and light-rail builds",
+      "rationale": "Retry #17 -- 16 consecutive failures since 2026-06-07. This has long passed the threshold where another automated retry alone is likely to succeed; flagging again for manual diagnostic of the infographic-writing agent rather than assuming retry #17 resolves it.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Hub covering location problem for transit accessibility and travel-time optimization",
+      "angle": "New arXiv paper (submitted this week) on optimizing accessibility and maximum travel times in transit networks via hub covering location -- connect to the site's existing transit-desert and equity-of-access coverage, and to the still-unproduced BRT-vs-light-rail cost infographic (network design choices that drive those costs).",
+      "rationale": "Freshest on-niche research signal from today's arXiv scan. Builds directly on existing site coverage (transit deserts, route optimization, equity) rather than starting a new thread.",
+      "target_length": "medium",
+      "slug": "hub-covering-location-transit-accessibility",
+      "output_path": "drafts/articles/hub-covering-location-transit-accessibility.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "Congestion pricing: how it actually works and who pays",
+      "angle": "Mechanics of congestion pricing programs (tolling structure, exemptions, revenue allocation) and a distributional look at who bears the cost vs. who benefits from transit reinvestment",
+      "rationale": "Carried over a second day unproduced. Not yet covered as a dedicated mechanics explainer (existing encyclopedia entry covers congestion pricing only as a funding source, not how the tolling itself works).",
+      "target_length": "medium",
+      "slug": "congestion-pricing-how-it-works-who-pays",
+      "output_path": "drafts/articles/congestion-pricing-how-it-works-who-pays.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "Backlog clearance: revise needs_revision scripts before writing new ones",
+      "angle": "Video script production remains on HOLD since 2026-06-18. us-cities-transit-gap-script was successfully revised and passed QC on 2026-06-25, shrinking the backlog by one. Today's priority is the next lowest-effort needs_revision item: dopamine-fracking-script (cut ~25w from Reel, fix vague meta-analysis citation in YouTube Section 3).",
+      "rationale": "Continuing backlog clearance rather than adding to the unconsumed pile. dopamine-fracking-script has the smallest fix list of the remaining six needs_revision scripts, making it the next highest-value clearance target.",
+      "target_length": "short",
+      "slug": "dopamine-fracking-script-revision",
+      "output_path": "drafts/scripts/dopamine-fracking-script.md"
+    }
+  ],
+  "retries": [
+    {
+      "type": "infographic",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "attempt": 17,
+      "note": "16 consecutive failures since 2026-06-07. Manual diagnostic of the infographic-writing agent is significantly overdue -- automated retries alone have not worked in over two weeks."
+    },
+    {
+      "type": "article",
+      "slug": "world-cup-2026-knockout-transit-stress-test",
+      "attempt": 3,
+      "note": "drafts/articles/ has never had a file successfully written in the site's history (22+ days). Knockout-stage angle is now fully time-sensitive since the group stage has closed."
+    }
+  ],
+  "skip_topics": [
+    "on-time performance",
+    "headway",
+    "subway tunnel construction",
+    "service change analysis",
+    "value capture financing",
+    "transit-oriented development",
+    "transit worker safety",
+    "transit funding equity",
+    "transit deserts (general)",
+    "transit and job access",
+    "transit access for people experiencing homelessness",
+    "EV bus equity gap",
+    "pantograph charging",
+    "TOD walkability thresholds",
+    "congestion pricing as a funding source (general)"
+  ],
+  "trend_signals": [
+    "Hub covering location problem for transit network accessibility (arXiv, fresh this week)",
+    "No clearly transit/urban-mobility-relevant breakout story in today's HN scan (top stories were general tech/culture: Om Malik obituary, Herculaneum scroll, Mozart notebook discovery)",
+    "AI agent security incident reporting (HN: 'what happened after 2k people tried to hack my AI assistant') trending -- general AI/tech, off-niche",
+    "World Cup 2026 has moved fully into the knockout stage, sharpening the host-metro transit surge-demand angle",
+    "GPS-mobility-data representativeness bias (carried over from prior days, still unaddressed methodology signal)"
+  ]
+}
