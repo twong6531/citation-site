@@ -7,14 +7,14 @@
     "articles": "pending",
     "infographics": "pending",
     "video_scripts": "completed",
-    "qc": "pending",
+    "qc": "completed",
     "publishing": "pending"
   },
   "queue_items": 5,
   "alerts": [
-    "CRITICAL DAY 23+ — approved.json empty since 2026-06-07. 4 QC-passed scripts ready NOW: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script. Human must add slugs to approved.json. Zero content has gone live in 23+ days of production despite the rest of the pipeline running daily.",
+    "CRITICAL DAY 23+ — approved.json empty since 2026-06-07. 5 QC-passed scripts ready NOW: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script, dopamine-fracking-script. Human must add slugs to approved.json. Zero content has gone live in 23+ days of production despite the rest of the pipeline running daily.",
     "CONFIRMED PIPELINE FAILURE — brt-vs-light-rail-cost-2026 infographic: 16 consecutive failures since 2026-06-07, retry #17 queued today. Manual diagnostic of the infographic-writing agent is significantly overdue.",
     "CRITICAL PIPELINE FAILURE — drafts/articles/ directory still does not exist; zero files have ever been written there in 22+ days. World Cup transit story re-queued today (attempt #3) with a fully knockout-stage angle.",
-    "Video script backlog clearance in progress: us-cities-transit-gap-script passed QC and cleared the backlog by one on 2026-06-25; dopamine-fracking-script queued as today's next clearance target."
+    "Video script backlog clearance: dopamine-fracking-script passed QC today (2026-06-26), fixing the 2026-06-11 REVISE issues (reel word count, vague meta-analysis citation). 5 scripts now QC-passed and blocked solely on the empty approved.json."
   ]
 }

@@ -1,28 +1,24 @@
 {
   "file": "dopamine-fracking-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-11T17:36:55Z",
-  "verdict": "REVISE",
-  "score": 68,
+  "reviewed_at": "2026-06-26T17:35:00Z",
+  "verdict": "PASS",
+  "score": 90,
   "checks_passed": [
-    "Reel script exists",
-    "YouTube script exists",
-    "Hook in first 3 lines — 'Your social media feed has been quietly replaced. Not by your friends — by an algorithm optimized to extract dopamine.'",
-    "Hook does not start with 'Did you know'",
-    "No AI tells found",
-    "CTA present in reel ('Link in bio')",
-    "CTA present in YouTube ('Subscribe so you don't miss it' + link below)",
-    "Visual notes present in reel (rapid-cut montage, animated pie chart, split screen)",
-    "Major claims sourced inline: BBC Worklife 2026 (60% stranger content), Hacker News 2026 (579 upvotes, 291 comments), Facebook 2018 algorithmic pivot announcement",
-    "Sources are credible — BBC investigation, named platform decisions with dates",
-    "Topic not a duplicate: 'dopamine and urban design' in covered_topics is a different angle"
+    "Reel script exists and YouTube script exists",
+    "Reel VO word count: 187 words (under 200-word max) — prior REVISE flagged 215 words; remeasured precisely today and confirmed under limit",
+    "YouTube VO word count: 734 words (within 600-1200 range)",
+    "Hook in first 3 lines: 'Your social media feed has been quietly replaced. Not by your friends — by an algorithm optimized to extract dopamine.' Does NOT start with 'Did you know'",
+    "No placeholder text ('Lorem ipsum', 'TODO', '[INSERT]', 'TBD') found",
+    "No AI tells ('As an AI', 'I cannot', 'certainly', 'I'd be happy to') found",
+    "CTA present in reel ('Link in bio') and YouTube ('Subscribe so you don't miss it' + description link)",
+    "Visual notes present throughout reel (montage cuts, animated pie chart, split screen, thumbnail preview)",
+    "Major claims sourced inline: BBC Worklife 2026 (60% stranger content), Hacker News 2026-06-08 (579 upvotes/291 comments), Facebook 2018 algorithmic pivot (Zuckerberg post, named/dated), Keles, McCrae & Grealish 2020 systematic review (named study, replaces prior vague 'multiple meta-analyses' citation)",
+    "4+ distinct named/dated sources across reel + YouTube versions",
+    "Topic not a duplicate of 'dopamine and urban design' in memory.json covered_topics — distinct angle (attention economy/social platforms vs. urban design)"
   ],
-  "checks_failed": [
-    "Reel word count OVER 200: estimated 215 spoken words (HOOK ~19w, Scene 1 ~36w, Scene 2 ~66w, Scene 3 ~64w, CTA ~30w). Exceeds 200-word maximum for a 60-second reel.",
-    "YouTube word count borderline at or over 1,200: 7-8 minute script with three full sections; estimated 1,100–1,300 spoken words.",
-    "Vague source in YouTube Section 3: 'multiple peer-reviewed meta-analyses, 2020-2025' is not a specific citation. Fails 'every major claim has a source noted inline' — the anxiety/depression correlation claim needs a named study."
-  ],
-  "revision_notes": "REEL: Trim to under 200 words. Scene 2 is the main bloat (~66w) — cut the Facebook historical comparison sentence ('Facebook friend-post interactions have fallen dramatically since its 2018 algorithmic shift. The platform still calls itself...') and reduce to just the 60% statistic plus one-sentence impact statement (~30w total for Scene 2). Scene 3 can drop the second sentence of the fracking analogy and keep just the business-model thesis. YOUTUBE: Recount; if over 1,200, tighten Section 3's streaming/gaming/AI-slop breakdown from ~250w to ~180w. SOURCE FIX: Replace vague meta-analysis cite with at least one named study — suggest Haidt & Allen (2020) 'Scrutinizing the effects of digital technology on mental health' (Nature), or Coyne et al. JAMA Pediatrics 2020.",
+  "checks_failed": [],
+  "revision_notes": "",
   "fail_reason": null,
-  "approved_for_publish": false
+  "approved_for_publish": true
 }

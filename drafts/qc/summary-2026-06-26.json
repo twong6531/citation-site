@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-26",
+  "total_reviewed": 1,
+  "passed": 1,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": ["dopamine-fracking-script"],
+  "needs_revision": [],
+  "blocked": [],
+  "notes": "Only one new artifact produced today: a revision to drafts/scripts/dopamine-fracking-script.md addressing the 2026-06-11 REVISE verdict (reel word count, vague meta-analysis citation in YouTube Section 3). Reel VO is now 187 words (was est. 215), the vague citation was replaced with a named systematic review (Keles, McCrae & Grealish, 2020), and YouTube VO measured at 734 words, well within range. Script now PASSes. No new articles and no new infographics were produced today — drafts/articles/ still does not exist (22+ day pipeline failure per status alerts) and drafts/infographics/ also does not exist. This is now the 5th QC-passed script awaiting human approval in approved.json, which has been empty since 2026-06-07 (day 23+ of zero published content)."
+}
