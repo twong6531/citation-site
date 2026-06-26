@@ -28,8 +28,8 @@
 
 **[15–35s] SCENE 2 — The Data Point**  
 **VISUAL:** Animated pie chart — friend posts shrinking, recommended-stranger content expanding, year-by-year 2018–2026.  
-**VOICEOVER:** A BBC investigation found that over 60% of the average social media feed now serves content from accounts you never followed — algorithmically selected not because it's meaningful, but because it triggers a response. [Source: BBC Worklife, 2026]  
-Facebook friend-post interactions have fallen dramatically since its 2018 algorithmic shift. The platform still calls itself a social network. But social networking — connecting with people you know — is no longer what it does.  
+**VOICEOVER:** A BBC investigation found that over 60% of your feed now comes from accounts you never followed — selected not because it's meaningful, but because it triggers a response. [Source: BBC Worklife, 2026]  
+Facebook friend-post interactions have fallen sharply since its 2018 algorithmic shift. The platform still calls itself a social network. It isn't anymore.  
 
 **ON SCREEN TEXT:** "2018: friends dominated your feed. 2026: 60%+ strangers. You didn't choose this."
 
@@ -37,7 +37,7 @@ Facebook friend-post interactions have fallen dramatically since its 2018 algori
 
 **[35–50s] SCENE 3 — Why It Matters**  
 **VISUAL:** Split screen — a fracking operation (aerial, industrial, scarred landscape) vs. a person doom-scrolling, face lit blue by their phone at 1am.  
-**VOICEOVER:** The essay that coined the term this week made a specific argument: this isn't a side effect. It's the business model. The same way fracking extracts maximum energy from a formation regardless of what it does to the ground, algorithmic feeds extract maximum engagement from a user regardless of what it does to their relationships, attention span, or ability to create anything of their own.
+**VOICEOVER:** The essay that coined the term made a specific argument: this isn't a side effect, it's the business model. Fracking extracts maximum energy from a formation regardless of the damage. Algorithmic feeds extract maximum engagement from a user regardless of what it costs their relationships, attention span, or ability to create.
 
 **ON SCREEN TEXT:** "Not a bug. The business model."
 
@@ -130,7 +130,7 @@ And platform engagement metrics confirmed what the algorithm knew: this drives m
 **VISUAL:** Research study graphics — social comparison studies, anxiety correlation data, Tristan Harris TED talk clip reference; counter-examples of RSS, Mastodon, reverse-chronological feed advocates  
 
 **VOICEOVER:**  
-The research on what algorithmic optimization does to users is contested but accumulating. Studies consistently show correlations between heavy algorithmic feed use and anxiety, depression, and social comparison effects — particularly in adolescents. [Source: multiple peer-reviewed meta-analyses, 2020–2025]  
+The research on what algorithmic optimization does to users is contested but accumulating. A systematic review by Keles, McCrae, and Grealish found consistent correlations between heavy social media use and anxiety, depression, and social comparison effects, particularly in adolescents. [Source: Keles, McCrae & Grealish, "A systematic review: the influence of social media on depression, anxiety and psychological distress in adolescents," International Journal of Adolescence and Youth, 2020]  
 Correlation is not causation, and researchers disagree on mechanism and effect size. But the direction of the evidence is consistent enough that several European regulators have launched investigations into algorithmic amplification.
 
 What's less contested is what it did to culture. The essay that coined "dopamine fracking" traces its effects across three domains:  
