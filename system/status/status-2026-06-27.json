@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-27",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 24+ -- approved.json empty since 2026-06-07. 5 QC-passed scripts ready NOW: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script, dopamine-fracking-script. Human must add slugs to approved.json. Zero content has gone live in 24+ days of production despite the rest of the pipeline running daily.",
+    "CONFIRMED PIPELINE FAILURE -- brt-vs-light-rail-cost-2026 infographic: 17 consecutive failures since 2026-06-07, retry #18 queued today. Manual diagnostic of the infographic-writing agent is significantly overdue.",
+    "CRITICAL PIPELINE FAILURE -- drafts/articles/ directory had to be recreated this run; zero files have ever been successfully written there in 23+ days. World Cup transit story re-queued today (attempt #4) with a retrospective knockout-stage angle since the tournament's group stage has closed.",
+    "World Cup story window is now closing entirely as the tournament progresses past group stage -- if not produced within the next few days, this item should likely be retired or reframed around the final/closing ceremony instead."
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2026-06-27",
+  "generated_at": "2026-06-27T14:04:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 knockout stage: did host-city transit systems hold up?",
+      "angle": "Retrospective stress-test now that group stage has closed — compare pre-tournament projections (queued 2026-06-24) against actual ridership/service data from host cities (LA, NY/NJ, Dallas, etc.) during the group stage window.",
+      "rationale": "Attempt #4 of the single most overdue queue item (24+ days unproduced). Article-writing pipeline has 0% success rate across site history. Drafts/articles/ directory just recreated this run after appearing to vanish again. Switching angle to retrospective (data now exists) since the original pre-tournament framing is now stale.",
+      "target_length": "long",
+      "slug": "world-cup-2026-host-city-transit-stress-test",
+      "output_path": "drafts/articles/world-cup-2026-host-city-transit-stress-test.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail: capital and operating cost comparison",
+      "angle": "Side-by-side cost-per-mile and cost-per-rider breakdown using FTA New Starts/Small Starts data, contextualized against the funding-equity and federal-grants encyclopedia articles already published.",
+      "rationale": "Retry #18 of an infographic queued since 2026-06-07 with 17 consecutive failures. Flagging for manual diagnostic rather than another silent retry — escalating in this run's alerts.",
+      "target_length": "short",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Hub covering location problem for transit network accessibility",
+      "angle": "Translate the new arXiv paper (Optimizing Accessibility and Maximum Travel Times in Transit Networks: The Hub Covering Location Problem) into a practitioner-facing brief on how agencies could use hub-covering models to fix transit deserts, tying into prior POMDP/CVaR transit-desert coverage.",
+      "rationale": "Freshest relevant academic signal from today's arXiv scan; extends an established coverage theme (transit deserts, equity) rather than starting a new one.",
+      "target_length": "medium",
+      "slug": "hub-covering-location-transit-accessibility",
+      "output_path": "drafts/articles/hub-covering-location-transit-accessibility.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "Congress's surface transportation reauthorization, 2026 status",
+      "angle": "Plain-language status update on where the federal reauthorization bill stands, what's at stake for transit funding formulas, and why it's been queued (unproduced) for weeks.",
+      "rationale": "Long-queued companion item to the World Cup story; still unproduced and time-sensitive given legislative calendar.",
+      "target_length": "medium",
+      "slug": "surface-transportation-reauthorization-2026-status",
+      "output_path": "drafts/articles/surface-transportation-reauthorization-2026-status.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "GPS mobility-data bias in transit-equity research",
+      "angle": "Short explainer script on why GPS-based mobility datasets undercount low-income/older/non-smartphone riders, and what that means for transit-desert policy built on this data — tied to the representativeness-bias arXiv paper flagged 2026-06-23.",
+      "rationale": "Video script production is technically off HOLD (dopamine-fracking-script cleared QC 06-26) but the 10-script backlog is still unresolved; do not add to the backlog further until publishing unblocks. Queued as lowest priority and should not be started until approved.json shows movement.",
+      "target_length": "short",
+      "slug": "gps-mobility-data-bias-transit-equity-script",
+      "output_path": "drafts/scripts/gps-mobility-data-bias-transit-equity-script.md"
+    }
+  ],
+  "retries": [
+    {"item": "brt-vs-light-rail-cost-2026", "type": "infographic", "attempt": 18, "first_queued": "2026-06-07"},
+    {"item": "world-cup-2026-host-city-transit-stress-test", "type": "article", "attempt": 4, "first_queued": "2026-06-11", "note": "renamed from world-cup-2026-transit-host-cities, angle shifted to retrospective"}
+  ],
+  "skip_topics": [
+    "California high-speed rail", "transit-oriented development", "transit equity automation",
+    "Southern California transit systems", "slime mold network optimization", "US cities transit gap",
+    "dopamine and urban design", "electric axial flux motors transit", "Pokemon Go drones urban data",
+    "transit app dark UX patterns", "Tesla SpaceX transit empire", "fare evasion economics",
+    "bonds and debt financing transit capital", "EV bus equity gap", "pantograph charging",
+    "TOD walkability thresholds", "Apple Foundation Models", "Anthropic safety strategy"
+  ],
+  "trend_signals": [
+    "speculative decoding / LLM inference efficiency (HN)",
+    "next-gen frontier model previews (GPT-5.6 Sol) (HN)",
+    "hub covering location problem for transit accessibility (arXiv)",
+    "GPS mobility-data representativeness bias (arXiv, carried from 2026-06-23)",
+    "long wave radio switch-off / legacy infrastructure retirement (HN)"
+  ]
+}
