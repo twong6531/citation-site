@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-27",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "notes": "No new drafts were produced today to review. drafts/articles/ does not exist (article pipeline has produced zero files in 23+ days per system/status alerts). drafts/infographics/ does not exist (infographics job is 'pending'; brt-vs-light-rail-cost-2026 infographic has failed 17 consecutive times since 2026-06-07). Video script production was placed on hold today (see drafts/scripts/HOLD-no-new-script-2026-06-27.md) because the only queued script task is gated on the same backlog freeze, and no new article exists to draw a script from. All previously-produced scripts/articles/infographics in drafts/ were already QC'd on prior dates (see existing files in drafts/qc/) and are not re-reviewed here. Separately from today's (empty) production run, 5 scripts have been QC-PASS and publish-ready since prior runs (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script) but system/approved.json has been empty since 2026-06-07 (20 consecutive days), so nothing has gone live. This is a human-action bottleneck, not a content-quality issue."
+}
