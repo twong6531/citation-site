@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 28px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 27, 2026 &#8212; 15 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">A counterfactual-without-control-group method finds NYC congestion pricing lifted bus and subway</text>
+<text x="90" y="241" class="body">ridership well beyond the priced zone, while overall travel demand fell only modestly and unevenly</text>
+<text x="90" y="257" class="body">across neighborhoods -- the first rigorous post-implementation read of the policy.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">A new dynamic program computes provable worst-case (not average-case) bus headway bounds, applied</text>
+<text x="90" y="319" class="body">to a real Nashville route -- the first tool to bound the longest possible rider wait under any</text>
+<text x="90" y="335" class="body">holding policy, not just the typical one.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">A decade-old SUMO mesoscopic traffic model is shown to violate core flow theory and systematically</text>
+<text x="90" y="397" class="body">underestimate congestion, calling into question prior congestion-dependent transit research that</text>
+<text x="90" y="413" class="body">relied on it.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">Optimizing Accessibility and Maximum Travel Times in Transit Networks: The Hub Covering Lo</text>
+<text x="40" y="576" class="small">Carmen-Ana Domínguez-Bravo, Elena Fernández, Armin Lüer-Villagra</text>
+<text x="40" y="604" class="body">A new mixed-integer optimization model places transit access points and hub corridors to jointly cap</text>
+<text x="40" y="620" class="body">first/last-mile travel time and total trip time across a network.</text>
+<text x="40" y="652" class="body">It's the freshest submission in today's batch (June 25) and reframes a classic OR problem in a way</text>
+<text x="40" y="668" class="body">that matters operationally: instead of optimizing coverage or speed alone, it makes the first/last-</text>
+<text x="40" y="684" class="body">mile access-time ceiling an explicit, tunable design parameter alongside trunk-network speed, giving</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Counterfactuals without</text>
+<text x="52" y="782" class="body">control groups: both the</text>
+<text x="52" y="798" class="body">congestion-pricing</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">Worst-case, not average-</text>
+<text x="312" y="782" class="body">case, reliability: the</text>
+<text x="312" y="798" class="body">headway-bunching paper and</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">Decentralization as an</text>
+<text x="572" y="782" class="body">architecture choice, not</text>
+<text x="572" y="798" class="body">just an optimization</text>
+<line x1="40" y1="816" x2="760" y2="816" class="ruleLight"/>
+<text x="40" y="836" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="882" class="body">High</text>
+<text x="40" y="912" class="body">Medium</text>
+<text x="40" y="942" class="body">Low</text>
+<rect x="110" y="870" width="120.0" height="18" fill="#1A1A1A"/>
+<text x="240.0" y="882" class="small">3</text>
+<rect x="110" y="900" width="400.0" height="18" fill="#1A1A1A"/>
+<text x="520.0" y="912" class="small">10</text>
+<rect x="110" y="930" width="80.0" height="18" fill="#1A1A1A"/>
+<text x="200.0" y="942" class="small">2</text>
+<line x1="40" y1="976" x2="760" y2="976" class="ruleLight"/>
+<text x="40" y="1016" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1044" class="body" font-weight="bold">1.</text>
+<text x="60" y="1044" class="body">Agencies citing SUMO-mesoscopic-derived congestion forecasts for BRT or signal-priority corridor</text>
+<text x="60" y="1060" class="body">decisions should treat congestion-magnitude estimates as likely understated until the corrected</text>
+<text x="40" y="1106" class="body" font-weight="bold">2.</text>
+<text x="60" y="1106" class="body">Before expanding fare-free programs, use scenario simulation (like the NYC fare framework) to</text>
+<text x="60" y="1122" class="body">separate the equity case from the ridership case — they are not the same argument and shouldn't be</text>
+<text x="40" y="1168" class="body" font-weight="bold">3.</text>
+<text x="60" y="1168" class="body">Agencies designing or revising bus holding policies should evaluate them against worst-case headway</text>
+<text x="60" y="1184" class="body">bounds, not just average headway, since average-case-optimized policies can still produce bad worst-</text>
+<text x="40" y="1230" class="body" font-weight="bold">4.</text>
+<text x="60" y="1230" class="body">Low-density and rural transit agencies evaluating microtransit/DRT vendors should ask whether</text>
+<text x="60" y="1246" class="body">dispatch is centralized or decentralized — the slime-mold results suggest decentralized bidding</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 27, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
