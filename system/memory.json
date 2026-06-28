@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-27T14:04:00Z",
+  "last_updated": "2026-06-28T14:10:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -1066,6 +1066,21 @@
       "date": "2026-06-27",
       "job": "infographic_writing",
       "reason": "brt-vs-light-rail-cost-2026 not produced -- retry #17 confirmed failed, retry #18 queued."
+    },
+    {
+      "date": "2026-06-28",
+      "job": "publishing",
+      "reason": "approved.json empty \u2014 no human approvals received for 21+ consecutive days (since 2026-06-07)"
+    },
+    {
+      "date": "2026-06-28",
+      "job": "article_writing",
+      "reason": "drafts/articles/ empty again \u2014 0% long-form article production rate sustained for 21+ days"
+    },
+    {
+      "date": "2026-06-28",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 infographic not produced \u2014 approximately 22nd consecutive failure since 2026-06-07"
     }
   ],
   "content_gaps": [
@@ -1110,6 +1125,7 @@
     "NEW RESEARCH SIGNAL: arXiv paper on the hub covering location problem for transit network accessibility and travel-time optimization \u2014 queued as today's research item, ties into existing transit-desert/equity and BRT-cost coverage.",
     "CRITICAL DAY 24+: approved.json still empty since 2026-06-07. 5 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script, dopamine-fracking-script). Zero content has gone live despite 24+ days of daily production. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to approved.json.",
     "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic -- 17 consecutive failures since 2026-06-07, retry #18 queued 2026-06-27. Recommend pausing further automated retries and running a manual diagnostic of the infographic-writing agent.",
-    "CRITICAL: drafts/articles/ directory has never had a file successfully produced in 23+ days of site history. World Cup transit story re-queued today (attempt #4) with a fully retrospective knockout-stage-window angle."
+    "CRITICAL: drafts/articles/ directory has never had a file successfully produced in 23+ days of site history. World Cup transit story re-queued today (attempt #4) with a fully retrospective knockout-stage-window angle.",
+    "CRITICAL DAY 21+: approved.json still empty since 2026-06-07. 4 QC-passed video scripts ready now (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script). Zero content of any kind has gone live in 21+ days of daily production. Escalating again 2026-06-28."
   ]
 }

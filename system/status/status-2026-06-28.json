@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-28",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "held_no_action",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 21+ -- approved.json empty since 2026-06-07. 4 QC-passed scripts ready NOW: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script. Human must add slugs to approved.json. Zero content has gone live in 21+ days of production despite the rest of the pipeline running daily.",
+    "CONFIRMED PIPELINE FAILURE -- brt-vs-light-rail-cost-2026 infographic: ~21 consecutive failures since 2026-06-07, retry #22 queued today. Manual diagnostic of the infographic-writing agent is significantly overdue and the standing recommendation from prior days has not been acted on.",
+    "CONFIRMED PIPELINE FAILURE -- drafts/articles/ directory is empty again; 0% successful long-form article production sustained for 21+ days running. Recommend a human-run diagnostic of the article-writing agent outside the daily cycle rather than further blind retries.",
+    "Video script production remains correctly held per 2026-06-27 decision -- backlog of 10 scripts (4 passed, 6 needs_revision) is unresolved; no new script queued today.",
+    "External news scan (HN, Google News) returned no transit/urban-mobility-relevant stories today; today's queue leans on an arXiv hit (hub covering location problem in transit network design) instead."
+  ]
+}

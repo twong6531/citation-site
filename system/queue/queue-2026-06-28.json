@@ -1,0 +1,101 @@
+{
+  "date": "2026-06-28",
+  "generated_at": "2026-06-28T14:10:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "research",
+      "topic": "The Hub Covering Location Problem: Optimizing Transit Accessibility vs. Travel Time",
+      "angle": "New arXiv research formalizes the tradeoff agencies make informally every redesign: fewer, better-placed hub transfers cut network cost but raise worst-case rider travel time. Translate the optimization framework into a practical lens for evaluating hub-and-spoke bus redesigns (e.g. LA Metro NextGen, Houston's 2015 reimagining).",
+      "rationale": "Freshest on-niche signal from today's scan (arXiv: 'Optimizing Accessibility and Maximum Travel Times in Transit Networks: The Hub Covering Location Problem'). No prior coverage of hub-and-spoke network design tradeoffs in memory's covered_topics.",
+      "target_length": "medium",
+      "slug": "hub-covering-location-transit-tradeoffs",
+      "output_path": "drafts/research/hub-covering-location-transit-tradeoffs.html"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "topic": "Why Long-Form Articles Have a 0% Production Rate After 21+ Days",
+      "angle": "Diagnostic/meta piece is NOT being queued as content — flagging instead in retries. See retries array: drafts/articles/ has never successfully received a file despite being queued daily since 2026-06-07.",
+      "rationale": "N/A — moved to retries, not a content priority. See retries[0].",
+      "target_length": "n/a",
+      "slug": "n/a",
+      "output_path": "n/a"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs. Light Rail: Lifecycle Cost Comparison",
+      "angle": "Per-mile capital cost, O&M cost, and farebox recovery for BRT vs. light rail, using FTA New Starts/Small Starts data, framed around the 2026 wave of BRT-to-rail upgrade debates (e.g. Indianapolis, Richmond).",
+      "rationale": "Retry of the longest-running stuck item in the queue (queued since 2026-06-07, 21+ consecutive failures). Re-queuing once more before recommending the item be retired or reassigned to a different agent/format.",
+      "target_length": "short",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "explainer",
+      "topic": "What a Hub-and-Spoke Bus Network Redesign Actually Changes for Riders",
+      "angle": "Companion explainer to the research brief (rank 1): walk through a before/after of a real hub-and-spoke redesign (Houston 2015 or LA Metro NextGen) showing which riders gained frequency and which lost one-seat rides.",
+      "rationale": "Pairs with today's research item to give the topic both an analytical and a reader-facing angle, increasing odds at least one format clears QC and approval.",
+      "target_length": "medium",
+      "slug": "hub-and-spoke-bus-redesign-rider-impact",
+      "output_path": "drafts/articles/hub-and-spoke-bus-redesign-rider-impact.html"
+    },
+    {
+      "rank": 4,
+      "type": "video_script",
+      "topic": "HOLD — no new video script",
+      "angle": "Video script production remains on hold. Backlog is 10 scripts: 3 QC-passed and publish-ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics) plus us-cities-transit-gap-script (passed 2026-06-25) — 4 passed total — and 6 flagged needs_revision since as early as 2026-06-09/10/11. No new script should be drafted until a human clears this backlog or explicitly approves continuing production regardless.",
+      "rationale": "Per memory.json drafts_pending_approval and the 2026-06-27 commit 'Video scripts held: approval backlog still unresolved' — generating more scripts into an already-stuck queue compounds the problem rather than solving it.",
+      "target_length": "n/a",
+      "slug": "HOLD-no-new-script-2026-06-28",
+      "output_path": "drafts/scripts/HOLD-no-new-script-2026-06-28.md"
+    }
+  ],
+  "retries": [
+    {
+      "type": "article_writing_diagnostic",
+      "topic": "drafts/articles/ pipeline failure",
+      "reason": "0% successful long-form article production for 21+ consecutive days (since at least 2026-06-07). drafts/articles/ is currently empty again. The article-writing agent itself, not the topic queue, is the suspected fault — recommend manual diagnostic run outside the daily pipeline before re-queuing additional article topics.",
+      "action_needed": "human_diagnostic"
+    },
+    {
+      "type": "infographic_writing_diagnostic",
+      "topic": "brt-vs-light-rail-cost-2026",
+      "reason": "21+ consecutive failures since 2026-06-07 (this is approximately retry #22). Re-queued once more at rank 2 above per standing instruction, but further blind retries without a manual diagnostic are unlikely to succeed.",
+      "action_needed": "human_diagnostic"
+    },
+    {
+      "type": "publishing_approval_backlog",
+      "topic": "approved.json empty",
+      "reason": "approved.json has had zero entries since 2026-06-07 (21 consecutive days). At least 4 QC-passed video scripts are publish-ready right now: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script. Zero content of any kind has gone live in 21+ days of daily production.",
+      "action_needed": "human_approval"
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity automation",
+    "autonomous vehicles",
+    "transit desert remediation",
+    "Southern California transit systems (daily brief format — distinct from new explainers)",
+    "slime mold network optimization",
+    "US cities transit gap",
+    "dopamine and urban design",
+    "electric axial flux motors transit",
+    "TOD Builder interactive game",
+    "Pokemon Go military drone urban data pipeline",
+    "transit app dark UX patterns",
+    "Tesla SpaceX transit empire",
+    "fare evasion economics",
+    "transit financing/bonds, fare structures, ADA, environmental justice, federal grants, EV bus equity, pantograph charging, walkability TOD thresholds (full encyclopedia series, June 12)"
+  ],
+  "trend_signals": [
+    "Hub covering location / accessibility-vs-travel-time tradeoff in transit network design (arXiv, fresh)",
+    "Age-verification / online safety legislation (Kids Online Safety-style act) — general tech news, low fit for niche",
+    "AI coding agent security (Codex sensitive-file exclusion, anonymous 0-day dumps) — general tech, low fit for niche",
+    "Mainstream tech/news feeds (HN, Google News) returned no transit/urban-mobility-relevant stories today — niche content should lean on arXiv and the internal backlog",
+    "Persistent internal trend: 21-day publishing approval freeze is now the dominant signal in the system, ahead of any external news"
+  ]
+}
