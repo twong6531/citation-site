@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-28",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "notes": "No new drafts were produced today. drafts/articles/ and drafts/infographics/ do not exist (consistent with the 21+ day article/infographic pipeline failures noted in system/status/status-2026-06-28.json). drafts/scripts/ contains only previously-QC'd scripts plus a HOLD-no-new-script-2026-06-28.md notice; all 10 existing scripts already have QC reports in drafts/qc/ from prior runs and were not re-reviewed. No QC action was required today."
+}
