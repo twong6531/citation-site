@@ -17,5 +17,6 @@
     "CONFIRMED PIPELINE FAILURE -- drafts/articles/ directory is empty again; 0% successful long-form article production sustained for 21+ days running. Recommend a human-run diagnostic of the article-writing agent outside the daily cycle rather than further blind retries.",
     "Video script production remains correctly held per 2026-06-27 decision -- backlog of 10 scripts (4 passed, 6 needs_revision) is unresolved; no new script queued today.",
     "External news scan (HN, Google News) returned no transit/urban-mobility-relevant stories today; today's queue leans on an arXiv hit (hub covering location problem in transit network design) instead."
-  ]
+  ],
+  "publishing": "skipped_no_approved_items"
 }
