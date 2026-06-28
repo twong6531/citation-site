@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" font-family="Helvetica Neue, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="1400" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="40" font-size="13" letter-spacing="2" fill="#888888" font-weight="600">DAILY BRIEFING</text>
+<text x="40" y="78" font-size="28" font-weight="bold" fill="#111111">AI Power and Surveillance Tensions</text>
+<text x="40" y="104" font-size="13" fill="#999999">June 28, 2026</text>
+<line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="168" font-size="13" fill="#BBBBBB" font-weight="bold">01</text>
+<rect x="68" y="154" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="168" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="168" font-size="18" text-anchor="end">🐛</text>
+<text x="40" y="200" font-size="16" font-weight="bold" fill="#111111">Anonymous Account Mass-Drops GitHub 0-Days</text>
+<text x="40" y="222" font-size="12" fill="#666666">An anonymous GitHub account calling itself &#x27;exploitarium&#x27; began publishing a wave of</text>
+<text x="40" y="238" font-size="12" fill="#666666">undisclosed zero-day vulnerabilities, alarming security researchers industry-wide.</text>
+<circle cx="44" cy="264" r="2.5" fill="#00897B"/>
+<text x="54" y="268" font-size="11.5" fill="#444444">Story drew 888 points on Hacker News, the day&#x27;s top story, with 347 comments</text>
+<circle cx="44" cy="281" r="2.5" fill="#00897B"/>
+<text x="54" y="285" font-size="11.5" fill="#444444">The account published undisclosed exploits via a public repo named &#x27;exploitarium&#x27;</text>
+<circle cx="44" cy="298" r="2.5" fill="#00897B"/>
+<text x="54" y="302" font-size="11.5" fill="#444444">Mass-dropping bypasses the 90-day coordinated disclosure windows most vendors rely on</text>
+<text x="40" y="323" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="313" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="313" width="180.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="323" font-size="11" fill="#111111" font-weight="bold">9/10</text>
+<line x1="40" y1="332" x2="760" y2="332" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="370" font-size="13" fill="#BBBBBB" font-weight="bold">02</text>
+<rect x="68" y="356" width="55" height="20" rx="10" fill="#E65100"/>
+<text x="95.5" y="370" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">WORLD</text>
+<text x="740" y="370" font-size="18" text-anchor="end">🇦🇹</text>
+<text x="40" y="402" font-size="16" font-weight="bold" fill="#111111">Austria Lobbies EU to Host Anthropic</text>
+<text x="40" y="424" font-size="12" fill="#666666">Austria is pushing the European Union to court Anthropic for a regional base after</text>
+<text x="40" y="440" font-size="12" fill="#666666">new U.S. restrictions limited the AI lab&#x27;s access for some international customers.</text>
+<circle cx="44" cy="466" r="2.5" fill="#E65100"/>
+<text x="54" y="470" font-size="11.5" fill="#444444">Story drew 45 points on Hacker News with 39 comments</text>
+<circle cx="44" cy="483" r="2.5" fill="#E65100"/>
+<text x="54" y="487" font-size="11.5" fill="#444444">Reported by Bloomberg on June 28, 2026</text>
+<circle cx="44" cy="500" r="2.5" fill="#E65100"/>
+<text x="54" y="504" font-size="11.5" fill="#444444">Austria&#x27;s pitch follows new U.S. curbs restricting Anthropic access for foreign users</text>
+<text x="40" y="525" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="515" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="515" width="140.0" height="10" rx="5" fill="#E65100"/>
+<text x="310" y="525" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="534" x2="760" y2="534" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="572" font-size="13" fill="#BBBBBB" font-weight="bold">03</text>
+<rect x="68" y="558" width="38" height="20" rx="10" fill="#6C47FF"/>
+<text x="87.0" y="572" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="572" font-size="18" text-anchor="end">🤖</text>
+<text x="40" y="604" font-size="16" font-weight="bold" fill="#111111">Google Limits Meta&#x27;s Access to Gemini</text>
+<text x="40" y="626" font-size="12" fill="#666666">Google has moved to restrict how Meta can use its Gemini AI models, per a Financial</text>
+<text x="40" y="642" font-size="12" fill="#666666">Times report, highlighting rising friction between two of the biggest AI labs.</text>
+<circle cx="44" cy="668" r="2.5" fill="#6C47FF"/>
+<text x="54" y="672" font-size="11.5" fill="#444444">Story drew 45 points on Hacker News with 12 comments</text>
+<circle cx="44" cy="685" r="2.5" fill="#6C47FF"/>
+<text x="54" y="689" font-size="11.5" fill="#444444">Reported by the Financial Times, relayed by CNBC on June 28, 2026</text>
+<circle cx="44" cy="702" r="2.5" fill="#6C47FF"/>
+<text x="54" y="706" font-size="11.5" fill="#444444">Restrictions target Meta&#x27;s use of Google&#x27;s Gemini model family specifically</text>
+<text x="40" y="727" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="717" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="717" width="140.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="727" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="736" x2="760" y2="736" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="774" font-size="13" fill="#BBBBBB" font-weight="bold">04</text>
+<rect x="68" y="760" width="55" height="20" rx="10" fill="#E65100"/>
+<text x="95.5" y="774" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">WORLD</text>
+<text x="740" y="774" font-size="18" text-anchor="end">📷</text>
+<text x="40" y="806" font-size="16" font-weight="bold" fill="#111111">Flock License-Plate Cameras Keep Spreading</text>
+<text x="40" y="828" font-size="12" fill="#666666">An Engadget investigation details how Flock Safety&#x27;s AI-powered license-plate cameras</text>
+<text x="40" y="844" font-size="12" fill="#666666">have proliferated to over 100,000 units nationwide, well beyond reading plates.</text>
+<circle cx="44" cy="870" r="2.5" fill="#E65100"/>
+<text x="54" y="874" font-size="11.5" fill="#444444">Story drew 50 points on Hacker News</text>
+<circle cx="44" cy="887" r="2.5" fill="#E65100"/>
+<text x="54" y="891" font-size="11.5" fill="#444444">More than 100,000 Flock automated license-plate readers are installed across the U.S.</text>
+<circle cx="44" cy="904" r="2.5" fill="#E65100"/>
+<text x="54" y="908" font-size="11.5" fill="#444444">404 Media found 1,400+ Denver police searches run on ICE&#x27;s behalf as of August</text>
+<text x="40" y="929" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="919" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="919" width="140.0" height="10" rx="5" fill="#E65100"/>
+<text x="310" y="929" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="938" x2="760" y2="938" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="976" font-size="13" fill="#BBBBBB" font-weight="bold">05</text>
+<rect x="68" y="962" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="976" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="976" font-size="18" text-anchor="end">🖥️</text>
+<text x="40" y="1008" font-size="16" font-weight="bold" fill="#111111">Guide Clusters AMD Strix Halo Chips for AI</text>
+<text x="40" y="1030" font-size="12" fill="#666666">A new community guide walks through building an RDMA-networked cluster of AMD</text>
+<text x="40" y="1046" font-size="12" fill="#666666">Strix Halo APUs to run LLM inference across multiple machines.</text>
+<circle cx="44" cy="1072" r="2.5" fill="#00897B"/>
+<text x="54" y="1076" font-size="11.5" fill="#444444">Story drew 193 points on Hacker News with 59 comments</text>
+<circle cx="44" cy="1089" r="2.5" fill="#00897B"/>
+<text x="54" y="1093" font-size="11.5" fill="#444444">Guide uses vLLM toolboxes to run distributed inference across Strix Halo nodes</text>
+<circle cx="44" cy="1106" r="2.5" fill="#00897B"/>
+<text x="54" y="1110" font-size="11.5" fill="#444444">Targets RDMA-based low-latency networking to link multiple AMD APUs into one cluster</text>
+<text x="40" y="1131" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1121" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1121" width="120.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="1131" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="1140" x2="760" y2="1140" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1178" font-size="13" fill="#BBBBBB" font-weight="bold">06</text>
+<rect x="68" y="1164" width="38" height="20" rx="10" fill="#6C47FF"/>
+<text x="87.0" y="1178" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="1178" font-size="18" text-anchor="end">🔓</text>
+<text x="40" y="1210" font-size="16" font-weight="bold" fill="#111111">OpenAI Codex Still Lacks a Sensitive-File Filter</text>
+<text x="40" y="1232" font-size="12" fill="#666666">A long-open GitHub issue on OpenAI&#x27;s Codex agent is drawing fresh attention since the</text>
+<text x="40" y="1248" font-size="12" fill="#666666">tool still has no built-in way to block reading sensitive files like .env secrets.</text>
+<circle cx="44" cy="1274" r="2.5" fill="#6C47FF"/>
+<text x="54" y="1278" font-size="11.5" fill="#444444">Story drew 78 points on Hacker News with 57 comments</text>
+<circle cx="44" cy="1291" r="2.5" fill="#6C47FF"/>
+<text x="54" y="1295" font-size="11.5" fill="#444444">Issue #2847 was originally filed August 28, 2025, and remains open</text>
+<circle cx="44" cy="1308" r="2.5" fill="#6C47FF"/>
+<text x="54" y="1312" font-size="11.5" fill="#444444">Requests a .codexignore mechanism to block .env, .pem, and .ssh/** from the model</text>
+<text x="40" y="1333" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1323" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1323" width="100.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="1333" font-size="11" fill="#111111" font-weight="bold">5/10</text>
+<line x1="40" y1="1342" x2="760" y2="1342" stroke="#E5E5E5" stroke-width="1"/>
+<rect x="0" y="1396" width="800" height="4" fill="#111111"/>
+<text x="40" y="1378" font-size="11" fill="#999999">Generated by AI</text>
+<text x="760" y="1378" font-size="11" fill="#999999" text-anchor="end">June 28, 2026</text>
+</svg>
