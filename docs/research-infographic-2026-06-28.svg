@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 26px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 28, 2026 &#8212; 12 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">NYC's congestion pricing program lifted bus and subway ridership well beyond the priced zone itself,</text>
+<text x="90" y="241" class="body">using time-series foundation models to build counterfactual demand forecasts where no clean control</text>
+<text x="90" y="257" class="body">group exists -- one of the first rigorous post-implementation reads of the policy.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">A new dynamic program computes provably tight worst-case (not just average-case) bus headway bounds</text>
+<text x="90" y="319" class="body">under any holding policy, validated on a real Nashville, TN route -- closing a long-standing gap</text>
+<text x="90" y="335" class="body">between average-case optimization and what riders actually experience as unreliability.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Tabular reinforcement learning matched Deep RL's metro-network-expansion performance on real Xi'an</text>
+<text x="90" y="397" class="body">and Amsterdam networks while using 18x fewer training episodes and 12x less carbon -- a direct</text>
+<text x="90" y="413" class="body">challenge to the assumption that bigger models always win at transit network design.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">Public transit gains and spatially uneven travel demand changes after NYC congestion ...</text>
+<text x="40" y="576" class="small">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao</text>
+<text x="40" y="604" class="body">Using time-series foundation models to generate calibrated probabilistic counterfactual demand</text>
+<text x="40" y="620" class="body">forecasts, the study finds bus and subway ridership rose significantly relative to a no-policy</text>
+<text x="40" y="636" class="body">baseline, with transit gains spilling well beyond Manhattan's Congestion Relief Zone -- the most</text>
+<text x="40" y="652" class="body">consequential live US transit policy test of the decade, paired with a reusable evaluation method.</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Equity-aware evaluation</text>
+<text x="52" y="782" class="body">is becoming the default lens</text>
+<text x="52" y="798" class="body">-- fare policy, congestion</text>
+<text x="52" y="814" class="body">pricing, metro RL rewards,</text>
+<text x="52" y="830" class="body">and transit deserts all</text>
+<text x="52" y="846" class="body">model distributional effects.</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">Decentralization and</text>
+<text x="312" y="782" class="body">self-organization (slime-</text>
+<text x="312" y="798" class="body">mold swarms, edge-autonomous</text>
+<text x="312" y="814" class="body">SDN rail pods) rival</text>
+<text x="312" y="830" class="body">centralized control on</text>
+<text x="312" y="846" class="body">reliability and latency.</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">Right-sizing compute:</text>
+<text x="572" y="782" class="body">tabular RL beats Deep RL on</text>
+<text x="572" y="798" class="body">small problems; AlphaTransit</text>
+<text x="572" y="814" class="body">uses learned guidance to</text>
+<text x="572" y="830" class="body">avoid costly simulator</text>
+<text x="572" y="846" class="body">rollouts inside search.</text>
+<line x1="40" y1="900" x2="760" y2="900" class="ruleLight"/>
+<text x="40" y="940" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="986" class="body">High</text>
+<text x="40" y="1016" class="body">Medium</text>
+<text x="40" y="1046" class="body">Low</text>
+<rect x="110" y="974" width="160" height="18" fill="#1A1A1A"/>
+<text x="280" y="986" class="small">4</text>
+<rect x="110" y="1004" width="320" height="18" fill="#1A1A1A"/>
+<text x="440" y="1016" class="small">8</text>
+<text x="118" y="1046" class="small">0</text>
+<line x1="40" y1="1080" x2="760" y2="1080" class="ruleLight"/>
+<text x="40" y="1120" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1148" class="body" font-weight="bold">1.</text>
+<text x="60" y="1148" class="body">Agencies designing or revising fare policy should pilot agent-based, socioeconomically-stratified</text>
+<text x="60" y="1164" class="body">simulation before launch -- equity and revenue effects are decoupled enough that intuition alone</text>
+<text x="60" y="1180" class="body">is an unreliable guide to predicting outcomes.</text>
+<text x="40" y="1212" class="body" font-weight="bold">2.</text>
+<text x="60" y="1212" class="body">Before adopting Deep RL for network design problems, benchmark a simpler tabular or search-based</text>
+<text x="60" y="1228" class="body">baseline first -- for many real-world metro and bus network sizes it may already be competitive at</text>
+<text x="60" y="1244" class="body">a fraction of the compute and carbon cost.</text>
+<text x="40" y="1276" class="body" font-weight="bold">3.</text>
+<text x="60" y="1276" class="body">Transit operations centers should formalize worst-case (not just average-case) headway bounds and</text>
+<text x="60" y="1292" class="body">multidimensional resilience scoring as standard KPIs for evaluating bunching-control and</text>
+<text x="60" y="1308" class="body">disruption-response policies.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 28, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
