@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" font-family="Helvetica Neue, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="1400" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="40" font-size="13" letter-spacing="2" fill="#888888" font-weight="600">DAILY BRIEFING</text>
+<text x="40" y="78" font-size="28" font-weight="bold" fill="#111111">AI Benchmarks and Tech Power</text>
+<text x="40" y="104" font-size="13" fill="#999999">June 29, 2026</text>
+<line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="168" font-size="13" fill="#BBBBBB" font-weight="bold">01</text>
+<rect x="68" y="154" width="38" height="20" rx="10" fill="#6C47FF"/>
+<text x="87.0" y="168" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="168" font-size="18" text-anchor="end">🛡️</text>
+<text x="40" y="200" font-size="16" font-weight="bold" fill="#111111">GLM 5.2 Beats Claude on Cyber Benchmarks</text>
+<text x="40" y="222" font-size="12" fill="#666666">Security firm Semgrep published benchmark results showing Zhipu AI&#x27;s GLM 5.2 model</text>
+<text x="40" y="238" font-size="12" fill="#666666">outperforming Anthropic&#x27;s Claude on a suite of offensive and defensive cybersecurity tasks,</text>
+<circle cx="44" cy="264" r="2.5" fill="#6C47FF"/>
+<text x="54" y="268" font-size="11.5" fill="#444444">The post topped Hacker News with 1,006 points and drew 467 comments, the day&#x27;s highest-engag...</text>
+<circle cx="44" cy="281" r="2.5" fill="#6C47FF"/>
+<text x="54" y="285" font-size="11.5" fill="#444444">Semgrep ran the comparison using its own internal cybersecurity benchmark suite, not a third...</text>
+<circle cx="44" cy="298" r="2.5" fill="#6C47FF"/>
+<text x="54" y="302" font-size="11.5" fill="#444444">GLM 5.2 is developed by Zhipu AI (Z.ai), one of China&#x27;s leading open-weight model labs</text>
+<text x="40" y="323" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="313" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="313" width="160.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="323" font-size="11" fill="#111111" font-weight="bold">8/10</text>
+<line x1="40" y1="332" x2="760" y2="332" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="370" font-size="13" fill="#BBBBBB" font-weight="bold">02</text>
+<rect x="68" y="356" width="38" height="20" rx="10" fill="#6C47FF"/>
+<text x="87.0" y="370" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="370" font-size="18" text-anchor="end">📄</text>
+<text x="40" y="402" font-size="16" font-weight="bold" fill="#111111">Open-Source ATS Scores Same Resume Three Ways</text>
+<text x="40" y="424" font-size="12" fill="#666666">A developer tested HackerRank&#x27;s newly open-sourced applicant tracking system on his own</text>
+<text x="40" y="440" font-size="12" fill="#666666">resume and got three different scores — 90, then 74, then 88 — without changing a single</text>
+<circle cx="44" cy="466" r="2.5" fill="#6C47FF"/>
+<text x="54" y="470" font-size="11.5" fill="#444444">The post drew 752 points and 318 comments on Hacker News</text>
+<circle cx="44" cy="483" r="2.5" fill="#6C47FF"/>
+<text x="54" y="487" font-size="11.5" fill="#444444">The same unedited resume scored 90/100, then 74/100, then 88/100 on repeated runs</text>
+<circle cx="44" cy="500" r="2.5" fill="#6C47FF"/>
+<text x="54" y="504" font-size="11.5" fill="#444444">HackerRank open-sourced the ATS code, letting outside developers inspect and reproduce the s...</text>
+<text x="40" y="525" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="515" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="515" width="120.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="525" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="534" x2="760" y2="534" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="572" font-size="13" fill="#BBBBBB" font-weight="bold">03</text>
+<rect x="68" y="558" width="54" height="20" rx="10" fill="#00897B"/>
+<text x="95.0" y="572" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="572" font-size="18" text-anchor="end">🗞️</text>
+<text x="40" y="604" font-size="16" font-weight="bold" fill="#111111">Startup Tries Pulling Article via Google Removal</text>
+<text x="40" y="626" font-size="12" fill="#666666">Gergely Orosz of The Pragmatic Engineer reported that Pollen, the events startup he covered</text>
+<text x="40" y="642" font-size="12" fill="#666666">in a 2022 investigation, filed a request with Google to remove his article from search</text>
+<circle cx="44" cy="668" r="2.5" fill="#00897B"/>
+<text x="54" y="672" font-size="11.5" fill="#444444">The post drew 581 points and 82 comments on Hacker News</text>
+<circle cx="44" cy="685" r="2.5" fill="#00897B"/>
+<text x="54" y="689" font-size="11.5" fill="#444444">The original 2022 article covered Pollen CEO Callum Negus-Fancey and CTO Bradley Wright</text>
+<circle cx="44" cy="702" r="2.5" fill="#00897B"/>
+<text x="54" y="706" font-size="11.5" fill="#444444">Orosz says Google&#x27;s removal process moved forward on the request before he intervened</text>
+<text x="40" y="727" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="717" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="717" width="140.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="727" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="736" x2="760" y2="736" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="774" font-size="13" fill="#BBBBBB" font-weight="bold">04</text>
+<rect x="68" y="760" width="86" height="20" rx="10" fill="#2E7D32"/>
+<text x="111.0" y="774" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">BUSINESS</text>
+<text x="740" y="774" font-size="18" text-anchor="end">🛰️</text>
+<text x="40" y="806" font-size="16" font-weight="bold" fill="#111111">Rocket Lab Acquires Satellite Operator Iridium</text>
+<text x="40" y="828" font-size="12" fill="#666666">Rocket Lab announced it will acquire Iridium Communications, the company that operates a</text>
+<text x="40" y="844" font-size="12" fill="#666666">global low-Earth-orbit satellite constellation providing voice, data, and IoT coverage, in</text>
+<circle cx="44" cy="870" r="2.5" fill="#2E7D32"/>
+<text x="54" y="874" font-size="11.5" fill="#444444">Rocket Lab confirmed the acquisition in an official investor news release on June 29</text>
+<circle cx="44" cy="887" r="2.5" fill="#2E7D32"/>
+<text x="54" y="891" font-size="11.5" fill="#444444">Iridium operates a low-Earth-orbit constellation supplying global satellite voice, data, and...</text>
+<circle cx="44" cy="904" r="2.5" fill="#2E7D32"/>
+<text x="54" y="908" font-size="11.5" fill="#444444">Rocket Lab framed the deal as creating a fully integrated launch-to-network space company</text>
+<text x="40" y="929" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="919" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="919" width="140.0" height="10" rx="5" fill="#2E7D32"/>
+<text x="310" y="929" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="938" x2="760" y2="938" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="976" font-size="13" fill="#BBBBBB" font-weight="bold">05</text>
+<rect x="68" y="962" width="86" height="20" rx="10" fill="#2E7D32"/>
+<text x="111.0" y="976" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">BUSINESS</text>
+<text x="740" y="976" font-size="18" text-anchor="end">⚖️</text>
+<text x="40" y="1008" font-size="16" font-weight="bold" fill="#111111">Memory Makers Sued Over Price Fixing</text>
+<text x="40" y="1030" font-size="12" fill="#666666">Samsung, SK Hynix, and Micron — the three companies that together dominate global memory-</text>
+<text x="40" y="1046" font-size="12" fill="#666666">chip production — were named in a new U.S. lawsuit alleging coordinated price fixing on DRAM</text>
+<circle cx="44" cy="1072" r="2.5" fill="#2E7D32"/>
+<text x="54" y="1076" font-size="11.5" fill="#444444">The story drew 91 points and 31 comments on Hacker News</text>
+<circle cx="44" cy="1089" r="2.5" fill="#2E7D32"/>
+<text x="54" y="1093" font-size="11.5" fill="#444444">The three named manufacturers control the large majority of global DRAM and NAND supply</text>
+<circle cx="44" cy="1106" r="2.5" fill="#2E7D32"/>
+<text x="54" y="1110" font-size="11.5" fill="#444444">The suit was filed in U.S. federal court, per reporting from Seoul Economic Daily</text>
+<text x="40" y="1131" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1121" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1121" width="120.0" height="10" rx="5" fill="#2E7D32"/>
+<text x="310" y="1131" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="1140" x2="760" y2="1140" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1178" font-size="13" fill="#BBBBBB" font-weight="bold">06</text>
+<rect x="68" y="1164" width="62" height="20" rx="10" fill="#E65100"/>
+<text x="99.0" y="1178" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">WORLD</text>
+<text x="740" y="1178" font-size="18" text-anchor="end">👓</text>
+<text x="40" y="1210" font-size="16" font-weight="bold" fill="#111111">Instagram Puts User Photos in Meta Glasses Ads</text>
+<text x="40" y="1232" font-size="12" fill="#666666">Instagram has begun incorporating ordinary users&#x27; own photos into advertisements promoting</text>
+<text x="40" y="1248" font-size="12" fill="#666666">Meta&#x27;s smart glasses, according to screenshots circulating on social media. The practice has</text>
+<circle cx="44" cy="1274" r="2.5" fill="#E65100"/>
+<text x="54" y="1278" font-size="11.5" fill="#444444">The story drew 88 points and 21 comments on Hacker News</text>
+<circle cx="44" cy="1291" r="2.5" fill="#E65100"/>
+<text x="54" y="1295" font-size="11.5" fill="#444444">Screenshots originated from a widely shared social media post documenting the ad placements</text>
+<circle cx="44" cy="1308" r="2.5" fill="#E65100"/>
+<text x="54" y="1312" font-size="11.5" fill="#444444">The ads promote Meta&#x27;s smart-glasses hardware line rather than a typical sponsored post</text>
+<text x="40" y="1333" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1323" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1323" width="100.0" height="10" rx="5" fill="#E65100"/>
+<text x="310" y="1333" font-size="11" fill="#111111" font-weight="bold">5/10</text>
+<line x1="40" y1="1342" x2="760" y2="1342" stroke="#E5E5E5" stroke-width="1"/>
+<rect x="0" y="1396" width="800" height="4" fill="#111111"/>
+<text x="40" y="1378" font-size="11" fill="#999999">Generated by AI</text>
+<text x="760" y="1378" font-size="11" fill="#999999" text-anchor="end">June 29, 2026</text>
+</svg>
