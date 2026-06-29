@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoCal Transit Intelligence — June 29, 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; }
+nav a:hover { color: #fff; }
+.hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; }
+.hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.priority.high { background: #ef4444; color: #fff; }
+.priority.medium { background: #f59e0b; color: #000; }
+.priority.low-medium { background: #64748b; color: #fff; }
+.agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+.card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; }
+.date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+.connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+.source-link:hover { color: #60a5fa; text-decoration: underline; }
+.status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+.status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:nth-child(odd) td { background: #1e293b; }
+tr:nth-child(even) td { background: #0f172a; }
+.themes { background: #0a1628; padding: 2rem; }
+.themes-inner { max-width: 1400px; margin: 0 auto; }
+.themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+.theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+.theme:last-child { border-bottom: none; }
+.theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+.theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>SoCal Transit Intel</strong></div>
+  <div><a href="transit.html">Archive</a><a href="https://thesource.metro.net" target="_blank">Metro Source</a></div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Daily Brief</h1>
+  <p class="subtitle">June 29, 2026 — coverage of the past 9 days across LA Metro, Metrolink, San Diego MTS, SCAG, OCTA, LAX/LAWA, Amtrak Pacific Surfliner, and CA High-Speed Rail</p>
+</div>
+
+<div class="grid">
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://www.sandiegouniontribune.com/wp-content/uploads/2024/10/SUT-L-Free-Trolley-Day-006_98f823.jpg?w=1024&h=676" alt="San Diego MTS trolley near Old Town Transit Center" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">San Diego MTS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>Pedestrian killed by trolley near Old Town Transit Center</h2>
+      <p class="date-range">June 28 – 29, 2026</p>
+      <p class="summary">A man was struck and killed by a San Diego Metropolitan Transit System trolley Sunday afternoon near the Old Town Transit Center, one of the system's busiest multimodal hubs. San Diego police are investigating the collision, which occurred on Taylor Street near Pacific Highway and Congress Street. MTS said trolleys were able to continue running on a single track around the scene, with only modest delays to Blue and Green Line service.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Collision occurred at approximately <strong>12:45 p.m. on Sunday, June 28</strong> on Taylor Street near the Old Town Transit Center</li>
+        <li>Victim was transported to a hospital, where he <strong>died from his injuries</strong>; his name had not been released as of Monday</li>
+        <li>MTS shifted to <strong>single-track operation</strong> around the incident, causing modest delays in both directions</li>
+        <li>Old Town Transit Center is a key interchange for the <strong>Blue and Green Line trolleys, COASTER, and Amtrak Pacific Surfliner</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The fatality lands the same week MTS approved its FY27 operating budget and a low-income fare freeze proposal — a reminder that safety around grade-level rail crossings remains one of the system's most persistent operational risks even as it works to expand and stabilize service.</p>
+      <p class="connections"><em>Connects to:</em> San Diego MTS $482.5M FY27 budget and fare freeze proposal</p>
+      <a class="source-link" href="https://www.sandiegouniontribune.com/2026/06/29/man-fatally-struck-by-trolley-in-old-town/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scpr.brightspotcdn.com/dims4/default/cc13e3c/2147483647/strip/true/crop/2347x1232+34+0/resize/1200x630!/quality/90/?url=http%3A%2F%2Fscpr-brightspot.s3.us-west-2.amazonaws.com%2Fa0%2F01%2F10b0d43d4f80ad192f2065fe5324%2Fvermont-ave-brt-concept.png" alt="Vermont Avenue bus rapid transit concept rendering" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LA City</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>Vermont Avenue bus project moves ahead without bike lanes after judge's ruling</h2>
+      <p class="date-range">June 15 – June 25, 2026</p>
+      <p class="summary">A Los Angeles Superior Court judge's June 15 preliminary ruling, reported June 25, allows Metro's $400 million Vermont Avenue bus rapid transit project to proceed without the protected bike lanes that street-safety advocate Joe Linton argues are legally required under Measure HLA. The ruling is a preliminary decision on an injunction tied to Linton's broader lawsuit, which contends the city's role in permitting and design review obligates it to implement Mobility Plan upgrades, including bike lanes, along the corridor.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>$400 million</strong> project adds dedicated bus lanes along more than <strong>12 miles</strong> of Vermont Avenue between 120th Street and Sunset Boulevard</li>
+        <li>Vermont Avenue has among the <strong>highest rates of pedestrian deaths and injuries</strong> of any corridor in the city</li>
+        <li>Lawsuit filed in <strong>April 2025</strong> by Joe Linton, editor of Streetsblog LA, suing as a resident, not in his publication role</li>
+        <li>Metro and the LA City Attorney argue Measure HLA's Mobility Plan upgrades apply <strong>only to projects the city itself leads</strong>, not Metro's</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The ruling tests whether Metro-led capital projects can sidestep city-mandated street-safety upgrades by routing permitting through the county instead of the city — a precedent that could shape how other regional megaprojects handle bike and pedestrian infrastructure going forward.</p>
+      <p class="connections"><em>Connects to:</em> LA Metro World Cup ridership surge, D Line weekend ridership gains</p>
+      <a class="source-link" href="https://laist.com/news/transportation/vermont-transit-corridor-measure-hla" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scpr.brightspotcdn.com/dims4/default/02015fd/2147483647/strip/true/crop/4032x2117+0+454/resize/1200x630!/quality/90/?url=http%3A%2F%2Fscpr-brightspot.s3.us-west-2.amazonaws.com%2Fd7%2F0f%2Fa5b92a004eecafaf53eeee7b219f%2Fapm-testing-november-24-century-blvd.jpg" alt="LAX Automated People Mover testing" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LAX/LAWA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>LAX's $3.34B people mover still testing without passengers as World Cup crowds pour in</h2>
+      <p class="date-range">June 24 – 25, 2026</p>
+      <p class="summary">As World Cup travelers stream through LAX, the long-delayed Automated People Mover (branded LAX SkyLink) remains in passenger-free reliability testing rather than carrying riders — years past its original 2023 opening target. The dispute between Los Angeles World Airports and contractor LINXS over responsibility for the delays continues, even as testing enters a more advanced phase that LAWA says is a "major milestone" toward eventual service.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>The elevated automated train is a <strong>$3.34 billion</strong> project, now multiple years behind its original <strong>2023</strong> opening target</li>
+        <li>Built by contractor <strong>LAX Integrated Express Solutions (LINXS)</strong> for LAWA</li>
+        <li>System entered a more advanced <strong>reliability-testing phase</strong> in June, still without passengers aboard</li>
+        <li>World Cup arrivals continue to rely on <strong>shuttles and roadways</strong> instead of the people mover</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The people mover is the connective piece meant to link LAX directly to Metro's rail network — its continued absence during the World Cup is a costly preview of risk for the far larger crowds expected at the 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> LA Metro World Cup ridership surge, D Line weekend ridership gains</p>
+      <a class="source-link" href="https://www.latimes.com/california/story/2026-06-24/lax-people-mover-world-cup-delays" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scpr.brightspotcdn.com/dims4/default/ac0f867/2147483647/strip/true/crop/1200x630+0+87/resize/1200x630!/quality/90/?url=http%3A%2F%2Fscpr-brightspot.s3.us-west-2.amazonaws.com%2F31%2F9b%2F9a76f3eb425f8027c1e69147475a%2Flaist-share-image.png" alt="LA Metro World Cup ridership" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>Metro ridership gets major boost as fans flock to SoFi and watch parties</h2>
+      <p class="date-range">June 23, 2026</p>
+      <p class="summary">As World Cup matches continue at SoFi Stadium and watch parties draw crowds across the region, LA Metro is reporting a significant ridership lift tied directly to tournament-related travel. The boost builds on Metro's already-strong May numbers and reflects sustained demand for the region-wide shuttle and rail network built for the tournament, rather than a one-off surge confined to match days.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Ridership gains tied to both <strong>SoFi Stadium matches</strong> and <strong>neighborhood watch parties</strong> across LA County</li>
+        <li>Comes on top of Metro's <strong>best rail ridership month in over six years</strong>, reported in May</li>
+        <li>Metro and partner agencies are running direct bus service from <strong>15 locations</strong> regionwide to World Cup matches</li>
+        <li>Surge reinforces demand patterns Metro is using to plan transit capacity for the <strong>2028 Olympics</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Sustained, not just match-day, ridership growth gives Metro real-world data to validate its World Cup transit investments ahead of the much larger logistical test the 2028 Olympics will pose.</p>
+      <p class="connections"><em>Connects to:</em> D Line weekend ridership gains, Union Station Fan Zone sellout, Metro's 196 World Cup-wrapped buses</p>
+      <a class="source-link" href="https://laist.com/news/transportation/metro-ridership-world-cup-sofi-watch-parties" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://ewscripps.brightspotcdn.com/dims4/default/4aa3b9b/2147483647/strip/true/crop/4836x2539+0+323/resize/1200x630!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Fb4%2F26%2Fe0ffacb94313a4123226cc801d89%2Ffirst-trolley.jpg" alt="San Diego MTS trolley" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">San Diego MTS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>San Diego MTS approves $482.5M FY27 budget, weighs fare freeze for low-income riders</h2>
+      <p class="date-range">June 23 – 24, 2026</p>
+      <p class="summary">The San Diego Metropolitan Transit System board approved a $482.5 million operating budget for fiscal year 2027 that maintains existing trolley and bus routes without service cuts. Separately, MTS is considering a fare freeze proposal that would lock in current transit costs for low-income riders, aiming to protect affordability even as the agency manages rising operating costs region-wide.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>$482.5 million</strong> operating budget approved for fiscal year 2027</li>
+        <li>Budget <strong>preserves existing trolley and bus route levels</strong> — no service cuts</li>
+        <li>Fare freeze proposal would <strong>lock in current fares</strong> specifically for low-income riders</li>
+        <li>Budget approval covers both <strong>Blue, Green, and Orange Line trolley operations</strong> and MTS bus routes</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> MTS is charting a notably different course than Metrolink's indefinite service cuts to the north — preserving service levels and even considering new affordability protections — making it a useful counterpoint for how SoCal transit agencies are weathering the same regional cost pressures differently.</p>
+      <p class="connections"><em>Connects to:</em> San Diego MTS Old Town trolley fatality</p>
+      <a class="source-link" href="https://www.transportationtoday.news/news/san-diego-transit-board-approves-482-5m-operating-budget/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-2.33.35-PM-scaled.png?fit=1200%2C502&ssl=1" alt="Union Station World Cup Fan Zone" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>Union Station's World Cup Fan Zone sells out all four days</h2>
+      <p class="date-range">June 22, 2026</p>
+      <p class="summary">"The Heart of the City," Metro's official FIFA World Cup Fan Zone at L.A. Union Station, has sold out for all four days of its run, drawing fans for live entertainment, soccer legend meet-and-greets, and communal match viewing. The activation is part of Metro's broader strategy to turn its largest rail hub into a tournament-adjacent destination rather than just a transfer point.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Fan Zone branded <strong>"The Heart of the City"</strong> at Los Angeles Union Station</li>
+        <li>Event <strong>sold out for all four scheduled days</strong></li>
+        <li>Programming includes <strong>live entertainment and appearances by soccer legends</strong></li>
+        <li>Positions Union Station as an official <strong>World Cup Fan Zone</strong>, not just a transit hub</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Turning Union Station into a sold-out destination in its own right shows Metro experimenting with placemaking around its rail network — a strategy it will likely lean on again for 2028 Olympics programming.</p>
+      <p class="connections"><em>Connects to:</em> LA Metro World Cup ridership surge, Metro's 196 World Cup-wrapped buses</p>
+      <a class="source-link" href="https://thesource.metro.net/watch-world-cup-matches-meet-soccer-legends-and-enjoy-live-entertainment-at-union-stations-fan-zone/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/4-1.jpeg?fit=1200%2C801&ssl=1" alt="Metro World Cup wrapped bus" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>Metro transformed nearly 200 buses into rolling World Cup celebrations</h2>
+      <p class="date-range">June 22, 2026</p>
+      <p class="summary">As the official Public Transit Provider of the Los Angeles World Cup 2026 Host, Metro has wrapped 196 buses in special World Cup-branded designs, turning its familiar orange fleet into moving advertisements for the tournament across the region. Metro describes the campaign as both a marketing effort and a way of signaling its civic role in hosting the global event.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>196 buses</strong> wrapped with special FIFA World Cup branding</li>
+        <li>Metro holds the title of <strong>official Public Transit Provider</strong> for the LA World Cup 2026 host committee</li>
+        <li>Wraps have been visible on routes <strong>"across Los Angeles"</strong> for several weeks leading into the tournament</li>
+        <li>Campaign framed as building <strong>civic visibility</strong> beyond simple route service</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The bus-wrap campaign is a small but visible piece of Metro's larger effort to position itself as the face of World Cup transportation — branding that doubles as a dry run for the agency's much bigger 2028 Olympics visibility push.</p>
+      <p class="connections"><em>Connects to:</em> Union Station Fan Zone sellout, LA Metro World Cup ridership surge</p>
+      <a class="source-link" href="https://thesource.metro.net/how-metro-transformed-nearly-200-buses-into-rolling-celebrations-for-the-world-cup/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://railway-news.com/wp-content/uploads/2026/06/LA-Metro-Reports-Busiest-May-Since-2020.webp" alt="LA Metro D Line ridership" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>D Line weekend ridership surged nearly 80% after extension opened</h2>
+      <p class="date-range">May 8 – June 23, 2026</p>
+      <p class="summary">New numbers detailed by Railway-News show LA Metro's May rail ridership boom was driven by an outsized weekend effect: systemwide weekend rail ridership rose 18% year-over-year, but D Line weekend ridership alone grew nearly 80% following the May 8 opening of three new stations. Almost 27 million total riders boarded Metro bus and rail service in May, with buses still carrying about 76% of all trips.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>Almost 27 million</strong> total boardings across bus and rail in May 2026; <strong>20.5 million</strong> on buses (about 76% of total)</li>
+        <li>Systemwide <strong>weekend rail ridership up 18%</strong> year-over-year; <strong>D Line weekend ridership up nearly 80%</strong></li>
+        <li>D Line overall ridership up <strong>62%</strong> year-over-year; new stations adding an estimated <strong>8,000–10,000 rides per day</strong></li>
+        <li>About <strong>45,000 rides</strong> taken to and from the first two World Cup matches at LA Stadium (SoFi)</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The weekend-specific surge suggests the D Line extension is converting discretionary, leisure-oriented trips — not just commutes — into rail ridership, a pattern Metro will want to replicate as it plans future extensions and weighs rail-versus-bus investment trade-offs.</p>
+      <p class="connections"><em>Connects to:</em> LA Metro World Cup ridership surge, Vermont Avenue bus project ruling, LAX people mover delays</p>
+      <a class="source-link" href="https://railway-news.com/la-metro-reports-busiest-may-in-over-six-years/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<div class="status-board">
+  <h2>Agency Status Board</h2>
+  <table>
+    <thead>
+      <tr><th>Agency</th><th>Status</th><th>Key Activity</th><th>Next Milestone</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>LA Metro</td><td>Strong, mixed legal exposure</td><td>D Line weekend ridership up nearly 80%; World Cup ridership surge sustained beyond match days; Vermont Ave litigation win on bike lanes; 196 buses wrapped for World Cup; Union Station Fan Zone sold out</td><td>Continued World Cup match-day service through the knockout rounds; appeal/next phase of Linton v. Metro Vermont Ave lawsuit</td></tr>
+      <tr><td>LAX / LAWA</td><td>Critical</td><td>$3.34B Automated People Mover still in passenger-free testing during World Cup; LAWA-LINXS dispute over delays continues</td><td>Passenger service launch target, expected after World Cup concludes</td></tr>
+      <tr><td>San Diego MTS</td><td>Stable but safety-strained</td><td>$482.5M FY27 budget approved with no service cuts; fare freeze proposed for low-income riders; pedestrian fatality at Old Town Transit Center June 28</td><td>Fare freeze proposal decision; police investigation into trolley fatality</td></tr>
+      <tr><td>Metrolink</td><td>Critical (no new developments this period)</td><td>Indefinite 20% service cuts remain in effect from earlier this spring</td><td>Possible fare increase decision, expected as early as October</td></tr>
+      <tr><td>OCTA</td><td>Stable (no new developments this period)</td><td>FY27 budget previously approved; no fresh coverage in this 9-day window</td><td>FY27 budget takes effect July 1, 2026</td></tr>
+      <tr><td>Amtrak Pacific Surfliner</td><td>Stable (no new developments this period)</td><td>13th daily LA–San Diego roundtrip remains in effect; no fresh coverage this period</td><td>Monitoring ridership through summer World Cup travel season</td></tr>
+      <tr><td>CA High-Speed Rail</td><td>Advancing, contentious (no new developments this period)</td><td>LA-to-Anaheim environmental review previously closed; no fresh coverage this period</td><td>Authority decision on preferred alternative for LA-to-Anaheim segment</td></tr>
+      <tr><td>SCAG / LA Housing-Transit Policy</td><td>Active friction (no new developments this period)</td><td>SB 79 implementation delay ordinances previously approved; no fresh coverage this period</td><td>SB 79 takes statewide effect July 1, 2026</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes</h2>
+    <div class="theme">
+      <h3>World Cup ridership gains are proving durable, not just match-day spikes</h3>
+      <p>Both the broad "fans flock to SoFi and watch parties" ridership boost and the granular D Line weekend-ridership data (up nearly 80%) point to sustained, leisure-driven demand growth rather than one-off surges tied to specific games. That's a meaningfully different signal than simple match-day shuttle counts, and one Metro will lean on heavily when making the case for continued rail investment ahead of the 2028 Olympics.</p>
+    </div>
+    <div class="theme">
+      <h3>Marquee infrastructure keeps missing its moment</h3>
+      <p>LAX's $3.34 billion people mover remains in passenger-free testing even as World Cup crowds flood the airport — an embarrassing near-miss that previews the stakes for 2028, when far larger crowds will need exactly this connection. The contrast with Metro's own World Cup wins (sold-out Fan Zone, wrapped buses, ridership records) makes the airport's gap especially visible this week.</p>
+    </div>
+    <div class="theme">
+      <h3>Transit safety incidents remain a constant backdrop to growth narratives</h3>
+      <p>San Diego MTS's pedestrian fatality near the Old Town Transit Center landed the same week the agency touted a stable, cut-free FY27 budget and a low-income fare freeze proposal — a reminder that safety incidents around at-grade rail crossings continue to shadow even agencies with otherwise positive operational news.</p>
+    </div>
+    <div class="theme">
+      <h3>Legal and regulatory friction is shaping how megaprojects get built, not just whether</h3>
+      <p>The Vermont Avenue ruling turns on a technical question — whether Metro's coordination with the city makes the city legally responsible for triggering Measure HLA's bike-lane requirements. It's a preview of the kind of jurisdictional disputes likely to recur as more transit capital projects move through overlapping city, county, and regional approval processes.</p>
+    </div>
+    <div class="theme">
+      <h3>Regional transit agencies are diverging sharply on fiscal footing</h3>
+      <p>San Diego MTS approved a $482.5 million FY27 budget with no service cuts and is weighing new affordability protections for low-income riders — a notably different trajectory than Metrolink's indefinite 20% service cuts further north. The split illustrates how unevenly post-pandemic recovery and cost pressures are landing across SoCal's patchwork of transit operators.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Sources: San Diego Union-Tribune &middot; LAist &middot; thesource.metro.net &middot; Los Angeles Times &middot; Railway-News &middot; Transportation Today &middot; 10News San Diego<br>
+  Generated June 29, 2026
+</footer>
+
+</body>
+</html>
