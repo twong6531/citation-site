@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-29",
+  "total_reviewed": 0,
+  "passed": 0,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [],
+  "blocked": [],
+  "note": "No new drafts were produced on 2026-06-29. drafts/articles/ and drafts/infographics/ are empty (pipeline failure ongoing per status alerts), and video script production was held with no new script per the standing 2026-06-27 decision (see drafts/scripts/HOLD-no-new-script-2026-06-29.md). Nothing required QC today. Pre-existing backlog remains unchanged: 4 scripts already QC-passed and publish-ready (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script) are still blocked on a human adding slugs to approved.json (empty since 2026-06-07, 22+ days)."
+}
