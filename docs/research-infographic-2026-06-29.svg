@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 26px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 29, 2026 &#8212; 10 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">A physics-anchored machine learning model can now forecast, before a cold wave hits, which electric-bus</text>
+<text x="90" y="241" class="body">blocks will fail to finish their day -- and a forecast-triggered opportunity-charging policy cuts mean</text>
+<text x="90" y="257" class="body">failure probability from 0.759 to 0.112 across eight real Toronto cold-wave days.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Running urban air mobility like a ride-hailing service instead of a scheduled transit line more than</text>
+<text x="90" y="319" class="body">doubles simulated operating profit at LAX -- a direct challenge to the assumption that new modes should</text>
+<text x="90" y="335" class="body">be priced like the transit systems they're meant to complement.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">LLM-based urban simulators reproduce plausible-sounding activity narratives but fail core empirical</text>
+<text x="90" y="397" class="body">mobility tests -- trip-length distributions, OD flows, and dwell times -- in both Paris and Shanghai,</text>
+<text x="90" y="413" class="body">warning planners not to conflate narrative plausibility with mobility realism.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">When the Timetable Breaks: Cold-Wave-Robust Battery-Electric Bus Operations</text>
+<text x="40" y="576" class="small">Yifan Wang</text>
+<text x="40" y="604" class="body">WeatherRobustBus couples a transparent traction/cabin-thermal physics backbone with a bounded ML</text>
+<text x="40" y="620" class="body">residual, validated against an independent EnergyPlus simulation, to predict block-level cold-wave</text>
+<text x="40" y="636" class="body">failure risk for electric buses -- then shows opportunity charging is the dominant lever to fix it,</text>
+<text x="40" y="652" class="body">cutting failure probability nearly 7x across real Toronto TTC vehicle blocks.</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Resilience by design:</text>
+<text x="52" y="782" class="body">cold-wave bus forecasting,</text>
+<text x="52" y="798" class="body">physics-constrained load</text>
+<text x="52" y="814" class="body">fusion, and ERTMS security</text>
+<text x="52" y="830" class="body">modeling all engineer around</text>
+<text x="52" y="846" class="body">failure modes in advance.</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">Causal over correlational:</text>
+<text x="312" y="782" class="body">e-scooter hub siting and</text>
+<text x="312" y="798" class="body">physics-anchored battery</text>
+<text x="312" y="814" class="body">models both beat black-box</text>
+<text x="312" y="830" class="body">correlation-only baselines,</text>
+<text x="312" y="846" class="body">one already shaping construction.</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">Transit-grade scrutiny for</text>
+<text x="572" y="782" class="body">new modes: UAM pricing,</text>
+<text x="572" y="798" class="body">scooter-transit proximity,</text>
+<text x="572" y="814" class="body">and LLM-simulated agents are</text>
+<text x="572" y="830" class="body">all benchmarked against real</text>
+<text x="572" y="846" class="body">transit-style standards.</text>
+<line x1="40" y1="900" x2="760" y2="900" class="ruleLight"/>
+<text x="40" y="940" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="986" class="body">High</text>
+<text x="40" y="1016" class="body">Medium</text>
+<text x="40" y="1046" class="body">Low</text>
+<rect x="110" y="974" width="80" height="18" fill="#1A1A1A"/>
+<text x="200" y="986" class="small">2</text>
+<rect x="110" y="1004" width="280" height="18" fill="#1A1A1A"/>
+<text x="400" y="1016" class="small">7</text>
+<rect x="110" y="1034" width="40" height="18" fill="#1A1A1A"/>
+<text x="160" y="1046" class="small">1</text>
+<line x1="40" y1="1080" x2="760" y2="1080" class="ruleLight"/>
+<text x="40" y="1120" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1148" class="body" font-weight="bold">1.</text>
+<text x="60" y="1148" class="body">Cold-climate transit agencies electrifying their fleets should adopt forecast-triggered opportunity-</text>
+<text x="60" y="1164" class="body">charging protocols ahead of cold waves rather than discovering block infeasibility in real time.</text>
+<text x="40" y="1196" class="body" font-weight="bold">2.</text>
+<text x="60" y="1196" class="body">Agencies running APC-based crowding or equity analytics should check whether their pipeline enforces</text>
+<text x="60" y="1212" class="body">physical feasibility and dynamically weights sensor trust -- static fusion leaves reliability on the table.</text>
+<text x="40" y="1244" class="body" font-weight="bold">3.</text>
+<text x="60" y="1244" class="body">Before trusting LLM-based generative-agent simulators for service planning, run them through empirical</text>
+<text x="60" y="1260" class="body">mobility-realism checks (trip-length, OD-flow, dwell-time) rather than accepting plausible output at face value.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 29, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>

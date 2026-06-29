@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest &#8212; June 29, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E6;
+    --muted: #888888;
+    --accent: #E8FF00;
+    --accent2: #4488FF;
+    --highlight: #FF6B35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand { font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--accent); letter-spacing: 1px; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 20px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; letter-spacing: 1px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 40px; }
+
+  .editorial-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+  .editorial-header { padding: 20px 28px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .editorial-header .section-tag { font-size: 10px; letter-spacing: 3px; color: var(--muted); }
+  .editorial-header h2 { font-size: 18px; margin-top: 4px; }
+  .editorial-body { padding: 28px; text-align: center; }
+  .editorial-body img { max-width: 100%; border-radius: 2px; }
+  .editorial-body .no-image {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 13px; border: 1px dashed var(--border); border-radius: 2px;
+  }
+  .editorial-caption { padding: 16px 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  .executive-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .executive-summary h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .executive-summary p { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 12px; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; line-height: 1.5; }
+
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  .paper-card .paper-num { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-card h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+  .paper-card .section-head { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 20px; margin-bottom: 8px; }
+  .paper-card p, .paper-card li { font-size: 14px; color: #BBBBBB; line-height: 1.65; }
+  .paper-card ul { padding-left: 20px; }
+  .paper-card ul li { margin-bottom: 6px; }
+  .paper-card .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .paper-card .tag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 1px; }
+  .paper-card .tag.high { border-color: #44FF88; color: #44FF88; }
+  .paper-card .tag.medium { border-color: #FFAA44; color: #FFAA44; }
+  .paper-card .tag.low { border-color: #FF4444; color: #FF4444; }
+
+  .takeaways { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface2); border-left: 3px solid var(--accent); padding: 20px 24px; }
+  .takeaway p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .contrarian-block { background: var(--surface); border: 1px solid #FF6B35; padding: 28px 32px; margin-bottom: 48px; }
+  .contrarian-block h2 { font-size: 10px; letter-spacing: 4px; color: #FF6B35; text-transform: uppercase; margin-bottom: 20px; }
+  .contrarian-block .insight { margin-bottom: 20px; padding-left: 16px; border-left: 2px solid #FF6B35; }
+  .contrarian-block .insight p { font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  .infographic-section { margin-bottom: 48px; }
+  .svg-wrapper { background: #F7F7F5; padding: 24px; border: 1px solid var(--border); }
+  .svg-wrapper svg { width: 100%; height: auto; }
+  .download-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent2); border: 1px solid var(--accent2); padding: 8px 16px; }
+
+  .long-term { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 48px; }
+  .long-term h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .long-term p { font-size: 15px; line-height: 1.75; color: #CCCCCC; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 32px 20px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand">Transit Research Digest</span>
+  <a href="research.html" class="back-link">&#8592; Archive Index</a>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Transit Research Digest &#183; June 29, 2026</div>
+  <h1>Physics-Anchored Machine Learning Shows How a Single Cold Day Can Cascade Into Citywide Electric-Bus Timetable Failure</h1>
+  <div class="meta">
+    <span><span class="badge">10 PAPERS</span></span>
+    <span>arXiv &#183; Self-Analysis (Gemini API unavailable today: 401 service-blocked on Bearer auth; 429 quota-exhausted on key auth)</span>
+    <span>Cold-climate EV bus resilience &#183; Causal e-scooter hub siting &#183; UAM vs. transit economics &#183; Lifecycle metro usage modeling</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- EDITORIAL IMAGE SECTION -->
+  <div class="editorial-section">
+    <div class="editorial-header">
+      <div class="section-tag">TODAY'S TRANSIT ILLUSTRATION</div>
+      <h2>A battery-electric transit bus on opportunity charge at a cold-climate depot, pantograph lowered, cabin-heating bridge running</h2>
+    </div>
+    <div class="editorial-body">
+      <div class="no-image">
+        &#9723; EDITORIAL ILLUSTRATION UNAVAILABLE<br>
+        <span style="font-size:11px;margin-top:8px;display:block;">Gemini Imagen API unavailable today (401 service-blocked on Bearer auth; imagen-4.0-generate-001 returns 400 &#8220;Imagen 3 is only available on paid plans&#8221;) &#8212; image generation skipped per instructions</span>
+        <span style="font-size:11px;color:#555;margin-top:4px;display:block;">A battery-electric bus of the kind studied in today's paper-of-the-day sits at a depot bay during a cold wave, roof-mounted pantograph lowered onto an overhead opportunity-charging rail for a short top-up between blocks. Inside, a diesel- or propane-fired auxiliary heater bridges the cabin-heating load that would otherwise drain the traction battery faster than the scheduled layover can recharge it, while telematics feed real-time state-of-charge and outdoor-temperature data into the kind of forecast-triggered dispatch logic the paper proposes. The visual is rich with engineering detail: the depot's overhead charging gantry and contact shoes, underbody battery packs and thermal-management ductwork, the bus's low-floor accessible doors, and a dispatcher's screen in the background showing block-by-block failure-risk forecasts derived from the hourly weather feed.</span>
+      </div>
+    </div>
+    <div class="editorial-caption">
+      <span>A battery-electric transit bus on opportunity charge at a cold-climate depot &#8212; Technical Editorial Illustration</span>
+      <span>Independently researched and rendered from today's papers</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>Today's transit research cluster is unusually thin on brand-new arXiv submissions in the narrowest sense &#8212; most "transit"-tagged papers from the last 72 hours are unrelated false positives (phase transitions, automata theory, cosmic ray transport) rather than genuine transportation research &#8212; so this digest instead surfaces ten genuinely transit-relevant papers from the past several weeks that haven't yet appeared in this archive, found by broadening the search into physics.soc-ph/eess.SY categories and bike/scooter/rail-specific terms. The strongest signal across them is that resilience and trust are becoming first-class engineering targets, not afterthoughts: a physics-anchored ML framework now lets agencies forecast which electric-bus blocks will fail during a cold wave before it happens, a multi-agent framework explicitly enforces physical feasibility on noisy passenger-counting data, and a systematic cybersecurity audit of Europe's rail control standard finds legacy components quietly undermining a system built for full autonomy. A second thread runs through the new-mobility papers: causal, not just correlational, evidence is starting to drive real infrastructure decisions, as seen in the e-scooter hub-siting framework already informing construction in Heilbronn, while a sober validation study of LLM-based urban simulators warns that mobility realism and narrative plausibility are not the same thing.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>Resilience by design is replacing resilience by accident &#8212; cold-wave bus battery forecasting, physics-constrained passenger-load fusion, and ERTMS cybersecurity risk modeling all treat failure modes as something to engineer around in advance, not just react to.</h3>
+    </div>
+    <div class="theme-card">
+      <h3>Causal and physically-grounded modeling is displacing pure correlation across the new-mobility stack &#8212; from e-scooter hub siting causal templates already shaping real construction to physics-anchored battery models beating black-box ML in the cold tail.</h3>
+    </div>
+    <div class="theme-card">
+      <h3>The line between transit and adjacent modes (UAM, e-scooters, bike-share, LLM-simulated agents) keeps getting tested against real transit-style benchmarks &#8212; pricing paradigms, transfer/proximity effects, empirical mobility realism &#8212; rather than evaluated as standalone novelties.</h3>
+    </div>
+  </div>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">Paper Analyses</div>
+  <div class="papers-grid">
+
+    <!-- Paper 01 -->
+    <div class="paper-card featured">
+      <div class="paper-num">Paper 01 &#183; Paper of the Day &#183; arXiv (2026-06-25) (2606.26920)</div>
+      <h3><a href="http://arxiv.org/abs/2606.26920v1" target="_blank">When the Timetable Breaks: Physics-Anchored Scientific Machine Learning for Cold-Wave-Robust Battery-Electric Bus Operations</a></h3>
+      <div class="authors">Yifan Wang</div>
+      <div class="one-liner">WeatherRobustBus couples a physics-based traction/thermal model with a bounded machine-learning residual to predict, hours in advance, which electric bus blocks will fail to finish their day during a cold wave &#8212; and shows opportunistic charging fixes most of the risk.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>Transit agencies are electrifying fleets without the tools to see that cabin heating, not just driving, can drain batteries faster than scheduled layovers can recharge them, turning one cold day into a network-wide service collapse; this is one of the first frameworks to make that risk quantifiable and actionable before it happens.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Cabin heating, not traction, is often the dominant and underappreciated drain on electric bus batteries in winter, and it scales with outdoor temperature in ways fixed timetables don't account for.</li>
+        <li>A transparent physics backbone (traction + cabin thermal model) anchored with a bounded monotone residual ML ensemble outperforms pure ML baselines specifically in the out-of-support cold tail, where pure ML degrades 1.5-4x.</li>
+        <li>Validation against an independent EnergyPlus bus-cabin simulation (not just held-out data) gives the model a first-principles reference rather than just statistical cross-validation.</li>
+        <li>Monte Carlo simulation over 60 real Toronto TTC vehicle blocks reveals a sharp, threshold-like weather-induced failure envelope rather than a gradual decline.</li>
+        <li>A forecast-triggered policy combining opportunity charging, a fuel-fired cabin-heating bridge, and modest schedule buffering cuts mean cold-wave failure probability from 0.759 to 0.112 across eight real cold-wave days.</li>
+        <li>Ablation analysis shows opportunity charging is the dominant lever for reducing failure risk, with the fuel-fired heater acting as a low-cost complement rather than the primary fix.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>A physics-anchored scientific machine learning framework (transparent traction/cabin-thermal backbone plus bounded monotone residual ensemble) trained on real hourly weather and real TTC duty schedules, validated against an independent EnergyPlus cabin-thermal simulation, then embedded in a Monte Carlo block-feasibility simulator across 60 real Toronto bus blocks and eight real cold-wave days.</p>
+      <div class="section-head">Results</div>
+      <p>Lowest all-year prediction error among tested models (0.213 kWh RMSE over 8760 hours) and the only model that stays reliable below -12&#176;C, where pure-ML baselines degrade 1.5-4x; the forecast-triggered robust policy reduces mean cold-wave block failure probability from 0.759 to 0.112.</p>
+      <div class="section-head">Limitations</div>
+      <p>Validated on a single agency (Toronto TTC) and a single climate profile; the EnergyPlus reference simulation is itself a model, not direct cabin-temperature field measurement, and generalization to other vehicle platforms or battery chemistries is untested.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Cold-climate transit agencies could deploy forecast-triggered opportunity-charging and heating-bridge protocols before a cold wave hits, rather than discovering block infeasibility in real time as buses strand mid-route.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agency fleet electrification planners, cold-climate transit operators, battery-electric vehicle energy modelers, agencies writing electrification RFPs and depot-charging infrastructure specs.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most prior electric-bus energy models either use pure black-box ML (which fails in unseen cold extremes) or static engineering margins (which don't adapt to real weather); this is among the first to combine physics-anchored hybrid modeling with independent simulation validation and a concrete operational mitigation policy.</p>
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 02 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 02 &#183; arXiv (2026-06-24) (2606.25484)</div>
+      <h3><a href="http://arxiv.org/abs/2606.25484v1" target="_blank">From Causal Discovery to Implementation: An Agentic AI Framework for E-Scooter Mobility Hub Planning Across 29 German Cities</a></h3>
+      <div class="authors">Meng Jin, Melanie Handrich, Simone Martinenz, Nicholas Hoeser, Ziyue Li</div>
+      <div class="one-liner">An LLM-orchestrated causal discovery pipeline builds a transferable "causal template library" from public e-scooter data across 29 German cities, and two of its recommended hub sites are already under construction in Heilbronn.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>Most micromobility hub siting decisions are made from correlational demand models or planner intuition; this is a rare attempt to identify what actually causes demand to cluster in a given urban context, and then make that causal knowledge transferable to cities without their own rich dataset.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Demand drivers for scooter hotspots differ systematically by city type (large, university, industrial, hilly) and by location within a city (core vs peripheral), so one-size-fits-all siting heuristics misfire.</li>
+        <li>Core-area demand is driven mainly by activity access and proximity to transit, while peripheral demand responds more to built form &#8212; a finding with direct implications for where transit agencies and cities should co-locate scooter infrastructure.</li>
+        <li>An LLM orchestrates causal-discovery algorithm selection per city-cluster unit (57 total), adapting method choice to local data conditions rather than applying one fixed causal algorithm everywhere.</li>
+        <li>The resulting Causal Template Library is built entirely from public GBFS data, making the approach reproducible by cities without access to proprietary trip data.</li>
+        <li>Real-world validation: two hub sites identified through the framework's causal evidence are currently under construction in Heilbronn, Germany.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>A three-phase agentic AI framework: causal discovery (LLM-orchestrated algorithm selection across 57 city-cluster units), causal template library construction from public GBFS data across 29 German cities, and a downstream site-scoring/recommendation tool calibrated to local demographics.</p>
+      <div class="section-head">Results</div>
+      <p>Identified systematically different causal demand drivers across four city types and two cluster types (core/peripheral); produced practitioner-ready hub-siting recommendations now informing real infrastructure construction in Heilbronn.</p>
+      <div class="section-head">Limitations</div>
+      <p>Built entirely on German cities and German urban form/GBFS data conventions; causal discovery from observational mobility data carries inherent identification risk even when LLM-orchestrated, and the framework's transferability outside Germany is untested.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Cities and micromobility operators can use the public Causal Template Library as a starting point for siting decisions instead of commissioning a bespoke demand study, and transit agencies can use the core-area transit-proximity finding to justify co-located scooter hub investment.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Micromobility operators, city transportation departments, transit-microtransit integration planners, causal ML researchers in urban mobility.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Goes beyond correlational, single-city scooter demand models by building an explicitly causal, multi-city, LLM-orchestrated framework whose outputs have already informed a real infrastructure decision.</p>
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 03 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 03 &#183; arXiv (2026-05-30) (2606.00504)</div>
+      <h3><a href="http://arxiv.org/abs/2606.00504v1" target="_blank">Like Uber or Like Buses? Economic Feasibility Analysis of UAM for Airport Access</a></h3>
+      <div class="authors">Shangqing Cao, Rishi Kumar Srinivasan, Raja Sengupta, Mark Hansen</div>
+      <div class="one-liner">A two-stage economic model of Urban Air Mobility airport access finds that running UAM like a ride-hailing service with dynamic pricing more than doubles operating profit compared to fixed-price scheduled-transit-style operation.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>Whether the first viable UAM use case (airport access) gets regulated and operated like a subway or like Uber has major implications for fares, equity of access, and how it integrates with existing ground transit &#8212; and this paper provides one of the first quantitative answers to that operational design question.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>The central design question for UAM airport access isn't aircraft technology but operating paradigm: scheduled-transit-style fixed pricing versus TNC-style dynamic supply-demand matching.</li>
+        <li>A binary logit demand model captures travelers trading off UAM's time savings against its fare, letting the framework simulate how demand responds to different pricing strategies.</li>
+        <li>The downstream electric-vehicle routing problem explicitly models non-linear charging time, a detail simplified away in many UAM fleet models but critical to realistic turnaround scheduling.</li>
+        <li>Applied to a real case study (LAX, eight-spoke vertiport network), variable/dynamic pricing increases operating profit by more than 100% versus fixed pricing.</li>
+        <li>Economies of stage length emerge &#8212; longer UAM flights are disproportionately more profitable, suggesting UAM airport access may favor longer-haul suburban catchment areas over short hops.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>A two-stage framework: (1) a joint supply-demand variable pricing model using binary logit demand, (2) an Electric UAM Vehicle Routing Problem with non-linear charging time (eUAMVRP-NL) that optimizes fleet scheduling and charging given the demand from stage one; applied to a case study of LAX airport access with an eight-spoke vertiport network.</p>
+      <div class="section-head">Results</div>
+      <p>TNC-like dynamic/variable pricing increases UAM operating profit by over 100% relative to fixed-pricing scheduled-transit-style operation, with profitability increasing further on longer routes (economies of stage length).</p>
+      <div class="section-head">Limitations</div>
+      <p>Single case study (LAX); the binary logit demand model and cost assumptions are calibrated to currently available eVTOL cost/performance estimates, which remain uncertain and may shift as the technology matures.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Airports and regulators deciding how to integrate UAM into ground transportation networks now have quantitative evidence that fixed, transit-style pricing leaves substantial revenue on the table relative to dynamic pricing &#8212; a tradeoff that has equity implications if dynamic pricing prices out lower-income travelers.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Airport ground transportation planners, UAM/eVTOL operators, aviation economists, regulators drafting UAM integration policy.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Earlier UAM economic studies have generally assumed one operating paradigm rather than comparing them directly; this is among the first to quantify the profit gap between scheduled-transit-style and TNC-style UAM operation under a shared vehicle-routing and demand framework.</p>
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 04 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 04 &#183; arXiv (2026-06-16) (2606.17939)</div>
+      <h3><a href="http://arxiv.org/abs/2606.17939v1" target="_blank">Understanding Long-Term Dynamics of Individual Metro Usage: A Hidden Semi-Markov State Framework with Survival Analysis</a></h3>
+      <div class="authors">Bingxun Wang, Valeria Maria Urbano, Shan He, Yang Chen, Wei Liu, Zhibin Jiang, Piercesare Secchi</div>
+      <div class="one-liner">A Hidden Semi-Markov Model combined with survival analysis on four years of Shanghai metro smart-card data reveals that the mechanisms governing when riders disengage and when they return are fundamentally different and can be modeled separately.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>Transit agencies obsess over daily ridership counts but rarely have a rigorous way to see the multi-year lifecycle of individual riders &#8212; who's at risk of churning, and when a lapsed rider is likely to come back &#8212; and this gives them exactly that lens.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Five robust latent mobility states emerge from the data, organized around a directional transition hierarchy centered on an "occasional-usage gateway" state that riders pass through before disengaging or re-engaging more fully.</li>
+        <li>Exit hazard (the risk a rider stops using the metro) is state-dependent but duration-independent &#8212; how long someone has been in a usage pattern doesn't predict when they'll leave it, only which pattern they're in does.</li>
+        <li>Re-entry hazard (the chance a lapsed rider returns) decays sharply with how long they've been inactive &#8212; the longer someone's been gone, the less likely they come back, and the relationship is sharp rather than gradual.</li>
+        <li>The framework was validated on a genuinely large, longitudinal dataset (four years of Shanghai metro smart-card records), not a synthetic or short-window sample.</li>
+        <li>The state-dependent duration distributions (a semi-Markov rather than plain Markov structure) let the model capture realistic dwell times in each usage pattern rather than assuming memoryless transitions.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>Hidden Semi-Markov Model (HSMM) inferring latent mobility states with explicit duration distributions, integrated with discrete-time survival analysis modeling state-dependent hazard functions for exit and re-entry; applied to four years (2021-2024) of individual-level Shanghai metro smart-card data.</p>
+      <div class="section-head">Results</div>
+      <p>Identification of five interpretable mobility states with a directional transition hierarchy; demonstration that exit hazard is duration-independent (state-dependent only) while re-entry hazard decays sharply with inactivity length &#8212; two distinct temporal mechanisms governing disengagement versus return.</p>
+      <div class="section-head">Limitations</div>
+      <p>Single-system validation (Shanghai); smart-card data captures trip events but not the underlying reasons for behavior change (e.g., job loss, relocation, fare changes), limiting causal interpretation of state transitions.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Transit operators can use the gateway-state finding to identify riders sliding toward disengagement early enough to intervene, and can time win-back marketing or fare incentives according to the empirically sharp re-entry decay curve rather than a guessed schedule.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agency CRM and retention teams, fare policy analysts, smart-card data scientists, transportation behavioral researchers.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Moves beyond static clustering or short-term mobility-variability studies (the norm in prior transit smart-card literature) by explicitly modeling multi-year lifecycle dynamics with separate exit/re-entry hazard mechanisms.</p>
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 05 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 05 &#183; arXiv (2026-06-11) (2606.13835)</div>
+      <h3><a href="http://arxiv.org/abs/2606.13835v1" target="_blank">When Plausible Is Not Realistic: Evaluating Human Mobility in LLM-Based Urban Simulation</a></h3>
+      <div class="authors">Gustavo H. Santos, Aline Carneiro Viana, Thiago H. Silva</div>
+      <div class="one-liner">A new validation framework testing LLM-based urban simulators (AgentSociety, CitySim) against real mobility data in Paris and Shanghai finds a substantial gap between narratively plausible agent behavior and empirically realistic mobility patterns.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>LLM-driven generative agents are increasingly used to simulate cities for transit and policy planning, but if their mobility patterns "sound right" without actually reproducing real trip-length distributions, origin-destination flows, or dwell times, any planning decision built on top of them inherits that hidden error.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>LLM-based urban simulators can capture high-level semantic activity distributions (the kinds of activities agents say they're doing) while still failing core spatial and temporal mobility constraints.</li>
+        <li>Specific failure points include unrealistic trip-length distributions, origin-destination flow patterns, dwell times, and transition dynamics between activities.</li>
+        <li>Realistic mobility diversity is unstable across default prompting configurations, meaning two runs of the "same" simulator setup can produce meaningfully different realism without any explicit signal that something changed.</li>
+        <li>Achieving more realistic diversity may require explicit profile-aware agent initialization rather than relying on default LLM prompting to produce behaviorally diverse populations.</li>
+        <li>The authors built and released open infrastructure for regional-scale map generation, observability-enhanced simulation, and mobility-metric computation, intended to make this kind of validation reproducible for other simulators.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>A multi-dimensional validation framework (mobility laws, temporal rhythms, network motifs, semantic activity transitions, behavioral mobility profiles) comparing two LLM-based urban simulators (AgentSociety, CitySim) against real-world mobility datasets from the Greater Paris region and Shanghai.</p>
+      <div class="section-head">Results</div>
+      <p>Both simulators reproduce some high-level semantic activity patterns but show a substantial gap from empirical mobility realism on spatial/temporal metrics including trip-length distributions, OD flows, and dwell times; mobility diversity is sensitive to prompting configuration.</p>
+      <div class="section-head">Limitations</div>
+      <p>Evaluates only two specific LLM-based simulators, both of which may be superseded by newer architectures; the validation framework's metrics, while broad, can't capture every dimension of mobility realism that a downstream transit planning use case might care about.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Transit planners and researchers considering LLM-agent-based simulation for service planning, demand forecasting, or scenario testing should treat current LLM urban simulators as narratively useful but empirically unvalidated, and should run this kind of rigorous check before trusting simulator output for real decisions.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Urban simulation researchers, transit demand forecasters exploring generative-agent methods, LLM-for-science/society researchers, transportation planning departments evaluating new modeling tools.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most prior LLM urban-agent work has emphasized whether agent behavior looks plausible to a human reader; this is among the first to rigorously benchmark that behavior against quantitative empirical mobility metrics across two real cities.</p>
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 06 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 06 &#183; arXiv (2026-05-19) (2605.19834)</div>
+      <h3><a href="http://arxiv.org/abs/2605.19834v1" target="_blank">A Closed-loop, State-centric, Multi-agent Framework for Passenger Load Estimation from Heterogeneous Data Streams</a></h3>
+      <div class="authors">Yiyao Xu, Hao Zhou, Yuhang Wang, Jingran Sun</div>
+      <div class="one-liner">A closed-loop, physics-constrained multi-agent framework fuses heterogeneous, error-prone passenger counting data streams into more reliable stop-by-stop passenger load estimates for transit agencies.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>Agencies increasingly rely on automatic passenger counting (APC) systems for crowding alerts, schedule planning, and equity analysis, but those systems' accuracy varies with station layout and conditions &#8212; meaning the "ground truth" agencies plan around is often quietly wrong, and this targets that reliability gap directly.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Modern APC systems' accuracy is highly context-dependent (station layout, flow intensity, operating conditions), undermining the assumption that load estimates are reliable ground truth.</li>
+        <li>A unified stop-event backbone enforces physical feasibility (e.g., load can't go negative, boardings/alightings must balance) at every inference step rather than only at the trip level.</li>
+        <li>A Perception-Physical-Fusion loop dynamically allocates trust among heterogeneous evidence sources rather than weighting all sensors equally regardless of context.</li>
+        <li>Physics-derived violation residuals (cases where an estimate breaks a feasibility constraint) are fed back into training, letting the model learn from its own constraint violations rather than only from labeled ground truth.</li>
+        <li>Optional trip-level macro-correction and closed-loop calibration modules let the system self-correct over time as more stop-by-stop evidence accumulates.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>A closed-loop, state-centric multi-agent architecture combining a stop-event backbone, a Perception-Physical-Fusion inference loop with dynamic trust allocation across heterogeneous sensor streams, and physics-violation-residual feedback into training, with optional trip-level macro-correction.</p>
+      <div class="section-head">Results</div>
+      <p>The paper presents the architecture and its constituent modules as a method contribution; the closed-loop calibration design is positioned to improve robustness over single-pass APC inference under incremental count errors and evidence conflicts.</p>
+      <div class="section-head">Limitations</div>
+      <p>As a framework/architecture paper, the abstract does not report a head-to-head accuracy benchmark against deployed APC baselines on a named transit system, leaving real-world performance gains to be assessed in follow-up validation.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies relying on APC for service planning, crowding communication to riders, or equity analysis could adopt this kind of physics-constrained fusion layer to make existing sensor investments more trustworthy without replacing hardware.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Transit operations and APC system engineers, agencies building real-time crowding/passenger information systems, sensor fusion and robust-ML researchers.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Moves beyond treating individual APC sensor streams as independent or static-weighted inputs by introducing dynamic, context-dependent trust allocation and physics-feasibility enforcement as first-class parts of the inference loop.</p>
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 07 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 07 &#183; arXiv (2026-06-10) (2606.11839)</div>
+      <h3><a href="http://arxiv.org/abs/2606.11839v2" target="_blank">Systematic Cybersecurity Risk Analysis of European Rail Traffic Management System</a></h3>
+      <div class="authors">Kacper Darowski, Sebastian N. Peters, Lukas Lautenschlager</div>
+      <div class="one-liner">A systematic security analysis of Europe's unified rail control standard (ERTMS) finds that legacy components like Eurobalises and GSM-R introduce vulnerabilities that persist even in modern and future ERTMS deployments, and identifies full migration to ETCS Level 2 as the most impactful fix.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>ERTMS underpins train control across the EU and is explicitly designed to support fully autonomous driving in the future, but this study shows cybersecurity has lagged behind functional ambition &#8212; a gap that matters enormously given the safety-critical nature of train control.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Cybersecurity was treated as an afterthought in ERTMS standard development relative to its functional and safety goals.</li>
+        <li>Legacy technologies embedded in ERTMS &#8212; Eurobalises and GSM-Railway (GSM-R) &#8212; introduce vulnerabilities that persist across minimal implementations, deployments with optional safety add-ons, and even prospective future evolutions like FRMCS.</li>
+        <li>Systematic component-level modeling lets the authors trace which underlying technology-level threats actually propagate into ERTMS-specific risk, rather than listing threats in the abstract.</li>
+        <li>Full transition to ETCS Level 2 was identified as the single most significant available measure for improving ERTMS cybersecurity today.</li>
+        <li>The authors note their risk quantification methodology needs railway-specific adaptation to mature further &#8212; an honest limitation rather than an overclaim.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>Systematic security risk analysis combining component-level modeling of ERTMS architecture with threat analysis drawn from the security literature on ERTMS's underlying technologies (Eurobalises, GSM-R, prospective FRMCS), assessed across minimal, optional-safety-measure, and future ERTMS deployment configurations.</p>
+      <div class="section-head">Results</div>
+      <p>Identification of persistent, legacy-driven vulnerabilities across all assessed ERTMS deployment configurations, and identification of full ETCS Level 2 migration as the most significant available mitigation.</p>
+      <div class="section-head">Limitations</div>
+      <p>The risk quantification methodology is acknowledged by the authors to need railway-specific refinement; analysis is based on modeling and literature synthesis rather than penetration testing of a live operational ERTMS deployment.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Rail infrastructure operators and EU regulators planning ERTMS rollouts or upgrades should treat full ETCS Level 2 migration as a security priority, not merely an operational/capacity one, and should budget for legacy-component risk that optional safety measures don't fully resolve.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Rail signaling and cybersecurity engineers, EU rail regulators and infrastructure managers, critical-infrastructure security researchers.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior ERTMS literature has largely focused on functional and safety-case aspects of the standard; this is among the first systematic, component-level cybersecurity risk analyses spanning current and prospective future ERTMS configurations.</p>
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 08 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 08 &#183; arXiv (2026-06-10) (2606.11739)</div>
+      <h3><a href="http://arxiv.org/abs/2606.11739v1" target="_blank">Multi-View In-Cabin Monitoring System for Public Transport Vehicles</a></h3>
+      <div class="authors">Evgeny Gorelik, Kenny Dean Karrow, Fikret Sivrikaya, Sahin Albayrak, Christian Baumann</div>
+      <div class="one-liner">A new open dataset of synchronized camera and LiDAR data from inside a real German city bus enables benchmarking of multi-view 3D human detection models for in-cabin passenger monitoring.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>In-cabin sensing underlies a growing set of transit safety and automation use cases (crowding detection, fall/incident detection, support for partly automated driving), but progress has been limited by the lack of realistic, openly available in-vehicle multi-sensor datasets &#8212; this fills that specific gap.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>The dataset combines four synchronized inward-facing RGB-D cameras with a rotating LiDAR, covering the full interior of a real, digitalized, partly automated German city bus.</li>
+        <li>9,136 synchronized samples are annotated with both 3D human pose estimates and oriented 3D bounding boxes for occupants, generated via a calibration and pseudo-labeling pipeline rather than fully manual labeling.</li>
+        <li>A nuScenes-format conversion lowers the barrier for researchers already working with standard autonomous-driving perception tooling to apply it to the transit in-cabin domain.</li>
+        <li>Benchmarking of representative multi-view 3D detection models (Lift-Splat-Shoot, BEVFusion) on the dataset gives the field a concrete baseline rather than just a raw data release.</li>
+        <li>The dataset and tooling are openly released, supporting both comparative evaluation and small-scale model training rather than requiring agencies to collect their own proprietary in-cabin data.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>Multi-sensor data collection (four synchronized inward-facing RGB-D cameras plus rotating LiDAR) in a real, partly automated German city bus, with a calibration and pseudo-labeling pipeline producing 3D pose and bounding-box annotations, converted to nuScenes format, and benchmarked with established multi-view 3D detection models.</p>
+      <div class="section-head">Results</div>
+      <p>Successfully produced and released 9,136 annotated synchronized samples with benchmarked baseline performance from Lift-Splat-Shoot and BEVFusion-style multi-view 3D detection models on the in-cabin domain.</p>
+      <div class="section-head">Limitations</div>
+      <p>Data collected from a single bus platform and route context; pseudo-labeled annotations (rather than fully manual ground truth) may carry systematic labeling error that propagates into any model trained or evaluated on the dataset.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies and vendors building in-cabin safety, crowding-detection, or automation-support systems can use this dataset to develop and benchmark perception models without needing to instrument and label their own fleet from scratch.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Transit vehicle automation and safety system vendors, computer vision researchers in autonomous driving/transit, agencies evaluating in-cabin monitoring procurement.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends the well-established outward-facing autonomous-driving perception dataset paradigm (e.g., nuScenes itself) to the comparatively underserved inward-facing, in-cabin transit monitoring domain.</p>
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 09 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 09 &#183; arXiv (2026-06-22) (2606.23054)</div>
+      <h3><a href="http://arxiv.org/abs/2606.23054v1" target="_blank">Uncovering commuting flows in Bike Sharing Systems</a></h3>
+      <div class="authors">Mohamadou Salifou</div>
+      <div class="one-liner">A privacy-preserving statistical method identifies commuting patterns in bike-share systems using only trip duration distributions and mixture modeling, without relying on individual user identifiers.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>Identifying which bike-share trips are commutes versus leisure rides is valuable for service planning and equity analysis, but doing so usually requires individually identifiable trip-chaining data; this offers a more privacy-respecting path to similar insight.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Commuting trips and other "typical" journeys can be statistically distinguished from other trip types using regularities in trip duration distributions alone, without needing to track individual riders across trips.</li>
+        <li>A mixture model separates trips into latent "fast"/commute-like and "typical" journey categories based on duration patterns.</li>
+        <li>Logistic regression on the posterior probabilities of category membership translates the mixture model's soft classification into an interpretable, actionable commuting-pattern signal.</li>
+        <li>The method's privacy-preserving framing (no individual identifiers required) is itself a contribution, not just a side effect, since it lowers the data-access barrier for cities analyzing their own bike-share systems.</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>A duration-distribution-based mixture model classifying bike-share trips into "fast"/commute-like versus "typical" categories, combined with logistic regression on posterior category-membership probabilities, applied without individual rider identifiers.</p>
+      <div class="section-head">Results</div>
+      <p>Demonstrates that commuting patterns can be recovered from aggregate trip duration regularities alone, providing a privacy-preserving alternative to identifier-based trip-chaining analysis for characterizing bike-share commuting.</p>
+      <div class="section-head">Limitations</div>
+      <p>The abstract describes a single case/method study without a named city or system-scale validation detail, and duration-based classification may conflate genuine commuting with other regularly-timed non-commute trips (e.g., scheduled errands).</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Cities and bike-share operators wanting to understand commuting demand for service planning or equity reporting can apply this method without expanding personal data collection or triggering the privacy concerns that come with individual trip-chaining.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Bike-share system operators, city active-transportation planners, privacy-conscious mobility data researchers.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Differs from the dominant approach to commute identification in shared-mobility research, which typically relies on individual trip-chaining with rider identifiers, by recovering similar insight from aggregate, anonymized duration statistics.</p>
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 10 &#183; arXiv (2026-06-25) (2606.27513)</div>
+      <h3><a href="http://arxiv.org/abs/2606.27513v1" target="_blank">Toward a Hybrid Digital Twin of Society: Quantifying Cognitive-Spatial Linkages Through Online-Offline Feedback Networks</a></h3>
+      <div class="authors">Rafiazka Hilman, Julia Koltai</div>
+      <div class="one-liner">Using paired Google Search and Location History data from the same individuals in Budapest, this study finds that people's online information-seeking is far more concentrated and repetitive than their actual physical movement, and that COVID-19 disrupted physical routines much more than digital ones.</div>
+      <div class="section-head">Why It Matters</div>
+      <p>Urban mobility research usually studies either where people go or what they search for, rarely both for the same people &#8212; this paper's joint view reframes physical travel as something shaped by, but not simply mirroring, digital information behavior, with direct relevance to how digital platforms might be used to anticipate or influence travel demand.</p>
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Online search exploration is more concentrated than offline physical mobility, suggesting people's digital curiosity is narrower and more repetitive than where their bodies actually go.</li>
+        <li>A "Feedback Network" models transitions between search-related and location-related activity clusters, letting the authors quantify how digital and physical behavior co-evolve over time rather than treating them as a one-time correlation.</li>
+        <li>Concentration Entropy reveals persistent, stable "cognitive-spatial behavioral loops" specifically around retail and business services &#8212; categories where online search and offline visitation reinforce each other most strongly.</li>
+        <li>COVID-19 disrupted spatial (physical movement) routines far more severely than cognitive (search) exploration, widening the gap between what people researched online and where they actually went.</li>
+        <li>Radius of gyration, normally used only for physical mobility, is adapted here to also measure geographic dispersion of semantic/search exploration, enabling direct comparison between online and offline "movement."</li>
+      </ul>
+      <div class="section-head">Methodology</div>
+      <p>A computational framework (the "Feedback Network") combining semantic and spatial analysis of paired Google Search and Location History data donated by the same individuals in Budapest, Hungary (2018-2022), using an adapted radius-of-gyration metric and Concentration Entropy to characterize online-offline behavioral co-evolution.</p>
+      <div class="section-head">Results</div>
+      <p>Online search behavior is shown to be more concentrated/repetitive than offline physical mobility; persistent retail/business-service-related search-visitation loops are identified; COVID-19 widened the gap between digital engagement and realized physical movement.</p>
+      <div class="section-head">Limitations</div>
+      <p>Single-city dataset (Budapest) drawn from a voluntary data-donation panel, which may not represent the broader population's online-offline behavior; the four-year window spans the COVID-19 disruption, complicating clean pre/post comparison.</p>
+      <div class="section-head">Practical Implications</div>
+      <p>Transit and urban planners exploring "digital twin" approaches to demand forecasting should be cautious about assuming online search interest is a reliable proxy for physical travel demand, given the demonstrated concentration gap between the two.</p>
+      <div class="section-head">Who Should Care</div>
+      <p>Urban digital-twin researchers, mobility-as-a-service platforms exploring search-data demand signals, computational social scientists studying human mobility.</p>
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most prior urban mobility research studies online and offline behavior separately; this is among the first to jointly model their co-evolution using paired individual-level data and to formally quantify the differing concentration of each.</p>
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="contrarian-block">
+    <h2>Contrarian Insights</h2>
+    <div class="insight">
+      <p>Running urban air mobility like a subway, not like Uber, may be the economically worse choice: dynamic, TNC-style pricing more than doubled simulated UAM airport-access profits over fixed transit-style fares &#8212; a finding that cuts against the instinct to model new modes on transit's predictable-fare playbook.</p>
+    </div>
+    <div class="insight">
+      <p>More tenured riders aren't necessarily more loyal riders: Shanghai metro data shows that how long someone has used the system doesn't predict when they'll stop, undercutting the common assumption that tenure builds retention &#8212; only their current usage state matters.</p>
+    </div>
+    <div class="insight">
+      <p>LLM-based city simulators that sound convincing in narrative terms can still fail basic empirical mobility tests (trip lengths, OD flows, dwell times) &#8212; a warning that "plausible" and "realistic" are being conflated across a fast-growing body of generative-agent transportation research.</p>
+    </div>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways">
+    <div class="takeaway">
+      <p>Cold-climate transit agencies electrifying their fleets should adopt forecast-triggered opportunity-charging protocols ahead of cold waves, rather than discovering block-level energy infeasibility in real time.</p>
+    </div>
+    <div class="takeaway">
+      <p>Agencies and vendors deploying or evaluating APC-based crowding or equity analytics should ask whether their pipeline enforces physical feasibility constraints and dynamically weights sensor trust &#8212; static, unweighted fusion is leaving reliability on the table.</p>
+    </div>
+    <div class="takeaway">
+      <p>Before trusting LLM-based generative-agent urban simulators for service planning or demand forecasting, run them through an empirical mobility-realism validation (trip-length, OD-flow, dwell-time checks) rather than accepting narratively plausible output at face value.</p>
+    </div>
+  </div>
+
+  <!-- LONG TERM IMPLICATIONS -->
+  <div class="long-term">
+    <h2>Long-Term Implications</h2>
+    <p>If physics-anchored hybrid modeling continues to outperform pure black-box ML specifically in rare, high-stakes tail conditions (extreme cold, rare disruptions), the next wave of transit AI investment may shift away from purely data-hungry deep learning toward smaller models anchored in domain physics &#8212; cheaper to validate, more trustworthy in exactly the conditions agencies care most about. At the same time, as causal e-scooter siting templates and UAM pricing-paradigm studies show new mobility modes being held to increasingly transit-grade standards of economic and causal rigor, the boundary between "transit" and "new mobility" research is likely to keep dissolving &#8212; meaning transit agencies that ignore micromobility and air-mobility literature risk missing the modeling techniques that will eventually be applied to their own networks.</p>
+  </div>
+
+  <!-- INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-label">Data Infographic</div>
+    <div class="svg-wrapper">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 26px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 29, 2026 &#8212; 10 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">A physics-anchored machine learning model can now forecast, before a cold wave hits, which electric-bus</text>
+<text x="90" y="241" class="body">blocks will fail to finish their day -- and a forecast-triggered opportunity-charging policy cuts mean</text>
+<text x="90" y="257" class="body">failure probability from 0.759 to 0.112 across eight real Toronto cold-wave days.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">Running urban air mobility like a ride-hailing service instead of a scheduled transit line more than</text>
+<text x="90" y="319" class="body">doubles simulated operating profit at LAX -- a direct challenge to the assumption that new modes should</text>
+<text x="90" y="335" class="body">be priced like the transit systems they're meant to complement.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">LLM-based urban simulators reproduce plausible-sounding activity narratives but fail core empirical</text>
+<text x="90" y="397" class="body">mobility tests -- trip-length distributions, OD flows, and dwell times -- in both Paris and Shanghai,</text>
+<text x="90" y="413" class="body">warning planners not to conflate narrative plausibility with mobility realism.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">When the Timetable Breaks: Cold-Wave-Robust Battery-Electric Bus Operations</text>
+<text x="40" y="576" class="small">Yifan Wang</text>
+<text x="40" y="604" class="body">WeatherRobustBus couples a transparent traction/cabin-thermal physics backbone with a bounded ML</text>
+<text x="40" y="620" class="body">residual, validated against an independent EnergyPlus simulation, to predict block-level cold-wave</text>
+<text x="40" y="636" class="body">failure risk for electric buses -- then shows opportunity charging is the dominant lever to fix it,</text>
+<text x="40" y="652" class="body">cutting failure probability nearly 7x across real Toronto TTC vehicle blocks.</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Resilience by design:</text>
+<text x="52" y="782" class="body">cold-wave bus forecasting,</text>
+<text x="52" y="798" class="body">physics-constrained load</text>
+<text x="52" y="814" class="body">fusion, and ERTMS security</text>
+<text x="52" y="830" class="body">modeling all engineer around</text>
+<text x="52" y="846" class="body">failure modes in advance.</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">Causal over correlational:</text>
+<text x="312" y="782" class="body">e-scooter hub siting and</text>
+<text x="312" y="798" class="body">physics-anchored battery</text>
+<text x="312" y="814" class="body">models both beat black-box</text>
+<text x="312" y="830" class="body">correlation-only baselines,</text>
+<text x="312" y="846" class="body">one already shaping construction.</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">Transit-grade scrutiny for</text>
+<text x="572" y="782" class="body">new modes: UAM pricing,</text>
+<text x="572" y="798" class="body">scooter-transit proximity,</text>
+<text x="572" y="814" class="body">and LLM-simulated agents are</text>
+<text x="572" y="830" class="body">all benchmarked against real</text>
+<text x="572" y="846" class="body">transit-style standards.</text>
+<line x1="40" y1="900" x2="760" y2="900" class="ruleLight"/>
+<text x="40" y="940" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="986" class="body">High</text>
+<text x="40" y="1016" class="body">Medium</text>
+<text x="40" y="1046" class="body">Low</text>
+<rect x="110" y="974" width="80" height="18" fill="#1A1A1A"/>
+<text x="200" y="986" class="small">2</text>
+<rect x="110" y="1004" width="280" height="18" fill="#1A1A1A"/>
+<text x="400" y="1016" class="small">7</text>
+<rect x="110" y="1034" width="40" height="18" fill="#1A1A1A"/>
+<text x="160" y="1046" class="small">1</text>
+<line x1="40" y1="1080" x2="760" y2="1080" class="ruleLight"/>
+<text x="40" y="1120" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1148" class="body" font-weight="bold">1.</text>
+<text x="60" y="1148" class="body">Cold-climate transit agencies electrifying their fleets should adopt forecast-triggered opportunity-</text>
+<text x="60" y="1164" class="body">charging protocols ahead of cold waves rather than discovering block infeasibility in real time.</text>
+<text x="40" y="1196" class="body" font-weight="bold">2.</text>
+<text x="60" y="1196" class="body">Agencies running APC-based crowding or equity analytics should check whether their pipeline enforces</text>
+<text x="60" y="1212" class="body">physical feasibility and dynamically weights sensor trust -- static fusion leaves reliability on the table.</text>
+<text x="40" y="1244" class="body" font-weight="bold">3.</text>
+<text x="60" y="1244" class="body">Before trusting LLM-based generative-agent simulators for service planning, run them through empirical</text>
+<text x="60" y="1260" class="body">mobility-realism checks (trip-length, OD-flow, dwell-time) rather than accepting plausible output at face value.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv preprints &#8212; June 29, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
+    </div>
+    <a href="research-infographic-2026-06-29.svg" class="download-link" download>&#8595; Download SVG Infographic</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Transit Research Digest &#183; June 29, 2026 &#183; 10 papers analyzed &#183; Source: arXiv (Semantic Scholar rate-limited 429, Gemini analysis/imagen unavailable today)</p>
+  <p style="margin-top: 8px;"><a href="research.html">&#8592; Back to Archive Index</a></p>
+</footer>
+
+</body>
+</html>
