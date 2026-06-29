@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-28T14:10:00Z",
+  "last_updated": "2026-06-29T14:10:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -1081,6 +1081,21 @@
       "date": "2026-06-28",
       "job": "infographic_writing",
       "reason": "brt-vs-light-rail-cost-2026 infographic not produced \u2014 approximately 22nd consecutive failure since 2026-06-07"
+    },
+    {
+      "date": "2026-06-29",
+      "job": "publishing",
+      "reason": "approved.json empty -- no human approvals received for 22nd consecutive day (since 2026-06-07). 4 QC-passed scripts remain publish-ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script."
+    },
+    {
+      "date": "2026-06-29",
+      "job": "article_writing",
+      "reason": "drafts/articles/ empty again -- 0% long-form article success rate sustained for 22+ consecutive days since 2026-06-07."
+    },
+    {
+      "date": "2026-06-29",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced for ~23rd consecutive day. Retry queued again but manual diagnostic remains overdue."
     }
   ],
   "content_gaps": [
@@ -1126,6 +1141,7 @@
     "CRITICAL DAY 24+: approved.json still empty since 2026-06-07. 5 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script, dopamine-fracking-script). Zero content has gone live despite 24+ days of daily production. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to approved.json.",
     "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic -- 17 consecutive failures since 2026-06-07, retry #18 queued 2026-06-27. Recommend pausing further automated retries and running a manual diagnostic of the infographic-writing agent.",
     "CRITICAL: drafts/articles/ directory has never had a file successfully produced in 23+ days of site history. World Cup transit story re-queued today (attempt #4) with a fully retrospective knockout-stage-window angle.",
-    "CRITICAL DAY 21+: approved.json still empty since 2026-06-07. 4 QC-passed video scripts ready now (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script). Zero content of any kind has gone live in 21+ days of daily production. Escalating again 2026-06-28."
+    "CRITICAL DAY 21+: approved.json still empty since 2026-06-07. 4 QC-passed video scripts ready now (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script). Zero content of any kind has gone live in 21+ days of daily production. Escalating again 2026-06-28.",
+    "CRITICAL DAY 22: approved.json still empty since 2026-06-07. 0% article and infographic production sustained for 22+ days. Pipeline has produced briefing/research/QC output daily but zero new long-form articles, zero new infographics, and zero publishes in over three weeks. Manual diagnostic of article-writing and infographic-writing agents, plus human review of approved.json, are now the top priority outside the daily automated cycle."
   ]
 }

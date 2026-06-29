@@ -1,0 +1,92 @@
+{
+  "date": "2026-06-29",
+  "generated_at": "2026-06-29T14:10:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "explainer",
+      "topic": "What a Hub-and-Spoke Bus Network Redesign Actually Changes for Riders",
+      "angle": "Companion explainer to yesterday's research brief: walk through a before/after of a real hub-and-spoke redesign (Houston 2015 or LA Metro NextGen) showing which riders gained frequency and which lost one-seat rides.",
+      "rationale": "Carried forward from 2026-06-28 queue (rank 3) — no evidence in docs/ or drafts/articles/ that it was produced. Re-queued at rank 1 since the article-writing pipeline output is the active gap, not the topic.",
+      "target_length": "medium",
+      "slug": "hub-and-spoke-bus-redesign-rider-impact",
+      "output_path": "drafts/articles/hub-and-spoke-bus-redesign-rider-impact.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs. Light Rail: Lifecycle Cost Comparison",
+      "angle": "Per-mile capital cost, O&M cost, and farebox recovery for BRT vs. light rail, using FTA New Starts/Small Starts data, framed around the 2026 wave of BRT-to-rail upgrade debates (e.g. Indianapolis, Richmond).",
+      "rationale": "Retry of the longest-running stuck item in the queue (queued since 2026-06-07, now ~22+ consecutive failures). Re-queued once more; see retries for the standing recommendation that this stop being blindly retried.",
+      "target_length": "short",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "drafts/infographics/brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Hub Covering Location Problem: Practical Reading for Agency Network Redesigns",
+      "angle": "Yesterday's arXiv-sourced research brief (hub-covering-location-transit-tradeoffs) does not appear in docs/ or memory.json published list. Re-queue as a research brief in case the prior attempt was lost rather than rejected; pair with rank 1's explainer if both clear.",
+      "rationale": "No new transit-specific external signal today (Google News and arXiv feeds returned empty on this run, likely a fetch issue) — reusing yesterday's freshest unproduced signal rather than inventing an unvalidated topic.",
+      "target_length": "medium",
+      "slug": "hub-covering-location-transit-tradeoffs",
+      "output_path": "drafts/research/hub-covering-location-transit-tradeoffs.html"
+    },
+    {
+      "rank": 4,
+      "type": "video_script",
+      "topic": "HOLD — no new video script",
+      "angle": "Video script production remains on hold. Backlog is unchanged at 10 scripts: 4 QC-passed and publish-ready (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script) plus 6 flagged needs_revision since as early as 2026-06-09/10/11. No new script should be drafted until a human clears this backlog or explicitly approves continuing production regardless.",
+      "rationale": "Per memory.json drafts_pending_approval and the 2026-06-27 decision to hold — generating more scripts into an already-stuck queue compounds the problem rather than solving it. Nothing has changed since 2026-06-28.",
+      "target_length": "n/a",
+      "slug": "HOLD-no-new-script-2026-06-29",
+      "output_path": "drafts/scripts/HOLD-no-new-script-2026-06-29.md"
+    }
+  ],
+  "retries": [
+    {
+      "type": "article_writing_diagnostic",
+      "topic": "drafts/articles/ pipeline failure",
+      "reason": "0% successful long-form article production for 22+ consecutive days (since at least 2026-06-07). drafts/articles/ is empty again this run, exactly as on 2026-06-28. The article-writing agent itself, not the topic queue, is the suspected fault — a manual diagnostic run outside the daily pipeline is now significantly overdue.",
+      "action_needed": "human_diagnostic"
+    },
+    {
+      "type": "infographic_writing_diagnostic",
+      "topic": "brt-vs-light-rail-cost-2026",
+      "reason": "22+ consecutive failures since 2026-06-07 (approximately retry #23). Re-queued once more at rank 2 above per standing instruction, but further blind retries without a manual diagnostic of the infographic-writing agent are very unlikely to succeed.",
+      "action_needed": "human_diagnostic"
+    },
+    {
+      "type": "publishing_approval_backlog",
+      "topic": "approved.json empty",
+      "reason": "approved.json has had zero entries since 2026-06-07 (22 consecutive days). At least 4 QC-passed video scripts are publish-ready right now: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script. Zero content of any kind has gone live in 22+ days of daily production despite the rest of the pipeline (briefing, research, QC) running every day.",
+      "action_needed": "human_approval"
+    }
+  ],
+  "skip_topics": [
+    "California high-speed rail",
+    "transit-oriented development",
+    "transit equity automation",
+    "autonomous vehicles",
+    "transit desert remediation",
+    "Southern California transit systems (daily brief format — distinct from new explainers)",
+    "slime mold network optimization",
+    "US cities transit gap",
+    "dopamine and urban design",
+    "electric axial flux motors transit",
+    "TOD Builder interactive game",
+    "Pokemon Go military drone urban data pipeline",
+    "transit app dark UX patterns",
+    "Tesla SpaceX transit empire",
+    "fare evasion economics",
+    "transit financing/bonds, fare structures, ADA, environmental justice, federal grants, EV bus equity, pantograph charging, walkability TOD thresholds (full encyclopedia series, June 12)",
+    "hub covering location / accessibility-vs-travel-time tradeoff in transit network design (queued, not yet produced)"
+  ],
+  "trend_signals": [
+    "GLM 5.2 vs Claude benchmark claims trending on HN (general AI, low fit for niche)",
+    "AI policy and entrepreneurship pieces trending on HN (general tech, low fit for niche)",
+    "Google News Technology and arXiv transit-query feeds both returned empty on this run — likely a transient fetch/network issue, not an absence of news",
+    "No fresh transit/urban-mobility-specific external signal today — internal backlog (hub-covering-location research, BRT/LRT infographic) remains the most relevant material",
+    "Persistent internal trend: the 22-day publishing approval freeze plus 0% article/infographic production is now the dominant signal in the system, ahead of any external news"
+  ]
+}
