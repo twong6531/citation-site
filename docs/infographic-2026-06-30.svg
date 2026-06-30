@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" font-family="Helvetica Neue, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="1400" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="40" font-size="13" letter-spacing="2" fill="#888888" font-weight="600">DAILY BRIEFING</text>
+<text x="40" y="78" font-size="28" font-weight="bold" fill="#111111">Digital Sovereignty and Tech Independence</text>
+<text x="40" y="104" font-size="13" fill="#999999">June 30, 2026</text>
+<line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="168" font-size="13" fill="#BBBBBB" font-weight="bold">01</text>
+<rect x="68" y="154" width="38" height="20" rx="10" fill="#6C47FF"/>
+<text x="87.0" y="168" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">AI</text>
+<text x="740" y="168" font-size="18" text-anchor="end">💻</text>
+<text x="40" y="200" font-size="16" font-weight="bold" fill="#111111">Qwen 3.6 27B Nails Local AI Coding</text>
+<text x="40" y="222" font-size="12" fill="#666666">A widely shared benchmark post argues Alibaba&#x27;s newly released Qwen 3.6 27B is the first</text>
+<text x="40" y="238" font-size="12" fill="#666666">open-weight model genuinely good enough for real coding work on consumer hardware. Running</text>
+<circle cx="44" cy="260" r="2.5" fill="#6C47FF"/>
+<text x="54" y="264" font-size="11.5" fill="#444444">The post topped Hacker News with 1,040 points and drew 672 comments, the day&#x27;s highest-engag...</text>
+<circle cx="44" cy="277" r="2.5" fill="#6C47FF"/>
+<text x="54" y="281" font-size="11.5" fill="#444444">Qwen 3.6 27B is a 27-billion-parameter open-weight model released by Alibaba&#x27;s Qwen team</text>
+<circle cx="44" cy="294" r="2.5" fill="#6C47FF"/>
+<text x="54" y="298" font-size="11.5" fill="#444444">It runs locally via llama.cpp and OpenCode on a MacBook or a single RTX-class GPU, no cloud ...</text>
+<text x="40" y="329" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="319" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="319" width="180.0" height="10" rx="5" fill="#6C47FF"/>
+<text x="310" y="329" font-size="11" fill="#111111" font-weight="bold">9/10</text>
+<line x1="40" y1="338" x2="760" y2="338" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="358" font-size="13" fill="#BBBBBB" font-weight="bold">02</text>
+<rect x="68" y="344" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="358" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="358" font-size="18" text-anchor="end">🌐</text>
+<text x="40" y="390" font-size="16" font-weight="bold" fill="#111111">New .self Domain Backs Self-Hosting</text>
+<text x="40" y="412" font-size="12" fill="#666666">The Human-Centered Computing Foundation is proposing ".self" as a new top-level domain built</text>
+<text x="40" y="428" font-size="12" fill="#666666">specifically to support self-hosted, user-owned digital infrastructure. The pitch frames it</text>
+<circle cx="44" cy="450" r="2.5" fill="#00897B"/>
+<text x="54" y="454" font-size="11.5" fill="#444444">The proposal drew 592 points and 339 comments on Hacker News</text>
+<circle cx="44" cy="467" r="2.5" fill="#00897B"/>
+<text x="54" y="471" font-size="11.5" fill="#444444">HCCF is positioning ".self" as infrastructure for self-hosted, individually owned digital id...</text>
+<circle cx="44" cy="484" r="2.5" fill="#00897B"/>
+<text x="54" y="488" font-size="11.5" fill="#444444">The goal is to let people run their own services under the TLD instead of depending on centr...</text>
+<text x="40" y="519" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="509" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="509" width="140.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="519" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="528" x2="760" y2="528" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="548" font-size="13" fill="#BBBBBB" font-weight="bold">03</text>
+<rect x="68" y="534" width="60" height="20" rx="10" fill="#E65100"/>
+<text x="98.0" y="548" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">WORLD</text>
+<text x="740" y="548" font-size="18" text-anchor="end">💳</text>
+<text x="40" y="580" font-size="16" font-weight="bold" fill="#111111">EU Digital ID Wallets Depend on Big Tech</text>
+<text x="40" y="602" font-size="12" fill="#666666">A Waag Futurelab analysis argues the EU&#x27;s flagship digital identity wallet (EUDI Wallet)</text>
+<text x="40" y="618" font-size="12" fill="#666666">framework leans on Google&#x27;s Play Integrity and Apple&#x27;s App Attest to verify device safety.</text>
+<circle cx="44" cy="640" r="2.5" fill="#E65100"/>
+<text x="54" y="644" font-size="11.5" fill="#444444">The article drew 500 points and 209 comments on Hacker News</text>
+<circle cx="44" cy="657" r="2.5" fill="#E65100"/>
+<text x="54" y="661" font-size="11.5" fill="#444444">EUDI Wallet verification relies on Google&#x27;s Play Integrity and Apple&#x27;s App Attest device-saf...</text>
+<circle cx="44" cy="674" r="2.5" fill="#E65100"/>
+<text x="54" y="678" font-size="11.5" fill="#444444">Waag frames this as undermining the EU&#x27;s stated goal of reducing reliance on U.S. platform c...</text>
+<text x="40" y="709" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="699" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="699" width="160.0" height="10" rx="5" fill="#E65100"/>
+<text x="310" y="709" font-size="11" fill="#111111" font-weight="bold">8/10</text>
+<line x1="40" y1="718" x2="760" y2="718" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="738" font-size="13" fill="#BBBBBB" font-weight="bold">04</text>
+<rect x="68" y="724" width="84" height="20" rx="10" fill="#2E7D32"/>
+<text x="110.0" y="738" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">BUSINESS</text>
+<text x="740" y="738" font-size="18" text-anchor="end">🎨</text>
+<text x="40" y="770" font-size="16" font-weight="bold" fill="#111111">Rogue Amoeba Campaigns to Free App Icons</text>
+<text x="40" y="792" font-size="12" fill="#666666">Rogue Amoeba, maker of the audio tool Audio Hijack, published "Free the Icons," criticizing</text>
+<text x="40" y="808" font-size="12" fill="#666666">restrictive trademark and licensing rules that limit how indie Mac developers can use and</text>
+<circle cx="44" cy="830" r="2.5" fill="#2E7D32"/>
+<text x="54" y="834" font-size="11.5" fill="#444444">The post drew 573 points and 210 comments on Hacker News</text>
+<circle cx="44" cy="847" r="2.5" fill="#2E7D32"/>
+<text x="54" y="851" font-size="11.5" fill="#444444">Rogue Amoeba is the developer behind Audio Hijack and other long-running Mac audio utilities</text>
+<circle cx="44" cy="864" r="2.5" fill="#2E7D32"/>
+<text x="54" y="868" font-size="11.5" fill="#444444">The campaign calls on platform holders to loosen licensing restrictions on indie app icon de...</text>
+<text x="40" y="899" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="889" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="889" width="120.0" height="10" rx="5" fill="#2E7D32"/>
+<text x="310" y="899" font-size="11" fill="#111111" font-weight="bold">6/10</text>
+<line x1="40" y1="908" x2="760" y2="908" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="928" font-size="13" fill="#BBBBBB" font-weight="bold">05</text>
+<rect x="68" y="914" width="52" height="20" rx="10" fill="#00897B"/>
+<text x="94.0" y="928" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">TECH</text>
+<text x="740" y="928" font-size="18" text-anchor="end">⚡</text>
+<text x="40" y="960" font-size="16" font-weight="bold" fill="#111111">Zluda 6 Breaks Nvidia&#x27;s CUDA Lock-In</text>
+<text x="40" y="982" font-size="12" fill="#666666">The open-source Zluda project shipped its version 6 release, letting unmodified CUDA</text>
+<text x="40" y="998" font-size="12" fill="#666666">applications run on non-Nvidia GPUs including AMD and Intel hardware. The project continues</text>
+<circle cx="44" cy="1020" r="2.5" fill="#00897B"/>
+<text x="54" y="1024" font-size="11.5" fill="#444444">The release post drew 58 points and 5 comments on Hacker News</text>
+<circle cx="44" cy="1037" r="2.5" fill="#00897B"/>
+<text x="54" y="1041" font-size="11.5" fill="#444444">Zluda 6 runs unmodified CUDA applications on AMD and Intel GPUs without recompilation</text>
+<circle cx="44" cy="1054" r="2.5" fill="#00897B"/>
+<text x="54" y="1058" font-size="11.5" fill="#444444">The project persists despite Nvidia previously moving to block third-party CUDA translation ...</text>
+<text x="40" y="1089" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1079" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1079" width="140.0" height="10" rx="5" fill="#00897B"/>
+<text x="310" y="1089" font-size="11" fill="#111111" font-weight="bold">7/10</text>
+<line x1="40" y1="1098" x2="760" y2="1098" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1118" font-size="13" fill="#BBBBBB" font-weight="bold">06</text>
+<rect x="68" y="1104" width="60" height="20" rx="10" fill="#E65100"/>
+<text x="98.0" y="1118" font-size="11" fill="#FFFFFF" font-weight="600" text-anchor="middle">WORLD</text>
+<text x="740" y="1118" font-size="18" text-anchor="end">🏛️</text>
+<text x="40" y="1150" font-size="16" font-weight="bold" fill="#111111">Supreme Court Upholds Birthright Citizenship</text>
+<text x="40" y="1172" font-size="12" fill="#666666">The U.S. Supreme Court issued a ruling affirming a broad, 14th Amendment-based</text>
+<text x="40" y="1188" font-size="12" fill="#666666">interpretation of birthright citizenship, rejecting efforts to narrow who qualifies for</text>
+<circle cx="44" cy="1210" r="2.5" fill="#E65100"/>
+<text x="54" y="1214" font-size="11.5" fill="#444444">AP News&#x27;s live coverage was already climbing Hacker News with 13 points and rising minutes a...</text>
+<circle cx="44" cy="1227" r="2.5" fill="#E65100"/>
+<text x="54" y="1231" font-size="11.5" fill="#444444">The ruling addresses the 14th Amendment&#x27;s citizenship clause covering children born on U.S. ...</text>
+<circle cx="44" cy="1244" r="2.5" fill="#E65100"/>
+<text x="54" y="1248" font-size="11.5" fill="#444444">The decision rejects attempts to narrow birthright citizenship eligibility</text>
+<text x="40" y="1279" font-size="10" fill="#999999" font-weight="600">IMPACT</text>
+<rect x="100" y="1269" width="200" height="10" rx="5" fill="#E5E5E5"/>
+<rect x="100" y="1269" width="200.0" height="10" rx="5" fill="#E65100"/>
+<text x="310" y="1279" font-size="11" fill="#111111" font-weight="bold">10/10</text>
+<line x1="40" y1="1288" x2="760" y2="1288" stroke="#E5E5E5" stroke-width="1"/>
+<text x="40" y="1294" font-size="11" fill="#999999">Generated by AI</text>
+<text x="760" y="1294" font-size="11" fill="#999999" text-anchor="end">June 30, 2026</text>
+<rect x="0" y="1396" width="800" height="4" fill="#111111"/>
+</svg>
