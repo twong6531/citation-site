@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-30",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 4,
+  "alerts": [
+    "CRITICAL DAY 24+: approved.json empty since 2026-06-07. 5 QC-passed scripts ready NOW: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. Human must add slugs to approved.json. Zero content has gone live in 24+ days of production despite the rest of the pipeline running daily.",
+    "CONFIRMED PIPELINE FAILURE -- brt-vs-light-rail-cost-2026 infographic: ~24 consecutive failures since 2026-06-07, another retry queued today. Manual diagnostic of the infographic-writing agent remains overdue.",
+    "CONFIRMED PIPELINE FAILURE -- drafts/articles/ directory has never had a file produced; 0% successful long-form article production sustained for 24+ days running. Recommend a human-run diagnostic of the article-writing agent outside the daily cycle rather than further blind retries.",
+    "Video script production remains correctly held per 2026-06-27 decision -- backlog of 10 scripts (5 passed QC, 5+ needs_revision) is unresolved; no new script queued today.",
+    "Google News Technology RSS feed returned empty for a third straight day (06-28, 06-29, 06-30); arXiv transit query returned only tangential results. Today's queue reuses unproduced backlog topics rather than inventing new ones.",
+    "Daily file-based alerts on the approval backlog have run for 24+ consecutive days without a human response visible in the repo. Escalating via push notification today since this channel has not produced action."
+  ]
+}

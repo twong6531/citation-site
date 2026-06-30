@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-29T14:10:00Z",
+  "last_updated": "2026-06-30T14:06:47Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -414,6 +414,186 @@
       "type": "imagen",
       "url": "docs/imagen-2026-06-23.svg",
       "topic": "Editorial Imagen"
+    },
+    {
+      "date": "2026-06-24",
+      "type": "news",
+      "url": "docs/2026-06-24.html",
+      "topic": "Daily Briefing"
+    },
+    {
+      "date": "2026-06-24",
+      "type": "research",
+      "url": "docs/research-2026-06-24.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-24",
+      "type": "transit",
+      "url": "docs/transit-2026-06-24.html",
+      "topic": "SoCal Transit Intelligence"
+    },
+    {
+      "date": "2026-06-24",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-24.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-24",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-24.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-25",
+      "type": "news",
+      "url": "docs/2026-06-25.html",
+      "topic": "Daily Briefing"
+    },
+    {
+      "date": "2026-06-25",
+      "type": "research",
+      "url": "docs/research-2026-06-25.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-25",
+      "type": "transit",
+      "url": "docs/transit-2026-06-25.html",
+      "topic": "SoCal Transit Intelligence"
+    },
+    {
+      "date": "2026-06-25",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-25.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-25",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-25.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-26",
+      "type": "news",
+      "url": "docs/2026-06-26.html",
+      "topic": "Daily Briefing"
+    },
+    {
+      "date": "2026-06-26",
+      "type": "research",
+      "url": "docs/research-2026-06-26.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-26",
+      "type": "transit",
+      "url": "docs/transit-2026-06-26.html",
+      "topic": "SoCal Transit Intelligence"
+    },
+    {
+      "date": "2026-06-26",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-26.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-26",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-26.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-27",
+      "type": "news",
+      "url": "docs/2026-06-27.html",
+      "topic": "Daily Briefing"
+    },
+    {
+      "date": "2026-06-27",
+      "type": "research",
+      "url": "docs/research-2026-06-27.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-27",
+      "type": "transit",
+      "url": "docs/transit-2026-06-27.html",
+      "topic": "SoCal Transit Intelligence"
+    },
+    {
+      "date": "2026-06-27",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-27.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-27",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-27.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "news",
+      "url": "docs/2026-06-28.html",
+      "topic": "Daily Briefing"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "research",
+      "url": "docs/research-2026-06-28.html",
+      "topic": "Transit Research Digest"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "transit",
+      "url": "docs/transit-2026-06-28.html",
+      "topic": "SoCal Transit Intelligence"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-28.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-28.svg",
+      "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "news",
+      "url": "docs/2026-06-29.html",
+      "topic": "Daily Briefing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "research",
+      "url": "docs/research-2026-06-29.html",
+      "topic": "Physics-Anchored ML / Electric-Bus Timetable Cascade"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "transit",
+      "url": "docs/transit-2026-06-29.html",
+      "topic": "SoCal Transit Intelligence"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-29.svg",
+      "topic": "Editorial Infographic"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-29.svg",
+      "topic": "Research Infographic"
     }
   ],
   "drafts_pending_approval": [
@@ -1096,6 +1276,21 @@
       "date": "2026-06-29",
       "job": "infographic_writing",
       "reason": "brt-vs-light-rail-cost-2026 not produced for ~23rd consecutive day. Retry queued again but manual diagnostic remains overdue."
+    },
+    {
+      "date": "2026-06-30",
+      "job": "publishing",
+      "reason": "approved.json empty -- no human approvals received for 24th consecutive day (since 2026-06-07). 5 QC-passed scripts remain publish-ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script."
+    },
+    {
+      "date": "2026-06-30",
+      "job": "article_writing",
+      "reason": "drafts/articles/ has never had a file produced -- 0% long-form article success rate sustained for 24+ consecutive days since 2026-06-07."
+    },
+    {
+      "date": "2026-06-30",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced for ~24th consecutive day. Retry queued again but manual diagnostic remains overdue."
     }
   ],
   "content_gaps": [
@@ -1142,6 +1337,10 @@
     "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic -- 17 consecutive failures since 2026-06-07, retry #18 queued 2026-06-27. Recommend pausing further automated retries and running a manual diagnostic of the infographic-writing agent.",
     "CRITICAL: drafts/articles/ directory has never had a file successfully produced in 23+ days of site history. World Cup transit story re-queued today (attempt #4) with a fully retrospective knockout-stage-window angle.",
     "CRITICAL DAY 21+: approved.json still empty since 2026-06-07. 4 QC-passed video scripts ready now (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script). Zero content of any kind has gone live in 21+ days of daily production. Escalating again 2026-06-28.",
-    "CRITICAL DAY 22: approved.json still empty since 2026-06-07. 0% article and infographic production sustained for 22+ days. Pipeline has produced briefing/research/QC output daily but zero new long-form articles, zero new infographics, and zero publishes in over three weeks. Manual diagnostic of article-writing and infographic-writing agents, plus human review of approved.json, are now the top priority outside the daily automated cycle."
+    "CRITICAL DAY 22: approved.json still empty since 2026-06-07. 0% article and infographic production sustained for 22+ days. Pipeline has produced briefing/research/QC output daily but zero new long-form articles, zero new infographics, and zero publishes in over three weeks. Manual diagnostic of article-writing and infographic-writing agents, plus human review of approved.json, are now the top priority outside the daily automated cycle.",
+    "CRITICAL DAY 24+: approved.json still empty since 2026-06-07 (24 consecutive days as of 2026-06-30). 5 QC-passed video scripts ready now (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script, dopamine-fracking-script). Zero content of any kind has gone live in 24+ days of daily production despite briefing/research/QC running every day. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to approved.json. This remains the single longest-running unresolved alert in the pipeline's history; escalating again with a push notification today since daily file-based alerts over 3+ weeks have not produced a human response.",
+    "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic -- approximately 24 consecutive failures since 2026-06-07. Recommend pausing further automated retries and running a manual diagnostic of the infographic-writing agent instead.",
+    "CRITICAL: drafts/articles/ directory has never had a file successfully produced in 24+ days of site history -- 0% article production rate sustained across the entire production run. Manual diagnostic of the article-writing agent is now significantly overdue.",
+    "Google News Technology RSS feed returned empty results for a third consecutive day (2026-06-28, 06-29, 06-30) -- worth a human check on whether this is a persistent fetch/parsing issue rather than three days of coincidental transient failures."
   ]
 }
