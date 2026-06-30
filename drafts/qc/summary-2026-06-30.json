@@ -13,7 +13,34 @@
   ],
   "needs_revision": [],
   "blocked": [],
-  "notes": "drafts/articles/ and drafts/infographics/ remain empty (24+ day pipeline failure per status alerts); drafts/scripts/ received only a HOLD notice today (no new video script, per the standing 2026-06-27 decision) -- nothing new to QC there, and the existing 10-script backlog is unchanged from prior QC verdicts (5 PASS, 5+ REVISE). The day's only actual new production was committed directly to docs/ (the live GitHub Pages site, already linked from index.html/research.html/transit.html) before this QC run even started: a daily briefing, a 13-paper transit research digest, a SoCal transit brief, and two SVG infographics. All 5 were reviewed in depth -- full read-through, word counts, structure checks, AI-tell/placeholder checks -- and all PASS. Three load-bearing factual claims were independently verified against live web search/source-fetch rather than taken on faith: the Qwen 3.6 27B release, the Supreme Court's Trump v. Barbara birthright-citizenship ruling, and (most rigorously) the CA High-Speed Rail Bakersfield station relocation and the HCD-vs-SCAG SB 79 K-Line directive -- all confirmed accurate against primary sources, including exact dates, vote counts, and dollar figures.",
+  "notes": "drafts/articles/ and drafts/infographics/ remain empty (24+ day pipeline failure per status alerts); drafts/scripts/ received only a HOLD notice today (no new video script, per the standing 2026-06-27 decision) -- nothing new to QC there, and the existing 10-script backlog is unchanged from prior QC verdicts (5 PASS, 5 REVISE). The day's only actual new production was committed directly to docs/ (the live GitHub Pages site, already linked from index.html/research.html/transit.html) before this QC run even started: a daily briefing, a 13-paper transit research digest, a SoCal transit brief, and two SVG infographics. All 5 were reviewed in depth -- full read-through, word counts, structure checks, AI-tell/placeholder checks -- and all PASS. Three load-bearing factual claims were independently verified against live web search/source-fetch rather than taken on faith: the Qwen 3.6 27B release, the Supreme Court's Trump v. Barbara birthright-citizenship ruling, and (most rigorously) the CA High-Speed Rail Bakersfield station relocation and the HCD-vs-SCAG SB 79 K-Line directive -- all confirmed accurate against primary sources, including exact dates, vote counts, and dollar figures.",
   "process_finding": "QC GAP, NOT A CONTENT DEFECT: docs/ output has been explicitly excluded from QC scope every day since at least 2026-06-20 (see drafts/qc/summary-2026-06-20.json through 2026-06-28.json, each noting docs/ content was 'committed directly to docs/ outside the drafts/ -> QC -> approved.json gate' and 'out of this QC pass's scope'). That means the only content actually going live on the site every day has had zero independent review for 10+ consecutive days -- the approved.json gate that the daily alerts focus on only governs the (currently unpublished) drafts/scripts/ backlog, not the docs/ pipeline that publishes unconditionally and immediately, before QC ever runs. Today's content happened to check out clean on a full review, but the structural gap remains: a future day's docs/ output (a fabricated quote, a wrong figure, an embarrassing factual error) would go live on the public site with no review step able to catch it before publication. Recommend a human decide explicitly: either (a) formalize docs/ as pre-QC-gate publishing and accept that risk as policy, or (b) add a real pre-publish QC step for the docs/ pipeline so review happens before commit+push, not after.",
-  "carryover_alert": "system/approved.json has been empty since 2026-06-07 (24+ consecutive days). 5 QC-passed scripts (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script) remain ready for publish but blocked solely on a human adding slugs to approved.json. This is a human/publishing bottleneck, not a QC issue, and is unchanged from prior days' reports."
+  "carryover_alert": "system/approved.json has been empty since 2026-06-07 (24+ consecutive days). 5 QC-passed scripts (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script) remain ready for publish but blocked solely on a human adding slugs to approved.json. This is a human/publishing bottleneck, not a QC issue, and is unchanged from prior days' reports.",
+  "script_backlog_full": {
+    "total_scripts": 10,
+    "pass": {
+      "count": 5,
+      "items": [
+        {"slug": "tesla-spacex-transit-empire-script", "score": 93},
+        {"slug": "dopamine-fracking-script", "score": 90},
+        {"slug": "us-cities-transit-gap-script", "score": 92},
+        {"slug": "transit-app-dark-ux-2026-script", "score": 82},
+        {"slug": "fare-evasion-economics-script", "score": 81}
+      ]
+    },
+    "revise": {
+      "count": 5,
+      "items": [
+        {"slug": "slime-mold-transit-script", "score": 72, "primary_issue": "reel word count over 200; YouTube word count at/over 1200 ceiling"},
+        {"slug": "apple-gemini-2026-script", "score": 65, "primary_issue": "reel VO ~249 words, significantly over 200-word limit; YouTube may exceed 1200 ceiling"},
+        {"slug": "pokemon-go-drones-urban-data-script", "score": 62, "primary_issue": "reel word count over 200"},
+        {"slug": "transit-desert-pomdp-script", "score": 60, "primary_issue": "reel VO ~298 words (~3x the 60-second allotment); deeply over-written scenes"},
+        {"slug": "electric-axial-flux-motor-transit-explainer-script", "score": 58, "primary_issue": "reel word count over 200; YouTube word count likely over ceiling"}
+      ]
+    }
+  },
+  "verification_pass": {
+    "run_at": "2026-06-30T21:00:00Z",
+    "finding": "Second QC pass confirms: no new drafts were produced today requiring review (only a HOLD notice in drafts/scripts/). All 10 script QC files were verified as current — none of the underlying script files were modified after their QC verdicts. The 5 docs/ items reviewed in the first pass (17:35 UTC) remain PASS. No changes to any QC verdict. Status correctly reflects qc=completed."
+  }
 }
