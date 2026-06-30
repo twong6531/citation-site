@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 26px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 30, 2026 &#8212; 13 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">NYC's congestion-pricing program is already producing real evaluation data: transit ridership rose</text>
+<text x="90" y="241" class="body">after the cordon program launched, but the demand response was sharply uneven by neighborhood --</text>
+<text x="90" y="257" class="body">one of the first rigorous real-world reads on a live, city-scale pricing intervention.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">A wave of operations-research papers -- hub covering location, risk-aware transit-desert remediation,</text>
+<text x="90" y="319" class="body">and justice-informed AMoD dispatch -- show planners building equity directly into the optimization</text>
+<text x="90" y="335" class="body">objective itself, instead of just measuring inequity after service is already built.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Ride-hail-to-vertiport subsidy design has arrived years before commercial air-taxi service exists --</text>
+<text x="90" y="397" class="body">researchers are now proactively pricing the ground-access economics of advanced air mobility hubs,</text>
+<text x="90" y="413" class="body">a notably forward-looking shift from transit research's usual reactive posture.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">Public transit gains and spatially uneven travel demand after NYC congestion pricing</text>
+<text x="40" y="576" class="small">Donghang Li, Dingyi Zhuang, Yunlin Li, et al.</text>
+<text x="40" y="604" class="body">Using time-series foundation models to build credible counterfactuals for NYC's first cordon-based</text>
+<text x="40" y="620" class="body">congestion pricing program, the authors find transit ridership gains after the January 2025 launch --</text>
+<text x="40" y="636" class="body">but the size and even direction of demand change varies sharply across neighborhoods, a reminder that</text>
+<text x="40" y="652" class="body">system-wide policy wins can still mask real winners and losers at the block level.</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Equity by design:</text>
+<text x="52" y="782" class="body">hub covering, transit-</text>
+<text x="52" y="798" class="body">desert remediation, and</text>
+<text x="52" y="814" class="body">justice-informed AMoD</text>
+<text x="52" y="830" class="body">dispatch all optimize</text>
+<text x="52" y="846" class="body">directly for fairness.</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">Live policy evaluation:</text>
+<text x="312" y="782" class="body">NYC congestion pricing</text>
+<text x="312" y="798" class="body">is assessed in near-</text>
+<text x="312" y="814" class="body">real time with time-</text>
+<text x="312" y="830" class="body">series foundation models,</text>
+<text x="312" y="846" class="body">not years-later studies.</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">AI enters two layers:</text>
+<text x="572" y="782" class="body">LLM preference capture</text>
+<text x="572" y="798" class="body">(ChatPlanner) and raw</text>
+<text x="572" y="814" class="body">algorithmic routing speed</text>
+<text x="572" y="830" class="body">(T-REX) advance trip</text>
+<text x="572" y="846" class="body">planning simultaneously.</text>
+<line x1="40" y1="900" x2="760" y2="900" class="ruleLight"/>
+<text x="40" y="940" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="986" class="body">High</text>
+<text x="40" y="1016" class="body">Medium</text>
+<text x="40" y="1046" class="body">Low</text>
+<rect x="110" y="974" width="120" height="18" fill="#1A1A1A"/>
+<text x="240" y="986" class="small">3</text>
+<rect x="110" y="1004" width="280" height="18" fill="#1A1A1A"/>
+<text x="400" y="1016" class="small">7</text>
+<rect x="110" y="1034" width="120" height="18" fill="#1A1A1A"/>
+<text x="240" y="1046" class="small">3</text>
+<line x1="40" y1="1080" x2="760" y2="1080" class="ruleLight"/>
+<text x="40" y="1120" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1148" class="body" font-weight="bold">1.</text>
+<text x="60" y="1148" class="body">Pair any city-wide congestion-pricing before/after analysis with neighborhood-level breakdowns</text>
+<text x="60" y="1164" class="body">before declaring a transit ridership win, per the NYC findings.</text>
+<text x="40" y="1196" class="body" font-weight="bold">2.</text>
+<text x="60" y="1196" class="body">Pilot hub covering location optimization to set explicit maximum-travel-time guarantees on new</text>
+<text x="60" y="1212" class="body">BRT/rail networks instead of relying on demand-weighted heuristics alone.</text>
+<text x="40" y="1244" class="body" font-weight="bold">3.</text>
+<text x="60" y="1244" class="body">Treat ride-hail-to-hub ground-access subsidy design as a first-class planning problem for any</text>
+<text x="60" y="1260" class="body">AAM/air-taxi pilot, not an afterthought once vertiports are physically built.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv + Semantic Scholar &#8212; June 30, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>

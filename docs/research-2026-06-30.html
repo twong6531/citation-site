@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — June 30, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E6;
+    --muted: #888888;
+    --accent: #E8FF00;
+    --accent2: #4488FF;
+    --highlight: #FF6B35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand { font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--accent); letter-spacing: 1px; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 20px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; letter-spacing: 1px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 40px; }
+
+  .editorial-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+  .editorial-header { padding: 20px 28px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .editorial-header .section-tag { font-size: 10px; letter-spacing: 3px; color: var(--muted); }
+  .editorial-header h2 { font-size: 18px; margin-top: 4px; }
+  .editorial-body { padding: 28px; text-align: center; }
+  .editorial-body img { max-width: 100%; border-radius: 2px; }
+  .editorial-body .no-image {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 13px; border: 1px dashed var(--border); border-radius: 2px;
+  }
+  .editorial-caption { padding: 16px 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  .executive-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .executive-summary h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .executive-summary p { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 12px; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; line-height: 1.5; }
+
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  .paper-card .paper-num { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-card h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+  .paper-card .section-head { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 20px; margin-bottom: 8px; }
+  .paper-card p, .paper-card li { font-size: 14px; color: #BBBBBB; line-height: 1.65; }
+  .paper-card ul { padding-left: 20px; }
+  .paper-card ul li { margin-bottom: 6px; }
+  .paper-card .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .paper-card .tag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 1px; }
+  .paper-card .tag.high { border-color: #44FF88; color: #44FF88; }
+  .paper-card .tag.medium { border-color: #FFAA44; color: #FFAA44; }
+  .paper-card .tag.low { border-color: #FF4444; color: #FF4444; }
+
+  .takeaways { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface2); border-left: 3px solid var(--accent); padding: 20px 24px; }
+  .takeaway p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .contrarian-block { background: var(--surface); border: 1px solid #FF6B35; padding: 28px 32px; margin-bottom: 48px; }
+  .contrarian-block h2 { font-size: 10px; letter-spacing: 4px; color: #FF6B35; text-transform: uppercase; margin-bottom: 20px; }
+  .contrarian-block .insight { margin-bottom: 20px; padding-left: 16px; border-left: 2px solid #FF6B35; }
+  .contrarian-block .insight p { font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  .infographic-section { margin-bottom: 48px; }
+  .svg-wrapper { background: #F7F7F5; padding: 24px; border: 1px solid var(--border); }
+  .svg-wrapper svg { width: 100%; height: auto; }
+  .download-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent2); border: 1px solid var(--accent2); padding: 8px 16px; }
+
+  .long-term { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 48px; }
+  .long-term h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .long-term p { font-size: 15px; line-height: 1.75; color: #CCCCCC; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 32px 20px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand">Transit Research Digest</span>
+  <a href="research.html" class="back-link">← Archive Index</a>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Transit Research Digest · June 30, 2026</div>
+  <h1>Engineering Equity Into the Algorithm: From NYC Congestion Pricing to Air-Taxi Ground Access</h1>
+  <div class="meta">
+    <span><span class="badge">13 PAPERS</span></span>
+    <span>arXiv · Semantic Scholar</span>
+    <span>NYC congestion pricing · Justice-informed AMoD · AAM ground access · Continental journey planning</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- EDITORIAL IMAGE SECTION -->
+  <div class="editorial-section">
+    <div class="editorial-header">
+      <div class="section-tag">TODAY'S TRANSIT ILLUSTRATION</div>
+      <h2>An advanced air mobility (AAM) vertiport hub with an integrated ride-hailing pickup and drop-off zone</h2>
+    </div>
+    <div class="editorial-body">
+      <div class="no-image">
+        ◻ EDITORIAL ILLUSTRATION UNAVAILABLE<br>
+        <span style="font-size:11px;margin-top:8px;display:block;">Gemini Imagen API requires a paid plan on this key — image generation skipped</span>
+        <span style="font-size:11px;color:#555;margin-top:4px;display:block;">Subject: An advanced air mobility (AAM) vertiport hub with an integrated ride-hailing pickup and drop-off zone</span>
+      </div>
+    </div>
+    <div class="editorial-caption">
+      <span>An advanced air mobility (AAM) vertiport hub with an integrated ride-hailing pickup and drop-off zone — Technical Editorial Illustration</span>
+      <span>Independently researched and rendered from today's papers</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>Today&#x27;s transit research converges on a single throughline: transportation systems are being re-engineered as adaptive, equity-aware networks rather than static infrastructure. NYC&#x27;s first cordon congestion-pricing program is already generating real evaluable data, showing ridership gains but spatially uneven demand shifts. In parallel, a wave of operations-research papers — hub covering location, risk-aware transit-desert remediation, justice-informed AMoD dispatch — show planners moving from descriptive equity studies toward prescriptive, optimization-driven tools that bake fairness into the algorithm itself. On the algorithmic side, continental-scale journey planning (T-REX) and LLM-based personalized routing (ChatPlanner) push trip planning toward real-time, preference-aware systems. And a strong thread of Global South case studies (Guatemala City BRT, Bengaluru TOD) demonstrates that accessibility gains from transit investment depend heavily on institutional execution, not infrastructure alone. Finally, an emerging and almost entirely unstudied frontier — ride-hail-to-vertiport subsidy design for advanced air mobility — signals that researchers are already modeling the ground-access economics of air taxis years before commercial deployment.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>From measuring inequity to engineering it away</h3>
+      <p style="font-size:13px;color:#BBBBBB;margin-top:10px;line-height:1.55;">From measuring inequity to engineering it away: multiple papers (justice-informed AMoD, risk-aware transit deserts, hub covering) embed equity directly into optimization objectives rather than treating it as a post-hoc assessment.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Real-world natural experiments are catching up to theory</h3>
+      <p style="font-size:13px;color:#BBBBBB;margin-top:10px;line-height:1.55;">Real-world natural experiments are catching up to theory: the NYC congestion pricing study shows researchers can now evaluate live, city-scale policy using time-series foundation models instead of waiting years for clean panel data.</p>
+    </div>
+    <div class="theme-card">
+      <h3>AI is entering trip planning at two very different layers</h3>
+      <p style="font-size:13px;color:#BBBBBB;margin-top:10px;line-height:1.55;">AI is entering trip planning at two very different layers: LLMs for natural-language preference capture (ChatPlanner) and classical algorithmic advances for raw routing speed at scale (T-REX) — these are complementary, not competing, layers of the same stack.</p>
+    </div>
+  </div>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">Paper Analyses</div>
+  <div class="papers-grid">
+
+    <!-- Paper 01 -->
+    <div class="paper-card featured">
+      <div class="paper-num">Paper 01 · Paper of the Day · arXiv 2606.17530</div>
+      <h3><a href="http://arxiv.org/abs/2606.17530v1" target="_blank">Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</a></h3>
+      <div class="authors">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao</div>
+      <div class="one-liner">Using time-series foundation models on NYC&#x27;s first cordon congestion-pricing program (Jan 2025), the authors find transit ridership rose but travel-demand responses varied sharply by neighborhood.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Congestion pricing is the most consequential transit-funding and demand-management policy live in a major US city right now, and this is one of the first rigorous post-implementation evaluations of its system-wide spillovers.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Cordon pricing produced measurable transit ridership gains in Manhattan&#x27;s congestion zone.</li>
+        <li>Demand shifts were spatially uneven, with outlying boroughs responding differently than the core.</li>
+        <li>Time-series foundation models offered a way to build credible counterfactuals without clean control groups.</li>
+        <li>Policy spillovers cut across travel modes and geography simultaneously, complicating simple before/after comparisons.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Quasi-experimental evaluation using time-series foundation models to construct synthetic counterfactuals for transit and traffic demand across NYC neighborhoods, given the absence of a clean control group for a city-wide pricing shock.</p>
+
+      <div class="section-head">Results</div>
+      <p>Transit ridership increased post-implementation, but the magnitude and even direction of demand change varied significantly by location, suggesting equity-relevant unevenness in who benefits from the policy.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-city, single-policy natural experiment with a short post-period (about 18 months of data at most); foundation-model counterfactuals are a new technique without long external validation.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies and city planners evaluating congestion pricing elsewhere (e.g., other dense US/global cities considering similar schemes) should expect uneven neighborhood-level effects and plan complementary service increases in underserved areas.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agency planners, congestion-pricing policy designers, transportation economists, city council staff in cities considering similar tolls.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends earlier congestion-pricing literature (London, Stockholm, Singapore) which generally lacked this granularity; novel in applying time-series foundation models rather than traditional difference-in-differences to a transportation policy question.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 02 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 02 · arXiv 2606.27196</div>
+      <h3><a href="http://arxiv.org/abs/2606.27196v1" target="_blank">Optimizing Accessibility and Maximum Travel Times in Transit Networks: The Hub Covering Location Problem</a></h3>
+      <div class="authors">Carmen-Ana Domínguez-Bravo, Elena Fernández, Armin Lüer-Villagra</div>
+      <div class="one-liner">A new optimization model places transit hubs to minimize maximum travel time across a two-segment journey (local access plus trunk transit), formalized as a hub covering location problem.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Hub placement decisions shape decades of transit-oriented development and equity outcomes; this gives planners a rigorous, optimization-backed tool rather than rule-of-thumb hub siting.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Trips are modeled as two segments: a local access leg and a longer trunk transit leg via hubs.</li>
+        <li>The hub covering location formulation directly targets worst-case travel time rather than only average travel time.</li>
+        <li>Optimized hub placement can materially shrink the accessibility gap between best- and worst-served areas.</li>
+        <li>The framework generalizes classic facility-location math to integrated multimodal transit design.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mathematical optimization (hub covering location problem formulation) solved over a network model representing local access points and trunk transit corridors.</p>
+
+      <div class="section-head">Results</div>
+      <p>The model identifies hub configurations that bound maximum travel time across the network, improving worst-case accessibility compared to naive or purely demand-weighted hub placement.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Optimization models of this kind are typically validated on synthetic or limited real networks and assume relatively stable demand; real-world political and right-of-way constraints on hub siting are not captured.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies designing new BRT, rail, or hub-and-spoke networks can use this as a planning tool to set service-level guarantees on maximum trip time, particularly useful for equity-focused network redesigns.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit network planners, operations-research transportation modelers, agencies undertaking network redesigns (e.g., bus network restructurings).</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on the classical hub-and-spoke and p-hub median/covering literature from logistics, adapting it specifically to passenger transit accessibility rather than freight cost minimization.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 03 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 03 · arXiv 2606.21897</div>
+      <h3><a href="http://arxiv.org/abs/2606.21897v1" target="_blank">Simulating Public Transit Fare Policies in NYC: An Efficient, Socioeconomic-Aware Framework</a></h3>
+      <div class="authors">Parker Wischhover, Hossein Amiri, Kiara Ha, Jooyoung Yoo, Lina Li, Andreas Züfle, Joon-Seok Kim</div>
+      <div class="one-liner">A scalable agent-based simulation framework models how different NYC fare policies would affect ridership across socioeconomic groups before they&#x27;re implemented.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Fare policy (means-tested discounts, fare capping, zone pricing) is one of the few levers transit agencies control directly for equity, and most agencies currently lack tools to simulate impacts before rollout.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Combines a synthetic population with agent-based simulation and multimodal travel-time estimation to test fare scenarios.</li>
+        <li>Designed for computational efficiency at city scale, addressing a common bottleneck in agent-based transit models.</li>
+        <li>Explicitly incorporates socioeconomic heterogeneity rather than treating riders as a homogeneous population.</li>
+        <li>Framework is general enough to be reused for other cities&#x27; fare policy evaluation, not just NYC.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Synthetic population generation plus agent-based simulation integrated with multimodal travel-time estimation, applied to NYC&#x27;s existing transit network and fare structure.</p>
+
+      <div class="section-head">Results</div>
+      <p>The framework demonstrates it can evaluate counterfactual fare policies at scale and surface socioeconomically differentiated ridership and welfare effects, though specific headline fare-policy &#x27;winners&#x27; are scenario dependent.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Agent-based simulations depend heavily on synthetic population quality and behavioral assumptions; validation against real fare-change natural experiments is needed to confirm predictive accuracy.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies (MTA and peers) can pre-test fare changes like fare capping or income-based discounts for equity and revenue impact before committing to costly pilots.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Fare policy analysts, transit agency finance and equity offices, transportation economists, advocacy groups pushing for fare reform.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Improves on earlier activity-based transport demand models by explicitly targeting fare-policy equity questions and prioritizing computational scalability for city-wide what-if analysis.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 04 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 04 · arXiv 2606.08371</div>
+      <h3><a href="http://arxiv.org/abs/2606.08371v1" target="_blank">Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</a></h3>
+      <div class="authors">Polina Khoroshevskaya, Ashish Kumar Perukari</div>
+      <div class="one-liner">The paper formulates transit desert remediation as a partially observable sequential decision problem, since ridership for non-existent service can&#x27;t be directly observed in advance.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Tens of millions of US and Latin American residents live in transit deserts, and agencies routinely under-invest there precisely because demand can&#x27;t be measured until service exists — this paper offers a principled way out of that chicken-and-egg trap.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Frames the core problem as a &#x27;cold start&#x27;: you cannot observe latent demand for a service that doesn&#x27;t yet exist.</li>
+        <li>Uses a partially observable decision-process formulation to plan service rollout under genuine demand uncertainty.</li>
+        <li>Risk-aware objectives (not just expected-value optimization) are used to avoid catastrophic under- or over-investment.</li>
+        <li>Targets remediation specifically, i.e., sequencing where to add service first, not just identifying deserts.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Formulates transit desert remediation as a risk-aware partially observable Markov decision process (POMDP)-style planning problem under demand uncertainty.</p>
+
+      <div class="section-head">Results</div>
+      <p>The framework provides a principled sequencing strategy for service expansion that balances expected ridership gains against the risk of misallocating scarce transit investment.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>As a planning-methodology paper, real-world validation against an actual transit desert rollout is likely limited or absent; results depend on prior assumptions about latent demand distributions.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Regional transit authorities and DOTs can use this approach to prioritize new bus routes or microtransit pilots in underserved areas with defensible, risk-adjusted justification for capital committees.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Regional transit planning agencies, state DOTs, equity-focused transportation researchers, microtransit operators.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Moves beyond static transit-desert identification studies (which just map gaps) toward a dynamic, decision-theoretic remediation strategy.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 05 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 05 · arXiv 2606.15315</div>
+      <h3><a href="http://arxiv.org/abs/2606.15315v1" target="_blank">ChatPlanner: A Large Language Model Framework for Personalized Public Transit Routing</a></h3>
+      <div class="authors">Tingting Yang, Chenhao Xue, Jun Chen</div>
+      <div class="one-liner">ChatPlanner uses fine-tuned LLMs with retrieval-augmented generation to produce transit routes personalized to individual rider preferences expressed in natural language.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Trip planners today (Google Maps, transit apps) optimize for time or transfers but rarely capture nuanced preferences like &#x27;avoid stairs&#x27; or &#x27;prefer routes with fewer crowded transfers&#x27; — this is an early example of LLMs closing that gap.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Combines fine-tuned LLMs with retrieval-augmented generation grounded in real transit data (likely GTFS-based).</li>
+        <li>Targets preference-aware routing rather than purely shortest-path or fewest-transfer routing.</li>
+        <li>Demonstrates a concrete application of conversational AI to a logistics/optimization domain traditionally dominated by graph algorithms.</li>
+        <li>Raises the question of how to keep LLM-generated routes factually grounded in real schedules to avoid hallucinated itineraries.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Fine-tuned large language models combined with retrieval-augmented generation (RAG) over transit data to generate personalized routing recommendations from natural-language rider preferences.</p>
+
+      <div class="section-head">Results</div>
+      <p>The framework demonstrates feasibility of preference-aware natural-language transit routing; the paper reports improved alignment to stated preferences versus standard shortest-path planners, though absolute accuracy and hallucination rates against ground-truth schedules need scrutiny.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>LLM-based routing carries real hallucination risk for safety/time-critical itinerary information; the paper&#x27;s evaluation is likely on a limited city/dataset and computational cost of LLM inference at scale is a practical barrier for real-time apps.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit app developers and MaaS (Mobility-as-a-Service) platforms could adopt conversational, preference-aware trip planning, but should pair LLM output with deterministic schedule validation to prevent hallucinated routes.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit app developers, MaaS platform engineers, accessibility advocates interested in preference-sensitive routing (e.g., step-free access).</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Distinct from classical multi-criteria shortest-path transit routing (e.g., RAPTOR-family algorithms) by using natural language as the preference interface rather than fixed weighted objectives.</p>
+
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 06 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 06 · arXiv 2605.18778</div>
+      <h3><a href="http://arxiv.org/abs/2605.18778v1" target="_blank">T-REX: Fast and Dynamic Journey Planning for Continental-Scale Public Transit Networks</a></h3>
+      <div class="authors">Jonas Sauer, Patrick Steil, Sascha Witt</div>
+      <div class="one-liner">T-REX is a new multi-level-overlay journey-planning algorithm that extends Trip-Based Public Transit Routing to handle continental and country-scale transit networks with fast dynamic updates.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>As Europe pushes integrated cross-border rail ticketing and journey planning, the underlying routing algorithms have to scale from city-sized to continent-sized networks without losing the millisecond-level query speed riders expect.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Applies multi-level partition/overlay techniques (borrowed from road-network routing) to Trip-Based Transit Routing.</li>
+        <li>Targets dynamic journey planning, meaning it can handle real-time disruptions/delays, not just static timetables.</li>
+        <li>Identifies and prunes irrelevant long-distance transfers using the multi-level partition, cutting query time.</li>
+        <li>Designed explicitly for country/continental scale, addressing a known scalability ceiling in prior transit-routing algorithms.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Algorithmic computer science: multi-level overlay graph partitioning applied to Trip-Based Public Transit Routing (TB), benchmarked presumably against continental-scale European rail/transit timetable datasets.</p>
+
+      <div class="section-head">Results</div>
+      <p>T-REX achieves fast journey-planning queries at continental scale while supporting dynamic (real-time) updates, improving on the scalability limits of prior trip-based routing approaches.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>As an algorithms paper, real-world deployment integration (multi-operator data quality, fare integration, last-mile connections) is out of scope; benchmarks may not reflect messier real-world disruption patterns.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>National rail operators and pan-European journey planners (e.g., for cross-border rail itineraries) gain a path to real-time, continent-scale trip planning rather than degraded performance at large network sizes.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit routing engineers, national rail/transit IT departments, MaaS platforms operating across multiple countries or agencies.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Directly extends Trip-Based Public Transit Routing (TB) and RAPTOR-family algorithms, addressing their known scaling limits when applied beyond single-city or single-country networks.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 07 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 07 · arXiv 2605.25617</div>
+      <h3><a href="http://arxiv.org/abs/2605.25617v1" target="_blank">Justice-informed Planning of Intermodal Autonomous Mobility-on-Demand Systems under Operational Constraints</a></h3>
+      <div class="authors">Giacomo Ganassoli, Francesco Mazzeo, Cecilia Pasquale, Silvia Siri, Mauro Salazar</div>
+      <div class="one-liner">This paper builds transport-justice principles directly into the operational planning of intermodal autonomous mobility-on-demand (AMoD) fleets, instead of just measuring injustice after the fact.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most AMoD optimization research chases efficiency or revenue; as cities prepare for robotaxi and autonomous shuttle fleets integrated with transit, this is an early prescriptive (not just descriptive) approach to baking equity into the dispatch algorithm itself.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Distinguishes between transport-justice assessment (common in prior work) and operational prescription (this paper&#x27;s contribution).</li>
+        <li>Integrates AMoD fleet planning with conventional public transit as a connected intermodal system rather than a competing service.</li>
+        <li>Explicitly avoids pure utilitarian objectives that can penalize the worst-off riders for system-wide efficiency gains.</li>
+        <li>Operates under realistic operational constraints (fleet size, vehicle capacity, depot/charging limits).</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Optimization-based planning model for intermodal AMoD systems incorporating justice-informed objective functions (e.g., minimizing worst-case service disparities) under fleet and operational constraints.</p>
+
+      <div class="section-head">Results</div>
+      <p>The justice-informed planning approach produces fleet allocation and routing strategies that improve service equity relative to purely utilitarian baselines, at some efficiency cost that the paper presumably quantifies.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Like most AMoD planning papers, validated primarily in simulation; real-world AMoD fleets remain regulatorily and technologically immature, limiting near-term applicability.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities piloting autonomous shuttle or robotaxi integration with transit (e.g., as first/last-mile connectors) can use justice-informed dispatch objectives to avoid worsening existing transportation inequities.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>AMoD/robotaxi operators, transit agencies exploring autonomous first/last-mile pilots, transportation equity researchers.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Moves beyond descriptive transport-justice literature (which assesses inequity) to prescriptive operations research that directly optimizes for justice within real operational constraints.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 08 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 08 · arXiv 2605.00083</div>
+      <h3><a href="http://arxiv.org/abs/2605.00083v1" target="_blank">Comparative Analysis of Polygon-Based and Global Machine Learning Models for Bus Occupancy Prediction</a></h3>
+      <div class="authors">Daniel Azenkot, Michael Fire, Eran Ben Elia</div>
+      <div class="one-liner">The paper compares localized, polygon-region-specific ML models against a single global model for predicting bus occupancy, finding that local dynamics matter more than uniform citywide models assume.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Crowding prediction directly affects rider comfort, dwell times, and operational planning, and most agencies still rely on one-size-fits-all forecasting models that miss neighborhood-specific ridership patterns.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Splits the city into polygons (sub-regions) and trains region-specific models versus a single global model.</li>
+        <li>Finds that treating a city as a homogeneous region for ridership forecasting loses meaningful local signal.</li>
+        <li>Polygon-based localized models can better capture neighborhood-specific demand drivers (land use, events, demographics).</li>
+        <li>Trade-off exists between model granularity/accuracy and the operational complexity of maintaining many local models.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Comparative machine learning study: trains and evaluates global (citywide) versus polygon/region-segmented occupancy prediction models on real bus ridership/occupancy data.</p>
+
+      <div class="section-head">Results</div>
+      <p>Polygon-based localized models outperform the single global model on occupancy prediction accuracy in at least some regions, supporting localized modeling approaches for bus crowding forecasts.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Localized models require more data per region and more maintenance overhead; performance gains may not generalize to smaller transit agencies with sparser data.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies building real-time crowding dashboards or capacity-management tools should consider regionally segmented forecasting models rather than a single citywide model, especially in cities with heterogeneous land use.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit operations and service-planning teams, data scientists building ridership forecasting pipelines, agencies implementing real-time crowding information for riders.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends the broader transit ridership-prediction ML literature by directly testing the global-vs-local modeling assumption that prior bus occupancy studies often take for granted.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 09 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 09 · arXiv 2606.21390</div>
+      <h3><a href="http://arxiv.org/abs/2606.21390v1" target="_blank">Distance-based subsidy rate design to incentivize ride-hail access to advanced air mobility hubs</a></h3>
+      <div class="authors">Zhenglei Ji, Hai Yang, Joseph Y. J. Chow</div>
+      <div class="one-liner">This paper designs distance-based subsidy schemes for ride-hailing trips that feed passengers into advanced air mobility (AAM) hubs, treating first/last-mile ride-hail access as a coalition problem to solve.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>As eVTOL air-taxi services move from prototype to early commercial pilots, first/last-mile ground access is the binding constraint on adoption — this is one of the first papers to formally price that connection rather than assume it away.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Treats AAM hub success as contingent on a &#x27;multimodal coalition&#x27; with ground ride-hail operators, not a standalone service.</li>
+        <li>Designs subsidy rates that scale with ride-hail trip distance to balance operator incentives against public cost.</li>
+        <li>Frames the integration challenge explicitly as incentive design/mechanism design, not just network planning.</li>
+        <li>Implicitly raises questions about how AAM hub access subsidies compare to subsidizing traditional transit access instead.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Mechanism/incentive-design modeling: formulates distance-based subsidy rate optimization for ride-hail operators serving advanced air mobility hub access trips.</p>
+
+      <div class="section-head">Results</div>
+      <p>The proposed distance-based subsidy structure can incentivize adequate ride-hail coverage to AAM hubs at a defined public cost, providing a tunable policy lever for early-stage AAM deployment.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>AAM/eVTOL networks do not yet exist at commercial scale, so the model is necessarily speculative and untested against real ride-hail-to-vertiport demand patterns; assumes cooperative ride-hail operator behavior.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities and AAM operators planning vertiport rollouts (e.g., for air-taxi pilots) can use distance-based subsidy design as a starting framework for ground-access incentive programs, similar to existing transit-feeder subsidy debates.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban air mobility planners, ride-hail platform policy teams, city departments evaluating AAM pilot programs, transportation economists studying multimodal subsidy design.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends ride-hail/transit integration subsidy literature (first/last-mile transit feeder subsidies) into the new and largely unstudied AAM hub-access context.</p>
+
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 10 · Semantic Scholar</div>
+      <h3><a href="https://www.semanticscholar.org/paper/1c44df2ca269f0b4687d7ddae72dd770130eb0eb" target="_blank">Interconnectedness enhances network resilience of multimodal public transportation systems for Safe-to-Fail urban mobility</a></h3>
+      <div class="authors">Zizhen Xu, S. S. Chopra</div>
+      <div class="one-liner">This Nature Communications study finds that greater interconnectedness between transit modes (bus, rail, etc.) measurably improves network-wide resilience to disruptions, supporting a &#x27;safe-to-fail&#x27; rather than &#x27;fail-safe&#x27; design philosophy.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>With climate change increasing extreme-weather disruptions to urban infrastructure, this is a highly-cited (86 citations), rigorous quantitative case for why cities should invest in multimodal redundancy rather than single-mode hardening.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Interconnected multimodal networks (where modes interlink at many points) degrade more gracefully than siloed single-mode networks under disruption.</li>
+        <li>Adopts a &#x27;safe-to-fail&#x27; resilience paradigm: design for graceful degradation rather than assuming failures can be entirely prevented.</li>
+        <li>Quantifies resilience using network-science metrics applied specifically to real multimodal transit infrastructure.</li>
+        <li>Findings have direct relevance to climate-adaptation planning for transit systems facing more frequent extreme weather.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Network science / complex systems analysis applying interconnectedness and resilience metrics to real-world multimodal public transportation network data, testing disruption scenarios.</p>
+
+      <div class="section-head">Results</div>
+      <p>Higher interconnectedness between transit modes is associated with significantly improved system-wide resilience and faster functional recovery after simulated disruptions, compared to less-interconnected baseline networks.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Resilience metrics from network science can abstract away real operational details (e.g., actual rider behavior during disruptions, agency coordination capacity); findings are correlational across network structures rather than from a controlled real-world intervention.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies and city infrastructure planners should prioritize physical and informational interconnection between modes (shared stations, integrated fare/info systems) as a climate-resilience investment, not just a convenience feature.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Climate-resilience and infrastructure planners, transit agency network designers, urban systems researchers, emergency management planners.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on general network-resilience theory (applied previously to power grids and the internet) and is among the more rigorous applications of that theory specifically to multimodal urban transit.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 11 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 11 · Semantic Scholar</div>
+      <h3><a href="https://www.semanticscholar.org/paper/d266a18b86d1c061b834c1fdf18f4d76d0a29b61" target="_blank">An Assessment of Accessibility from a Socially Sustainable Urban Mobility Approach in Mass Transit Projects: Contributions from the Northern Central American Triangle</a></h3>
+      <div class="authors">C. Grande-Ayala</div>
+      <div class="one-liner">A GIS-based before/after comparison of BRT projects in Guatemala City, San Salvador, and Tegucigalpa finds Guatemala City&#x27;s BRT meaningfully improved equitable access to health and education facilities.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Most BRT equity research focuses on wealthy-country case studies; this fills a major gap by rigorously comparing real outcomes across three Global South capital cities with shared regional context but different implementation choices.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Guatemala City&#x27;s BRT project reduced access times to public health clinics and schools more than comparable projects in San Salvador and Tegucigalpa.</li>
+        <li>Accessibility evaluated through GIS-modeled equity and spatial-efficiency indicators, not just ridership counts.</li>
+        <li>Differences in outcomes across the three cities are attributed to implementation and institutional design choices, not just infrastructure presence.</li>
+        <li>Methodology is explicitly designed to be replicable in other Global South cities with limited open data.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Comparative case study using GIS modeling (transportation networks, population layers, facility locations) to compute before/after accessibility and equity indicators for BRT projects in three Central American capitals (2000–2020).</p>
+
+      <div class="section-head">Results</div>
+      <p>Guatemala City&#x27;s BRT project significantly narrowed the accessibility gap to essential services versus the other two cities&#x27; projects, demonstrating BRT&#x27;s potential for socially sustainable outcomes when implementation is strong.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Three-city case study limits generalizability; reliance on open-source/secondary data in data-scarce contexts introduces measurement uncertainty in the accessibility indicators.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities in the Global South planning BRT expansions can use this replicable GIS accessibility methodology to evaluate projects against social-sustainability goals, not just ridership or cost metrics.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>BRT project planners in Latin America and other Global South regions, development-finance institutions funding transit projects, urban equity researchers.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends the largely Global North-focused BRT accessibility literature into an underrepresented regional context with a directly comparative, replicable methodology.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 12 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 12 · Semantic Scholar</div>
+      <h3><a href="https://www.semanticscholar.org/paper/e1dc5584b2b04357371426eec940d90cd20a7618" target="_blank">Analysis of urban mobility and quality of life: North–South transit-oriented development (TOD) in Bengaluru</a></h3>
+      <div class="authors">Vishwa Udachan, S. Patil</div>
+      <div class="one-liner">A case study of Bengaluru&#x27;s Hebbal-Silk Board corridor argues that TOD could cut travel times, raise transit ridership, and reduce sprawl-related emissions, but flags affordability and coordination as major risks.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Bengaluru is one of the fastest-growing tech-hub megacities globally, and its mobility crisis is a bellwether for dozens of similarly car-dependent, rapidly urbanizing Indian and Global South metros.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Identifies the Hebbal-Silk Board corridor as a high-demand, high-congestion axis ripe for TOD intervention.</li>
+        <li>TOD framed explicitly as integrating land-use and transportation planning, not just adding transit infrastructure.</li>
+        <li>Highlights non-motorized transport infrastructure improvement as a complementary TOD benefit alongside transit ridership gains.</li>
+        <li>Names affordability, inclusivity, and inter-agency coordination as the central implementation risks, echoing common TOD failure modes worldwide.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Case study analysis using secondary data (government reports, transportation studies, site analyses) to evaluate existing infrastructure and benchmark Bengaluru&#x27;s corridor against successful global TOD strategies.</p>
+
+      <div class="section-head">Results</div>
+      <p>The study concludes TOD along the corridor could reduce travel times and increase ridership and non-motorized transport use, contingent on institutional integration and equity-oriented planning being addressed.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Relies on secondary/benchmarking data rather than original quantitative modeling or post-implementation measurement, since the TOD intervention itself is prospective rather than already completed.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Bengaluru and similar Indian metro planning authorities can use the corridor-level diagnostic and benchmarking approach to prioritize TOD investment, provided they pair it with affordability safeguards.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Indian urban planning authorities, TOD policy designers in rapidly urbanizing Global South cities, transit equity advocates.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Applies established global TOD best-practice frameworks to a specific, data-thin Indian corridor context, complementing the broader TOD literature dominated by East Asian and European case studies.</p>
+
+      <div class="meta-row">
+        <span class="tag low">LOW CONFIDENCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 13 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 13 · Semantic Scholar</div>
+      <h3><a href="https://www.semanticscholar.org/paper/83df23c23487a2edc9109fef76ced0295dbbbf05" target="_blank">Transformative Urban Mobility: Comparative Analysis of Global Transit-Oriented Development Strategies</a></h3>
+      <div class="authors">N. Ali, Anuar Alias, Hasniyati Hamzah, Ismail Muhammad, K. N. Othman</div>
+      <div class="one-liner">A six-city comparative study finds that successful TOD strategies share patterns of institutional innovation and policy adaptation, but that cities tailor implementation to their own socio-economic context rather than copying a single template.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>TOD is widely cited as a best practice, but cities frequently fail to adapt &#x27;gold standard&#x27; models (Tokyo, Curitiba) to local conditions; this comparative framework helps explain why one-size-fits-all TOD transplants often underperform.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Identifies recurring mechanisms — institutional innovation, policy adaptation, technological integration — across successful TOD efforts in six cities.</li>
+        <li>Argues effective TOD strategies are context-sensitive rather than directly transferable across geographies.</li>
+        <li>Frames TOD success as requiring simultaneous attention to technological, social-equity, and sustainability objectives.</li>
+        <li>Positions institutional/governance innovation as just as important as physical transit infrastructure design.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Comparative qualitative analysis across six cities representing diverse geographic and developmental contexts, using a structured analytical framework to deconstruct TOD strategy components.</p>
+
+      <div class="section-head">Results</div>
+      <p>The research identifies distinctive but interconnected patterns of TOD implementation across the six cities, concluding that adaptive, context-sensitive frameworks outperform directly transplanted models.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Comparative qualitative case-study designs are inherently harder to generalize quantitatively; city selection criteria and how &#x27;success&#x27; was measured are not detailed in the abstract and would need scrutiny in the full text.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Planning agencies importing TOD models from celebrated international examples should budget for substantial local institutional adaptation rather than expecting direct transferability.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban planning departments evaluating TOD strategies, international development consultants advising on transit-led urban growth, comparative urbanism researchers.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Adds a structured comparative lens to a TOD literature that is otherwise dominated by single-city case studies, directly addressing the transferability question those studies usually leave open.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+      </div>
+    </div>
+
+  </div><!-- end papers-grid -->
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="contrarian-block">
+    <h2>Contrarian Insights</h2>
+    <div class="insight">
+      <p>Bigger and more &#x27;global&#x27; models aren&#x27;t always better: the bus occupancy prediction paper finds that localized, polygon-specific models can beat a single citywide model, cutting against the usual ML instinct to pool more data into one model.</p>
+    </div>
+    <div class="insight">
+      <p>TOD success is not primarily a design problem — multiple papers (the six-city comparative study, the Bengaluru case) argue institutional adaptation and governance, not transit infrastructure itself, is the binding constraint on TOD outcomes.</p>
+    </div>
+    <div class="insight">
+      <p>Congestion pricing&#x27;s transit ridership &#x27;win&#x27; is not uniformly distributed — celebratory headline numbers about NYC&#x27;s pricing program mask significant neighborhood-level unevenness that could become an equity liability if uncorrected.</p>
+    </div>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways">
+    <div class="takeaway">
+      <p>Transit agencies evaluating new pricing or fare policies should pair any city-wide before/after analysis with neighborhood-level breakdowns before declaring success, per the NYC congestion-pricing findings.</p>
+    </div>
+    <div class="takeaway">
+      <p>Agencies planning new BRT/rail hub networks should pilot optimization tools like the hub covering location model to set explicit maximum-travel-time guarantees rather than relying on demand-weighted heuristics alone.</p>
+    </div>
+    <div class="takeaway">
+      <p>Crowding-prediction teams should test region-segmented (polygon-based) ML models against their current global model before assuming a single citywide model is sufficient.</p>
+    </div>
+    <div class="takeaway">
+      <p>Cities exploring AMoD or air-taxi pilots should treat ground-access subsidy design (ride-hail-to-hub) as a first-class planning problem from day one, not an afterthought once vertiports are built.</p>
+    </div>
+  </div>
+
+  <!-- LONG TERM IMPLICATIONS -->
+  <div class="long-term">
+    <h2>Long-Term Implications</h2>
+    <p>Over the next five to ten years, expect transit planning to bifurcate into two complementary tracks: highly localized, equity-engineered service design (risk-aware transit deserts, justice-informed AMoD dispatch, polygon-level demand models) on one hand, and increasingly large-scale, real-time, AI-assisted trip orchestration (continental journey planning, LLM-based personalized routing) on the other. The Global South BRT/TOD case studies are a reminder that none of this technical sophistication substitutes for institutional execution — the cities that succeed will be those that pair better algorithms with stronger governance, not those with the most advanced model alone. The early appearance of AAM/vertiport ground-access research also suggests transportation researchers are now proactively modeling next-generation modes years ahead of commercial scale, a notable shift from the historically reactive posture of transit research.</p>
+  </div>
+
+  <!-- SVG INFOGRAPHIC -->
+  <div class="infographic-section">
+    <div class="section-label">Data Infographic</div>
+    <div class="svg-wrapper">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+<rect x="0" y="0" width="800" height="1600" fill="#F7F7F5"/>
+<style>
+text { font-family: Helvetica, Arial, sans-serif; fill: #1A1A1A; }
+.label { font-size: 11px; letter-spacing: 1px; fill: #777; text-transform: uppercase; }
+.num { font-size: 40px; font-weight: bold; }
+.h1 { font-size: 26px; font-weight: bold; }
+.h2 { font-size: 16px; font-weight: bold; }
+.body { font-size: 12px; fill: #333; }
+.small { font-size: 10px; fill: #888; }
+.rule { stroke: #1A1A1A; stroke-width: 1; }
+.ruleLight { stroke: #CCC; stroke-width: 1; }
+</style>
+<text x="40" y="55" class="label">TRANSIT RESEARCH BRIEFING</text>
+<text x="40" y="95" class="h1">Daily Transit Intelligence</text>
+<text x="40" y="120" class="body">June 30, 2026 &#8212; 13 papers analyzed</text>
+<line x1="40" y1="140" x2="760" y2="140" class="rule"/>
+<text x="40" y="190" class="label">KEY FINDINGS</text>
+<text x="40" y="245" class="num">1</text>
+<text x="90" y="225" class="body">NYC's congestion-pricing program is already producing real evaluation data: transit ridership rose</text>
+<text x="90" y="241" class="body">after the cordon program launched, but the demand response was sharply uneven by neighborhood --</text>
+<text x="90" y="257" class="body">one of the first rigorous real-world reads on a live, city-scale pricing intervention.</text>
+<text x="40" y="323" class="num">2</text>
+<text x="90" y="303" class="body">A wave of operations-research papers -- hub covering location, risk-aware transit-desert remediation,</text>
+<text x="90" y="319" class="body">and justice-informed AMoD dispatch -- show planners building equity directly into the optimization</text>
+<text x="90" y="335" class="body">objective itself, instead of just measuring inequity after service is already built.</text>
+<text x="40" y="401" class="num">3</text>
+<text x="90" y="381" class="body">Ride-hail-to-vertiport subsidy design has arrived years before commercial air-taxi service exists --</text>
+<text x="90" y="397" class="body">researchers are now proactively pricing the ground-access economics of advanced air mobility hubs,</text>
+<text x="90" y="413" class="body">a notably forward-looking shift from transit research's usual reactive posture.</text>
+<line x1="40" y1="478" x2="760" y2="478" class="ruleLight"/>
+<text x="40" y="520" class="label">PAPER OF THE DAY</text>
+<text x="40" y="548" class="h2">Public transit gains and spatially uneven travel demand after NYC congestion pricing</text>
+<text x="40" y="576" class="small">Donghang Li, Dingyi Zhuang, Yunlin Li, et al.</text>
+<text x="40" y="604" class="body">Using time-series foundation models to build credible counterfactuals for NYC's first cordon-based</text>
+<text x="40" y="620" class="body">congestion pricing program, the authors find transit ridership gains after the January 2025 launch --</text>
+<text x="40" y="636" class="body">but the size and even direction of demand change varies sharply across neighborhoods, a reminder that</text>
+<text x="40" y="652" class="body">system-wide policy wins can still mask real winners and losers at the block level.</text>
+<line x1="40" y1="716" x2="760" y2="716" class="ruleLight"/>
+<text x="40" y="736" class="label">EMERGING THEMES</text>
+<rect x="40" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="52" y="766" class="body">Equity by design:</text>
+<text x="52" y="782" class="body">hub covering, transit-</text>
+<text x="52" y="798" class="body">desert remediation, and</text>
+<text x="52" y="814" class="body">justice-informed AMoD</text>
+<text x="52" y="830" class="body">dispatch all optimize</text>
+<text x="52" y="846" class="body">directly for fairness.</text>
+<rect x="300" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="312" y="766" class="body">Live policy evaluation:</text>
+<text x="312" y="782" class="body">NYC congestion pricing</text>
+<text x="312" y="798" class="body">is assessed in near-</text>
+<text x="312" y="814" class="body">real time with time-</text>
+<text x="312" y="830" class="body">series foundation models,</text>
+<text x="312" y="846" class="body">not years-later studies.</text>
+<rect x="560" y="758" width="4" height="4" fill="#1A1A1A"/>
+<text x="572" y="766" class="body">AI enters two layers:</text>
+<text x="572" y="782" class="body">LLM preference capture</text>
+<text x="572" y="798" class="body">(ChatPlanner) and raw</text>
+<text x="572" y="814" class="body">algorithmic routing speed</text>
+<text x="572" y="830" class="body">(T-REX) advance trip</text>
+<text x="572" y="846" class="body">planning simultaneously.</text>
+<line x1="40" y1="900" x2="760" y2="900" class="ruleLight"/>
+<text x="40" y="940" class="label">CONFIDENCE DISTRIBUTION</text>
+<text x="40" y="986" class="body">High</text>
+<text x="40" y="1016" class="body">Medium</text>
+<text x="40" y="1046" class="body">Low</text>
+<rect x="110" y="974" width="120" height="18" fill="#1A1A1A"/>
+<text x="240" y="986" class="small">3</text>
+<rect x="110" y="1004" width="280" height="18" fill="#1A1A1A"/>
+<text x="400" y="1016" class="small">7</text>
+<rect x="110" y="1034" width="120" height="18" fill="#1A1A1A"/>
+<text x="240" y="1046" class="small">3</text>
+<line x1="40" y1="1080" x2="760" y2="1080" class="ruleLight"/>
+<text x="40" y="1120" class="label">ACTIONABLE TAKEAWAYS</text>
+<text x="40" y="1148" class="body" font-weight="bold">1.</text>
+<text x="60" y="1148" class="body">Pair any city-wide congestion-pricing before/after analysis with neighborhood-level breakdowns</text>
+<text x="60" y="1164" class="body">before declaring a transit ridership win, per the NYC findings.</text>
+<text x="40" y="1196" class="body" font-weight="bold">2.</text>
+<text x="60" y="1196" class="body">Pilot hub covering location optimization to set explicit maximum-travel-time guarantees on new</text>
+<text x="60" y="1212" class="body">BRT/rail networks instead of relying on demand-weighted heuristics alone.</text>
+<text x="40" y="1244" class="body" font-weight="bold">3.</text>
+<text x="60" y="1244" class="body">Treat ride-hail-to-hub ground-access subsidy design as a first-class planning problem for any</text>
+<text x="60" y="1260" class="body">AAM/air-taxi pilot, not an afterthought once vertiports are physically built.</text>
+<line x1="40" y1="1530" x2="760" y2="1530" class="rule"/>
+<text x="40" y="1560" class="small">Generated autonomously from arXiv + Semantic Scholar &#8212; June 30, 2026</text>
+<text x="40" y="1576" class="small">Transit Research Agent &#183; citation-site</text>
+</svg>
+    </div>
+    <a href="research-infographic-2026-06-30.svg" class="download-link" download>↓ Download SVG Infographic</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Transit Research Digest · June 30, 2026 · 13 papers analyzed · Sources: arXiv (9 papers) + Semantic Scholar (4 papers)</p>
+  <p style="margin-top: 8px;"><a href="research.html">← Back to Archive Index</a></p>
+</footer>
+
+</body>
+</html>
