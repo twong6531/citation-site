@@ -1,0 +1,20 @@
+{
+  "file": "docs/infographic-2026-06-30.svg",
+  "type": "editorial_infographic",
+  "reviewed_at": "2026-06-30T17:45:00Z",
+  "verdict": "PASS",
+  "score": 90,
+  "checks_passed": [
+    "Valid SVG: file begins with <svg> and declares xmlns",
+    "Has viewBox attribute (0 0 800 1400)",
+    "Meaningful text content: 71 distinct <text> elements summarizing all 6 daily-briefing stories, not placeholder text",
+    "Content matches and accurately condenses docs/2026-06-30.html"
+  ],
+  "checks_failed": [
+    "No PNG companion exists; site convention is SVG-only fallback for editorial infographics (consistent with all prior days, not treated as a defect)"
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "SVG-only is the established, accepted format for this pipeline (no AI image generation available on current API plan). File was already committed to docs/ prior to this QC review."
+}

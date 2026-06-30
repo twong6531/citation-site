@@ -1,0 +1,22 @@
+{
+  "file": "docs/research-2026-06-30.html",
+  "type": "transit_research_digest",
+  "reviewed_at": "2026-06-30T17:45:00Z",
+  "verdict": "PASS",
+  "score": 94,
+  "checks_passed": [
+    "Word count: ~5,930 words across 13 paper analyses, far over the floor",
+    "Sources: 13 papers cited with direct arXiv/Semantic Scholar links; spot-checked arXiv 2606.17530 (NYC congestion pricing paper) against the live abstract -- title, authors, and findings all match exactly",
+    "No placeholder text, no AI tells",
+    "HTML structure complete with meta viewport, title, valid embedded SVG infographic with viewBox",
+    "Navigation: header and footer both link back to research.html archive index",
+    "Each paper analysis includes why-it-matters, key insights, methodology, results, limitations, practical implications, who-should-care, and comparison-to-prior-work sections with an honest confidence tag (high/medium/low) rather than uniform overconfidence",
+    "Executive summary, emerging themes, contrarian insights, actionable takeaways, and long-term implications sections add real synthesis beyond a paper list",
+    "Confidence distribution in the infographic (3 high / 7 medium / 3 low) honestly reflects appropriate uncertainty rather than inflating confidence"
+  ],
+  "checks_failed": [],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "Best-sourced item reviewed today. File was already committed to docs/ (live site) prior to this QC review -- see summary note on the docs/ publish-before-QC gap."
+}

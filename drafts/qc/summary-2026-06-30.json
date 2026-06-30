@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-30",
+  "total_reviewed": 5,
+  "passed": 5,
+  "revise": 0,
+  "failed": 0,
+  "ready_to_publish": [
+    "2026-06-30-html (daily briefing)",
+    "research-2026-06-30-html (transit research digest)",
+    "transit-2026-06-30-html (SoCal transit brief)",
+    "infographic-2026-06-30-svg",
+    "research-infographic-2026-06-30-svg"
+  ],
+  "needs_revision": [],
+  "blocked": [],
+  "notes": "drafts/articles/ and drafts/infographics/ remain empty (24+ day pipeline failure per status alerts); drafts/scripts/ received only a HOLD notice today (no new video script, per the standing 2026-06-27 decision) -- nothing new to QC there, and the existing 10-script backlog is unchanged from prior QC verdicts (5 PASS, 5+ REVISE). The day's only actual new production was committed directly to docs/ (the live GitHub Pages site, already linked from index.html/research.html/transit.html) before this QC run even started: a daily briefing, a 13-paper transit research digest, a SoCal transit brief, and two SVG infographics. All 5 were reviewed in depth -- full read-through, word counts, structure checks, AI-tell/placeholder checks -- and all PASS. Three load-bearing factual claims were independently verified against live web search/source-fetch rather than taken on faith: the Qwen 3.6 27B release, the Supreme Court's Trump v. Barbara birthright-citizenship ruling, and (most rigorously) the CA High-Speed Rail Bakersfield station relocation and the HCD-vs-SCAG SB 79 K-Line directive -- all confirmed accurate against primary sources, including exact dates, vote counts, and dollar figures.",
+  "process_finding": "QC GAP, NOT A CONTENT DEFECT: docs/ output has been explicitly excluded from QC scope every day since at least 2026-06-20 (see drafts/qc/summary-2026-06-20.json through 2026-06-28.json, each noting docs/ content was 'committed directly to docs/ outside the drafts/ -> QC -> approved.json gate' and 'out of this QC pass's scope'). That means the only content actually going live on the site every day has had zero independent review for 10+ consecutive days -- the approved.json gate that the daily alerts focus on only governs the (currently unpublished) drafts/scripts/ backlog, not the docs/ pipeline that publishes unconditionally and immediately, before QC ever runs. Today's content happened to check out clean on a full review, but the structural gap remains: a future day's docs/ output (a fabricated quote, a wrong figure, an embarrassing factual error) would go live on the public site with no review step able to catch it before publication. Recommend a human decide explicitly: either (a) formalize docs/ as pre-QC-gate publishing and accept that risk as policy, or (b) add a real pre-publish QC step for the docs/ pipeline so review happens before commit+push, not after.",
+  "carryover_alert": "system/approved.json has been empty since 2026-06-07 (24+ consecutive days). 5 QC-passed scripts (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script) remain ready for publish but blocked solely on a human adding slugs to approved.json. This is a human/publishing bottleneck, not a QC issue, and is unchanged from prior days' reports."
+}

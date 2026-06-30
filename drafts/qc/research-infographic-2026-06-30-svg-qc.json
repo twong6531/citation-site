@@ -1,0 +1,20 @@
+{
+  "file": "docs/research-infographic-2026-06-30.svg",
+  "type": "research_infographic",
+  "reviewed_at": "2026-06-30T17:45:00Z",
+  "verdict": "PASS",
+  "score": 90,
+  "checks_passed": [
+    "Valid SVG: file begins with <svg> and declares xmlns",
+    "Has viewBox attribute (0 0 800 1600)",
+    "Meaningful text content summarizing key findings, paper of the day, emerging themes, confidence distribution, and actionable takeaways from the research digest -- not placeholder text",
+    "Content matches and accurately condenses docs/research-2026-06-30.html"
+  ],
+  "checks_failed": [
+    "No PNG companion exists; site convention is SVG-only fallback (consistent with all prior days, not treated as a defect)"
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "SVG-only is the established, accepted format for this pipeline. File was already committed to docs/ prior to this QC review."
+}

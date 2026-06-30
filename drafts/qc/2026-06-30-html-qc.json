@@ -1,0 +1,22 @@
+{
+  "file": "docs/2026-06-30.html",
+  "type": "daily_briefing",
+  "reviewed_at": "2026-06-30T17:45:00Z",
+  "verdict": "PASS",
+  "score": 92,
+  "checks_passed": [
+    "Word count: ~1,400 words across 6 stories, well over the 600-word floor",
+    "Sources: 6 Hacker News stories with point/comment counts cited as the primary evidence for engagement claims; underlying claims (Qwen 3.6 27B release, Supreme Court Trump v. Barbara birthright citizenship ruling 6-3) independently verified accurate via web search against real June 30, 2026 news coverage",
+    "No placeholder text (no Lorem ipsum/TODO/[INSERT]/TBD)",
+    "No AI tells ('As an AI', 'I cannot', 'certainly', etc.)",
+    "HTML structure complete: <html>, <head>, <body>, meta viewport, title all present",
+    "Navigation: footer links back to index.html; in-page back-link present",
+    "Editorial image unavailability is disclosed transparently rather than left as a silent placeholder",
+    "Each story has headline, summary, bulleted facts, 'why it matters' analysis, impact score, and topic tag -- consistent structure throughout"
+  ],
+  "checks_failed": [],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "Spot-checked the Qwen 3.6 27B and Supreme Court birthright citizenship stories against live web search; both confirmed accurate. File was already committed to docs/ (live site, linked from index.html) prior to this QC review -- see summary note on the docs/ publish-before-QC gap."
+}

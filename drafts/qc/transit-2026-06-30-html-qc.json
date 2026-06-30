@@ -1,0 +1,21 @@
+{
+  "file": "docs/transit-2026-06-30.html",
+  "type": "socal_transit_brief",
+  "reviewed_at": "2026-06-30T17:45:00Z",
+  "verdict": "PASS",
+  "score": 95,
+  "checks_passed": [
+    "Word count: ~2,775 words across 7 stories plus a status board and themes section, well over the floor",
+    "Sources: 7 named, linked sources (Construction Dive, BakersfieldNow, LAist, WEHOonline, APTA Passenger Transport, SCVNews) with a consolidated footer source list",
+    "No placeholder text, no AI tells",
+    "HTML structure complete with meta viewport and title; nav links to transit.html archive",
+    "Factual spot-check on the two highest-stakes claims confirmed accurate via live web search/fetch: (1) CA High-Speed Rail dropping the downtown Bakersfield station for a 7th Standard Road site to save $1.7B, confirmed by BakersfieldNow/KTLA/KGET coverage; (2) the HCD June 22 directive ordering SCAG to restore the three West Hollywood K Line stations to the SB 79 map -- confirmed verbatim against the cited WEHOonline source, including the May 18 council meeting count, the 'Item 25' map correction reference, and the July 2 vote date",
+    "Agency status board and emerging-themes synthesis sections add real analytical value beyond a link list",
+    "Cross-story 'Connects to' references are internally consistent"
+  ],
+  "checks_failed": [],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "note": "Highest-confidence item reviewed today after direct source verification. File was already committed to docs/ (live site) prior to this QC review -- see summary note on the docs/ publish-before-QC gap."
+}
