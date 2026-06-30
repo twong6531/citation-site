@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoCal Transit Intelligence — June 30, 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; }
+nav a:hover { color: #fff; }
+.hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; }
+.hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.priority.high { background: #ef4444; color: #fff; }
+.priority.medium { background: #f59e0b; color: #000; }
+.priority.low-medium { background: #64748b; color: #fff; }
+.agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+.card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; }
+.date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+.connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+.source-link:hover { color: #60a5fa; text-decoration: underline; }
+.status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+.status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:nth-child(odd) td { background: #1e293b; }
+tr:nth-child(even) td { background: #0f172a; }
+.themes { background: #0a1628; padding: 2rem; }
+.themes-inner { max-width: 1400px; margin: 0 auto; }
+.themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+.theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+.theme:last-child { border-bottom: none; }
+.theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+.theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>SoCal Transit Intel</strong></div>
+  <div><a href="transit.html">Archive</a><a href="https://thesource.metro.net" target="_blank">Metro Source</a></div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Daily Brief</h1>
+  <p class="subtitle">June 30, 2026 — coverage of the past 9 days across LA Metro, Metrolink, San Diego MTS, SCAG, OCTA, LAX/LAWA, Amtrak Pacific Surfliner, and CA High-Speed Rail</p>
+</div>
+
+<div class="grid">
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/JUkvAabTOqviIuGir2E0zPQ_efuIWZ_5Vd4qa6oxR3M/g:nowe:0:0/c:2500:1412/rs:fit:770:435/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS8yMDIzLTA2LTA3LVR1bGFyZS1TdHJlZXQtVW5kZXJjcm9zc2luZy5qcGVn.webp" alt="California High-Speed Rail Central Valley construction" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">CA High-Speed Rail</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>High-speed rail issues $2.4B Merced-Madera RFQ, lines up Plenary-led team to evaluate private financing</h2>
+      <p class="date-range">June 25 – June 29, 2026</p>
+      <p class="summary">The California High-Speed Rail Authority board approved a Request for Qualifications for a roughly $2.4 billion design-build contract covering the 34-mile Merced-to-Madera civil works segment. Separately, the Authority finalized a Co-Development Agreement with Momentum Alliance Partners — a consortium led by Plenary Americas with CDPQ Infra, Keolis, SNCF Voyageurs, and Jacobs — to spend six months evaluating public-private partnership models for funding and delivering future expansion.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Merced-to-Madera civil works contract valued at approximately <strong>$2.4 billion</strong>, covering about <strong>34 miles</strong></li>
+        <li>Two qualified design-build teams to be shortlisted by <strong>end of 2026</strong>; major construction targeted for <strong>late 2027 through 2030</strong></li>
+        <li>Momentum Alliance Partners, led by <strong>Plenary Americas</strong>, begins a six-month P3 financing evaluation</li>
+        <li>Future P3 financing could draw on up to roughly <strong>$1 billion through 2045</strong> in securitized cap-and-invest Greenhouse Gas Reduction Fund revenue</li>
+        <li>Active Central Valley construction spans <strong>171 miles</strong> between Merced and Bakersfield, with over <strong>80 miles</strong> of guideway and <strong>61 major structures</strong> completed</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Pairing a major new construction procurement with a private-financing evaluation signals the Authority is trying to both keep building and diversify away from pure state/federal funding — a dual-track strategy it will need as it simultaneously trims costs elsewhere on the line.</p>
+      <p class="connections"><em>Connects to:</em> CA High-Speed Rail's Bakersfield station relocation</p>
+      <a class="source-link" href="https://www.constructiondive.com/news/california-high-speed-rail-madera-merced-RFQ/824010/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://harvest-media-clips.sinclairstoryline.com/KBAK/2026-06-24T12:15:52.311Z/Live-DVR/cd35a11a-31e6-4234-9a60-263906fe5945/thumbnails/000005.jpg" alt="California High-Speed Rail Bakersfield station site" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">CA High-Speed Rail</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>High-speed rail drops downtown Bakersfield station, shifts north to save $1.7B</h2>
+      <p class="date-range">June 24 – June 25, 2026</p>
+      <p class="summary">The California High-Speed Rail Authority is abandoning its long-planned downtown Bakersfield station in favor of an "interim" site north of 7th Standard Road, about five miles from the original location near F Street and Golden State Avenue. The Authority says the new site offers strategic access to Meadows Field Airport while preserving a future track alignment toward downtown Bakersfield and Palmdale, but critics argue the original downtown plan was always going to be too costly to build.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>New interim station site sits about <strong>five miles</strong> from the original downtown F Street/Golden State Avenue location</li>
+        <li>The shift is projected to save the Authority an estimated <strong>$1.7 billion</strong></li>
+        <li>Media reports indicate the 7th Standard Road station may <strong>not open until 2033</strong></li>
+        <li>Authority CEO Ian Choudri: "It's never about changing anything just because we want to," citing funding-driven design changes</li>
+        <li>Kern County Taxpayers Association chairman Michael Turnipseed called the original downtown plan "probably the worst public works project in the history of the United States"</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Swapping a costly downtown alignment for a cheaper interim site north of the city is the clearest sign yet that the Authority is willing to scale back original promises to keep the broader system moving — a trade-off Bakersfield-area riders and officials will be litigating for years.</p>
+      <p class="connections"><em>Connects to:</em> CA High-Speed Rail's $2.4B Merced-Madera RFQ and P3 evaluation</p>
+      <a class="source-link" href="https://bakersfieldnow.com/news/local/california-high-speed-rail-drops-downtown-bakersfield-station-shifts-north-of-7th-standard-road" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scpr.brightspotcdn.com/dims4/default/04db9cf/2147483647/strip/true/crop/6000x4000+0+0/resize/672x448!/quality/90/?url=http%3A%2F%2Fscpr-brightspot.s3.us-west-2.amazonaws.com%2Fa6%2Fa2%2F8486ce3140069da83a6c5ba95d6f%2Fgettyimages-2218306151.jpg" alt="Fans riding LA Metro to SoFi Stadium for the World Cup" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>World Cup shuttle ridership tops 100,000 rides as fans skip driving to SoFi Stadium</h2>
+      <p class="date-range">June 12 – June 25, 2026</p>
+      <p class="summary">Metro's dedicated $1.75 shuttle service to SoFi Stadium has logged more than 100,000 rides across the World Cup's first four matches, with ridership climbing every match day. Nearby rail lines are seeing even sharper spikes: the K Line and C Line both posted double-digit ridership jumps on match days, and fare-gate taps at the Expo/USC station rose nearly 600% on the day of the U.S. vs. Paraguay opener.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Over <strong>100,000 rides</strong> logged to and from SoFi Stadium across the first four World Cup matches</li>
+        <li>Direct shuttle fare: <strong>$1.75</strong> per ride, same as a standard bus fare, running from <strong>13 regional hubs</strong> every 10 minutes</li>
+        <li>Shuttle ridership grew from <strong>18,551 rides</strong> (U.S. vs. Paraguay opener) to over <strong>29,000 rides</strong> (Iran vs. Belgium)</li>
+        <li><strong>K Line ridership up 41%</strong> and <strong>C Line up 23%</strong> during the Iran vs. New Zealand match versus a typical Monday</li>
+        <li><strong>Expo/USC station taps up nearly 600%</strong> on the U.S. vs. Paraguay match day; <strong>D Line ridership up more than 95%</strong> during the Mexico vs. South Korea match</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The granular, line-by-line numbers show World Cup transit demand isn't just a single SoFi shuttle story — it's lifting ridership across Metro's entire rail network on match days, real-world proof points the agency will lean on heavily while planning for the much larger 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> LA Metro's six-year-high May ridership, Metro's 196 World Cup-wrapped buses</p>
+      <a class="source-link" href="https://laist.com/news/transportation/sofi-watch-parties-metro-ridership-world-cup" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://wehoonline.com/wp-content/uploads/2026/06/0074fc17-1e22-4ba2-9a22-500ca0352187.jpg" alt="West Hollywood K Line station area" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">SCAG</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>State orders West Hollywood's K Line stations back onto the SB 79 transit-density map</h2>
+      <p class="date-range">June 22 – June 27, 2026</p>
+      <p class="summary">California's Department of Housing and Community Development directed SCAG on June 22 to restore West Hollywood's three planned K Line Northern Extension stations to the official SB 79 transit-density map, after SCAG had excluded them for lacking completed environmental clearance. HCD ruled that a project only needs an approved "locally preferred alternative" route to qualify — not finished environmental review — forcing SCAG to revise its methodology ahead of a July 2 vote, one day after SB 79 takes effect statewide.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>HCD issued its directive to SCAG on <strong>June 22, 2026</strong>, rejecting the environmental-clearance requirement</li>
+        <li>K Line Northern Extension is <strong>"Item 25"</strong> on SCAG's map corrections, headed for a <strong>July 2, 2026</strong> Regional Council vote — one day after SB 79 takes effect</li>
+        <li>Three affected station areas, all on Santa Monica Boulevard: <strong>San Vicente, Fairfax, and La Brea</strong></li>
+        <li>SB 79 sets minimum height floors near qualifying stops: <strong>65 feet</strong> within a quarter mile, <strong>55 feet</strong> within a half mile</li>
+        <li>City staff confirmed over <strong>1,100 rent-stabilized units</strong> could be affected without a local Transit-Oriented Development Alternative Plan (TODAP); 38 of 39 speakers at a May 18 council meeting urged adopting one</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The last-minute reversal — one day before SB 79 takes statewide effect — shows how contested and procedurally fluid California's new transit-density mandate remains, with thousands of units' worth of zoning hanging on a single mapping methodology dispute.</p>
+      <p class="connections"><em>Connects to:</em> Vermont Avenue bus rapid transit litigation, LA Metro's K Line ridership gains</p>
+      <a class="source-link" href="https://wehoonline.com/sb-79-k-line-west-hollywood-scag-map-hcd-2026/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://aptapassengertransport.com/wp-content/uploads/2026/06/0622-LA-Metro-ridership-1792x1002-1.jpg" alt="LA Metro D Line train" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>LA Metro logs busiest May for rail ridership in more than six years</h2>
+      <p class="date-range">May 2026 (reported June 22 – 23, 2026)</p>
+      <p class="summary">LA Metro reported that systemwide rail ridership hit its highest level in more than six years in May 2026, driven by the three new D Line subway-extension stations that opened May 8 and by early World Cup service. The new figures put hard numbers behind a trend Metro has been touting for weeks: total May ridership across bus and rail topped 26.9 million trips, with rail alone carrying nearly 6.5 million of them.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Systemwide <strong>rail ridership up 9.5%</strong> year-over-year in May 2026 — the highest level in over six years</li>
+        <li><strong>D Line ridership jumped 62%</strong> versus May 2025 after three new stations opened May 8 (Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega)</li>
+        <li>New D Line stations added an estimated <strong>8,000–10,000 daily riders</strong>; weekend D Line ridership grew nearly <strong>80%</strong></li>
+        <li>Total May 2026 system ridership (bus + rail): <strong>26,966,657</strong>; rail-only: <strong>6,472,058</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The systemwide totals confirm the D Line extension's gains weren't a fluke confined to weekends near the new stations — overall rail ridership growth is real and sustained, strengthening Metro's case for further rail investment.</p>
+      <p class="connections"><em>Connects to:</em> World Cup shuttle ridership surge, Metro's 196 World Cup-wrapped buses</p>
+      <a class="source-link" href="https://aptapassengertransport.com/la-metro-ridership-reaches-six-year-high-following-d-line-expansion/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scvnews.com/wp-content/uploads/2023/09/metrolink-service.jpg" alt="Metrolink train" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">Metrolink</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>Metrolink to run holiday weekend schedule July 3, offers $10 SoCal Day Pass</h2>
+      <p class="date-range">June 29, 2026 (service dates July 3 – 5, 2026)</p>
+      <p class="summary">In observance of the Fourth of July holiday weekend, Metrolink will operate a weekend schedule on Friday, July 3, across six of its seven lines (Riverside Line trains will not run that day), with Metrolink and Arrow running regular weekend schedules July 4 and 5. To encourage affordable holiday travel, Metrolink is also promoting its $10 SoCal Day Pass for unlimited rides, alongside its ongoing contactless-payment pilot on the San Bernardino Line and Arrow service.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Weekend schedule operates <strong>Friday, July 3, 2026</strong>; Riverside Line trains will <strong>not</strong> run that day</li>
+        <li>Six other lines (Antelope Valley, Orange County, 91/Perris Valley, San Bernardino, IEOC, Ventura County) run on weekend schedule</li>
+        <li><strong>$10 SoCal Day Pass</strong> provides unlimited rides for the day of purchase, via station kiosks and the Metrolink Mobile App</li>
+        <li>Contactless payment pilot on the San Bernardino Line/Arrow runs through <strong>July 19, 2026</strong>, with daily fare caps of <strong>$15 weekdays / $10 weekends</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> A cheap, easy-to-promote day pass during a holiday weekend that overlaps with World Cup travel is a low-cost way for Metrolink to capture discretionary riders while the region's attention is already on transit.</p>
+      <p class="connections"><em>Connects to:</em> World Cup shuttle ridership surge</p>
+      <a class="source-link" href="https://scvnews.com/july-3-metrolink-will-operate-weekend-schedule-offer-10-socal-day-pass/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/4-1.jpeg" alt="Metro bus wrapped in World Cup branding" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>Behind the scenes: how Metro wrapped 196 buses for the World Cup</h2>
+      <p class="date-range">June 22, 2026 (installation March – June 2026)</p>
+      <p class="summary">As the official Public Transit Provider of the LA World Cup 2026 host committee, Metro detailed the production behind its 196 World Cup-wrapped buses: each 40-foot vehicle required just over 1,000 square feet of UV-protective vinyl applied across 10 panels, with crews at 10 bus divisions taking 8-9 hours per bus. Installation began in mid-March, in partnership with the LA Sports and Entertainment Commission and ad partner Outfront.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>196 buses</strong> wrapped with World Cup graphics across LA County</li>
+        <li>Each bus required just over <strong>1,000 square feet</strong> of pressure-sensitive, UV-protective vinyl across <strong>10 panels</strong> (~112in x 48in each)</li>
+        <li>A team of <strong>2-3 installers</strong> spent <strong>8-9 hours per bus</strong>; installation began <strong>mid-March 2026</strong> across 10 Metro bus divisions</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The production details turn a simple branding campaign into a dry run for the much larger fleet-visibility push Metro will need ahead of the 2028 Olympics, when far more vehicles will likely need similar treatment on a tighter timeline.</p>
+      <p class="connections"><em>Connects to:</em> World Cup shuttle ridership surge, LA Metro's six-year-high May ridership</p>
+      <a class="source-link" href="https://thesource.metro.net/how-metro-transformed-nearly-200-buses-into-rolling-celebrations-for-the-world-cup/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<div class="status-board">
+  <h2>Agency Status Board</h2>
+  <table>
+    <thead>
+      <tr><th>Agency</th><th>Status</th><th>Key Activity</th><th>Next Milestone</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CA High-Speed Rail</td><td>Advancing, restructuring</td><td>Issued $2.4B Merced-Madera civil works RFQ; lined up Plenary-led Momentum Alliance Partners for a 6-month P3 financing evaluation; dropped the downtown Bakersfield station for a $1.7B-cheaper site north of 7th Standard Road</td><td>Design-build team shortlist by end of 2026; 7th Standard Road station may not open until 2033</td></tr>
+      <tr><td>LA Metro</td><td>Strong, World Cup-driven</td><td>May rail ridership highest in 6+ years (+9.5% YoY); World Cup shuttles logged 100,000+ rides to SoFi at a $1.75 flat fare; 196 buses wrapped in World Cup branding</td><td>Continued match-day service through World Cup knockout rounds (through July 10)</td></tr>
+      <tr><td>SCAG / HCD</td><td>Active rulemaking</td><td>Ordered West Hollywood's three K Line station areas restored to the SB 79 transit-density map</td><td>SCAG Regional Council vote July 2, one day after SB 79 takes effect July 1</td></tr>
+      <tr><td>Metrolink</td><td>Stable, promotional</td><td>Holiday weekend schedule for July 3-5 with a $10 SoCal Day Pass; contactless payment pilot continues on the San Bernardino Line/Arrow</td><td>Contactless pilot ends July 19</td></tr>
+      <tr><td>San Diego MTS</td><td>Stable, no new developments this period</td><td>$482.5M FY27 budget and fare-freeze proposal previously covered; June 28 Old Town Transit Center trolley fatality remains under SDPD investigation</td><td>Fare freeze proposal decision pending SANDAG review</td></tr>
+      <tr><td>LAX / LAWA</td><td>Critical, no new developments this period</td><td>$3.34B SkyLink Automated People Mover remains in passenger-free testing, still not running for World Cup crowds</td><td>Passenger service target "second half of 2026"</td></tr>
+      <tr><td>OCTA</td><td>Stable, no new developments this period</td><td>FY27 budget previously approved; no fresh coverage in this window</td><td>FY27 budget takes effect July 1, 2026</td></tr>
+      <tr><td>Amtrak Pacific Surfliner</td><td>Stable, no new developments this period</td><td>13th daily LA–San Diego roundtrip remains in effect</td><td>Monitoring ridership through summer World Cup travel season</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes</h2>
+    <div class="theme">
+      <h3>High-speed rail is trading scope for speed and savings</h3>
+      <p>Dropping the downtown Bakersfield station for a $1.7 billion-cheaper interim site, while simultaneously issuing a new $2.4 billion Merced-Madera contract and bringing in a private-capital partner, shows the Authority shifting from "build exactly as originally promised" toward active cost discipline — even as it keeps construction moving forward on multiple fronts at once.</p>
+    </div>
+    <div class="theme">
+      <h3>SB 79's rollout is being decided station-by-station, right up to the deadline</h3>
+      <p>West Hollywood's K Line stations were ordered back onto the SB 79 map just one day before the law takes effect statewide, with SCAG's confirming vote scheduled for the day after. The episode shows how procedurally contested California's new transit-density mandate remains, with thousands of housing units' zoning status hinging on mapping technicalities decided at the last minute.</p>
+    </div>
+    <div class="theme">
+      <h3>World Cup transit numbers are getting sharper, not just bigger</h3>
+      <p>Reporting has moved from broad "ridership boost" framing to line-by-line data: 100,000+ shuttle rides, per-match growth curves, and individual rail line spikes like the K Line's 41% jump and Expo/USC's 600% tap increase. That granularity gives Metro real evidence — not just anecdotes — to justify its World Cup transit investments ahead of 2028.</p>
+    </div>
+    <div class="theme">
+      <h3>Smaller, cheaper moves are riding the World Cup spotlight</h3>
+      <p>Metrolink's $10 holiday day pass and Metro's detailed bus-wrap production story both show agencies using the World Cup's elevated attention to make low-cost, high-visibility plays — building goodwill and incremental ridership without the price tag of a capital project.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Sources: Construction Dive &middot; BakersfieldNow (KBAK/KBFX) &middot; LAist &middot; WEHOonline.com &middot; APTA Passenger Transport &middot; SCVNews.com &middot; thesource.metro.net<br>
+  Generated June 30, 2026
+</footer>
+
+</body>
+</html>
