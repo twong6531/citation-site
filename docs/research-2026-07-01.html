@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 1, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #242424;
+    --border: #2E2E2E;
+    --text: #E8E8E6;
+    --muted: #888888;
+    --accent: #E8FF00;
+    --accent2: #4488FF;
+    --highlight: #FF6B35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand { font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--accent); letter-spacing: 1px; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 3px solid var(--accent);
+    padding: 60px 40px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 20px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; letter-spacing: 1px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 40px; }
+
+  .editorial-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+  .editorial-header { padding: 20px 28px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .editorial-header .section-tag { font-size: 10px; letter-spacing: 3px; color: var(--muted); }
+  .editorial-header h2 { font-size: 18px; margin-top: 4px; }
+  .editorial-body { padding: 28px; text-align: center; }
+  .editorial-body img { max-width: 100%; border-radius: 2px; }
+  .editorial-body .no-image {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 13px; border: 1px dashed var(--border); border-radius: 2px;
+  }
+  .editorial-caption { padding: 16px 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  .executive-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .executive-summary h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .executive-summary p { font-size: 16px; line-height: 1.75; color: var(--text); }
+
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 12px; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; line-height: 1.5; }
+
+  .papers-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-color: var(--accent); border-left: 4px solid var(--accent); }
+  .paper-card .paper-num { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-card h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .one-liner { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+  .paper-card .section-head { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 20px; margin-bottom: 8px; }
+  .paper-card p, .paper-card li { font-size: 14px; color: #BBBBBB; line-height: 1.65; }
+  .paper-card ul { padding-left: 20px; }
+  .paper-card ul li { margin-bottom: 6px; }
+  .paper-card .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .paper-card .tag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 1px; }
+  .paper-card .tag.high { border-color: #44FF88; color: #44FF88; }
+  .paper-card .tag.medium { border-color: #FFAA44; color: #FFAA44; }
+  .paper-card .tag.low { border-color: #FF4444; color: #FF4444; }
+
+  .takeaways { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface2); border-left: 3px solid var(--accent); padding: 20px 24px; }
+  .takeaway p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .contrarian-block { background: var(--surface); border: 1px solid #FF6B35; padding: 28px 32px; margin-bottom: 48px; }
+  .contrarian-block h2 { font-size: 10px; letter-spacing: 4px; color: #FF6B35; text-transform: uppercase; margin-bottom: 20px; }
+  .contrarian-block .insight { margin-bottom: 20px; padding-left: 16px; border-left: 2px solid #FF6B35; }
+  .contrarian-block .insight p { font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  .infographic-section { margin-bottom: 48px; }
+  .svg-wrapper { background: #F7F7F5; padding: 24px; border: 1px solid var(--border); }
+  .svg-wrapper svg { width: 100%; height: auto; }
+  .download-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent2); border: 1px solid var(--accent2); padding: 8px 16px; }
+
+  .long-term { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 48px; }
+  .long-term h2 { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .long-term p { font-size: 15px; line-height: 1.75; color: #CCCCCC; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 32px 20px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand">Transit Research Digest</span>
+  <a href="research.html" class="back-link">← Archive Index</a>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Transit Research Digest · July 1, 2026</div>
+  <h1>AI Route Design, Cordon Pricing Spillovers, and Transit as a Labor Market Tool</h1>
+  <div class="meta">
+    <span><span class="badge">10 PAPERS</span></span>
+    <span>arXiv · Semantic Scholar</span>
+    <span>AlphaTransit · NYC congestion pricing · free transit India · ride-hail dynamics · headway AI</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- EDITORIAL IMAGE SECTION -->
+  <div class="editorial-section">
+    <div class="editorial-header">
+      <div class="section-tag">TODAY'S TRANSIT ILLUSTRATION</div>
+      <h2>A city-scale bus route network design board with AI decision tree overlays and service coverage heatmap</h2>
+    </div>
+    <div class="editorial-body">
+      <div class="no-image">
+        ◻ EDITORIAL ILLUSTRATION UNAVAILABLE<br>
+        <span style="font-size:11px;margin-top:8px;display:block;">Gemini Imagen API quota exceeded on this key — image generation skipped</span>
+        <span style="font-size:11px;color:#555;margin-top:4px;display:block;">Subject: A city-scale bus route network design board with AI decision tree overlays and service coverage heatmap</span>
+      </div>
+    </div>
+    <div class="editorial-caption">
+      <span>A city-scale bus route network design board with AI decision tree overlays and service coverage heatmap — Technical Editorial Illustration</span>
+      <span>Independently researched and rendered from today's papers</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <p>Today's ten-paper digest reveals a field undergoing a quiet but fundamental transformation: transit research is moving from descriptive to prescriptive, and from one-size-fits-all to context-aware. The most striking signal is methodological—AlphaTransit shows that Monte Carlo Tree Search guided by a neural policy-value network can solve the Transit Route Network Design Problem at city scale, outperforming reinforcement learning alone by 9–11 percentage points in service coverage. Paired with a separate ConvLSTM approach for real-time headway prediction, AI is entering transit operations at two complementary levels: network design and dispatch control. The policy side is equally rich: NYC's first cordon congestion pricing program, now 18 months old, is yielding real evaluable data showing transit ridership gains alongside spatially uneven demand reductions—and a new framework for evaluating such policies without clean control groups. On the equity frontier, a quasi-natural experiment from five Indian states demonstrates that free bus access for women directly increases paid workforce participation, with the largest effects in the most patriarchal districts—a striking finding that reframes free-fare programs as labor market interventions, not just mobility subsidies. The Chicago simulation quantifying transit's $35.4B annual economic value (13:1 return on a $2.7B public investment) puts a price tag on absence that policymakers can actually use. And in Shanghai, a maturing ride-hail market has begun to complement rather than substitute for transit—a pattern that will recur in every major city within a decade.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>AI moves from analysis to design</h3>
+      <p style="font-size:13px;color:#BBBBBB;margin-top:10px;line-height:1.55;">Two papers this week show AI crossing from transit analysis into transit design itself: AlphaTransit for bus network route generation and ConvLSTM for real-time headway dispatch control. These are not research demos—both are tested on real city-scale benchmarks and beat or match human-engineered alternatives.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Transit as an economic intervention, not just mobility</h3>
+      <p style="font-size:13px;color:#BBBBBB;margin-top:10px;line-height:1.55;">The India free-fare study and the Chicago economic modeling both reframe transit not as a social service with a ridership metric, but as an economic multiplier measurable in employment rates and GDP-equivalent opportunity costs. This framing is more compelling to fiscal committees than ridership counts alone.</p>
+    </div>
+    <div class="theme-card">
+      <h3>City context dominates cross-city generalizations</h3>
+      <p style="font-size:13px;color:#BBBBBB;margin-top:10px;line-height:1.55;">Three papers—the NYC congestion pricing spatial heterogeneity finding, the multi-city transit-PM2.5 work showing non-uniform relationships, and the Miami OTP-frequency interaction varying by time of day—all converge on the same warning: aggregate averages mask the city-specific and neighborhood-specific dynamics that actually drive transit outcomes.</p>
+    </div>
+  </div>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">Paper Analyses</div>
+  <div class="papers-grid">
+
+    <!-- Paper 01 — PAPER OF THE DAY -->
+    <div class="paper-card featured">
+      <div class="paper-num">Paper 01 · Paper of the Day · arXiv:2605.28730</div>
+      <h3><a href="https://arxiv.org/abs/2605.28730" target="_blank">AlphaTransit: Learning to Design City-scale Transit Routes</a></h3>
+      <div class="authors">Bibek Poudel, Sai Swaminathan, Weizi Li · May 27, 2026</div>
+      <div class="one-liner">Monte Carlo Tree Search combined with a learned neural policy-value network solves the Transit Route Network Design Problem at city scale, beating prior RL methods by 9–11 percentage points in service coverage.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Bus network design is one of the hardest combinatorial optimization problems in urban planning—the space of possible route sets is astronomical, and today most agencies rely on consultant heuristics or incremental patch decisions. AlphaTransit offers a principled, learnable approach that directly targets service coverage.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Frames route design as a sequential decision problem where each step selects a route extension, with delayed feedback making it a challenging planning problem.</li>
+        <li>The policy network suggests route extensions; the value network evaluates future network quality, enabling efficient lookahead without expensive simulation rollouts.</li>
+        <li>On Bloomington benchmark: 54.6% service rate (mixed demand) and 82.1% (full demand)—9.9% and 11.4% improvements over RL without search.</li>
+        <li>Code and data are publicly available, making this immediately reusable by agencies and planners.</li>
+        <li>Demonstrates that learned guidance and MCTS are complements, not substitutes—each alone underperforms the combination.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Monte Carlo Tree Search guided by a neural policy-value network trained via a combination of behavioral cloning from known-good solutions and self-play. Evaluated on the Bloomington, Indiana TRNDP benchmark under mixed and full demand scenarios.</p>
+
+      <div class="section-head">Results</div>
+      <p>AlphaTransit achieves 54.6% (mixed) and 82.1% (full demand) service rates, outperforming reinforcement learning without search by 9.9% and 11.4%, and MCTS without learned guidance by 2.5% and 11.2%.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Validated on one benchmark city (Bloomington); generalization to larger, more complex real-world networks has not yet been demonstrated. The approach requires training data from existing route solutions, which may not exist in transit deserts.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies planning bus network restructurings can use AlphaTransit as an optimization engine to generate candidate network designs, replacing or augmenting expensive consultant-led route studies. Best applied to full network redesigns rather than incremental route patches.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agency planners, operations researchers, transportation planning consultants, municipal governments undertaking bus network restructurings.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior approaches to TRNDP used metaheuristics (genetic algorithms, simulated annealing) or recent RL methods. AlphaTransit is the first to combine MCTS with learned guidance for this specific problem, drawing from the success of AlphaGo-style search in games and extending it to infrastructure planning.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">AI / NETWORK DESIGN</span>
+        <span class="tag">OPEN SOURCE</span>
+      </div>
+    </div>
+
+    <!-- Paper 02 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 02 · arXiv:2606.17530</div>
+      <h3><a href="https://arxiv.org/abs/2606.17530" target="_blank">Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</a></h3>
+      <div class="authors">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao · June 16, 2026</div>
+      <div class="one-liner">NYC's cordon congestion pricing (January 2025) increased bus and subway ridership relative to counterfactual expectations, but demand reductions concentrated inside Manhattan's Congestion Relief Zone while transit gains spread to outer neighborhoods.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>This is one of the first rigorous post-implementation evaluations of NYC's January 2025 congestion pricing program using time-series foundation models. Congestion pricing is the most consequential urban transport policy live in the US, and real evaluation data are only now becoming available.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Time-series foundation models can construct credible counterfactual forecasts for large-scale policy changes even without traditional control groups.</li>
+        <li>Bus and subway ridership increased significantly relative to expected no-policy baseline post-January 2025.</li>
+        <li>Overall travel demand decreased modestly—pricing suppressed some trips entirely rather than shifting all car trips to transit.</li>
+        <li>Effects are spatially heterogeneous: demand reductions concentrated within the cordon zone; transit gains extended beyond Manhattan's core.</li>
+        <li>Sociodemographic analysis reveals uneven adaptation across neighborhoods—equity implications vary by community type.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Quasi-experimental evaluation using time-series foundation models to generate probabilistic counterfactual demand forecasts for bus, subway, and aggregate trip volume. Applies the framework to system-wide urban mobility data covering pre- and post-January 2025 periods.</p>
+
+      <div class="section-head">Results</div>
+      <p>Post-policy transit ridership increased relative to expected no-policy demand. Overall travel demand decreased modestly. Effects distributed unevenly across NYC geography and sociodemographic groups.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Short post-period (18 months at most). Foundation-model counterfactuals are a relatively new technique without extensive external validation in transportation policy contexts. Single-city, single-program natural experiment limits generalizability.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities considering congestion pricing should not assume uniform transit ridership gains—complementary service investments in outer neighborhoods may be needed to capture the full mobility benefit. Equity monitoring should focus on adaptation speed across income groups.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Urban transportation planners, transit agency executives, policy analysts in cities considering congestion pricing, transportation economists.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends congestion pricing evaluation literature (London, Stockholm, Singapore) with a novel methodological approach adapted to US data scarcity. Notably, earlier NYC-specific analyses used traditional difference-in-differences approaches; this paper introduces foundation models for causal inference in transport.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">CONGESTION PRICING</span>
+        <span class="tag">EQUITY</span>
+      </div>
+    </div>
+
+    <!-- Paper 03 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 03 · arXiv:2604.14758</div>
+      <h3><a href="https://arxiv.org/abs/2604.14758" target="_blank">Ticket to ride: Impact of free public transport on women's workforce participation in India</a></h3>
+      <div class="authors">Udayan Rathore, Ashish Singh · April 16, 2026</div>
+      <div class="one-liner">Free bus schemes for women across five Indian states—evaluated via triple-difference estimation on Time Use Survey data—significantly increased women's paid work participation and employment duration, with largest effects in the most patriarchal districts.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Free-fare programs for women are spreading rapidly across South Asia and beyond. This paper is one of the first to provide quasi-experimental evidence that such programs work as labor market interventions, not just mobility subsidies—a reframing that could reshape the cost-benefit calculus for policymakers.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Uses a quasi-natural experiment from free bus schemes in Punjab, Tamil Nadu, and three other Indian states.</li>
+        <li>Triple-difference estimation and event study framework confirm the effects are not pre-existing trends.</li>
+        <li>Early adopters (Punjab and Tamil Nadu) show concentrated effects, reflecting both institutional readiness and baseline mobility constraint levels.</li>
+        <li>Disproportionately large effects in patriarchal districts with highest pre-existing mobility restrictions—the program targets exactly those who benefit most.</li>
+        <li>Mechanism: easing non-financial binding constraints (social permission, safety concerns) rather than purely reducing ticket costs.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Triple-difference regression using two rounds of India's representative Time Use Survey, leveraging variation across states, time periods, and individual demographics. Complemented by event study design to test for pre-trends and effect timing.</p>
+
+      <div class="section-head">Results</div>
+      <p>Free bus schemes measurably increased women's paid work participation rates and duration of employment. Effects strongest in early-adopting states and in districts with highest patriarchal constraints on female mobility.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Limited to five states with available Time Use Survey data across two rounds. Mechanism (non-financial vs. financial constraint easing) is inferred rather than directly measured. Program rollout timing and quality varied across states.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Policymakers evaluating free-fare programs should measure labor market outcomes alongside ridership—particularly women's employment rates. Programs should be targeted where mobility constraints are highest, not simply where transit density is highest.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit equity advocates, development economists, gender policy researchers, transport ministries in South and Southeast Asia, World Bank transport division.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior free-fare literature focused on ridership, environmental impacts, and general mobility. This paper is novel in documenting labor market effects via quasi-experimental design rather than surveys or theory.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">EQUITY</span>
+        <span class="tag">FREE FARE</span>
+        <span class="tag">GLOBAL SOUTH</span>
+      </div>
+    </div>
+
+    <!-- Paper 04 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 04 · arXiv:2409.04568</div>
+      <h3><a href="https://arxiv.org/abs/2409.04568" target="_blank">Impact of Transit on Mobility, Equity, and Economy in the Chicago Metropolitan Region</a></h3>
+      <div class="authors">Omer Verbas, Taner Cokyasar, Seamus Joyce-Johnson, Scott Wainwright, Maeve Coates, Aymeric Rousseau, Jim Aloisi, Anson Stewart, Joshua Auld · September 2024</div>
+      <div class="one-liner">Agent-based simulation of Chicago with transit eliminated shows 14.2% regional travel-time increase, 11.8% activity cancellations, and $35.4B annual economic loss—a 13:1 return on transit's $2.7B annual public funding.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Transit funding debates are perpetually hampered by the difficulty of quantifying the counterfactual: what happens if transit disappears? This paper provides one of the most detailed answers ever attempted, using agent-based simulation at metro scale to price transit's absence in terms legislators and budget committees can act on.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Regional travel times increase 14.2% and intra-city Chicago travel times increase 34.7% if transit is eliminated.</li>
+        <li>11.8% of non-work activities are cancelled regionally; 26.9% within the City of Chicago.</li>
+        <li>Economic cost of elimination: $35.4B annually—a 13:1 benefit ratio on $2.7B public transit funding.</li>
+        <li>Equity burden is sharply skewed: the lowest income quartile would bear nearly half of all cancelled non-work activities.</li>
+        <li>Women face disproportionate cancellation burdens, reinforcing the equity findings from the India paper above.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Full-region agent-based travel demand simulation using the POLARIS framework, modeling all Chicago metropolitan residents and their activity chains with and without transit service to derive counterfactual outcomes.</p>
+
+      <div class="section-head">Results</div>
+      <p>Transit elimination would cost Chicago $35.4B annually, increase regional average travel time 14.2%, and force cancellation of 11.8% of non-work activities. Low-income residents and women bear disproportionate burdens.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Extreme counterfactual (complete elimination) rather than partial scenarios; partial service cuts may have nonlinear effects not captured here. Agent behavioral responses (e.g., relocation, car purchase) are constrained by simulation assumptions.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>The 13:1 return ratio is a powerful budget-advocacy tool. Agencies facing funding cuts should commission similar studies for their regions; the methodology is publicly described and replicable with POLARIS or comparable ABM frameworks.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agency executives, city budget offices, state legislatures, metropolitan planning organizations, equity advocates.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Advances beyond earlier transit economic impact studies (which typically use multiplier-based input-output analysis) by directly simulating behavioral responses at the individual trip level, capturing cancellation effects that multiplier studies miss.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">ECONOMIC IMPACT</span>
+        <span class="tag">EQUITY</span>
+        <span class="tag">SIMULATION</span>
+      </div>
+    </div>
+
+    <!-- Paper 05 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 05 · arXiv:2510.19745</div>
+      <h3><a href="https://arxiv.org/abs/2510.19745" target="_blank">Substitution or Complement? Uncovering the Interplay between Ride-hailing Services and Public Transit</a></h3>
+      <div class="authors">Zhicheng Jin, Xiaotong Sun, Li Zhen, Weihua Gu, Huizhao Tu · October 2025 / May 2026</div>
+      <div class="one-liner">Using 96,716 ride-hail vehicles in Shanghai, the authors show the TNC-transit relationship has shifted toward complementarity (+9.22% complement ratio, −9.06% substitution ratio) as the market matures—with nonlinear distance-to-metro effects.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>The question of whether ride-hailing helps or hurts transit has been debated since Uber's founding. This paper provides large-scale empirical evidence from one of the world's most mature TNC markets that the relationship is shifting—with significant implications for how transit agencies and regulators should frame ride-hailing partnerships.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Classifies each ride-hail trip into one of four categories: first-mile complementary, last-mile complementary, substitutive, and independent of transit.</li>
+        <li>Complementary ratio increased 9.22% and substitutive ratio decreased 9.06% compared to earlier Shanghai studies—suggesting market maturation favors integration over competition.</li>
+        <li>Distance to metro stations and bus stop density show nonlinear effects (via CatBoost + SHAP analysis)—neither proximity nor distance is uniformly good or bad for complementarity.</li>
+        <li>Results from a saturated market (Shanghai) may differ from less-mature TNC markets.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>September 2022 GPS data from 96,716 ride-hail vehicles in Shanghai. CatBoost (gradient boosting) with SHAP (Shapley additive explanations) values to identify nonlinear effects of proximity, land use, and network characteristics on TNC-transit relationship classification.</p>
+
+      <div class="section-head">Results</div>
+      <p>Complementary TNC-transit trips now outnumber substitutive ones and growing; nonlinear proximity effects suggest optimal first/last-mile "sweet spot" distances for TNC-transit integration.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single city (Shanghai), single month (September 2022). Shanghai's transit density is far higher than most US/European cities; transferability to lower-density contexts requires caution. Classification relies on geographic proximity rather than traveler-stated intent.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies considering TNC integration programs should expect complementary effects to grow as TNC markets mature. Optimal first/last-mile partnership zones exist at specific distance bands from stations—these can be estimated from local GPS data before committing to subsidy programs.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit agency partnerships teams, Uber/Lyft policy teams, transportation planners designing mobility-as-a-service integration, urban researchers.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Earlier US studies found primarily substitutive TNC-transit relationships; this paper's Shanghai data suggests temporal and market-maturity dynamics that prior cross-sectional studies couldn't detect.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+        <span class="tag">RIDE-HAILING</span>
+        <span class="tag">MULTIMODAL</span>
+      </div>
+    </div>
+
+    <!-- Paper 06 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 06 · arXiv:2601.19937</div>
+      <h3><a href="https://arxiv.org/abs/2601.19937" target="_blank">Critical Transit Infrastructure in Smart Cities and Urban Air Quality: A Multi-City Seasonal Comparison of Ridership and PM2.5</a></h3>
+      <div class="authors">Sean Elliott, Sohini Roy · January 2026 (revised April 2026)</div>
+      <div class="one-liner">Integrating agency-reported transit ridership with PM2.5 measurements across NYC, Chicago, Las Vegas, and Phoenix reveals pronounced structural differences between cities and seasons—apparent mobility-AQ relationships are not uniform or generalizable.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Smart-city advocates often assume transit ridership improvements will automatically reduce urban air pollution. This paper provides multi-city empirical evidence that the relationship is far more complex, city-specific, and seasonally dependent—a useful corrective to oversimplified policy narratives.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Dataset integrates two heterogeneous data streams (transit ridership and PM2.5) across four structurally different cities.</li>
+        <li>Cities show "pronounced structural differences in transit scale and intensity"—NYC vs. Phoenix represent opposite ends of a transit-density spectrum.</li>
+        <li>Seasonal shifts in both ridership and PM2.5 are consistent within cities but differ dramatically between them.</li>
+        <li>Apparent mobility-PM2.5 correlations break down when cities are pooled—a warning against cross-city generalizations in smart-city benchmarks.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Multi-source dataset construction combining agency-reported ridership (presumably GTFS/NTD) with EPA ambient PM2.5 monitoring data. Comparative analysis across March and October 2024 in four US metro areas.</p>
+
+      <div class="section-head">Results</div>
+      <p>No uniform transit-AQ relationship found. Each city shows city-specific seasonal patterns. The work positions multi-source integrated monitoring as a scalable smart-city capability but cautions against pooled modeling.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Descriptive/correlational analysis; does not establish causal pathways from transit to PM2.5. PM2.5 is influenced by industrial, weather, and wildfire factors not controlled in this analysis. Two months of data limits seasonal inference.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Cities claiming air-quality co-benefits of transit investment should collect their own city-specific data rather than relying on cross-city benchmarks. Integrated transit-environment monitoring dashboards are technically feasible and should become a standard smart-city data product.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Smart-city data officers, environmental health researchers, transit agency sustainability teams, EPA regional offices, air quality monitoring networks.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Builds on prior single-city transit-environment studies by constructing a comparable multi-city dataset, but the key contribution is the warning against cross-city generalization that prior pooled analyses may have obscured.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+        <span class="tag">AIR QUALITY</span>
+        <span class="tag">SMART CITIES</span>
+        <span class="tag">DATA INFRASTRUCTURE</span>
+      </div>
+    </div>
+
+    <!-- Paper 07 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 07 · arXiv:2506.15113</div>
+      <h3><a href="https://arxiv.org/abs/2506.15113" target="_blank">Transit for All: Mapping Equitable Bike2Subway Connection using Region Representation Learning</a></h3>
+      <div class="authors">Min Namgung, JangHyeon Lee, Fangyi Ding, Yao-Yi Chiang · June 2025</div>
+      <div class="one-liner">Region representation learning on multimodal geospatial data predicts bike-share demand at candidate stations, identifies equity gaps in first/last-mile subway access, and recommends station placements that narrow gaps for low-income communities.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>The first/last-mile problem is the dominant barrier to subway access for non-car-owning low-income residents. Bike-sharing is affordable and scalable, but station placement decisions typically optimize for ridership—this paper proposes an equity-weighted placement framework instead.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Proposes a three-component framework: demand prediction → equity assessment (weighted PTAL) → station placement optimization.</li>
+        <li>Uses region representation learning to encode spatial context from multiple geospatial data layers rather than relying on single-mode features.</li>
+        <li>Introduces weighted Public Transport Accessibility Level (wPTAL) combining demand forecasts with equity weights for income and demographic factors.</li>
+        <li>NYC case study identifies specific transit accessibility gaps disproportionately impacting low-income and minority neighborhoods.</li>
+        <li>Strategic equity-weighted placement significantly reduces measured accessibility disparities.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Region representation learning combining multimodal geospatial inputs (OSM, demographics, land use, transit network) to predict bike-share demand at new station locations; integrated with a weighted accessibility metric to identify placement priorities.</p>
+
+      <div class="section-head">Results</div>
+      <p>NYC analysis identifies specific underserved neighborhoods where new stations would maximally reduce equity gaps. Equity-weighted placement outperforms pure demand-maximizing placement on accessibility equity metrics.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Demand model trained on existing station data—predictions for areas with no current bike-share data are extrapolated rather than directly observed. Social acceptance of bike-share in car-dependent or senior-heavy neighborhoods not modeled.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Bike-share operators and city transportation departments can apply this framework to prioritize equity-focused station siting rather than defaulting to high-demand commercial zones. The wPTAL metric can be adopted as a standard equity accountability tool for micromobility programs.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Bike-share operators, city DOTs, transit equity advocates, MPOs conducting Title VI analysis, urban geography researchers.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Extends prior accessibility-based bike-share planning by adding both a learned demand model (replacing simple gravity models) and an explicit equity weighting mechanism that prior placement frameworks lacked.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+        <span class="tag">EQUITY</span>
+        <span class="tag">FIRST/LAST MILE</span>
+        <span class="tag">BIKE SHARE</span>
+      </div>
+    </div>
+
+    <!-- Paper 08 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 08 · arXiv:2511.07467</div>
+      <h3><a href="https://arxiv.org/abs/2511.07467" target="_blank">Analyzing the Impact of Service Frequency and On-time Performance on Transit Ridership in Miami-Dade County</a></h3>
+      <div class="authors">Duanya Lyu, Xiang Yan · November 2025</div>
+      <div class="one-liner">Using pre-COVID (2018–19) and recovery-period (2021–23) automated passenger count data, the authors show frequency and on-time performance interact: improving reliability yields the largest ridership gains on already-frequent routes.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Transit agencies face constant budget tradeoffs between adding service (frequency) and improving quality (reliability). This paper provides one of the first empirical estimates of how these two interventions interact—a result directly actionable in service planning decisions.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Ridership declined steadily pre-COVID, dropped sharply during pandemic, and recovered to pre-pandemic levels by late 2022—providing a natural experiment period.</li>
+        <li>Frequency consistently influences ridership across all periods.</li>
+        <li>On-time performance became significantly more important post-pandemic, suggesting rider tolerance for unreliability may have decreased.</li>
+        <li>Key interaction: "improving reliability is particularly effective on frequent routes"—agencies shouldn't invest in OTP on infrequent routes as first priority.</li>
+        <li>Time-of-day matters: OTP strategies should focus on morning peak; frequency strategies should target midday and evening.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Two-way fixed effects panel regression using automated passenger count data and real-time GTFS feed schedules for Miami-Dade County bus routes. Comparison across pre-COVID (2018–2019) and recovery (2021–2023) periods to identify period-specific dynamics.</p>
+
+      <div class="section-head">Results</div>
+      <p>Frequency and OTP independently boost ridership; their interaction is significant in the recovery period. Morning OTP and midday/evening frequency are the highest-leverage service improvement strategies.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single system (Miami-Dade), which has specific demographic and land-use characteristics (car-dependent, dispersed, warm weather) that may not generalize. COVID recovery dynamics may be atypical.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Budget-constrained agencies should prioritize OTP improvements on frequent routes and frequency increases on off-peak services, rather than uniform investment across all routes. Morning OTP is a particularly high-value target for peak ridership recovery.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit operations staff, service planning departments, budget analysts at transit agencies, state transit oversight offices.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior ridership-service-quality studies typically treat frequency and OTP separately; this paper's interaction finding is a meaningful advance. The COVID-recovery period also provides a novel context for studying ridership-service relationships.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">SERVICE PLANNING</span>
+        <span class="tag">RIDERSHIP</span>
+        <span class="tag">OTP</span>
+      </div>
+    </div>
+
+    <!-- Paper 09 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 09 · arXiv:2510.03121</div>
+      <h3><a href="https://arxiv.org/abs/2510.03121" target="_blank">Real Time Headway Predictions in Urban Rail Systems and Implications for Service Control: A Deep Learning Approach</a></h3>
+      <div class="authors">Muhammad Usama, Haris Koutsopoulos · October 2025</div>
+      <div class="one-liner">A ConvLSTM model captures spatiotemporal headway dynamics across all stations simultaneously, enabling dispatchers to evaluate control decisions in real time without running expensive simulations.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>Bus bunching and train headway irregularities are among the most visible and frustrating rider experiences, yet dispatchers currently make control decisions without reliable tools to predict how their interventions will propagate downstream. This paper closes that gap for rail.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>ConvLSTM captures both temporal evolution and spatial propagation of headway irregularities simultaneously—previous approaches handled these dimensions separately.</li>
+        <li>Planned terminal headways are incorporated as a key input, making the model aware of dispatcher intent as well as historical patterns.</li>
+        <li>The model can simulate the downstream effects of different dispatcher strategies (holding, skipping stops, short-turning) before committing.</li>
+        <li>Validated on large-scale real metro system data.</li>
+        <li>Computationally efficient enough for real-time deployment without GPU-intensive simulation rollouts.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Convolutional Long Short-Term Memory (ConvLSTM) neural network trained on historical headway data from a large metro system. Inputs include planned terminal headways and historical headway patterns; output is predicted headway evolution across the entire line over a planning horizon.</p>
+
+      <div class="section-head">Results</div>
+      <p>ConvLSTM outperforms simpler LSTM and statistical baselines in headway prediction accuracy. The framework provides actionable insights for real-time dispatching decisions across a full metro line.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Validated on a single metro system; headway dynamics vary significantly across rail systems with different signal architectures, stopping patterns, and ridership distributions. Real-time integration with operations control center systems is not described.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Rail operators can deploy this as a decision support tool in operations control centers—entering a proposed holding or short-turning decision and seeing its predicted downstream headway effects before execution. Particularly valuable for handling disruptions.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Rail operations control center managers, transit technologists, signal and control system engineers, transit data scientists.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Prior headway prediction models used simpler LSTM or regression approaches that treated each station independently; ConvLSTM's simultaneous spatial-temporal modeling is a meaningful architectural advance for the specific geometry of rail lines.</p>
+
+      <div class="meta-row">
+        <span class="tag medium">MEDIUM CONFIDENCE</span>
+        <span class="tag">OPERATIONS</span>
+        <span class="tag">RAIL</span>
+        <span class="tag">DEEP LEARNING</span>
+      </div>
+    </div>
+
+    <!-- Paper 10 -->
+    <div class="paper-card">
+      <div class="paper-num">Paper 10 · arXiv:2605.20263</div>
+      <h3><a href="https://arxiv.org/abs/2605.20263" target="_blank">The NetMob26 Dataset: A High-Resolution Multi-Source View of Public Bus Mobility in Niterói</a></h3>
+      <div class="authors">Felipe Domingos, Humberto T. Marques-Neto, Bruno Pereira, Clayson Celes, Steffen Knoblauch, Vinícius F.S. Mota · May 2026</div>
+      <div class="one-liner">A research-grade open dataset combining GPS telemetry from the full Niterói bus fleet, 7.2 million anonymized ticketing records, route/stop data, weather, and sociodemographics from March 2026—purpose-built for the NetMob Data Challenge.</div>
+
+      <div class="section-head">Why It Matters</div>
+      <p>High-resolution, multi-source public transit datasets from the Global South are rare. This dataset enables a new generation of transit research on a Brazilian mid-size city (population ~500K, across the bay from Rio de Janeiro) that would otherwise be understudied.</p>
+
+      <div class="section-head">Key Insights</div>
+      <ul>
+        <li>Combines four heterogeneous data streams: GPS telemetry, ticketing records (~7.2M records), route/stop data, and sociodemographic layers.</li>
+        <li>Processed through cleaning and anonymization to protect passenger privacy while maintaining research utility.</li>
+        <li>Enables investigation of public transportation efficiency, demand forecasting, service accessibility, and external factor impacts (including weather).</li>
+        <li>Released as a NetMob Data Challenge dataset—structured for competitive benchmarking of new methods.</li>
+      </ul>
+
+      <div class="section-head">Methodology</div>
+      <p>Dataset paper documenting collection, cleaning, anonymization, and integration of four data sources for Niterói's municipal bus fleet during March 2026. Challenge participants must agree to terms for data access.</p>
+
+      <div class="section-head">Results</div>
+      <p>Dataset enables multiple concurrent research tracks: efficiency, demand forecasting, equity analysis, and weather-sensitivity modeling. Provides a benchmark for comparing transit AI methods on real-world Global South data.</p>
+
+      <div class="section-head">Limitations</div>
+      <p>Single-month snapshot (March 2026); longitudinal dynamics not captured. Access requires challenge participant agreement, limiting open reuse. Niterói is atypical in its geography (waterfront, hilly terrain) which limits transferability of findings.</p>
+
+      <div class="section-head">Practical Implications</div>
+      <p>Transit agencies in mid-size cities should build similar integrated data infrastructure combining GPS, ticketing, and sociodemographics—this dataset demonstrates both what's possible and how to anonymize correctly. Challenge results will generate benchmark methods agencies can evaluate for deployment.</p>
+
+      <div class="section-head">Who Should Care</div>
+      <p>Transit data scientists, operations researchers, international development transit specialists, city governments in Brazil and Latin America, data challenge participants.</p>
+
+      <div class="section-head">Comparison to Prior Work</div>
+      <p>Most prior high-resolution transit datasets come from London, NYC, or Asian megacities. NetMob26 fills a gap with a well-documented mid-size Latin American city dataset, positioning Niterói as an accessible research benchmark for Global South transit.</p>
+
+      <div class="meta-row">
+        <span class="tag high">HIGH CONFIDENCE</span>
+        <span class="tag">DATASET</span>
+        <span class="tag">GLOBAL SOUTH</span>
+        <span class="tag">BENCHMARK</span>
+      </div>
+    </div>
+
+  </div><!-- /papers-grid -->
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="contrarian-block">
+    <h2>Contrarian Insights</h2>
+    <div class="insight">
+      <p><strong>Free transit may not be about price at all.</strong> The India paper finds effects concentrated in the most patriarchal districts and explicitly attributes the mechanism to "easing non-financial binding constraints." This implies that even modest safety improvements or social legitimacy signals (transit for women is officially sanctioned) may matter more than the fare elimination itself. A heavily subsidized but socially stigmatized or unsafe transit option might achieve much less.</p>
+    </div>
+    <div class="insight">
+      <p><strong>Ride-hailing in mature markets is already acting like a feeder, not a competitor.</strong> Most US transit agencies still treat Uber and Lyft primarily as competitive threats to ridership. The Shanghai data shows that in a city where TNCs have saturated the market, they've evolved into first/last-mile feeders with a net positive relationship to transit. US agencies may be fighting yesterday's war.</p>
+    </div>
+    <div class="insight">
+      <p><strong>Reliability may be more important than frequency post-COVID—but agencies aren't measuring it right.</strong> The Miami paper shows OTP became more important during recovery, but standard on-time performance metrics (typically measured against scheduled arrival within 5 minutes) are notoriously gameable and poorly correlated with actual passenger wait time. The policy implication (invest in reliability) is right; the measurement tool to know if you're succeeding may not be.</p>
+    </div>
+  </div>
+
+  <!-- INFOGRAPHIC -->
+  <div class="section-label">Data Infographic</div>
+  <div class="infographic-section">
+    <div class="svg-wrapper">
+      <img src="research-infographic-2026-07-01.svg" alt="Transit Research Infographic July 1 2026" style="width:100%;max-width:800px;display:block;margin:0 auto;">
+    </div>
+    <a class="download-link" href="research-infographic-2026-07-01.svg" download>↓ Download SVG Infographic</a>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <div class="takeaways">
+    <div class="takeaway">
+      <p><strong>1. Cordon pricing agencies: plan for uneven geography.</strong> NYC data shows transit gains extend well beyond the priced zone while demand reductions are concentrated within it. Outer-borough and cross-river routes should pre-position capacity increases ahead of any new congestion pricing rollout.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>2. Network redesign agencies: pilot AlphaTransit.</strong> The code is open-source and the benchmark is publicly documented. Agencies undertaking bus network restructurings in the next 12–24 months have a concrete AI tool to evaluate alongside consultant proposals—testing it against the Bloomington benchmark is a weekend-scale effort.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>3. Free-fare programs: measure employment, not just ridership.</strong> If the India findings transfer to other contexts, agencies considering free-fare pilots should include labor market outcome tracking (employment rates, income surveys) in their evaluation frameworks from day one. The ROI case for free transit gets substantially stronger if job access effects are counted.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>4. Bike-share operators: use wPTAL for equity-weighted siting.</strong> The NYC Bike2Subway framework identifies specific low-income neighborhoods where new stations would maximally close access gaps. Any city with PTAL data and bike-share station locations can reproduce this analysis with the published methodology.</p>
+    </div>
+    <div class="takeaway">
+      <p><strong>5. Bus agencies: invest in OTP on frequent routes first, frequency on sparse routes second.</strong> The Miami interaction effect suggests these are not equivalent budget choices. Marginal OTP dollars yield larger ridership returns on routes already running every 10 minutes than on hourly routes.</p>
+    </div>
+  </div>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <div class="long-term">
+    <h2>Long-Term Implications</h2>
+    <p>The cumulative signal from this week's digest is that transit research is arriving at a new paradigm: AI-designed networks, real-time AI-controlled dispatch, and equity-embedded optimization are no longer speculative futures—they're present-tense papers with public code and city-scale validation. The question is no longer whether AI will transform transit operations design, but which agencies will adopt it first and whether the adoption happens through equity-focused or efficiency-only lenses. The free-transit/labor-market finding from India, if it replicates in other contexts, has the potential to transform the political economy of transit funding: if bus access is a labor market intervention with measurable employment effects, it competes for workforce development funding rather than transportation infrastructure funding alone—potentially tripling the pool of capital available to transit agencies. Meanwhile, the ride-hailing complementarity finding from Shanghai, if it arrives in US cities on a 5–10 year lag, suggests that today's adversarial TNC-transit relationship is temporary. Agencies that build the data infrastructure and partnerships now to integrate TNC as a first/last-mile feeder will be materially better positioned than those that resist the relationship until it's forced on them.</p>
+  </div>
+
+</main>
+
+<footer>
+  Transit Research Digest · July 1, 2026 · <a href="research.html">Archive Index</a> · <a href="index.html">Home</a><br>
+  <span style="display:block;margin-top:8px;font-size:11px;color:#555;">Sources: arXiv (econ.GN, cs.AI, cs.SY) · Semantic Scholar · Analysis performed by Transit Research Agent</span>
+</footer>
+
+</body>
+</html>

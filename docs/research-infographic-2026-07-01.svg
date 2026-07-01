@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="130" fill="#0F0F0F"/>
+  <text x="40" y="44" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#888" letter-spacing="4">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="900" fill="#F7F7F5" letter-spacing="-1">July 1, 2026</text>
+  <text x="40" y="104" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666" letter-spacing="2">10 PAPERS · AI NETWORKS · EQUITY INTERVENTIONS · RIDERSHIP DYNAMICS</text>
+  <rect x="0" y="128" width="800" height="3" fill="#E8FF00"/>
+
+  <!-- SECTION: KEY FINDINGS -->
+  <text x="40" y="162" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#888" letter-spacing="4">KEY FINDINGS</text>
+  <rect x="40" y="170" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- Finding 01 -->
+  <text x="40" y="202" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="900" fill="#0F0F0F" letter-spacing="-2">01</text>
+  <rect x="100" y="180" width="2" height="46" fill="#0F0F0F"/>
+  <text x="116" y="196" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F0F0F">
+    <tspan>NYC congestion pricing lifted bus &amp; subway ridership—but</tspan>
+  </text>
+  <text x="116" y="214" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F0F0F">
+    <tspan>demand reductions concentrated inside the cordon zone</tspan>
+  </text>
+  <text x="116" y="232" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666">arXiv:2606.17530 · Li et al. 2026</text>
+
+  <!-- Finding 02 -->
+  <text x="40" y="282" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="900" fill="#0F0F0F" letter-spacing="-2">02</text>
+  <rect x="100" y="260" width="2" height="46" fill="#0F0F0F"/>
+  <text x="116" y="276" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F0F0F">
+    <tspan>AlphaTransit (MCTS + neural policy) achieves 9–11% better</tspan>
+  </text>
+  <text x="116" y="294" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F0F0F">
+    <tspan>bus network service rates than prior AI methods</tspan>
+  </text>
+  <text x="116" y="312" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666">arXiv:2605.28730 · Poudel et al. 2026</text>
+
+  <!-- Finding 03 -->
+  <text x="40" y="362" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="900" fill="#0F0F0F" letter-spacing="-2">03</text>
+  <rect x="100" y="340" width="2" height="46" fill="#0F0F0F"/>
+  <text x="116" y="356" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F0F0F">
+    <tspan>Free bus access for women in India measurably increased</tspan>
+  </text>
+  <text x="116" y="374" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F0F0F">
+    <tspan>paid employment—strongest in patriarchal districts</tspan>
+  </text>
+  <text x="116" y="392" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666">arXiv:2604.14758 · Rathore &amp; Singh 2026</text>
+
+  <rect x="40" y="410" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- SECTION: PAPER OF THE DAY -->
+  <rect x="40" y="422" width="720" height="118" fill="#0F0F0F"/>
+  <text x="60" y="448" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#E8FF00" letter-spacing="4">PAPER OF THE DAY</text>
+  <text x="60" y="474" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#F7F7F5">
+    <tspan>AlphaTransit: Learning to Design</tspan>
+  </text>
+  <text x="60" y="494" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#F7F7F5">
+    <tspan>City-scale Transit Routes</tspan>
+  </text>
+  <text x="60" y="514" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#888">
+    <tspan>Poudel, Swaminathan, Li · arXiv:2605.28730 · May 2026</tspan>
+  </text>
+  <text x="60" y="530" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#BBBBBB">
+    <tspan>Monte Carlo Tree Search + neural policy-value network solves the</tspan>
+  </text>
+  <text x="60" y="546" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#BBBBBB">
+    <tspan>Transit Route Network Design Problem at city scale.</tspan>
+  </text>
+
+  <rect x="40" y="548" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- SECTION: EMERGING THEMES (3 cols) -->
+  <text x="40" y="576" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#888" letter-spacing="4">EMERGING THEMES</text>
+  <rect x="40" y="582" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- Theme Col 1 -->
+  <rect x="40" y="594" width="224" height="168" fill="#EBEBEA"/>
+  <text x="56" y="618" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" letter-spacing="1">AI-DESIGNED NETWORKS</text>
+  <text x="56" y="638" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>AlphaTransit demonstrates that</tspan>
+  </text>
+  <text x="56" y="654" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>ML-guided combinatorial search</tspan>
+  </text>
+  <text x="56" y="670" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>can exceed hand-tuned RL for</tspan>
+  </text>
+  <text x="56" y="686" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>route network design. Real-time</tspan>
+  </text>
+  <text x="56" y="702" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>headway prediction (ConvLSTM)</tspan>
+  </text>
+  <text x="56" y="718" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>is now operationally viable.</tspan>
+  </text>
+
+  <!-- Theme Col 2 -->
+  <rect x="288" y="594" width="224" height="168" fill="#EBEBEA"/>
+  <text x="304" y="618" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" letter-spacing="1">EQUITY INTERVENTIONS</text>
+  <text x="304" y="638" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>Free fare programs are not just</tspan>
+  </text>
+  <text x="304" y="654" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>mobility tools—they unlock labor</tspan>
+  </text>
+  <text x="304" y="670" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>markets. Bike2Subway equity</tspan>
+  </text>
+  <text x="304" y="686" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>mapping shows first/last mile</tspan>
+  </text>
+  <text x="304" y="702" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>gaps disproportionately harm</tspan>
+  </text>
+  <text x="304" y="718" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>low-income neighborhoods.</tspan>
+  </text>
+
+  <!-- Theme Col 3 -->
+  <rect x="536" y="594" width="224" height="168" fill="#EBEBEA"/>
+  <text x="552" y="618" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" letter-spacing="1">MULTIMODAL DYNAMICS</text>
+  <text x="552" y="638" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>In mature ride-hail markets</tspan>
+  </text>
+  <text x="552" y="654" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>(Shanghai), TNCs are shifting</tspan>
+  </text>
+  <text x="552" y="670" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>from transit substitutes toward</tspan>
+  </text>
+  <text x="552" y="686" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>complements (+9% complement</tspan>
+  </text>
+  <text x="552" y="702" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>ratio). Smart city transit-AQ</tspan>
+  </text>
+  <text x="552" y="718" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>links are city-specific, not</tspan>
+  </text>
+  <text x="552" y="734" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#333">
+    <tspan>universal.</tspan>
+  </text>
+
+  <rect x="40" y="772" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- SECTION: CONFIDENCE CHART -->
+  <text x="40" y="800" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#888" letter-spacing="4">CONFIDENCE RATINGS</text>
+  <rect x="40" y="806" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- Bars -->
+  <!-- Paper labels (abbreviated) and bars -->
+  <text x="40" y="832" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">NYC Congestion Pricing</text>
+  <rect x="240" y="820" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="820" width="413" height="14" fill="#0F0F0F"/>
+  <text x="662" y="832" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#0F0F0F" font-weight="700">HIGH</text>
+
+  <text x="40" y="858" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">AlphaTransit</text>
+  <rect x="240" y="846" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="846" width="390" height="14" fill="#0F0F0F"/>
+  <text x="643" y="858" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#0F0F0F" font-weight="700">HIGH</text>
+
+  <text x="40" y="884" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">Free Transit: India</text>
+  <rect x="240" y="872" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="872" width="405" height="14" fill="#0F0F0F"/>
+  <text x="658" y="884" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#0F0F0F" font-weight="700">HIGH</text>
+
+  <text x="40" y="910" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">Ride-hail vs. Transit</text>
+  <rect x="240" y="898" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="898" width="321" height="14" fill="#555"/>
+  <text x="575" y="910" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#555" font-weight="700">MEDIUM</text>
+
+  <text x="40" y="936" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">Chicago Transit Impact</text>
+  <rect x="240" y="924" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="924" width="390" height="14" fill="#0F0F0F"/>
+  <text x="643" y="936" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#0F0F0F" font-weight="700">HIGH</text>
+
+  <text x="40" y="962" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">Transit &amp; Air Quality</text>
+  <rect x="240" y="950" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="950" width="298" height="14" fill="#555"/>
+  <text x="552" y="962" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#555" font-weight="700">MEDIUM</text>
+
+  <text x="40" y="988" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">Equitable Bike2Subway</text>
+  <rect x="240" y="976" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="976" width="321" height="14" fill="#555"/>
+  <text x="575" y="988" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#555" font-weight="700">MEDIUM</text>
+
+  <text x="40" y="1014" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">Miami Frequency/OTP</text>
+  <rect x="240" y="1002" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="1002" width="367" height="14" fill="#0F0F0F"/>
+  <text x="621" y="1014" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#0F0F0F" font-weight="700">HIGH</text>
+
+  <text x="40" y="1040" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">Headway Predictions</text>
+  <rect x="240" y="1028" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="1028" width="321" height="14" fill="#555"/>
+  <text x="575" y="1040" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#555" font-weight="700">MEDIUM</text>
+
+  <text x="40" y="1066" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#333">NetMob26 Dataset</text>
+  <rect x="240" y="1054" width="459" height="14" fill="#E0E0DC"/>
+  <rect x="240" y="1054" width="377" height="14" fill="#0F0F0F"/>
+  <text x="630" y="1066" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#0F0F0F" font-weight="700">HIGH</text>
+
+  <rect x="40" y="1082" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- SECTION: ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="1108" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#888" letter-spacing="4">ACTIONABLE TAKEAWAYS</text>
+  <rect x="40" y="1114" width="720" height="1" fill="#D0D0CC"/>
+
+  <!-- Takeaway 1 -->
+  <rect x="40" y="1126" width="4" height="60" fill="#E8FF00"/>
+  <text x="56" y="1144" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#0F0F0F">
+    <tspan>Plan for uneven geographic ridership response when implementing cordon pricing.</tspan>
+  </text>
+  <text x="56" y="1162" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#555">
+    <tspan>Outer-borough transit agencies should pre-position capacity for modal shift spillovers.</tspan>
+  </text>
+
+  <!-- Takeaway 2 -->
+  <rect x="40" y="1202" width="4" height="60" fill="#E8FF00"/>
+  <text x="56" y="1220" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#0F0F0F">
+    <tspan>AI route optimization is mature enough to pilot in real-world network redesigns.</tspan>
+  </text>
+  <text x="56" y="1238" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#555">
+    <tspan>AlphaTransit's open code offers a concrete tool for agencies undertaking bus restructuring.</tspan>
+  </text>
+
+  <!-- Takeaway 3 -->
+  <rect x="40" y="1278" width="4" height="60" fill="#E8FF00"/>
+  <text x="56" y="1296" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#0F0F0F">
+    <tspan>Bike-share station placement should target equity gaps, not just high demand areas.</tspan>
+  </text>
+  <text x="56" y="1314" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#555">
+    <tspan>Region representation learning can identify underserved first/last-mile gaps in any city.</tspan>
+  </text>
+
+  <!-- Takeaway 4 -->
+  <rect x="40" y="1354" width="4" height="60" fill="#E8FF00"/>
+  <text x="56" y="1372" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#0F0F0F">
+    <tspan>Frequency and on-time performance interact—reliability matters most on frequent routes.</tspan>
+  </text>
+  <text x="56" y="1390" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#555">
+    <tspan>Miami-Dade data: OTP improvements yield larger ridership gains on already-frequent lines.</tspan>
+  </text>
+
+  <!-- Takeaway 5 -->
+  <rect x="40" y="1430" width="4" height="44" fill="#E8FF00"/>
+  <text x="56" y="1448" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#0F0F0F">
+    <tspan>Free transit programs for targeted groups work—but equity gains peak in restricted areas.</tspan>
+  </text>
+  <text x="56" y="1466" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#555">
+    <tspan>Highest labor market effects in patriarchal districts with highest pre-existing mobility barriers.</tspan>
+  </text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1506" width="800" height="94" fill="#0F0F0F"/>
+  <text x="40" y="1538" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#888" letter-spacing="2">TRANSIT RESEARCH DIGEST · JULY 1, 2026</text>
+  <text x="40" y="1558" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555">Sources: arXiv (econ.GN, cs.SY, cs.AI) · Semantic Scholar · 10 papers analyzed</text>
+  <text x="40" y="1578" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555">twong6531.github.io/citation-site/research.html</text>
+</svg>
