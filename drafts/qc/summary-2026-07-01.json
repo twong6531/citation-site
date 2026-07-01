@@ -1,0 +1,30 @@
+{
+  "date": "2026-07-01",
+  "reviewed_at": "2026-07-01T18:05:00Z",
+  "total_reviewed": 5,
+  "passed": 4,
+  "revise": 1,
+  "failed": 0,
+  "ready_to_publish": [
+    "research-2026-07-01",
+    "transit-2026-07-01",
+    "infographic-2026-07-01",
+    "research-infographic-2026-07-01"
+  ],
+  "needs_revision": [
+    {
+      "slug": "2026-07-01",
+      "file": "docs/2026-07-01.html",
+      "score": 70,
+      "primary_issue": "Sources: only one generic source ('Hacker News Top Stories') in footer; no per-story citations or article links for any of the 6 stories. Add at minimum 2 inline source links — the Anthropic/Claude Sonnet 5 announcement and the Godot AI ban policy post.",
+      "secondary_issue": "Editorial illustration failed (Imagen API 404); placeholder text visible to readers in a white box. Consider a typographic fallback rather than the error message block."
+    }
+  ],
+  "blocked": [],
+  "pipeline_alerts": [
+    "CRITICAL DAY 26 — ARTICLE PIPELINE STILL BROKEN: Three new articles were queued today (ai-deregulation-anthropic-transit-planning-tools-2026, q3-2026-transit-funding-outlook, world-cup-2026-transit-lessons-knockout-stage) and NONE were produced. The drafts/articles/ directory does not exist. This is now 26 consecutive days of 0% article production. Standard daily content (briefing, research digest, transit intel) was produced directly to docs/ and bypassed the drafts pipeline entirely. Human diagnostic required.",
+    "CRITICAL RETRY EXHAUSTED — BRT INFOGRAPHIC: brt-vs-light-rail-cost-2026 infographic was queued for retry #19 today. It was NOT produced. The queue explicitly stated that if this infographic was not produced on retry #19, automated retries should be suspended and a manual diagnostic run. Recommend suspending further automated retries now.",
+    "PIPELINE BYPASS: All 5 files produced today were written directly to docs/ (not drafts/). The status.json still shows articles='pending' and infographics='pending' even though docs/ contains today's files. The publishing step may be confused about what has been produced vs. approved.",
+    "IMAGE API DOWN: Both the daily briefing (Imagen API 404 for all model variants) and the research digest (Gemini Imagen API quota exceeded) failed to generate editorial illustrations today. This is the same pattern as prior days — image generation appears to be systematically broken, not intermittently failing."
+  ]
+}

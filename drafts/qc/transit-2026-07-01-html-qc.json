@@ -1,0 +1,22 @@
+{
+  "file": "docs/transit-2026-07-01.html",
+  "type": "article",
+  "reviewed_at": "2026-07-01T18:05:00Z",
+  "verdict": "PASS",
+  "score": 84,
+  "checks_passed": [
+    "Word count: 3467 content words — well above 600 threshold",
+    "Sources: multiple named publications with specific facts and at least one inline source URL. Sources list in footer: LA Metro/The Source, LAist, Los Angeles Times, Smart Cities Dive, Amtrak Media, Railway Age, Planetizen, NBC Los Angeles, KTLA, LA Daily News, Metro Magazine. Story 1 includes direct LA Times URL with dated article path. Specific facts: $3.34B LAX APM cost, 2.25 miles guideway, 6 stations, World Cup Group Stage June 12-July 2, $21B Brightline West cost, 2,400+ DPS applicants, 13 daily Pacific Surfliner roundtrips, etc.",
+    "No placeholder text: no Lorem ipsum, TODO, [INSERT], TBD",
+    "No AI tells: no prohibited phrases across 503 lines",
+    "HTML structure: has <!DOCTYPE html>, <html lang=en>, <head>, <body>, meta charset, meta viewport, <title>",
+    "Factual spot-check: LAX SkyLink $3.34B cost is publicly documented; World Cup Group Stage dates are accurate; California HSR/Brightline cost escalation consistent with public reporting; all facts pass plausibility test",
+    "Duplicate check: new daily edition (June 22 - July 1 coverage window); topics are distinct from prior editions"
+  ],
+  "checks_failed": [
+    "Navigation: nav bar links to 'transit.html' (archive) and 'Metro Source' (external) but has no direct link to index.html. Footer has no navigation links. The back-to-home path requires two clicks (transit.html → index.html). Minor issue; page is reachable from index but does not directly link back."
+  ],
+  "revision_notes": "Add a direct 'Home' or 'Back to Index' link in the footer pointing to index.html. One line: <a href='index.html'>← Home</a>. Optional: also add it to the nav bar beside the Archive link.",
+  "fail_reason": null,
+  "approved_for_publish": true
+}

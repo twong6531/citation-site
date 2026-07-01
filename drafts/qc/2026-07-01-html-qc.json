@@ -1,0 +1,23 @@
+{
+  "file": "docs/2026-07-01.html",
+  "type": "article",
+  "reviewed_at": "2026-07-01T18:05:00Z",
+  "verdict": "REVISE",
+  "score": 70,
+  "checks_passed": [
+    "Word count: 913 content words (above 600 threshold)",
+    "No placeholder text: no Lorem ipsum, TODO, [INSERT], or TBD found",
+    "No AI tells: no 'As an AI', 'I cannot', 'certainly', 'I'd be happy to'",
+    "HTML structure: has <html lang=en>, <head>, <body>, meta charset, meta viewport, <title>",
+    "Navigation: has 'Back to index' link (index.html) in both news section and footer",
+    "Factual spot-check: all 6 stories match corroborated HN top stories for July 1 — Claude Sonnet 5 launch, frog bacterium tumor study, Godot AI ban, synthetic cell, Nintendo salary raise, ballista spider; all plausible",
+    "Duplicate check: no prior coverage of this specific date's briefing in recent archive"
+  ],
+  "checks_failed": [
+    "Sources: only one generic source cited ('Source data: Hacker News Top Stories' in footer). Criterion requires 2+ cited sources with specific facts. No per-story links, no article URLs, no named publications cited inline for any of the 6 stories. The Anthropic/Claude Sonnet 5 story (Impact 10/10) lacks a source link or citation despite being attributed to a named NYT article in the queue brief.",
+    "Image: editorial illustration unavailable — Imagen API returned 404. Placeholder text visible to readers: 'Editorial illustration unavailable today — the Imagen API returned a 404 for all model variants.' This is noted gracefully but the page is visually incomplete."
+  ],
+  "revision_notes": "Add at minimum 2 inline source citations: (1) link the Anthropic/Claude Sonnet 5 story to the official Anthropic announcement or NYT article ('U.S. Lifts Restrictions on Anthropic's Most Powerful A.I. Models'); (2) link the Godot AI ban story to the Godot GitHub policy post or original source. Optional: add source links to the frog bacterium and Nintendo stories. The image failure note is acceptable as-is (graceful degradation), but consider adding a alt visual (e.g., simple typographic card) rather than a paragraph of text in a white box.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

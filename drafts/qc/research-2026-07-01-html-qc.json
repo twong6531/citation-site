@@ -1,0 +1,23 @@
+{
+  "file": "docs/research-2026-07-01.html",
+  "type": "article",
+  "reviewed_at": "2026-07-01T18:05:00Z",
+  "verdict": "PASS",
+  "score": 93,
+  "checks_passed": [
+    "Word count: 4843 content words — well above 600 threshold",
+    "Sources: 10 papers cited with full arXiv IDs, author names, and dates (arXiv:2605.28730, 2606.17530, 2604.14758, 2409.04568, 2510.19745 and 5 more). Specific statistics cited throughout: 9.9%/11.4% service coverage improvement (AlphaTransit), $35.4B economic loss/13:1 ROI (Chicago), 14.2% regional travel-time increase, +9.22% TNC complement ratio (Shanghai), etc.",
+    "No placeholder text: image failure is noted inline with a descriptive message, not a TODO or [INSERT]",
+    "No AI tells: no prohibited phrases found across 702 lines",
+    "HTML structure: has <!DOCTYPE html>, <html lang=en>, <head>, <body>, meta charset, meta viewport, <title>",
+    "Navigation: header has '← Archive Index' (research.html); footer has 'Archive Index' + 'Home' (index.html)",
+    "Factual spot-check: all cited arXiv IDs follow correct format; NYC congestion pricing Jan 2025 date correct; Chicago $35.4B / $2.7B public funding figures internally consistent; AlphaTransit benchmark (Bloomington) is a known TRNDP benchmark; all figures pass plausibility test",
+    "Duplicate check: no prior coverage of these specific papers in memory; July 1 edition covers fresh papers not found in prior digests"
+  ],
+  "checks_failed": [
+    "Image: Gemini Imagen API quota exceeded — editorial illustration not rendered. Noted gracefully inline. Minor presentation issue only."
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true
+}
