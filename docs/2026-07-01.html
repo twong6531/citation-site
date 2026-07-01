@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Briefing &mdash; July 1, 2026</title>
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --card: #1a1a22;
+      --border: #2a2a36;
+      --text: #e8e8f0;
+      --muted: #8888aa;
+      --accent: #6C47FF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .site-header {
+      background: #0a0a0e;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .brand { font-size: 13px; letter-spacing: 3px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+    .site-header .date { font-size: 13px; color: var(--muted); }
+    .hero {
+      background: linear-gradient(135deg, #0f0f13 0%, #1a0f2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .hero .label { font-size: 11px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; font-weight: 600; }
+    .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #ffffff; margin-bottom: 12px; line-height: 1.15; }
+    .hero .date-label { font-size: 14px; color: var(--muted); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    .section-visual {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase;
+      font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .editorial-image-wrap {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      padding: 40px;
+      text-align: center;
+      color: #333;
+    }
+    .editorial-image-wrap img { max-width: 100%; border-radius: 8px; }
+    .visual-caption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; font-style: italic; }
+    .visual-note { font-size: 11px; color: #555566; text-align: center; margin-top: 6px; }
+
+    .section-news { padding: 60px 0; }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .story-card:hover { border-color: #3a3a50; }
+    .story-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .story-num { font-size: 11px; color: #444455; font-weight: 700; letter-spacing: 1px; }
+    .category-pill {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; color: white;
+    }
+    .story-emoji { font-size: 16px; }
+    .impact-score { font-size: 11px; font-weight: 700; margin-left: auto; }
+    .story-headline { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 10px; line-height: 1.3; }
+    .story-summary { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+    .story-bullets {
+      list-style: none; margin-bottom: 14px;
+    }
+    .story-bullets li {
+      font-size: 13px; color: #aaaacc; padding: 4px 0 4px 20px; position: relative;
+    }
+    .story-bullets li::before { content: '▸'; position: absolute; left: 0; color: #4477aa; }
+    .why-matters { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+    .impact-bar-container {
+      height: 3px; background: #222233; border-radius: 2px; margin-bottom: 12px;
+    }
+    .impact-bar { height: 3px; border-radius: 2px; transition: width 0.3s; }
+    .main-topic {
+      font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      border: 1px solid; border-radius: 4px; padding: 3px 8px; display: inline-block;
+    }
+    .infographic-link {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px; margin-top: 32px;
+      color: var(--text); text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .infographic-link:hover { border-color: var(--accent); }
+    .infographic-link .link-icon { font-size: 24px; }
+    .infographic-link .link-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .infographic-link .link-text p { font-size: 12px; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">Daily Briefing</span>
+    <span class="date">July 1, 2026</span>
+  </header>
+
+  <div class="hero">
+    <div class="label">Today's Intelligence Report</div>
+    <h1>AI Code Accountability</h1>
+    <div class="date-label">July 1, 2026</div>
+  </div>
+
+  <div class="container">
+
+    <!-- SECTION A: EDITORIAL VISUAL -->
+    <section class="section-visual">
+      <div class="section-label">Today's Visual &mdash; July 1, 2026</div>
+
+      <div class="editorial-image-wrap">
+        <p style="font-size:14px; color:#666; line-height:1.7;">
+          <strong>Visual Subject: Australian Ballista Spider Silk Trap</strong><br><br>
+          The newly discovered Australian "ballista spider" constructs an elaborate elastic silk trap
+          stretched taut between plant stems approximately 12&nbsp;cm apart. The ultra-fine silk threads
+          store mechanical spring energy, releasing instantaneously when a harvester ant touches the
+          trigger lines — launching the prey into a sticky catching web above. Named for the ancient
+          Greek and Roman torsion artillery, this spider's mechanism represents a form of evolved
+          mechanical engineering, achieving catapult-level force at millimeter scale.<br><br>
+          <em>Editorial illustration unavailable today &mdash; the Imagen API returned a 404 for all model variants. The infographic and story analysis below contain the day's full reporting.</em>
+        </p>
+      </div>
+      <p class="visual-caption">Australian Ballista Spider Silk Trap &mdash; Technical Editorial Illustration</p>
+      <p class="visual-note">Independently researched and rendered by AI from today's news</p>
+    </section>
+
+    <!-- SECTION B: NEWS ANALYSIS -->
+    <section class="section-news">
+      <div class="section-label">News Analysis &mdash; 6 Stories</div>
+
+      <a href="index.html" class="back-link">&larr; Back to index</a>
+
+      <!-- Story 1 -->
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">01</span>
+          <span class="category-pill" style="background:#6C47FF">AI</span>
+          <span class="story-emoji">🤖</span>
+          <span class="impact-score" style="color:#6C47FF">Impact 10/10</span>
+        </div>
+        <h2 class="story-headline">Anthropic Launches Claude Sonnet 5</h2>
+        <p class="story-summary">Anthropic released Claude Sonnet 5, its most agentic mid-tier model yet, with performance approaching the flagship Opus 4.8 at significantly lower cost. It immediately became the default model for all Free and Pro users globally, making near-frontier agentic AI widely accessible.</p>
+        <ul class="story-bullets">
+          <li>Introductory pricing of $2/M input tokens, $10/M output tokens through August 2026</li>
+          <li>Surpasses predecessor Sonnet 4.6 on reasoning, tool use, coding, and agentic benchmark tasks</li>
+          <li>Default model now across Free, Pro, Max, Team, and Enterprise Claude plans</li>
+        </ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Claude Sonnet 5 brings near-Opus agentic capabilities to mid-tier pricing, potentially accelerating autonomous AI adoption across development workflows.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:100%; background:#6C47FF"></div>
+        </div>
+        <span class="main-topic" style="border-color:#6C47FF;color:#6C47FF">AI Model Launch</span>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">02</span>
+          <span class="category-pill" style="background:#0077CC">Science</span>
+          <span class="story-emoji">🐸</span>
+          <span class="impact-score" style="color:#0077CC">Impact 9/10</span>
+        </div>
+        <h2 class="story-headline">Frog Gut Bacterium Wipes All Mouse Tumors</h2>
+        <p class="story-summary">A single dose of a bacterium derived from frog gut microbiome completely eradicated 100% of tumors in mouse models, according to a new study. The treatment represents a potentially revolutionary approach to cancer therapy using natural microbiome organisms rather than synthetic compounds.</p>
+        <ul class="story-bullets">
+          <li>100% tumor eradication rate in mouse models after just a single dose treatment</li>
+          <li>Bacterium sourced directly from frog gut microbiome — no synthetic compounds required</li>
+          <li>Could represent a paradigm shift toward biological, low-toxicity cancer immunotherapy</li>
+        </ul>
+        <p class="why-matters"><strong>Why it matters:</strong> If replicated in humans, this frog-derived bacterial therapy could offer a non-toxic alternative to chemotherapy and reshape oncology treatment protocols.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:90%; background:#0077CC"></div>
+        </div>
+        <span class="main-topic" style="border-color:#0077CC;color:#0077CC">Cancer Breakthrough</span>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">03</span>
+          <span class="category-pill" style="background:#00897B">Tech</span>
+          <span class="story-emoji">🎮</span>
+          <span class="impact-score" style="color:#00897B">Impact 8/10</span>
+        </div>
+        <h2 class="story-headline">Godot Engine Rejects All AI-Authored Code</h2>
+        <p class="story-summary">Popular open source game engine Godot banned all AI-generated code contributions, stating that developers who heavily use AI cannot be trusted to understand or maintain their own submissions. The policy explicitly targets the "slop code" problem threatening open source quality.</p>
+        <ul class="story-bullets">
+          <li>Policy bans all AI-generated contributions to the project regardless of perceived quality</li>
+          <li>Cited rationale: heavy AI users can't reliably debug or fix what AI generated for them</li>
+          <li>Godot has 90,000+ GitHub stars and is used by millions of indie and studio developers worldwide</li>
+        </ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Godot's firm stance sets a precedent for open source projects grappling with how to maintain code quality amid an AI-generated contribution flood.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:80%; background:#00897B"></div>
+        </div>
+        <span class="main-topic" style="border-color:#00897B;color:#00897B">AI Code Policy</span>
+      </div>
+
+      <!-- Story 4 -->
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">04</span>
+          <span class="category-pill" style="background:#0077CC">Science</span>
+          <span class="story-emoji">🔬</span>
+          <span class="impact-score" style="color:#0077CC">Impact 8/10</span>
+        </div>
+        <h2 class="story-headline">First Scratch-Built Cell Grows and Divides</h2>
+        <p class="story-summary">Scientists have for the first time created a fully synthetic cell — assembled entirely from purified, non-living molecular components — that grows and divides like a natural cell. The milestone marks a fundamental advance in synthetic biology and our understanding of what defines life.</p>
+        <ul class="story-bullets">
+          <li>Cell constructed entirely from purified molecular parts — no living cells used in assembly</li>
+          <li>Successfully replicates both growth and division, the two defining hallmarks of cellular life</li>
+          <li>Opens pathways to engineering artificial organisms and probing the chemical origin of life</li>
+        </ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Building a dividing cell from scratch from non-living components brings humanity meaningfully closer to understanding and eventually replicating the origin of life itself.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:80%; background:#0077CC"></div>
+        </div>
+        <span class="main-topic" style="border-color:#0077CC;color:#0077CC">Synthetic Biology</span>
+      </div>
+
+      <!-- Story 5 -->
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">05</span>
+          <span class="category-pill" style="background:#2E7D32">Business</span>
+          <span class="story-emoji">💰</span>
+          <span class="impact-score" style="color:#2E7D32">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">Nintendo Raises All Employee Salaries 10%</h2>
+        <p class="story-summary">Nintendo announced a 10% base salary increase for all employees, defying the gaming industry's ongoing wave of layoffs at studios including divisions of EA, Sony, and Microsoft. The Japanese giant's move highlights how sustained profitability enables counter-cyclical investment in talent.</p>
+        <ul class="story-bullets">
+          <li>10% raise applied to base salaries uniformly across all Nintendo employee levels and roles</li>
+          <li>Counter-trend to widespread gaming layoffs hitting EA, Sony, Microsoft, and others in 2025–2026</li>
+          <li>Nintendo has reported record revenues across consecutive fiscal years, funding the increase</li>
+        </ul>
+        <p class="why-matters"><strong>Why it matters:</strong> Nintendo's salary increase demonstrates that profitable gaming companies can invest in their workforce rather than cutting costs, setting a standard for the industry.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#2E7D32"></div>
+        </div>
+        <span class="main-topic" style="border-color:#2E7D32;color:#2E7D32">Gaming Industry Labor</span>
+      </div>
+
+      <!-- Story 6 -->
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-num">06</span>
+          <span class="category-pill" style="background:#0077CC">Science</span>
+          <span class="story-emoji">🕷️</span>
+          <span class="impact-score" style="color:#0077CC">Impact 7/10</span>
+        </div>
+        <h2 class="story-headline">Spring-Loaded Spider Snare Discovered in Australia</h2>
+        <p class="story-summary">Scientists discovered a new Australian spider species that builds an elastic spring-loaded silk trap to capture ants — dubbed the "ballista spider" after the ancient torsion siege weapon. The spider stretches ultra-fine silk to high tension and releases it like a catapult when prey triggers the mechanism.</p>
+        <ul class="story-bullets">
+          <li>Spider stretches silk threads to spring tension, releasing with siege-weapon-level mechanical force</li>
+          <li>Trap precisely targets harvester ants, launching them at velocity into a sticky catching web</li>
+          <li>Named "ballista" after the ancient Greek and Roman torsion artillery used in siege warfare</li>
+        </ul>
+        <p class="why-matters"><strong>Why it matters:</strong> The ballista spider reveals new frontiers in how evolution produces mechanical advantage, offering inspiration for micro-scale spring and trap engineering.</p>
+        <div class="impact-bar-container">
+          <div class="impact-bar" style="width:70%; background:#0077CC"></div>
+        </div>
+        <span class="main-topic" style="border-color:#0077CC;color:#0077CC">Arachnid Engineering</span>
+      </div>
+
+      <!-- Infographic link -->
+      <a href="infographic-2026-07-01.svg" class="infographic-link">
+        <span class="link-icon">📊</span>
+        <div class="link-text">
+          <h4>Download Today's Data Infographic</h4>
+          <p>Typographic SVG summary of all 6 stories &mdash; July 1, 2026</p>
+        </div>
+      </a>
+
+    </section>
+  </div>
+
+  <footer>
+    <p>Daily Briefing &mdash; July 1, 2026 &middot; Generated by AI &middot; <a href="index.html">Back to Index</a></p>
+    <p style="margin-top:8px;">Source data: Hacker News Top Stories &middot; Live at <a href="https://twong6531.github.io/citation-site/">twong6531.github.io/citation-site</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" width="800" height="1400" font-family="'Helvetica Neue', Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+
+  <!-- TOP BAR -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- HEADER -->
+  <text x="40" y="42" font-size="11" letter-spacing="3" fill="#999999" font-weight="600">DAILY BRIEFING</text>
+  <text x="40" y="80" font-size="28" font-weight="700" fill="#111111">AI Code Accountability</text>
+  <text x="40" y="108" font-size="13" fill="#888888">July 1, 2026 · Top Stories · Powered by Claude</text>
+  <line x1="40" y1="124" x2="760" y2="124" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 1: Claude Sonnet 5 — AI -->
+  <!-- Card BG subtle -->
+  <rect x="20" y="132" width="760" height="185" fill="#F7F7F5" rx="0"/>
+  <!-- Number -->
+  <text x="40" y="158" font-size="11" fill="#BBBBBB" font-weight="700">01</text>
+  <!-- Category pill -->
+  <rect x="62" y="143" width="32" height="17" rx="3" fill="#6C47FF"/>
+  <text x="78" y="155" font-size="9" fill="#FFFFFF" font-weight="700" text-anchor="middle">AI</text>
+  <!-- Headline -->
+  <text x="40" y="188" font-size="16" font-weight="700" fill="#111111">Anthropic Launches Claude Sonnet 5</text>
+  <!-- Summary -->
+  <text x="40" y="210" font-size="12" fill="#555555">Anthropic released Claude Sonnet 5, the most agentic mid-tier model yet, with performance</text>
+  <text x="40" y="226" font-size="12" fill="#555555">approaching Opus 4.8 at lower cost — now the default for all Free and Pro users globally.</text>
+  <!-- Bullets -->
+  <text x="40" y="250" font-size="11" fill="#333333">· $2/M input, $10/M output tokens (introductory through Aug 2026)</text>
+  <text x="40" y="265" font-size="11" fill="#333333">· Surpasses Sonnet 4.6 on reasoning, tool use, coding, and agentic tasks</text>
+  <text x="40" y="280" font-size="11" fill="#333333">· Default model now for Free, Pro, Max, Team, and Enterprise plans</text>
+  <!-- Impact bar -->
+  <text x="40" y="303" font-size="9" fill="#AAAAAA" letter-spacing="1">IMPACT</text>
+  <rect x="100" y="294" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="294" width="200" height="6" rx="3" fill="#6C47FF"/>
+  <text x="308" y="303" font-size="9" fill="#6C47FF" font-weight="700">10/10</text>
+  <!-- Divider -->
+  <line x1="40" y1="317" x2="760" y2="317" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 2: Frog Bacterium — Science -->
+  <text x="40" y="345" font-size="11" fill="#BBBBBB" font-weight="700">02</text>
+  <rect x="62" y="330" width="60" height="17" rx="3" fill="#0077CC"/>
+  <text x="92" y="342" font-size="9" fill="#FFFFFF" font-weight="700" text-anchor="middle">SCIENCE</text>
+  <text x="40" y="375" font-size="16" font-weight="700" fill="#111111">Frog Gut Bacterium Wipes All Mouse Tumors</text>
+  <text x="40" y="397" font-size="12" fill="#555555">A single dose of a frog-derived gut bacterium completely eradicated 100% of tumors in mice,</text>
+  <text x="40" y="413" font-size="12" fill="#555555">potentially offering a non-toxic alternative to chemotherapy derived from nature's microbiome.</text>
+  <text x="40" y="437" font-size="11" fill="#333333">· 100% tumor eradication rate in mouse models after a single dose</text>
+  <text x="40" y="452" font-size="11" fill="#333333">· Bacterium sourced from frog gut microbiome, not synthetic compounds</text>
+  <text x="40" y="467" font-size="11" fill="#333333">· Could represent a paradigm shift in biological cancer immunotherapy</text>
+  <text x="40" y="490" font-size="9" fill="#AAAAAA" letter-spacing="1">IMPACT</text>
+  <rect x="100" y="481" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="481" width="180" height="6" rx="3" fill="#0077CC"/>
+  <text x="308" y="490" font-size="9" fill="#0077CC" font-weight="700">9/10</text>
+  <line x1="40" y1="504" x2="760" y2="504" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 3: Godot Bans AI Code — Tech -->
+  <text x="40" y="532" font-size="11" fill="#BBBBBB" font-weight="700">03</text>
+  <rect x="62" y="517" width="36" height="17" rx="3" fill="#00897B"/>
+  <text x="80" y="529" font-size="9" fill="#FFFFFF" font-weight="700" text-anchor="middle">TECH</text>
+  <text x="40" y="562" font-size="16" font-weight="700" fill="#111111">Godot Engine Rejects All AI-Authored Code</text>
+  <text x="40" y="584" font-size="12" fill="#555555">Godot, the popular open source game engine, banned AI-generated code contributions, warning</text>
+  <text x="40" y="600" font-size="12" fill="#555555">that heavy AI users cannot be trusted to understand or fix their own generated code.</text>
+  <text x="40" y="624" font-size="11" fill="#333333">· Policy bans all AI-generated contributions regardless of perceived quality</text>
+  <text x="40" y="639" font-size="11" fill="#333333">· Rationale: AI-heavy contributors can't debug or maintain what they submit</text>
+  <text x="40" y="654" font-size="11" fill="#333333">· Godot has 90,000+ GitHub stars and is used by millions of developers</text>
+  <text x="40" y="677" font-size="9" fill="#AAAAAA" letter-spacing="1">IMPACT</text>
+  <rect x="100" y="668" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="668" width="160" height="6" rx="3" fill="#00897B"/>
+  <text x="308" y="677" font-size="9" fill="#00897B" font-weight="700">8/10</text>
+  <line x1="40" y1="691" x2="760" y2="691" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 4: Synthetic Cell — Science -->
+  <text x="40" y="719" font-size="11" fill="#BBBBBB" font-weight="700">04</text>
+  <rect x="62" y="704" width="60" height="17" rx="3" fill="#0077CC"/>
+  <text x="92" y="716" font-size="9" fill="#FFFFFF" font-weight="700" text-anchor="middle">SCIENCE</text>
+  <text x="40" y="749" font-size="16" font-weight="700" fill="#111111">First Scratch-Built Cell Grows and Divides</text>
+  <text x="40" y="771" font-size="12" fill="#555555">Scientists created the first fully synthetic cell — built entirely from purified molecular parts —</text>
+  <text x="40" y="787" font-size="12" fill="#555555">that successfully grows and divides like a living cell, a landmark in synthetic biology.</text>
+  <text x="40" y="811" font-size="11" fill="#333333">· Assembled from non-living components only — no living cells in the process</text>
+  <text x="40" y="826" font-size="11" fill="#333333">· Demonstrates both growth and division, the two hallmarks of cellular life</text>
+  <text x="40" y="841" font-size="11" fill="#333333">· Opens paths to engineering artificial organisms and studying life's origin</text>
+  <text x="40" y="864" font-size="9" fill="#AAAAAA" letter-spacing="1">IMPACT</text>
+  <rect x="100" y="855" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="855" width="160" height="6" rx="3" fill="#0077CC"/>
+  <text x="308" y="864" font-size="9" fill="#0077CC" font-weight="700">8/10</text>
+  <line x1="40" y1="878" x2="760" y2="878" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 5: Nintendo Salary — Business -->
+  <text x="40" y="906" font-size="11" fill="#BBBBBB" font-weight="700">05</text>
+  <rect x="62" y="891" width="68" height="17" rx="3" fill="#2E7D32"/>
+  <text x="96" y="903" font-size="9" fill="#FFFFFF" font-weight="700" text-anchor="middle">BUSINESS</text>
+  <text x="40" y="936" font-size="16" font-weight="700" fill="#111111">Nintendo Raises All Employee Salaries 10%</text>
+  <text x="40" y="958" font-size="12" fill="#555555">Nintendo announced a 10% base salary increase for all employees, bucking the industry</text>
+  <text x="40" y="974" font-size="12" fill="#555555">trend of layoffs at major gaming studios including EA, Sony, and Microsoft divisions.</text>
+  <text x="40" y="998" font-size="11" fill="#333333">· 10% raise applied to base salaries across all employee levels</text>
+  <text x="40" y="1013" font-size="11" fill="#333333">· Contrasts with wave of layoffs across EA, Sony, Microsoft game studios</text>
+  <text x="40" y="1028" font-size="11" fill="#333333">· Nintendo reported record revenues in recent consecutive fiscal quarters</text>
+  <text x="40" y="1051" font-size="9" fill="#AAAAAA" letter-spacing="1">IMPACT</text>
+  <rect x="100" y="1042" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="1042" width="140" height="6" rx="3" fill="#2E7D32"/>
+  <text x="308" y="1051" font-size="9" fill="#2E7D32" font-weight="700">7/10</text>
+  <line x1="40" y1="1065" x2="760" y2="1065" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 6: Ballista Spider — Science -->
+  <text x="40" y="1093" font-size="11" fill="#BBBBBB" font-weight="700">06</text>
+  <rect x="62" y="1078" width="60" height="17" rx="3" fill="#0077CC"/>
+  <text x="92" y="1090" font-size="9" fill="#FFFFFF" font-weight="700" text-anchor="middle">SCIENCE</text>
+  <text x="40" y="1123" font-size="16" font-weight="700" fill="#111111">Spring-Loaded Spider Snare Discovered</text>
+  <text x="40" y="1145" font-size="12" fill="#555555">A newly discovered Australian spider builds a spring-loaded elastic silk trap — dubbed the</text>
+  <text x="40" y="1161" font-size="12" fill="#555555">"ballista spider" — that launches ants into a sticky net using stored mechanical energy.</text>
+  <text x="40" y="1185" font-size="11" fill="#333333">· Spider stretches silk to spring tension, releasing like a siege-weapon catapult</text>
+  <text x="40" y="1200" font-size="11" fill="#333333">· Trap specifically targets harvester ants, which it snares mid-air</text>
+  <text x="40" y="1215" font-size="11" fill="#333333">· Named "ballista" after the ancient Greek and Roman torsion artillery</text>
+  <text x="40" y="1238" font-size="9" fill="#AAAAAA" letter-spacing="1">IMPACT</text>
+  <rect x="100" y="1229" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="1229" width="140" height="6" rx="3" fill="#0077CC"/>
+  <text x="308" y="1238" font-size="9" fill="#0077CC" font-weight="700">7/10</text>
+  <line x1="40" y1="1252" x2="760" y2="1252" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- FOOTER -->
+  <text x="40" y="1290" font-size="11" fill="#AAAAAA">Generated by AI · Daily Briefing · July 1, 2026</text>
+  <text x="760" y="1290" font-size="11" fill="#CCCCCC" text-anchor="end">twong6531.github.io/citation-site</text>
+
+  <!-- BOTTOM BAR -->
+  <rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>
