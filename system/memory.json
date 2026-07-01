@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-30T14:06:47Z",
+  "last_updated": "2026-07-01T00:00:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -594,6 +594,36 @@
       "type": "research_infographic",
       "url": "docs/research-infographic-2026-06-29.svg",
       "topic": "Research Infographic"
+    },
+    {
+      "date": "2026-06-30",
+      "type": "news",
+      "url": "docs/2026-06-30.html",
+      "topic": "Daily Briefing 2026-06-30"
+    },
+    {
+      "date": "2026-06-30",
+      "type": "research",
+      "url": "docs/research-2026-06-30.html",
+      "topic": "Transit Research Digest 2026-06-30 (Gemini/Imagen unavailable, self-analyzed)"
+    },
+    {
+      "date": "2026-06-30",
+      "type": "transit",
+      "url": "docs/transit-2026-06-30.html",
+      "topic": "SoCal Transit Intelligence 2026-06-30"
+    },
+    {
+      "date": "2026-06-30",
+      "type": "infographic",
+      "url": "docs/infographic-2026-06-30.svg",
+      "topic": "Editorial Infographic 2026-06-30"
+    },
+    {
+      "date": "2026-06-30",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-06-30.svg",
+      "topic": "Research Infographic 2026-06-30"
     }
   ],
   "drafts_pending_approval": [
@@ -969,7 +999,10 @@
     "Salesforce Fin AI acquisition",
     "Apple Foundation Models",
     "Anthropic safety strategy",
-    "psilocybin Alzheimer research"
+    "psilocybin Alzheimer research",
+    "Q3 2026 transit funding outlook federal reauthorization",
+    "AI deregulation Anthropic model restrictions transit planning tools",
+    "World Cup 2026 knockout stage transit operations host cities"
   ],
   "failed_jobs": [
     {
@@ -1291,6 +1324,21 @@
       "date": "2026-06-30",
       "job": "infographic_writing",
       "reason": "brt-vs-light-rail-cost-2026 not produced for ~24th consecutive day. Retry queued again but manual diagnostic remains overdue."
+    },
+    {
+      "date": "2026-07-01",
+      "job": "publishing",
+      "reason": "approved.json still empty -- no human approvals received for 25th consecutive day since 2026-06-07. 5 QC-passed scripts ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. Publishing skipped again."
+    },
+    {
+      "date": "2026-07-01",
+      "job": "article_writing",
+      "reason": "drafts/articles/ directory has never had a file produced in 25+ days of site history. 0% long-form article success rate. New angle queued today: AI-deregulation-anthropic-transit-planning-tools-2026 (hooks into NYT story on US lifting Anthropic AI model restrictions)."
+    },
+    {
+      "date": "2026-07-01",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced for ~25th consecutive day -- retry #19 queued today. If not produced today, automated retries should be suspended and a manual diagnostic run."
     }
   ],
   "content_gaps": [
@@ -1341,6 +1389,10 @@
     "CRITICAL DAY 24+: approved.json still empty since 2026-06-07 (24 consecutive days as of 2026-06-30). 5 QC-passed video scripts ready now (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap-script, dopamine-fracking-script). Zero content of any kind has gone live in 24+ days of daily production despite briefing/research/QC running every day. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to approved.json. This remains the single longest-running unresolved alert in the pipeline's history; escalating again with a push notification today since daily file-based alerts over 3+ weeks have not produced a human response.",
     "CONFIRMED PIPELINE FAILURE: brt-vs-light-rail-cost-2026 infographic -- approximately 24 consecutive failures since 2026-06-07. Recommend pausing further automated retries and running a manual diagnostic of the infographic-writing agent instead.",
     "CRITICAL: drafts/articles/ directory has never had a file successfully produced in 24+ days of site history -- 0% article production rate sustained across the entire production run. Manual diagnostic of the article-writing agent is now significantly overdue.",
-    "Google News Technology RSS feed returned empty results for a third consecutive day (2026-06-28, 06-29, 06-30) -- worth a human check on whether this is a persistent fetch/parsing issue rather than three days of coincidental transient failures."
+    "Google News Technology RSS feed returned empty results for a third consecutive day (2026-06-28, 06-29, 06-30) -- worth a human check on whether this is a persistent fetch/parsing issue rather than three days of coincidental transient failures.",
+    "CRITICAL DAY 25: approved.json still empty since 2026-06-07. 5 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking). Zero content has gone live in 25 consecutive days of daily production. REQUIRES IMMEDIATE HUMAN ACTION.",
+    "CONFIRMED PIPELINE FAILURE DAY 25: brt-vs-light-rail-cost-2026 infographic queued for ~25th consecutive attempt since 2026-06-07. Retry #19 today. If not produced, automated retries should be permanently suspended pending manual diagnostic of the infographic-writing agent.",
+    "CONFIRMED PIPELINE FAILURE DAY 25: drafts/articles/ has never had a file produced across the entire site history. 0% article production rate for 25+ consecutive days. Manual diagnostic of the article-writing agent is long overdue.",
+    "NEW SIGNAL (2026-07-01): US lifts restrictions on Anthropic's most powerful AI models (NYT). Queued as Rank 1 article with transit-planning-AI angle -- first fresh news hook not previously covered."
   ]
 }

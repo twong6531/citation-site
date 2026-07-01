@@ -1,0 +1,91 @@
+{
+  "date": "2026-07-01",
+  "generated_at": "2026-07-01T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "U.S. AI Deregulation and Transit: What Lifting Restrictions on Anthropic's Most Powerful Models Means for Smart Transit Planning",
+      "angle": "The NYT reports the U.S. has lifted export/use restrictions on Anthropic's most capable AI models. Examine how this deregulatory shift could accelerate AI-driven transit planning tools — demand forecasting, autonomous shuttle routing, equity audits — that previously relied on less capable model tiers. Include concrete examples of transit agency AI pilots, risks of fast deployment without equity review, and what the policy shift means for the urban mobility AI stack.",
+      "rationale": "Hot breaking story (NYT, today) + niche alignment (AI + transit/infrastructure policy). No prior coverage of AI deregulation-transit intersection. July 1 start-of-Q3 timing makes forward-looking AI policy pieces especially resonant. This is also the first new long-form article angle in 10+ days not already retried to exhaustion.",
+      "target_length": "long",
+      "slug": "ai-deregulation-anthropic-transit-planning-tools-2026",
+      "output_path": "drafts/articles/ai-deregulation-anthropic-transit-planning-tools-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "BRT vs Light Rail: Full Cost Breakdown 2026",
+      "angle": "Capital cost per mile, operating cost per rider, build time, ridership capacity, and ROI timeline side-by-side. Use real-world US examples (LA, Houston, Denver). Static SVG suitable for embedding.",
+      "rationale": "This topic has been queued as a retry every day since 2026-06-07 (~25 consecutive failures). Still a genuine content gap — no comparable visualization exists anywhere on the site. Retry #19 today. The infographic-writing agent must produce this or a manual intervention is required.",
+      "target_length": "medium",
+      "slug": "brt-vs-light-rail-cost-2026",
+      "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Q3 2026 Transit Funding Outlook: Federal Reauthorization Status and State Budget Pressures",
+      "angle": "July 1 marks the start of Q3 and the new fiscal year for many US transit agencies. Analyze the current state of federal transportation reauthorization (IIJA follow-on), which state transit budgets are under stress heading into fall, and where fare revenue has and hasn't recovered post-pandemic. Pull data from FTA NTD, recent agency board agendas, and congressional testimony.",
+      "rationale": "Timely: July 1 is the fiscal-year inflection for transit agencies. Fills the research-brief slot. No prior quarterly outlook coverage in the archive. Connects to existing high-engagement topics (transit funding equity, federal grants).",
+      "target_length": "medium",
+      "slug": "q3-2026-transit-funding-outlook",
+      "output_path": "drafts/articles/q3-2026-transit-funding-outlook.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "World Cup 2026 Transit Lessons: What the Knockout Stage Crowd Surges Taught US Host Cities",
+      "angle": "World Cup 2026 knockout rounds are underway (July). Document how LA Metro, DART, MBTA, and other host-city agencies managed surge operations — extra service windows, fare suspension decisions, signal priority, staffing agreements. What worked, what broke, what agencies are carrying forward into the 2028 Olympics planning cycle.",
+      "rationale": "World Cup transit story has been queued since June as the #1 priority for the article-writing agent, which failed to produce it every day. Knockout stage is the live window now (group stage closed). Recasting as an explainer/lessons-learned piece extends relevance into Q3. Strong SEO angle for 2028 Olympics planning searches.",
+      "target_length": "medium",
+      "slug": "world-cup-2026-transit-lessons-knockout-stage",
+      "output_path": "drafts/articles/world-cup-2026-transit-lessons-knockout-stage.html"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "HOLD — Video Script Production Suspended",
+      "angle": "No new video scripts until the existing backlog (5 QC-passed, 5 needs-revision) is reviewed and approved.json is updated by a human. Do not produce a new script today.",
+      "rationale": "Video script production correctly held since 2026-06-27 per pipeline decision. Backlog of 10 scripts (5 passed QC: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking) remains unconsumed. No new production until human clears the queue.",
+      "target_length": "short",
+      "slug": "HOLD-no-new-script-2026-07-01",
+      "output_path": "drafts/scripts/HOLD-no-new-script-2026-07-01.md"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "type": "infographic",
+      "attempt_number": 19,
+      "first_queued": "2026-06-07",
+      "status": "never_produced",
+      "note": "~25 consecutive failures. Manual diagnostic of infographic-writing agent is now strongly recommended. Queuing for final automated retry; if not produced today, recommend suspending automated retries and running manual diagnostic."
+    }
+  ],
+  "skip_topics": [
+    "SoCal transit intelligence brief (produced daily since 2026-06-08)",
+    "Transit research digest (produced daily)",
+    "Physics-anchored ML / electric-bus timetable cascade (covered 2026-06-29)",
+    "Fare evasion economics (video script exists, QC passed)",
+    "Tesla/SpaceX transit empire (video script exists, QC passed)",
+    "Transit app dark UX (video script exists, QC passed)",
+    "US cities transit gap (video script exists, QC passed, revised 2026-06-25)",
+    "Dopamine fracking (video script exists, QC passed)",
+    "Hub covering location problem (covered 2026-06-26 research brief)",
+    "GPS mobility data representativeness bias (covered 2026-06-23 research brief)"
+  ],
+  "trend_signals": [
+    "U.S. lifts restrictions on Anthropic's most powerful AI models (NYT, 2026-07-01) — AI regulatory shift with direct transit-planning implications",
+    "AI changing the way politicians run for office (NYT) — AI in civic/policy infrastructure broadly",
+    "Claude Code steganographically marking requests (HN trending) — AI model transparency/trust debate",
+    "World Cup 2026 knockout stage underway — host-city transit ops in live stress-test mode",
+    "July 1 new fiscal quarter — US transit agency budget cycles, FTA reauthorization status"
+  ],
+  "news_scan_notes": {
+    "hacker_news_top": ["Why I Stopped Arguing with People", "Asahi Linux 7.1 Progress Report", "Single Dose of Frog-Derived Gut Bacterium Eradicates 100% of Tumors in Mice", "Claude Code is steganographically marking requests", "Nintendo has raised its employees base salary by 10%", "The Internet I Grew Up with Doesn't Exist Anymore", "Obfuscation: Building the final boss of cryptography (Part I)"],
+    "nyt_technology": ["U.S. Lifts Restrictions on Anthropic's Most Powerful A.I. Models", "Bending Spoons, Owner of AOL and Other Old Internet Brands, Is Going Public", "In San Francisco's A.I. Era, Even $180,000 Tech Salaries Are No Longer Enough", "How A.I. Is Changing the Way Politicians Run for Office"],
+    "google_news_tech": "empty (4th consecutive day)",
+    "arxiv_transit": "no results (fetch timeout)"
+  }
+}

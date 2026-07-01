@@ -1,0 +1,22 @@
+{
+  "date": "2026-07-01",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 4,
+  "alerts": [
+    "CRITICAL DAY 25: approved.json empty since 2026-06-07. Now 25 consecutive days without a human approval. 5 QC-passed video scripts ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. Human must add slugs to approved.json. Zero content of any kind has gone live in 25 days of daily production.",
+    "CONFIRMED PIPELINE FAILURE DAY 25: brt-vs-light-rail-cost-2026 infographic has never been produced in ~25 consecutive queued attempts since 2026-06-07. Today is retry #19. If not produced today, automated retries should be suspended pending manual diagnostic.",
+    "CONFIRMED PIPELINE FAILURE: drafts/articles/ directory has never had a file successfully produced in 25+ days of site history. 0% article production rate across the entire production run. World Cup 2026 transit article has been queued as #1 or #2 priority for 25+ consecutive days without production.",
+    "VIDEO SCRIPTS ON HOLD: no new scripts until human reviews existing backlog (5 QC-passed, 5 needs-revision) and approved.json is updated.",
+    "FOURTH STRAIGHT DAY: Google News Technology RSS feed returned empty — recommend checking whether this is a persistent parsing/access issue rather than transient failure.",
+    "NEW TODAY (Q3 PRIORITY): U.S. lifts restrictions on Anthropic AI models — queued as Rank 1 article with AI-deregulation-transit-planning angle. First fresh news hook in several days."
+  ]
+}
