@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoCal Transit Intelligence — July 1, 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; }
+nav a:hover { color: #fff; }
+.hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; }
+.hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.priority.high { background: #ef4444; color: #fff; }
+.priority.medium { background: #f59e0b; color: #000; }
+.priority.low-medium { background: #64748b; color: #fff; }
+.agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+.card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; }
+.date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+.connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+.source-link:hover { color: #60a5fa; text-decoration: underline; }
+.status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+.status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:nth-child(odd) td { background: #1e293b; }
+tr:nth-child(even) td { background: #0f172a; }
+.themes { background: #0a1628; padding: 2rem; }
+.themes-inner { max-width: 1400px; margin: 0 auto; }
+.themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+.theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+.theme:last-child { border-bottom: none; }
+.theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+.theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>SoCal Transit Intel</strong></div>
+  <div><a href="transit.html">Archive</a><a href="https://thesource.metro.net" target="_blank">Metro Source</a></div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">July 1, 2026 · 10 stories · June 22 – July 1, 2026</p>
+  <p class="subtitle" style="margin-top:0.25rem;font-size:0.9rem;">LA Metro · LAWA · CA HSR · Amtrak · Metrolink · LADOT · SCAG</p>
+</div>
+
+<div class="grid">
+
+  <!-- STORY 1 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_9887-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="LAX SkyLink people mover World Cup"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LAWA</span>
+        <span class="agency">LAX</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: LAX SkyLink People Mover Still Can't Move World Cup Fans</h2>
+      <p class="date-range">June 12 – June 24, 2026</p>
+      <p class="summary">As hundreds of thousands of World Cup fans poured into Los Angeles International Airport, LAX's long-awaited $3.34 billion automated people mover was nowhere to be found in service. The LA Times reported on June 24 that the SkyLink APM continues to struggle with testing delays and certification setbacks, leaving travelers to navigate the old horseshoe road network and shuttle buses — the exact congestion the APM was designed to eliminate. International visitors expressed frustration at the airport's layout, with one outlet headlining: "I'm still lost: Los Angeles airport baffles travelers ahead of World Cup."</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>$3.34 billion</strong> total project cost for the LAX Automated People Mover</li>
+        <li><strong>2.25 miles</strong> of elevated guideway connecting 6 stations across the airport campus</li>
+        <li><strong>Originally planned for 2023</strong>, the opening slipped to 2024, 2025, and now 2026</li>
+        <li><strong>World Cup Group Stage</strong> ran June 12 – July 2 at SoFi Stadium; millions transited LAX</li>
+        <li>Connects terminals, the new Metro rail station, and the Consolidated Rent-A-Car facility (CONRAC)</li>
+        <li>Testing and certification ongoing; no revenue service date announced as of July 1</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The SkyLink is the critical link between the Metro K Line's Aviation/LAX station and the airport terminals. Without it, the much-hyped car-free airport arrival isn't fully functional. With the 2028 Olympics 24 months away, LAWA needs to resolve certification issues immediately — the World Cup exposed exactly what Olympic planners feared most.</p>
+      <p class="connections"><em>Connects to:</em> Topic 6 (D Line/Metro ridership), Topic 4 (Governor's transit urgency order), Topic 9 (World Cup shuttle ridership)</p>
+      <a class="source-link" href="https://www.latimes.com/california/story/2026-06-24/lax-people-mover-train-delays-world-cup" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 2 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/4-1.jpeg?fit=1200%2C801&ssl=1"
+           alt="LA Metro buses FY27 budget"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: Metro Board Signs Off on FY27 Budget — Largest Operational Spending Plan Yet</h2>
+      <p class="date-range">June 26 – June 30, 2026</p>
+      <p class="summary">LA Metro's Board of Directors approved the agency's fiscal year 2027 budget at its June board meeting, clearing a major financial milestone as the agency manages its most complex service environment in decades. The spending plan covers expanding World Cup operations, sustaining D Line extension service, funding the new Department of Public Safety (DPS) officer corps, and advancing capital projects for the 2028 Olympics. Railway Age and LAist both flagged the approval as the governing body signed off on priorities that balance immediate ridership demand with long-term infrastructure investment.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Board approval came at the June 2026 meeting, covering FY July 2026 – June 2027</li>
+        <li>Budget includes operating funds for three new D Line stations opened in spring 2026</li>
+        <li>Funding allocated for Metro's new Department of Public Safety sworn officer corps</li>
+        <li>Capital funds support ongoing Sepulveda transit corridor environmental review and E Line extension</li>
+        <li>World Cup service expenses — $1.75 shuttle program, extra rail service — factored into FY27 plan</li>
+        <li>Metro's annual budget has grown substantially since Measure M passage in 2016</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The FY27 budget is effectively a commitment to both the World Cup's remaining knockout rounds and the 2028 Olympic buildout. It greenlit officer hiring, sustained expanded D Line service, and locked in capital priorities for the next 12 months — shaping which 2028 projects get momentum now versus later.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (Metro DPS), Topic 6 (D Line ridership), Topic 4 (Governor's urgency order)</p>
+      <a class="source-link" href="https://www.railwayage.com/passenger/la-metro-board-signs-off-on-fy27-budget/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 3 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?fit=1200%2C600&ssl=1"
+           alt="LA Metro Department of Public Safety officers"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metro DPS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: Metro's New Police Force Draws 2,400+ Applicants — Officer Debut on Track</h2>
+      <p class="date-range">June 9 – June 30, 2026</p>
+      <p class="summary">LA Metro's new in-house Department of Public Safety (DPS) recruitment campaign launched on June 9 and immediately drew 950 applications in its first 24 hours — a strong signal of public interest in Metro's first-ever sworn officer corps. By late June, the LA Daily News reported the applicant pool had swelled past 2,400 total candidates. Metro Magazine headlined the milestone as a "strong start" for what Metro CEO Stephanie Wiggins has called a once-in-a-generation opportunity to build a transit-focused law enforcement culture from scratch, rather than inheriting one.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>950 applications</strong> received in the first 24 hours of the June 9 launch</li>
+        <li><strong>2,400+ total applicants</strong> reported by late June (LA Daily News)</li>
+        <li>Metro DPS replaces contracted services from LAPD, LASD, and Long Beach PD</li>
+        <li>First recruits will shape department culture, policy, and community-focused approach</li>
+        <li>Target: several hundred sworn officers deployed before 2028 Olympics</li>
+        <li>Board chair acknowledged the hiring scale will be "a challenge" given Metro's size</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metro has faced sustained criticism over safety and rider perception — the same period saw City Journal publish a piece titled "LA Metro Is a Crime-Ridden Hellscape." Building its own force allows Metro to set culture, training, and accountability from day one. The 2,400-applicant response suggests there's a ready pool, but translating interest to a deployable force in 24 months is the real challenge.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (FY27 budget funds DPS), Topic 6 (safety perception affects ridership decisions)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-launches-sworn-officer-recruitment-for-its-department-of-public-safety/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 4 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/2B4A0812-scaled.jpg?fit=1200%2C800&ssl=1"
+           alt="California Governor transit urgency order Metro"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">State of CA</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">SCAG</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: Governor Newsom Orders State Agencies to "Increase the Urgency" on Transit</h2>
+      <p class="date-range">June 30, 2026</p>
+      <p class="summary">California Governor Gavin Newsom issued a directive to state agencies to dramatically accelerate transit project delivery as the World Cup's transportation demands exposed the gap between Southern California's ambitions and its current infrastructure. Planetizen reported the order calls for streamlined permitting, expedited environmental review timelines, and cross-agency coordination to ensure critical transit projects are delivered before the 2028 Olympics. The move comes as LAX's people mover remains stuck in testing and multiple rail expansion projects face bureaucratic delays.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Directive orders state agencies to prioritize permitting and review for transit infrastructure</li>
+        <li>Targets projects tied to LA 2028 Olympic and Paralympic Games transportation plans</li>
+        <li>Context: SkyLink APM still not in revenue service; Sepulveda Pass study ongoing</li>
+        <li>World Cup exposing infrastructure gaps at SoFi Stadium, LAX, and transit corridors</li>
+        <li>Related to the governor's broader push to accelerate housing and infrastructure under CEQA reform</li>
+        <li>SCAG and LA Metro expected to benefit from streamlined state-level coordination</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> This is the clearest signal yet that Sacramento views 2028 Olympic transit readiness as a state-level emergency, not just a local issue. If the directive translates into real permitting acceleration, it could meaningfully affect when projects like the Sepulveda Pass transit corridor, SkyLink certification, and Vermont Ave BRT reach the finish line.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (LAX SkyLink delays), Topic 5 (HSR federal funding gap), Topic 8 (Vermont Ave BRT)</p>
+      <a class="source-link" href="https://www.planetizen.com/news/2026/06/131965-california-governor-orders-state-agencies-increase-urgency-transit-projects" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 5 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/oL83hiVqor80_DQcMmr3mRX6KiV7RmxKYxzXnlT1hWo/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS8yMDI0LTAyLTIxLUhhbmZvcmRfVmlhZHVjdC0zOS5KUEc=.webp"
+           alt="California High Speed Rail Hanford Viaduct"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">CA HSR Authority</span>
+        <span class="agency">Brightline West</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: US High-Speed Rail Courts Private Capital as Federal Funding Evaporates</h2>
+      <p class="date-range">June 23 – July 1, 2026</p>
+      <p class="summary">With the Trump administration having pulled billions in federal funding from California's San Francisco–Los Angeles high-speed rail project, the CA High-Speed Rail Authority is now actively courting private investors to fill the gap. Smart Cities Dive published a comprehensive analysis on July 1 asking whether US high-speed rail projects will "ever leave the station," noting that California is looking to the private sector while other privately funded projects — including Brightline West's Las Vegas–California corridor — are grappling with soaring cost estimates. Separately, CAHSRA released draft environmental documents for the LA-to-Anaheim segment, signaling the southern terminus is progressing.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Trump administration pulled federal funding; state filed — then dropped — a lawsuit to reinstate it</li>
+        <li>CA HSR total project cost estimates now range from <strong>$135–$231 billion</strong> depending on scope</li>
+        <li>Brightline West (Las Vegas–SoCal) costs have risen to <strong>$21 billion</strong>, targeting 2029 opening</li>
+        <li>LA-to-Anaheim draft Environmental Impact Report released; public comment period open</li>
+        <li>CAHSRA board cleared final environmental milestone to link downtown SF to downtown LA</li>
+        <li>Plenary-led team evaluating private financing for $2.4B Merced–Madera construction package</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> California HSR's pivot to private capital is the biggest structural shift in the project's history. If it works, it could be a model for US rail nationally; if it fails, it likely signals the effective end of the SF-LA segment. For SoCal, the LA-Anaheim EIR advancing means the southern stub could still be functional as a regional rail connector even if the full line takes decades.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (Governor urgency order on transit), Topic 7 (Pacific Surfliner capacity bridging HSR gap)</p>
+      <a class="source-link" href="https://www.smartcitiesdive.com/news/high-speed-rail-private-investors/824187/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 6 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/DSC_3090-Enhanced-NR-Edit-scaled.jpg?fit=1200%2C800&ssl=1"
+           alt="D Line Extension LA Metro six-year ridership high"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: D Line Extension Fuels Metro's Strongest Rail Ridership in Six-Plus Years</h2>
+      <p class="date-range">June 12 – June 22, 2026</p>
+      <p class="summary">Three new D Line (Purple Line) Extension stations — Fairfax/La Cienega, Beverly Hills/Wilshire, and Wilshire/Rodeo — opened in spring 2026 and immediately transformed ridership figures. Metro reported that May 2026 saw the highest rail ridership since before the COVID-19 pandemic — the strongest month in more than six years. The World Cup then layered another demand surge on top: Metro's dedicated $1.75 shuttle service to SoFi Stadium launched June 12 and the system saw weekend ridership surge on the D Line as fans chose rail over $200 parking near SoFi.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Three new D Line stations serve Miracle Mile, Fairfax District, and Beverly Hills-adjacent areas</li>
+        <li>May 2026 rail ridership was the <strong>highest since early COVID period</strong> — 6+ year high</li>
+        <li>Weekend D Line ridership surged <strong>~80%</strong> after extension opened</li>
+        <li>World Cup service to SoFi began June 12 with dedicated trains and bus connections</li>
+        <li>Metro is the <strong>official public transit provider</strong> of the LA 2026 FIFA World Cup</li>
+        <li>Rail performance data being tracked as a key indicator for 2028 Olympics planning</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> For the first time since the pandemic, Metro can point to genuine organic ridership growth driven by new infrastructure — not just discounts. The D Line extension proves that rail expansion attracts riders in LA's West Side. Whether that ridership sticks post-World Cup is the test case for 2028.</p>
+      <p class="connections"><em>Connects to:</em> Topic 9 (World Cup shuttle ridership), Topic 1 (LAX SkyLink needs to work before 2028), Topic 3 (DPS needed as ridership grows)</p>
+      <a class="source-link" href="https://thesource.metro.net/new-d-line-stations-help-drive-strongest-rail-ridership-in-more-than-six-years-world-cup-service-starts-strong/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 7 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://media.amtrak.com/wp-content/uploads/2026/04/NB-Surfliner-Arriving-Santa-Barbara-Station-Photo-2-1024x683.jpg"
+           alt="Amtrak Pacific Surfliner train at Santa Barbara station"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Amtrak</span>
+        <span class="agency">Caltrans</span>
+        <span class="agency">Pacific Surfliner</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: New Daily Pacific Surfliner Train Links LA to San Luis Obispo — 11th Roundtrip</h2>
+      <p class="date-range">April 6, 2026</p>
+      <p class="summary">Amtrak added a new daily Pacific Surfliner roundtrip between Los Angeles and San Luis Obispo, establishing service #795 northbound and #796 southbound as the 11th daily roundtrip on that segment. The launch, announced April 6 by Amtrak Media, expands coastal corridor coverage and reduces gaps between trains on the scenic LA–SLO route. Separately, Amtrak also added a 12th and 13th daily roundtrip between Los Angeles and San Diego, bringing the Surfliner to record frequency on the busiest California corridor. World Cup demand has driven further schedule adjustments.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>New trains #795/#796 operate daily LA to San Luis Obispo — the <strong>11th daily roundtrip</strong> on that segment</li>
+        <li>Amtrak also added <strong>12th and 13th roundtrips</strong> between LA and San Diego</li>
+        <li>Service launched April 6, 2026 per Amtrak Media press release</li>
+        <li>Pacific Surfliner is co-funded by Caltrans and operated by Amtrak on state-owned infrastructure</li>
+        <li>Route serves key coastal cities: Ventura, Santa Barbara, San Luis Obispo, plus SD corridor</li>
+        <li>World Cup period added extra special-event trains between LA and the San Diego border region</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> More Surfliner frequency reduces the penalty of missing a train and makes the LA–SD and LA–SLO corridors genuinely competitive with driving on price-sensitive trips. As CA HSR timelines slip further, the Pacific Surfliner is the de facto backbone of California intercity rail — adding capacity now is the most practical near-term improvement available.</p>
+      <p class="connections"><em>Connects to:</em> Topic 5 (CA HSR delays make Surfliner more critical), Topic 9 (World Cup drives intercity rail demand)</p>
+      <a class="source-link" href="https://media.amtrak.com/2026/04/new-daily-pacific-surfliner-train-connects-los-angeles-and-san-luis-obispo/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 8 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scpr.brightspotcdn.com/dims4/default/cc13e3c/2147483647/strip/true/crop/2347x1232+34+0/resize/1200x630!/quality/90/?url=http%3A%2F%2Fscpr-brightspot.s3.us-west-2.amazonaws.com%2Fa0%2F01%2F10b0d43d4f80ad192f2065fe5324%2Fvermont-ave-brt-concept.png"
+           alt="Vermont Avenue BRT bus rapid transit concept"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LADOT</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: Vermont Ave Rapid Bus Clears Court Hurdle — No Bike Lanes Required, for Now</h2>
+      <p class="date-range">June 25, 2026</p>
+      <p class="summary">A judge ruled on June 25 that Metro's Vermont Avenue rapid bus project can proceed without the dedicated bike lanes that cycling advocates and the California Bicycle Coalition argued were legally required. LAist reported the ruling allows construction to move forward on what would be one of the busiest BRT corridors in Southern California — the Vermont Avenue line runs through high-density neighborhoods from Hollywood to South LA. Metro is separately exploring a private partnership to accelerate the timeline for the project, which has faced years of delays over design disputes.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Judge ruled June 25, 2026 that the Vermont Ave BRT project may proceed without bike lanes "for now"</li>
+        <li>California Bicycle Coalition had sued to force bike lane inclusion in the project design</li>
+        <li>Vermont Ave corridor runs approximately 12 miles through high-density South LA and Hollywood</li>
+        <li>Metro exploring private partnership to speed delivery (reported by LAist, May 2026)</li>
+        <li>Project is part of Metro's BRT network expansion ahead of 2028 Olympics</li>
+        <li>Bike lane dispute reflects broader tension between bus speed/reliability and multimodal design</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Vermont Avenue is one of LA's highest-ridership bus corridors. A BRT upgrade here would benefit tens of thousands of daily riders who are among the most transit-dependent in the county. The court ruling clears a major hurdle, though the bike lane issue may resurface on appeal — adding another variable to an already-delayed project.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (Governor urgency order to accelerate transit), Topic 2 (FY27 budget includes BRT capital funding)</p>
+      <a class="source-link" href="https://laist.com/news/transportation/judge-rules-vermont-avenue-bus-project-will-move-ahead-for-now-without-bike-lanes" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 9 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-2.33.35-PM-scaled.png?fit=1200%2C502&ssl=1"
+           alt="Union Station World Cup Fan Zone Metro"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LADOT</span>
+        <span class="agency">FIFA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: World Cup Shuttle Ridership Tops 100,000; Metro Proves the Stadium-Rail Model Works</h2>
+      <p class="date-range">June 12 – June 30, 2026</p>
+      <p class="summary">Metro's $1.75 shuttle bus service to SoFi Stadium emerged as one of the World Cup's transportation success stories, surpassing 100,000 rides during the group stage. The service — run in partnership with Zum — offered fans an affordable alternative to the $150–$200 parking fees near the stadium. Metro also served as the anchor for Union Station's official World Cup Fan Zone, which sold out all four days of its run. The combination of the D Line extension opening, World Cup-branded buses, and shuttle services produced Metro's most ambitious and successful special-event operations in the agency's history.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>100,000+ rides</strong> on the $1.75 Metro shuttle to SoFi Stadium during group stage</li>
+        <li>Shuttle service contracted through <strong>Zum</strong>, operating from multiple pick-up points across LA County</li>
+        <li>Union Station's <strong>official World Cup Fan Zone</strong> sold out all four days</li>
+        <li><strong>196 buses</strong> wrapped with World Cup livery rolled through the region</li>
+        <li>Metro is the <strong>official public transit provider</strong> of LA 2026 FIFA World Cup</li>
+        <li>Moovit integrated into Metro app for real-time transit routing during tournament</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The World Cup is the largest-scale test run for 2028 Olympics transit planning. Metro's shuttle ridership figures and Union Station's packed fan zones demonstrate that Angelenos and international visitors will use transit when the service is affordable, frequent, and well-promoted. These operational lessons — what worked, what didn't — will directly inform 2028 planning.</p>
+      <p class="connections"><em>Connects to:</em> Topic 6 (D Line ridership surge), Topic 1 (LAX SkyLink failure undercuts the car-free arrival story)</p>
+      <a class="source-link" href="https://thesource.metro.net/watch-world-cup-matches-meet-soccer-legends-and-enjoy-live-entertainment-at-union-stations-fan-zone/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 10 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_0802-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Anime Expo LA Convention Center Metro"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: Anime Expo Kicks Off Metro's Packed Summer Event Season</h2>
+      <p class="date-range">July 1 – July 5, 2026</p>
+      <p class="summary">Anime Expo returns to the LA Convention Center July 2–5, drawing tens of thousands of fans from around the world and adding another major event to Metro's already extraordinary summer schedule. Metro is encouraging attendees to ride rail to the Convention Center/L.A. Live station, avoiding what promises to be severe downtown parking congestion. With the FIFA World Cup group stage wrapping up July 2, the first week of July puts Metro simultaneously serving the World Cup knockout rounds and Anime Expo — a dual-event pressure test on the system's capacity and operations.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Anime Expo runs <strong>July 2–5, 2026</strong> at the LA Convention Center — one of the world's largest anime events</li>
+        <li>Metro recommends arriving via the <strong>Blue, Expo, or Green Lines</strong> to LATTC/Ortho Institute or 7th St/Metro Center stations</li>
+        <li>Event overlaps with <strong>World Cup knockout rounds</strong> also served by Metro during the same week</li>
+        <li>July 4 weekend coincides with Metrolink's holiday schedule and $10 SoCal Day Pass</li>
+        <li>Metro's summer slate: World Cup → Anime Expo → Taste of Soul → more events through September</li>
+        <li>Metro Art also participated in LACMA's Block Party and Art Parade in June</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The convergence of Anime Expo and the World Cup knockout rounds during the same week is Metro's largest simultaneous multi-event test since the Super Bowl. Successfully managing both — without major disruptions — builds the operational credibility and public confidence Metro needs heading into the 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> Topic 9 (World Cup transportation operations), Topic 6 (D Line capacity critical during event surges)</p>
+      <a class="source-link" href="https://thesource.metro.net/go-metro-to-anime-expo-at-l-a-convention-center-july-2-5/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<!-- AGENCY STATUS BOARD -->
+<div class="status-board">
+  <h2>Agency Status Board</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Development</th>
+        <th>Trend</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro</strong></td>
+        <td>Active / Expanding</td>
+        <td>FY27 budget approved; DPS recruitment at 2,400+ applicants; D Line extension driving six-year ridership high</td>
+        <td>↑ Ridership growing</td>
+      </tr>
+      <tr>
+        <td><strong>LAWA / LAX</strong></td>
+        <td>Under Pressure</td>
+        <td>SkyLink APM still in testing, no revenue service during World Cup; travelers navigating old horseshoe system</td>
+        <td>⚠ Critical delay</td>
+      </tr>
+      <tr>
+        <td><strong>CA HSR Authority</strong></td>
+        <td>Pivoting</td>
+        <td>Seeking private investors after federal pullback; LA-Anaheim EIR released; Merced-Madera RFQ issued at $2.4B</td>
+        <td>→ Uncertain path</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak / Pacific Surfliner</strong></td>
+        <td>Expanding</td>
+        <td>Added 11th daily LA–SLO roundtrip (April 2026); 12th and 13th LA–SD roundtrips added; World Cup specials operated</td>
+        <td>↑ Record frequency</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink</strong></td>
+        <td>Constrained</td>
+        <td>Running holiday schedule July 3–4 with $10 SoCal Day Pass; "temporary" 20% service cuts now indefinite</td>
+        <td>↓ Service reduced</td>
+      </tr>
+      <tr>
+        <td><strong>San Diego MTS</strong></td>
+        <td>Stable</td>
+        <td>$482.5M FY27 budget approved; weighing fare freeze for low-income riders; pedestrian safety incident near Old Town</td>
+        <td>→ Steady state</td>
+      </tr>
+      <tr>
+        <td><strong>OCTA</strong></td>
+        <td>Stable</td>
+        <td>$2B FY27 budget approved; OC Streetcar construction progressing; no major service disruptions reported</td>
+        <td>→ On plan</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG</strong></td>
+        <td>Active</td>
+        <td>SB 79 transit-density map updates underway; West Hollywood K Line stations restored to map after state order</td>
+        <td>↑ Policy active</td>
+      </tr>
+      <tr>
+        <td><strong>Brightline West</strong></td>
+        <td>Pre-construction</td>
+        <td>Las Vegas–SoCal HSR costs up to $21B; pre-construction work underway in CA; targeting 2029 debut</td>
+        <td>⚠ Cost escalation</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- EMERGING THEMES -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes</h2>
+
+    <div class="theme">
+      <h3>1. The 2028 Olympics Pressure Test Is Happening Now — Not in Two Years</h3>
+      <p>The 2026 FIFA World Cup is not just a sports event; it is the de facto dry run for 2028 Olympic transit. Metro's shuttle success and D Line ridership surge are the good news. LAX's SkyLink still not in service is the alarm bell. Governor Newsom's urgency directive signals that Sacramento has finally internalized that two years is not enough runway if the runway itself isn't operational.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. LA Metro Is Building Its Own Police Force — and It's Attracting a Crowd</h3>
+      <p>The 2,400+ applicants for Metro's new Department of Public Safety represent an inflection point. For years, Metro contracted safety to LAPD, LASD, and Long Beach PD with mixed results and persistent rider perception problems. The DPS allows Metro to build a culture designed around transit — emphasizing de-escalation, mental health response, and community trust. Whether the board and management can execute the buildout in time for 2028 is the next question.</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. California High-Speed Rail Is Now Dependent on Private Capital — An Untested Bet</h3>
+      <p>After decades of relying on a mix of voter-approved bonds and federal grants, California HSR faces a new reality: the Trump administration has pulled federal funding, and the project must either attract private investors or accept indefinite delay. The Plenary-led evaluation of private financing for the Merced-Madera segment is the first real test of whether Wall Street sees California rail as bankable. Brightline West's cost escalation to $21 billion is a cautionary data point for what private rail actually costs in 21st-century America.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. Transit-Oriented Land Use Is Now a Legal and Political Battlefield</h3>
+      <p>SB 79's transit-density requirements, the Vermont Avenue bike lane lawsuit, and LA City Council's attempts to delay implementation all reflect the same fundamental tension: Southern California wants better transit but resists the density and design changes that make it viable. Courts, state agencies, and local governments are now in active conflict over who decides what gets built next to which stops — a fight that will define the shape of the region for decades.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. Amtrak Pacific Surfliner Is Punching Above Its Weight as HSR's Practical Substitute</h3>
+      <p>While California's high-speed rail project stretches toward an uncertain future, Amtrak has quietly added multiple daily roundtrips on the Pacific Surfliner — making the LA–San Diego and LA–San Luis Obispo corridors more competitive with driving than at any point in recent history. The Surfliner isn't HSR, but with 13 daily roundtrips on the southern segment and new World Cup specials, it is the functional backbone of California intercity rail right now.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Sources: LA Metro / The Source · LAist · Los Angeles Times · Smart Cities Dive · Amtrak Media · Railway Age · Planetizen · NBC Los Angeles · KTLA · LA Daily News · Metro Magazine · Google News RSS<br>
+  SoCal Transit Intelligence · Compiled July 1, 2026 · Coverage window: June 22 – July 1, 2026
+</footer>
+
+</body>
+</html>
