@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-02",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold",
+    "qc": "pending",
+    "publishing": "skipped_no_approved_items"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 26: approved.json empty since 2026-06-07. Now 26 consecutive days without a human approval. 5 QC-passed scripts ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. Human must add slugs to system/approved.json. Zero content of any kind has gone live in 26 days of daily production.",
+    "BRT INFOGRAPHIC RETRY SUSPENDED: brt-vs-light-rail-cost-2026 infographic automated retries suspended after ~20 consecutive failures. Manual diagnostic of infographic-writing agent required before re-queuing. Fresh topic substituted today: ai-tools-transit-operations-visual-guide-2026.",
+    "CONFIRMED PIPELINE FAILURE DAY 26: drafts/articles/ directory has never had a file successfully produced in 26+ days of site history. 0% article production rate across the entire production run. Manual diagnostic of article-writing agent is long overdue.",
+    "VIDEO SCRIPTS ON HOLD: no new scripts until human reviews existing backlog (5 QC-passed, 5 needs-revision) and approved.json is updated.",
+    "FIFTH STRAIGHT DAY: Google News Technology RSS feed returned empty — confirmed persistent issue. Manual check of feed URL/parsing logic required.",
+    "NEW TODAY (Rank 1): Google loses $4.7B EU antitrust fine — queued as article with transit-mapping-platform dependency angle.",
+    "NEW TODAY (Rank 2): Single Transformer Layer efficiency breakthrough — queued as research brief with transit AI demand forecasting angle."
+  ]
+}

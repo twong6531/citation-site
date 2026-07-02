@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-01T00:00:00Z",
+  "last_updated": "2026-07-02T14:08:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -624,6 +624,18 @@
       "type": "research_infographic",
       "url": "docs/research-infographic-2026-06-30.svg",
       "topic": "Research Infographic 2026-06-30"
+    },
+    {
+      "date": "2026-07-01",
+      "type": "transit",
+      "url": "docs/transit-2026-07-01.html",
+      "topic": "SoCal Transit Intelligence 2026-07-01"
+    },
+    {
+      "date": "2026-07-01",
+      "type": "research",
+      "url": "docs/research-2026-07-01.html",
+      "topic": "Transit Research Digest 2026-07-01"
     }
   ],
   "drafts_pending_approval": [
@@ -1339,6 +1351,21 @@
       "date": "2026-07-01",
       "job": "infographic_writing",
       "reason": "brt-vs-light-rail-cost-2026 not produced for ~25th consecutive day -- retry #19 queued today. If not produced today, automated retries should be suspended and a manual diagnostic run."
+    },
+    {
+      "date": "2026-07-02",
+      "job": "publishing",
+      "reason": "approved.json still empty -- no human approvals received for 26th consecutive day since 2026-06-07. 5 QC-passed scripts ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. Publishing skipped again."
+    },
+    {
+      "date": "2026-07-02",
+      "job": "article_writing",
+      "reason": "drafts/articles/ has never had a file produced in 26+ consecutive days. 0% long-form article production rate sustained across entire site history. New angles queued today: Google EU antitrust transit mapping, AI efficiency transit demand forecasting, AI deregulation transit planning tools."
+    },
+    {
+      "date": "2026-07-02",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 automated retry SUSPENDED after ~20 consecutive failures since 2026-06-07. Replaced today with fresh topic: ai-tools-transit-operations-visual-guide-2026. Manual diagnostic of infographic-writing agent required."
     }
   ],
   "content_gaps": [
@@ -1393,6 +1420,12 @@
     "CRITICAL DAY 25: approved.json still empty since 2026-06-07. 5 QC-passed scripts ready (tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking). Zero content has gone live in 25 consecutive days of daily production. REQUIRES IMMEDIATE HUMAN ACTION.",
     "CONFIRMED PIPELINE FAILURE DAY 25: brt-vs-light-rail-cost-2026 infographic queued for ~25th consecutive attempt since 2026-06-07. Retry #19 today. If not produced, automated retries should be permanently suspended pending manual diagnostic of the infographic-writing agent.",
     "CONFIRMED PIPELINE FAILURE DAY 25: drafts/articles/ has never had a file produced across the entire site history. 0% article production rate for 25+ consecutive days. Manual diagnostic of the article-writing agent is long overdue.",
-    "NEW SIGNAL (2026-07-01): US lifts restrictions on Anthropic's most powerful AI models (NYT). Queued as Rank 1 article with transit-planning-AI angle -- first fresh news hook not previously covered."
+    "NEW SIGNAL (2026-07-01): US lifts restrictions on Anthropic's most powerful AI models (NYT). Queued as Rank 1 article with transit-planning-AI angle -- first fresh news hook not previously covered.",
+    "CRITICAL DAY 26 (2026-07-02): approved.json still empty since 2026-06-07. 26 consecutive days without a human approval. 5 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to system/approved.json.",
+    "BRT INFOGRAPHIC RETRY SUSPENDED (2026-07-02): brt-vs-light-rail-cost-2026 infographic automated retries suspended after ~20 consecutive failures since 2026-06-07. Manual diagnostic of infographic-writing agent required before re-queuing.",
+    "CONFIRMED PIPELINE FAILURE DAY 26 (2026-07-02): drafts/articles/ has never had a file produced in 26+ consecutive days of site history. 0% article production rate. Manual diagnostic of article-writing agent is long overdue.",
+    "NEW SIGNAL (2026-07-02): Google loses fight over record $4.7B EU antitrust fine (HN today). Queued as Rank 1 article with transit-mapping-platform dependency angle.",
+    "NEW SIGNAL (2026-07-02): Single Transformer Layer matches full-parameter RL training (HN today). Queued as Rank 2 research brief with transit demand forecasting efficiency angle.",
+    "Google News RSS feed empty for 5th consecutive day (2026-07-02) -- confirmed persistent access/parsing issue. Manual check of feed URL required."
   ]
 }

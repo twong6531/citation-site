@@ -1,0 +1,89 @@
+{
+  "date": "2026-07-02",
+  "generated_at": "2026-07-02T14:08:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Google's $4.7B EU Antitrust Loss and Transit Mapping Platforms",
+      "angle": "Google's confirmed loss in the EU antitrust fine case (reported today on HN) sets a precedent for how Big Tech monopolies over mapping and transit data can be challenged. Frame for transit: what does it mean for agencies that depend on Google Maps Transit, Waze Carpool, and similar tools when the dominant provider faces structural remedies?",
+      "rationale": "Fresh breaking signal from HN #11 today (Google loses fight over record $4.7B EU antitrust fine). Not previously covered. Fits infrastructure policy niche. Connects Big Tech regulation to transit data dependency — an underexplored angle that differentiates the site from generic tech coverage. World Cup transit story has been queued 25+ times without production; swapping in a fresher news hook with stronger publication potential.",
+      "target_length": "long",
+      "slug": "google-eu-antitrust-transit-mapping-implications-2026",
+      "output_path": "drafts/articles/google-eu-antitrust-transit-mapping-implications-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "research",
+      "topic": "Efficient AI for Transit Demand Forecasting: Single-Layer Transformer Findings",
+      "angle": "HN today features a paper showing a single Transformer layer matches full-parameter RL training efficiency. Transit angle: transit agencies investing in demand-forecasting AI could massively reduce compute cost and deployment complexity. Tie to existing site coverage of AI-driven transit optimization (POMDP, electric bus timetable cascade).",
+      "rationale": "Trending on HN today (#4: 'Is One Layer Enough? A Single Transformer Layer Matches Full-Parameter RL Training'). Direct relevance to transit AI tooling and the site's research brief format. Fresh, novel academic signal. Extends the existing AI-in-transit thread without repeating prior topics.",
+      "target_length": "medium",
+      "slug": "efficient-ai-single-transformer-transit-demand-forecasting-2026",
+      "output_path": "drafts/articles/efficient-ai-single-transformer-transit-demand-forecasting-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "infographic",
+      "topic": "AI Tools in Transit Operations: A Visual Field Guide",
+      "angle": "Map the current landscape of AI tools used in transit operations — demand forecasting, schedule optimization, real-time disruption detection, passenger information systems. Avoids the failing brt-vs-light-rail topic; fresh visual tied to today's AI efficiency signal and the site's existing AI+transit coverage.",
+      "rationale": "brt-vs-light-rail-cost-2026 infographic has failed for ~20 consecutive production cycles. Suspending that automated retry (recommend manual diagnostic). Replacing with a fresh, achievable scope: a field guide format has clearer information architecture and less data-precision risk. Ties directly to today's AI trend signals.",
+      "target_length": "medium",
+      "slug": "ai-tools-transit-operations-visual-guide-2026",
+      "output_path": "drafts/infographics/ai-tools-transit-operations-visual-guide-2026.svg"
+    },
+    {
+      "rank": 4,
+      "type": "article",
+      "topic": "AI Deregulation and Transit Planning Tools: Impact of Lifting Anthropic Model Restrictions",
+      "angle": "Carry-forward from 2026-07-01 rank 1 queue item. US lifts restrictions on Anthropic's most powerful AI models (per NYT). How does this affect transit planning tools that use Claude or similar models for GTFS analysis, ridership modeling, and infrastructure cost estimation? Practical, concrete angle for the transit niche.",
+      "rationale": "Queued 2026-07-01 as rank 1 but not produced. Still timely and not yet published. Complements today's Google antitrust and AI efficiency signals — together they tell a coherent story of AI governance in motion. Not covered anywhere in site history.",
+      "target_length": "long",
+      "slug": "ai-deregulation-anthropic-transit-planning-tools-2026",
+      "output_path": "drafts/articles/ai-deregulation-anthropic-transit-planning-tools-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "Big Tech Antitrust and Public Transit Technology: Why It Matters",
+      "angle": "Short explainer companion to the Google EU antitrust article. Explains the basics: why transit agencies are increasingly dependent on Big Tech data platforms, what happens to that data under monopoly enforcement, and what alternative transit data ecosystems exist (GTFS, Open Street Map, GTFS-RT). Builds on today's news hook with an educational format.",
+      "rationale": "Companion piece to rank 1 article, shorter format, fills the explainer gap. Encyclopedic angle fits existing site architecture. Topic not covered in site history.",
+      "target_length": "short",
+      "slug": "big-tech-antitrust-public-transit-tech-explainer-2026",
+      "output_path": "drafts/articles/big-tech-antitrust-public-transit-tech-explainer-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "status": "SUSPENDED_PENDING_MANUAL_DIAGNOSTIC",
+      "consecutive_failures": 20,
+      "note": "Automated retry suspended as of 2026-07-02 after ~20 consecutive failures since 2026-06-07. Manual diagnostic of infographic-writing agent required before re-queuing."
+    }
+  ],
+  "skip_topics": [
+    "SoCal transit intelligence (produced daily, covered today via transit brief pipeline)",
+    "World Cup 2026 knockout stage transit operations (queued 25+ times, group stage window closed, story stale)",
+    "Physics-anchored ML electric bus timetable cascade (covered 2026-06-29)",
+    "Q3 2026 transit funding federal reauthorization (covered 2026-06-27+)",
+    "TOD walkability thresholds (covered 2026-06-15)",
+    "EV bus equity gap (covered 2026-06-15)",
+    "Permanent ridership shift post-pandemic (covered 2026-06-15)",
+    "Hub covering location problem transit (covered 2026-06-26)",
+    "GPS mobility data representativeness bias (covered 2026-06-24)"
+  ],
+  "trend_signals": [
+    "Google loses $4.7B EU antitrust fine — Big Tech accountability escalation (HN today)",
+    "Kimi K2.7 Code now in GitHub Copilot — AI coding tools going mainstream, competitive race intensifying",
+    "Single Transformer Layer matches full-parameter RL training — efficiency breakthrough in AI model architecture",
+    "US AI deregulation momentum — Anthropic model restrictions lifted (carry-forward from 2026-07-01)",
+    "Google News RSS returning empty results for 5th consecutive day — possible feed access/parsing issue needing manual check"
+  ],
+  "pipeline_alerts": [
+    "CRITICAL DAY 26: approved.json empty since 2026-06-07. 26 consecutive days without a human approval. 5 QC-passed scripts remain ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. REQUIRES HUMAN ACTION — add slugs to system/approved.json.",
+    "BRT infographic automated retries SUSPENDED after ~20 consecutive failures. Manual diagnostic of infographic-writing agent required.",
+    "drafts/articles/ has never had a file produced in 26+ days of site history. 0% article production rate. Manual diagnostic of article-writing agent required.",
+    "VIDEO SCRIPTS ON HOLD: 5 QC-passed scripts and 5 needs-revision in backlog. No new scripts until approved.json is updated.",
+    "Google News RSS feed empty for 5th consecutive day — check feed URL/parsing logic."
+  ]
+}
