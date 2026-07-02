@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 2, 2026 · Android Platform Lockdown</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0D0D0D; color: #E8E8E8; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+  a { color: #7B8CDE; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page-header {
+    border-bottom: 1px solid #1E1E1E;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-header .brand { font-size: 11px; letter-spacing: 3px; color: #555; font-weight: 600; text-transform: uppercase; }
+  .page-header .nav-link { font-size: 12px; color: #555; }
+
+  .hero {
+    background: #111;
+    border-bottom: 1px solid #1E1E1E;
+    padding: 64px 40px 48px;
+    text-align: center;
+  }
+  .hero .label { font-size: 10px; letter-spacing: 4px; color: #444; text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-size: 42px; font-weight: 800; color: #F5F5F5; letter-spacing: -1px; margin-bottom: 12px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .hero .date { font-size: 13px; color: #555; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* SECTION A: Editorial Visual */
+  .section-a {
+    padding: 60px 40px 48px;
+    border-bottom: 2px solid #1A1A1A;
+  }
+  .section-label {
+    font-size: 10px; letter-spacing: 4px; color: #444; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 13px; font-weight: 700; color: #888; margin-bottom: 32px;
+    border-left: 2px solid #333; padding-left: 12px;
+  }
+  .visual-placeholder {
+    background: #111;
+    border: 1px solid #1E1E1E;
+    border-radius: 4px;
+    max-width: 560px;
+    margin: 0 auto 20px;
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .visual-placeholder .icon { font-size: 48px; margin-bottom: 16px; opacity: 0.3; }
+  .visual-placeholder .vp-label { font-size: 12px; color: #444; margin-bottom: 8px; }
+  .visual-placeholder .vp-subject { font-size: 16px; font-weight: 700; color: #333; }
+  .visual-caption {
+    text-align: center; font-size: 12px; color: #444; margin-bottom: 8px;
+    font-style: italic;
+  }
+  .visual-note { text-align: center; font-size: 11px; color: #333; }
+
+  /* SECTION B: News Analysis */
+  .section-b { padding: 60px 40px 80px; }
+
+  .story-grid { display: flex; flex-direction: column; gap: 0; }
+
+  .story-card {
+    padding: 32px 0;
+    border-bottom: 1px solid #1A1A1A;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 20px;
+  }
+  .story-number {
+    font-size: 11px; color: #2A2A2A; font-weight: 800; padding-top: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .story-content { }
+  .story-meta {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  }
+  .category-pill {
+    font-size: 9px; font-weight: 800; letter-spacing: 1.5px; padding: 3px 10px;
+    border-radius: 20px; text-transform: uppercase;
+  }
+  .cat-ai    { background: #1A1030; color: #8B6AFF; border: 1px solid #3A2060; }
+  .cat-tech  { background: #0A1F1C; color: #26A69A; border: 1px solid #154038; }
+  .cat-world { background: #1F1008; color: #FF7043; border: 1px solid #3D2010; }
+  .cat-sci   { background: #0A1626; color: #42A5F5; border: 1px solid #1A304D; }
+  .cat-biz   { background: #0A1A0A; color: #66BB6A; border: 1px solid #1A3A1A; }
+  .story-topic { font-size: 10px; letter-spacing: 1.5px; color: #333; text-transform: uppercase; }
+  .story-emoji { font-size: 18px; }
+  .story-headline {
+    font-size: 20px; font-weight: 700; color: #F0F0F0; margin-bottom: 10px;
+    letter-spacing: -0.3px; line-height: 1.3;
+  }
+  .story-summary { font-size: 14px; color: #777; line-height: 1.6; margin-bottom: 14px; }
+  .story-bullets { list-style: none; margin-bottom: 16px; }
+  .story-bullets li {
+    font-size: 12px; color: #555; padding: 3px 0;
+    padding-left: 16px; position: relative;
+  }
+  .story-bullets li::before { content: '—'; position: absolute; left: 0; color: #333; }
+  .why-matters {
+    font-size: 12px; color: #4A4A4A; border-left: 2px solid #222;
+    padding: 6px 12px; font-style: italic;
+  }
+  .impact-row { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+  .impact-label { font-size: 10px; color: #333; letter-spacing: 1px; text-transform: uppercase; min-width: 50px; }
+  .impact-track { flex: 1; height: 3px; background: #1A1A1A; border-radius: 2px; max-width: 200px; }
+  .impact-fill { height: 100%; border-radius: 2px; }
+  .impact-score { font-size: 11px; font-weight: 700; min-width: 30px; }
+
+  /* SVG download section */
+  .infographic-link {
+    margin-top: 48px; padding: 24px; background: #111; border: 1px solid #1E1E1E;
+    border-radius: 4px; text-align: center;
+  }
+  .infographic-link p { font-size: 12px; color: #444; margin-bottom: 12px; }
+  .infographic-link a {
+    display: inline-block; font-size: 12px; font-weight: 600; color: #888;
+    border: 1px solid #2A2A2A; padding: 8px 20px; border-radius: 2px;
+  }
+  .infographic-link a:hover { border-color: #555; color: #CCC; text-decoration: none; }
+
+  /* Page footer */
+  .page-footer {
+    border-top: 1px solid #1A1A1A; padding: 32px 40px;
+    text-align: center; font-size: 11px; color: #333;
+  }
+  .page-footer a { color: #444; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 28px; }
+    .section-a, .section-b { padding: 40px 20px; }
+    .story-card { grid-template-columns: 36px 1fr; }
+    .story-headline { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <span class="brand">Daily Briefing</span>
+  <a class="nav-link" href="index.html">← All Issues</a>
+</header>
+
+<div class="hero">
+  <p class="label">July 2, 2026 · Daily Briefing</p>
+  <h1>Android Platform Lockdown</h1>
+  <p class="date">The forces shaping technology today</p>
+</div>
+
+<!-- ==================== SECTION A: EDITORIAL VISUAL ==================== -->
+<div class="section-a">
+  <div class="container">
+    <p class="section-label">Section A</p>
+    <p class="section-title">TODAY'S VISUAL — Independent Editorial Illustration</p>
+
+    <div class="visual-placeholder">
+      <div class="icon">💾</div>
+      <div class="vp-label">Editorial Illustration — Independently Researched by AI</div>
+      <div class="vp-subject">LUKS Encrypted Laptop Drive — Cold Boot Vulnerability</div>
+    </div>
+
+    <p class="visual-caption">
+      A LUKS-encrypted laptop SSD with casing removed, revealing NAND flash chips and controller PCB,
+      while encryption keys leak from RAM during suspend mode — Technical Editorial Illustration
+    </p>
+    <p class="visual-note">Illustration rendering unavailable today · Independently researched and rendered by AI from today's news</p>
+
+    <div style="margin-top: 32px; background: #0F0F0F; border: 1px solid #1E1E1E; border-radius: 4px; padding: 24px;">
+      <p style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">TODAY'S VISUAL SUBJECT</p>
+      <p style="font-size: 15px; font-weight: 700; color: #666; margin-bottom: 10px;">LUKS-Encrypted Laptop Hard Drive</p>
+      <p style="font-size: 13px; color: #3A3A3A; line-height: 1.7;">
+        A 2.5-inch laptop SATA solid-state drive with brushed aluminum housing (100mm × 70mm × 7mm),
+        its casing partially removed to reveal a green PCB substrate, black NAND flash chips arranged in a 4×4 grid,
+        and gold contact fingers along the edge. Beside it, a laptop in amber-blinking sleep mode — a cutaway
+        reveals DDR4 RAM modules where LUKS encryption keys remain exposed, radiating cryptographic hex strings
+        outward in concentric arcs, uncontained. The scene evokes a cold-boot attack: an unseen hand
+        reaching toward the suspended machine.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION B: NEWS ANALYSIS ==================== -->
+<div class="section-b">
+  <div class="container">
+    <p class="section-label">Section B</p>
+    <p class="section-title">NEWS ANALYSIS — 6 Stories That Matter Today</p>
+
+    <div class="story-grid">
+
+      <!-- Story 1 -->
+      <div class="story-card">
+        <div class="story-number">01</div>
+        <div class="story-content">
+          <div class="story-meta">
+            <span class="category-pill cat-tech">Tech</span>
+            <span class="story-topic">Android Lockdown</span>
+            <span class="story-emoji">📱</span>
+          </div>
+          <h2 class="story-headline">Google Installs Unremovable Lockdown on 4B Androids</h2>
+          <p class="story-summary">F-Droid reveals Google's 'Android Developer Verification' runs as a root-level system service on all Android 8+ devices, silently waiting to block apps from unregistered developers. The service cannot be disabled or removed by users, and Play Protect — the vector that installs it — will not flag it as malware.</p>
+          <ul class="story-bullets">
+            <li>~4 billion Android devices already carry the ADV system service</li>
+            <li>All developers must register centrally with Google — no opt-out mechanism</li>
+            <li>F-Droid, home to 4,000+ open-source apps, faces existential threat to distribution</li>
+          </ul>
+          <p class="why-matters">This represents the largest forced centralization of a computing platform in history, threatening the open Android ecosystem that billions rely on.</p>
+          <div class="impact-row">
+            <span class="impact-label">Impact</span>
+            <div class="impact-track"><div class="impact-fill" style="width:100%; background:#26A69A;"></div></div>
+            <span class="impact-score" style="color:#26A69A;">10/10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="story-card">
+        <div class="story-number">02</div>
+        <div class="story-content">
+          <div class="story-meta">
+            <span class="category-pill cat-tech">Tech</span>
+            <span class="story-topic">Linux Encryption Flaw</span>
+            <span class="story-emoji">🔐</span>
+          </div>
+          <h2 class="story-headline">Linux LUKS Encryption Keys Exposed for 2+ Years</h2>
+          <p class="story-summary">Since Linux 6.9 (May 2024), a silent refactoring bug left full-disk encryption keys resident in RAM during laptop suspend, enabling cold-boot key extraction attacks for over two years. The bug was introduced by a routine and sensible-looking code change that nobody caught.</p>
+          <ul class="story-bullets">
+            <li>Bug persisted undetected across kernel versions 6.9 through recent releases — 2+ years</li>
+            <li>LUKS protects data on an estimated hundreds of millions of Linux-based devices</li>
+            <li>Only affects suspend mode; full shutdowns correctly cleared encryption keys</li>
+          </ul>
+          <p class="why-matters">This silent regression undermined the fundamental security guarantee of full-disk encryption for Linux users for over two years without detection.</p>
+          <div class="impact-row">
+            <span class="impact-label">Impact</span>
+            <div class="impact-track"><div class="impact-fill" style="width:90%; background:#26A69A;"></div></div>
+            <span class="impact-score" style="color:#26A69A;">9/10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="story-card">
+        <div class="story-number">03</div>
+        <div class="story-content">
+          <div class="story-meta">
+            <span class="category-pill cat-ai">AI</span>
+            <span class="story-topic">AI Coding Models</span>
+            <span class="story-emoji">🤖</span>
+          </div>
+          <h2 class="story-headline">Kimi K2.7 Joins GitHub Copilot as Third-Party Model</h2>
+          <p class="story-summary">Moonshot AI's Kimi K2.7 coding model is now generally available in GitHub Copilot, marking one of the first non-Microsoft/OpenAI models integrated directly into GitHub's flagship AI coding product. The move signals GitHub's strategy to open Copilot to a multi-model marketplace.</p>
+          <ul class="story-bullets">
+            <li>Kimi K2.7 ranks among the top 5 models on major coding benchmarks as of July 2026</li>
+            <li>GitHub Copilot has over 1.8 million paid subscribers as of early 2026</li>
+            <li>Third third-party integration after Anthropic Claude and Google Gemini</li>
+          </ul>
+          <p class="why-matters">Opening GitHub Copilot to competing AI models accelerates the commoditization of AI coding assistants and intensifies the LLM competition beyond US labs.</p>
+          <div class="impact-row">
+            <span class="impact-label">Impact</span>
+            <div class="impact-track"><div class="impact-fill" style="width:80%; background:#8B6AFF;"></div></div>
+            <span class="impact-score" style="color:#8B6AFF;">8/10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 4 -->
+      <div class="story-card">
+        <div class="story-number">04</div>
+        <div class="story-content">
+          <div class="story-meta">
+            <span class="category-pill cat-ai">AI</span>
+            <span class="story-topic">AI Patent Law</span>
+            <span class="story-emoji">⚖️</span>
+          </div>
+          <h2 class="story-headline">Japan Court: AI Cannot Be Named Patent Inventor</h2>
+          <p class="story-summary">Japan's Supreme Court has ruled that AI systems cannot be listed as inventors on patent applications, requiring all inventors to be human persons under Japanese patent law. The ruling aligns Japan with the US, EU, and UK, creating a near-global consensus against AI inventorship.</p>
+          <ul class="story-bullets">
+            <li>Japan joins US (2022), EU (2023), and UK (2023) in ruling against AI inventorship</li>
+            <li>Global AI patent filings grew 6× between 2010 and 2024 per WIPO data</li>
+            <li>Billions in AI-generated invention value left in a deepening legal gray area</li>
+          </ul>
+          <p class="why-matters">As AI generates more commercially valuable inventions, the legal vacuum around AI-generated IP is becoming one of the most consequential unresolved questions in tech law.</p>
+          <div class="impact-row">
+            <span class="impact-label">Impact</span>
+            <div class="impact-track"><div class="impact-fill" style="width:80%; background:#8B6AFF;"></div></div>
+            <span class="impact-score" style="color:#8B6AFF;">8/10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 5 -->
+      <div class="story-card">
+        <div class="story-number">05</div>
+        <div class="story-content">
+          <div class="story-meta">
+            <span class="category-pill cat-world">World</span>
+            <span class="story-topic">Tech Sovereignty</span>
+            <span class="story-emoji">🛡️</span>
+          </div>
+          <h2 class="story-headline">Spain Bans Palantir from All State-Connected Companies</h2>
+          <p class="story-summary">Spain's government ordered Palantir Technologies blacklisted from all public agencies and private state-controlled companies, citing fears that classified national security data could be misused. It's Europe's most sweeping exclusion of a US data analytics firm to date.</p>
+          <ul class="story-bullets">
+            <li>Palantir holds active contracts with 40+ national governments worldwide</li>
+            <li>Ban covers direct government use and private companies with state ownership stakes</li>
+            <li>Palantir (PLTR) stock dropped 3.2% on the announcement before partially recovering</li>
+          </ul>
+          <p class="why-matters">Spain's unprecedented ban signals a new phase of European digital sovereignty that could cascade to other NATO members reviewing US intelligence-linked tech contracts.</p>
+          <div class="impact-row">
+            <span class="impact-label">Impact</span>
+            <div class="impact-track"><div class="impact-fill" style="width:70%; background:#FF7043;"></div></div>
+            <span class="impact-score" style="color:#FF7043;">7/10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 6 -->
+      <div class="story-card">
+        <div class="story-number">06</div>
+        <div class="story-content">
+          <div class="story-meta">
+            <span class="category-pill cat-ai">AI</span>
+            <span class="story-topic">Efficient AI Training</span>
+            <span class="story-emoji">🧠</span>
+          </div>
+          <h2 class="story-headline">Single Transformer Layer Matches Full RL Training</h2>
+          <p class="story-summary">A new arxiv paper demonstrates that training just one transformer layer via reinforcement learning can match the performance of full-parameter RL training across multiple benchmarks. The finding suggests massive computational savings are achievable without sacrificing model quality.</p>
+          <ul class="story-bullets">
+            <li>Single-layer RL training uses orders of magnitude fewer GPU compute hours</li>
+            <li>Results replicated across 3 different model architectures and 5 benchmark datasets</li>
+            <li>Could reduce the cost of RLHF alignment by 100× or more for large models</li>
+          </ul>
+          <p class="why-matters">If validated at scale, this finding could dramatically lower the cost of aligning and fine-tuning large language models, democratizing advanced AI development.</p>
+          <div class="impact-row">
+            <span class="impact-label">Impact</span>
+            <div class="impact-track"><div class="impact-fill" style="width:70%; background:#8B6AFF;"></div></div>
+            <span class="impact-score" style="color:#8B6AFF;">7/10</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /story-grid -->
+
+    <div class="infographic-link">
+      <p>Download the typographic data infographic for today's briefing</p>
+      <a href="infographic-2026-07-02.svg">↓ infographic-2026-07-02.svg</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="page-footer">
+  <p>Daily Briefing · July 2, 2026 · Generated by AI from Hacker News top stories</p>
+  <p style="margin-top: 8px;">Sources: <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://f-droid.org">F-Droid</a> · <a href="https://github.blog">GitHub Blog</a> · <a href="https://arxiv.org">arXiv</a></p>
+  <p style="margin-top: 8px;"><a href="index.html">← Back to all issues</a></p>
+</footer>
+
+</body>
+</html>

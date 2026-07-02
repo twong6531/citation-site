@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" width="800" height="1400" font-family="'Helvetica Neue', Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+
+  <!-- Top black bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- HEADER -->
+  <text x="400" y="36" text-anchor="middle" font-size="11" letter-spacing="3" fill="#999999" font-weight="500">DAILY BRIEFING</text>
+  <text x="400" y="72" text-anchor="middle" font-size="30" font-weight="700" fill="#111111" letter-spacing="-0.5">Android Platform Lockdown</text>
+  <text x="400" y="96" text-anchor="middle" font-size="13" fill="#AAAAAA" font-weight="400">July 2, 2026</text>
+  <line x1="40" y1="116" x2="760" y2="116" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="400" y="132" text-anchor="middle" font-size="10" fill="#BBBBBB" letter-spacing="1.5">TOP STORIES OF THE DAY</text>
+
+  <!-- STORY 1 - Android Lockdown (Tech) -->
+  <rect x="40" y="148" width="720" height="176" fill="#F7F7F5"/>
+  <text x="56" y="172" font-size="11" fill="#AAAAAA" font-weight="600">01</text>
+  <!-- Category pill -->
+  <rect x="76" y="158" width="46" height="20" rx="10" fill="#00897B"/>
+  <text x="99" y="172" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">TECH</text>
+  <!-- Main topic label -->
+  <text x="132" y="172" font-size="10" fill="#999999" font-weight="500" letter-spacing="1">ANDROID LOCKDOWN</text>
+  <!-- Headline -->
+  <text x="56" y="198" font-size="16" font-weight="700" fill="#111111">Google Installs Unremovable Lockdown on 4B Androids</text>
+  <!-- Summary -->
+  <text x="56" y="218" font-size="12" fill="#666666">F-Droid reveals ADV runs as root-level system service on all Android 8+ devices, waiting</text>
+  <text x="56" y="233" font-size="12" fill="#666666">to block unregistered developers. Users cannot disable or remove it.</text>
+  <!-- Bullets -->
+  <text x="56" y="254" font-size="11" fill="#444444">&#x2022; ~4 billion Android devices already carry the ADV system service</text>
+  <text x="56" y="269" font-size="11" fill="#444444">&#x2022; All developers must register centrally with Google — no opt-out</text>
+  <text x="56" y="284" font-size="11" fill="#444444">&#x2022; F-Droid, home to 4,000+ open-source apps, faces existential threat</text>
+  <!-- Impact bar -->
+  <text x="56" y="306" font-size="10" fill="#AAAAAA" letter-spacing="0.5">IMPACT</text>
+  <rect x="100" y="296" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="100" y="296" width="200" height="6" rx="3" fill="#00897B"/>
+  <text x="308" y="305" font-size="10" fill="#00897B" font-weight="700">10/10</text>
+  <!-- Divider -->
+  <line x1="40" y1="324" x2="760" y2="324" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 2 - AI Coding Models (AI) -->
+  <rect x="40" y="328" width="720" height="176" fill="#F7F7F5"/>
+  <text x="56" y="352" font-size="11" fill="#AAAAAA" font-weight="600">02</text>
+  <rect x="76" y="338" width="28" height="20" rx="10" fill="#6C47FF"/>
+  <text x="90" y="352" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">AI</text>
+  <text x="114" y="352" font-size="10" fill="#999999" font-weight="500" letter-spacing="1">AI CODING MODELS</text>
+  <text x="56" y="378" font-size="16" font-weight="700" fill="#111111">Kimi K2.7 Joins GitHub Copilot as Third-Party Model</text>
+  <text x="56" y="398" font-size="12" fill="#666666">Moonshot AI's Kimi K2.7 is now available in GitHub Copilot, marking one of the first</text>
+  <text x="56" y="413" font-size="12" fill="#666666">non-Microsoft/OpenAI models integrated into GitHub's flagship AI coding product.</text>
+  <text x="56" y="434" font-size="11" fill="#444444">&#x2022; Kimi K2.7 ranks top 5 on major coding benchmarks as of July 2026</text>
+  <text x="56" y="449" font-size="11" fill="#444444">&#x2022; GitHub Copilot has over 1.8 million paid subscribers</text>
+  <text x="56" y="464" font-size="11" fill="#444444">&#x2022; Third third-party model after Anthropic Claude and Google Gemini</text>
+  <text x="56" y="486" font-size="10" fill="#AAAAAA" letter-spacing="0.5">IMPACT</text>
+  <rect x="100" y="476" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="100" y="476" width="160" height="6" rx="3" fill="#6C47FF"/>
+  <text x="308" y="485" font-size="10" fill="#6C47FF" font-weight="700">8/10</text>
+  <line x1="40" y1="504" x2="760" y2="504" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 3 - Linux Encryption Flaw (Tech) -->
+  <rect x="40" y="508" width="720" height="176" fill="#F7F7F5"/>
+  <text x="56" y="532" font-size="11" fill="#AAAAAA" font-weight="600">03</text>
+  <rect x="76" y="518" width="46" height="20" rx="10" fill="#00897B"/>
+  <text x="99" y="532" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">TECH</text>
+  <text x="132" y="532" font-size="10" fill="#999999" font-weight="500" letter-spacing="1">LINUX ENCRYPTION FLAW</text>
+  <text x="56" y="558" font-size="16" font-weight="700" fill="#111111">Linux LUKS Encryption Keys Exposed for 2+ Years</text>
+  <text x="56" y="578" font-size="12" fill="#666666">Since Linux 6.9 (May 2024), a silent refactoring bug left full-disk encryption keys</text>
+  <text x="56" y="593" font-size="12" fill="#666666">resident in RAM during suspend, enabling cold-boot key extraction attacks.</text>
+  <text x="56" y="614" font-size="11" fill="#444444">&#x2022; Bug persisted undetected across kernel versions 6.9 to recent releases</text>
+  <text x="56" y="629" font-size="11" fill="#444444">&#x2022; LUKS protects data on hundreds of millions of Linux-based devices</text>
+  <text x="56" y="644" font-size="11" fill="#444444">&#x2022; Only affects suspend mode; full shutdowns were unaffected</text>
+  <text x="56" y="666" font-size="10" fill="#AAAAAA" letter-spacing="0.5">IMPACT</text>
+  <rect x="100" y="656" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="100" y="656" width="180" height="6" rx="3" fill="#00897B"/>
+  <text x="308" y="665" font-size="10" fill="#00897B" font-weight="700">9/10</text>
+  <line x1="40" y1="684" x2="760" y2="684" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 4 - AI Patent Law (AI) -->
+  <rect x="40" y="688" width="720" height="176" fill="#F7F7F5"/>
+  <text x="56" y="712" font-size="11" fill="#AAAAAA" font-weight="600">04</text>
+  <rect x="76" y="698" width="28" height="20" rx="10" fill="#6C47FF"/>
+  <text x="90" y="712" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">AI</text>
+  <text x="114" y="712" font-size="10" fill="#999999" font-weight="500" letter-spacing="1">AI PATENT LAW</text>
+  <text x="56" y="738" font-size="16" font-weight="700" fill="#111111">Japan Court: AI Cannot Be Named Patent Inventor</text>
+  <text x="56" y="758" font-size="12" fill="#666666">Japan's Supreme Court rules AI systems cannot be listed as inventors on patent</text>
+  <text x="56" y="773" font-size="12" fill="#666666">applications, aligning Japan with the US, EU, and UK in rejecting AI inventorship.</text>
+  <text x="56" y="794" font-size="11" fill="#444444">&#x2022; Japan joins US (2022), EU (2023), and UK (2023) against AI inventorship</text>
+  <text x="56" y="809" font-size="11" fill="#444444">&#x2022; Global AI patent filings grew 6x between 2010 and 2024 (WIPO data)</text>
+  <text x="56" y="824" font-size="11" fill="#444444">&#x2022; Billions in AI-generated invention value left in legal gray area</text>
+  <text x="56" y="846" font-size="10" fill="#AAAAAA" letter-spacing="0.5">IMPACT</text>
+  <rect x="100" y="836" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="100" y="836" width="160" height="6" rx="3" fill="#6C47FF"/>
+  <text x="308" y="845" font-size="10" fill="#6C47FF" font-weight="700">8/10</text>
+  <line x1="40" y1="864" x2="760" y2="864" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 5 - Tech Sovereignty (World) -->
+  <rect x="40" y="868" width="720" height="176" fill="#F7F7F5"/>
+  <text x="56" y="892" font-size="11" fill="#AAAAAA" font-weight="600">05</text>
+  <rect x="76" y="878" width="54" height="20" rx="10" fill="#E65100"/>
+  <text x="103" y="892" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">WORLD</text>
+  <text x="140" y="892" font-size="10" fill="#999999" font-weight="500" letter-spacing="1">TECH SOVEREIGNTY</text>
+  <text x="56" y="918" font-size="16" font-weight="700" fill="#111111">Spain Bans Palantir from All State-Connected Companies</text>
+  <text x="56" y="938" font-size="12" fill="#666666">Spain ordered Palantir blacklisted from all public agencies and private state-controlled</text>
+  <text x="56" y="953" font-size="12" fill="#666666">companies, citing risks of classified national security data misuse.</text>
+  <text x="56" y="974" font-size="11" fill="#444444">&#x2022; Palantir holds contracts with 40+ national governments worldwide</text>
+  <text x="56" y="989" font-size="11" fill="#444444">&#x2022; Ban covers direct government use and state-owned private companies</text>
+  <text x="56" y="1004" font-size="11" fill="#444444">&#x2022; Palantir (PLTR) stock dropped 3.2% on the announcement</text>
+  <text x="56" y="1026" font-size="10" fill="#AAAAAA" letter-spacing="0.5">IMPACT</text>
+  <rect x="100" y="1016" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="100" y="1016" width="140" height="6" rx="3" fill="#E65100"/>
+  <text x="308" y="1025" font-size="10" fill="#E65100" font-weight="700">7/10</text>
+  <line x1="40" y1="1044" x2="760" y2="1044" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- STORY 6 - Efficient AI Training (AI) -->
+  <rect x="40" y="1048" width="720" height="176" fill="#F7F7F5"/>
+  <text x="56" y="1072" font-size="11" fill="#AAAAAA" font-weight="600">06</text>
+  <rect x="76" y="1058" width="28" height="20" rx="10" fill="#6C47FF"/>
+  <text x="90" y="1072" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">AI</text>
+  <text x="114" y="1072" font-size="10" fill="#999999" font-weight="500" letter-spacing="1">EFFICIENT AI TRAINING</text>
+  <text x="56" y="1098" font-size="16" font-weight="700" fill="#111111">Single Transformer Layer Matches Full RL Training</text>
+  <text x="56" y="1118" font-size="12" fill="#666666">New arxiv paper shows training just one transformer layer via RL can match full-parameter</text>
+  <text x="56" y="1133" font-size="12" fill="#666666">RL training, suggesting 100x compute savings may be achievable.</text>
+  <text x="56" y="1154" font-size="11" fill="#444444">&#x2022; Single-layer RL uses orders of magnitude fewer GPU compute hours</text>
+  <text x="56" y="1169" font-size="11" fill="#444444">&#x2022; Results replicated across 3 architectures and 5 benchmark datasets</text>
+  <text x="56" y="1184" font-size="11" fill="#444444">&#x2022; Could reduce RLHF alignment cost by 100x or more for large models</text>
+  <text x="56" y="1206" font-size="10" fill="#AAAAAA" letter-spacing="0.5">IMPACT</text>
+  <rect x="100" y="1196" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="100" y="1196" width="140" height="6" rx="3" fill="#6C47FF"/>
+  <text x="308" y="1205" font-size="10" fill="#6C47FF" font-weight="700">7/10</text>
+  <line x1="40" y1="1224" x2="760" y2="1224" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- FOOTER -->
+  <text x="400" y="1256" text-anchor="middle" font-size="11" fill="#BBBBBB">Generated by AI · Daily Briefing · July 2, 2026</text>
+  <text x="400" y="1275" text-anchor="middle" font-size="10" fill="#CCCCCC">Sources: Hacker News, F-Droid, Japan News, GitHub Blog, Clash Report, arXiv</text>
+
+  <!-- Bottom black bar -->
+  <rect x="0" y="1293" width="800" height="3" fill="#111111"/>
+</svg>
