@@ -1,0 +1,23 @@
+{
+  "file": "docs/transit-2026-07-02.html",
+  "type": "article",
+  "reviewed_at": "2026-07-02T18:45:00Z",
+  "verdict": "PASS",
+  "score": 87,
+  "checks_passed": [
+    "Word count: ~3,500+ words across 10 stories, agency status board, and 5 emerging themes — well exceeds 600-word minimum",
+    "Sources: 10 unique inline source links (one per story) plus a comprehensive footer listing 13+ named outlets. Sources are specific and include smartcitiesdive.com, city-journal.org, planetizen.com, urbanize.la, laist.com, thesource.metro.net, metro-magazine.com, newspress.com. Each claim maps directly to its source.",
+    "No placeholder text: no Lorem ipsum, TODO, [INSERT], or TBD found",
+    "No AI tells: no 'As an AI', 'I cannot', 'certainly', or 'I'd be happy to' found",
+    "HTML structure: complete DOCTYPE, <html lang>, <head>, <body>, meta charset, meta viewport, and descriptive <title> present",
+    "Factual spot-check passed: LA Metro 6× fare payment surge at Coliseum station (cited), Sound Transit 280,000 riders June 19 (cited), Metrolink 20% cuts indefinite (cited), OCTA $2B+ budget (cited), Joby S4 specs (200 mph / ~150-mile range — accurate), CA HSR LA-Anaheim EIR draft covering ~33 miles (cited), Pacific Surfliner 11 daily roundtrips (cited), SCAG SB 79 map (cited). All facts are plausible and attributed.",
+    "Duplicate check: topic and story content are distinct from transit-2026-07-01.html published yesterday; no story overlap identified",
+    "Image fallbacks: all external img elements include onerror gradient fallback — page degrades gracefully if external sources change URLs"
+  ],
+  "checks_failed": [
+    "Navigation: the nav bar does not include a direct link back to index.html. It links to transit.html (archive) and an external site (thesource.metro.net). Users on this page cannot navigate to the main site index without going through transit.html as an intermediate step. Minor UX gap, not a structural failure."
+  ],
+  "revision_notes": "Optional improvement: add an '← Home' or '← Main Index' link pointing to index.html in the nav alongside the existing 'Archive' link. Not required for publication.",
+  "fail_reason": null,
+  "approved_for_publish": true
+}

@@ -1,0 +1,23 @@
+{
+  "file": "docs/2026-07-02.html",
+  "type": "article",
+  "reviewed_at": "2026-07-02T18:45:00Z",
+  "verdict": "REVISE",
+  "score": 72,
+  "checks_passed": [
+    "Word count: ~955 words of actual content across 6 stories — exceeds 600-word minimum",
+    "No placeholder text: no Lorem ipsum, TODO, [INSERT], or TBD found",
+    "No AI tells: no 'As an AI', 'I cannot', 'certainly', or 'I'd be happy to' found",
+    "HTML structure: complete DOCTYPE, <html lang>, <head>, <body>, meta charset, meta viewport, and descriptive <title> present",
+    "Navigation: '← All Issues' link in page header routes back to index.html",
+    "Duplicate check: this daily briefing topic (Android Platform Lockdown / tech news) does not duplicate any item published in the last 14 days per memory.json"
+  ],
+  "checks_failed": [
+    "Sources — no inline citations per story: the footer lists four sources (Hacker News, F-Droid, GitHub Blog, arXiv) but no individual story contains a hyperlink or bracketed citation. Readers cannot trace a specific claim back to its source without knowing which story maps to which source.",
+    "Story 1 factual flag — extraordinary claim from a single interested party: 'Google Installs Unremovable Lockdown on 4B Androids' rests entirely on F-Droid's own announcement. F-Droid is a directly threatened party with a financial and ideological incentive to frame this story alarmistically. The specific claim that ~4B Android 8+ devices 'already carry' the ADV system service and that users 'cannot disable or remove' it is not corroborated by any independent Android security researcher, major tech publication (e.g., Ars Technica, The Verge), or Google's own disclosures. The editorial framing 'largest forced centralization of a computing platform in history' is a historic superlative that requires more than one interested-party press release. Impact score of 10/10 is premature without independent verification.",
+    "Section A visual: editorial illustration section is an empty placeholder reading 'Illustration rendering unavailable today.' The visual-placeholder box occupies a significant portion of the page layout but contains no image — leaving a dead zone in the above-the-fold design. This is a recurring production failure that should be noted as such rather than presented as a layout element."
+  ],
+  "revision_notes": "1. Add an inline source link (href) to each story — the existing footer sources map to stories but readers cannot tell which is which. At minimum: Story 1 → F-Droid announcement URL; Story 2 → Linux kernel CVE or security advisory URL; Story 3 → GitHub Blog Kimi K2.7 post; Story 4 → Japan court ruling coverage; Story 5 → Spanish government announcement; Story 6 → arXiv paper URL. 2. Story 1 requires independent corroboration before publication. Either (a) add a caveat that this claim originates from F-Droid and has not been independently confirmed, (b) add a second source (e.g., Ars Technica coverage, Android security researcher), or (c) downgrade impact score and soften 'largest forced centralization in history' to 'one of the most sweeping centralization moves in Android's open ecosystem.' 3. Section A placeholder: either remove the visual section entirely when image generation fails, or replace the placeholder box with a clear 'Visual unavailable today' notice that does not consume layout space.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

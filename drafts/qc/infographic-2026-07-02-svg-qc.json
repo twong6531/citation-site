@@ -1,0 +1,22 @@
+{
+  "file": "docs/infographic-2026-07-02.svg",
+  "type": "infographic",
+  "reviewed_at": "2026-07-02T18:45:00Z",
+  "verdict": "REVISE",
+  "score": 75,
+  "checks_passed": [
+    "Valid SVG: file begins with <svg xmlns=\"http://www.w3.org/2000/svg\"> — well-formed XML",
+    "viewBox attribute present: viewBox=\"0 0 800 1400\" with explicit width and height attributes",
+    "Meaningful text content: all 6 stories from the daily briefing are represented with headlines, 2-line summaries, 3 bullet points each, and impact scores with color-coded bars",
+    "Content accuracy: story headlines, summaries, bullets, and impact scores match the companion docs/2026-07-02.html article",
+    "Category color coding consistent: Tech = #00897B (teal), AI = #6C47FF (purple), World = #E65100 (orange) — matches HTML pill colors"
+  ],
+  "checks_failed": [
+    "PNG companion missing: no infographic-2026-07-02.png file exists in docs/. The QC criteria require either a PNG companion or an explicit SVG-only note. Neither condition is met. SVG-only files may not display correctly in all email clients, social share previews, or older PDF/print workflows.",
+    "Story ordering inconsistency vs. HTML article: in docs/2026-07-02.html, stories are ordered 1-Android, 2-LUKS Encryption, 3-Kimi K2.7, 4-Japan Patent, 5-Spain/Palantir, 6-Single Transformer Layer. In this SVG, the order is 1-Android, 2-Kimi K2.7, 3-LUKS Encryption (stories 2 and 3 are swapped). Readers who cross-reference the infographic and the article will find the story numbering inconsistent.",
+    "Empty canvas below bottom bar: the SVG viewBox height is 1400px but the bottom decorative bar is at y=1293 and footer text ends at y=1275. Approximately 107px of blank white canvas appear below the bottom bar with no content. Minor visual artifact but visible in SVG viewers."
+  ],
+  "revision_notes": "1. Generate or export a PNG companion at 800×1400px (or 1600×2800 @2×) and save as infographic-2026-07-02.png in docs/. 2. Reorder stories 2 and 3 to match the HTML article: move the LUKS Encryption block above the Kimi K2.7 block so story numbering is consistent across formats. 3. Either trim the SVG viewBox height to 1300 (or wherever the bottom bar is) or add a note/label in the empty space — the blank 107px below the bottom bar suggests a sizing error.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}

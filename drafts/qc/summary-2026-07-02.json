@@ -1,0 +1,42 @@
+{
+  "date": "2026-07-02",
+  "total_reviewed": 3,
+  "passed": 1,
+  "revise": 2,
+  "failed": 0,
+  "ready_to_publish": [
+    "transit-2026-07-02"
+  ],
+  "needs_revision": [
+    "2026-07-02 (daily briefing): Story 1 needs independent corroboration beyond F-Droid; add inline source links per story; fix editorial visual placeholder",
+    "infographic-2026-07-02: story ordering mismatch (stories 2/3 swapped vs. HTML), missing PNG companion, 107px empty canvas below bottom bar"
+  ],
+  "blocked": [],
+  "pipeline_notes": [
+    "PIPELINE FAILURE CONFIRMED DAY 27: drafts/articles/ remains empty — no article-writing agent output. This is the 27th consecutive day with zero files produced in drafts/articles/. The standard article production pipeline is broken.",
+    "No research article produced today (status: research=pending). docs/research-2026-07-02.html does not exist.",
+    "No new video scripts produced (status: video_scripts=no_new_tasks). Existing backlog of 5 QC-passed scripts still awaiting human approval in system/approved.json.",
+    "All three content files reviewed today were produced directly to docs/ by the briefing and transit agents — not via the standard drafts/ pipeline.",
+    "Editorial image generation still failing (Section A of 2026-07-02.html is an empty placeholder for the second or more consecutive day)."
+  ],
+  "qc_items": [
+    {
+      "file": "docs/transit-2026-07-02.html",
+      "verdict": "PASS",
+      "score": 87,
+      "approved_for_publish": true
+    },
+    {
+      "file": "docs/2026-07-02.html",
+      "verdict": "REVISE",
+      "score": 72,
+      "approved_for_publish": false
+    },
+    {
+      "file": "docs/infographic-2026-07-02.svg",
+      "verdict": "REVISE",
+      "score": 75,
+      "approved_for_publish": false
+    }
+  ]
+}
