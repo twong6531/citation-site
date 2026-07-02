@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoCal Transit Intelligence — July 2, 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; }
+nav a:hover { color: #fff; }
+.hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; }
+.hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.priority.high { background: #ef4444; color: #fff; }
+.priority.medium { background: #f59e0b; color: #000; }
+.priority.low-medium { background: #64748b; color: #fff; }
+.agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+.card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; }
+.date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+.connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+.source-link:hover { color: #60a5fa; text-decoration: underline; }
+.status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+.status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:nth-child(odd) td { background: #1e293b; }
+tr:nth-child(even) td { background: #0f172a; }
+.themes { background: #0a1628; padding: 2rem; }
+.themes-inner { max-width: 1400px; margin: 0 auto; }
+.themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+.theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+.theme:last-child { border-bottom: none; }
+.theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+.theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>SoCal Transit Intel</strong></div>
+  <div><a href="transit.html">Archive</a><a href="https://thesource.metro.net" target="_blank">Metro Source</a></div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">July 2, 2026 · 10 stories · June 23 – July 2, 2026</p>
+  <p class="subtitle" style="margin-top:0.25rem;font-size:0.9rem;">LA Metro · Metrolink · CA HSR · OCTA · SCAG · Amtrak · Joby Aviation</p>
+</div>
+
+<div class="grid">
+
+  <!-- STORY 1 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/4qX7QAFXaPPqXQtNDh84rmd-IrvpEvMxW4pspIakyTo/g:ce/rs:fill:1200:675:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMjgwNzYyMzQyLmpwZw==.webp"
+           alt="World Cup transit ridership records"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Sound Transit</span>
+        <span class="agency">MARTA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: World Cup Shatters Transit Ridership Records Across US Host Cities</h2>
+      <p class="date-range">June 12 – July 2, 2026</p>
+      <p class="summary">The 2026 FIFA World Cup has produced unprecedented public transit ridership across U.S. host cities, with Smart Cities Dive publishing a landmark national data synthesis on July 2. LA Metro logged a nearly six-fold increase in fare payments at the LA Memorial Coliseum light rail station on match days compared to typical Fridays — a dramatic demonstration of transit capacity. Seattle's Sound Transit set a new all-time daily ridership record, and Atlanta's MARTA carried 1.7 million passengers over the tournament's group stage, with some days hitting three times normal ridership.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>~6× increase</strong> in fare payments at LA Memorial Coliseum light rail station on match days vs. typical Fridays</li>
+        <li><strong>Seattle Sound Transit:</strong> 280,000 riders on June 19 — 60,000 above previous all-time record</li>
+        <li><strong>Kansas City Streetcar:</strong> 39,000+ trips on June 16 — a single-day record</li>
+        <li><strong>MARTA (Atlanta):</strong> 1.7 million total riders; some game days 1.2–3× normal daily levels</li>
+        <li><strong>$100M+</strong> in federal funding appropriated for public transit during the tournament</li>
+        <li><strong>$1B+</strong> authorized for event security, including transit station coverage</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> These figures are the most comprehensive proof-of-concept for urban transit investment in recent US history. For LA Metro, a six-fold surge at a single station during World Cup is exactly the operational stress test planners need to prepare for the 2028 Olympics, when multiple venues will fire simultaneously. Transit systems that handled World Cup loads well are already lobbying for expanded federal investment.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (Metrolink's cuts undercut regional network), Topic 10 (Spain vs Austria Group Stage finale today)</p>
+      <a class="source-link" href="https://www.smartcitiesdive.com/news/world-cup-drives-record-public-transit-ridership/824264/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 2 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?fit=1200%2C600&ssl=1"
+           alt="LA Metro Department of Public Safety officers"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metro DPS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: "Crime-Ridden Hellscape" vs. Record Ridership — LA Metro's Safety Narrative War</h2>
+      <p class="date-range">June 23 – July 2, 2026</p>
+      <p class="summary">A City Journal article published July 2 titled "L.A. Metro Is a Crime-Ridden Hellscape" reignited the debate over safety on LA's transit system, arguing that a deliberate policy of not enforcing fares "for the sake of equity" created conditions for crime to flourish. The piece follows multiple New York Post articles questioning Metro safety, even as Metro reports its strongest ridership in six years and the agency builds its in-house Department of Public Safety. The disconnect between growing ridership numbers and persistent public fear of crime represents Metro's deepest brand challenge heading into the 2028 Olympics.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>City Journal op-ed (July 2) links fare non-enforcement policy to crime environment on Metro</li>
+        <li>NY Post has run multiple stories in 2026 on Metro crime — including "crime is down, but riders aren't convinced"</li>
+        <li>Metro DPS now has <strong>2,400+ applicants</strong> for sworn officer positions launched June 9</li>
+        <li>Metro reported <strong>6+ year ridership high</strong> in May 2026 alongside continued safety concerns</li>
+        <li>Metro Board explored free fare expansion but pulled back, partly citing budget and perception issues</li>
+        <li>Metro's fare evasion rate and enforcement strategy remain politically charged topics in 2026</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The optics gap — record ridership coexisting with "hellscape" headlines — could undermine public confidence in exactly the years before LA28. Building the DPS is the structural fix, but it takes 18–24 months to deploy meaningfully. The agency needs a communications and enforcement strategy to bridge the gap before the Olympics bring global media scrutiny to every incident on the system.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (ridership growth must be sustained), Topic 7 (OCTA budget includes safety allocations)</p>
+      <a class="source-link" href="https://www.city-journal.org/article/l-a-metro-is-a-crime-ridden-hellscape" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 3 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_9887-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Metrolink commuter rail service cuts"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">SCAG</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: Metrolink's "Temporary" 20% Service Cuts Are Now Indefinitely Permanent</h2>
+      <p class="date-range">June 23 – June 30, 2026</p>
+      <p class="summary">Planetizen and the Orange County Register reported in late June that Metrolink's so-called "temporary" 20% service reductions — introduced in 2023 as a post-pandemic cost measure — are now effectively indefinite, with no restoration timeline announced. Ridership has not recovered to pre-COVID levels on most routes, and Metrolink's board is wrestling with a deeper question about the agency's long-term identity: a suburban commuter railroad shaped by five-day office commutes that may never fully return, or something else entirely. The Santa Barbara Metrolink proposal was also formally scrapped this period.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>"Temporary" 20% service cuts introduced in 2023 now continuing indefinitely (Planetizen, OC Register)</li>
+        <li>Metrolink ridership remains well below 2019 peaks on most lines</li>
+        <li>Agency evaluating its mission: pure commuter rail vs. broader regional connectivity role</li>
+        <li>Santa Barbara Metrolink extension proposal officially scrapped — Pacific Surfliner will serve Santa Barbara</li>
+        <li>Metrolink ran <strong>World Cup special service</strong> for SoFi Stadium and LA Stadium matches</li>
+        <li>SoCal Day Pass ($10) offered for the July 4 holiday weekend</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metrolink's chronic underfunding and ridership shortfall reveal a structural gap in SoCal's transit network: while LA Metro expands rail in the urban core, the suburban commuter network that connects Ventura, San Bernardino, Riverside, and Orange counties is quietly contracting. With the World Cup and Olympics generating demand for regional connectivity, Metrolink's cuts couldn't come at a worse strategic moment.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup regional demand), Topic 9 (Pacific Surfliner steps up where Metrolink retreats)</p>
+      <a class="source-link" href="https://www.planetizen.com/news/2026/06/socals-metrolink-continue-temporary-service-cuts" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 4 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/-7-DbV5jJlvkqT5AkxoCG07uabtQf0RB7rVSoGeVaAQ/g:ce/rs:fill:1200:675:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS8yMDI0LTAyLTIxLUhhbmZvcmRfVmlhZHVjdC0zOS5KUEc=.webp"
+           alt="California High Speed Rail LA to Anaheim EIR viaduct"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">CA HSR Authority</span>
+        <span class="agency">OCTA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: CA High-Speed Rail Releases Draft EIR for Los Angeles to Anaheim Segment</h2>
+      <p class="date-range">June 2026</p>
+      <p class="summary">The California High-Speed Rail Authority released the Draft Environmental Impact Report and Environmental Impact Statement for the Los Angeles to Anaheim segment — the 33-mile southern terminus of the statewide HSR system. The document covers the route from Los Angeles Union Station through Norwalk/Santa Fe Springs, Fullerton, and on to a station near Angel Stadium in Anaheim. Urbanize LA, the Fullerton Observer, and the OC Register all covered the release, noting this as the most significant planning document for the LA-area portion of the project in years. A public comment period is now open.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Draft EIR/EIS covers <strong>~33 miles</strong> from LA Union Station to Anaheim</li>
+        <li>Proposed stations: Los Angeles, Norwalk/Santa Fe Springs, Fullerton, Anaheim</li>
+        <li>Public comment period now open following the release</li>
+        <li>Separate from the Central Valley construction; this segment is in environmental review phase</li>
+        <li>LA-Anaheim could function as a regional express rail link even before the full SF-LA system completes</li>
+        <li>Full system cost now estimated at <strong>$135–$231 billion</strong> depending on scope and inflation</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The LA-to-Anaheim EIR is the clearest signal that California HSR is still planning for a Southern California presence, even as the project's financial future remains murky. Anaheim would connect to OCTA, Metrolink, and ART (Anaheim Resort Transit), making this segment potentially the most useful near-term piece of a high-speed network. Public comment is the moment to shape station locations and impacts.</p>
+      <p class="connections"><em>Connects to:</em> Topic 7 (OCTA intersects at Anaheim terminus), Topic 9 (Pacific Surfliner carries the load until HSR is real)</p>
+      <a class="source-link" href="https://urbanize.la/post/california-high-speed-rail-authority-releases-draft-eir-for-l-a-to-anaheim-segment/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 5 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/DSC_3090-Enhanced-NR-Edit-scaled.jpg?fit=1200%2C800&ssl=1"
+           alt="SCAG SB 79 transit housing map Southern California"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">SCAG</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: SCAG SB 79 Map Finally Shows Where Dense Housing Can Go Near SoCal Transit</h2>
+      <p class="date-range">June 3, 2026</p>
+      <p class="summary">The Southern California Association of Governments released its long-awaited draft map showing which transit corridors in the six-county region qualify for upzoning under SB 79 — the landmark California law allowing up to 9-story residential buildings within half a mile of qualifying transit stops. LAist reported the map covers hundreds of stations and stops across LA Metro rail and BRT lines, Metrolink corridors, and high-frequency bus routes. The release sparked controversy almost immediately, with West Hollywood pushing back on K Line station inclusions — before a state order forced them back onto the map.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>SCAG draft map released June 3, 2026 covering LA, Orange, Riverside, San Bernardino, Ventura, and Imperial counties</li>
+        <li>SB 79 allows <strong>up to 9-story</strong> mixed-use residential buildings within <strong>0.5 miles</strong> of qualifying transit</li>
+        <li>Qualifying transit includes rail stations, BRT stops, and high-frequency bus routes (≥15 min headways)</li>
+        <li>West Hollywood successfully lobbied to remove K Line stations — state then <strong>ordered them restored</strong></li>
+        <li>City of LA separately exploring ways to delay SB 79 implementation in certain neighborhoods</li>
+        <li>Map is in draft form; final version subject to state review and comment</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> SB 79 is the most sweeping upzoning law near transit California has ever enacted. The SCAG map is the moment when the abstract law becomes real geography — landowners, developers, and community groups can now see exactly which parcels are affected. The political pushback from West Hollywood previews the battles ahead in every affluent neighborhood near a rail stop across SoCal.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (HSR stations will also be SB 79 hubs), Topic 3 (Metrolink route inclusions matter for suburban upzoning)</p>
+      <a class="source-link" href="https://laist.com/news/housing/state-law-will-put-more-housing-near-transit-stops-this-socal-map-finally-shows-where" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 6 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/4-1.jpeg?fit=1200%2C801&ssl=1"
+           alt="LA Metro tap to pay credit card contactless payment"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: Metro's Tap-to-Pay Goes Live — Credit Cards and Phones Now Accepted at Gates</h2>
+      <p class="date-range">June 2026</p>
+      <p class="summary">LA Metro announced that riders can now pay fares using standard credit or debit cards, as well as mobile wallets such as Apple Pay and Google Pay, at turnstiles and validators systemwide. The open-loop payment upgrade eliminates the historic friction point of needing a TAP card or exact cash to board — a significant accessibility improvement for tourists, occasional riders, and World Cup visitors who may be unfamiliar with Metro's proprietary fare system. The launch was particularly well-timed as Metro became the official public transit provider of the 2026 FIFA World Cup, serving millions of first-time riders from around the globe.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metro now accepts <strong>Visa, Mastercard, American Express, Discover</strong> cards at turnstiles</li>
+        <li><strong>Apple Pay, Google Pay, and Samsung Pay</strong> accepted via contactless tap at validators</li>
+        <li>Legacy TAP card remains valid and continues as the primary stored-value option</li>
+        <li>Open-loop payment available on both rail gates and bus validators systemwide</li>
+        <li>Particularly significant for <strong>World Cup tourists</strong> who may not want to buy a dedicated transit card</li>
+        <li>Los Angeles is among the largest US transit systems to implement open-loop payment at this scale</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Payment friction is one of the most documented barriers to casual transit use. International visitors and infrequent riders often skip transit because they don't understand or can't easily obtain proprietary fare cards. Open-loop payment removes that barrier entirely — and timing the rollout during the World Cup, when millions of international visitors are in town, gives Metro an ideal test of the system at scale before the 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup ridership surge partly enabled by lower fare friction), Topic 10 (more convenient fare access boosts match-day ridership)</p>
+      <a class="source-link" href="https://thesource.metro.net/paying-to-ride-metro-just-got-easier-tap-your-credit-or-debit-card-and-go/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 7 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/oL83hiVqor80_DQcMmr3mRX6KiV7RmxKYxzXnlT1hWo/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS8yMDI0LTAyLTIxLUhhbmZvcmRfVmlhZHVjdC0zOS5KUEc=.webp"
+           alt="OCTA Orange County Transportation Authority FY27 budget OC Streetcar"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">OCTA</span>
+        <span class="agency">OC Streetcar</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: OCTA's $2B+ FY27 Budget Green-Lights OC Streetcar Construction Progress</h2>
+      <p class="date-range">June 2026</p>
+      <p class="summary">The Orange County Transportation Authority approved a balanced FY 2026–27 budget totaling over $2 billion, sustaining construction progress on the OC Streetcar and maintaining existing bus service levels across Orange County. Metro Magazine covered the budget approval as a signal of OCTA's fiscal stability relative to peers — a contrast to Metrolink's service cuts and San Diego MTS's ongoing fare debates. The OC Streetcar, a 4.1-mile modern streetcar in Santa Ana, continues construction along Harbor Boulevard with a projected opening in the late 2020s.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>OCTA FY27 budget: <strong>$2B+</strong> — balanced with no service cuts proposed</li>
+        <li>OC Streetcar: <strong>4.1-mile</strong> alignment through Santa Ana and Garden Grove; still under construction</li>
+        <li>OC Streetcar will connect Santa Ana Regional Transportation Center (Metrolink/Amtrak) to Garden Grove Blvd</li>
+        <li>Budget includes funding for zero-emission bus fleet transition</li>
+        <li>OCTA serves <strong>3.1 million residents</strong> across Orange County</li>
+        <li>At the intersection of CA HSR's proposed Anaheim terminus (Topic 4)</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> OCTA's fiscal stability stands in contrast to the financial pressures hitting Metrolink and Amtrak. The OC Streetcar is the first new light rail/streetcar project to break ground in Orange County in decades — and with the CA HSR LA-Anaheim EIR just released, the convergence of rail investments at Anaheim-area hubs could reshape OC's transit geography by 2030.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (CA HSR Anaheim terminus adjacent to OC Streetcar corridor), Topic 9 (Pacific Surfliner serves Santa Ana/OC)</p>
+      <a class="source-link" href="https://www.metro-magazine.com/10231041/californias-octa-proposes-2026-27-balanced-budget-to-advance-transportation" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 8 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/nFpd25RcB4hVYbkCcmCHds_yI0MCl_1MkKLw7Zwqa0g/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9IRVJPLUlNQUdFLTIwMjUxMTI5LVRveW90YV9HYXpvby1FQTIwMDE2Ny5qcGc=.webp"
+           alt="Joby Aviation Toyota electric air taxi eVTOL joint venture"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Joby Aviation</span>
+        <span class="agency">LAWA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: Joby + Toyota Form Electric Air Taxi Joint Venture — LA Urban Air Mobility Accelerates</h2>
+      <p class="date-range">July 2, 2026</p>
+      <p class="summary">Joby Aviation and Toyota announced a formal joint venture on July 2, combining Joby's S4 eVTOL aircraft with Toyota's manufacturing expertise and capital in a new entity aimed at accelerating certification and commercial production. The partnership builds on a strategic alliance first announced in 2024 and represents Toyota's most direct commitment yet to urban air mobility commercialization. Los Angeles, which is already building vertiport infrastructure as part of its 2028 Olympic planning, is one of the primary target markets for Joby's air taxi service, which would offer point-to-point flights across the LA Basin in under 10 minutes.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Joint venture announced July 2, 2026 — formalizes Joby-Toyota alliance begun in 2024</li>
+        <li>Joby S4 aircraft: <strong>200 mph</strong> top speed; <strong>~150-mile</strong> range; carries pilot + 4 passengers</li>
+        <li>Toyota brings manufacturing scale; Joby brings aircraft design and FAA certification progress</li>
+        <li>LAWA has identified vertiport sites at LAX and Burbank Airport for future eVTOL operations</li>
+        <li>LA28 Olympics is an explicit target for initial commercial flights in LA</li>
+        <li>NYC also preparing vertiports; competition for first commercial eVTOL market is intensifying</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> For LA transit planning, Joby's acceleration is a potential game-changer for last-mile and long-range connections that conventional transit can't easily serve — think LAX to downtown Burbank in 8 minutes, or Century City to Pasadena without touching the 110. Whether or not eVTOL delivers on its timeline, it's arriving in LA's planning universe during the same window as the Olympics and HSR, reshaping how the region thinks about mobility investment.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (LAX mobility ecosystem), Topic 4 (SkyLink's failure to connect LAX terminals accelerates eVTOL appeal)</p>
+      <a class="source-link" href="https://www.smartcitiesdive.com/news/joby-toyota-electric-air-taxi-joint-venture-s4-series-evtol-aircraft/824345/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 9 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://media.amtrak.com/wp-content/uploads/2026/04/NB-Surfliner-Arriving-Santa-Barbara-Station-Photo-2-1024x683.jpg"
+           alt="Amtrak Pacific Surfliner Santa Barbara station"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Amtrak</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">Caltrans</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: Santa Barbara Metrolink Plan Scrapped — Pacific Surfliner Will Carry the Route Instead</h2>
+      <p class="date-range">June 2026</p>
+      <p class="summary">A long-discussed proposal to extend Metrolink service to Santa Barbara was formally abandoned in June, with officials and the Santa Barbara News-Press confirming that the Pacific Surfliner will instead expand frequency to serve the corridor. The decision reflects Metrolink's fiscal contraction and its board's reluctance to take on new route obligations while existing service is being cut. The Pacific Surfliner already added its 11th daily Los Angeles–San Luis Obispo roundtrip in April 2026, giving Santa Barbara passengers more train options even without a Metrolink connection.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Santa Barbara Metrolink extension proposal <strong>officially scrapped</strong> June 2026 (Santa Barbara News-Press)</li>
+        <li>Pacific Surfliner now runs <strong>11 daily roundtrips</strong> on the LA–SLO segment (as of April 2026)</li>
+        <li>Santa Barbara is served by Surfliner trains — but not at commuter-rail frequency or price</li>
+        <li>Metrolink's board cited fiscal constraints and low ridership projections for the Santa Barbara extension</li>
+        <li>Ventura County is the furthest north Metrolink currently operates</li>
+        <li>UCR students facing Metrolink fare increases in late 2026 as agency seeks revenue</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The Santa Barbara decision illustrates the growing divide between Amtrak intercity service (expanding) and Metrolink commuter rail (contracting). As Metrolink retreats from growth and trims existing service, the Pacific Surfliner is quietly becoming the dominant rail option for California coastal travel — a role it was never quite designed for, but one it may have to hold until HSR arrives.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (Metrolink contraction continues), Topic 4 (HSR LA-Anaheim EIR reveals slow path to real speed)</p>
+      <a class="source-link" href="https://www.newspress.com/santa-barbara-metrolink-proposal-scrapped-pacific-surfliner-to-provide-new-train-service/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 10 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-2.33.35-PM-scaled.png?fit=1200%2C502&ssl=1"
+           alt="Metro Spain vs Austria World Cup match day service"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: Spain vs. Austria — Metro Runs Full Match-Day Service as Group Stage Closes</h2>
+      <p class="date-range">July 2, 2026</p>
+      <p class="summary">Metro is operating full World Cup match-day service today for Spain vs. Austria at LA Stadium (SoFi) — the final Group Stage match in the LA area. Metro confirmed parking remains available at World Cup service locations, with Union Station serving as the central hub and fan zone. Today's match closes the Group Stage as LA transitions to hosting knockout rounds starting July 3. Metro has operated seamlessly across all Group Stage matches, logging record ridership and no major service disruptions — a benchmark for the 2028 Olympic opening ceremonies weeks.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Spain vs. Austria, July 2 — final Group Stage match at LA Stadium (SoFi)</li>
+        <li>Metro running full service with <strong>dedicated $1.75 shuttle buses</strong> to SoFi from multiple hubs</li>
+        <li>Union Station fan zone sold out; parking still available at select Metro lots (as of late morning)</li>
+        <li>Group Stage total: LA hosted multiple matches June 12 – July 2 without major transit incident</li>
+        <li>Knockout Round service ramps up July 3 as LA enters the elimination phase of the tournament</li>
+        <li>Metro's real-time service updates published at thesource.metro.net throughout match day</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Today's match closes the book on the Group Stage, which has been Metro's first full-tournament operational test at this scale. Zero major incidents across 20+ match days is the institutional knowledge that will inform Olympic planning. The Knockout Rounds bring higher stakes — and higher crowds — as the tournament enters its decisive phase.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (national ridership records set on match days), Topic 6 (tap-to-pay making boarding easier for fans)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-service-updates-for-spain-vs-austria-on-thursday-july-2/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<!-- AGENCY STATUS BOARD -->
+<div class="status-board">
+  <h2>Agency Status Board</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Development</th>
+        <th>Trend</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro</strong></td>
+        <td>Record Mode</td>
+        <td>~6× fare payments at Coliseum station on match days; tap-to-pay open-loop live; DPS hiring at 2,400+ applicants</td>
+        <td>↑ Ridership surging</td>
+      </tr>
+      <tr>
+        <td><strong>LAWA / LAX</strong></td>
+        <td>Under Pressure</td>
+        <td>SkyLink APM still not in revenue service; World Cup group stage complete without people mover operational</td>
+        <td>⚠ Critical delay</td>
+      </tr>
+      <tr>
+        <td><strong>CA HSR Authority</strong></td>
+        <td>Dual-Track</td>
+        <td>LA-to-Anaheim draft EIR out for public comment; private investor co-development agreement active; Brightline West costs at $21.5B</td>
+        <td>→ Environmental review progressing</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak / Pacific Surfliner</strong></td>
+        <td>Expanding</td>
+        <td>11th daily LA–SLO roundtrip; stepping in for scrapped Santa Barbara Metrolink plan; World Cup specials operated</td>
+        <td>↑ Record frequency</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink</strong></td>
+        <td>Contracting</td>
+        <td>20% "temporary" cuts now indefinite; Santa Barbara extension scrapped; fares likely rising for some riders</td>
+        <td>↓ Cuts entrenched</td>
+      </tr>
+      <tr>
+        <td><strong>San Diego MTS</strong></td>
+        <td>Stable</td>
+        <td>$482.5M FY27 budget approved; evaluating fare freeze for low-income riders; no major World Cup service disruptions</td>
+        <td>→ Steady state</td>
+      </tr>
+      <tr>
+        <td><strong>OCTA</strong></td>
+        <td>Stable / Building</td>
+        <td>$2B+ FY27 balanced budget approved; OC Streetcar construction ongoing; well-positioned at future HSR Anaheim terminus</td>
+        <td>↑ On plan</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG</strong></td>
+        <td>Policy Flash Point</td>
+        <td>SB 79 draft transit housing map released; West Hollywood K Line stations restored after state pushback; battles ahead</td>
+        <td>⚠ Political friction</td>
+      </tr>
+      <tr>
+        <td><strong>Joby / Urban Air</strong></td>
+        <td>Accelerating</td>
+        <td>Joby-Toyota joint venture formalized July 2; LA targeting vertiports at LAX and Burbank for LA28 Olympics</td>
+        <td>↑ Advancing toward LA28</td>
+      </tr>
+      <tr>
+        <td><strong>Brightline West</strong></td>
+        <td>Pre-construction</td>
+        <td>Las Vegas–SoCal HSR costs now $21.5B (up from $12B); targeting 2029 completion; pre-construction work underway</td>
+        <td>⚠ Cost escalation</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- EMERGING THEMES -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes</h2>
+
+    <div class="theme">
+      <h3>1. The World Cup as 2028 Olympics Dress Rehearsal — Scorecards Due</h3>
+      <p>The Group Stage is over. LA Metro ran 20+ match days, logged a six-fold ridership surge at the Coliseum station, operated 196 wrapped buses, ran $1.75 shuttles past 100,000 rides, and activated Union Station as an official fan zone. Against that success, LAX's SkyLink never opened, and some Metrolink routes cut service. Today, as the Knockout Rounds begin, transit agencies have their first Group Stage debrief data in hand — the 24-month sprint to LA28 starts now.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. The Divergence of SoCal Transit: Urban Core Growing, Suburban Network Contracting</h3>
+      <p>LA Metro is expanding (D Line extension, new stations, DPS hiring, open-loop payments) while Metrolink is quietly contracting (indefinite service cuts, scrapped expansions, fare hikes). OCTA and San Diego MTS are stable but not growing. The regional picture is one of stark divergence: transit is winning in the LA urban core and losing in the suburban counties. SB 79's transit housing map could rebalance this by concentrating development near urban rail — or it could trigger enough political backlash to stall for years.</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. California HSR's Southern California Moment — Or Not</h3>
+      <p>The LA-to-Anaheim draft EIR is the most tangible HSR development in SoCal in years — but the project's $87B funding gap and loss of federal support mean the southern stub exists primarily on paper. Meanwhile, the Pacific Surfliner continues adding frequency, Metrolink retreats, and Brightline West's Las Vegas corridor sees costs balloon to $21.5B. The region is accumulating more rail plans than it can fund while the one proven intercity rail service (Surfliner) quietly fills the gap.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. Safety Perception vs. Ridership Reality — Metro's Biggest PR Challenge</h3>
+      <p>City Journal's "hellscape" piece dropped the same week Metro reported record World Cup ridership. This cognitive dissonance — system growing in popularity while safety anxiety persists — is Metro's most complex communications challenge. The DPS hiring surge (2,400+ applicants) is the structural answer, but a deployable sworn force won't be operational before mid-2027 at the earliest. In the gap, every crime incident on Metro will generate national coverage during the highest-profile period in the agency's history.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. LA's Urban Air Mobility Pipeline Takes Shape</h3>
+      <p>The Joby-Toyota joint venture is the most concrete signal yet that electric air taxis in LA are a planning reality, not a concept. LAWA is already identifying vertiport sites. The combination of SkyLink's ongoing failure to connect LAX terminals and Joby's accelerating timeline creates an odd scenario: aviation-based urban mobility may launch in LA before the transit agency's $3.34B people mover starts revenue service at the same airport.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Sources: LA Metro / The Source · Smart Cities Dive · City Journal · Planetizen · OC Register · LAist · Westside Today · Santa Barbara News-Press · Amtrak Media · Metro Magazine · SCVNews · Urbanize LA · CA High-Speed Rail Authority<br>
+  SoCal Transit Intelligence — Generated July 2, 2026
+</footer>
+
+</body>
+</html>
