@@ -6,7 +6,7 @@
     "content_plan": "pending",
     "articles": "pending",
     "infographics": "pending",
-    "video_scripts": "hold",
+    "video_scripts": "no_new_tasks",
     "qc": "pending",
     "publishing": "skipped_no_approved_items"
   },
@@ -16,8 +16,9 @@
     "BRT INFOGRAPHIC RETRY SUSPENDED: brt-vs-light-rail-cost-2026 infographic automated retries suspended after ~20 consecutive failures. Manual diagnostic of infographic-writing agent required before re-queuing. Fresh topic substituted today: ai-tools-transit-operations-visual-guide-2026.",
     "CONFIRMED PIPELINE FAILURE DAY 26: drafts/articles/ directory has never had a file successfully produced in 26+ days of site history. 0% article production rate across the entire production run. Manual diagnostic of article-writing agent is long overdue.",
     "VIDEO SCRIPTS ON HOLD: no new scripts until human reviews existing backlog (5 QC-passed, 5 needs-revision) and approved.json is updated.",
-    "FIFTH STRAIGHT DAY: Google News Technology RSS feed returned empty — confirmed persistent issue. Manual check of feed URL/parsing logic required.",
-    "NEW TODAY (Rank 1): Google loses $4.7B EU antitrust fine — queued as article with transit-mapping-platform dependency angle.",
-    "NEW TODAY (Rank 2): Single Transformer Layer efficiency breakthrough — queued as research brief with transit AI demand forecasting angle."
+    "FIFTH STRAIGHT DAY: Google News Technology RSS feed returned empty \u2014 confirmed persistent issue. Manual check of feed URL/parsing logic required.",
+    "NEW TODAY (Rank 1): Google loses $4.7B EU antitrust fine \u2014 queued as article with transit-mapping-platform dependency angle.",
+    "NEW TODAY (Rank 2): Single Transformer Layer efficiency breakthrough \u2014 queued as research brief with transit AI demand forecasting angle.",
+    "VIDEO SCRIPT AGENT 2026-07-02: No video_script type tasks in queue and drafts/articles/ is empty. Nothing to write. Backlog: 5 QC-passed scripts awaiting human approval in system/approved.json (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script). Day 26 of zero approvals."
   ]
 }
