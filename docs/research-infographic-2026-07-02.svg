@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="120" fill="#1A1A1A"/>
+  <text x="40" y="42" font-size="11" fill="#888888" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="76" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">JULY 2, 2026</text>
+  <text x="40" y="102" font-size="13" fill="#AAAAAA" letter-spacing="1">12 PAPERS · URBAN TRANSIT · AI · POLICY · RESILIENCE</text>
+  <rect x="680" y="30" width="80" height="60" fill="none" stroke="#444" stroke-width="1"/>
+  <text x="720" y="58" font-size="10" fill="#888" text-anchor="middle">PAPERS</text>
+  <text x="720" y="78" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle">12</text>
+
+  <!-- DIVIDER -->
+  <rect x="40" y="138" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- SECTION: KEY FINDINGS -->
+  <text x="40" y="168" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">KEY FINDINGS</text>
+
+  <!-- Finding 1 -->
+  <rect x="40" y="180" width="4" height="72" fill="#1A1A1A"/>
+  <text x="56" y="198" font-size="36" fill="#E8E8E5" font-weight="700">01</text>
+  <text x="56" y="222" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="56" dy="0">NYC Congestion Pricing Boosts Transit</tspan>
+  </text>
+  <text x="56" y="240" font-size="12" fill="#444444">
+    <tspan x="56" dy="0">Bus and subway ridership rose significantly after Jan 2025 pricing launch.</tspan>
+  </text>
+  <text x="56" y="256" font-size="12" fill="#444444">
+    <tspan x="56" dy="0">Gains extend beyond Manhattan core — spatially heterogeneous benefits.</tspan>
+  </text>
+
+  <!-- Finding 2 -->
+  <rect x="40" y="272" width="4" height="72" fill="#1A1A1A"/>
+  <text x="56" y="290" font-size="36" fill="#E8E8E5" font-weight="700">02</text>
+  <text x="56" y="314" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="56" dy="0">Continental Transit Routing in Under 10ms</tspan>
+  </text>
+  <text x="56" y="332" font-size="12" fill="#444444">
+    <tspan x="56" dy="0">T-REX algorithm answers Europe-wide journey queries in &lt;10ms,</tspan>
+  </text>
+  <text x="56" y="348" font-size="12" fill="#444444">
+    <tspan x="56" dy="0">20× faster than prior methods — enabling real-time trip planning at scale.</tspan>
+  </text>
+
+  <!-- Finding 3 -->
+  <rect x="40" y="364" width="4" height="72" fill="#1A1A1A"/>
+  <text x="56" y="382" font-size="36" fill="#E8E8E5" font-weight="700">03</text>
+  <text x="56" y="406" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="56" dy="0">Slime-Mold Routing Doubles Passenger Delivery</tspan>
+  </text>
+  <text x="56" y="424" font-size="12" fill="#444444">
+    <tspan x="56" dy="0">Bio-inspired swarm transit improves delivery rates 28–101% vs. fixed routes,</tspan>
+  </text>
+  <text x="56" y="440" font-size="12" fill="#444444">
+    <tspan x="56" dy="0">with 75%+ reduction in walking time across suburban and rural scenarios.</tspan>
+  </text>
+
+  <rect x="40" y="452" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="40" y="480" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">PAPER OF THE DAY</text>
+  <rect x="40" y="492" width="720" height="110" fill="#1A1A1A" rx="2"/>
+  <text x="60" y="516" font-size="10" fill="#888888" letter-spacing="2">FEATURED RESEARCH</text>
+  <text x="60" y="538" font-size="15" fill="#FFFFFF" font-weight="700">
+    <tspan x="60" dy="0">Public Transit Gains After NYC Congestion Pricing</tspan>
+  </text>
+  <text x="60" y="558" font-size="12" fill="#AAAAAA">
+    <tspan x="60" dy="0">Li, Zhuang, Li, Shen, Cao, Zheng, Wang, Zhao · 2026</tspan>
+  </text>
+  <text x="60" y="578" font-size="12" fill="#CCCCCC">
+    <tspan x="60" dy="0">First rigorous causal study of America's first congestion pricing program. Uses</tspan>
+  </text>
+  <text x="60" y="596" font-size="12" fill="#CCCCCC">
+    <tspan x="60" dy="0">time series foundation models to isolate policy impact from confounders.</tspan>
+  </text>
+
+  <rect x="40" y="618" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="646" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">EMERGING THEMES</text>
+
+  <!-- Theme 1 -->
+  <rect x="40" y="660" width="222" height="120" fill="none" stroke="#1A1A1A" stroke-width="1.5" rx="1"/>
+  <text x="56" y="684" font-size="11" fill="#888888" letter-spacing="1" font-weight="600">THEME 01</text>
+  <text x="56" y="704" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan x="56" dy="0">AI-Native</tspan>
+    <tspan x="56" dy="18">Operations</tspan>
+  </text>
+  <text x="56" y="742" font-size="11" fill="#444444">
+    <tspan x="56" dy="0">LLMs, neural nets,</tspan>
+    <tspan x="56" dy="15">and foundation models</tspan>
+    <tspan x="56" dy="15">reshaping real-time transit</tspan>
+  </text>
+
+  <!-- Theme 2 -->
+  <rect x="289" y="660" width="222" height="120" fill="none" stroke="#1A1A1A" stroke-width="1.5" rx="1"/>
+  <text x="305" y="684" font-size="11" fill="#888888" letter-spacing="1" font-weight="600">THEME 02</text>
+  <text x="305" y="704" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan x="305" dy="0">Equity-Centered</tspan>
+    <tspan x="305" dy="18">Policy Design</tspan>
+  </text>
+  <text x="305" y="742" font-size="11" fill="#444444">
+    <tspan x="305" dy="0">Fare-free buses and</tspan>
+    <tspan x="305" dy="15">congestion pricing reveal</tspan>
+    <tspan x="305" dy="15">uneven distributional effects</tspan>
+  </text>
+
+  <!-- Theme 3 -->
+  <rect x="538" y="660" width="222" height="120" fill="none" stroke="#1A1A1A" stroke-width="1.5" rx="1"/>
+  <text x="554" y="684" font-size="11" fill="#888888" letter-spacing="1" font-weight="600">THEME 03</text>
+  <text x="554" y="704" font-size="13" fill="#1A1A1A" font-weight="700">
+    <tspan x="554" dy="0">Resilience</tspan>
+    <tspan x="554" dy="18">by Design</tspan>
+  </text>
+  <text x="554" y="742" font-size="11" fill="#444444">
+    <tspan x="554" dy="0">Hierarchical forecasting</tspan>
+    <tspan x="554" dy="15">and coordinated response</tspan>
+    <tspan x="554" dy="15">cut disruption costs</tspan>
+  </text>
+
+  <rect x="40" y="796" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="824" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">CONFIDENCE DISTRIBUTION · 12 PAPERS</text>
+
+  <!-- High confidence bar -->
+  <text x="40" y="852" font-size="12" fill="#1A1A1A">HIGH</text>
+  <rect x="120" y="838" width="420" height="22" fill="#1A1A1A" rx="1"/>
+  <text x="550" y="854" font-size="12" fill="#444">7 papers</text>
+
+  <!-- Medium confidence bar -->
+  <text x="40" y="892" font-size="12" fill="#1A1A1A">MEDIUM</text>
+  <rect x="120" y="878" width="240" height="22" fill="#888888" rx="1"/>
+  <text x="370" y="894" font-size="12" fill="#444">5 papers</text>
+
+  <!-- Low confidence bar -->
+  <text x="40" y="932" font-size="12" fill="#1A1A1A">LOW</text>
+  <rect x="120" y="918" width="0" height="22" fill="#CCCCCC" rx="1"/>
+  <text x="130" y="934" font-size="12" fill="#444">0 papers</text>
+
+  <rect x="40" y="952" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="980" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="40" y="1008" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">→ </tspan><tspan font-weight="400">Plan transit investments alongside congestion pricing — gains are geographically uneven.</tspan>
+  </text>
+  <text x="40" y="1030" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">→ </tspan><tspan font-weight="400">Adopt hierarchical OD forecast reconciliation for operations centers managing disruptions.</tspan>
+  </text>
+  <text x="40" y="1052" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">→ </tspan><tspan font-weight="400">Deploy continental-scale journey planners — T-REX proves &lt;10ms is achievable today.</tspan>
+  </text>
+  <text x="40" y="1074" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">→ </tspan><tspan font-weight="400">Test bio-inspired demand-responsive routing for low-density suburbs and rural networks.</tspan>
+  </text>
+  <text x="40" y="1096" font-size="12" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">→ </tspan><tspan font-weight="400">Evaluate "thermodynamic temperature" metric to identify congestion-fragile cities early.</tspan>
+  </text>
+
+  <rect x="40" y="1116" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <text x="40" y="1144" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">CONTRARIAN INSIGHTS</text>
+  <rect x="40" y="1156" width="720" height="80" fill="#F0EFE8" rx="2"/>
+  <text x="60" y="1178" font-size="12" fill="#333333">
+    <tspan x="60" dy="0">· Fare-free bus programs shift modal composition more than they grow total ridership —</tspan>
+    <tspan x="60" dy="18">  revenue losses may not be justified by aggregate demand gains.</tspan>
+    <tspan x="60" dy="18">· The Macroscopic Fundamental Diagram is an incomplete traffic state description —</tspan>
+    <tspan x="60" dy="18">  entropy-capacity trade-offs reveal hidden congestion regime information.</tspan>
+  </text>
+
+  <rect x="40" y="1252" width="720" height="1" fill="#DDDDDD"/>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <text x="40" y="1280" font-size="10" fill="#888888" letter-spacing="3" font-weight="600">LONG-TERM IMPLICATIONS</text>
+  <text x="40" y="1306" font-size="12" fill="#444444">
+    <tspan x="40" dy="0">As AI-native routing (LLMs, swarm intelligence) matures alongside real-time continental planning,</tspan>
+    <tspan x="40" dy="18">the gap between rigid scheduled transit and truly demand-responsive networks will narrow.</tspan>
+    <tspan x="40" dy="18">Policy frameworks coupling congestion pricing with targeted transit equity programs will become</tspan>
+    <tspan x="40" dy="18">the standard toolkit — but only if spatial equity analysis is embedded from design, not retrofitted.</tspan>
+  </text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1540" width="800" height="60" fill="#1A1A1A"/>
+  <text x="40" y="1565" font-size="10" fill="#888888" letter-spacing="2">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="1585" font-size="10" fill="#555555">Autonomous research · 12 papers · July 2, 2026 · Sources: arXiv</text>
+  <text x="760" y="1575" font-size="10" fill="#555555" text-anchor="end">twong6531.github.io/citation-site</text>
+
+  <!-- Paper count decorative element -->
+  <circle cx="720" cy="1290" r="50" fill="none" stroke="#DDDDDD" stroke-width="1"/>
+  <circle cx="720" cy="1290" r="35" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+  <text x="720" y="1284" font-size="26" fill="#1A1A1A" font-weight="700" text-anchor="middle">12</text>
+  <text x="720" y="1302" font-size="9" fill="#888888" text-anchor="middle" letter-spacing="1">PAPERS</text>
+
+</svg>
