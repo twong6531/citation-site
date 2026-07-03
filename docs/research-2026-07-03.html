@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 3, 2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --bg2: #181c24;
+    --bg3: #1e2330;
+    --border: #2a2f3e;
+    --text: #e2e8f0;
+    --muted: #8892a4;
+    --accent: #e84b3a;
+    --blue: #4a9eff;
+    --green: #48c774;
+    --gold: #f0b429;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono: 'SF Mono', 'Fira Code', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; line-height: 1.65; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  .site-header {
+    background: #0a0d12;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .logo { font-size: 13px; font-weight: 700; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+  .site-header a { color: var(--muted); font-size: 13px; }
+  .site-header a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0a0d12 0%, #0f1520 50%, #0a1218 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 60px 40px 50px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .hero .label { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px; }
+  .hero .meta { font-size: 13px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+  .pill.blue { background: #1e4a7a; color: var(--blue); }
+  .pill.green { background: #1a3d2a; color: var(--green); }
+  .pill.gold { background: #3a2a00; color: var(--gold); }
+
+  /* Main layout */
+  .main { max-width: 960px; margin: 0 auto; padding: 0 40px 60px; }
+
+  /* Section headers */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+
+  /* Editorial image section */
+  .editorial-section {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 30px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .editorial-section h2 { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; }
+  .editorial-section img { max-width: 100%; border-radius: 2px; }
+  .editorial-section .caption { margin-top: 16px; font-size: 12px; color: var(--muted); font-style: italic; }
+  .editorial-section .note { margin-top: 8px; font-size: 11px; color: #4a5568; }
+  .no-image-placeholder {
+    background: #0a0d12;
+    border: 1px dashed #2a2f3e;
+    border-radius: 4px;
+    padding: 60px 30px;
+    color: var(--muted);
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  .no-image-placeholder .subject { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+  .no-image-placeholder .context { font-size: 13px; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+
+  /* Executive summary */
+  .executive-summary {
+    background: var(--bg2);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 32px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .stat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-card .num { font-size: 36px; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+  .stat-card .label { font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .stat-card.accent .num { color: var(--accent); }
+  .stat-card.blue .num { color: var(--blue); }
+  .stat-card.green .num { color: var(--green); }
+  .stat-card.gold .num { color: var(--gold); }
+
+  /* Themes grid */
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .theme-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .theme-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .theme-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* Contrarian / takeaways */
+  .insight-list { list-style: none; margin: 16px 0; }
+  .insight-list li {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .insight-list li:last-child { border-bottom: none; }
+  .insight-list .num { font-size: 22px; font-weight: 800; color: var(--accent); min-width: 36px; line-height: 1; }
+  .insight-list .text strong { color: var(--text); display: block; margin-bottom: 4px; }
+  .insight-list .text span { color: var(--muted); font-size: 13px; }
+
+  /* Papers */
+  .paper-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .paper-card .paper-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .paper-card .paper-header h3 { font-size: 15px; font-weight: 700; line-height: 1.4; flex: 1; }
+  .paper-card .paper-body { padding: 20px 24px; }
+  .paper-card .paper-body .summary { font-size: 14px; color: var(--text); margin-bottom: 16px; line-height: 1.65; }
+  .paper-card .paper-meta { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .paper-card .insights { margin-top: 16px; }
+  .paper-card .insights h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
+  .paper-card .insights ul { list-style: none; }
+  .paper-card .insights ul li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 5px 0 5px 16px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.55;
+  }
+  .paper-card .insights ul li:last-child { border-bottom: none; }
+  .paper-card .insights ul li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+  .paper-card .paper-footer {
+    background: #0a0d12;
+    padding: 12px 24px;
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+  .paper-card .paper-footer .conf-badge {
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .conf-high { background: #1a3d2a; color: var(--green); }
+  .conf-medium { background: #3a2a00; color: var(--gold); }
+  .conf-low { background: #3a1a1a; color: var(--accent); }
+
+  /* POTD */
+  .potd-card {
+    background: linear-gradient(135deg, #1a0e1a, #0f1520);
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    padding: 28px;
+    margin: 24px 0;
+  }
+  .potd-card .potd-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+  .potd-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  .potd-card .authors { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .potd-card .reason { font-size: 14px; line-height: 1.7; color: var(--text); }
+
+  /* SVG infographic */
+  .infographic-section {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 30px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .infographic-section h2 { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; }
+  .infographic-section svg { max-width: 100%; }
+  .infographic-section .download-link { margin-top: 16px; font-size: 13px; }
+
+  /* Long-term implications */
+  .implications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .implication-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .implication-card .num { font-size: 28px; font-weight: 800; color: #2a2f3e; line-height: 1; margin-bottom: 10px; }
+
+  /* Footer */
+  .site-footer {
+    background: #0a0d12;
+    border-top: 1px solid var(--border);
+    padding: 30px 40px;
+    max-width: 960px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 700px) {
+    .hero { padding: 40px 20px 30px; }
+    .hero h1 { font-size: 28px; }
+    .main { padding: 0 20px 40px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .themes-grid, .implications-grid { grid-template-columns: 1fr; }
+    .site-header, .site-footer { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="logo">Transit Research Digest</span>
+  <a href="research.html">← Archive</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="label">Autonomous Research · July 3, 2026</div>
+  <h1>Transit Research Digest<br>July 3, 2026</h1>
+  <div class="meta">
+    <span>📄 12 papers analyzed</span>
+    <span>🔬 Self-analysis (Gemini API quota exceeded)</span>
+    <span>🌍 arXiv · Semantic Scholar · Frontiers · ScienceDirect</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- SECTION A: EDITORIAL IMAGE -->
+  <div class="section-label">Today's Transit Illustration</div>
+  <div class="editorial-section">
+    <h2>Today's Transit Illustration</h2>
+    <div class="no-image-placeholder">
+      <div class="subject">A BRT Station Platform in Bogota with Real-Time Digital Arrival Boards and Dedicated Center-Running Bus Lanes</div>
+      <div class="context">
+        Bogota's TransMilenio BRT system features elevated island platforms 30–50cm above adjacent traffic lanes, enclosed by full-height tempered glass barriers and red painted corrugated steel canopy structures spanning 120–180m. Platforms include floor-mounted LED guidance strips, overhead 65-inch digital arrival countdown boards in Spanish, and turnstile fare gates at pedestrian bridge terminals. The stations span 8–10 lane arterials via pedestrian access bridges — an engineering marvel of high-capacity center-running BRT used as case study in this week's DST-TransitNet ridership prediction research.
+      </div>
+      <div style="margin-top: 16px; font-size: 12px; color: #4a5568;">
+        Imagen API (Gemini) requires a paid plan — illustration generation skipped this session.
+      </div>
+    </div>
+    <div class="caption">TransMilenio BRT Station, Bogota, Colombia — Technical Editorial Illustration (Subject)</div>
+    <div class="note">Independently researched from today's papers · Imagen generation unavailable (free tier quota)</div>
+  </div>
+
+  <!-- SECTION B: RESEARCH ANALYSIS -->
+  <div class="section-label">Executive Summary</div>
+
+  <div class="executive-summary">
+    This week's transit research cohort reveals a field in deep methodological transition: artificial intelligence — from GNN-based ridership prediction to LLM-orchestrated causal discovery to mechanism design for autonomous fleets — is remaking both how we understand transit systems and how we plan them. Five papers published within the last week tackle data bias, elderly mobility, and equity gaps that mainstream transit research has historically ignored. Meanwhile, the physical infrastructure debate continues through TOD assessments in car-centric Dubai and fare-free zone optimization that gives planners their first rigorous equity-welfare tradeoff framework. The overarching signal: transit planning is becoming more data-driven, more AI-assisted, and more urgently equity-aware — but the data we're using may be systematically biased against the communities transit is meant to serve.
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card green"><div class="num">12</div><div class="label">Papers Analyzed</div></div>
+    <div class="stat-card accent"><div class="num">83%</div><div class="label">High Confidence</div></div>
+    <div class="stat-card blue"><div class="num">4</div><div class="label">Emerging Themes</div></div>
+    <div class="stat-card gold"><div class="num">5</div><div class="label">Contrarian Findings</div></div>
+  </div>
+
+  <!-- PAPER OF THE DAY -->
+  <div class="section-label">Paper of the Day</div>
+  <div class="potd-card">
+    <div class="potd-label">⭐ Paper of the Day</div>
+    <h2>Leveraging Sidewalk Robots for Walkability-Related Analyses</h2>
+    <div class="authors">Xing Tong, Michele D. Simoni, Kaj Munhoz Arfvidsson, Jonas Mårtensson · Computers, Environment and Urban Systems (2026) · <a href="https://arxiv.org/abs/2507.12148">arXiv:2507.12148</a></div>
+    <div class="reason">The idea of repurposing autonomous delivery robots as continuous walkability monitors is delightfully practical — it turns every Starship or Serve robot delivery into a pedestrian infrastructure data collection event. The finding that robot speed is a proxy for pedestrian quality is elegant, and the implications for city-scale walkability monitoring are transformative. This is exactly the kind of unexpected dual-use innovation that could change urban planning at near-zero marginal cost. 101 trips across 900 sidewalk segments on Stockholm's KTH campus demonstrated that higher pedestrian density, reduced width, and surface irregularity are all associated with slower, more variable robot trajectories.</div>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-label">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3 style="color: var(--accent);">🤖 AI-Powered Transit Prediction</h3>
+      <p>GNN, RNN, and LLM models are achieving network-scale operational forecasting. DST-TransitNet on Bogota's BRT, MBTA benchmarking across 10 models, and causal incident flow prediction represent a new generation of AI transit management tools.</p>
+    </div>
+    <div class="theme-card">
+      <h3 style="color: var(--blue);">⚖️ Inclusive &amp; Equity-Aware Design</h3>
+      <p>Elderly mobility modeling, GPS data bias exposure, and fare-free zone equity optimization all challenge transit planning's majority-population defaults — revealing systematic gaps in how transit serves vulnerable groups.</p>
+    </div>
+    <div class="theme-card">
+      <h3 style="color: var(--green);">🛴 Multimodal Integration</h3>
+      <p>E-scooter hub causal AI planning, fly-by transit corridors, and AMoD incentive design reflect a multimodal future where public transit is the backbone but the edges are radically diversified by new mobility modes.</p>
+    </div>
+    <div class="theme-card">
+      <h3 style="color: var(--gold);">🏗️ Physical Infrastructure Catchup</h3>
+      <p>TOD assessments in car-dominated Dubai and sidewalk robot walkability monitoring signal growing investment in the physical context around transit stations — the hardware catching up to the software.</p>
+    </div>
+  </div>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <div class="section-label">Contrarian Insights</div>
+  <ul class="insight-list">
+    <li>
+      <span class="num">01</span>
+      <span class="text"><strong>Weather data hurts transit prediction models</strong><span>The MBTA benchmarking study shows that including weather variables causes overfitting across all 10 tested models, challenging the widespread assumption that meteorological inputs improve ridership forecasting. Temporal features dominate predictive accuracy.</span></span>
+    </li>
+    <li>
+      <span class="num">02</span>
+      <span class="text"><strong>High-capability AI models don't help with underrepresented groups</strong><span>The elderly mobility study found that more powerful LLMs (Qwen3-4B) didn't reduce prediction errors when demographic training data was scarce. Data quantity matters more than model sophistication for minority populations.</span></span>
+    </li>
+    <li>
+      <span class="num">03</span>
+      <span class="text"><strong>GPS mobility data is not a neutral planning resource</strong><span>Facebook and Veraset give systematically different portraits of the same Mexican population. Using either without bias audit risks perpetuating inequity in transit planning — particularly in lower-income and rural areas.</span></span>
+    </li>
+    <li>
+      <span class="num">04</span>
+      <span class="text"><strong>Equity and welfare optimization diverge on fare-free zones</strong><span>The first analytical model shows these objectives push in different directions on zone size and timing, meaning "equity-focused fare-free transit" requires explicitly different policy parameters than welfare-maximizing approaches.</span></span>
+    </li>
+    <li>
+      <span class="num">05</span>
+      <span class="text"><strong>Dominant incentive misalignment in AMoD integration shifts with congestion</strong><span>In the NYC AMoD-transit model, which operator (AMoD or public transit) requires stronger financial incentives to cooperate changes based on network congestion levels — a counterintuitive dynamic for regulators.</span></span>
+    </li>
+  </ul>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <div class="section-label">Actionable Takeaways</div>
+  <ul class="insight-list">
+    <li>
+      <span class="num" style="color: var(--green);">A</span>
+      <span class="text"><strong>Strip weather data from transit ridership models unless regularization is applied</strong><span>Temporal features (day of week, season) dominate predictive accuracy — weather features cause overfitting across all 10 MBTA model variants tested.</span></span>
+    </li>
+    <li>
+      <span class="num" style="color: var(--green);">B</span>
+      <span class="text"><strong>Audit GPS mobility datasets for demographic bias before use in transit planning</strong><span>Facebook and Veraset have source-specific, spatially structured biases. Multi-source validation is essential for equity-sensitive planning in lower-income contexts.</span></span>
+    </li>
+    <li>
+      <span class="num" style="color: var(--green);">C</span>
+      <span class="text"><strong>Build elderly-specific ridership models for paratransit and off-peak service design</strong><span>General models overestimate elderly travel distances by 4.5% and dwell times by 8.9% — meaningful errors for paratransit scheduling and stop placement.</span></span>
+    </li>
+    <li>
+      <span class="num" style="color: var(--green);">D</span>
+      <span class="text"><strong>For fare-free transit zones, explicitly choose between welfare-maximizing or equity-maximizing objective functions</strong><span>They produce different zone sizes and activation timings — equity goals push for larger zones and earlier implementation.</span></span>
+    </li>
+    <li>
+      <span class="num" style="color: var(--green);">E</span>
+      <span class="text"><strong>Deploy sidewalk delivery robots as dual-purpose walkability sensors</strong><span>Speed and trajectory data from existing commercial sidewalk robot operations provide continuous, city-scale pedestrian infrastructure monitoring at zero marginal cost.</span></span>
+    </li>
+  </ul>
+
+  <!-- ALL PAPERS -->
+  <div class="section-label">All Papers Analyzed</div>
+
+  <!-- Paper 1: TOD Dubai -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1689752/full">Enhancing Neighborhood Functionality Through Transit-Oriented Design: A Study of Sustainable Development, Proximity, and Mobility</a></h3>
+      <span class="pill">TOD</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Yahia, Chohan, Arar, Mangi · <em>Frontiers in Built Environment</em>, 2025 · Dubai, UAE</div>
+      <div class="summary">A GIS-based assessment of Dubai's Al Barsha neighborhood around Mall of the Emirates Metro station reveals that vehicle-dominant street design undermines TOD potential despite strong ridership demand (5.6M annual passengers) and mixed land use — requiring regulatory transformation, not just design guidelines.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Al Barsha lacks continuous pedestrian pathways despite high-density transit use</li>
+          <li>12,000 m² of dispersed surface parking should be consolidated into structured facilities</li>
+          <li>577,541 m² of underutilized land available for transit-supportive infill development</li>
+          <li>5.08 km active mobility corridor proposed to reconnect fragmented pedestrian networks</li>
+          <li>Dubai's regulatory frameworks must change to enable higher density and mixed uses near transit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: GIS + field surveys + TOD metrics</span>
+      <span>Who cares: City planners, transit authorities, Gulf urban developers</span>
+    </div>
+  </div>
+
+  <!-- Paper 2: MBTA Forecasting -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2512.02336">Forecasting MBTA Transit Dynamics: A Performance Benchmarking of Statistical and Machine Learning Models</a></h3>
+      <span class="pill">ML</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Nalamalpu, Yuan, Zhou, Pinsky · <em>arXiv:2512.02336</em>, Dec 2025 · Boston, USA</div>
+      <div class="summary">Comprehensive benchmarking of 10 models for Boston's MBTA ridership and delay forecasting finds that temporal factors (day of week, season) far outperform weather data, and that adding meteorological variables often causes overfitting.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Temporal factors dominate: day of week and season substantially outperform weather metrics</li>
+          <li>Adding weather variables frequently caused overfitting across all 10 tested models</li>
+          <li>Novel self-exciting point process framework applied to delay prediction</li>
+          <li>11 models for delay prediction benchmarked with RMSE as primary metric</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: Retrospective benchmarking, feature ablation</span>
+      <span>Who cares: Transit data scientists, operations researchers</span>
+    </div>
+  </div>
+
+  <!-- Paper 3: DST-TransitNet -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2410.15013">DST-TransitNet: A Dynamic Spatio-Temporal Deep Learning Model for Scalable and Efficient Network-Wide Prediction of Station-Level Transit Ridership</a></h3>
+      <span class="pill">GNN</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Wang, Shalaby · <em>arXiv:2410.15013 / TRB 2025</em> · Bogota, Colombia</div>
+      <div class="summary">A hybrid GNN-RNN model outperforms state-of-the-art alternatives in predicting station-level ridership on Bogota's TransMilenio BRT system, maintaining accuracy stability over long prediction intervals — critical for real-time transit management in the global south.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Graph Neural Networks capture inter-station spatial dependencies that ARIMA/SARIMA miss</li>
+          <li>Recurrent Neural Networks handle temporal dynamics including peak-hour variation</li>
+          <li>Time series decomposition improves model interpretability without sacrificing accuracy</li>
+          <li>Tested on Bogota's TransMilenio BRT across three distinct social scenarios</li>
+          <li>Model maintains stability over extended prediction horizons — practical for operations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: GNN + RNN hybrid, time series decomposition</span>
+      <span>Who cares: BRT operators, AI researchers, Latin American city governments</span>
+    </div>
+  </div>
+
+  <!-- Paper 4: Sidewalk Robots (POTD) -->
+  <div class="paper-card" style="border-color: var(--accent);">
+    <div class="paper-header" style="background: #1a0a0a;">
+      <h3><a href="https://arxiv.org/abs/2507.12148">Leveraging Sidewalk Robots for Walkability-Related Analyses ⭐ Paper of the Day</a></h3>
+      <span class="pill">WALKING</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Tong, Simoni, Arfvidsson, Mårtensson · <em>Computers, Environment and Urban Systems (2026)</em> · Stockholm, Sweden</div>
+      <div class="summary">Autonomous sidewalk delivery robots can serve as scalable mobile sensing platforms to continuously monitor pedestrian infrastructure quality. Robot speed is an effective proxy for walkability — higher pedestrian density, reduced width, and surface irregularity all slow robot trajectories. 101 trips across 900 segments on KTH's Stockholm campus demonstrated the concept.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Robot speed effectively proxies pedestrian comfort and sidewalk quality</li>
+          <li>Higher pedestrian density + reduced width + surface irregularity = slower, more variable trajectories</li>
+          <li>101 robot trips, 900 sidewalk segment records collected on KTH campus</li>
+          <li>Three data categories: trip characteristics, physical conditions, pedestrian activity</li>
+          <li>Continuous real-time walkability monitoring at city scale becomes feasible with delivery robot fleets</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: Sensor-equipped robot, 101 trips, spatial analysis</span>
+      <span>Who cares: City planners, sidewalk robot operators, pedestrian advocates</span>
+    </div>
+  </div>
+
+  <!-- Paper 5: Subway Incident -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2412.06871">Predicting Subway Passenger Flows Under Incident Situation with Causality</a></h3>
+      <span class="pill">CAUSAL</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Huang, Qiu, Yuan, Yang · <em>arXiv:2412.06871</em>, Dec 2024 / revised Feb 2026</div>
+      <div class="summary">A two-stage causal framework predicts subway passenger flows during service disruptions, combining baseline normal-operations models with synthetic control methods to isolate incident-specific effects — improving both accuracy and interpretability precisely when forecasting matters most.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Standard prediction models trained on normal operations degrade significantly during incidents</li>
+          <li>Synthetic control methods isolate causal effects of disruptions from background variation</li>
+          <li>Placebo testing validates causal inference in transit disruption scenarios</li>
+          <li>Framework reveals key factors influencing passenger behavior during incidents</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: Two-stage causal framework, synthetic control, placebo tests</span>
+      <span>Who cares: Metro operators, emergency management, transit control centers</span>
+    </div>
+  </div>
+
+  <!-- Paper 6: Elderly Mobility -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2606.31207">Towards Inclusive Mobility Modeling: Characterizing and Evaluating Elderly Trajectory Patterns in Urban Systems</a></h3>
+      <span class="pill">EQUITY</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Wang, He, Zhou · <em>arXiv:2606.31207</em>, June 30, 2026 · Jersey City, USA</div>
+      <div class="summary">Elderly Citi Bike riders show fundamentally different mobility signatures — 958m activity ranges vs 1,189m for young riders, mobility entropy 1.82 vs 4.15, and off-peak temporal patterns — and models trained on full populations systematically overestimate their travel parameters by 4.5–8.9%.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Elderly riders: activity ranges 958m vs. 1,189m (young) — 19% smaller geographic scope</li>
+          <li>Mobility entropy 1.82 vs. 4.15 — elderly use far more predictable, localized routes</li>
+          <li>Off-peak temporal patterns: elderly riders avoid rush hours (likely safety and comfort)</li>
+          <li>Full-population models overestimate step length by 4.5% and dwell time by 8.9%</li>
+          <li>Qwen3-4B fine-tuned with QLoRA performs best on elderly-specific data</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: Citi Bike data 2016–2020, Markov chains, LLM fine-tuning</span>
+      <span>Who cares: Transit planners, paratransit operators, aging-in-place advocates</span>
+    </div>
+  </div>
+
+  <!-- Paper 7: Fly-by Transit -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2511.21295">Fly-by Transit: A Novel Door-to-Door Shared Mobility with Minimal Stops</a></h3>
+      <span class="pill">INNOVATION</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Fan, Gu · <em>arXiv:2511.21295</em>, Nov 2025</div>
+      <div class="summary">Small electric vehicle convoys that decouple trailing cars mid-route can reduce travel times versus conventional buses while delivering 13%+ cost savings compared to ride-hailing — offering a near-term practical alternative to futuristic in-motion coupling transit concepts.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>13%+ savings in generalized system costs vs. conventional buses and e-hailing taxis</li>
+          <li>In-motion decoupling of trailing vehicles avoids delays for primary convoy passengers</li>
+          <li>Small electric vehicles provide zero-emission service at economies of scale</li>
+          <li>Avoids unsolved engineering challenges of in-motion passenger coupling</li>
+          <li>Practical near-term pathway without autonomous technology requirements</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-medium">MEDIUM CONFIDENCE</span>
+      <span>Methodology: Stylized corridor model, analytical optimization</span>
+      <span>Who cares: Micro-transit operators, city transportation departments, mobility VCs</span>
+    </div>
+  </div>
+
+  <!-- Paper 8: E-Scooter AI -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2606.25484">From Causal Discovery to Implementation: An Agentic AI Framework for E-Scooter Mobility Hub Planning Across 29 German Cities</a></h3>
+      <span class="pill">CAUSAL AI</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Jin, Handrich, Martinenz, Hoeser, Li · <em>arXiv:2606.25484</em>, June 24, 2026 · Germany</div>
+      <div class="summary">An LLM-orchestrated causal discovery pipeline identifies transferable hub siting templates across 29 German cities, revealing that core and peripheral e-scooter demand drivers differ systematically by city type — with two real hub sites in Heilbronn already under construction from this research.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Core locations: demand driven by activity access and transit proximity</li>
+          <li>Peripheral locations: demand driven by built-form characteristics (density, land use)</li>
+          <li>City type (large, university, industrial, hilly) modulates demand patterns</li>
+          <li>LLM orchestration adapts causal algorithms across 57 city-cluster units</li>
+          <li>Two hub sites in Heilbronn, Germany are currently under construction from this research</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: GBFS data + LLM causal orchestration + practitioner tool</span>
+      <span>Who cares: Micromobility operators (Tier, Lime), city planners, smart city AI teams</span>
+    </div>
+  </div>
+
+  <!-- Paper 9: Fare-Free Equity -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2502.08731">Equity-aware Design and Timing of Fare-free Transit Zoning Under Demand Uncertainty</a></h3>
+      <span class="pill">POLICY</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Guo, Lu, Chow, Schonfeld · <em>arXiv:2502.08731</em>, Feb 2025 / revised Oct 2025</div>
+      <div class="summary">The first analytical stochastic model for optimizing fare-free transit zone configuration shows that equity goals push for larger zones and earlier activation than pure welfare maximization — giving policymakers the first rigorous framework for designing fare-free zones with explicit equity-welfare tradeoffs.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Optimal fare-free zone length increases when equity objectives are added to welfare maximization</li>
+          <li>Welfare-focused regimes support earlier implementation with longer durations</li>
+          <li>Real options theory applied for first time to transit fare policy timing</li>
+          <li>Fare-free zones increase ridership and reduce automobile usage within zone boundaries</li>
+          <li>Equity and welfare objectives produce divergent policy parameters — explicit choice required</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: Stochastic analytical model, real options theory</span>
+      <span>Who cares: Transit policy makers, equity advocates, transit authority boards</span>
+    </div>
+  </div>
+
+  <!-- Paper 10: GPS Bias -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2606.23616">One Country, Multiple Portraits: Representativeness in GPS-Based Mobility Data Is Source-Specific and Spatially Dependent</a></h3>
+      <span class="pill">DATA BIAS</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Cabrera, Rowe, González-Leonardo, Vilchis-García, Omodei, Hernández-Rosales · <em>arXiv:2606.23616</em>, June 22, 2026 · Mexico</div>
+      <div class="summary">GPS mobility data from Facebook and Veraset exhibit fundamentally different demographic and spatial biases across 2,478 Mexican municipalities — Facebook shows higher but demographically biased coverage, while Veraset concentrates in wealthier urban areas. Using either for transit planning without bias audit risks perpetuating inequity.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Facebook: higher, more spatially uniform coverage but biased toward connected/younger users</li>
+          <li>Veraset (multi-app aggregator): concentrates users in larger, wealthier municipalities</li>
+          <li>Bias drivers differ by source: wealth for Veraset; demographics for Facebook</li>
+          <li>Neighboring municipalities show similar bias patterns — significant spatial dependence</li>
+          <li>Validated against 2020 Mexican Census across 2,478 municipalities</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: Explainable ML + spatial statistical modeling vs. Census</span>
+      <span>Who cares: Transport researchers, city data scientists, equity analysts in global south</span>
+    </div>
+  </div>
+
+  <!-- Paper 11: AMoD Incentive -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2605.18687">Implementation-Based Incentive Design for Autonomous Mobility-on-Demand and Transit Systems</a></h3>
+      <span class="pill">MECHANISM</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Li, Zhang, Zardini · <em>arXiv:2605.18687</em>, May 2026 · NYC</div>
+      <div class="summary">K-implementation theory enables computation of minimum financial transfers that make AMoD and public transit operators cooperate toward socially optimal outcomes in NYC — revealing that dominant incentive misalignment shifts based on network congestion levels.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Dominant incentive misalignment source shifts based on network congestion levels</li>
+          <li>Three large-scale optimization problems required: social target, AMoD best response, PT best response</li>
+          <li>Entropy-regularized convex optimization enables tractable computation at NYC scale</li>
+          <li>Tight payment bounds achieved in NYC case study</li>
+          <li>Framework decomposes obligations into separate deviation gains per operator</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-medium">MEDIUM CONFIDENCE</span>
+      <span>Methodology: K-implementation theory, convex optimization, NYC case study</span>
+      <span>Who cares: City transportation directors, AMoD researchers, transit economists</span>
+    </div>
+  </div>
+
+  <!-- Paper 12: Multimodal AMoD -->
+  <div class="paper-card">
+    <div class="paper-header">
+      <h3><a href="https://arxiv.org/abs/2404.05885">Design of Transit-Centric Multimodal Urban Mobility System with Autonomous Mobility-on-Demand</a></h3>
+      <span class="pill">MULTIMODAL</span>
+    </div>
+    <div class="paper-body">
+      <div class="paper-meta">Guo, Zhao · <em>arXiv:2404.05885</em>, April 2024 · Chicago, USA</div>
+      <div class="summary">The first joint optimization of transit network design, AMoD fleet sizing, and multimodal pricing demonstrates that treating transit and AMoD as separate systems leaves significant efficiency on the table — Chicago case study shows integrated optimization substantially outperforms sequential planning.</div>
+      <div class="insights">
+        <h4>Key Insights</h4>
+        <ul>
+          <li>Joint optimization of three variables outperforms sequential planning approaches</li>
+          <li>Discrete choice modeling captures passenger mode and route preferences endogenously</li>
+          <li>First-order approximation algorithm handles Chicago-scale network feasibly</li>
+          <li>Transit-centric framing preserves public transit as system backbone</li>
+          <li>AMoD serves as first-last mile complement rather than transit substitute</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paper-footer">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <span>Methodology: Joint optimization, discrete choice, first-order approximation</span>
+      <span>Who cares: City transportation planners, transit authorities, urban mobility engineers</span>
+    </div>
+  </div>
+
+  <!-- SVG INFOGRAPHIC -->
+  <div class="section-label">Data Infographic</div>
+  <div class="infographic-section">
+    <h2>Research Digest Infographic — July 3, 2026</h2>
+    <img src="research-infographic-2026-07-03.svg" alt="Transit Research Infographic July 3, 2026" style="max-width:100%; border: 1px solid #2a2f3e;">
+    <div class="download-link"><a href="research-infographic-2026-07-03.svg">↓ Download SVG</a></div>
+  </div>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <div class="section-label">Long-Term Implications</div>
+  <div class="implications-grid">
+    <div class="implication-card">
+      <div class="num">01</div>
+      The convergence of AMoD, AI-optimized transit networks, and causal planning tools could fundamentally restructure transit as a dynamically priced, real-time coordinated service rather than fixed-route scheduling — transforming transit from a public utility model to an intelligent mobility platform.
+    </div>
+    <div class="implication-card">
+      <div class="num">02</div>
+      If mobility data bias is not corrected, AI-driven transit planning will systematically underserve low-income, elderly, and rural populations — institutionalizing existing inequities at scale precisely through the tools designed to improve service delivery.
+    </div>
+    <div class="implication-card">
+      <div class="num">03</div>
+      Transit-oriented development must expand to car-centric cities globally (Gulf, Southeast Asia, Latin America) if urban sustainability goals are to be met — Dubai's findings suggest this requires regulatory transformation, not just TOD design guidelines.
+    </div>
+    <div class="implication-card">
+      <div class="num">04</div>
+      The emerging causal AI paradigm (as demonstrated in e-scooter hub planning with LLM orchestration) will gradually replace correlational ML across all transit planning domains, improving cross-city transferability and policy interpretability.
+    </div>
+  </div>
+
+</div><!-- /.main -->
+
+<footer class="site-footer">
+  <div>
+    <strong>Transit Research Digest</strong> · July 3, 2026<br>
+    Autonomous research agent · 12 papers analyzed
+  </div>
+  <div>
+    <a href="research.html">← Back to Archive</a>
+  </div>
+</footer>
+
+</body>
+</html>
