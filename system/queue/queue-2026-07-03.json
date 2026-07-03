@@ -1,0 +1,81 @@
+{
+  "date": "2026-07-03",
+  "generated_at": "2026-07-03T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Virginia bans sale of geolocation data — implications for transit and urban mobility data markets",
+      "angle": "Virginia just became the first US state to ban selling geolocation data. This directly threatens the business model of mobility data brokers, MaaS aggregators, and transit analytics vendors who monetize GPS traces — including GTFS-realtime feeds licensed to third parties. What changes for transit agencies, and what rights do riders gain?",
+      "rationale": "891 HN points today — top story. Directly affects transit/urban mobility data ecosystem. Virginia SB 1059 signed into law, effective immediately for sale/transfer of precise geolocation data. Not covered in any prior article. Strong regulatory angle aligns with niche. Also a vehicle to revisit transit-desert/equity methodology since GPS data sourcing is central to that research.",
+      "target_length": "long",
+      "slug": "virginia-geolocation-ban-transit-mobility-data",
+      "output_path": "drafts/articles/virginia-geolocation-ban-transit-mobility-data.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "July 4th Weekend Transit Demand: How Agencies Prepare for Holiday Surges",
+      "angle": "Visual explainer of holiday ridership patterns, capacity planning decisions (extra trains, extended hours, special shuttles to fireworks), fare policy on holidays, and how transit agencies measure success on peak event days — using historical data from LA Metro, NYC MTA, WMATA, and MBTA.",
+      "rationale": "Ultra-timely (July 3, day before Independence Day). Visual data on holiday ridership is publish-ready without complex research. Fresh angle — holiday-specific transit planning has never been covered. Strong public-service value for readers who will actually use transit tomorrow.",
+      "target_length": "medium",
+      "slug": "july-4th-transit-demand-patterns-2026",
+      "output_path": "docs/infographic-july-4th-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Right to Local Intelligence: AI Sovereignty in Municipal Transit Planning",
+      "angle": "The 'Right to Local Intelligence' movement (righttointelligence.org, 352 HN pts today) argues cities should control the AI systems that govern local services. Research brief on how AI autonomy in transit operations — scheduling, demand forecasting, dynamic routing — intersects with municipal accountability, procurement transparency, and algorithmic bias risk.",
+      "rationale": "Fresh signal from today. 352 HN points. Not previously covered. Links the AI governance conversation directly to transit operations where AI is increasingly embedded. Strong research angle with real policy implications for transit authorities evaluating third-party AI contracts.",
+      "target_length": "medium",
+      "slug": "right-to-local-intelligence-ai-transit-planning",
+      "output_path": "docs/research-2026-07-03.html"
+    },
+    {
+      "rank": 4,
+      "type": "video_script",
+      "topic": "CarPlay Is Additive — Why Car Tech UX Is Crushing Transit Apps",
+      "angle": "Today's viral CarPlay article (418 HN pts) shows how in-vehicle UI integration is so good it makes driving addictive. This script argues transit apps are doing the opposite — they're friction, not flow. What would it take for transit apps to be as satisfying as CarPlay? Three design requirements transit agencies must adopt before 2028.",
+      "rationale": "418 HN points today. Fresh angle on UX gap between car tech and transit tech — not previously covered in any script. Strong hook for YouTube audience who commute by car but might be persuadable. Editorial angle is pro-transit. Note: video scripts on HOLD due to existing backlog — this script is queued as a research/draft item only; production holds until human approvals received for backlog.",
+      "target_length": "medium",
+      "slug": "carplay-transit-apps-ux-gap-2026",
+      "output_path": "drafts/scripts/carplay-transit-apps-ux-gap-2026-script.md"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "What Gemini Code Assist Shutting Down Reveals About AI Tools Consolidation — and What It Means for Transit Tech Teams",
+      "angle": "Google is shutting down Gemini Code Assist on July 17. Transit agencies and urban mobility startups that adopted this tool face migration decisions. This is also a signal about AI tools market consolidation — fewer vendors, higher switching costs, and procurement risk for municipal tech buyers who signed multi-year AI contracts.",
+      "rationale": "Confirmed today from Google docs. Transit agencies are increasingly AI-tool adopters. The consolidation risk is a governance/procurement angle that has direct operational relevance. Shorter explainer format appropriate — medium depth.",
+      "target_length": "short",
+      "slug": "gemini-code-assist-shutdown-transit-tech-consolidation",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-tech.html"
+    }
+  ],
+  "retries": [
+    {
+      "type": "article",
+      "slug": "virginia-geolocation-ban-transit-mobility-data",
+      "note": "Article-writing agent has 0% success rate over 27 consecutive days. This is retry attempt in a new session context — if drafts/articles/ remains empty after this run, manual diagnostic of the article-writing agent is now mandatory. BRT infographic automated retries remain suspended."
+    }
+  ],
+  "skip_topics": [
+    "Google EU antitrust transit mapping platforms (covered 2026-07-02)",
+    "Single Transformer Layer AI efficiency transit forecasting (covered 2026-07-02)",
+    "AI deregulation Anthropic model restrictions (covered 2026-07-01)",
+    "World Cup 2026 transit operations (tournament concluded, window closed)",
+    "BRT vs light rail cost infographic (retries suspended after 20+ failures)",
+    "California high-speed rail (covered 2026-06-06)",
+    "Transit-oriented development (covered 2026-06-06)",
+    "Physics-anchored ML electric bus timetable (covered 2026-06-29)",
+    "SoCal transit daily brief (produced separately as transit-2026-07-03.html, not a queue item)"
+  ],
+  "trend_signals": [
+    "Virginia geolocation data ban — first US state ban on selling precise location data (891 HN pts)",
+    "Right to Local Intelligence — AI sovereignty movement for municipal governance (352 HN pts)",
+    "CarPlay UX dominance — car-native integration beats transit app design (418 HN pts)",
+    "Alibaba banning Claude Code — enterprise AI tools trust/backdoor concerns (210 HN pts)",
+    "Gemini Code Assist shutdown July 17 — AI developer tools consolidation (confirmed via Google docs)"
+  ]
+}

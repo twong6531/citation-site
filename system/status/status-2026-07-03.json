@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-03",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold_backlog",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 27: approved.json empty since 2026-06-07. 27 consecutive days without a human approval. 5 QC-passed scripts ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to system/approved.json.",
+    "ARTICLE AGENT UNRESPONSIVE: drafts/articles/ has never had a file produced in 27 consecutive days across the entire site history. 0% article production rate. Manual diagnostic of article-writing agent is now critically overdue.",
+    "BRT INFOGRAPHIC RETRIES SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 remain suspended. Manual diagnostic of infographic-writing agent required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD: 5 QC-passed scripts and 5 needs-revision scripts in backlog. No new scripts until human approvals received.",
+    "GOOGLE NEWS RSS FEED EMPTY: 6+ consecutive days of empty results from Google News Technology RSS. Persistent parsing/access issue -- manual check required.",
+    "NEW TODAY: Virginia geolocation data ban (891 HN pts) -- queued as Rank 1 long article with transit mobility data privacy angle.",
+    "NEW TODAY: Right to Local Intelligence (352 HN pts) -- queued as Rank 3 research brief on AI governance in municipal transit planning.",
+    "NEW TODAY: Gemini Code Assist shutdown July 17 -- queued as Rank 5 short explainer for transit tech teams.",
+    "TIMELY: July 3 -- Rank 2 infographic on July 4th holiday transit demand patterns is publish-by-tomorrow or it loses timeliness."
+  ]
+}
