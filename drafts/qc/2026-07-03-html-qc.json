@@ -1,0 +1,27 @@
+{
+  "file": "docs/2026-07-03.html",
+  "type": "article",
+  "reviewed_at": "2026-07-03T18:00:00Z",
+  "verdict": "REVISE",
+  "score": 73,
+  "checks_passed": [
+    "Word count ~877 words (PASS: 600+ threshold met)",
+    "No AI tells detected (no 'As an AI', 'I cannot', 'certainly,', 'I'd be happy')",
+    "No true placeholder text (no Lorem ipsum, TODO, [INSERT], TBD in editorial content)",
+    "HTML structure complete: DOCTYPE, html, head, body, meta charset, meta viewport, title all present",
+    "Navigation present: footer links to index.html",
+    "Named sources with specific facts present: FractalFir (crustc), Wassym Bensaid (Rivian CSO), Elena Verna, Decoder podcast",
+    "Specific verifiable facts: Linux 6.9 kernel version, ~400,000 line rustc codebase, $10M CarPlay app count claim",
+    "No duplicate topic overlap in 14-day covered_topics window (topics are new for today)",
+    "Factual spot-check: Linux LUKS sleep-mode key exposure plausible; crustc project is real; Rivian CarPlay debate is real; Elena Verna AI hype critique is real person/topic"
+  ],
+  "checks_failed": [
+    "SOURCES: No per-story inline source links — footer cites only 'Hacker News · Jul 3, 2026' generically. Prior QC runs flagged this same issue (2026-07-02 REVISE noted 'add inline source links per story'). Recurring deficiency, now 2+ consecutive days.",
+    "EDITORIAL IMAGE: Section A is an unresolved API-quota placeholder for the 8th+ consecutive day. Styled div describes what the image would be, but no image is rendered. Class 'visual-placeholder' is an intentional design fallback, but the quota issue ('API quota') has persisted without resolution since at least 2026-06-20.",
+    "FACTUAL FLAG — CARPLAY: '5,000+ phone apps unavailable in any OEM system' — specific stat without inline citation. Plausible but unverifiable without a source link."
+  ],
+  "revision_notes": "Two actionable fixes: (1) Add per-story source links as anchor tags — the story content references specific named sources (Decoder podcast for Rivian, Elena Verna's own publication, crustc GitHub) but does not link to them. Add a hyperlinked source attribution to each story card. (2) Resolve the API quota issue for editorial image generation: investigate why quota has been exceeded for 8+ consecutive days, or implement a fallback that fetches a relevant CC-licensed image rather than leaving Section A empty. The placeholder div is functional but not publication-quality.",
+  "fail_reason": null,
+  "approved_for_publish": false,
+  "pipeline_note": "File already committed to docs/ and live on GitHub Pages before this QC review. The docs/ pipeline publishes unconditionally before QC runs — this is the same structural gap documented in prior daily summaries (2026-06-30 process_finding). QC verdict applies retroactively and informs revision priority."
+}

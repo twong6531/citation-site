@@ -1,0 +1,85 @@
+{
+  "date": "2026-07-03",
+  "total_reviewed": 5,
+  "passed": 3,
+  "revise": 2,
+  "failed": 0,
+  "ready_to_publish": [
+    "research-2026-07-03 (Transit Research Digest, score 88)",
+    "transit-2026-07-03 (SoCal Transit Intelligence, score 87)",
+    "research-infographic-2026-07-03-svg (Research Infographic, score 85)"
+  ],
+  "needs_revision": [
+    "2026-07-03 (Daily Briefing, score 73): Add per-story source links; resolve API quota for editorial image (Day 8+ of placeholder Section A)",
+    "infographic-2026-07-03-svg (Daily Briefing Infographic, score 62): TEXT TRUNCATION — 3 of 6 'why it matters' lines cut off mid-word (cards 3, 4, 6). Fix multi-line text wrapping before redistribution."
+  ],
+  "blocked": [],
+  "qc_items": [
+    {
+      "file": "docs/2026-07-03.html",
+      "verdict": "REVISE",
+      "score": 73,
+      "approved_for_publish": false,
+      "primary_issue": "No per-story source links; editorial image Section A is API-quota placeholder (8+ consecutive days)"
+    },
+    {
+      "file": "docs/research-2026-07-03.html",
+      "verdict": "PASS",
+      "score": 88,
+      "approved_for_publish": true,
+      "primary_issue": null
+    },
+    {
+      "file": "docs/transit-2026-07-03.html",
+      "verdict": "PASS",
+      "score": 87,
+      "approved_for_publish": true,
+      "primary_issue": null
+    },
+    {
+      "file": "docs/infographic-2026-07-03.svg",
+      "verdict": "REVISE",
+      "score": 62,
+      "approved_for_publish": false,
+      "primary_issue": "TEXT TRUNCATION: 'why it matters' text cut off mid-word on cards 3 (AI Local), 4 (CarPlay), and 6 (AI Hype). Single-line SVG text elements exceed 800px canvas."
+    },
+    {
+      "file": "docs/research-infographic-2026-07-03.svg",
+      "verdict": "PASS",
+      "score": 85,
+      "approved_for_publish": true,
+      "primary_issue": null
+    }
+  ],
+  "pipeline_notes": [
+    "PIPELINE FAILURE CONFIRMED DAY 28: drafts/articles/ remains empty. Article-writing agent has produced zero output across 28 consecutive days. Virginia geolocation data ban (Rank 1 — 891 HN pts) and Right to Local Intelligence (Rank 3 — 352 HN pts) queued for today but NOT produced.",
+    "TIMELY ITEM MISSED — CRITICAL: July 4th holiday transit demand infographic (Rank 2 queue item) was NOT produced today. Timeliness window closes tomorrow (July 4). This is the America 250th birthday and the single most transit-intensive holiday weekend in LA Metro's history. The infographic agent did not produce a July 4th-specific piece; today's infographic covers Linux security news instead.",
+    "VIDEO SCRIPTS ON HOLD — DAY 28: CarPlay UX gap script (Rank 4) not produced. system/approved.json still empty. 5 QC-passed scripts remain blocked: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script.",
+    "GOOGLE NEWS RSS FEED: Listed as empty for 6+ consecutive days in today's status alerts. The SoCal transit brief and daily briefing appear to have sourced today's content correctly (Metro Source, HN), but the RSS parsing failure is an unresolved monitoring gap.",
+    "DOCS/ PRE-PUBLISH PATTERN CONTINUES: All 5 files reviewed today were committed directly to docs/ before QC ran. The docs/ -> QC -> publish gate does not exist in the current pipeline. Content goes live immediately. This is the 28th consecutive day of unconditional docs/ publishing without QC pre-approval.",
+    "EDITORIAL IMAGE API QUOTA: The image generation API (Imagen/Gemini) has been hitting quota limits for 8+ consecutive days. Both today's daily briefing and research digest acknowledge this. No resolution path has been identified in the system."
+  ],
+  "infographic_defect_log": {
+    "file": "docs/infographic-2026-07-03.svg",
+    "defect_type": "SVG text truncation",
+    "affected_cards": [3, 4, 6],
+    "examples": [
+      {"card": 3, "text_rendered": "who controls access to intellige", "should_be": "who controls access to intelligence itself"},
+      {"card": 4, "text_rendered": "for the dash", "should_be": "for the dashboard of the future"},
+      {"card": 6, "text_rendered": "is critical f", "should_be": "is critical for investors and consumers"}
+    ],
+    "fix_required": "Multi-line tspan wrapping in SVG text elements for cards 3, 4, and 6"
+  },
+  "critical_alerts_carried_forward": [
+    "CRITICAL DAY 28: approved.json empty since 2026-06-07. 5 QC-passed scripts blocked on human approval. Requires immediate human action.",
+    "ARTICLE AGENT UNRESPONSIVE: 28 consecutive days, 0% article production rate.",
+    "TIMELY ITEM MISSED: July 4th holiday transit infographic not produced — window closes 2026-07-04.",
+    "EDITORIAL IMAGE QUOTA: 8+ consecutive days of Imagen API quota failure."
+  ],
+  "script_backlog_unchanged": {
+    "pass_count": 5,
+    "revise_count": 5,
+    "pass_items": ["tesla-spacex-transit-empire-script", "dopamine-fracking-script", "us-cities-transit-gap-script", "transit-app-dark-ux-2026-script", "fare-evasion-economics-script"],
+    "revise_items": ["slime-mold-transit-script", "apple-gemini-2026-script", "pokemon-go-drones-urban-data-script", "transit-desert-pomdp-script", "electric-axial-flux-motor-transit-explainer-script"]
+  }
+}

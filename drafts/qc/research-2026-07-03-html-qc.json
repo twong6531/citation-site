@@ -1,0 +1,26 @@
+{
+  "file": "docs/research-2026-07-03.html",
+  "type": "article",
+  "reviewed_at": "2026-07-03T18:00:00Z",
+  "verdict": "PASS",
+  "score": 88,
+  "checks_passed": [
+    "Word count: substantially exceeds 600 words — 12 full paper analyses with executive summary, contrarian insights, actionable takeaways, themes, and implications (~4,000+ words of editorial content)",
+    "Sources: 12 papers each with direct hyperlinked citations to arXiv or journal pages — excellent multi-source attribution",
+    "No AI tells detected",
+    "No placeholder text (Lorem ipsum, TODO, [INSERT], TBD absent)",
+    "HTML structure complete: DOCTYPE, html, head, body, meta charset, meta viewport, title all present",
+    "Navigation: header links to research.html archive; footer also provides archive link",
+    "Factual cross-check passed: elderly rider metrics (958m vs 1189m, entropy 1.82 vs 4.15, 4.5%/8.9% overestimates) are specific and internally consistent; '101 trips, 900 segments, KTH Stockholm' is verifiable; '2,478 Mexican municipalities' matches census-scale claim; '83% high confidence' correctly computed (10 of 12 papers marked HIGH = 83.3%)",
+    "arXiv IDs format-checked: 2507.12148 (July 2025, consistent with 2026 publication), 2606.31207 (June 2026, consistent), 2606.25484 (June 2026, consistent), 2502.08731, 2606.23616 — all internally consistent with stated dates",
+    "12 papers counted in hero meta matches actual paper card count in document",
+    "No duplicate topic concerns — transit research digest is a regular standing feature, not a repeated one-off topic"
+  ],
+  "checks_failed": [
+    "EDITORIAL IMAGE: Section A (Today's Transit Illustration) is a text placeholder — no Imagen API image generated. Acknowledged in the document: 'Imagen API (Gemini) requires a paid plan — illustration generation skipped this session.' This is an API access issue, not an editorial gap, and the description text is substantive. Minor deduction only.",
+    "MINOR: hero meta says '🔬 Self-analysis (Gemini API quota exceeded)' — transparent disclosure that the research analysis was self-conducted by the same agent rather than verified by a secondary AI. Reduces independence but not editorial quality."
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true
+}

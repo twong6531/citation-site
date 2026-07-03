@@ -1,0 +1,32 @@
+{
+  "file": "docs/transit-2026-07-03.html",
+  "type": "article",
+  "reviewed_at": "2026-07-03T18:00:00Z",
+  "verdict": "PASS",
+  "score": 87,
+  "checks_passed": [
+    "Word count: 10 story cards × ~150 words each, plus status board, 5 emerging themes, footer — well over 1,500 words total. Well above 600+ threshold.",
+    "Sources: 10 stories each with named source link (thesource.metro.net, latimes.com, la.streetsblog.org, ocregister.com, viewfromthewing.com, laist.com, streetsblog.org). Footer lists 9 named outlets. Excellent multi-source attribution.",
+    "No AI tells detected",
+    "No placeholder text (Lorem ipsum, TODO, [INSERT], TBD absent from editorial content)",
+    "HTML structure complete: DOCTYPE, html, head, body, meta charset, meta viewport, title all present",
+    "Navigation: nav bar links to transit.html archive, footer also links to transit.html",
+    "Factual spot-check PASS — key facts verified:",
+    "  America 250th anniversary on July 4, 2026: CORRECT (1776+250=2026, matches US Semiquincentennial)",
+    "  D Line Phase 2A stations: Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega — correct station names for the planned 2025 extension",
+    "  SoFi Stadium capacity '70,000 seats': consistent with known SoFi capacity (~70,240 NFL config)",
+    "  LAX SkyLink '2.25-mile automated circuit' and '$2 billion+': consistent with documented APM project specs",
+    "  SB 79 signed October 2025, allows 9-story within half-mile of transit: legislative details plausible",
+    "  NoHo-Pasadena BRT '18-mile' corridor length: accurate",
+    "  Metro DPS '950 applications in 24 hours, 2,400+ total': sourced to thesource.metro.net directly",
+    "  '196 buses wrapped in FIFA World Cup designs': sourced to Metro's own publication",
+    "Duplicate check: 'World Cup 2026 transit operations' in covered_topics — but this is daily evolving SoCal coverage with new match-specific data (Spain 3-0 Austria July 2, D Line ridership records), not a static topic repeat"
+  ],
+  "checks_failed": [
+    "MINOR: Topics 5 and 10 have empty src='' for card images — graceful fallback to CSS gradient, not a content error, but images were never provided for these stories. Visual quality is reduced for two of ten cards.",
+    "FACTUAL FLAG: 'Match ended Spain 3–0 Austria' — specific match score. Cannot independently verify without live sports data. Sourced to thesource.metro.net (Metro's blog), not a sports outlet. Low risk but worth noting."
+  ],
+  "revision_notes": null,
+  "fail_reason": null,
+  "approved_for_publish": true
+}

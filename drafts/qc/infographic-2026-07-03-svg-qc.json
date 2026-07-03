@@ -1,0 +1,26 @@
+{
+  "file": "docs/infographic-2026-07-03.svg",
+  "type": "infographic",
+  "reviewed_at": "2026-07-03T18:00:00Z",
+  "verdict": "REVISE",
+  "score": 62,
+  "checks_passed": [
+    "Valid SVG: file starts with <?xml version='1.0' encoding='UTF-8'?> and <svg viewBox> — valid SVG document",
+    "viewBox attribute present: viewBox='0 0 800 1378'",
+    "Meaningful text content: 6 story cards with story numbers, category pills, headlines, summary text, impact bars with scores, 'why it matters' text",
+    "Content matches parent HTML: all 6 stories from 2026-07-03.html are correctly represented with consistent headlines and scores",
+    "Structural completeness: header, 6 cards, footer — correctly bounded at y=1378",
+    "Emoji icons match story themes (🔑 Linux key, 🦀 Rust, 🧠 AI, 🚗 CarPlay, 🖥️ Steam, 🎭 AI hype)"
+  ],
+  "checks_failed": [
+    "CRITICAL — TEXT TRUNCATION IN 3 OF 6 CARDS: Multiple 'why it matters' text lines are cut off mid-word or mid-sentence in the SVG, leaving incomprehensible fragments visible to readers:",
+    "  Card 3 (AI Local): 'who controls access to intellige' — truncated, missing 'nce itself'",
+    "  Card 4 (CarPlay): 'for the dash' — truncated, missing 'board of the future'",
+    "  Card 6 (AI Hype): 'is critical f' — truncated, missing 'or investors and consumers'",
+    "  Root cause: SVG text elements with long strings exceed the 800px canvas width without wrapping or clipping, producing visible mid-word cutoffs at the SVG edge.",
+    "PNG COMPANION: No PNG companion file exists. docs/infographic-2026-07-03.png is absent. Ongoing deficiency for SVG-only output — PNG needed for social sharing and non-SVG environments."
+  ],
+  "revision_notes": "Two fixes required: (1) TEXT TRUNCATION (critical): Rebuild the 'why it matters' text sections for cards 3, 4, and 6 using multi-line <tspan> elements that wrap text at approximately 600 characters per line, staying within the 800px canvas width. Cards 1, 2, and 5 are unaffected. The root cause is single-line text SVG elements that extend past the viewBox boundary. (2) PNG companion: Generate infographic-2026-07-03.png at 800×1378px for social distribution. The truncation defect means the current SVG should not be used in any context where the cut-off text would be visible — fix before redistribution.",
+  "fail_reason": null,
+  "approved_for_publish": false
+}
