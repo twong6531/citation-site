@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoCal Transit Intelligence — July 3, 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; }
+nav a:hover { color: #fff; }
+.hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; }
+.hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+.card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.priority.high { background: #ef4444; color: #fff; }
+.priority.medium { background: #f59e0b; color: #000; }
+.priority.low-medium { background: #64748b; color: #fff; }
+.agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+.card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; }
+.date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+.connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+.source-link:hover { color: #60a5fa; text-decoration: underline; }
+.status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+.status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:nth-child(odd) td { background: #1e293b; }
+tr:nth-child(even) td { background: #0f172a; }
+.themes { background: #0a1628; padding: 2rem; }
+.themes-inner { max-width: 1400px; margin: 0 auto; }
+.themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+.theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+.theme:last-child { border-bottom: none; }
+.theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+.theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>SoCal Transit Intel</strong></div>
+  <div><a href="transit.html">Archive</a><a href="https://thesource.metro.net" target="_blank">Metro Source</a></div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">July 3, 2026 &nbsp;·&nbsp; 10 stories &nbsp;·&nbsp; June 24 – July 3, 2026</p>
+</div>
+
+<div class="grid">
+
+  <!-- TOPIC 1 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/07/IMG_0549-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="July 4th America 250th transit service"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: America's 250th Birthday — Metro Covers July 4th + World Cup Weekend</h2>
+      <p class="date-range">July 3–5, 2026</p>
+      <p class="summary">Los Angeles is hosting what may be the most transit-intensive holiday weekend in its history: America's Semiquincentennial celebrations on the National Mall equivalent at Grand Park, the FIFA World Cup Round of 16 at SoFi Stadium, and Anime Expo at the Convention Center are all running simultaneously, with LA Metro providing service to all three. Metro's July 4th guide, published today, emphasizes free connections to fireworks, parades, and block parties across the region.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>America turns <strong>250 years old</strong> on July 4, 2026</li>
+        <li>Gloria Molina Grand Park hosts official America 250 celebrations in downtown LA</li>
+        <li>Anime Expo continues at LA Convention Center through July 5</li>
+        <li>FIFA World Cup Round of 16 in progress — next LA match at SoFi Stadium</li>
+        <li>Metro recommends all lines including B/D to downtown, A Line to Convention Center</li>
+        <li>Holiday service levels with extended evening runs on most rail lines</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metro is simultaneously serving a national anniversary celebration, a global sporting event, and one of North America's largest anime conventions — an operational stress test that would have been unthinkable a decade ago. Success here validates the agency's capacity for multi-event coordination.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (D Line ridership), Topic 5 (World Cup 196 buses)</p>
+      <a class="source-link" href="https://thesource.metro.net/go-metro-to-americas-250th-celebration-and-the-best-july-events-in-los-angeles-this-weekend-july-3-5/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 2 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_9887-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Metro World Cup service Spain vs Austria July 2"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: Spain vs. Austria Delivered Metro's Biggest World Cup Day Yet</h2>
+      <p class="date-range">July 2, 2026</p>
+      <p class="summary">Yesterday's Spain vs. Austria Group Stage finale at SoFi Stadium drew the largest single-match transit crowds of the entire Los Angeles World Cup series, with Metro and Metrolink jointly operating high-frequency shuttle service that carried tens of thousands of fans from Union Station and downtown LA to Inglewood. The match attracted massive global viewership and proved Metro's event-day capacity in the Round of 16 run-up.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Spain vs. Austria played July 2 at SoFi Stadium (LA Stadium)</li>
+        <li>Metro operated continuous high-frequency rail service to Inglewood all day</li>
+        <li>Metrolink provided supplemental express trains from Union Station area</li>
+        <li>SoFi capacity: <strong>70,000 seats</strong> — all sold out</li>
+        <li>Match ended Spain 3–0 Austria (Spain advances to Round of 16)</li>
+        <li>Metro reported "strong" ridership performance — details pending official count</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Every World Cup match day is a live operational test for LA28 Olympics planning. Metro's ability to move 70,000 stadium fans without gridlock on the A Line extension corridor is exactly the proof-of-concept the 2028 Games organizing committee needs to see.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (D Line ridership record), Topic 9 (Metrolink)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-service-updates-for-spain-vs-austria-on-thursday-july-2/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 3 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/DSC_3090-Enhanced-NR-Edit-scaled.jpg?fit=1200%2C800&ssl=1"
+           alt="D Line extension ridership record Metro rail"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: D Line Extension + World Cup Drive Strongest Metro Rail Ridership in 6 Years</h2>
+      <p class="date-range">June 16, 2026</p>
+      <p class="summary">Metro's May 2026 rail ridership reached its highest level since the start of the COVID-19 pandemic, fueled by two powerful forces: the opening of three new D Line (Purple Line) Extension stations serving the Miracle Mile, Fairfax District, and Beverly Hills-adjacent neighborhoods, and the start of FIFA World Cup service to SoFi Stadium. The milestone signals that post-pandemic transit recovery in LA is no longer a hope — it is underway.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Highest Metro rail ridership in <strong>6+ years</strong> (since pre-COVID)</li>
+        <li>Three new D Line stations opened: Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega</li>
+        <li>New stations serve Miracle Mile LACMA, Fairfax District, Beverly Hills-adjacent areas</li>
+        <li>World Cup service to SoFi Stadium "started strong" per Metro's June 16 report</li>
+        <li>Joint Metro + Metrolink operations for SoFi matchday service</li>
+        <li>May 2026 ridership data — June numbers expected to be even higher</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The D Line Extension is LA's largest transit investment since the Red Line in the 1990s. Six-year ridership highs in its first month of operation vindicate the $9 billion project and set the stage for Phase 3 completion to the Westside and Santa Monica.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (July 4th weekend), Topic 2 (World Cup match days), Topic 8 (Metro Board projects)</p>
+      <a class="source-link" href="https://thesource.metro.net/new-d-line-stations-help-drive-strongest-rail-ridership-in-more-than-six-years-world-cup-service-starts-strong/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 4 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://www.dailynews.com/wp-content/uploads/2026/03/LDN-L-LAXFEES-0311-DC-12.jpg?w=1024&h=682"
+           alt="LAX SkyLink automated people mover delays World Cup"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LAX / LAWA</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: LAX SkyLink People Mover Struggles as World Cup Fans Pour In</h2>
+      <p class="date-range">June 24 – July 3, 2026</p>
+      <p class="summary">The LAX SkyLink Automated People Mover — a $2 billion+ project years in the making — has been unable to provide reliable service during the World Cup's peak travel period, frustrating tens of thousands of arriving international visitors who expected a smooth airport connection. Test runs began in April 2026, but chronic service interruptions and delays have persisted into July, making the system effectively unavailable when it is needed most.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>LAX SkyLink cost: over <strong>$2 billion</strong> for 2.25-mile automated circuit</li>
+        <li>Connects all 9 terminal areas, Consolidated Rent-A-Car facility, and Metro A Line</li>
+        <li>Test runs officially began April 22, 2026 (NBC LA)</li>
+        <li>LA Times (June 24): travelers reporting "long-awaited train struggles with delays"</li>
+        <li>LAX also hiked Uber/Lyft pickup fees in March 2026 in anticipation of APM launch</li>
+        <li>World Cup matchdays flooded LAX with international arrivals — reliability gap exposed</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> SkyLink is LA's single most important transit-airport connectivity project for the 2028 Olympics. If it cannot function reliably for the World Cup — which drew far fewer visitors — the LA28 Games could face a serious first-mile/last-mile crisis at the city's primary international gateway.</p>
+      <p class="connections"><em>Connects to:</em> Topic 5 (Cathay Pacific station naming), Topic 2 (World Cup transit)</p>
+      <a class="source-link" href="https://www.latimes.com/california/story/2026-06-24/lax-skylink-people-mover-delays-world-cup" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 5 -->
+  <article class="card">
+    <div class="card-image">
+      <img src=""
+           alt="Cathay Pacific LAX Metro station naming rights"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#0a3060,#1e1b4b)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LAX / LAWA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: Cathay Pacific Bids ~$10M to Name the New LAX Metro Station</h2>
+      <p class="date-range">May 15–20, 2026</p>
+      <p class="summary">Cathay Pacific, the Hong Kong-based international airline, is pursuing a deal to purchase the naming rights for the new LAX Metro station — the future terminus of the A Line (Blue Line) extension to the airport — in an approximately $10 million deal. The station, which will serve as the Metro connection point for LAX SkyLink passengers, would become "Cathay Pacific Station" under the proposed arrangement. View from the Wing and aviation industry outlets broke the story in May.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Cathay Pacific seeking to rename the new LAX Metro station for ~<strong>$10 million</strong></li>
+        <li>Station will connect to the LAX SkyLink Automated People Mover</li>
+        <li>Would create a branded aviation-transit gateway for a specific airline</li>
+        <li>Multiple international carriers compete for LAX terminal presence</li>
+        <li>Metro has sold naming rights to other infrastructure elements before</li>
+        <li>Deal would be contingent on regulatory and board approvals</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Corporate station naming at a public airport gateway raises novel questions about equity, branding, and precedent for publicly funded transit. If approved, it could unlock a new revenue stream for Metro — but also set expectations for private sponsors at other high-profile stations.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (LAX SkyLink delays), Topic 3 (Metro ridership growth)</p>
+      <a class="source-link" href="https://viewfromthewing.com/laxs-new-metro-station-set-to-be-renamed-for-cathay-pacific-in-nearly-10-million-deal/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 6 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?fit=1200%2C600&ssl=1"
+           alt="Metro Department of Public Safety sworn officer recruitment"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: Metro DPS Recruitment Surges — 950 Apps in 24 Hours, 2,400+ Total</h2>
+      <p class="date-range">June 9 – July 1, 2026</p>
+      <p class="summary">When Metro opened sworn officer applications for its new Department of Public Safety on June 9, it received 950 applications in the first 24 hours alone. By July 1, total applications had climbed past 2,400. The DPS represents Metro's historic shift away from contracting LAPD and LASD, toward an in-house community-focused police force whose recruits will shape the agency's culture and public safety approach from the ground up.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>950 applications</strong> in first 24 hours (June 9 launch)</li>
+        <li><strong>2,400+</strong> total applicants by July 1 per earlier briefing</li>
+        <li>First-ever sworn peace officers under Metro's direct control</li>
+        <li>First recruits will build DPS culture, policies, and community approach</li>
+        <li>Emphasis on community-focused, de-escalation-first policing model</li>
+        <li>Transition from LAPD/LASD contract model underway</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Transit safety perception is a leading driver of ridership. Building an in-house force accountable directly to Metro — rather than contracting external agencies with separate priorities — gives Metro unprecedented control over the rider experience. The 2,400+ applicant surge suggests strong interest in the new model.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (ridership recovery), Topic 2 (World Cup safety demands)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-launches-sworn-officer-recruitment-for-its-department-of-public-safety/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 7 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/4-1.jpeg?fit=1200%2C801&ssl=1"
+           alt="Metro 196 World Cup wrapped buses and Union Station Fan Zone"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Union Station</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: 196 Wrapped Buses + Union Station Fan Zone — Metro's World Cup Identity</h2>
+      <p class="date-range">June 22, 2026</p>
+      <p class="summary">As LA's Official FIFA World Cup Public Transit Provider, Metro deployed 196 buses wrapped in vivid World Cup designs across the region — a visible symbol of the agency's $400 million event operations role. The Union Station Heart of the City Fan Zone, an official FIFA Watch Party venue, sold out all four of its initial days and featured soccer legends, live entertainment, and international fans from dozens of nations converging on LA's grand transit hub.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>196 buses</strong> wrapped in FIFA World Cup designs across LA Metro fleet</li>
+        <li>Metro designated <em>Official Public Transit Provider</em> of FIFA World Cup 2026 LA Host City</li>
+        <li>Union Station Fan Zone sold out all <strong>4 initial days</strong></li>
+        <li>Fan Zone featured live soccer legends, entertainment, and international food/culture</li>
+        <li>Union Station serving as a physical crossroads for global World Cup fans</li>
+        <li>Metro operating free or subsidized match-day shuttles to SoFi Stadium</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metro's World Cup brand activation is the largest public-facing marketing campaign in the agency's history. It converts transit into a cultural experience — not just a utility — and builds goodwill among the millions of first-time Metro riders who are discovering the system during the tournament.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (match day service), Topic 1 (July 4th multi-event)</p>
+      <a class="source-link" href="https://thesource.metro.net/how-metro-transformed-nearly-200-buses-into-rolling-celebrations-for-the-world-cup/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 8 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://la.streetsblog.org/wp-content/uploads/sites/13/2026/05/LARiver6thStreet2026Jan17_01.jpeg"
+           alt="Metro board NoHo-Pasadena BRT East Valley Rail LA River path"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">City of Burbank</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: Metro Board Greenlights NoHo-Pasadena BRT & East Valley Rail — Then Sues Burbank</h2>
+      <p class="date-range">May 21–28, 2026</p>
+      <p class="summary">Metro's May 2026 Board meeting approved FY 2026-27 budget and project budgets for both the East San Fernando Valley Light Rail and NoHo-Pasadena BRT corridors — and within days, Metro filed a lawsuit against Burbank over construction permit requirements it says are blocking NoHo-Pasadena's progress. Mayor Karen Bass assumes the Metro board chairpersonship in July, adding political momentum to the agency's ambitious project calendar.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>FY 2026-27 Metro annual budget approved at May board meeting</li>
+        <li>East San Fernando Valley Light Rail: project budget approved</li>
+        <li>NoHo-Pasadena BRT: <strong>18-mile</strong> rapid bus corridor, North Hollywood to Pasadena</li>
+        <li>Metro files lawsuit against City of Burbank over construction permit blockage</li>
+        <li>LA River bike/walk path advancement motion approved</li>
+        <li>Mayor Karen Bass becomes Metro board chair starting July 2026</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The Burbank lawsuit is unusual — Metro rarely sues cities. It signals that the agency is tired of permit delays killing project timelines, and it sets a precedent for how Metro will handle municipal obstruction on future corridors. NoHo-Pasadena BRT is already years behind schedule.</p>
+      <p class="connections"><em>Connects to:</em> Topic 10 (SCAG SB 79 housing near transit), Topic 6 (DPS safety reform)</p>
+      <a class="source-link" href="https://la.streetsblog.org/2026/05/28/metro-may-2026-board-updates-budget-east-valley-rail-noho-pasadena-river-path-and-more" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 9 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://www.ocregister.com/wp-content/uploads/2026/05/OCR-L-METROLINK-05XX-JG-01-1.jpg?w=1024&h=658"
+           alt="Metrolink ridership drop service cuts World Cup"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Metrolink</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: Metrolink's Contradiction: World Cup Hero, Everyday Ridership Crisis</h2>
+      <p class="date-range">May 7 – June 26, 2026</p>
+      <p class="summary">Metrolink has been simultaneously praised for its World Cup match-day performance at SoFi Stadium and criticized for its ongoing structural decline: what began as "temporary" 20% service cuts have now been made indefinitely permanent, regular ridership remains well below pre-pandemic levels, and a vehicle-train collision in Pacoima this spring added safety concerns to the list of challenges. The commuter railroad is struggling to define what it is and who it is for.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>World Cup special service to SoFi Stadium expanded and well-received</li>
+        <li><strong>20% service cuts</strong> declared "temporary" are now indefinitely permanent (July 2 brief)</li>
+        <li>Regular weekday ridership still significantly below pre-pandemic levels</li>
+        <li>UCR commuter fares raised in May 2026</li>
+        <li>Vehicle crash into Metrolink train in Pacoima, May 30, 2026</li>
+        <li>OC Register: Metrolink "struggling to define its future"</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metrolink's bifurcated performance — excelling for special events, failing for daily commuters — exposes a fundamental strategic question: should a regional commuter railroad compete primarily for special events or double down on regular ridership with more frequent, reliable service? Its answer will shape SoCal's rail network for decades.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (World Cup service), Topic 3 (Metro ridership recovery contrast)</p>
+      <a class="source-link" href="https://www.ocregister.com/2026/05/15/ridership-drop-service-cuts-plague-metrolink-as-it-struggles-to-define-its-future/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 10 -->
+  <article class="card">
+    <div class="card-image">
+      <img src=""
+           alt="SCAG SB 79 transit housing map SoCal"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#14532d,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">SCAG</span>
+        <span class="agency">CA Legislature</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: SCAG SB 79 Draft Map — Where Dense Housing Can Rise Near SoCal Transit</h2>
+      <p class="date-range">June 1–3, 2026</p>
+      <p class="summary">The Southern California Association of Governments released a draft map showing which parcels across the region would be eligible for up to 9-story residential development under California's SB 79 transit-oriented housing law, signed by Governor Newsom in October 2025. The map, which covers LA Metro rail, Metrolink, and BRT corridors, has ignited immediate opposition from homeowners adjacent to transit lines while transit advocates say it's necessary to house a region where rising rents are pushing people away from transit options.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>SB 79 signed by Governor Newsom, <strong>October 2025</strong></li>
+        <li>Allows up to <strong>9-story buildings</strong> within a half-mile of qualifying transit stops</li>
+        <li>SCAG draft map released June 3, 2026 — covers all major SoCal transit corridors</li>
+        <li>City of LA was exploring implementation delays for certain neighborhoods</li>
+        <li>Valley residents and multiple city councils pushing back on upzoning</li>
+        <li>Advocates: transit-oriented development reduces car dependency and carbon emissions</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> SB 79 is arguably the most significant land-use change affecting SoCal transit since Measure R. By allowing density along transit corridors statewide, it could produce hundreds of thousands of new transit-adjacent homes — and dramatically boost the long-term ridership base that agencies like Metro need to justify their investments.</p>
+      <p class="connections"><em>Connects to:</em> Topic 8 (Metro Board projects), Topic 3 (D Line ridership growth)</p>
+      <a class="source-link" href="https://laist.com/news/transportation/state-law-will-put-more-housing-near-transit-stops-this-socal-map-finally-shows-where" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<!-- Agency Status Board -->
+<div class="status-board">
+  <h2>Agency Status Board — July 3, 2026</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Metric / Story</th>
+        <th>Trend</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro Rail</strong></td>
+        <td>Record ridership</td>
+        <td>Highest rail ridership in 6+ years; D Line Extension driving growth</td>
+        <td>↑ Strong</td>
+      </tr>
+      <tr>
+        <td><strong>LA Metro Bus</strong></td>
+        <td>World Cup activated</td>
+        <td>196 buses wrapped; match-day service to SoFi well-rated</td>
+        <td>↑ Active</td>
+      </tr>
+      <tr>
+        <td><strong>LA Metro DPS</strong></td>
+        <td>Recruitment underway</td>
+        <td>2,400+ sworn officer applicants; first in-house force forming</td>
+        <td>↑ Building</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink</strong></td>
+        <td>Mixed — event vs. daily</td>
+        <td>World Cup service praised; 20% cuts now permanent; ridership below pre-COVID</td>
+        <td>↔ Conflicted</td>
+      </tr>
+      <tr>
+        <td><strong>LAX / LAWA</strong></td>
+        <td>SkyLink struggling</td>
+        <td>$2B+ APM seeing chronic delays during peak World Cup arrivals</td>
+        <td>↓ Concern</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak Pacific Surfliner</strong></td>
+        <td>Expanded service</td>
+        <td>New daily LA–San Luis Obispo roundtrip added April 2026</td>
+        <td>↑ Improved</td>
+      </tr>
+      <tr>
+        <td><strong>CA High-Speed Rail</strong></td>
+        <td>Cost escalation</td>
+        <td>$231B full system estimate; LA–Anaheim draft EIR in public comment</td>
+        <td>↓ Pressure</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG</strong></td>
+        <td>SB 79 implementation</td>
+        <td>Draft transit-housing map released; community pushback underway</td>
+        <td>↔ In flux</td>
+      </tr>
+      <tr>
+        <td><strong>OCTA</strong></td>
+        <td>Budget approved</td>
+        <td>$2B+ FY27 budget greenlights OC Streetcar project progress</td>
+        <td>↑ Steady</td>
+      </tr>
+      <tr>
+        <td><strong>LADOT / Vermont Ave</strong></td>
+        <td>Cleared court hurdle</td>
+        <td>Judge rules rapid bus project may proceed without bike lanes</td>
+        <td>↑ Advancing</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Emerging Themes -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes</h2>
+
+    <div class="theme">
+      <h3>1. The World Cup as LA Transit's Coming-Out Party</h3>
+      <p>The FIFA World Cup 2026 is doing something no policy agenda could: forcing Angelenos who have never used public transit to get on Metro, Metrolink, and the Pacific Surfliner. D Line ridership is breaking six-year records. Union Station's Fan Zone is sold out. SoFi match days are proving Metro can move 70,000 fans without gridlock. Whatever comes after the final whistle, LA transit has been introduced to an enormous new audience — and some of them will stay.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. The Airport Gap: LAX SkyLink vs. Metro's Momentum</h3>
+      <p>Metro's rail network is surging, but getting to the airport remains broken. The $2 billion LAX SkyLink APM is missing the biggest transit moment in LA's recent history, experiencing chronic delays precisely when World Cup fans and international media are watching. This exposes a first-mile/last-mile crisis that will only grow more acute as LA28 approaches. Cathay Pacific's $10M station-naming bid shows corporate belief in the station's eventual importance — but first it has to actually work.</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. Metrolink's Identity Crisis</h3>
+      <p>Metrolink is two agencies simultaneously: a capable event shuttle that shone during World Cup, and a struggling commuter railroad with permanent service cuts and a ridership base that never recovered from COVID. The same agency expanded World Cup service while raising UCR fares and keeping its 20% cuts. Until Metrolink resolves whether it is a commuter railroad or a special-events operator, it will satisfy neither mission fully.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. Building on Transit: SB 79 Maps Where LA Grows Next</h3>
+      <p>SCAG's draft SB 79 map is quietly as consequential as any rail project. By showing exactly which parcels near transit corridors can build 9-story residential buildings, it defines the future population density of SoCal's transit neighborhoods. The pushback from homeowners and some city councils is fierce — but the law is in effect. The next five years will test whether transit-oriented density can transform ridership math across the region.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. Metro's Safety Overhaul: DPS as a Cultural Reset</h3>
+      <p>The 2,400+ applicants for Metro's new Department of Public Safety are not just filling positions — they are building an entirely new law enforcement culture from scratch. Metro's bet is that an in-house force accountable to the transit agency's values will produce better rider outcomes than contracting LAPD and LASD. The World Cup period, with millions of global visitors on the system, is the highest-stakes environment imaginable for this new approach to debut.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Sources: LA Metro / The Source · LAist · LA Times · Streetsblog LA · Orange County Register · View from the Wing · NBC Los Angeles · Google News RSS · SCAG<br>
+  Compiled July 3, 2026 · Coverage window: June 24 – July 3, 2026 · <a href="transit.html" style="color:#3b82f6;">Full Archive</a>
+</footer>
+
+</body>
+</html>
