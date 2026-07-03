@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1378" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1378" fill="#F7F7F5"/>
+  
+  <!-- Top bar -->
+  <rect width="800" height="4" fill="#111111"/>
+  
+  <!-- Header -->
+  <text x="32" y="36" font-size="11" fill="#999999" font-weight="700" letter-spacing="2">DAILY BRIEFING</text>
+  <text x="32" y="72" font-size="28" fill="#111111" font-weight="800">Linux Security Memory Exposure</text>
+  <text x="32" y="96" font-size="13" fill="#AAAAAA">July 3, 2026</text>
+  <line x1="32" y1="112" x2="768" y2="112" stroke="#E5E5E5" stroke-width="1.5"/>
+  <text x="768" y="72" font-size="13" fill="#AAAAAA" text-anchor="end">TOP STORIES</text>
+  
+  
+    <!-- Card 1 -->
+    <text x="32" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="700" letter-spacing="1">01</text>
+    <rect x="52" y="158" width="40" height="18" rx="9" fill="#00897B"/>
+    <text x="72.0" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">Tech</text>
+    <text x="32" y="196" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700">Linux Bug Left Encryption Keys in RAM 2 Years</text>
+    <text x="32" y="217" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">A regression introduced in Linux kernel 6.9 (May 2024) caused LUKS full-disk</text>
+    <text x="32" y="232" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">encryption to silently fail during laptop suspend, leaving master decryption keys resident...</text>
+    <text x="32" y="256" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">IMPACT</text>
+    <rect x="32" y="262" width="590" height="4" rx="2" fill="#E5E5E5"/>
+    <rect x="32" y="262" width="590" height="4" rx="2" fill="#00897B"/>
+    <text x="638" y="266" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">10/10</text>
+    <text x="32" y="284" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA">WHY IT MATTERS  </text>
+    <text x="32" y="299" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555555">Millions of Linux users believed their encrypted laptops were secure during sleep; they were not.</text>
+    <line x1="32" y1="334" x2="768" y2="334" stroke="#E5E5E5" stroke-width="1"/>
+    <text x="740" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="20">🔑</text>
+    
+    <!-- Card 2 -->
+    <text x="32" y="365" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="700" letter-spacing="1">02</text>
+    <rect x="52" y="353" width="40" height="18" rx="9" fill="#00897B"/>
+    <text x="72.0" y="365" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">Tech</text>
+    <text x="32" y="391" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700">Rust Compiler Entirely Translated into C Code</text>
+    <text x="32" y="412" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">Developer FractalFir completed crustc, a project that translates the entire Rust compiler</text>
+    <text x="32" y="427" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">(rustc) — a ~400,000 line Rust codebase — into equivalent C code....</text>
+    <text x="32" y="451" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">IMPACT</text>
+    <rect x="32" y="457" width="590" height="4" rx="2" fill="#E5E5E5"/>
+    <rect x="32" y="457" width="472" height="4" rx="2" fill="#00897B"/>
+    <text x="638" y="461" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">8/10</text>
+    <text x="32" y="479" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA">WHY IT MATTERS  </text>
+    <text x="32" y="494" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555555">Bootstrapping Rust from C dramatically improves trust and auditability of the entire Rust toolchain.</text>
+    <line x1="32" y1="529" x2="768" y2="529" stroke="#E5E5E5" stroke-width="1"/>
+    <text x="740" y="365" font-family="Helvetica Neue, Arial, sans-serif" font-size="20">🦀</text>
+    
+    <!-- Card 3 -->
+    <text x="32" y="560" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="700" letter-spacing="1">03</text>
+    <rect x="52" y="548" width="26" height="18" rx="9" fill="#6C47FF"/>
+    <text x="65.0" y="560" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">AI</text>
+    <text x="32" y="586" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700">Right to Run AI Locally Gains Advocacy Movement</text>
+    <text x="32" y="607" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">A new advocacy initiative at righttointelligence.org is pushing for people&apos;s explicit right</text>
+    <text x="32" y="622" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">to run AI models locally on their own hardware, rather than being...</text>
+    <text x="32" y="646" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">IMPACT</text>
+    <rect x="32" y="652" width="590" height="4" rx="2" fill="#E5E5E5"/>
+    <rect x="32" y="652" width="472" height="4" rx="2" fill="#6C47FF"/>
+    <text x="638" y="656" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#6C47FF" font-weight="700">8/10</text>
+    <text x="32" y="674" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA">WHY IT MATTERS  </text>
+    <text x="32" y="689" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555555">As AI becomes infrastructure, who controls where it runs determines who controls access to intellige</text>
+    <line x1="32" y1="724" x2="768" y2="724" stroke="#E5E5E5" stroke-width="1"/>
+    <text x="740" y="560" font-family="Helvetica Neue, Arial, sans-serif" font-size="20">🧠</text>
+    
+    <!-- Card 4 -->
+    <text x="32" y="755" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="700" letter-spacing="1">04</text>
+    <rect x="52" y="743" width="40" height="18" rx="9" fill="#00897B"/>
+    <text x="72.0" y="755" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">Tech</text>
+    <text x="32" y="781" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700">CarPlay Debate: OEM Infotainment vs Apple Integration</text>
+    <text x="32" y="802" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">Developer Casey Liss sparked a debate after Rivian&apos;s CSO argued against CarPlay</text>
+    <text x="32" y="817" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">integration, contending that OEM-built infotainment systems are superior. Liss counters that CarPlay...</text>
+    <text x="32" y="841" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">IMPACT</text>
+    <rect x="32" y="847" width="590" height="4" rx="2" fill="#E5E5E5"/>
+    <rect x="32" y="847" width="354" height="4" rx="2" fill="#00897B"/>
+    <text x="638" y="851" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">6/10</text>
+    <text x="32" y="869" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA">WHY IT MATTERS  </text>
+    <text x="32" y="884" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555555">The fight over car infotainment control is really a battle between automakers and Apple for the dash</text>
+    <line x1="32" y1="919" x2="768" y2="919" stroke="#E5E5E5" stroke-width="1"/>
+    <text x="740" y="755" font-family="Helvetica Neue, Arial, sans-serif" font-size="20">🚗</text>
+    
+    <!-- Card 5 -->
+    <text x="32" y="950" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="700" letter-spacing="1">05</text>
+    <rect x="52" y="938" width="40" height="18" rx="9" fill="#00897B"/>
+    <text x="72.0" y="950" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">Tech</text>
+    <text x="32" y="976" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700">Valve Opens Steam Machine E-Ink Screen Designs</text>
+    <text x="32" y="997" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">Valve released open-source hardware designs for the e-ink status display on the</text>
+    <text x="32" y="1012" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">Steam Machine gaming PC, allowing the community to manufacture and customize their...</text>
+    <text x="32" y="1036" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">IMPACT</text>
+    <rect x="32" y="1042" width="590" height="4" rx="2" fill="#E5E5E5"/>
+    <rect x="32" y="1042" width="354" height="4" rx="2" fill="#00897B"/>
+    <text x="638" y="1046" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#00897B" font-weight="700">6/10</text>
+    <text x="32" y="1064" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA">WHY IT MATTERS  </text>
+    <text x="32" y="1079" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555555">Open-source hardware designs let hobbyists extend gaming PCs in ways manufacturers never anticipated</text>
+    <line x1="32" y1="1114" x2="768" y2="1114" stroke="#E5E5E5" stroke-width="1"/>
+    <text x="740" y="950" font-family="Helvetica Neue, Arial, sans-serif" font-size="20">🖥️</text>
+    
+    <!-- Card 6 -->
+    <text x="32" y="1145" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#AAAAAA" font-weight="700" letter-spacing="1">06</text>
+    <rect x="52" y="1133" width="68" height="18" rx="9" fill="#2E7D32"/>
+    <text x="86.0" y="1145" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">Business</text>
+    <text x="32" y="1171" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700">Critics Blast Corporate AI Overconfidence and Hype</text>
+    <text x="32" y="1192" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">Growth strategist Elena Verna published a pointed critique of &apos;AI confidence theater&apos;</text>
+    <text x="32" y="1207" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#666666">— companies and executives performing expertise in AI without substance. She argues...</text>
+    <text x="32" y="1231" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#999999">IMPACT</text>
+    <rect x="32" y="1237" width="590" height="4" rx="2" fill="#E5E5E5"/>
+    <rect x="32" y="1237" width="413" height="4" rx="2" fill="#2E7D32"/>
+    <text x="638" y="1241" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#2E7D32" font-weight="700">7/10</text>
+    <text x="32" y="1259" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#AAAAAA">WHY IT MATTERS  </text>
+    <text x="32" y="1274" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#555555">As AI spending soars, separating genuine productivity gains from performative adoption is critical f</text>
+    <line x1="32" y1="1309" x2="768" y2="1309" stroke="#E5E5E5" stroke-width="1"/>
+    <text x="740" y="1145" font-family="Helvetica Neue, Arial, sans-serif" font-size="20">🎭</text>
+    
+  
+  <!-- Footer -->
+  <text x="32" y="1348" font-size="10" fill="#AAAAAA">Generated by AI · July 3, 2026 · hacker-news.firebaseio.com</text>
+  <rect y="1375" width="800" height="3" fill="#111111"/>
+</svg>

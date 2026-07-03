@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 3, 2026</title>
+<style>
+  :root {
+    --bg: #0E0E10;
+    --bg2: #18181C;
+    --bg3: #222228;
+    --border: #2A2A32;
+    --text: #E8E8F0;
+    --muted: #888899;
+    --accent: #6C47FF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  
+  /* SECTION A - Visual */
+  .section-visual {
+    background: var(--bg2);
+    border-bottom: 2px solid var(--border);
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .section-visual .section-label {
+    font-size: 11px; letter-spacing: 3px; color: var(--muted); font-weight: 700; margin-bottom: 8px;
+  }
+  .section-visual .visual-heading {
+    font-size: clamp(20px, 4vw, 36px); font-weight: 800; margin-bottom: 6px;
+    background: linear-gradient(135deg, #a78bfa, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .section-visual .day-label { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+  .visual-placeholder {
+    max-width: 600px; margin: 0 auto 24px;
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 12px;
+    padding: 80px 40px; position: relative; overflow: hidden;
+  }
+  .visual-placeholder::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, #6C47FF22 0%, transparent 70%);
+  }
+  .visual-placeholder .vp-icon { font-size: 64px; margin-bottom: 20px; display: block; }
+  .visual-placeholder h3 { font-size: 18px; color: var(--text); margin-bottom: 12px; font-weight: 700; }
+  .visual-placeholder p { font-size: 13px; color: var(--muted); max-width: 400px; margin: 0 auto; }
+  .visual-caption { font-size: 13px; color: var(--muted); font-style: italic; }
+  .visual-note { font-size: 11px; color: #555566; margin-top: 8px; }
+  
+  /* SECTION B - News */
+  .section-news {
+    max-width: 900px; margin: 0 auto; padding: 48px 24px;
+  }
+  .section-header {
+    border-bottom: 2px solid var(--border); padding-bottom: 24px; margin-bottom: 40px;
+  }
+  .briefing-label { font-size: 11px; letter-spacing: 3px; color: var(--muted); font-weight: 700; margin-bottom: 8px; }
+  .briefing-topic { font-size: clamp(22px, 5vw, 42px); font-weight: 900; line-height: 1.1; color: var(--text); }
+  .briefing-date { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  
+  /* Story cards */
+  .story-card {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 28px; margin-bottom: 20px; transition: border-color 0.2s;
+  }
+  .story-card:hover { border-color: #3A3A46; }
+  .card-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .card-num { font-size: 11px; color: var(--muted); font-weight: 800; letter-spacing: 1px; min-width: 24px; }
+  .cat-pill {
+    font-size: 10px; font-weight: 800; letter-spacing: 1px;
+    padding: 3px 10px; border-radius: 20px; color: white; text-transform: uppercase;
+  }
+  .topic-label { font-size: 11px; color: var(--muted); }
+  .emoji-large { font-size: 22px; margin-left: auto; }
+  .story-headline { font-size: clamp(16px, 2.5vw, 20px); font-weight: 800; line-height: 1.3; margin-bottom: 12px; color: var(--text); }
+  .story-summary { font-size: 14px; color: #AAAABB; line-height: 1.6; margin-bottom: 16px; }
+  .story-bullets { list-style: none; margin-bottom: 20px; }
+  .story-bullets li {
+    font-size: 13px; color: var(--muted); padding: 6px 0 6px 20px; border-bottom: 1px solid var(--border); position: relative;
+  }
+  .story-bullets li::before { content: '→'; position: absolute; left: 0; color: #6C47FF; }
+  .impact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .impact-label { font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: 1px; white-space: nowrap; }
+  .impact-track { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .impact-bar { height: 100%; border-radius: 2px; transition: width 0.3s; }
+  .impact-num { font-size: 12px; font-weight: 800; white-space: nowrap; }
+  .why-matters { background: var(--bg3); border-radius: 8px; padding: 12px 16px; }
+  .why-label { font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+  .why-matters p { font-size: 13px; color: #AAAABB; }
+  
+  /* SVG section */
+  .svg-section {
+    max-width: 900px; margin: 0 auto 40px; padding: 0 24px;
+    display: flex; align-items: center; gap: 16px;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 28px;
+  }
+  .svg-section p { font-size: 13px; color: var(--muted); }
+  .svg-section a { color: #6C47FF; text-decoration: none; font-weight: 600; }
+  .svg-section a:hover { text-decoration: underline; }
+  
+  /* Footer */
+  footer {
+    text-align: center; padding: 32px 24px; border-top: 1px solid var(--border);
+    font-size: 12px; color: #444455;
+  }
+  footer a { color: #6C47FF; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- SECTION A: EDITORIAL IMAGE -->
+<section class="section-visual">
+  <p class="section-label">TODAY'S VISUAL · JULY 3, 2026</p>
+  <h1 class="visual-heading">Editorial Illustration</h1>
+  <p class="day-label">AI-Researched Technical Artwork</p>
+  
+  <div class="visual-placeholder">
+    <span class="vp-icon">🔑</span>
+    <h3>DDR5 Memory: LUKS Key Exposure</h3>
+    <p>A DDR5 laptop SODIMM memory module — a small green circuit board approximately 68mm wide, studded with rows of black NAND-like memory chips — photographed in extreme close-up. The Linux 6.9 kernel bug (released May 2024) caused LUKS full-disk encryption keys to remain resident in these volatile memory chips across laptop suspend for over two years, meaning a thief with physical access to a sleeping laptop could extract the master decryption key directly from RAM. The module glows with implied cryptographic data still trapped in its cells despite the laptop appearing safely powered down.</p>
+  </div>
+  <p class="visual-caption">laptop DDR5 DRAM memory module with exposed encryption keys during sleep mode — Technical Editorial Illustration</p>
+  <p class="visual-note">Independently researched and rendered by AI from today's news · Image generation unavailable (API quota)</p>
+</section>
+
+<!-- SECTION B: NEWS ANALYSIS -->
+<section class="section-news">
+  <div class="section-header">
+    <p class="briefing-label">DAILY BRIEFING</p>
+    <h1 class="briefing-topic">Linux Security Memory Exposure</h1>
+    <p class="briefing-date">July 3, 2026 · Top stories from Hacker News &amp; Tech Press</p>
+  </div>
+  
+  
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">01</span>
+        <span class="cat-pill" style="background:#00BCD4">Tech</span>
+        <span class="topic-label">Kernel Security Flaw</span>
+        <span class="emoji-large">🔑</span>
+      </div>
+      <h2 class="story-headline">Linux Bug Left Encryption Keys in RAM 2 Years</h2>
+      <p class="story-summary">A regression introduced in Linux kernel 6.9 (May 2024) caused LUKS full-disk encryption to silently fail during laptop suspend, leaving master decryption keys resident in RAM for over two years. Any attacker with physical access to a sleeping laptop could have extracted the key, defeating the entire purpose of disk encryption.</p>
+      <ul class="story-bullets"><li>Bug present since Linux 6.9 released May 2024 — over 2 years undetected</li>
+<li>Affects all Linux users with LUKS full-disk encryption using suspend-to-RAM</li>
+<li>LUKS key wipe still worked on full shutdown, but sleep/suspend (the common case) was broken</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-track"><div class="impact-bar" style="width:100%;background:#00BCD4"></div></div>
+        <span class="impact-num" style="color:#00BCD4">10/10</span>
+      </div>
+      <div class="why-matters">
+        <span class="why-label">WHY IT MATTERS</span>
+        <p>Millions of Linux users believed their encrypted laptops were secure during sleep; they were not.</p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">02</span>
+        <span class="cat-pill" style="background:#00BCD4">Tech</span>
+        <span class="topic-label">Compiler Bootstrapping</span>
+        <span class="emoji-large">🦀</span>
+      </div>
+      <h2 class="story-headline">Rust Compiler Entirely Translated into C Code</h2>
+      <p class="story-summary">Developer FractalFir completed crustc, a project that translates the entire Rust compiler (rustc) — a ~400,000 line Rust codebase — into equivalent C code. This extraordinary feat allows Rust programs to be bootstrapped from a C compiler, removing the circular dependency on an existing Rust installation.</p>
+      <ul class="story-bullets"><li>Rustc is approximately 400,000 lines of complex Rust code</li>
+<li>C translation enables bootstrapping Rust from scratch using only a C compiler</li>
+<li>Project removes the 'requires Rust to compile Rust' chicken-and-egg problem</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-track"><div class="impact-bar" style="width:80%;background:#00BCD4"></div></div>
+        <span class="impact-num" style="color:#00BCD4">8/10</span>
+      </div>
+      <div class="why-matters">
+        <span class="why-label">WHY IT MATTERS</span>
+        <p>Bootstrapping Rust from C dramatically improves trust and auditability of the entire Rust toolchain.</p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">03</span>
+        <span class="cat-pill" style="background:#7C5CFC">AI</span>
+        <span class="topic-label">AI Sovereignty</span>
+        <span class="emoji-large">🧠</span>
+      </div>
+      <h2 class="story-headline">Right to Run AI Locally Gains Advocacy Movement</h2>
+      <p class="story-summary">A new advocacy initiative at righttointelligence.org is pushing for people's explicit right to run AI models locally on their own hardware, rather than being forced to rely on cloud APIs. The movement frames local AI as a matter of digital sovereignty, privacy, and autonomy.</p>
+      <ul class="story-bullets"><li>Movement advocates for open-weights AI models that run without internet connection</li>
+<li>Framed as a civil right analogous to the right to privacy and free speech</li>
+<li>Targets Big Tech cloud-lock-in of AI capabilities away from personal devices</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-track"><div class="impact-bar" style="width:80%;background:#7C5CFC"></div></div>
+        <span class="impact-num" style="color:#7C5CFC">8/10</span>
+      </div>
+      <div class="why-matters">
+        <span class="why-label">WHY IT MATTERS</span>
+        <p>As AI becomes infrastructure, who controls where it runs determines who controls access to intelligence itself.</p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">04</span>
+        <span class="cat-pill" style="background:#00BCD4">Tech</span>
+        <span class="topic-label">Car Tech War</span>
+        <span class="emoji-large">🚗</span>
+      </div>
+      <h2 class="story-headline">CarPlay Debate: OEM Infotainment vs Apple Integration</h2>
+      <p class="story-summary">Developer Casey Liss sparked a debate after Rivian's CSO argued against CarPlay integration, contending that OEM-built infotainment systems are superior. Liss counters that CarPlay is additive — it supplements the car's system with thousands of phone apps rather than replacing the car's native features.</p>
+      <ul class="story-bullets"><li>Rivian CSO Wassym Bensaid argued against CarPlay on the Decoder podcast</li>
+<li>Apple CarPlay gives access to 5,000+ phone apps unavailable in any OEM system</li>
+<li>CarPlay adoption is a key purchase decision factor for many car buyers</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-track"><div class="impact-bar" style="width:60%;background:#00BCD4"></div></div>
+        <span class="impact-num" style="color:#00BCD4">6/10</span>
+      </div>
+      <div class="why-matters">
+        <span class="why-label">WHY IT MATTERS</span>
+        <p>The fight over car infotainment control is really a battle between automakers and Apple for the dashboard of the future.</p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">05</span>
+        <span class="cat-pill" style="background:#00BCD4">Tech</span>
+        <span class="topic-label">Open Hardware</span>
+        <span class="emoji-large">🖥️</span>
+      </div>
+      <h2 class="story-headline">Valve Opens Steam Machine E-Ink Screen Designs</h2>
+      <p class="story-summary">Valve released open-source hardware designs for the e-ink status display on the Steam Machine gaming PC, allowing the community to manufacture and customize their own versions. The move continues Valve's pattern of community hardware empowerment.</p>
+      <ul class="story-bullets"><li>E-ink screen shows game status, notifications, and system metrics on Steam Machine</li>
+<li>Full hardware design files released so anyone can manufacture compatible screens</li>
+<li>Valve will not produce or sell screens themselves — entirely community-driven</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-track"><div class="impact-bar" style="width:60%;background:#00BCD4"></div></div>
+        <span class="impact-num" style="color:#00BCD4">6/10</span>
+      </div>
+      <div class="why-matters">
+        <span class="why-label">WHY IT MATTERS</span>
+        <p>Open-source hardware designs let hobbyists extend gaming PCs in ways manufacturers never anticipated.</p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">06</span>
+        <span class="cat-pill" style="background:#4CAF50">Business</span>
+        <span class="topic-label">AI Hype Backlash</span>
+        <span class="emoji-large">🎭</span>
+      </div>
+      <h2 class="story-headline">Critics Blast Corporate AI Overconfidence and Hype</h2>
+      <p class="story-summary">Growth strategist Elena Verna published a pointed critique of 'AI confidence theater' — companies and executives performing expertise in AI without substance. She argues that performative AI confidence is eroding trust and obscuring genuine progress.</p>
+      <ul class="story-bullets"><li>Article identifies a pattern of AI hype replacing actual product metrics</li>
+<li>Targets executives claiming AI transformations without measurable outcomes</li>
+<li>Calls for specific, honest reporting of AI impact with real numbers</li></ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-track"><div class="impact-bar" style="width:70%;background:#4CAF50"></div></div>
+        <span class="impact-num" style="color:#4CAF50">7/10</span>
+      </div>
+      <div class="why-matters">
+        <span class="why-label">WHY IT MATTERS</span>
+        <p>As AI spending soars, separating genuine productivity gains from performative adoption is critical for investors and consumers.</p>
+      </div>
+    </div>
+
+  
+</section>
+
+<div class="svg-section">
+  <span style="font-size:28px">📊</span>
+  <div>
+    <p style="font-size:13px;color:#E8E8F0;font-weight:700;margin-bottom:4px">Data Infographic</p>
+    <p>Download the full typographic infographic: <a href="infographic-2026-07-03.svg">infographic-2026-07-03.svg</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>Generated by AI · <a href="index.html">← Back to Index</a> · <a href="https://twong6531.github.io/citation-site/">Live Site</a></p>
+  <p style="margin-top:8px">Sources: Hacker News · Jul 3, 2026</p>
+</footer>
+
+</body>
+</html>
