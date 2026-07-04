@@ -1,0 +1,52 @@
+{
+  "date": "2026-07-04",
+  "total_reviewed": 0,
+  "note": "No new content produced today. Video script production on hold (Day 28 of approval freeze). No articles or infographics produced (agents unresponsive/suspended). Summary reflects current backlog QC state.",
+  "backlog_total_reviewed": 10,
+  "passed": 5,
+  "revise": 5,
+  "failed": 0,
+  "ready_to_publish": [
+    "dopamine-fracking-script",
+    "fare-evasion-economics-script",
+    "tesla-spacex-transit-empire-script",
+    "transit-app-dark-ux-2026-script",
+    "us-cities-transit-gap-script"
+  ],
+  "needs_revision": [
+    {
+      "slug": "apple-gemini-2026-script",
+      "score": 65,
+      "revision_notes": "REEL: Cut voiceover to under 200 words. Trim Scene 2 \u2014 drop the 'Two years later Siri's reasoning is routed through Gemini 1.5 Pro...' expansion (on-screen text already carries this); keep just the contrast line (~25w). Tighten Scene 3 to 2 sentences max. Target: HOOK 25w, Scene 1 45w, Scene 2 35w, Scene 3 45w, CTA 25w = ~175w. YOUTUBE: Recount spoken words precisely. If over 1,200, trim Section 3 regulatory discussion (can cut from ~180w to ~100w without losing key points \u2014 keep DOJ pattern, drop detailed Samsung/Microsoft paragraph)."
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "score": 58,
+      "revision_notes": "FACTUAL FIX (REQUIRED before publish): Verify which hypercars actually use YASA axial flux motors. YASA supplied Ferrari (confirmed for some models); McLaren Artura motor sourcing needs verification \u2014 if not YASA, remove McLaren from the hook examples. Similarly verify Lamborghini Revuelto motor supplier. Correct hook to name only verified YASA customers. PRIMARY SOURCE: Replace Wikipedia citations with: (1) Mercedes-Benz/YASA press release or official announcement for the June 2026 mass-production claim; (2) YASA technical datasheets for 42 kW/kg spec; (3) IEA or BloombergNEF for global EV bus fleet data (more authoritative than Wikipedia Electric Bus article). REEL: Trim to under 200 words \u2014 Scene 3 (transit implications) runs long at ~57w; cut 10-12 words by removing the Shenzhen date detail ('fully electric since 2018') from spoken voiceover (keep in on-screen text only)."
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "score": 62,
+      "revision_notes": "REEL FACTUAL FIX (REQUIRED): Scene 3 must hedge the drone claim to match the YouTube's more accurate framing. Change 'Your Pok\u00e9mon scan is exactly that kind of map' to something like: 'SLAM navigation in autonomous drones runs better with pre-built urban maps. Niantic has those maps. And under current law, selling them requires no warrant.' Remove the implication it's a confirmed pipeline. 15M FIGURE FIX: Scene 1 should say 'Ingress \u2014 Niantic's earlier game \u2014 logged fifteen million real-world location submissions by 2016. Pok\u00e9mon Go built on that foundation' (or similar). Do not attribute the 15M figure to Pok\u00e9mon Go AR scans. SOURCES: For the DHS/Venntel data purchase claim, cite the original reporting (Vice/Motherboard reporting from 2020 on DHS purchasing Venntel data is the primary source; Wikipedia cites this). Replace Wikipedia cites with one level deeper: actual EFF or ACLU reporting, or the Wyden/Leahy Senate letter on warrantless data purchases."
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "score": 72,
+      "revision_notes": "REEL: Scene 3 is the primary problem. Cut it from ~87 words to under 35 words. The equity point (wheelchair users, rural Americans) is powerful but must be compressed to one sentence: 'For car-dependent suburbs \u2014 and for wheelchair users who can't reach a fixed stop \u2014 this is the transit model that actually works.' Cut the 'for anyone who's ever watched a bus drive past with two people on it while 20 people need a ride on the next block' sentence entirely \u2014 it reads well in long-form but not at reel pace. Also trim Scene 2 slightly (drop the 'No central dispatcher. No fixed stops. Just buses talking to each other...' closing \u2014 the simulation visual carries this). Target total: under 180 words. NOTE: This is one of the strongest scripts in today's batch on content quality. The sole issue is reel pacing."
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "score": 60,
+      "revision_notes": "REEL REQUIRES NEAR-COMPLETE REWRITE: The current reel is a compressed YouTube script, not a reel. Rewrite to: HOOK (0-3s, ~20w): '55 million Americans have no functional transit. An AI just proved it can fix that.' Scene 1 (3-15s, ~35w): 'A study tested a new AI system across 25 US cities. After five years: 53.6% of transit deserts reached \u2014 5 points better than every existing method. [Source: Khoroshevskaya & Perukari 2026]' Scene 2 (15-35s, ~50w): 'The system learns from the routes it deploys. You don't need ridership data before building service \u2014 you get it as you build. That breaks the catch-22 where transit deserts never get service because there's no data to justify it.' Scene 3 (35-50s, ~35w): '5 points sounds small. Across 25 cities, it's hundreds of thousands of people with transit access who wouldn't have it otherwise. The planning tools most agencies use today are demonstrably obsolete.' CTA (50-60s, ~20w): 'Full breakdown \u2014 the model, the cities, and what deployment actually requires \u2014 in the video. Link in bio.' Total: ~160w. YOUTUBE: Recount spoken words; appears within range but verify."
+    }
+  ],
+  "blocked": [],
+  "system_alerts": [
+    "APPROVAL FREEZE DAY 28: 5 QC-PASS scripts await human approval in system/approved.json. No publish pipeline can run without it.",
+    "ARTICLE AGENT UNRESPONSIVE: 0 articles produced in 28 days. drafts/articles/ never populated.",
+    "INFOGRAPHIC AGENT SUSPENDED: BRT infographic retries suspended since 2026-07-02. Manual diagnostic required.",
+    "TIMELINESS LOST: July 4 holiday transit demand infographic (Rank 2) window has closed. Topic no longer publishable.",
+    "GOOGLE NEWS RSS FEED: 7+ days empty. Feed access/parsing requires manual fix.",
+    "VIDEO SCRIPTS ON HOLD: Production paused until human approval received."
+  ]
+}
