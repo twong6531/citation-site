@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 4, 2026</title>
+<style>
+  :root {
+    --bg: #0D0D14;
+    --surface: #15151F;
+    --card: #1C1C2A;
+    --accent: #6B8CFF;
+    --accent2: #FF6B6B;
+    --accent3: #44BB88;
+    --accent4: #FFB300;
+    --text: #E8E8F0;
+    --text-dim: #9999BB;
+    --text-muted: #666688;
+    --border: #2A2A40;
+    --highlight: #22223A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* HEADER */
+  .site-header {
+    background: linear-gradient(135deg, #0A0A18 0%, #151530 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 0 24px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .header-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .header-title span { color: var(--accent); }
+  .header-meta {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .header-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .stat-badge {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .stat-badge strong { color: var(--text); display: block; font-size: 20px; }
+
+  /* BACK LINK */
+  .back-link {
+    padding: 12px 0;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .back-link a { color: var(--accent); }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    padding: 28px 32px;
+    margin: 32px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .exec-summary p {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* PAPER OF THE DAY */
+  .potd {
+    background: linear-gradient(135deg, #1A1A35 0%, #151530 100%);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 32px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .potd::before {
+    content: '★';
+    position: absolute;
+    right: 24px;
+    top: 20px;
+    font-size: 48px;
+    color: var(--accent);
+    opacity: 0.12;
+  }
+  .potd-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .potd h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .potd .meta { font-size: 13px; color: var(--text-dim); margin-bottom: 16px; }
+  .potd p { font-size: 14.5px; color: #CCCCDD; line-height: 1.7; }
+
+  /* THEMES GRID */
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .theme-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 22px;
+    border-top: 3px solid;
+  }
+  .theme-card:nth-child(1) { border-top-color: var(--accent); }
+  .theme-card:nth-child(2) { border-top-color: var(--accent2); }
+  .theme-card:nth-child(3) { border-top-color: var(--accent3); }
+  .theme-card:nth-child(4) { border-top-color: var(--accent4); }
+  .theme-card h4 { font-size: 11px; letter-spacing: 2px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; }
+  .theme-card:nth-child(1) h4 { color: var(--accent); }
+  .theme-card:nth-child(2) h4 { color: var(--accent2); }
+  .theme-card:nth-child(3) h4 { color: var(--accent3); }
+  .theme-card:nth-child(4) h4 { color: var(--accent4); }
+  .theme-card p { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
+
+  /* CONTRARIAN */
+  .contrarian {
+    background: #1F1800;
+    border: 1px solid #554400;
+    border-left: 4px solid var(--accent4);
+    border-radius: 0 6px 6px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .contrarian-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--accent4);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .contrarian p { font-size: 14px; color: #DDCC88; line-height: 1.65; }
+
+  /* TAKEAWAYS */
+  .takeaways-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+  .takeaways-list li {
+    padding: 12px 16px 12px 44px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-dim);
+    background: var(--surface);
+    position: relative;
+    line-height: 1.55;
+  }
+  .takeaways-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 16px;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  /* PAPER CARDS */
+  .papers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .paper-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px 28px;
+    position: relative;
+  }
+  .paper-card:hover { border-color: var(--accent); }
+  .paper-number {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .paper-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .paper-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text);
+    padding-right: 60px;
+  }
+  .paper-card h3 a { color: var(--text); }
+  .paper-card h3 a:hover { color: var(--accent); }
+  .paper-authors { font-size: 12px; color: var(--text-dim); margin-bottom: 14px; }
+  .paper-summary {
+    font-size: 14px;
+    color: #AAAACC;
+    margin-bottom: 14px;
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+  }
+  .paper-body { font-size: 13.5px; color: var(--text-dim); line-height: 1.65; }
+  .paper-section { margin-top: 14px; }
+  .paper-section-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .insights-list { padding-left: 18px; margin: 6px 0; }
+  .insights-list li { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; line-height: 1.55; }
+  .confidence-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+  .conf-high { background: rgba(68,187,136,0.2); color: var(--accent3); border: 1px solid rgba(68,187,136,0.4); }
+  .conf-medium { background: rgba(107,140,255,0.2); color: var(--accent); border: 1px solid rgba(107,140,255,0.4); }
+  .conf-low { background: rgba(255,107,107,0.2); color: var(--accent2); border: 1px solid rgba(255,107,107,0.4); }
+
+  /* INFOGRAPHIC SECTION */
+  .infographic-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .infographic-section svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .infographic-dl {
+    margin-top: 16px;
+    font-size: 12px;
+  }
+  .infographic-dl a {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  /* LONG TERM */
+  .longterm {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .longterm p { font-size: 14px; color: var(--text-dim); line-height: 1.65; }
+
+  /* FOOTER */
+  footer {
+    background: #08080F;
+    border-top: 1px solid var(--border);
+    padding: 40px 0 24px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  footer p { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+  footer a { color: var(--accent); }
+
+  section { margin: 40px 0; }
+  @media (max-width: 600px) {
+    .header-stats { gap: 12px; }
+    .paper-card { padding: 18px; }
+    .exec-summary { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="back-link">
+  <div class="container">
+    <a href="research.html">← Research Archive</a> &nbsp;·&nbsp; Transit Research Digest
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-eyebrow">Transit Research Digest · Automated Analysis</div>
+    <h1 class="header-title">Urban Mobility <span>Weekly</span></h1>
+    <div class="header-meta">JULY 4, 2026 &nbsp;·&nbsp; AI-GENERATED RESEARCH SUMMARY</div>
+    <div class="header-stats">
+      <div class="stat-badge"><strong>10</strong> Papers Analyzed</div>
+      <div class="stat-badge"><strong>60%</strong> High Confidence</div>
+      <div class="stat-badge"><strong>2025–26</strong> Publication Range</div>
+      <div class="stat-badge"><strong>6</strong> Research Institutions</div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section>
+    <div class="section-label">Executive Summary</div>
+    <div class="exec-summary">
+      <p>This week's transit research digest spans a transformative inflection point in urban mobility science. <strong>Artificial intelligence has arrived at city-scale transit network design</strong>: the AlphaTransit system demonstrates that Monte Carlo Tree Search combined with learned network guidance can optimize entire bus route systems, achieving service rates up to 82.1% and outperforming both pure RL and pure search methods. Meanwhile, the integration of shared autonomous vehicles with fixed-route transit is proven effective—Chicago's network sees a 33.3% ridership boost through joint frequency and SAV fleet optimization.</p>
+      <br>
+      <p>Empirical policy results are crystallizing: NYC's January 2025 congestion pricing program has delivered measurable transit ridership gains well beyond the priced zone, validating the pricing-transit nexus theory with real-world time-series data. Simultaneously, a major behavioral finding from Miami-Dade overturns conventional wisdom—<strong>reliability now outranks frequency as the primary ridership driver</strong> in the post-COVID era, suggesting agencies may be misallocating capital toward expansion over operational improvements.</p>
+      <br>
+      <p>The 15-minute city framework gains empirical grounding through Helsinki/Madrid/Budapest comparison: multimodal transit substantially improves peripheral access and socio-spatial integration. A novel "fly-by transit" platoon concept using modular mini-EVs promises >13% system cost savings while eliminating stops for the main convoy. Data infrastructure matures with the NetMob26 open dataset from Brazil and 20M-trip Beijing smart card analysis. Incentive design theory provides new tools for cities managing AMoD operator conflicts with public transit goals.</p>
+    </div>
+  </section>
+
+  <!-- PAPER OF THE DAY -->
+  <div class="potd">
+    <div class="potd-label">★ PAPER OF THE DAY</div>
+    <h3>Fly-by Transit: A Novel Door-to-Door Shared Mobility with Minimal Stops</h3>
+    <div class="meta">Wenbo Fan &amp; Weihua Gu &nbsp;·&nbsp; arXiv:2511.21295 &nbsp;·&nbsp; November 2025</div>
+    <p>This paper introduces the most architecturally radical transit concept of the cycle. Modular mini-electric vehicles operate as either independent feeder "trailers" on neighborhood streets or as coupled platoons behind a high-performance "leader" on arterial corridors. The tail trailer can decouple <em>while the platoon is in motion</em>—serving its stop without halting the main convoy. This eliminates the fundamental stop-delay tradeoff that has constrained conventional transit for a century. The numerical analysis demonstrates &gt;13% generalized system cost savings over conventional buses, at lower cost than e-hailing, with stronger economies of scale than either. Unlike speculative autonomous transit concepts, FBT is designed around near-term feasible coupling technology. Selected as paper of the day for its originality, practical grounding, and potential to redefine the intermediate mobility tier between fixed-route bus and ride-hailing.</p>
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <section>
+    <div class="section-label">Emerging Themes</div>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <h4>AI + Network Optimization</h4>
+        <p>Machine learning has crossed from mode-prediction to full network design. AlphaTransit designs city-scale route systems; SAV-transit joint optimization runs Chicago's entire network; AMoD incentive theory formalizes operator alignment. The field is moving from "analyze existing systems" to "design better ones."</p>
+      </div>
+      <div class="theme-card">
+        <h4>Equity + Spatial Justice</h4>
+        <p>The 15-minute city framework now has three-city empirical data. NYC congestion pricing reveals uneven neighborhood adaptation patterns. SimFLEX identifies which peripheral areas gain most from feeder services. Equity is no longer an afterthought—it is a primary study variable in this week's top papers.</p>
+      </div>
+      <div class="theme-card">
+        <h4>Open Data Infrastructure</h4>
+        <p>NetMob26 provides 7.2M ticketing transactions and full GPS telemetry from Niterói, Brazil. Beijing's 20M smart-card study disaggregates behavior by frequency class. The field is building reusable, open datasets enabling reproducible transit science at a scale impossible five years ago.</p>
+      </div>
+      <div class="theme-card">
+        <h4>Post-COVID Behavioral Shift</h4>
+        <p>Rider composition changed permanently. Miami-Dade data shows reliability now dominates over frequency. The rider who returned post-2021 values predictability over convenience. This demands a rethink of service planning priorities, timetable design, and performance metric hierarchies at agencies worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRARIAN INSIGHT -->
+  <div class="contrarian">
+    <div class="contrarian-label">⚡ Contrarian Insight</div>
+    <p><strong>The frequency-first doctrine is obsolete.</strong> Transit planning has operated on a core axiom since the 1970s: more service frequency equals more riders. The Miami-Dade County analysis (arXiv:2511.07467) delivers a direct empirical challenge—in the post-COVID recovery period, on-time performance is a stronger ridership predictor than headway, and the interaction term shows reliability matters <em>most</em> precisely on the frequent routes where agencies are already investing. Transit agencies may be in a capital allocation trap: spending on more runs when improving existing run reliability would yield higher ridership per dollar spent. The political economy of service expansion makes this hard to act on, but the data is now unambiguous.</p>
+  </div>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <section>
+    <div class="section-label">Actionable Takeaways</div>
+    <ul class="takeaways-list">
+      <li>Transit agencies should audit OTP on high-frequency routes before planning service expansions—Miami-Dade shows reliability ROI now exceeds frequency ROI in post-COVID markets.</li>
+      <li>Cities considering congestion pricing can cite NYC as proof-of-concept: transit ridership gains from pricing extend well beyond the cordon zone and are measurable within months of implementation.</li>
+      <li>Regional planners building 15-minute city frameworks must integrate transit from the start—Helsinki/Madrid/Budapest data shows walking-only 15-minute city models fail peripheral neighborhoods; transit is the equity equalizer.</li>
+      <li>Metropolitan agencies with SAV deployment programs should evaluate the Chicago joint optimization framework (arXiv:2412.19401): a 33.3% ridership gain through coordinated SAV-transit integration is a replicable model with published methodology.</li>
+      <li>Municipal transit authorities managing relationships with AMoD operators (Uber, Lyft, Waymo pooled services) now have a mathematical framework (arXiv:2605.18687) to compute implementation-payment bounds that ensure socially optimal outcomes without operator defection.</li>
+      <li>Watch the Fly-by Transit platoon concept for pilot deployments—it targets precisely the cost-coverage gap between fixed-route buses and on-demand taxis, and its technology requirements are achievable with current EV and coupling technology.</li>
+      <li>Transit data teams should access the NetMob26 dataset (arXiv:2605.20263) for demand forecasting methodology: the four-source integration (GPS + ticketing + weather + sociodemographics) represents a new standard for system analytics.</li>
+    </ul>
+  </section>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <section>
+    <div class="section-label">Long-Term Implications</div>
+    <div class="longterm">
+      <p>The convergence of AI network design (AlphaTransit), autonomous vehicle integration (SAV-transit optimization), and novel vehicle architectures (Fly-by Transit) suggests that the <strong>2030s transit landscape will be fundamentally unrecognizable</strong> compared to today. Fixed-route buses will likely coexist with AI-optimized dynamic networks, SAV feeders, and platoon-style hybrid vehicles in an integrated multimodal system. The theoretical work on AMoD incentive design addresses the governance challenge this creates: when private operators (SAVs) and public transit must cooperate, who bears which cost, and how do cities ensure socially optimal outcomes without mandates?</p>
+      <br>
+      <p>The data science revolution in transit—exemplified by NetMob26 and the Beijing smart card study—is creating a feedback loop: better behavioral data reveals more precise demand patterns, enabling more targeted optimization, which generates better outcomes, which generate better data. Cities that invest in this infrastructure stack now will have compounding advantages in system efficiency over the next decade. Meanwhile, the equity findings from the 15-minute city and congestion pricing research are a warning: without deliberate spatial justice design, optimized transit systems risk improving aggregate efficiency while deepening access inequality along neighborhood lines.</p>
+    </div>
+  </section>
+
+  <!-- SVG INFOGRAPHIC -->
+  <section>
+    <div class="section-label">Research Infographic</div>
+    <div class="infographic-section">
+      <img src="research-infographic-2026-07-04.svg" alt="Transit Research Digest Infographic — July 4, 2026" style="max-width:100%;height:auto;border-radius:4px;" />
+      <div class="infographic-dl">
+        <a href="research-infographic-2026-07-04.svg" download>↓ Download SVG Infographic</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL PAPERS -->
+  <section>
+    <div class="section-label">All 10 Papers Analyzed</div>
+    <div class="papers-grid">
+
+      <!-- PAPER 1 -->
+      <div class="paper-card">
+        <div class="paper-number">01</div>
+        <div class="paper-meta">arXiv:2606.17530 &nbsp;·&nbsp; June 2026 &nbsp;·&nbsp; MIT / Urban Systems</div>
+        <h3><a href="https://arxiv.org/abs/2606.17530" target="_blank">Public Transit Gains and Spatially Uneven Travel Demand Changes After NYC Congestion Pricing</a></h3>
+        <div class="paper-authors">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao</div>
+        <div class="paper-summary">NYC's January 2025 congestion pricing program significantly boosted bus and subway ridership beyond projected baselines while concentrating travel demand reduction within the priced zone—validating the pricing-transit policy theory with robust counterfactual evidence.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Transit ridership gains extend spatially beyond the Congestion Relief Zone into outer boroughs</li>
+              <li>Overall travel demand declined modestly, not dramatically—pricing shifted mode, not trips</li>
+              <li>Neighborhood-level adaptation is highly uneven; equity implications are pronounced</li>
+              <li>Time-series foundation models provide a scalable counterfactual methodology without traditional control cities</li>
+              <li>The study provides the first rigorous quasi-experimental evidence on US urban congestion pricing at city scale</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Methodology</div>
+            <p class="paper-body">Time-series foundation model counterfactual forecasting applied to bus, subway, and aggregate trip volume data from January 2025 onward. Spatially disaggregated analysis at neighborhood level.</p>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Who Should Care</div>
+            <p class="paper-body">Transit agency planners, municipal transportation commissioners, congestion pricing advocates, urban economists, equity researchers.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 2 -->
+      <div class="paper-card">
+        <div class="paper-number">02</div>
+        <div class="paper-meta">arXiv:2605.28730 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; University of Memphis</div>
+        <h3><a href="https://arxiv.org/abs/2605.28730" target="_blank">AlphaTransit: Learning to Design City-scale Transit Routes</a></h3>
+        <div class="paper-authors">Bibek Poudel, Sai Swaminathan, Weizi Li</div>
+        <div class="paper-summary">AlphaTransit combines Monte Carlo Tree Search with neural network guidance to design entire city-scale bus route networks, achieving 82.1% service rates on the Bloomington benchmark and outperforming both pure RL and pure MCTS approaches by handling network-level route interactions that single-route optimization misses.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Route interactions are deceptive: a locally beneficial extension can create system-wide transfer bottlenecks</li>
+              <li>MCTS with learned guidance achieves 82.1% (full demand) and 54.6% (mixed demand) service rates</li>
+              <li>9.9–11.4% improvement over RL without search; 2.5–11.2% over MCTS without learning</li>
+              <li>Hybrid search+learning approach is essential—neither alone achieves the same performance</li>
+              <li>Code and data are publicly available, enabling direct replication and extension</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Practical Implications</div>
+            <p class="paper-body">First AI system capable of optimizing full city-scale bus networks considering network interdependencies. Could reduce transit planning cycles from years to hours. Applicable to network redesigns, service disruptions, and new development scenarios.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 3 -->
+      <div class="paper-card">
+        <div class="paper-number">03</div>
+        <div class="paper-meta">arXiv:2511.07467 &nbsp;·&nbsp; November 2025 &nbsp;·&nbsp; Transport Studies</div>
+        <h3><a href="https://arxiv.org/abs/2511.07467" target="_blank">Analyzing the Impact of Service Frequency and On-time Performance on Transit Ridership in Miami-Dade County</a></h3>
+        <div class="paper-authors">Duanya Lyu, Xiang Yan</div>
+        <div class="paper-summary">Using automated passenger counter data and GTFS feeds across pre-COVID and post-COVID periods, this study finds that on-time performance has become the dominant ridership predictor post-2021—surpassing frequency—with the effect strongest on already-frequent routes, overturning the classic frequency-first planning doctrine.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Frequency drove ridership consistently pre-COVID; OTP became dominant post-COVID recovery</li>
+              <li>Interaction term: reliability improvements are most effective on frequent routes—the highest-investment corridors</li>
+              <li>Morning peak: prioritize punctuality. Midday/evening: prioritize frequency.</li>
+              <li>The COVID-era shift in rider composition (fewer captive riders, more choice riders) explains the behavioral change</li>
+              <li>Ridership declined steadily even before COVID; OTP degradation may have been an underappreciated cause</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Limitations</div>
+            <p class="paper-body">Single metropolitan area (Miami-Dade); findings should be validated in cities with different modal share profiles and ridership composition. COVID effects may still be confounding post-2021 trends.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 4 -->
+      <div class="paper-card">
+        <div class="paper-number">04</div>
+        <div class="paper-meta">arXiv:2604.00699 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; European Urban Studies</div>
+        <h3><a href="https://arxiv.org/abs/2604.00699" target="_blank">Public Transport in the 15-Minute City</a></h3>
+        <div class="paper-authors">Zsófia Zádor, Gergő Pintér, Máté Mizsák, Bence Kovács, Imre Felde, Balázs Lengyel</div>
+        <div class="paper-summary">Analyzing Helsinki, Madrid, and Budapest with open mobility data, the authors demonstrate that multimodal access (walking + transit) dramatically expands amenity reach and socio-spatial integration beyond what walking alone achieves—proving transit is indispensable to the 15-minute city, especially for peripheral neighborhoods.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Multimodal mobility substantially increases access to amenities vs. walking-only 15-minute city models</li>
+              <li>Urban peripheries gain disproportionately from radial high-speed transit lines in terms of social cohesion</li>
+              <li>Radial lines alone don't improve amenity access—polycentric transit networks are needed</li>
+              <li>Results hold across three diverse European cities, suggesting cross-cultural generalizability</li>
+              <li>The 15-minute city is a car-dependency counter-strategy; it requires transit to fulfill its equity promise</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Comparison to Prior Work</div>
+            <p class="paper-body">Prior 15-minute city literature focused on walking and cycling. This paper is the first multi-city empirical test incorporating transit modes, providing the empirical foundation the framework previously lacked.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 5 -->
+      <div class="paper-card">
+        <div class="paper-number">05</div>
+        <div class="paper-meta">arXiv:2605.20263 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; NetMob Data Challenge</div>
+        <h3><a href="https://arxiv.org/abs/2605.20263" target="_blank">The NetMob26 Dataset: A High-Resolution Multi-Source View of Public Bus Mobility in Niterói</a></h3>
+        <div class="paper-authors">Felipe Domingos, Humberto T. Marques-Neto, Bruno Pereira, Clayson Celes, Steffen Knoblauch, Vinícius F. S. Mota</div>
+        <div class="paper-summary">A landmark open dataset release covering Niterói, Brazil's public bus network in March 2026: 7.2 million ticketing transactions, full GPS bus telemetry, weather data, route/stop specifications, and sociodemographic records—enabling demand forecasting, accessibility analysis, reliability assessment, and weather impact studies.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Four integrated data streams: GPS telemetry, ticketing transactions, auxiliary transit info, sociodemographics</li>
+              <li>7.2 million individual boarding events covering one full operational month (March 2026)</li>
+              <li>Enables investigations into demand forecasting, service reliability, accessibility, and weather effects</li>
+              <li>Licensed CC BY 4.0; requires participant data agreement—data is protected but accessible to researchers</li>
+              <li>Represents a new standard for transit open data in the Global South, enabling comparable methodology</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Why It Matters</div>
+            <p class="paper-body">Most high-resolution transit datasets are proprietary or from developed-world cities. NetMob26 enables reproducible transit science in a Latin American context, filling a geographic gap and potentially enabling cross-continental comparative studies.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-medium">MEDIUM CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 6 -->
+      <div class="paper-card">
+        <div class="paper-number">06</div>
+        <div class="paper-meta">arXiv:2511.21295 &nbsp;·&nbsp; November 2025 &nbsp;·&nbsp; Transportation Engineering</div>
+        <h3><a href="https://arxiv.org/abs/2511.21295" target="_blank">Fly-by Transit: A Novel Door-to-Door Shared Mobility with Minimal Stops</a></h3>
+        <div class="paper-authors">Wenbo Fan, Weihua Gu</div>
+        <div class="paper-summary">Modular mini-EVs operate as independent feeders or platoon members, with tail trailers decoupling from moving leaders to serve stops without halting the convoy—delivering &gt;13% generalized system cost savings versus conventional buses at lower cost than e-hailing.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Eliminates the fundamental stop-delay tradeoff: tail trailer decouples in motion, convoy doesn't stop</li>
+              <li>Two vehicle types: low-cost trailer pods (1–2 passengers, feeder routes) + high-performance leaders (corridor runs)</li>
+              <li>Stationary coupling at hub stations—avoids complex in-motion coupling, making technology near-term feasible</li>
+              <li>&gt;13% generalized system cost savings; lower cost than e-hailing; stronger economies of scale than both buses and taxis</li>
+              <li>Works with existing infrastructure; dedicated lanes enhance but are not required for initial deployment</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Limitations</div>
+            <p class="paper-body">Numerical analysis rather than simulation or real-world pilot; actual coupling reliability and passenger comfort during decoupling events need empirical validation. Regulatory frameworks for platoon operation on urban streets remain undeveloped.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-medium">MEDIUM CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 7 -->
+      <div class="paper-card">
+        <div class="paper-number">07</div>
+        <div class="paper-meta">arXiv:2502.17054 &nbsp;·&nbsp; February 2025 &nbsp;·&nbsp; Network Science / Transit</div>
+        <h3><a href="https://arxiv.org/abs/2502.17054" target="_blank">Optimizing Urban Mobility Through Complex Network Analysis and Big Data from Smart Cards</a></h3>
+        <div class="paper-authors">Li Sun, Negin Ashrafi, Maryam Pishgar</div>
+        <div class="paper-summary">Analysis of 20 million Beijing smart card transactions distinguishes high-frequency and low-frequency passenger network structures, finding that high-frequency networks are highly connected but fragile (35% efficiency loss under disruption) while low-frequency networks are geographically dispersed but resilient (10% loss).</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>High-frequency network: clustering coefficient 0.72, but 35% efficiency decline under targeted disruptions</li>
+              <li>Low-frequency network: 10% efficiency decline under comparable disruptions—more geographically resilient</li>
+              <li>57.4% of HF trips occur 6:00–10:00 AM; LF travelers distribute temporally (commuter vs. discretionary split)</li>
+              <li>Proposed interventions: route diversification for HF vulnerability, improved accessibility for LF underserved areas</li>
+              <li>Network science framework reveals structural vulnerability invisible to standard ridership metrics</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Who Should Care</div>
+            <p class="paper-body">Transit system resilience planners, emergency management agencies, data science teams at transit authorities, academic researchers studying complex network dynamics in transportation.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 8 -->
+      <div class="paper-card">
+        <div class="paper-number">08</div>
+        <div class="paper-meta">arXiv:2605.18687 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; ETH Zurich / Optimization</div>
+        <h3><a href="https://arxiv.org/abs/2605.18687" target="_blank">Implementation-Based Incentive Design for Autonomous Mobility-on-Demand and Transit Systems</a></h3>
+        <div class="paper-authors">Xinling Li, Runyu Zhang, Gioele Zardini</div>
+        <div class="paper-summary">A mathematical framework for computing the minimum transfer payments needed to make socially optimal outcomes individually rational for both AMoD operators and public transit providers—applied to NYC to show how congestion levels shift which operator poses the dominant incentive challenge.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Framing: determine the minimum payment that makes deviation unattractive for each operator type</li>
+              <li>Framework decomposes incentive misalignment separately for AMoD operators vs. transit providers</li>
+              <li>NYC case study: congestion levels determine which operator presents the dominant incentive problem</li>
+              <li>Produces tight implementation-payment bounds—not worst-case estimates, but practical intervention thresholds</li>
+              <li>Accounts for mode choice and congestion externalities in the social welfare function</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Practical Implications</div>
+            <p class="paper-body">Cities managing Waymo, Uber pooled services, or other AMoD operators alongside public transit now have a theoretically grounded tool for designing payment schemes that ensure cooperative behavior without regulatory overreach.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-medium">MEDIUM CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 9 -->
+      <div class="paper-card">
+        <div class="paper-number">09</div>
+        <div class="paper-meta">arXiv:2412.19401 &nbsp;·&nbsp; Dec 2024 / Feb 2026 &nbsp;·&nbsp; Northwestern / Argonne</div>
+        <h3><a href="https://arxiv.org/abs/2412.19401" target="_blank">Joint Optimization of Multimodal Transit Frequency and Shared Autonomous Vehicle Fleet Size with Hybrid Metaheuristic and Nonlinear Programming</a></h3>
+        <div class="paper-authors">Max T.M. Ng, Hani S. Mahmassani, Draco Tong, Omer Verbas, Taner Cokyasar</div>
+        <div class="paper-summary">A particle swarm + nonlinear programming hybrid framework jointly optimizes transit route frequencies and SAV fleet size under budget constraints, achieving a 33.3% ridership increase in Chicago's metropolitan network by improving off-peak accessibility through coordinated SAV-transit integration.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>33.3% ridership increase in Chicago through joint SAV-transit frequency optimization</li>
+              <li>SAV integration particularly transforms off-peak service where fixed-route economics break down</li>
+              <li>Particle swarm optimization + nonlinear programming avoids computationally intensive microsimulations</li>
+              <li>Multinomial logit mode choice model captures behavioral response to service changes</li>
+              <li>Accepted for publication in Transportation Research Part C: Emerging Technologies (2026)</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Comparison to Prior Work</div>
+            <p class="paper-body">Prior work optimized transit or SAV fleets independently. This is among the first papers to jointly optimize both simultaneously, revealing complementarity effects that independent optimization misses—particularly the SAV's ability to economically serve low-density off-peak demand.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-high">HIGH CONFIDENCE</span>
+      </div>
+
+      <!-- PAPER 10 -->
+      <div class="paper-card">
+        <div class="paper-number">10</div>
+        <div class="paper-meta">arXiv:2504.17538 &nbsp;·&nbsp; April 2025 &nbsp;·&nbsp; Urban Planning / Simulation</div>
+        <h3><a href="https://arxiv.org/abs/2504.17538" target="_blank">SimFLEX: A Methodology for Comparative Analysis of Urban Areas for Implementing New On-Demand Feeder Bus Services</a></h3>
+        <div class="paper-authors">Hanna Vasiutina, Olha Shulika, Michał Bujak, Farnoud Ghasemi, Rafał Kucharski</div>
+        <div class="paper-summary">SimFLEX integrates OpenTripPlanner routing and ExMAS shared trip calculations to microsimulate on-demand feeder bus feasibility across different urban morphologies, revealing that Skotniki (compact suburb) outperforms Bronowice (sprawl) on attractiveness but Bronowice shows 77% greater waiting time reduction potential.</div>
+        <div class="paper-body">
+          <div class="paper-section">
+            <div class="paper-section-label">Key Insights</div>
+            <ul class="insights-list">
+              <li>Skotniki: up to 30% higher service attractiveness and 7% higher added value than Bronowice</li>
+              <li>Bronowice: approximately 77% greater waiting time reduction potential—revealing the "pain point" advantage</li>
+              <li>Methodology of successive averages models traveler learning and adoption dynamics realistically</li>
+              <li>Open-source tool applicable across diverse urban morphologies and transit network configurations</li>
+              <li>Provides policymakers with a decision-support framework before committing to costly on-demand service pilots</li>
+            </ul>
+          </div>
+          <div class="paper-section">
+            <div class="paper-section-label">Limitations</div>
+            <p class="paper-body">Applied to two Polish urban areas; generalizability to other European or non-European contexts needs validation. Microsimulation parameters may not capture all real-world behavioral nuances. Assumes rational utility-maximizing travelers.</p>
+          </div>
+        </div>
+        <span class="confidence-badge conf-medium">MEDIUM CONFIDENCE</span>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="container">
+    <p>
+      <strong>Transit Research Digest</strong> &nbsp;·&nbsp; Automated Analysis &nbsp;·&nbsp; July 4, 2026<br>
+      Sources: arXiv.org preprint server &nbsp;·&nbsp; Semantic Scholar &nbsp;·&nbsp; Web search aggregation<br>
+      Papers: 2606.17530 &nbsp;·&nbsp; 2605.28730 &nbsp;·&nbsp; 2511.07467 &nbsp;·&nbsp; 2604.00699 &nbsp;·&nbsp; 2605.20263<br>
+      2511.21295 &nbsp;·&nbsp; 2502.17054 &nbsp;·&nbsp; 2605.18687 &nbsp;·&nbsp; 2412.19401 &nbsp;·&nbsp; 2504.17538<br><br>
+      <a href="research.html">← Back to Research Archive</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

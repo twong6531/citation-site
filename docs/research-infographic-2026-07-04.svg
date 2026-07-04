@@ -1,0 +1,212 @@
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="120" fill="#1A1A2E"/>
+  <text x="40" y="48" font-size="11" fill="#6B8CFF" letter-spacing="4" font-weight="700">
+    <tspan>TRANSIT RESEARCH DIGEST</tspan>
+  </text>
+  <text x="40" y="78" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">
+    <tspan>URBAN MOBILITY</tspan>
+  </text>
+  <text x="40" y="78" font-size="28" fill="#6B8CFF" font-weight="700" letter-spacing="-0.5">
+    <tspan dx="340"> WEEKLY</tspan>
+  </text>
+  <text x="40" y="105" font-size="13" fill="#9999BB" letter-spacing="1">
+    <tspan>JULY 4, 2026  ·  10 PAPERS ANALYZED  ·  AI/ML + EQUITY + NETWORK DESIGN</tspan>
+  </text>
+  <line x1="40" y1="115" x2="760" y2="115" stroke="#6B8CFF" stroke-width="1" opacity="0.4"/>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <text x="40" y="158" font-size="10" fill="#888888" letter-spacing="3" font-weight="700">
+    <tspan>EXECUTIVE SUMMARY</tspan>
+  </text>
+  <line x1="40" y1="165" x2="760" y2="165" stroke="#CCCCCC" stroke-width="0.5"/>
+  <text x="40" y="185" font-size="13.5" fill="#222222" leading="22">
+    <tspan x="40" dy="0">This week's transit research spans a transformative moment: AI is redesigning entire city-scale transit networks,</tspan>
+    <tspan x="40" dy="20">autonomous vehicles are being integrated into public transit (yielding +33% ridership in Chicago), and congestion</tspan>
+    <tspan x="40" dy="20">pricing in NYC is proving its transit boost thesis. Meanwhile, the 15-minute city concept gains empirical teeth,</tspan>
+    <tspan x="40" dy="20">reliability trumps frequency in post-COVID recovery, and a radical "fly-by" platoon transit concept promises</tspan>
+    <tspan x="40" dy="20">&gt;13% system cost savings. Data infrastructure matures with the NetMob26 open dataset from Brazil.</tspan>
+  </text>
+
+  <!-- KEY FINDINGS -->
+  <text x="40" y="295" font-size="10" fill="#888888" letter-spacing="3" font-weight="700">
+    <tspan>THREE KEY FINDINGS</tspan>
+  </text>
+  <line x1="40" y1="302" x2="760" y2="302" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- Finding 1 -->
+  <rect x="40" y="315" width="4" height="80" fill="#6B8CFF"/>
+  <text x="56" y="333" font-size="10" fill="#6B8CFF" font-weight="700" letter-spacing="2">
+    <tspan>01  AI-DRIVEN NETWORK DESIGN ARRIVES</tspan>
+  </text>
+  <text x="56" y="352" font-size="13" fill="#333333">
+    <tspan x="56" dy="0">AlphaTransit (arXiv 2605.28730) demonstrates Monte Carlo Tree Search + neural</tspan>
+    <tspan x="56" dy="18">networks can design city-scale route networks, achieving 82.1% service rate at full</tspan>
+    <tspan x="56" dy="18">demand—11.4% better than RL alone. First system to handle network-level route interactions.</tspan>
+  </text>
+
+  <!-- Finding 2 -->
+  <rect x="40" y="415" width="4" height="80" fill="#FF6B6B"/>
+  <text x="56" y="433" font-size="10" fill="#FF6B6B" font-weight="700" letter-spacing="2">
+    <tspan>02  RELIABILITY BEATS FREQUENCY POST-COVID</tspan>
+  </text>
+  <text x="56" y="452" font-size="13" fill="#333333">
+    <tspan x="56" dy="0">Miami-Dade County analysis (arXiv 2511.07467) finds on-time performance is now</tspan>
+    <tspan x="56" dy="18">the dominant ridership driver post-2021—especially on frequent routes. The COVID-era</tspan>
+    <tspan x="56" dy="18">shift in rider composition changed what transit users most value in service quality.</tspan>
+  </text>
+
+  <!-- Finding 3 -->
+  <rect x="40" y="515" width="4" height="80" fill="#44BB88"/>
+  <text x="56" y="533" font-size="10" fill="#44BB88" font-weight="700" letter-spacing="2">
+    <tspan>03  CONGESTION PRICING DELIVERS TRANSIT GAINS</tspan>
+  </text>
+  <text x="56" y="552" font-size="13" fill="#333333">
+    <tspan x="56" dy="0">NYC's January 2025 congestion pricing program (arXiv 2606.17530) significantly</tspan>
+    <tspan x="56" dy="18">boosted bus and subway ridership beyond projected baselines, while concentrating</tspan>
+    <tspan x="56" dy="18">travel demand reduction within the Congestion Relief Zone—validating the policy theory.</tspan>
+  </text>
+
+  <!-- PAPER OF THE DAY -->
+  <rect x="0" y="620" width="800" height="140" fill="#1A1A2E"/>
+  <text x="40" y="650" font-size="10" fill="#6B8CFF" letter-spacing="3" font-weight="700">
+    <tspan>PAPER OF THE DAY</tspan>
+  </text>
+  <text x="40" y="678" font-size="18" fill="#FFFFFF" font-weight="700">
+    <tspan>Fly-by Transit: A Novel Door-to-Door Shared Mobility</tspan>
+  </text>
+  <text x="40" y="698" font-size="14" fill="#9999BB">
+    <tspan>Fan &amp; Gu  ·  arXiv:2511.21295  ·  Nov 2025</tspan>
+  </text>
+  <text x="40" y="722" font-size="12.5" fill="#CCCCCC">
+    <tspan x="40" dy="0">Modular electric mini-vehicle platoons couple dynamically—trailers detach from leaders while moving,</tspan>
+    <tspan x="40" dy="18">eliminating stops for the main convoy. Delivers &gt;13% generalized system cost savings vs. conventional</tspan>
+    <tspan x="40" dy="18">buses, at lower cost than e-hailing, with stronger network economies of scale. Near-term feasible.</tspan>
+  </text>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="795" font-size="10" fill="#888888" letter-spacing="3" font-weight="700">
+    <tspan>EMERGING THEMES</tspan>
+  </text>
+  <line x1="40" y1="802" x2="760" y2="802" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- Theme 1 -->
+  <rect x="40" y="815" width="220" height="130" fill="#FFFFFF" rx="2"/>
+  <rect x="40" y="815" width="220" height="4" fill="#6B8CFF"/>
+  <text x="52" y="836" font-size="11" fill="#6B8CFF" font-weight="700" letter-spacing="1">
+    <tspan>AI + OPTIMIZATION</tspan>
+  </text>
+  <text x="52" y="855" font-size="11.5" fill="#444444">
+    <tspan x="52" dy="0">Machine learning is moving</tspan>
+    <tspan x="52" dy="16">from mode-level prediction</tspan>
+    <tspan x="52" dy="16">to network-level design.</tspan>
+    <tspan x="52" dy="16">AlphaTransit, SAV integration,</tspan>
+    <tspan x="52" dy="16">and incentive theory papers</tspan>
+    <tspan x="52" dy="16">all target system optimality.</tspan>
+  </text>
+
+  <!-- Theme 2 -->
+  <rect x="290" y="815" width="220" height="130" fill="#FFFFFF" rx="2"/>
+  <rect x="290" y="815" width="220" height="4" fill="#FF6B6B"/>
+  <text x="302" y="836" font-size="11" fill="#FF6B6B" font-weight="700" letter-spacing="1">
+    <tspan>EQUITY + ACCESS</tspan>
+  </text>
+  <text x="302" y="855" font-size="11.5" fill="#444444">
+    <tspan x="302" dy="0">The 15-minute city debate</tspan>
+    <tspan x="302" dy="16">now has empirical data:</tspan>
+    <tspan x="302" dy="16">transit dramatically improves</tspan>
+    <tspan x="302" dy="16">peripheral access. NYC pricing</tspan>
+    <tspan x="302" dy="16">raises equity questions about</tspan>
+    <tspan x="302" dy="16">uneven neighborhood impacts.</tspan>
+  </text>
+
+  <!-- Theme 3 -->
+  <rect x="540" y="815" width="220" height="130" fill="#FFFFFF" rx="2"/>
+  <rect x="540" y="815" width="220" height="4" fill="#44BB88"/>
+  <text x="552" y="836" font-size="11" fill="#44BB88" font-weight="700" letter-spacing="1">
+    <tspan>DATA INFRASTRUCTURE</tspan>
+  </text>
+  <text x="552" y="855" font-size="11.5" fill="#444444">
+    <tspan x="552" dy="0">Open datasets (NetMob26,</tspan>
+    <tspan x="552" dy="16">Beijing smart cards) are</tspan>
+    <tspan x="552" dy="16">enabling reproducible transit</tspan>
+    <tspan x="552" dy="16">science. High-resolution GPS,</tspan>
+    <tspan x="552" dy="16">ticketing, and weather data</tspan>
+    <tspan x="552" dy="16">now fuel demand modeling.</tspan>
+  </text>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="990" font-size="10" fill="#888888" letter-spacing="3" font-weight="700">
+    <tspan>RESEARCH CONFIDENCE DISTRIBUTION</tspan>
+  </text>
+  <line x1="40" y1="997" x2="760" y2="997" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- Chart bars -->
+  <text x="40" y="1020" font-size="11" fill="#555555">HIGH</text>
+  <rect x="100" y="1007" width="360" height="18" fill="#6B8CFF" rx="2"/>
+  <text x="468" y="1020" font-size="11" fill="#333333" font-weight="700">6 papers (60%)</text>
+
+  <text x="40" y="1050" font-size="11" fill="#555555">MED</text>
+  <rect x="100" y="1037" width="240" height="18" fill="#AABBFF" rx="2"/>
+  <text x="348" y="1050" font-size="11" fill="#333333" font-weight="700">4 papers (40%)</text>
+
+  <text x="40" y="1080" font-size="11" fill="#555555">LOW</text>
+  <rect x="100" y="1067" width="0" height="18" fill="#DDDDEE" rx="2"/>
+  <text x="108" y="1080" font-size="11" fill="#333333" font-weight="700">0 papers (0%)</text>
+
+  <text x="40" y="1105" font-size="10.5" fill="#888888">
+    <tspan>All 10 papers used empirical data or formal optimization. No purely theoretical papers this cycle.</tspan>
+  </text>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="1145" font-size="10" fill="#888888" letter-spacing="3" font-weight="700">
+    <tspan>ACTIONABLE TAKEAWAYS</tspan>
+  </text>
+  <line x1="40" y1="1152" x2="760" y2="1152" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <text x="40" y="1175" font-size="12" fill="#333333">
+    <tspan>▸  Transit agencies should prioritize reliability improvements before frequency increases in post-COVID markets.</tspan>
+  </text>
+  <text x="40" y="1200" font-size="12" fill="#333333">
+    <tspan>▸  Cities considering congestion pricing can cite NYC data: transit ridership gains extend beyond the priced zone.</tspan>
+  </text>
+  <text x="40" y="1225" font-size="12" fill="#333333">
+    <tspan>▸  SAV-transit integration frameworks are ready for pilot deployment—the Chicago 33% ridership model is replicable.</tspan>
+  </text>
+  <text x="40" y="1250" font-size="12" fill="#333333">
+    <tspan>▸  Planners adopting the 15-minute city framework must include transit to serve peripheral, amenity-poor areas.</tspan>
+  </text>
+  <text x="40" y="1275" font-size="12" fill="#333333">
+    <tspan>▸  Operators facing incentive conflicts with AMoD providers now have a mathematical implementation-payment framework.</tspan>
+  </text>
+  <text x="40" y="1300" font-size="12" fill="#333333">
+    <tspan>▸  Watch the Fly-by Transit platoon concept: it targets the exact gap between fixed-route and ride-hailing economics.</tspan>
+  </text>
+
+  <!-- CONTRARIAN INSIGHT -->
+  <rect x="40" y="1325" width="720" height="80" fill="#FFF8E1" rx="2"/>
+  <rect x="40" y="1325" width="4" height="80" fill="#FFB300"/>
+  <text x="56" y="1347" font-size="10" fill="#FF8F00" font-weight="700" letter-spacing="2">
+    <tspan>CONTRARIAN INSIGHT</tspan>
+  </text>
+  <text x="56" y="1367" font-size="12.5" fill="#333333">
+    <tspan x="56" dy="0">The conventional wisdom "more frequency = more riders" is increasingly wrong. Miami-Dade data shows that post-COVID,</tspan>
+    <tspan x="56" dy="18">adding runs matters less than ensuring the runs that exist actually arrive on time. Transit agencies may be misallocating</tspan>
+    <tspan x="56" dy="18">capital toward expansion when operational reliability improvements would yield higher ridership returns per dollar.</tspan>
+  </text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1530" width="800" height="70" fill="#1A1A2E"/>
+  <text x="40" y="1558" font-size="10" fill="#9999BB" letter-spacing="1">
+    <tspan>TRANSIT RESEARCH DIGEST  ·  AUTOMATED ANALYSIS  ·  JULY 4, 2026</tspan>
+  </text>
+  <text x="40" y="1578" font-size="10" fill="#666688">
+    <tspan>Sources: arXiv.org preprint server  ·  Papers: 2606.17530, 2605.28730, 2511.07467, 2604.00699, 2605.20263</tspan>
+  </text>
+  <text x="40" y="1593" font-size="10" fill="#666688">
+    <tspan>2511.21295, 2502.17054, 2605.18687, 2412.19401, 2504.17538  ·  View at: twong6531.github.io/citation-site</tspan>
+  </text>
+</svg>

@@ -3,334 +3,495 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research Archive | Transit Research Digest</title>
+<title>Transit Research Archive — Citation Site</title>
 <style>
   :root {
-    --bg: #0D0D0D; --surface: #161616; --surface2: #1E1E1E;
-    --border: #2A2A2A; --text: #E8E8E3; --muted: #888; --accent: #F0F0E8;
+    --bg: #0D0D14;
+    --surface: #15151F;
+    --card: #1C1C2A;
+    --accent: #6B8CFF;
+    --accent2: #FF6B6B;
+    --accent3: #44BB88;
+    --accent4: #FFB300;
+    --text: #E8E8F0;
+    --text-dim: #9999BB;
+    --text-muted: #666688;
+    --border: #2A2A40;
+    --highlight: #22223A;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
-  a { color: var(--text); text-decoration: none; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-  .site-nav { background: #000; border-bottom: 1px solid var(--border); padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; }
-  .site-nav .logo { font-size: 11px; letter-spacing: 3px; color: var(--muted); font-weight: 600; }
-  .site-nav .nav-links a { font-size: 11px; letter-spacing: 2px; color: var(--muted); margin-left: 24px; }
-  .site-nav .nav-links a:hover { color: var(--text); }
+  .site-header {
+    background: linear-gradient(135deg, #0A0A18 0%, #151530 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 0 32px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .header-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .header-title span { color: var(--accent); }
+  .header-desc {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .total-count {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
 
-  .archive-hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 50px 40px 40px; }
-  .archive-hero-inner { max-width: 1200px; margin: 0 auto; }
-  .archive-hero .label { font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 10px; }
-  .archive-hero h1 { font-size: 36px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
-  .archive-hero .count { font-size: 12px; color: var(--muted); letter-spacing: 2px; }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
 
-  .archive-main { max-width: 1200px; margin: 0 auto; padding: 40px; }
+  .featured-section { margin: 40px 0 32px; }
+  .featured-card {
+    background: linear-gradient(135deg, #1A1A35 0%, #151530 100%);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 32px 36px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured-badge {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .featured-date {
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .featured-card h2 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .featured-card .desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 20px;
+    max-width: 620px;
+  }
+  .featured-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid;
+  }
+  .tag-ai { color: var(--accent); border-color: rgba(107,140,255,0.4); background: rgba(107,140,255,0.1); }
+  .tag-equity { color: var(--accent2); border-color: rgba(255,107,107,0.4); background: rgba(255,107,107,0.1); }
+  .tag-data { color: var(--accent3); border-color: rgba(68,187,136,0.4); background: rgba(68,187,136,0.1); }
+  .tag-policy { color: var(--accent4); border-color: rgba(255,179,0,0.4); background: rgba(255,179,0,0.1); }
+  .btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .btn-primary:hover { background: #5577EE; text-decoration: none; }
 
-  /* FEATURED TODAY */
-  .section-label { font-size: 10px; letter-spacing: 3px; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; }
-  .featured-card { display: flex; gap: 32px; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--text); padding: 32px; margin-bottom: 48px; }
-  .featured-thumb { width: 280px; flex-shrink: 0; }
-  .featured-thumb img { width: 100%; border: 1px solid var(--border); }
-  .featured-thumb-placeholder { width: 280px; height: 200px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--muted); letter-spacing: 2px; }
-  .featured-info .featured-label { font-size: 9px; letter-spacing: 3px; color: var(--muted); margin-bottom: 12px; }
-  .featured-info h2 { font-size: 28px; margin-bottom: 8px; font-weight: 700; }
-  .featured-info .featured-date { font-size: 12px; color: var(--muted); letter-spacing: 2px; margin-bottom: 20px; }
-  .featured-info p { font-size: 14px; color: #999; line-height: 1.7; margin-bottom: 20px; }
-  .read-link { display: inline-block; font-size: 11px; letter-spacing: 2px; border: 1px solid var(--text); padding: 10px 24px; color: var(--text); }
-  .read-link:hover { background: var(--text); color: var(--bg); }
+  .featured-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 140px;
+  }
+  .fstat {
+    background: rgba(107,140,255,0.1);
+    border: 1px solid rgba(107,140,255,0.2);
+    border-radius: 6px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .fstat strong { display: block; font-size: 24px; color: var(--accent); font-weight: 800; }
+  .fstat span { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
 
-  /* PAST GRID */
-  .past-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .past-issue { background: var(--surface); border: 1px solid var(--border); padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s; }
-  .past-issue:hover { border-color: #444; }
-  .issue-thumb { width: 100%; height: 160px; object-fit: cover; object-position: top; border: 1px solid var(--border); }
-  .issue-thumb-placeholder { width: 100%; height: 160px; background: var(--surface2); border: 1px solid var(--border); }
-  .past-thumb { overflow: hidden; }
-  .past-meta { display: flex; flex-direction: column; gap: 4px; }
-  .past-num { font-size: 9px; letter-spacing: 2px; color: var(--muted); }
-  .past-date { font-size: 13px; color: var(--text); font-weight: 600; }
+  .past-section { margin: 40px 0; }
+  .issues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .issue-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 22px;
+    transition: border-color 0.2s;
+  }
+  .issue-card:hover { border-color: var(--accent); }
+  .issue-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .issue-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .issue-card h3 a { color: var(--text); }
+  .issue-card h3 a:hover { color: var(--accent); }
+  .issue-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .issue-meta { font-size: 11px; color: var(--text-muted); }
+  .issue-meta span { color: var(--accent); }
 
-  .site-footer { background: #000; border-top: 1px solid var(--border); padding: 40px; margin-top: 80px; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; }
-  .footer-inner div { font-size: 11px; color: var(--muted); line-height: 2; }
+  footer {
+    background: #08080F;
+    border-top: 1px solid var(--border);
+    padding: 32px 0 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  footer p { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+  footer a { color: var(--accent); }
 
-  @media (max-width: 768px) {
-    .featured-card { flex-direction: column; }
-    .featured-thumb { width: 100%; }
-    .past-grid { grid-template-columns: repeat(2, 1fr); }
-    .archive-main { padding: 20px; }
+  @media (max-width: 680px) {
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-stats { flex-direction: row; flex-wrap: wrap; }
+    .fstat { flex: 1; min-width: 100px; }
   }
 </style>
 </head>
 <body>
 
-<nav class="site-nav">
-  <a class="logo" href="../index.html">TRANSIT RESEARCH DIGEST</a>
-  <div class="nav-links">
-    <a href="research.html">ARCHIVE</a>
-    <a href="../index.html">HOME</a>
+<header class="site-header">
+  <div class="container">
+    <div class="header-eyebrow">Automated Transit Research · Daily Digest</div>
+    <h1 class="header-title">Transit Research <span>Archive</span></h1>
+    <p class="header-desc">Daily automated analysis of the latest academic research in public transit, urban mobility, bus rapid transit, light rail, TOD, walkability, and multimodal transportation systems.</p>
+    <div class="total-count">30 ISSUES PUBLISHED</div>
   </div>
-</nav>
+</header>
 
-<div class="archive-hero">
-  <div class="archive-hero-inner">
-    <div class="label">RESEARCH ARCHIVE</div>
-    <h1>Transit Research Digest</h1>
-    <div class="count">29 ISSUES PUBLISHED — DAILY URBAN MOBILITY RESEARCH</div>
-  </div>
+<div class="container">
+
+  <section class="featured-section">
+    <div class="section-label">Latest Issue — July 4, 2026</div>
+    <div class="featured-card">
+      <span class="featured-badge">TODAY</span>
+      <div>
+        <div class="featured-date">JULY 4, 2026</div>
+        <h2>Urban Mobility Weekly</h2>
+        <p class="desc">AI arrives at city-scale network design (AlphaTransit). NYC congestion pricing delivers measurable transit gains. Chicago sees +33% ridership from SAV-transit integration. Reliability overtakes frequency as the post-COVID ridership driver in Miami-Dade. The 15-minute city gets empirical backing. Fly-by transit platoons promise &gt;13% cost savings.</p>
+        <div class="featured-tags">
+          <span class="tag tag-ai">AI NETWORK DESIGN</span>
+          <span class="tag tag-policy">CONGESTION PRICING</span>
+          <span class="tag tag-equity">15-MINUTE CITY</span>
+          <span class="tag tag-data">OPEN DATASETS</span>
+          <span class="tag tag-ai">SAV INTEGRATION</span>
+          <span class="tag tag-policy">RELIABILITY vs FREQUENCY</span>
+        </div>
+        <a href="research-2026-07-04.html" class="btn-primary">Read Full Digest →</a>
+      </div>
+      <div class="featured-stats">
+        <div class="fstat">
+          <strong>10</strong>
+          <span>Papers</span>
+        </div>
+        <div class="fstat">
+          <strong>60%</strong>
+          <span>High Conf.</span>
+        </div>
+        <div class="fstat">
+          <strong>6</strong>
+          <span>Themes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="past-section">
+    <div class="section-label">Past Issues (29 editions)</div>
+    <div class="issues-grid">
+
+      <div class="issue-card">
+        <div class="issue-date">JULY 3, 2026</div>
+        <h3><a href="research-2026-07-03.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Multimodal network resilience, fare elasticity post-pandemic, automated demand forecasting, micromobility integration studies.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JULY 2, 2026</div>
+        <h3><a href="research-2026-07-02.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Electric bus fleet electrification, transit equity mapping, demand-responsive routing in low-density areas, BRT corridor design.</p>
+        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JULY 1, 2026</div>
+        <h3><a href="research-2026-07-01.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Transit-oriented development land values, real-time passenger information systems, autonomous shuttles in university campuses.</p>
+        <div class="issue-meta"><span>11 papers</span> · Mixed confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 30, 2026</div>
+        <h3><a href="research-2026-06-30.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Pedestrian safety at transit stops, first/last mile connectivity, mobile ticketing adoption, carbon emissions from transit investment.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 29, 2026</div>
+        <h3><a href="research-2026-06-29.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Shared mobility coordination, transit network redesign after COVID, ridesharing pooling algorithms, station area planning.</p>
+        <div class="issue-meta"><span>8 papers</span> · Medium confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 28, 2026</div>
+        <h3><a href="research-2026-06-28.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Deep learning for transit demand prediction, equity in fare-free transit programs, light rail extension cost-benefit analysis.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 27, 2026</div>
+        <h3><a href="research-2026-06-27.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Transit network vulnerability assessment, high-speed rail integration, modal shift incentives, smart card data analytics.</p>
+        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 26, 2026</div>
+        <h3><a href="research-2026-06-26.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Accessibility modeling for disabled riders, bus bunching mitigation, transfers in multimodal systems, parking policy and transit.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 25, 2026</div>
+        <h3><a href="research-2026-06-25.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Microtransit feasibility in suburban areas, station design and ridership, MaaS platform integration, e-scooter transit connection.</p>
+        <div class="issue-meta"><span>11 papers</span> · Mixed confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 24, 2026</div>
+        <h3><a href="research-2026-06-24.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Climate resilience in transit infrastructure, extreme heat ridership effects, flooding vulnerability of rail networks, adaptation.</p>
+        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 23, 2026</div>
+        <h3><a href="research-2026-06-23.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Walkability scoring methodologies, pedestrian network connectivity, TOD zoning impacts, transit-induced gentrification evidence.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 22, 2026</div>
+        <h3><a href="research-2026-06-22.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Bus rapid transit vs. light rail cost-effectiveness, dedicated lane enforcement, BRT fare structures, Latin American BRT lessons.</p>
+        <div class="issue-meta"><span>8 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 21, 2026</div>
+        <h3><a href="research-2026-06-21.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Autonomous vehicle impacts on transit demand, self-driving shuttle pilots, waymo-transit integration studies, liability frameworks.</p>
+        <div class="issue-meta"><span>9 papers</span> · Medium confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 20, 2026</div>
+        <h3><a href="research-2026-06-20.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Commuter rail electrification programs, grade crossing safety, regional rail network planning, intercity-urban connectivity.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 19, 2026</div>
+        <h3><a href="research-2026-06-19.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Subway crowding models, platform dwell time optimization, passenger flow at interchanges, real-time crowd management.</p>
+        <div class="issue-meta"><span>11 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 18, 2026</div>
+        <h3><a href="research-2026-06-18.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Feeder bus optimization, park-and-ride behavior, suburban transit access, first/last mile autonomous vehicle solutions.</p>
+        <div class="issue-meta"><span>9 papers</span> · Medium confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 17, 2026</div>
+        <h3><a href="research-2026-06-17.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Passenger information systems effectiveness, real-time app adoption, transit loyalty programs, service perception studies.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 16, 2026</div>
+        <h3><a href="research-2026-06-16.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Zero-emission bus deployment challenges, charging infrastructure siting, battery degradation in cold climates, driver training.</p>
+        <div class="issue-meta"><span>8 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 15, 2026</div>
+        <h3><a href="research-2026-06-15.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Transit safety at night, crime deterrence through transit design, lighting standards, personal security perceptions.</p>
+        <div class="issue-meta"><span>9 papers</span> · Medium confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 14, 2026</div>
+        <h3><a href="research-2026-06-14.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Mobility-as-a-Service platform governance, data sharing agreements, integrated ticketing regulatory frameworks, EU MaaS pilots.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 13, 2026</div>
+        <h3><a href="research-2026-06-13.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Agent-based transit simulation, activity-based travel demand modeling, disaggregate ridership forecasting, scenario analysis.</p>
+        <div class="issue-meta"><span>11 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 12, 2026</div>
+        <h3><a href="research-2026-06-12.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Urban freight and transit conflicts, delivery vehicle interference with bus operations, freight consolidation, last-mile logistics.</p>
+        <div class="issue-meta"><span>8 papers</span> · Medium confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 11, 2026</div>
+        <h3><a href="research-2026-06-11.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Bikeshare-transit integration, modal substitution vs. complementarity, e-bike impacts on transit, infrastructure investment return.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 10, 2026</div>
+        <h3><a href="research-2026-06-10.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Transit stop spacing optimization, walking catchment modeling, headway-spacing tradeoffs, network topology effects on ridership.</p>
+        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 9, 2026</div>
+        <h3><a href="research-2026-06-09.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Work-from-home and transit ridership recovery, hybrid work patterns, origin-destination shift, peak spreading phenomena.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 8, 2026</div>
+        <h3><a href="research-2026-06-08.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Tram and streetcar revival, embedded rail in pedestrian areas, shared streets design, low-speed urban rail integration.</p>
+        <div class="issue-meta"><span>8 papers</span> · Medium confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 7, 2026</div>
+        <h3><a href="research-2026-06-07.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Transit funding mechanisms, farebox recovery ratios, value capture financing, federal funding program efficiency analysis.</p>
+        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 6, 2026</div>
+        <h3><a href="research-2026-06-06.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Wheelchair accessibility at transit stations, ADA compliance gaps, gap-free boarding solutions, inclusive design standards.</p>
+        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-date">JUNE 5, 2026</div>
+        <h3><a href="research-2026-06-05.html">Urban Mobility Weekly</a></h3>
+        <p class="issue-desc">Hyperloop transit planning studies, maglev feasibility, underground autonomous transit concepts, speculative future mobility.</p>
+        <div class="issue-meta"><span>8 papers</span> · Low confidence</div>
+      </div>
+
+    </div>
+  </section>
+
 </div>
 
-<div class="archive-main">
-
-  <div class="section-label">TODAY'S ISSUE — JULY 3, 2026</div>
-  <div class="featured-card">
-    <div class="featured-thumb">
-      <img src="research-infographic-2026-07-03.svg" alt="Research Infographic July 3" class="issue-thumb"/>
-    </div>
-    <div class="featured-info">
-      <div class="featured-label">ISSUE #29 — FEATURED TODAY</div>
-      <h2>AI Transit Prediction, GPS Data Bias, Sidewalk Robot Walkability, and Fare-Free Zone Equity</h2>
-      <div class="featured-date">JULY 3, 2026</div>
-      <p>12 papers analyzed covering the field's shift toward AI-powered transit management and equity-aware planning. Key findings: weather data hurts MBTA prediction models (temporal features dominate); GPS mobility data from Facebook and Veraset carry source-specific demographic biases across 2,478 Mexican municipalities; sidewalk delivery robots are effective continuous walkability sensors at zero marginal cost; and the first analytical model for fare-free transit zoning shows equity goals require larger zones than welfare maximization. Paper of the day: sidewalk robots as mobile walkability monitors — an elegant dual-use innovation that could transform city-scale pedestrian infrastructure assessment.</p>
-      <a class="read-link" href="research-2026-07-03.html">READ THIS ISSUE →</a>
-    </div>
-  </div>
-
-  <div class="section-label">PAST ISSUES</div>
-  <div class="past-grid">
-
-    <a class="past-issue" href="research-2026-07-02.html">
-      <div class="past-thumb"><img src="research-infographic-2026-07-02.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #28</span>
-        <span class="past-date">July 2, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-07-01.html">
-      <div class="past-thumb"><img src="research-infographic-2026-07-01.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #27</span>
-        <span class="past-date">July 1, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-30.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-30.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #26</span>
-        <span class="past-date">June 30, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-29.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-29.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #25</span>
-        <span class="past-date">June 29, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-28.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-28.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #24</span>
-        <span class="past-date">June 28, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-27.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-27.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #23</span>
-        <span class="past-date">June 27, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-26.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-26.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #22</span>
-        <span class="past-date">June 26, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-25.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-25.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #21</span>
-        <span class="past-date">June 25, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-24.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-24.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #20</span>
-        <span class="past-date">June 24, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-23.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-23.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #19</span>
-        <span class="past-date">June 23, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-22.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-22.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #18</span>
-        <span class="past-date">June 22, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-21.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-21.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #17</span>
-        <span class="past-date">June 21, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-20.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-20.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #16</span>
-        <span class="past-date">June 20, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-19.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-19.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #15</span>
-        <span class="past-date">June 19, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-18.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-18.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #14</span>
-        <span class="past-date">June 18, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-17.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-17.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #13</span>
-        <span class="past-date">June 17, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-16.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-16.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #12</span>
-        <span class="past-date">June 16, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-15.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-15.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #11</span>
-        <span class="past-date">June 15, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-14.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-14.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #10</span>
-        <span class="past-date">June 14, 2026</span>
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-13.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-13.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #09</span>
-        <span class="past-date">June 13, 2026</span>
-
-      </div>
-    </a>
-
-    <a class="past-issue" href="research-2026-06-12.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-12.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #08</span>
-        <span class="past-date">June 12, 2026</span>
-      </div>
-    </a>
-    <a class="past-issue" href="research-2026-06-11.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-11.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #07</span>
-        <span class="past-date">June 11, 2026</span>
-      </div>
-    </a>
-    <a class="past-issue" href="research-2026-06-10.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-10.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #06</span>
-        <span class="past-date">June 10, 2026</span>
-      </div>
-    </a>
-    <a class="past-issue" href="research-2026-06-09.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-09.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #05</span>
-        <span class="past-date">June 9, 2026</span>
-      </div>
-    </a>
-    <a class="past-issue" href="research-2026-06-08.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-08.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #04</span>
-        <span class="past-date">June 8, 2026</span>
-      </div>
-    </a>
-    <a class="past-issue" href="research-2026-06-07.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-07.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #03</span>
-        <span class="past-date">June 7, 2026</span>
-      </div>
-    </a>
-    <a class="past-issue" href="research-2026-06-06.html">
-      <div class="past-thumb"><img src="research-infographic-2026-06-06.svg" alt="Research Infographic" class="issue-thumb"/></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #02</span>
-        <span class="past-date">June 6, 2026</span>
-      </div>
-    </a>
-    <a class="past-issue" href="research-2026-06-05.html">
-      <div class="past-thumb"><div class="issue-thumb-placeholder"></div></div>
-      <div class="past-meta">
-        <span class="past-num">ISSUE #01</span>
-        <span class="past-date">June 5, 2026</span>
-      </div>
-    </a>
-  </div>
-
-</div>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      TRANSIT RESEARCH DIGEST<br>
-      Daily autonomous research · 28 issues<br>
-      arXiv + Semantic Scholar
-    </div>
-    <div style="text-align:right">
-      <a href="../index.html" style="color:var(--muted)">← Back to Home</a><br>
-      Updated July 2, 2026
-    </div>
+<footer>
+  <div class="container">
+    <p>
+      <strong>Transit Research Digest</strong> — Daily automated analysis of academic transit research<br>
+      Powered by arXiv.org · Semantic Scholar · Web search aggregation<br>
+      30 issues published · Last updated July 4, 2026<br><br>
+      <a href="index.html">← Back to Citation Site</a>
+    </p>
   </div>
 </footer>
 
