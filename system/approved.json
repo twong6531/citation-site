@@ -1,5 +1,11 @@
 {
-  "approved": [],
+  "approved": [
+    "2026-06-13-script-tesla-spacex-transit-empire-script",
+    "2026-06-13-script-transit-app-dark-ux-2026-script",
+    "2026-06-14-script-fare-evasion-economics-script",
+    "2026-06-25-script-us-cities-transit-gap-script",
+    "2026-06-26-script-dopamine-fracking-script"
+  ],
   "rejected": [],
   "instructions": "Add item slugs to 'approved' array to allow Publishing Agent to go live. Format: YYYY-MM-DD-type-slug (e.g. '2026-06-07-article-brt-funding'). Edit this file directly in GitHub to approve without touching local code."
 }
