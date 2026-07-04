@@ -1,0 +1,26 @@
+{
+  "date": "2026-07-04",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold_backlog",
+    "qc": "pending",
+    "publishing": "skipped_no_approved_items"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 28: approved.json empty since 2026-06-07. 28 consecutive days without a human approval. 5 QC-passed scripts ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to system/approved.json.",
+    "ARTICLE AGENT UNRESPONSIVE: drafts/articles/ has never had a file successfully produced in 28 consecutive days across the entire site history. 0% article production rate. Manual diagnostic of article-writing agent is critically overdue.",
+    "BRT INFOGRAPHIC RETRIES SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 remain suspended (suspended 2026-07-02). Manual diagnostic of infographic-writing agent required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD: 5 QC-passed scripts and 5 needs-revision scripts in backlog. No new scripts until human approvals received via system/approved.json.",
+    "GOOGLE NEWS RSS FEED EMPTY: 7+ consecutive days of empty results from Google News Technology RSS. Persistent access/parsing issue -- manual check of feed URL and parsing logic required.",
+    "TIMELINESS CRITICAL: Rank 2 queue item (July 4 holiday transit demand infographic) is publish-TODAY-only -- loses all relevance after end of day.",
+    "NEW TODAY: Virginia geolocation data ban (SB 338) in effect since July 1 -- Rank 1 long article queued on transit data privacy implications.",
+    "NEW TODAY: Claude Mythos AI discovers 6,200+ critical software vulnerabilities -- Rank 3 research brief queued on transit infrastructure security implications.",
+    "NEW TODAY: Record 72.2M July 4 travelers (AAA) -- Rank 4 research brief on transit mode-share analysis queued.",
+    "NEW TODAY: Gemini Code Assist shutdown July 17 -- Rank 5 explainer queued, 13 days to deadline."
+  ]
+}

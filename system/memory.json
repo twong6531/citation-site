@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03T06:00:00Z",
+  "last_updated": "2026-07-04T06:00:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -684,6 +684,24 @@
       "type": "research_infographic",
       "url": "docs/research-infographic-2026-07-02.svg",
       "topic": "Research Infographic 2026-07-02"
+    },
+    {
+      "date": "2026-07-03",
+      "type": "transit",
+      "url": "docs/transit-2026-07-03.html",
+      "topic": "SoCal Transit Brief 2026-07-03 — America 250th holiday transit, Spain vs Austria World Cup finale, D Line 6-year ridership high, LAX SkyLink delays, Cathay Pacific station naming, Metro DPS 2400+ applicants, 196 World Cup buses, Metro vs Burbank lawsuit, Metrolink identity crisis, SCAG SB 79 draft housing map (QC: 87 PASS)"
+    },
+    {
+      "date": "2026-07-03",
+      "type": "research",
+      "url": "docs/research-2026-07-03.html",
+      "topic": "Transit Research Digest 2026-07-03 — AI prediction bias, GPS mobility data equity, sidewalk robot walkability, fare-free zone optimization — 12 papers, self-analysis (Gemini quota exceeded) (QC: 88 PASS)"
+    },
+    {
+      "date": "2026-07-03",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-07-03.svg",
+      "topic": "Research Infographic 2026-07-03 (QC: 85 PASS)"
     }
   ],
   "drafts_pending_approval": [
@@ -1419,6 +1437,21 @@
       "date": "2026-07-02",
       "job": "infographic_writing",
       "reason": "brt-vs-light-rail-cost-2026 automated retry SUSPENDED after ~20 consecutive failures since 2026-06-07. Replaced today with fresh topic: ai-tools-transit-operations-visual-guide-2026. Manual diagnostic of infographic-writing agent required."
+    },
+    {
+      "date": "2026-07-03",
+      "job": "publishing",
+      "reason": "approved.json empty -- no human approvals received for 28th consecutive day (since 2026-06-07). 5 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking. Publishing skipped (day 28)."
+    },
+    {
+      "date": "2026-07-03",
+      "job": "article_writing",
+      "reason": "drafts/articles/ directory has never had a file successfully produced in 28 consecutive days. 0% article production rate across entire site history. Virginia geolocation ban article queued as Rank 1 but article agent remains unresponsive."
+    },
+    {
+      "date": "2026-07-03",
+      "job": "infographic_writing",
+      "reason": "Daily infographic-2026-07-03.svg QC score 62 (REVISE) due to text truncation on cards 3, 4, 6. July 4th transit demand infographic not produced -- QC agent flagged timeliness window missed for July 3 delivery."
     }
   ],
   "content_gaps": [
@@ -1487,6 +1520,16 @@
     "NEW SIGNAL (2026-07-03): Virginia bans sale of geolocation data (891 HN pts). Queued as Rank 1 article with transit mobility data angle. First state law of this type -- high relevance to transit agency data practices.",
     "NEW SIGNAL (2026-07-03): Right to Local Intelligence movement (352 HN pts). Queued as Rank 3 research brief with AI governance in municipal transit planning angle.",
     "NEW SIGNAL (2026-07-03): Gemini Code Assist shutting down July 17. Transit tech teams using this tool face migration deadlines. Queued as Rank 5 explainer.",
-    "GOOGLE NEWS RSS FEED (2026-07-03): Feed has returned empty results for 6+ consecutive days. Manual check of feed URL and parsing logic required -- persistent issue not resolving on its own."
+    "GOOGLE NEWS RSS FEED (2026-07-03): Feed has returned empty results for 6+ consecutive days. Manual check of feed URL and parsing logic required -- persistent issue not resolving on its own.",
+    "CRITICAL DAY 28 (2026-07-04): approved.json still empty since 2026-06-07. 28 consecutive days without a human approval. 5 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to system/approved.json.",
+    "ARTICLE AGENT UNRESPONSIVE (2026-07-04): drafts/articles/ has never had a file successfully produced in 28 consecutive days. 0% article production rate across entire site history. Manual diagnostic of article-writing agent is critically overdue.",
+    "BRT INFOGRAPHIC RETRIES SUSPENDED (2026-07-04): Automated retries for brt-vs-light-rail-cost-2026 remain suspended (suspended 2026-07-02). Manual diagnostic required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD (2026-07-04): 5 QC-passed, 5 needs-revision scripts in backlog. No new scripts until human approvals received.",
+    "GOOGLE NEWS RSS FEED (2026-07-04): 7+ consecutive days of empty results. Persistent access/parsing issue -- manual check required.",
+    "NEW SIGNAL (2026-07-04): Virginia SB 338 geolocation ban in effect since July 1 -- Rank 1 long article on transit data privacy implications queued.",
+    "NEW SIGNAL (2026-07-04): Claude Mythos AI discovers 6,200+ critical software vulnerabilities -- Rank 3 research brief queued on transit infrastructure security implications.",
+    "NEW SIGNAL (2026-07-04): Record 72.2M July 4 travelers (AAA all-time record) -- Rank 4 research brief on transit mode-share queued.",
+    "NEW SIGNAL (2026-07-04): Gemini Code Assist shutdown July 17 -- 13 days to deadline, Rank 5 explainer queued for transit tech teams.",
+    "TIMELINESS ALERT (2026-07-04): July 4 / America 250th holiday transit demand infographic is TODAY-ONLY for timeliness -- Rank 2 queue item."
   ]
 }

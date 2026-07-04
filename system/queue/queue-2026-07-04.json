@@ -1,0 +1,71 @@
+{
+  "date": "2026-07-04",
+  "generated_at": "2026-07-04T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Virginia geolocation data ban and transit agency mobility data practices",
+      "angle": "Virginia SB 338 went into effect July 1 — the first major state law banning the sale of precise location data (within 1,750 ft radius). Transit agencies collect and broker rider location data via apps, stop-level sensors, and real-time tracking. What does this law mean for data-sharing agreements, NTD reporting, third-party analytics vendors, and the spread of similar laws to other states (MD, OR already have bans)?",
+      "rationale": "Virginia's geolocation ban is 3 days old and directly affects how transit agencies, mobility-data aggregators (StreetLight, Replica, Replica/Sidewalk Labs, etc.), and trip-planning apps handle rider location data. It was queued as top priority yesterday and no article has ever been produced — this is the most compelling policy angle in weeks.",
+      "target_length": "long",
+      "slug": "virginia-geolocation-ban-transit-data-2026",
+      "output_path": "drafts/articles/virginia-geolocation-ban-transit-data-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "July 4th / Independence Day transit demand patterns — America 250th anniversary edition",
+      "angle": "Today is July 4, 2026 — the 250th anniversary of American independence and the biggest single-day transit demand event of the summer. MTA Saturday schedules + special Rockaway shuttles. MBTA free fares after 8:30 PM. Metro DC expanded service + crowd-management protocols. Port Authority: 5.5M travelers July 2–6. AAA: 72.2M total holiday travelers (all-time record). Visual comparison: drive vs. transit for major fireworks venues.",
+      "rationale": "LAST POSSIBLE DAY to publish this — the topic is only relevant on July 4 itself. MTA/MBTA/WMATA all have special service today. Record 72.2M holiday travelers gives a strong data hook. The SoCal transit brief yesterday covered some America 250 angles but an infographic synthesizing national holiday transit demand has not been produced.",
+      "target_length": "short",
+      "slug": "july-4-2026-holiday-transit-demand-infographic",
+      "output_path": "drafts/infographics/july-4-2026-holiday-transit-demand-infographic.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Claude Mythos and AI vulnerability discovery in transit infrastructure",
+      "angle": "Claude Mythos Preview (announced April 2026) autonomously discovered 6,200+ critical vulnerabilities in open-source software — including a 17-year-old FreeBSD RCE flaw and a 27-year-old OpenBSD flaw. Transit agencies run SCADA/OT systems, scheduling software, and real-time passenger information systems that are often Linux/BSD-based and decades-old. What are the transit infrastructure security implications of AI-scale vuln discovery? Should agencies prioritize immediate patching audits?",
+      "rationale": "HN today has 129-point story on vulnerabilities spiking around Claude Mythos Preview release. Transit infrastructure security has been an ongoing gap in the site's coverage and this is a fresh, high-authority news hook.",
+      "target_length": "medium",
+      "slug": "ai-vuln-discovery-transit-infrastructure-security-2026",
+      "output_path": "drafts/articles/ai-vuln-discovery-transit-infrastructure-security-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Record 72.2 million July 4 travelers: transit mode-share analysis",
+      "angle": "AAA projects 72.2M travelers (all-time record) for the July 4, 2026 holiday — 60M+ by car. But transit agencies are seeing strong ridership on holiday corridors: NYC subway on Saturday schedule, MBTA free rides, Metro DC expanded service. How does transit's holiday mode share compare to driving? Where does rail/bus outperform driving for fireworks access?",
+      "rationale": "Complements the infographic with deeper data analysis. Connects to existing transit-vs-car coverage and July 4th timeliness.",
+      "target_length": "medium",
+      "slug": "july-4-record-travel-transit-mode-share-2026",
+      "output_path": "drafts/articles/july-4-record-travel-transit-mode-share-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "Gemini Code Assist shutting down July 17 — what transit tech teams need to know",
+      "angle": "Google is shutting down Gemini Code Assist on July 17, 2026 — 13 days from now. Transit agencies and vendors using this AI coding assistant for GTFS tooling, scheduling automation, or fare system maintenance face an imminent migration deadline. What are the alternatives (GitHub Copilot, Cursor, Claude Code for Teams)? What data portability issues arise?",
+      "rationale": "Queued yesterday. Hard deadline of July 17 makes this time-sensitive. Transit tech teams are a direct audience segment.",
+      "target_length": "short",
+      "slug": "gemini-code-assist-shutdown-transit-tech-2026",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-tech-2026.html"
+    }
+  ],
+  "retries": [],
+  "skip_topics": [
+    "World Cup 2026 transit — tournament now in final stages, main coverage window passed",
+    "BRT vs Light Rail cost infographic — retries suspended, manual diagnostic needed",
+    "AI deregulation Anthropic transit planning tools — covered adequately in prior research digests",
+    "Google EU antitrust fine — queued 2026-07-02, still pending production",
+    "Right to Local Intelligence — queued 2026-07-03, still pending production"
+  ],
+  "trend_signals": [
+    "July 4, 2026 = America 250th anniversary — record 72.2M travelers, MTA/MBTA/WMATA special service",
+    "Virginia geolocation data ban in effect since July 1 — transit data privacy implications",
+    "Claude Mythos AI vulnerability discovery (6,200+ critical flaws) — transit infrastructure security angle",
+    "Shared micromobility at World Cup venues — Segway/Whoosh/JET activations in Mexico City",
+    "Gemini Code Assist shutdown July 17 — transit tech team migration deadline"
+  ]
+}
