@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" width="800" height="1400" font-family="Helvetica Neue, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- Header -->
+  <text x="400" y="36" text-anchor="middle" font-size="11" font-weight="500" fill="#888888" letter-spacing="3">DAILY BRIEFING</text>
+  <text x="400" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#111111">Cognition, Cost &amp; Cosmic Puzzles</text>
+  <text x="400" y="96" text-anchor="middle" font-size="13" fill="#AAAAAA">July 4, 2026</text>
+  <line x1="40" y1="116" x2="760" y2="116" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 1: CO2 Cognition -->
+  <rect x="40" y="132" width="720" height="185" fill="#F7F7F5"/>
+  <text x="56" y="162" font-size="11" font-weight="700" fill="#AAAAAA">01</text>
+  <!-- Category pill: Science -->
+  <rect x="76" y="148" width="62" height="20" rx="10" fill="#0077CC"/>
+  <text x="107" y="162" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">SCIENCE</text>
+  <text x="150" y="162" font-size="10" fill="#AAAAAA">Impact: ████████░░ 9/10</text>
+  <text x="56" y="186" font-size="16" font-weight="700" fill="#111111">CO2 in Meeting Rooms Kills Decision Quality</text>
+  <text x="56" y="204" font-size="12" fill="#555555">Research shows CO2 in closed rooms reaches 2,000+ ppm, causing measurable</text>
+  <text x="56" y="219" font-size="12" fill="#555555">cognitive impairment. At 2,500 ppm, 7 of 9 decision metrics become "dysfunctional."</text>
+  <text x="56" y="241" font-size="11" fill="#333333">▸ At 1,000 ppm: performance drops on 6 of 9 decision metrics vs 600 ppm baseline</text>
+  <text x="56" y="257" font-size="11" fill="#333333">▸ Closed rooms reach 1,000 ppm within the first hour of occupancy</text>
+  <text x="56" y="273" font-size="11" fill="#333333">▸ Real-world reading: 2,143 ppm — nearly 5× outdoor CO2 (~400 ppm)</text>
+  <line x1="40" y1="306" x2="760" y2="306" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 2: Costco -->
+  <text x="56" y="336" font-size="11" font-weight="700" fill="#AAAAAA">02</text>
+  <rect x="76" y="322" width="80" height="20" rx="10" fill="#2E7D32"/>
+  <text x="116" y="336" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">BUSINESS</text>
+  <text x="168" y="336" font-size="10" fill="#AAAAAA">Impact: ████████░░ 8/10</text>
+  <text x="56" y="360" font-size="16" font-weight="700" fill="#111111">Costco Thrives as Deliberate Amazon Opposite</text>
+  <text x="56" y="378" font-size="12" fill="#555555">Costco's ~4,000 SKU model, membership fees, and no third-party sellers make it a</text>
+  <text x="56" y="393" font-size="12" fill="#555555">structural counter to Amazon. Intentional scarcity builds trust that scale cannot replicate.</text>
+  <text x="56" y="415" font-size="11" fill="#333333">▸ Costco stocks ~4,000 SKUs; Amazon hosts hundreds of millions of product listings</text>
+  <text x="56" y="431" font-size="11" fill="#333333">▸ US/Canada annual membership renewal rate exceeds 90%</text>
+  <text x="56" y="447" font-size="11" fill="#333333">▸ No third-party sellers — Costco takes full responsibility for every product</text>
+  <line x1="40" y1="480" x2="760" y2="480" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 3: AI Economics -->
+  <text x="56" y="510" font-size="11" font-weight="700" fill="#AAAAAA">03</text>
+  <rect x="76" y="496" width="32" height="20" rx="10" fill="#6C47FF"/>
+  <text x="92" y="510" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">AI</text>
+  <text x="120" y="510" font-size="10" fill="#AAAAAA">Impact: ████████░░ 8/10</text>
+  <text x="56" y="534" font-size="16" font-weight="700" fill="#111111">AI Inference Cost Falls: New GLM-5.2 Benchmarks</text>
+  <text x="56" y="552" font-size="12" fill="#555555">Wafer.ai's GLM-5.2 on AMD GPUs delivers frontier-competitive results at dramatically</text>
+  <text x="56" y="567" font-size="12" fill="#555555">lower cost, via Vercel AI Gateway and OpenRouter. Performance-per-dollar accelerating.</text>
+  <text x="56" y="589" font-size="11" fill="#333333">▸ GLM-5.2 runs on AMD GPUs, diversifying inference beyond NVIDIA dominance</text>
+  <text x="56" y="605" font-size="11" fill="#333333">▸ Available via Vercel AI Gateway and OpenRouter for broad API access</text>
+  <text x="56" y="621" font-size="11" fill="#333333">▸ AI perf-per-dollar improving faster than traditional Moore's Law compute gains</text>
+  <line x1="40" y1="654" x2="760" y2="654" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 4: Mistral -->
+  <text x="56" y="684" font-size="11" font-weight="700" fill="#AAAAAA">04</text>
+  <rect x="76" y="670" width="32" height="20" rx="10" fill="#6C47FF"/>
+  <text x="92" y="684" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">AI</text>
+  <text x="120" y="684" font-size="10" fill="#AAAAAA">Impact: ███████░░░ 7/10</text>
+  <text x="56" y="708" font-size="16" font-weight="700" fill="#111111">Mistral Leanstral 1.5 Automates Math Proof Generation</text>
+  <text x="56" y="726" font-size="12" fill="#555555">Mistral AI released Leanstral 1.5, specializing in formal mathematical proof generation</text>
+  <text x="56" y="741" font-size="12" fill="#555555">using the Lean theorem prover, aiming for "proof abundance" beyond specialist labs.</text>
+  <text x="56" y="763" font-size="11" fill="#333333">▸ Uses Lean formal proof language — enables machine-checkable mathematical verification</text>
+  <text x="56" y="779" font-size="11" fill="#333333">▸ Targets theorem proving tasks previously requiring weeks of expert mathematician time</text>
+  <text x="56" y="795" font-size="11" fill="#333333">▸ Part of Mistral's expanding portfolio: OCR 4, Medium 3.5, Small 4, Voxtral TTS</text>
+  <line x1="40" y1="828" x2="760" y2="828" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 5: Webb -->
+  <text x="56" y="858" font-size="11" font-weight="700" fill="#AAAAAA">05</text>
+  <rect x="76" y="844" width="62" height="20" rx="10" fill="#0077CC"/>
+  <text x="107" y="858" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">SCIENCE</text>
+  <text x="150" y="858" font-size="10" fill="#AAAAAA">Impact: █████████░ 9/10</text>
+  <text x="56" y="882" font-size="16" font-weight="700" fill="#111111">Webb Telescope Reveals Galaxies That Shouldn't Exist</text>
+  <text x="56" y="900" font-size="12" fill="#555555">JWST surfaces early-universe galaxies 10–100× more massive than Lambda-CDM</text>
+  <text x="56" y="915" font-size="12" fill="#555555">models predict. Astrophysicists openly call for revisions to fundamental cosmology.</text>
+  <text x="56" y="937" font-size="11" fill="#333333">▸ JWST galaxies at redshift z&gt;10 are 10–100× more massive than model predictions</text>
+  <text x="56" y="953" font-size="11" fill="#333333">▸ Hubble Tension — expansion rate discrepancy — remains unresolved alongside findings</text>
+  <text x="56" y="969" font-size="11" fill="#333333">▸ Some researchers propose revising dark matter models or early star formation rates</text>
+  <line x1="40" y1="1002" x2="760" y2="1002" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 6: Giant Trees -->
+  <text x="56" y="1032" font-size="11" font-weight="700" fill="#AAAAAA">06</text>
+  <rect x="76" y="1018" width="62" height="20" rx="10" fill="#0077CC"/>
+  <text x="107" y="1032" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">SCIENCE</text>
+  <text x="150" y="1032" font-size="10" fill="#AAAAAA">Impact: ███████░░░ 7/10</text>
+  <text x="56" y="1056" font-size="16" font-weight="700" fill="#111111">Giant Trees Defy Physics to Reach 57 Meters</text>
+  <text x="56" y="1074" font-size="12" fill="#555555">Exeter research on Borneo's Dipterocarp trees overturns the assumption that hydraulic</text>
+  <text x="56" y="1089" font-size="12" fill="#555555">resistance limits tree height — vascular architecture precisely compensates throughout.</text>
+  <text x="56" y="1111" font-size="11" fill="#333333">▸ Dipterocarp trees reach 57 meters (≈19 stories) in Borneo and Southeast Asia</text>
+  <text x="56" y="1127" font-size="11" fill="#333333">▸ Researchers accessed canopy via double rope technique (DRT), pub. July 2, 2026</text>
+  <text x="56" y="1143" font-size="11" fill="#333333">▸ Xylem vessels taper at branch junctions — minimizing hydraulic resistance at height</text>
+  <line x1="40" y1="1176" x2="760" y2="1176" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- Footer -->
+  <text x="400" y="1210" text-anchor="middle" font-size="11" fill="#AAAAAA">Generated by AI · July 4, 2026 · twong6531.github.io/citation-site</text>
+  <text x="400" y="1228" text-anchor="middle" font-size="10" fill="#BBBBBB">Sources: Hacker News · Quanta Magazine · University of Exeter · Mistral AI · Wafer.ai</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 4, 2026</title>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent-ai: #6C47FF;
+    --accent-science: #0077CC;
+    --accent-tech: #00897B;
+    --accent-business: #2E7D32;
+    --accent-world: #E65100;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0 16px;
+    text-align: center;
+  }
+  .site-header a { color: var(--muted); text-decoration: none; font-size: 13px; }
+  .site-header a:hover { color: var(--text); }
+
+  /* TOP STRIPE */
+  .top-stripe { height: 4px; background: #e8e8e8; }
+
+  /* PAGE HEADER */
+  .page-header {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 24px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-header .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .page-header h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .page-header .meta {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .page-header .day-topic {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    max-width: 860px;
+    margin: 48px auto 0;
+    padding: 0 24px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .section-header h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-header .section-sub {
+    font-size: 13px;
+    color: #444;
+  }
+
+  /* VISUAL SECTION */
+  .visual-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 24px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .visual-placeholder {
+    background: #141414;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 64px 32px;
+    text-align: center;
+  }
+  .visual-placeholder .subject-icon { font-size: 64px; margin-bottom: 20px; }
+  .visual-placeholder h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .visual-placeholder .subject-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .visual-placeholder .visual-context {
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.7;
+    font-style: italic;
+  }
+  .visual-credit {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+  }
+
+  /* NEWS GRID */
+  .news-grid {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+  }
+
+  /* STORY CARDS */
+  .story-card {
+    border-bottom: 1px solid var(--border);
+    padding: 32px 0;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 20px;
+  }
+  .story-number {
+    font-size: 11px;
+    font-weight: 700;
+    color: #444;
+    padding-top: 4px;
+  }
+  .story-body {}
+  .story-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .category-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .cat-ai { background: var(--accent-ai); color: #fff; }
+  .cat-science { background: var(--accent-science); color: #fff; }
+  .cat-tech { background: var(--accent-tech); color: #fff; }
+  .cat-business { background: var(--accent-business); color: #fff; }
+  .cat-world { background: var(--accent-world); color: #fff; }
+
+  .impact-score {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .story-emoji { font-size: 18px; }
+  .story-headline {
+    font-size: clamp(17px, 2.5vw, 21px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }
+  .story-summary {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 16px;
+    line-height: 1.65;
+  }
+  .bullets {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  .bullets li {
+    font-size: 13px;
+    color: #888;
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .bullets li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #444;
+  }
+  .why-matters {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+    padding: 10px 14px;
+    border-left: 2px solid var(--border);
+  }
+
+  /* IMPACT BAR */
+  .impact-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .impact-bar-label { font-size: 10px; color: #555; letter-spacing: 1px; }
+  .impact-bar-track {
+    flex: 1;
+    max-width: 120px;
+    height: 3px;
+    background: #2a2a2a;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .impact-bar-fill { height: 100%; background: #e8e8e8; border-radius: 2px; }
+
+  /* SVG DOWNLOAD */
+  .infographic-link {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 24px 0;
+    text-align: center;
+  }
+  .infographic-link a {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.15s;
+  }
+  .infographic-link a:hover {
+    border-color: #555;
+    color: var(--text);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    color: #444;
+    font-size: 12px;
+  }
+  footer a { color: #555; text-decoration: none; }
+  footer a:hover { color: var(--muted); }
+
+  @media (max-width: 600px) {
+    .story-card { grid-template-columns: 1fr; }
+    .story-number { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-stripe"></div>
+
+<header class="site-header">
+  <a href="/citation-site/">← All Briefings</a>
+</header>
+
+<div class="page-header">
+  <div class="label">Daily Briefing</div>
+  <h1>Cognition, Cost &amp;<br>Cosmic Puzzles</h1>
+  <div class="meta">July 4, 2026 &nbsp;·&nbsp; 6 stories selected from 15 sources</div>
+  <div class="day-topic">Today: CO2 · AI Economics · Cosmology</div>
+</div>
+
+<!-- SECTION A: EDITORIAL VISUAL -->
+<div class="section-header">
+  <h2>Today's Visual</h2>
+  <span class="section-sub">Independently researched and rendered from today's news</span>
+</div>
+
+<div class="visual-section">
+  <div class="visual-placeholder">
+    <div class="subject-icon">🌳</div>
+    <div class="subject-label">Technical Editorial Illustration</div>
+    <h3>Dipterocarp Tree — 57m</h3>
+    <div class="visual-context">
+      The world's tallest tropical trees — Dipterocarpaceae in Borneo — tower 57 meters above the jungle floor, their massive buttress roots flaring outward at the base while a straight trunk rises like a column before exploding into a dense emergent canopy. University of Exeter researchers access the crown via double rope technique (DRT), tiny figures suspended against the vast bark. The tree's internal vascular system — xylem vessels narrowing precisely at each branch junction — defies the century-old assumption that hydraulic resistance increases with height, moving water efficiently to the very topmost leaves.
+    </div>
+  </div>
+  <div class="visual-credit">Image generation unavailable today — editorial illustration queued · Dipterocarp Tree, Borneo Rainforest</div>
+</div>
+
+<!-- SECTION B: NEWS ANALYSIS -->
+<div class="section-header">
+  <h2>News Analysis</h2>
+  <span class="section-sub">6 stories · curated by impact</span>
+</div>
+
+<div class="news-grid">
+
+  <!-- Story 1 -->
+  <div class="story-card">
+    <div class="story-number">01</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="category-pill cat-science">Science</span>
+        <span class="story-emoji">🧠</span>
+        <span class="impact-score">Impact 9/10</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <span class="impact-bar-label">IMPACT</span>
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%"></div></div>
+      </div>
+      <h2 class="story-headline">CO2 in Meeting Rooms Kills Decision Quality</h2>
+      <p class="story-summary">Research shows that CO2 concentrations in closed meeting rooms routinely reach 2,000+ ppm, causing measurable cognitive impairment. Lawrence Berkeley National Lab studies found that at 2,500 ppm, 7 of 9 decision-making measures fall into the "dysfunctional" range.</p>
+      <ul class="bullets">
+        <li>At 1,000 ppm CO2, performance drops on 6 of 9 decision metrics vs a 600 ppm baseline</li>
+        <li>A closed room with a few people reaches 1,000 ppm within the first hour</li>
+        <li>One real-world reading recorded 2,143 ppm — nearly 5× outdoor CO2 levels (~400 ppm)</li>
+      </ul>
+      <div class="why-matters">Every high-stakes meeting — strategy reviews, architecture sessions — takes place in exactly the conditions that impair the cognition needed to run them.</div>
+    </div>
+  </div>
+
+  <!-- Story 2 -->
+  <div class="story-card">
+    <div class="story-number">02</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="category-pill cat-business">Business</span>
+        <span class="story-emoji">🏪</span>
+        <span class="impact-score">Impact 8/10</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <span class="impact-bar-label">IMPACT</span>
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
+      </div>
+      <h2 class="story-headline">Costco Thrives as Deliberate Amazon Opposite</h2>
+      <p class="story-summary">A new economic analysis argues Costco's model — ~4,000 SKUs, membership fees, no third-party sellers, and direct manufacturer relationships — is a structural counter to Amazon's infinite-aisle marketplace. Intentional scarcity and quality curation build durable member loyalty that scale cannot replicate.</p>
+      <ul class="bullets">
+        <li>Costco stocks ~4,000 SKUs; Amazon hosts hundreds of millions of product listings</li>
+        <li>US/Canada annual membership renewal rate exceeds 90%</li>
+        <li>No third-party sellers — Costco takes full responsibility for every product on its floor</li>
+      </ul>
+      <div class="why-matters">Costco's model proves that deliberate constraint — fewer choices, higher trust — can outcompete infinite-selection platforms in the long run.</div>
+    </div>
+  </div>
+
+  <!-- Story 3 -->
+  <div class="story-card">
+    <div class="story-number">03</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="category-pill cat-ai">AI</span>
+        <span class="story-emoji">⚡</span>
+        <span class="impact-score">Impact 8/10</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <span class="impact-bar-label">IMPACT</span>
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
+      </div>
+      <h2 class="story-headline">AI Inference Cost Falls: New GLM-5.2 Benchmarks</h2>
+      <p class="story-summary">Wafer.ai's GLM-5.2, deployed on AMD GPUs via Vercel AI Gateway and OpenRouter, demonstrates that AI performance per dollar continues to improve dramatically. The model delivers frontier-competitive results at a fraction of the cost of comparable models from a year ago.</p>
+      <ul class="bullets">
+        <li>GLM-5.2 runs on AMD GPUs, diversifying AI inference beyond NVIDIA dominance</li>
+        <li>Available via Vercel AI Gateway and OpenRouter for broad API access</li>
+        <li>AI performance-per-dollar improving faster than traditional Moore's Law compute gains</li>
+      </ul>
+      <div class="why-matters">Rapidly falling AI inference costs are democratizing access to frontier AI for startups and developers who were priced out a year ago.</div>
+    </div>
+  </div>
+
+  <!-- Story 4 -->
+  <div class="story-card">
+    <div class="story-number">04</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="category-pill cat-ai">AI</span>
+        <span class="story-emoji">🔢</span>
+        <span class="impact-score">Impact 7/10</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <span class="impact-bar-label">IMPACT</span>
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:70%"></div></div>
+      </div>
+      <h2 class="story-headline">Mistral Leanstral 1.5 Automates Math Proof Generation</h2>
+      <p class="story-summary">Mistral AI released Leanstral 1.5, a model specializing in formal mathematical proof generation using the Lean theorem prover. The release marks a step toward "proof abundance" — making formally verified mathematics accessible beyond specialist researchers.</p>
+      <ul class="bullets">
+        <li>Uses Lean formal proof language — enables machine-checkable mathematical verification</li>
+        <li>Targets theorem proving tasks previously requiring weeks of expert mathematician time</li>
+        <li>Part of Mistral's expanding portfolio: OCR 4, Medium 3.5, Small 4, Voxtral TTS</li>
+      </ul>
+      <div class="why-matters">Automated formal proof generation could transform software verification, mathematics research, and cryptography by making rigorous proofs fast and cheap.</div>
+    </div>
+  </div>
+
+  <!-- Story 5 -->
+  <div class="story-card">
+    <div class="story-number">05</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="category-pill cat-science">Science</span>
+        <span class="story-emoji">🔭</span>
+        <span class="impact-score">Impact 9/10</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <span class="impact-bar-label">IMPACT</span>
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%"></div></div>
+      </div>
+      <h2 class="story-headline">Webb Telescope Reveals Galaxies That Shouldn't Exist</h2>
+      <p class="story-summary">The James Webb Space Telescope continues to surface early-universe galaxies far too massive and luminous for the standard Lambda-CDM cosmological model. Astrophysicists are openly puzzled, with some calling for revisions to fundamental assumptions about how the universe evolved.</p>
+      <ul class="bullets">
+        <li>JWST galaxies at redshift z&gt;10 are 10–100× more massive than model predictions</li>
+        <li>The Hubble Tension — expansion rate discrepancy — remains unresolved alongside these findings</li>
+        <li>Some researchers propose revising dark matter models or early star formation rates</li>
+      </ul>
+      <div class="why-matters">If confirmed, these observations would require rewriting the standard model of cosmology — one of the most successful scientific frameworks ever constructed.</div>
+    </div>
+  </div>
+
+  <!-- Story 6 -->
+  <div class="story-card">
+    <div class="story-number">06</div>
+    <div class="story-body">
+      <div class="story-meta">
+        <span class="category-pill cat-science">Science</span>
+        <span class="story-emoji">🌳</span>
+        <span class="impact-score">Impact 7/10</span>
+      </div>
+      <div class="impact-bar-wrap">
+        <span class="impact-bar-label">IMPACT</span>
+        <div class="impact-bar-track"><div class="impact-bar-fill" style="width:70%"></div></div>
+      </div>
+      <h2 class="story-headline">Giant Trees Defy Physics to Reach 57 Meters</h2>
+      <p class="story-summary">New University of Exeter research on Dipterocarp trees in Borneo — among the world's tallest tropical trees at 57+ meters — overturns the long-held assumption that hydraulic resistance limits tree height. Researchers found the trees' vascular architecture compensates precisely to maintain water flow to the topmost leaves.</p>
+      <ul class="bullets">
+        <li>Dipterocarp trees reach 57 meters (≈19 stories) in Borneo and Southeast Asia</li>
+        <li>Researchers accessed the canopy via double rope technique (DRT), published July 2, 2026</li>
+        <li>Xylem vessels taper at branch junctions — minimizing hydraulic resistance at height</li>
+      </ul>
+      <div class="why-matters">Understanding how trees defy hydraulic limits has implications for climate modeling, reforestation strategies, and our understanding of plant physiology at scale.</div>
+    </div>
+  </div>
+
+</div><!-- /.news-grid -->
+
+<div class="infographic-link">
+  <a href="infographic-2026-07-04.svg" download>↓ Download SVG Infographic</a>
+</div>
+
+<footer>
+  <p>Generated by AI · July 4, 2026 · <a href="/citation-site/">twong6531.github.io/citation-site</a></p>
+  <p style="margin-top:8px;">Sources: Hacker News · Quanta Magazine · University of Exeter · Mistral AI · Wafer.ai · Phenomenal World</p>
+</footer>
+
+</body>
+</html>
