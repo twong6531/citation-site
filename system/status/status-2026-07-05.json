@@ -8,7 +8,7 @@
     "infographics": "pending",
     "video_scripts": "hold_backlog_day_29_run_completed",
     "qc": "completed",
-    "publishing": "skipped_no_approved_items"
+    "publishing": "completed"
   },
   "queue_items": 5,
   "alerts": [
@@ -21,5 +21,13 @@
     "NEW TODAY (2026-07-05): arXiv paper on socioeconomic-aware NYC fare policy simulation -- Rank 2 research brief queued.",
     "NEW TODAY (2026-07-05): ChatPlanner LLM for personalized public transit routing (arXiv) -- Rank 3 explainer queued.",
     "TIMELINESS: Gemini Code Assist shutdown July 17 -- 12 days remaining. Rank 5 explainer."
+  ],
+  "published_today": 5,
+  "published_slugs": [
+    "2026-06-13-script-tesla-spacex-transit-empire-script",
+    "2026-06-13-script-transit-app-dark-ux-2026-script",
+    "2026-06-14-script-fare-evasion-economics-script",
+    "2026-06-25-script-us-cities-transit-gap-script",
+    "2026-06-26-script-dopamine-fracking-script"
   ]
 }

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hidden Math of Fare Evasion: Why Crackdowns Often Cost More Than They Collect</title>
+<style>
+  :root { --bg: #0E0E10; --surface: #18181B; --surface2: #222226; --border: #2A2A2E; --text: #F0F0F2; --muted: #888890; --accent: #6C47FF; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+  nav { border-bottom: 1px solid var(--border); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-size: 13px; font-weight: 800; letter-spacing: 3px; color: var(--text); text-decoration: none; }
+  .nav-back { font-size: 12px; color: var(--muted); }
+  .hero { max-width: 800px; margin: 0 auto; padding: 64px 40px 48px; }
+  .hero-type { font-size: 10px; letter-spacing: 4px; font-weight: 700; color: var(--accent); margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px, 5vw, 44px); font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+  .hero-meta { font-size: 12px; color: var(--muted); display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .score-badge { background: var(--accent); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; }
+  .content { max-width: 800px; margin: 0 auto; padding: 0 40px 80px; }
+  .section-header { font-size: 9px; letter-spacing: 4px; font-weight: 700; color: var(--muted); margin: 48px 0 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .scene-block { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; }
+  .scene-label { font-size: 9px; letter-spacing: 2px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .on-screen { background: var(--surface2); border-radius: 4px; padding: 8px 12px; font-size: 13px; font-weight: 700; margin: 8px 0; border-left: 2px solid #555; }
+  .visual-note { font-size: 12px; color: var(--muted); font-style: italic; margin: 6px 0; }
+  .vo { font-size: 14px; line-height: 1.8; margin: 8px 0; color: #ddd; }
+  .yt-body { font-size: 14px; line-height: 1.85; color: #ccc; }
+  .yt-body h3 { font-size: 15px; font-weight: 800; color: var(--text); margin: 28px 0 10px; }
+  .yt-body p { margin-bottom: 14px; }
+  .yt-body ul { padding-left: 22px; margin-bottom: 14px; }
+  .yt-body li { margin-bottom: 6px; }
+  .yt-body strong { color: var(--text); }
+  .source-cite { font-size: 11px; color: var(--muted); }
+  .caption-block { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin: 32px 0; }
+  .caption-label { font-size: 9px; letter-spacing: 3px; font-weight: 700; color: var(--muted); margin-bottom: 10px; }
+  .caption-block p { font-size: 13px; color: #bbb; line-height: 1.7; }
+  .sources-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .sources-block h3 { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: var(--muted); margin-bottom: 12px; }
+  .sources-block ul { padding-left: 20px; }
+  .sources-block li { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 4px; }
+  footer { border-top: 1px solid var(--border); padding: 24px 40px; text-align: center; }
+  footer p { font-size: 12px; color: var(--muted); }
+  @media (max-width: 600px) { .hero, .content { padding-left: 20px; padding-right: 20px; } nav { padding: 14px 20px; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">DAILY BRIEFING</a>
+  <a href="index.html" class="nav-back">&#8592; Back to index</a>
+</nav>
+<div class="hero">
+  <div class="hero-type">VIDEO SCRIPT</div>
+  <h1>The Hidden Math of Fare Evasion: Why Crackdowns Often Cost More Than They Collect</h1>
+  <div class="hero-meta">
+    <span>June 14, 2026</span>
+    <span class="score-badge">QC PASS &middot; 81/100</span>
+    <span>REEL + YOUTUBE</span>
+  </div>
+</div>
+<div class="content">
+
+  <div class="section-header">SHORT-FORM REEL (60 SECONDS)</div>
+
+  <div class="scene-block">
+    <div class="scene-label">HOOK (0–3s)</div>
+    <div class="on-screen">$690 million lost. So they spent $249 million to get it back.</div>
+    <div class="vo">New York's MTA lost $690 million to fare evasion in 2022. So they hired 500 more cops. Here's why the math still didn't work.</div>
+  </div>
+
+  <div class="scene-block">
+    <div class="scene-label">SCENE 1: Context (3–15s)</div>
+    <div class="visual-note">[B-ROLL: Turnstiles, someone hopping a subway gate, cop standing in station]</div>
+    <div class="vo">Fare evasion is treated as a revenue problem. So the instinct is more enforcement. More officers. More citations.</div>
+    <div class="on-screen">13% of NYC subway riders evaded fares in 2022 <span class="source-cite">[Source: MTA Quarterly Reports]</span></div>
+  </div>
+
+  <div class="scene-block">
+    <div class="scene-label">SCENE 2: The Turning Point (15–35s)</div>
+    <div class="visual-note">[GRAPHIC: Simple split-screen — left "Revenue from fines", right "Cost to collect"]</div>
+    <div class="vo">A 2019 NYC Comptroller analysis found that processing a single fare evasion summons — just the court system's share — costs more than the fine ever recovers. Add officer time at roughly $300 an hour including benefits, and the enforcement surge that cost $249 million over two years brought in nowhere close to that in recovered fares. <span class="source-cite">[Source: NYC Comptroller, 2019]</span></div>
+    <div class="on-screen">$249M enforcement cost. Fine revenue: far less.</div>
+  </div>
+
+  <div class="scene-block">
+    <div class="scene-label">SCENE 3: The Implication (35–50s)</div>
+    <div class="visual-note">[B-ROLL: Empty bus platform, person walking away from transit stop]</div>
+    <div class="vo">And there's a cost that never appears on a spreadsheet: aggressive enforcement pushes riders — especially low-income riders who can't afford $50 fines — off transit entirely. Fewer riders means fewer fares. The crackdown can accelerate the very revenue loss it's meant to stop.</div>
+  </div>
+
+  <div class="scene-block">
+    <div class="scene-label">SCENE 4: CTA (50–60s)</div>
+    <div class="vo">There's a smarter way to look at this — full breakdown with NYC, DC Metro, and LA Metro comparisons, and the proof-of-payment question, in the long-form video. Link in bio.</div>
+  </div>
+
+  <div class="caption-block">
+    <div class="caption-label">CAPTION</div>
+    <p>Transit agencies crack down on fare evasion and spend millions doing it — then recover a fraction of that in actual revenue. The economics of enforcement rarely appear in the political debate. NYC, DC Metro, and LA Metro have all tried different approaches: full barriers, proof-of-payment, and citation blitzes. The data suggests the blitz is the worst of the three options.</p>
+    <p style="margin-top:10px;font-size:12px;color:#666;">#transitpolicy #urbanplanning #publictransit #fareevasion #transitfunding</p>
+  </div>
+
+  <div class="section-header">LONG-FORM YOUTUBE (5–8 MINUTES)</div>
+
+  <div class="yt-body">
+    <h3>HOOK (0:00–0:30)</h3>
+    <p>In 2022, New York's MTA announced that fare evasion was costing the agency $690 million a year — roughly the annual operating budget of the entire Cleveland transit system. <span class="source-cite">[Source: MTA Fare Evasion Quarterly Report, 2022]</span> So the MTA hired 500 more officers, at a two-year cost of $249 million. <span class="source-cite">[Source: MTA Board Budget Documents, 2022]</span> Was that actually going to make the math work? Spoiler: it didn't.</p>
+
+    <h3>INTRO / STAKES (0:30–1:30)</h3>
+    <p>Fare evasion generates enormous political heat relative to its actual fiscal weight. What almost never enters the debate is the actual economics: how much does enforcement cost, dollar for dollar? What do you recover? And what are the indirect costs — riders who stop riding because the system feels hostile, legal challenges, racial disparities that create political liability?</p>
+    <p>Today we walk through the math for three systems: New York City (full barriers + police), Los Angeles (proof-of-payment + fare inspectors), and Washington DC Metro (between the two, repeatedly changed direction).</p>
+
+    <h3>SECTION 1: HOW WE GOT HERE (1:30–3:00)</h3>
+    <p>American transit agencies have been fighting fare evasion since they've been collecting fares. In the 1980s and 90s, European systems began experimenting with <strong>proof-of-payment (POP)</strong> — passengers buy a ticket before boarding, inspectors make random sweeps. Edmonton's LRT was the first North American system to try it in 1980. <span class="source-cite">[Source: Wikipedia, Proof of Payment]</span></p>
+    <p>LA Metro built its rail system as a proof-of-payment network in the 1990s. Evasion rates ranged from 5% to over 20% on some lines. <span class="source-cite">[Source: LA Metro Fare Compliance Reports; LA Times, 2019–2022]</span> NYC took the opposite approach: turnstiles everywhere, police everywhere. Washington DC Metro has full barriers but still struggled with enforcement gaps.</p>
+
+    <h3>SECTION 2: THE ENFORCEMENT MATH (3:00–5:00)</h3>
+    <p>Here's where it gets counterintuitive. When transit agencies talk about fare evasion, they focus on the revenue loss. What they don't put in the same press release: the cost of enforcement.</p>
+    <p>NYC's fare enforcement surge: $249 million over two years for 500 additional officers. Roughly $250,000 per officer per year including salary, benefits, training, and overhead. <span class="source-cite">[Source: MTA Budget Documents, 2022]</span></p>
+    <p>A 2019 NYC Comptroller analysis found that processing a single fare evasion summons through the civil court system cost significantly more than the fine recovered. When evasion was still treated criminally, each arrest cost the system an estimated $500 to $2,000+ in court time, public defender costs, and officer overtime. <span class="source-cite">[Source: NYC Comptroller Scott Stringer, "An Assessment of the NYPD Subway Fare Evasion Enforcement," 2019]</span> The fine, if collected, was $100.</p>
+    <p>Washington DC decriminalized fare evasion in 2018, reducing the penalty from up to 10 days in jail to a $50 civil citation. The explicit rationale: over 90% of citations were issued to Black residents — wildly disproportionate to the offense. <span class="source-cite">[Source: DC Council records, 2018]</span></p>
+    <p><strong>The indirect costs:</strong> when transit feels hostile, some riders who would have evaded simply don't ride at all. TransitCenter has documented that aggressive enforcement disproportionately discourages low-income riders and riders of color from using the system. <span class="source-cite">[Source: TransitCenter, "Who's On Board"]</span> This is a fiscal problem, not just an equity one.</p>
+
+    <h3>SECTION 3: WHAT THE DATA SHOWS (5:00–7:00)</h3>
+    <p><strong>New York:</strong> Evasion rate ~13%. Enforcement cost of the 2022 surge alone: $249M. Net fiscal benefit: analysts characterized it as at best break-even, likely negative when full costs are counted.</p>
+    <p><strong>LA Metro:</strong> Evasion rates sometimes cited at 20%+ before gate installation. The TAP gate program cost $154 million in capital investment. <span class="source-cite">[Source: LA Metro]</span> Enforcement approach criticized for inconsistency and racial profiling complaints.</p>
+    <p><strong>Washington DC:</strong> Full-barrier stations, but estimated tens of millions annually in evasion losses from back-door bus boarding and broken gates. After decriminalization in 2018, evasion rates rose modestly. <span class="source-cite">[Source: WMATA Inspector General, Fare Evasion Audit, 2022]</span></p>
+    <p>The research on proof-of-payment systems: an inspection rate of ~10-15% of riders is sufficient to deter most evasion. Below that, the rational-actor calculation shifts toward skipping payment. <span class="source-cite">[Source: Cervero, "Transit Metropolis," 1998]</span></p>
+    <p>The question transit agencies almost never seriously ask: if we have $250 million to spend on transit improvement, is enforcement the highest-value use of that money? Or does the same money invested in service frequency, reliability, or fare affordability generate more net revenue by growing ridership?</p>
+
+    <h3>OUTRO (7:00–8:00)</h3>
+    <p>Fare evasion is real, the revenue loss is real, and agencies aren't wrong to take it seriously. But the default response — more officers, more citations, more visible enforcement — consistently fails to close the gap, and often costs more than it recovers. The agencies getting this right are the ones asking the full question: not "how do we collect more fares?" but "how do we maximize net transit revenue?" Those aren't always the same question.</p>
+  </div>
+
+  <div class="sources-block">
+    <h3>SOURCES</h3>
+    <ul>
+      <li>MTA Fare Evasion Quarterly Report, Q4 2022</li>
+      <li>MTA Board Budget Documents, 2022</li>
+      <li>NYC Comptroller Scott Stringer, "An Assessment of the NYPD Subway Fare Evasion Enforcement," 2019</li>
+      <li>WMATA Inspector General, Fare Evasion Audit, 2022</li>
+      <li>LA Metro Inspector General Fare Compliance Report, 2019</li>
+      <li>DC Code &sect; 35-251, amended 2018; DC Council records</li>
+      <li>TransitCenter, "Who's On Board" research series</li>
+      <li>Wikipedia: Proof of Payment</li>
+      <li>Cervero, Robert, "Transit Metropolis," 1998</li>
+    </ul>
+  </div>
+
+</div>
+<footer>
+  <p>Daily Briefing &middot; <a href="index.html">&#8592; Return to index</a> &middot; Published July 5, 2026</p>
+</footer>
+</body>
+</html>

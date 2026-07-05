@@ -102,6 +102,22 @@
   .exp-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
   .exp-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
+  .scripts-wrap { max-width: 1000px; margin: 0 auto; padding: 0 40px 64px; }
+  .scripts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .scripts-grid { grid-template-columns: 1fr; } }
+  .script-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    transition: border-color .2s;
+  }
+  .script-card:hover { border-color: #444; }
+  .script-tag { font-size: 9px; letter-spacing: 2px; font-weight: 700; color: var(--muted); margin-bottom: 10px; }
+  .script-date { font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+  .script-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
+  .script-score { font-size: 10px; color: var(--accent); font-weight: 700; letter-spacing: 1px; }
+
   .interactive-wrap { max-width: 1000px; margin: 0 auto; padding: 0 40px 80px; }
   .game-card {
     background: var(--surface);
@@ -352,6 +368,49 @@
       <div class="arch-date">JUNE 5, 2026</div>
       <div class="arch-topic">Daily Briefing</div>
       <div class="arch-link">Read briefing →</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- VIDEO SCRIPTS -->
+<div class="scripts-wrap">
+  <div class="section-label">VIDEO SCRIPTS</div>
+  <div class="scripts-grid">
+
+    <a href="2026-06-13-script-tesla-spacex-transit-empire-script.html" class="script-card">
+      <div class="script-tag">TRANSIT · POLICY</div>
+      <div class="script-date">JUNE 13, 2026</div>
+      <div class="script-title">Elon Musk's Transit Empire: What a Tesla-SpaceX Merger Means for Public Transit</div>
+      <div class="script-score">QC PASS · 93/100</div>
+    </a>
+
+    <a href="2026-06-13-script-transit-app-dark-ux-2026-script.html" class="script-card">
+      <div class="script-tag">TRANSIT · TECH</div>
+      <div class="script-date">JUNE 13, 2026</div>
+      <div class="script-title">Why Your Transit App Is Terrible on Purpose</div>
+      <div class="script-score">QC PASS · 82/100</div>
+    </a>
+
+    <a href="2026-06-14-script-fare-evasion-economics-script.html" class="script-card">
+      <div class="script-tag">TRANSIT · ECONOMICS</div>
+      <div class="script-date">JUNE 14, 2026</div>
+      <div class="script-title">The Hidden Math of Fare Evasion: Why Crackdowns Often Cost More Than They Collect</div>
+      <div class="script-score">QC PASS · 81/100</div>
+    </a>
+
+    <a href="2026-06-25-script-us-cities-transit-gap-script.html" class="script-card">
+      <div class="script-tag">TRANSIT · INFRASTRUCTURE</div>
+      <div class="script-date">JUNE 25, 2026</div>
+      <div class="script-title">Why American Cities Are Decades Behind on Public Transit</div>
+      <div class="script-score">QC PASS · 92/100</div>
+    </a>
+
+    <a href="2026-06-26-script-dopamine-fracking-script.html" class="script-card">
+      <div class="script-tag">TECH · ATTENTION</div>
+      <div class="script-date">JUNE 26, 2026</div>
+      <div class="script-title">Dopamine Fracking: How Platforms Are Strip-Mining Your Brain</div>
+      <div class="script-score">QC PASS · 90/100</div>
     </a>
 
   </div>
