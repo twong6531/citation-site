@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="110" fill="#111111"/>
+  <text x="40" y="42" font-size="11" fill="#999999" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="76" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">July 5, 2026</text>
+  <text x="40" y="98" font-size="11" fill="#666666" letter-spacing="1">11 PAPERS · SELF-ANALYZED · arXiv + Semantic Scholar</text>
+
+  <!-- Divider line -->
+  <line x1="40" y1="130" x2="760" y2="130" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- SECTION: KEY FINDINGS -->
+  <text x="40" y="160" font-size="10" fill="#999999" letter-spacing="3" font-weight="700">KEY FINDINGS</text>
+
+  <!-- Finding 1 -->
+  <text x="40" y="188" font-size="40" fill="#E8E8E6" font-weight="700">01</text>
+  <text x="96" y="185" font-size="14" fill="#111111" font-weight="700">NYC Congestion Pricing Boosts Transit</text>
+  <text x="96" y="203" font-size="12" fill="#444444">Bus and subway ridership exceeded counterfactual forecasts</text>
+  <text x="96" y="219" font-size="12" fill="#444444">after January 2025 implementation; outer boroughs gained most.</text>
+
+  <!-- Finding 2 -->
+  <text x="40" y="252" font-size="40" fill="#E8E8E6" font-weight="700">02</text>
+  <text x="96" y="249" font-size="14" fill="#111111" font-weight="700">Cold Waves Cascade Electric Bus Failures</text>
+  <text x="96" y="267" font-size="12" fill="#444444">Cabin heating — not traction — drains batteries in winter.</text>
+  <text x="96" y="283" font-size="12" fill="#444444">Failure probability drops 0.759 → 0.112 with opportunity charging.</text>
+
+  <!-- Finding 3 -->
+  <text x="40" y="316" font-size="40" fill="#E8E8E6" font-weight="700">03</text>
+  <text x="96" y="313" font-size="14" fill="#111111" font-weight="700">AI Aggregators Threaten Public Transit Value</text>
+  <text x="96" y="331" font-size="12" fill="#444444">Profit-oriented V2G aggregators extract value from transit operators.</text>
+  <text x="96" y="347" font-size="12" fill="#444444">Governance frameworks required before public fleet deployment.</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="370" x2="760" y2="370" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="40" y="398" font-size="10" fill="#999999" letter-spacing="3" font-weight="700">PAPER OF THE DAY</text>
+  <rect x="40" y="410" width="720" height="2" fill="#111111"/>
+  <text x="40" y="438" font-size="15" fill="#111111" font-weight="700">
+    <tspan x="40" dy="0">Public transit gains and spatially uneven</tspan>
+    <tspan x="40" dy="20">travel demand changes after NYC</tspan>
+    <tspan x="40" dy="20">congestion pricing</tspan>
+  </text>
+  <text x="40" y="508" font-size="11" fill="#555555">Li, Zhuang, Li, Shen · arXiv:2606.17530 · 2026-06-16</text>
+  <text x="40" y="530" font-size="12" fill="#444444" font-style="italic">
+    <tspan x="40" dy="0">First empirical evaluation of a U.S. cordon congestion pricing program using</tspan>
+    <tspan x="40" dy="17">time-series foundation models as counterfactuals — proving transit gains were real.</tspan>
+  </text>
+
+  <!-- Divider -->
+  <line x1="40" y1="564" x2="760" y2="564" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="592" font-size="10" fill="#999999" letter-spacing="3" font-weight="700">EMERGING THEMES</text>
+
+  <!-- Theme 1 -->
+  <rect x="40" y="608" width="220" height="3" fill="#111111"/>
+  <text x="40" y="630" font-size="12" fill="#111111" font-weight="700">Zero-Emission</text>
+  <text x="40" y="646" font-size="12" fill="#111111" font-weight="700">Resilience</text>
+  <text x="40" y="674" font-size="11" fill="#555555"><tspan x="40" dy="0">Electrification creates new</tspan></text>
+  <text x="40" y="690" font-size="11" fill="#555555"><tspan x="40" dy="0">failure modes requiring new</tspan></text>
+  <text x="40" y="706" font-size="11" fill="#555555"><tspan x="40" dy="0">engineering frameworks —</tspan></text>
+  <text x="40" y="722" font-size="11" fill="#555555"><tspan x="40" dy="0">not just new vehicles.</tspan></text>
+
+  <!-- Theme 2 -->
+  <rect x="300" y="608" width="220" height="3" fill="#111111"/>
+  <text x="300" y="630" font-size="12" fill="#111111" font-weight="700">AI Planning</text>
+  <text x="300" y="646" font-size="12" fill="#111111" font-weight="700">Equity Gaps</text>
+  <text x="300" y="674" font-size="11" fill="#555555"><tspan x="300" dy="0">Models trained on majority</tspan></text>
+  <text x="300" y="690" font-size="11" fill="#555555"><tspan x="300" dy="0">data miss elderly, rural, and</tspan></text>
+  <text x="300" y="706" font-size="11" fill="#555555"><tspan x="300" dy="0">low-income riders. Model</tspan></text>
+  <text x="300" y="722" font-size="11" fill="#555555"><tspan x="300" dy="0">power doesn't fix this.</tspan></text>
+
+  <!-- Theme 3 -->
+  <rect x="560" y="608" width="200" height="3" fill="#111111"/>
+  <text x="560" y="630" font-size="12" fill="#111111" font-weight="700">Pricing as</text>
+  <text x="560" y="646" font-size="12" fill="#111111" font-weight="700">Transit Strategy</text>
+  <text x="560" y="674" font-size="11" fill="#555555"><tspan x="560" dy="0">Congestion pricing and</tspan></text>
+  <text x="560" y="690" font-size="11" fill="#555555"><tspan x="560" dy="0">AAM subsidies show</tspan></text>
+  <text x="560" y="706" font-size="11" fill="#555555"><tspan x="560" dy="0">pricing is inseparable</tspan></text>
+  <text x="560" y="722" font-size="11" fill="#555555"><tspan x="560" dy="0">from ridership strategy.</tspan></text>
+
+  <!-- Divider -->
+  <line x1="40" y1="748" x2="760" y2="748" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="776" font-size="10" fill="#999999" letter-spacing="3" font-weight="700">CONFIDENCE DISTRIBUTION — 11 PAPERS</text>
+
+  <!-- Chart bars -->
+  <!-- High: 6 papers -->
+  <text x="40" y="806" font-size="11" fill="#111111" font-weight="700">HIGH</text>
+  <rect x="120" y="792" width="360" height="18" fill="#111111"/>
+  <text x="488" y="806" font-size="11" fill="#555555">6 papers (55%)</text>
+
+  <!-- Medium: 5 papers -->
+  <text x="40" y="834" font-size="11" fill="#111111" font-weight="700">MEDIUM</text>
+  <rect x="120" y="820" width="300" height="18" fill="#666666"/>
+  <text x="428" y="834" font-size="11" fill="#555555">5 papers (45%)</text>
+
+  <!-- Low: 0 papers -->
+  <text x="40" y="862" font-size="11" fill="#111111" font-weight="700">LOW</text>
+  <rect x="120" y="848" width="10" height="18" fill="#CCCCCC"/>
+  <text x="138" y="862" font-size="11" fill="#BBBBBB">0 papers</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="886" x2="760" y2="886" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="914" font-size="10" fill="#999999" letter-spacing="3" font-weight="700">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="40" y="942" font-size="12" fill="#111111" font-weight="700">→</text>
+  <text x="60" y="942" font-size="12" fill="#333333"><tspan x="60" dy="0">Audit outer-borough service capacity NOW — NYC congestion</tspan></text>
+  <text x="60" y="958" font-size="12" fill="#333333"><tspan x="60" dy="0">pricing data shows demand shifts fastest in those corridors.</tspan></text>
+
+  <text x="40" y="984" font-size="12" fill="#111111" font-weight="700">→</text>
+  <text x="60" y="984" font-size="12" fill="#333333"><tspan x="60" dy="0">Cold-climate e-bus agencies: run WeatherRobustBus-style</tspan></text>
+  <text x="60" y="1000" font-size="12" fill="#333333"><tspan x="60" dy="0">cold-wave block audits before winter deployment.</tspan></text>
+
+  <text x="40" y="1026" font-size="12" fill="#111111" font-weight="700">→</text>
+  <text x="60" y="1026" font-size="12" fill="#333333"><tspan x="60" dy="0">Require GPS mobility data vendors to disclose coverage</tspan></text>
+  <text x="60" y="1042" font-size="12" fill="#333333"><tspan x="60" dy="0">bias by census tract before using data for route planning.</tspan></text>
+
+  <text x="40" y="1068" font-size="12" fill="#111111" font-weight="700">→</text>
+  <text x="60" y="1068" font-size="12" fill="#333333"><tspan x="60" dy="0">V2G and hydrogen backup contracts must include operation-</tspan></text>
+  <text x="60" y="1084" font-size="12" fill="#333333"><tspan x="60" dy="0">based coordination modes with auditable tariff-setting.</tspan></text>
+
+  <!-- Divider -->
+  <line x1="40" y1="1108" x2="760" y2="1108" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- PAPERS GRID -->
+  <text x="40" y="1136" font-size="10" fill="#999999" letter-spacing="3" font-weight="700">ALL PAPERS — QUICK REFERENCE</text>
+
+  <!-- Paper list -->
+  <text x="40" y="1162" font-size="10" fill="#888888">2606.17530</text>
+  <text x="130" y="1162" font-size="11" fill="#222222" font-weight="700">NYC Congestion Pricing → Transit Gains</text>
+  <text x="600" y="1162" font-size="10" fill="#111111" font-weight="700">HIGH</text>
+
+  <text x="40" y="1182" font-size="10" fill="#888888">2606.12855</text>
+  <text x="130" y="1182" font-size="11" fill="#222222" font-weight="700">Headway Bounds Under Bus Bunching</text>
+  <text x="600" y="1182" font-size="10" fill="#111111" font-weight="700">HIGH</text>
+
+  <text x="40" y="1202" font-size="10" fill="#888888">2606.26920</text>
+  <text x="130" y="1202" font-size="11" fill="#222222" font-weight="700">Cold-Wave-Robust Battery-Electric Bus Ops</text>
+  <text x="600" y="1202" font-size="10" fill="#111111" font-weight="700">HIGH</text>
+
+  <text x="40" y="1222" font-size="10" fill="#888888">2606.26400</text>
+  <text x="130" y="1222" font-size="11" fill="#222222" font-weight="700">AI Aggregators in Electric Bus V2G</text>
+  <text x="600" y="1222" font-size="10" fill="#666666" font-weight="700">MED</text>
+
+  <text x="40" y="1242" font-size="10" fill="#888888">2607.00585</text>
+  <text x="130" y="1242" font-size="11" fill="#222222" font-weight="700">Hydrogen Bus Resilience Hub Certification</text>
+  <text x="600" y="1242" font-size="10" fill="#111111" font-weight="700">HIGH</text>
+
+  <text x="40" y="1262" font-size="10" fill="#888888">2606.31207</text>
+  <text x="130" y="1262" font-size="11" fill="#222222" font-weight="700">Elderly Mobility Modeling Bias</text>
+  <text x="600" y="1262" font-size="10" fill="#666666" font-weight="700">MED</text>
+
+  <text x="40" y="1282" font-size="10" fill="#888888">2606.25484</text>
+  <text x="130" y="1282" font-size="11" fill="#222222" font-weight="700">E-Scooter Hub Causal Planning — 29 Cities</text>
+  <text x="600" y="1282" font-size="10" fill="#666666" font-weight="700">MED</text>
+
+  <text x="40" y="1302" font-size="10" fill="#888888">2606.21390</text>
+  <text x="130" y="1302" font-size="11" fill="#222222" font-weight="700">Ride-Hail Subsidies for AAM Vertiports</text>
+  <text x="600" y="1302" font-size="10" fill="#666666" font-weight="700">MED</text>
+
+  <text x="40" y="1322" font-size="10" fill="#888888">2606.21154</text>
+  <text x="130" y="1322" font-size="11" fill="#222222" font-weight="700">Real-Time Intersection Safety Index (VTTSI)</text>
+  <text x="600" y="1322" font-size="10" fill="#111111" font-weight="700">HIGH</text>
+
+  <text x="40" y="1342" font-size="10" fill="#888888">2606.21858</text>
+  <text x="130" y="1342" font-size="11" fill="#222222" font-weight="700">Urban Segregation Via Street Imagery</text>
+  <text x="600" y="1342" font-size="10" fill="#666666" font-weight="700">MED</text>
+
+  <text x="40" y="1362" font-size="10" fill="#888888">2606.23616</text>
+  <text x="130" y="1362" font-size="11" fill="#222222" font-weight="700">GPS Mobility Data Representativeness Bias</text>
+  <text x="600" y="1362" font-size="10" fill="#111111" font-weight="700">HIGH</text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1540" width="800" height="60" fill="#111111"/>
+  <text x="40" y="1565" font-size="10" fill="#888888">Transit Research Digest · July 5, 2026 · Auto-generated</text>
+  <text x="40" y="1583" font-size="10" fill="#666666">twong6531.github.io/citation-site/research.html</text>
+  <text x="700" y="1574" font-size="10" fill="#888888" text-anchor="middle">11 papers</text>
+</svg>

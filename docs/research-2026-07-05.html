@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 5, 2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2a2e42;
+    --text: #e2e8f0;
+    --text-muted: #8892a4;
+    --accent: #60a5fa;
+    --accent2: #34d399;
+    --gold: #fbbf24;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    background: #090b12;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .site-header .logo { font-size: 13px; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+  .site-header .back-link { margin-left: auto; font-size: 12px; color: var(--text-muted); border: 1px solid var(--border); padding: 5px 12px; border-radius: 4px; }
+  .site-header .back-link:hover { color: var(--text); text-decoration: none; }
+
+  .hero {
+    background: linear-gradient(135deg, #090b12 0%, #0d1525 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero .date-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #050810;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: #f1f5f9; margin-bottom: 20px; }
+  .hero h1 span { color: var(--accent); }
+  .hero .stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 24px; }
+  .hero .stat { }
+  .hero .stat-num { font-size: 28px; font-weight: 800; color: var(--accent2); font-family: var(--mono); }
+  .hero .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  .section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+  .section h2 { font-size: 22px; font-weight: 700; color: #f1f5f9; margin-bottom: 20px; }
+
+  .exec-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 28px 32px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
+  }
+
+  .potd-card {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 32px;
+    display: grid;
+    gap: 16px;
+  }
+  .potd-card .potd-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .potd-card h3 { font-size: 20px; font-weight: 700; color: #f1f5f9; line-height: 1.3; }
+  .potd-card .potd-meta { font-size: 13px; color: var(--text-muted); }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .theme-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .theme-card h3 { font-size: 15px; font-weight: 700; color: var(--accent2); margin-bottom: 10px; }
+  .theme-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .contrarian-grid { display: grid; gap: 16px; }
+  .contrarian-item {
+    background: var(--surface);
+    border: 1px solid #ef444444;
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .contrarian-icon { font-size: 20px; color: #ef4444; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .contrarian-item p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .takeaways-grid { display: grid; gap: 12px; }
+  .takeaway-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .takeaway-num { font-size: 18px; color: var(--accent); font-weight: 700; flex-shrink: 0; line-height: 1.4; }
+  .takeaway-item p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .papers-grid { display: grid; gap: 20px; }
+  .paper-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    transition: border-color 0.2s;
+  }
+  .paper-card:hover { border-color: var(--accent); }
+  .paper-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .paper-num { font-family: var(--mono); font-size: 12px; color: var(--text-muted); background: var(--surface2); padding: 4px 8px; border-radius: 4px; font-weight: 600; }
+  .paper-meta { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .paper-source { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+  .conf-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px; letter-spacing: 0.08em; }
+  .paper-title { font-size: 17px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .paper-title a { color: #f1f5f9; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-authors { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+  .paper-summary { font-size: 14px; color: var(--accent2); font-weight: 500; margin-bottom: 18px; border-left: 2px solid var(--accent2); padding-left: 12px; line-height: 1.5; }
+  .paper-details { display: none; }
+  .paper-card:focus-within .paper-details,
+  .paper-card.open .paper-details { display: block; }
+  .detail-block { margin-bottom: 16px; }
+  .detail-block h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+  .detail-block p { font-size: 13px; color: var(--text); line-height: 1.6; }
+  .detail-block ul { font-size: 13px; color: var(--text); line-height: 1.6; padding-left: 18px; }
+  .detail-block ul li { margin-bottom: 4px; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  .detail-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  .toggle-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  .toggle-btn:hover { color: var(--text); border-color: var(--accent); }
+
+  .infographic-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    text-align: center;
+  }
+  .infographic-section img { max-width: 100%; height: auto; border-radius: 6px; }
+  .infographic-section .download-link {
+    display: inline-block;
+    margin-top: 16px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+
+  .implications-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 24px 28px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text);
+  }
+
+  footer {
+    background: #090b12;
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--accent); }
+  footer .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 768px) {
+    .hero, .container { padding-left: 20px; padding-right: 20px; }
+    .detail-grid, .detail-row { grid-template-columns: 1fr; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .hero .stats { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="logo">Transit Research Digest</span>
+  <a href="research.html" class="back-link">← All Issues</a>
+</header>
+
+<div class="hero">
+  <div class="date-badge">July 5, 2026</div>
+  <h1>Transit Research<br><span>July 5, 2026</span></h1>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">11</div><div class="stat-label">Papers Analyzed</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">High Confidence</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Emerging Themes</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Actionable Takeaways</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section class="section">
+    <p class="section-label">Executive Summary</p>
+    <div class="exec-summary">This week's transit research reveals an accelerating convergence of AI, electrification, and equity — from NYC's congestion pricing generating measurable ridership gains to physics-anchored models exposing the cold-climate vulnerabilities of battery-electric bus fleets. A striking throughline is governance: whether managing AI aggregators for V2G operations, ensuring mobility-first reserve certification for hydrogen bus depots, or catching bias in commercial GPS mobility data, the papers collectively show that technical innovation without institutional frameworks risks replicating — or amplifying — inequity. The most actionable finding is the NYC congestion pricing result: the first U.S. cordon pricing program demonstrably boosted transit ridership, providing evidence that pricing interventions can be a transit funding and ridership strategy simultaneously.</div>
+  </section>
+
+  <!-- PAPER OF THE DAY -->
+  <section class="section">
+    <p class="section-label">Paper of the Day</p>
+    <div class="potd-card">
+      <span class="potd-label">⭐ Editor's Pick</span>
+      <h3>Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</h3>
+      <p class="potd-meta">Li, Zhuang, Li, Shen · arXiv:2606.17530 · June 16, 2026</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.6">First empirical evaluation of the U.S.'s first cordon congestion pricing program, using time-series foundation models as counterfactuals to isolate transit ridership gains from background trends. Finds statistically significant ridership increases on bus and subway, with spatially heterogeneous distribution favoring outer boroughs.</p>
+    </div>
+  </section>
+
+  <!-- EMERGING THEMES -->
+  <section class="section">
+    <p class="section-label">Emerging Themes</p>
+    <div class="themes-grid">
+    <div class="theme-card">
+      <h3>Zero-Emission Fleet Resilience Engineering</h3>
+      <p>Three separate papers (cold-wave e-bus, hydrogen hub certification, V2G aggregator governance) converge on the same insight: electrification introduces new failure modes that require new engineering frameworks, not just new vehicles. The operational complexity of zero-emission fleets — balancing battery state, hydrogen availability, grid services, and passenger service — demands purpose-built certification and management tools.</p>
+    </div>
+    <div class="theme-card">
+      <h3>AI-Driven Planning Needs Equity Guardrails</h3>
+      <p>Papers on elderly mobility modeling, GPS data bias, and causal scooter hub planning all reveal that AI planning tools trained on majority-group data systematically exclude marginalized populations. More capable models do not fix the problem — only targeted demographic data collection and representation requirements do. This is a policy gap regulators have not yet addressed.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Pricing as Transit Strategy</h3>
+      <p>The NYC congestion pricing study and the AAM subsidy design paper together suggest that pricing mechanisms — both to discourage car use and to subsidize multimodal connections — are increasingly central to transit planning. The era of treating pricing as a revenue instrument separate from ridership strategy is ending; these papers show the two are inseparable.</p>
+    </div></div>
+  </section>
+
+  <!-- CONTRARIAN INSIGHTS -->
+  <section class="section">
+    <p class="section-label">Contrarian Insights</p>
+    <div class="contrarian-grid"><div class="contrarian-item"><span class="contrarian-icon">↯</span><p>More capable AI models do NOT automatically improve transit planning equity — the elderly mobility paper shows that a larger LLM trained on unrepresentative data performs WORSE for elderly riders than a simple Markov chain trained on elderly-specific data. Model power is no substitute for demographic representation.</p></div><div class="contrarian-item"><span class="contrarian-icon">↯</span><p>Zero-emission depots that serve buildings as backup power may actually undermine transit service reliability unless carefully governed — the mobility certification paper shows that naive 'resilience hub' designs protect buildings at the direct expense of stranding buses, inverting the public purpose of the depot.</p></div></div>
+  </section>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <section class="section">
+    <p class="section-label">Actionable Takeaways</p>
+    <div class="takeaways-grid"><div class="takeaway-item"><span class="takeaway-num">→</span><p>Transit agencies in congestion-priced zones should immediately audit outer-borough service capacity — the NYC data shows demand shifts most in those corridors, where overcrowding could emerge faster than procurement cycles allow.</p></div><div class="takeaway-item"><span class="takeaway-num">→</span><p>Cold-climate agencies electrifying bus fleets must audit for cold-wave block-feasibility failures BEFORE winter deployment — WeatherRobustBus shows standard energy margins hide cascade failures that only emerge under multi-day cold snaps.</p></div><div class="takeaway-item"><span class="takeaway-num">→</span><p>Any agency using commercial GPS mobility data for planning should require vendors to provide source-specific coverage bias reports by census tract — the Mexico study shows coverage gaps correlate exactly with low-income and rural populations that most need transit.</p></div><div class="takeaway-item"><span class="takeaway-num">→</span><p>Transit agencies evaluating V2G or hydrogen backup contracts with energy aggregators should insist on operation-based coordination contracts with auditable tariff-setting — profit-oriented agentic aggregators will extract value from public operators unless contractually constrained.</p></div></div>
+  </section>
+
+  <!-- ALL PAPERS -->
+  <section class="section">
+    <p class="section-label">Full Paper Analyses — 11 Papers</p>
+    <div class="papers-grid">
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">01</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.17530</span>
+          <span class="conf-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">High</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.17530" target="_blank" rel="noopener">Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</a></h3>
+      <p class="paper-authors">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen</p>
+      <p class="paper-summary">NYC's first-in-nation cordon congestion pricing program, launched January 2025, measurably boosted bus and subway ridership while redistributing trip demand unevenly across the city.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>This is the first empirical evaluation of how a full U.S. cordon pricing scheme reshapes transit ridership in real time, using novel time-series foundation models as counterfactuals — a methodological breakthrough for policy evaluation.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Post-policy bus and subway ridership increased significantly above counterfactual forecasts</li><li>Outer-borough destinations gained relatively more trip demand than Manhattan core destinations</li><li>Time series foundation models provide probabilistic counterfactuals where traditional control groups fail</li><li>Congestion pricing generates spillovers across modes and locations, making siloed analysis misleading</li><li>Spatial heterogeneity in demand response means one headline number obscures critical equity patterns</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Time series foundation models generate probabilistic counterfactual forecasts with calibrated uncertainty using pre-intervention data, then compare actual post-policy data against those forecasts for bus, subway, and aggregate trip volume.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Bus and subway ridership statistically exceeded counterfactual forecasts post-January 2025; outer-borough trip volumes grew relative to Manhattan core; aggregate trip volume showed spatially heterogeneous patterns.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Foundation model counterfactuals rely on assumption that pre-intervention trends would have continued; external shocks concurrent with pricing could confound results; cannot fully separate congestion pricing effect from NYC economic trends.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Transit agencies in congestion-priced cities should prepare capacity for ridership surges, especially in outer-borough corridors. Equity monitoring must be spatially granular — aggregate gains can mask localized burdens.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Transit planners, urban economists, MTA leadership, congestion pricing advocates and opponents, equity researchers</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>Advances beyond Stockholm and London studies by using ML counterfactuals rather than synthetic control, and by being the first to analyze a U.S. cordon pricing program at this spatial granularity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">02</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.12855</span>
+          <span class="conf-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">High</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.12855" target="_blank" rel="noopener">Computing Headway Bounds under Worst-Case Bunching in Fixed-Line Transit Systems</a></h3>
+      <p class="paper-authors">Michael Yuhas, George Gunter, Jose Paulo Talusan, et al.</p>
+      <p class="paper-summary">A new dynamic programming framework computes tight upper and lower bounds on bus headway under any holding policy, revealing exactly which conditions produce worst-case bunching.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>Bus bunching is transit's most persistent service quality failure; this paper provides the first method to provably bound worst-case headway — enabling rigorous planning rather than heuristic mitigation.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Maximum and minimum headway bounds are achievable — specific event sequences that produce them can be identified</li><li>More control points do not always improve worst-case performance depending on placement</li><li>Holding policies trade riding time for headway regularity with quantifiable costs</li><li>Applied to Nashville TN network, bounds reveal which routes are structurally vulnerable to bunching</li><li>Number of vehicles and stop placement have non-obvious interactions affecting worst-case bunching</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Dynamic programming over time-space networks with bounded dwell and travel times; models arbitrary number of control points, vehicles, and deterministic holding policies; computes tight bounds by identifying adversarial event sequences.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Bounds are tight — the framework produces the specific dwell/travel time realization achieving each bound. Nashville case study identifies routes where even optimal holding fails to prevent significant headway deviation.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Assumes deterministic travel time bounds; stochastic analysis would require extension; does not model passenger behavior changes in response to holding; single-route analysis excludes network-level interactions.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Agencies can use this tool in planning stage to compare route designs, holding strategies, and fleet sizes before deployment, eliminating the need for costly simulation studies for worst-case analysis.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Transit operations researchers, bus network planners, dispatchers, software developers building scheduling tools</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>Prior work focused on average-case bunching and stochastic simulation; this is the first approach computing guaranteed worst-case bounds analytically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">03</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.26920</span>
+          <span class="conf-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">High</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.26920" target="_blank" rel="noopener">When the Timetable Breaks: Physics-Anchored Scientific Machine Learning for Cold-Wave-Robust Battery-Electric Bus Operations</a></h3>
+      <p class="paper-authors">Yifan Wang</p>
+      <p class="paper-summary">A physics-anchored ML framework predicts battery-electric bus energy failure cascades during cold waves and shows that opportunity charging — not just better forecasting — is the key intervention.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>As agencies race to electrify bus fleets, winter operational failures are an existential threat to electrification goals; this paper provides actionable, validated tools for managing cold-climate e-bus timetable resilience.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Cabin heating is the dominant cold-weather energy drain, not traction, and creates cascading block failures</li><li>Pure ML models degrade 1.5-4x versus physics-anchored hybrid in out-of-support cold tail temperatures</li><li>Opportunity charging is the most effective single intervention, reducing failure probability from 0.759 to 0.112</li><li>Fuel-fired cabin-heating bridge is low-cost complement that further reduces risk without major infrastructure</li><li>Standard seasonal energy margins systematically hide cold-wave vulnerabilities in fleet planning</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Physics-hybrid universal differential equation building-load twin validated against EnergyPlus; bounded monotone residual ensemble; Monte Carlo block-feasibility simulation over 60 real TTC vehicle blocks; deconfounded ablation study for intervention ranking.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Achieves 0.213 kWh RMSE over full year, lowest of all tested models; combined policy reduces cold-wave failure probability from 0.759 to 0.112 across eight cold-wave days at Toronto TTC.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Validated on Toronto TTC data; transferability to other cities or bus models requires revalidation; fuel-fired heater introduces emissions, partially compromising zero-emission goals.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Cold-climate agencies should audit their electrification plans against cold-wave scenarios, prioritize opportunity charging infrastructure at key layover points, and consider auxiliary cabin heat as bridging technology.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Transit electrification planners, cold-climate agencies (Minneapolis, Chicago, Toronto, Montreal), fleet procurement officers, EV charging infrastructure planners</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>Extends prior e-bus range-anxiety literature from individual vehicle to fleet-level block feasibility, adding novel physics-anchored cold-weather modeling not present in prior traction-only models.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">04</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.26400</span>
+          <span class="conf-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">Medium</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.26400" target="_blank" rel="noopener">When Agents Meet Electric Bus Fleet Operations: Pricing Behavior, Trade-offs, and Policy Implications in an Aggregator Framework</a></h3>
+      <p class="paper-authors">Jônatas Augusto Manzolli, Ali Eslami, Luis Miranda-Moreno</p>
+      <p class="paper-summary">AI-powered aggregators can coordinate electric bus V2G operations effectively but may extract value from transit operators unless governance explicitly mandates transparent pricing and value-sharing rules.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>As AI-driven energy intermediaries enter transit, this paper is the first to demonstrate the conflict between agentic efficiency and public-mission values in EV fleet management.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Agentic aggregators successfully reduce operational complexity and improve V2G flexibility utilization</li><li>Profit-oriented agentic pricing can extract value from public transport operators — the same capability cuts both ways</li><li>Real-time re-optimization under disturbances (service delays, price shocks) is where agentic value is highest</li><li>Transparent coordination modes and auditable tariff-setting are necessary preconditions for public-fleet deployment</li><li>Aggregator governance is a policy gap that regulators have not yet addressed for transit contexts</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Mixed-integer optimization core for scheduling feasibility; supervisory agent layer for disturbance detection and re-optimization triggers; depot case study with profit-based vs operation-based coordination modes under five disturbance scenarios.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Agentic aggregation maintains feasible schedules under most disturbance scenarios; profit-oriented mode generates higher aggregator revenue at cost of public transport operator; operation-based mode provides lower but more equitable outcomes.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Single-depot case study; does not model strategic behavior of multiple competing aggregators; tariff regulation scenarios not fully explored.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Transit agencies considering V2G programs should demand operation-based coordination contracts with auditable pricing before signing aggregator agreements; regulators should develop V2G governance frameworks for public fleets.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Transit agency CFOs, energy regulators, EV fleet operators, public-private partnership lawyers, climate policy researchers</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>First paper to explicitly model the governance tension between agentic aggregators and public transit missions in V2G literature.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">05</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2607.00585</span>
+          <span class="conf-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">High</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2607.00585" target="_blank" rel="noopener">Mobility Safe Adaptive Reserve Certification for Electric Vehicle Hydrogen Bus and Building Resilience Hubs</a></h3>
+      <p class="paper-authors">Yifan Wang</p>
+      <p class="paper-summary">A new mobility-first certification framework for shared zero-emission hubs guarantees 100% hydrogen bus service protection while still delivering backup power to critical buildings during grid outages.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>Multi-modal zero-emission depots are emerging as dual-purpose infrastructure, but without proper reserve certification they risk stranding buses to serve buildings — this framework resolves that conflict with validated math.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Mobility-blind hydrogen export policies delivered zero bus protection in tested scenarios despite serving 39% of building demand</li><li>The certified mobility-first policy is the only approach achieving 100% commitment delivery and bus protection simultaneously</li><li>Adaptive conformal inference raised late-period empirical coverage from 0.687 to 0.831 under seasonal load shift</li><li>Resilience value in shared zero-emission hubs depends entirely on service-aware certification, not raw export capacity</li><li>Standard promises (mean-resource) delivered only 45% of commitments in testing</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Physics-hybrid building-load digital twin; one-sided split conformal reserve calibration; adaptive conformal inference for seasonal drift; mobility-first scheduling constraint; evaluated over 495,221 real EV charging sessions and EnergyPlus-simulated building loads.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Mobility-first policy: 100% commitment delivery, 100% bus protection, zero mean bus-hydrogen shortfall, 20.5% critical-building demand served. Mobility-blind: 0% bus protection, 39.2% building demand served.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Results depend on AC Transit GTFS data and California energy context; hydrogen bus economics vary by region; building backup scenarios are simplified.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Transit agencies building zero-emission depots with grid backup functions should require mobility-first certification before signing building backup contracts.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Transit capital planners, resilience engineers, utility regulators, hydrogen infrastructure developers, emergency management agencies</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>Novel application of conformal prediction methods to transit-energy integration, extending prior work on EV grid services to multi-modal hydrogen-bus context.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">06</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.31207</span>
+          <span class="conf-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">Medium</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.31207" target="_blank" rel="noopener">Towards Inclusive Mobility Modeling: Characterizing and Evaluating Elderly Trajectory Patterns in Urban Systems</a></h3>
+      <p class="paper-authors">Zhengxuan Wang, Haohan He, Mengying Zhou</p>
+      <p class="paper-summary">Elderly riders have fundamentally different and more localized mobility patterns than young riders, and AI models trained on majority populations systematically misrepresent their behavior.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>As cities use AI to plan transit, systematic underrepresentation of elderly mobility creates infrastructure that serves young riders while failing aging populations — the fastest-growing rider demographic.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Elderly activity spaces are 24% smaller than young riders (958m vs 1,189m median trip radius)</li><li>Elderly mobility entropy is 2.3x lower, reflecting more repetitive, predictable trip patterns</li><li>Models trained on full population overestimate elderly step length by 4.5% and dwell time by 8.9%</li><li>More powerful LLMs do not automatically improve subgroup representation with limited demographic data</li><li>Off-peak asymmetric temporal patterns of elderly riders are systematically missed by majority-trained models</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Analysis of 2016-2020 Jersey City Citi Bike data; entropy and spatial metrics computed per demographic group; Markov chain and QLoRA-fine-tuned Qwen3-4B models compared across three training settings (full, young-only, elderly-only).</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Elderly-specific models substantially outperform full-population models on elderly mobility metrics; higher-capability models do not close the demographic gap without targeted training data.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Citi Bike data represents self-selecting bike-share users, not full elderly transit population; Jersey City may not generalize to other cities; age proxies from registration data may be imprecise.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Urban planners should demand demographic-disaggregated mobility models for transit planning; AI vendors should be required to report subgroup performance metrics, not just aggregate accuracy.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Urban planners, transit accessibility officers, aging services agencies, AI ethics researchers, smart city vendors</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>First paper to directly compare LLM and Markov model performance on elderly vs young mobility generation, revealing the limits of model capability as a substitute for representation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">07</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.25484</span>
+          <span class="conf-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">Medium</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.25484" target="_blank" rel="noopener">From Causal Discovery to Implementation: An Agentic AI Framework for E-Scooter Mobility Hub Planning Across 29 German Cities</a></h3>
+      <p class="paper-authors">Meng Jin, Melanie Handrich, Simone Martinenz, Nicholas Hoeser</p>
+      <p class="paper-summary">An AI framework using causal discovery on open GBFS data across 29 German cities reveals that core and peripheral e-scooter hub demand have fundamentally different causal drivers, enabling transferable siting templates.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>Existing scooter siting relies on correlational demand models — this is the first causal framework that explains WHY certain locations succeed, enabling cities without proprietary data to make better decisions.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Core demand causally driven by activity access and transit proximity — confirming transit-complementary hypothesis</li><li>Peripheral demand responds primarily to built form — density, land use — not transit access</li><li>City typology (large, university, industrial, hilly) systematically shapes which causal drivers dominate</li><li>Causal Template Library enables transferable siting without requiring expensive proprietary trip data</li><li>Two hub sites in Heilbronn Germany under construction based on framework findings — rare real-world validation</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>LLM-orchestrated causal discovery pipeline adapting algorithm selection to local data conditions; 57 city-cluster units across 29 cities; planning tool scoring candidate sites with calibrated recommendations.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>City-type-specific causal patterns identified; planning tool generates practitioner-ready site reports; Heilbronn implementation validates real-world applicability.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>GBFS data captures only shared scooter trips, not full micromobility demand; causal discovery assumes no hidden confounders; Germany-specific results may not transfer globally.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Cities planning micromobility integration should use causal (not correlational) demand models; open GBFS data is sufficient for rigorous planning without expensive third-party datasets.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Micromobility operators, city planners, transit integration specialists, open data advocates</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>First causal (vs correlational) micromobility demand model; first city-typology-specific analysis across European cities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">08</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.21390</span>
+          <span class="conf-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">Medium</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.21390" target="_blank" rel="noopener">Distance-based subsidy rate design to incentivize ride-hail access to advanced air mobility hubs</a></h3>
+      <p class="paper-authors">Zhenglei Ji, Hai Yang, Joseph Y. J. Chow</p>
+      <p class="paper-summary">Air taxi operators will need to subsidize ride-hail trips to vertiports whenever air taxi costs exceed $12/mile, with subsidy rates varying significantly by Manhattan vertiport location due to spatial demand heterogeneity.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>Advanced air mobility can only scale if first/last-mile ground access is solved; this paper establishes the economic mechanics of AAM-ridehail cooperation and identifies the subsidy threshold that makes it viable.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>AAM operators must subsidize ride-hail access when air taxi operating costs exceed $12 per mile</li><li>Ridership and profit contributions vary dramatically across candidate Manhattan vertiport locations</li><li>Demand zones with highest AAM airport access potential concentrate in specific NYC taxi zones under lower fare scenarios</li><li>Distance-based subsidy outperforms flat-rate subsidies in balancing ridership and operator profitability</li><li>Passenger value-of-time heterogeneity requires separate subsidy designs for different customer segments</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>High-volume for-hire vehicle NYC data integration; mode-choice model with heterogeneous value-of-time groups; joint optimization of subsidy rate and air taxi fare; spatial demand analysis across NYC taxi zones.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Distance-based subsidies enable viable AAM-ridehail coalitions at operating costs above $12/mile; Manhattan spatial heterogeneity means optimal vertiport locations require demand-aware subsidy design.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>NYC-specific analysis; AAM operating cost projections uncertain; ride-hail platform cooperation assumptions may not hold in competitive market.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>AAM operators should build subsidy mechanisms into business plans from launch; vertiport siting must account for ground-mode access costs as primary criterion.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>AAM companies (Joby, Archer, Lilium), urban air mobility planners, ride-hail platform strategists, airport authorities</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>First paper to formalize the AAM-ridehail subsidy problem as a joint optimization with distance-based rates and heterogeneous value-of-time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">09</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.21154</span>
+          <span class="conf-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">High</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.21154" target="_blank" rel="noopener">Virginia Tech Transportation Safety Index (VTTSI)</a></h3>
+      <p class="paper-authors">Jason Cusati, Cheng-Shun Chuang</p>
+      <p class="paper-summary">VTTSI is a real-time intersection safety scoring system fusing connected-vehicle telemetry with crash history to produce updated safety scores every 15 minutes on a 0-100 scale.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>Current intersection safety analysis uses crash data that is months or years old; real-time scoring enables dynamic signal timing, enforcement targeting, and rapid response to emerging dangerous conditions.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Traditional crash-based safety methods lag by months to years, missing rapidly changing operational conditions</li><li>Combining speed/conflict behavioral data with crash history outperforms either source alone</li><li>CRITIC-weighted MCDM integrating SAW, EDAS, CODAS metrics produces more robust scores than single-method approaches</li><li>15-minute update cycles enable actionable intervention within operational shift windows</li><li>Empirical Bayes crash stabilization corrects for low sample-size bias in crash-history metrics</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Multimodal connected-vehicle telemetry fusion with multi-year VDOT crash history; Empirical Bayes crash stabilization; speed and conflict behavior uplift factors; CRITIC-weighted MCDM combining SAW, EDAS, CODAS; cloud-native real-time architecture.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>System produces interpretable 0-100 safety scores updated every 15 minutes; validated against VDOT historical crash data; framework operational for Virginia intersections.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Requires connected-vehicle penetration for telemetry inputs; effectiveness depends on CV market share; Virginia-specific calibration may need adjustment for other states.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>DOTs should integrate real-time safety scoring into signal operations centers; law enforcement can use live scores for deployment targeting; transit agencies can use scores to flag intersections for operator alerts.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>State DOTs, traffic management centers, law enforcement, transit safety officers, connected vehicle platform providers</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>First framework combining real-time connected-vehicle conflict data with Empirical Bayes crash history in a production-quality operational safety index.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">10</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.21858</span>
+          <span class="conf-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">Medium</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.21858" target="_blank" rel="noopener">Perceiving exposure segregation with open urban imagery</a></h3>
+      <p class="paper-authors">Yunke Zhang, Ruolong Ma, Xin Zhang, Yu Shang, Fengli Xu, Tong Xia, Yong Li</p>
+      <p class="paper-summary">The VISAGE framework detects socioeconomic segregation patterns in US cities from street and satellite imagery, finding that fences, gated enclosures, and monofunctional zoning physically encode social isolation.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>Built-environment features that generate transit deserts are the same ones that produce segregation; this paper shows the physical mechanisms are readable from public imagery, enabling scalable policy diagnosis.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Defensible architectural forms (fences, gated enclosures) are the strongest visual predictors of social isolation</li><li>Monofunctional zoning systematically predicts higher segregation versus mixed-use infrastructure</li><li>Inclusionary housing policies leave detectable visual signatures in street imagery (Pearson r=0.770 with mixing)</li><li>VISAGE framework scales to 10,030 communities across 31 cities without proprietary data</li><li>Physical regulators of social mixing can now be identified from open imagery, enabling systematic planning audits</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Large multimodal model (VISAGE) trained on satellite and street-level imagery; interpretable visual codebook from sociological theory; validated against mobility-derived segregation measures across 31 US cities.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Visual codebook explains substantial variance in mobility-based segregation (r=0.770); defensible architecture and monofunctional zoning emerge as dominant negative predictors; mixed-use infrastructure as positive predictor.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Causal direction unclear — segregation may cause built environment, not vice versa; Google Street View temporal coverage varies; urban context outside US may differ.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Urban planners can use open imagery audits to identify segregation-perpetuating built form before expensive planning studies; transit investment prioritization can incorporate visual-segregation scores.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Urban planners, equity researchers, transit equity advocates, housing policy officials, computer vision researchers</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>First paper to operationalize sociological segregation theory as a visual codebook and validate it against observed mobility data at city scale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header">
+        <span class="paper-num">11</span>
+        <div class="paper-meta">
+          <span class="paper-source">arXiv:2606.23616</span>
+          <span class="conf-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">High</span>
+        </div>
+      </div>
+      <h3 class="paper-title"><a href="https://arxiv.org/abs/2606.23616" target="_blank" rel="noopener">One country, multiple portraits: representativeness in GPS-based mobility data is source-specific and spatially dependent</a></h3>
+      <p class="paper-authors">Carmen Cabrera, Francisco Rowe, Miguel González-Leonardo, Juan Ignacio Vilchis-García</p>
+      <p class="paper-summary">GPS mobility data from different platforms systematically misrepresents different populations — multi-app aggregators miss rural and low-income areas while Facebook data covers them more evenly.</p>
+      <div class="paper-details">
+        <div class="detail-block">
+          <h4>Why It Matters</h4>
+          <p>Transit planners using commercial mobility data to design routes may be systematically planning around wealthier, better-connected populations, amplifying inequality precisely where equity planning is most needed.</p>
+        </div>
+        <div class="detail-block">
+          <h4>Key Insights</h4>
+          <ul><li>Coverage bias differs fundamentally between Facebook and multi-app (Veraset) data — they are not interchangeable</li><li>Multi-app aggregators concentrate coverage in larger, wealthier, more digitally connected municipalities</li><li>Facebook provides more spatially even coverage, better representing peripheral and rural areas</li><li>Digital access and material resources drive multi-app bias; demographics drive Facebook bias</li><li>Spatial autocorrelation in coverage bias means neighboring municipalities show similar under/over-representation</li></ul>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h4>Methodology</h4>
+            <p>Comparison of two GPS mobility data sources against 2020 Mexican Population Census for 2,478 municipalities; explainable ML (XGBoost with SHAP) to identify bias drivers; spatial autocorrelation analysis; geographic resolution across urban-rural continuum.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Results</h4>
+            <p>Substantial and source-specific coverage bias confirmed; multi-app data more biased in rural and low-income areas; Facebook more evenly distributed but with demographic structure bias; spatial modeling explains remaining variation.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Limitations</h4>
+            <p>Mexico-specific findings; temporal coverage limited; Facebook data access may change due to platform policy; does not address data quality (accuracy) beyond coverage.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Practical Implications</h4>
+            <p>Agencies using commercial GPS data for planning must understand source-specific bias and apply corrections; multi-source fusion with bias adjustment is necessary for equitable mobility analysis.</p>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-block">
+            <h4>Who Should Care</h4>
+            <p>Transportation planners, equity researchers, smart city data scientists, government statisticians, GPS data vendors</p>
+          </div>
+          <div class="detail-block">
+            <h4>vs Prior Work</h4>
+            <p>First systematic cross-source comparison of GPS coverage bias at national scale with explainable ML attribution and spatial dependence modeling.</p>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- INFOGRAPHIC -->
+  <section class="section">
+    <p class="section-label">Research Infographic</p>
+    <div class="infographic-section">
+      <img src="research-infographic-2026-07-05.svg" alt="Transit Research Infographic July 5, 2026" loading="lazy">
+      <br>
+      <a href="research-infographic-2026-07-05.svg" download class="download-link">Download SVG Infographic</a>
+    </div>
+  </section>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <section class="section">
+    <p class="section-label">Long-Term Implications</p>
+    <div class="implications-block">The convergence of zero-emission mandates, AI-driven operations, and congestion pricing signals a structural transformation of transit from a passive infrastructure service to an active urban system actor — one that manages energy, prices space, and competes for mobility dollars with air taxis and e-scooters. The key long-term risk is that this transformation happens faster than governance frameworks can develop, leaving public-mission transit agencies at a disadvantage against well-capitalized private mobility operators.</div>
+  </section>
+
+</div>
+
+<footer>
+  <div>Transit Research Digest · Auto-generated · July 5, 2026</div>
+  <div style="font-size:11px;color:#4a5568;margin-top:6px">11 papers sourced from arXiv. Analyzed independently.</div>
+  <div class="footer-links">
+    <a href="research.html">← All Issues</a>
+    <a href="index.html">Site Home</a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.paper-card').forEach(card => {
+  const btn = document.createElement('button');
+  btn.className = 'toggle-btn';
+  btn.textContent = 'Show full analysis ▾';
+  btn.onclick = function() {
+    card.classList.toggle('open');
+    btn.textContent = card.classList.contains('open') ? 'Hide analysis ▴' : 'Show full analysis ▾';
+  };
+  card.appendChild(btn);
+});
+</script>
+</body>
+</html>
