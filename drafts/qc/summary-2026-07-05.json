@@ -1,0 +1,78 @@
+{
+  "date": "2026-07-05",
+  "total_reviewed": 0,
+  "note": "No new content produced today. Video script production on hold (Day 29 of approval freeze). No articles produced (article agent unresponsive — 29 consecutive days, 0% production rate). No infographics produced (retries suspended since 2026-07-02). Summary reflects current backlog QC state; all verdicts carry forward from prior QC runs.",
+  "backlog_total_reviewed": 10,
+  "passed": 5,
+  "revise": 5,
+  "failed": 0,
+  "ready_to_publish": [
+    "dopamine-fracking-script",
+    "fare-evasion-economics-script",
+    "tesla-spacex-transit-empire-script",
+    "transit-app-dark-ux-2026-script",
+    "us-cities-transit-gap-script"
+  ],
+  "needs_revision": [
+    {
+      "slug": "apple-gemini-2026-script",
+      "score": 65,
+      "revision_notes": "REEL: Cut voiceover to under 200 words (currently ~249). Trim Scene 2 — drop the 'Two years later Siri's reasoning is routed through Gemini 1.5 Pro...' expansion; keep just the contrast line. Tighten Scene 3 to 2 sentences max. Target: HOOK 25w, Scene 1 45w, Scene 2 35w, Scene 3 45w, CTA 25w = ~175w. YOUTUBE: Recount spoken words precisely; trim Section 3 regulatory discussion if over 1,200."
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "score": 58,
+      "revision_notes": "FACTUAL FIX (REQUIRED): Verify which hypercars actually use YASA axial flux motors before publish — McLaren Artura and Lamborghini Revuelto YASA sourcing must be confirmed. Replace Wikipedia citations with primary sources: Mercedes-Benz/YASA press release for June 2026 mass-production claim; YASA technical datasheets for 42 kW/kg spec; IEA or BloombergNEF for global EV bus fleet data. REEL: Trim Scene 3 to under 200 words total."
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "score": 62,
+      "revision_notes": "REEL FACTUAL FIX (REQUIRED): Hedge drone claim in Scene 3 — remove implication of confirmed data pipeline, add conditional framing. Fix 15M figure attribution to Ingress, not Pokemon Go AR scans. Replace Wikipedia citations with primary sources (Vice/Motherboard DHS/Venntel reporting 2020, EFF or ACLU on warrantless data purchases)."
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "score": 72,
+      "revision_notes": "REEL ONLY: Scene 3 runs ~87 words — cut to under 35. Compress equity point to one sentence. Drop the 'for anyone who's ever watched a bus drive past' sentence. Also trim Scene 2 closing. Target: under 180 words total. Content quality is high; sole issue is reel pacing."
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "score": 60,
+      "revision_notes": "REEL REQUIRES NEAR-COMPLETE REWRITE: Current reel is compressed YouTube script, not reel format. Rewrite to: HOOK (~20w): '55 million Americans have no functional transit. An AI just proved it can fix that.' Scene 1 (~35w): stat + Khoroshevskaya & Perukari 2026 source. Scene 2 (~50w): no-ridership-data advantage, breaks the catch-22. Scene 3 (~35w): 5-point improvement = hundreds of thousands of people. CTA (~20w). Total: ~160w. YouTube: verify word count within 600-1200 range."
+    }
+  ],
+  "blocked": [],
+  "timely_items_not_produced": [
+    {
+      "slug": "nyc-congestion-pricing-transit-ridership-equity-2026",
+      "rank": 1,
+      "reason": "Article agent unresponsive — 0% production rate across 29 days",
+      "freshness_note": "arXiv paper on NYC congestion pricing gains; freshness advantage fades within ~2 weeks from today"
+    },
+    {
+      "slug": "nyc-fare-policy-simulation-socioeconomic-equity-2026",
+      "rank": 2,
+      "reason": "Article agent unresponsive",
+      "freshness_note": "arXiv fare equity simulation paper; medium research brief"
+    },
+    {
+      "slug": "chatplanner-llm-personalized-transit-routing-2026",
+      "rank": 3,
+      "reason": "Article agent unresponsive",
+      "freshness_note": "LLM-for-transit routing paper; AI + transit angle performs well"
+    },
+    {
+      "slug": "gemini-code-assist-shutdown-transit-tech-july-2026",
+      "rank": 5,
+      "reason": "Article agent unresponsive AND scripts on hold",
+      "freshness_note": "HARD DEADLINE: July 17 — only 12 days remain. Window permanently closes on deadline."
+    }
+  ],
+  "system_alerts": [
+    "APPROVAL FREEZE DAY 29: 5 QC-PASS scripts await human approval in system/approved.json (empty since 2026-06-07). No publish pipeline can run. Add any slug to unblock: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script.",
+    "ARTICLE AGENT UNRESPONSIVE: 0 articles produced in 29 consecutive days. drafts/articles/ has never been populated across entire site history. Manual diagnostic of article-writing agent is critically overdue.",
+    "GEMINI SHUTDOWN DEADLINE: gemini-code-assist-shutdown-transit-tech-july-2026 has a hard deadline of July 17 (12 days). No automated agent will produce it under current hold/unresponsive conditions. Manual fast-track or direct write required.",
+    "INFOGRAPHIC AGENT SUSPENDED: BRT infographic retries remain suspended since 2026-07-02. Manual diagnostic required before re-queuing.",
+    "GOOGLE NEWS RSS FEED EMPTY: 8+ consecutive days of empty results. Feed access/parsing requires manual fix.",
+    "VIDEO SCRIPTS ON HOLD: 5 QC-passed scripts and 5 needs-revision scripts in backlog. No new scripts until at least one approval received via system/approved.json."
+  ]
+}
