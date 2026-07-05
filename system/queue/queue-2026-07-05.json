@@ -1,0 +1,77 @@
+{
+  "date": "2026-07-05",
+  "generated_at": "2026-07-05T06:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "NYC Congestion Pricing Transit Ridership Gains — Spatially Uneven Demand Changes",
+      "angle": "New arXiv study finds congestion pricing drove public transit gains but with spatially uneven ridership patterns — which neighborhoods won, which were left behind, and what this means for equity-conscious transit planning elsewhere.",
+      "rationale": "Fresh arXiv paper (2026 submission) on NYC's first-in-US congestion pricing program and its transit demand effects. NYC program has been live long enough for real ridership data. Directly bridges our transit equity + congestion pricing coverage without duplicating prior work. Strong hook for the niche audience.",
+      "target_length": "long",
+      "slug": "nyc-congestion-pricing-transit-ridership-equity-2026",
+      "output_path": "drafts/articles/nyc-congestion-pricing-transit-ridership-equity-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "research",
+      "topic": "Simulating Transit Fare Policies in NYC: Socioeconomic-Aware Framework",
+      "angle": "A new arXiv paper models how different fare structures (flat, distance-based, income-tiered) affect ridership and equity across NYC neighborhoods. What simulation reveals about who bears the cost of fare policy decisions.",
+      "rationale": "Directly complements our existing coverage on fare structure design and low-income riders. New methodology paper with practical transit agency implications. Timely given ongoing federal transit funding debates. Novel framing not previously covered.",
+      "target_length": "medium",
+      "slug": "nyc-fare-policy-simulation-socioeconomic-equity-2026",
+      "output_path": "drafts/articles/nyc-fare-policy-simulation-socioeconomic-equity-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "explainer",
+      "topic": "ChatPlanner: How LLMs Are Personalizing Public Transit Routing",
+      "angle": "New arXiv paper introduces ChatPlanner, a large language model framework for personalized transit routing — letting riders describe preferences in plain language rather than navigating rigid app interfaces. What this means for transit usability and the transit app dark UX problem.",
+      "rationale": "LLM + transit is a high-interest topic in our niche. This paper is recent (2026). Ties into our existing transit app dark UX coverage. Bridges AI and urban mobility without repeating covered topics. Short-medium explainer format fits naturally.",
+      "target_length": "medium",
+      "slug": "chatplanner-llm-personalized-transit-routing-2026",
+      "output_path": "drafts/articles/chatplanner-llm-personalized-transit-routing-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "infographic",
+      "topic": "NYC Congestion Pricing: Before vs. After Transit Ridership by Borough",
+      "angle": "Visual companion to Rank 1 article. Bar/map comparison of MTA ridership changes by borough and mode (subway, bus, commuter rail) before and after congestion pricing launch. Highlight the equity gap.",
+      "rationale": "Visual explainer for the Rank 1 article — infographics consistently perform well in our niche. No prior congestion pricing infographic exists in our library. Data available from MTA and the arXiv paper.",
+      "target_length": "short",
+      "slug": "nyc-congestion-pricing-transit-ridership-infographic-2026",
+      "output_path": "docs/infographic-nyc-congestion-pricing-2026.svg"
+    },
+    {
+      "rank": 5,
+      "type": "research",
+      "topic": "Gemini Code Assist Shutdown: What Transit Tech Teams Need to Know Before July 17",
+      "angle": "Google is shutting down Gemini Code Assist on July 17 — 12 days away. Transit agencies and transit-tech vendors relying on it face migration decisions now. What tools exist, what the transition looks like, and why this matters for AI adoption in public agencies.",
+      "rationale": "Hard deadline 12 days out makes this time-critical. Bridges AI tools + transit tech niche. Practical and actionable for a technically-oriented reader. Not previously covered in depth.",
+      "target_length": "short",
+      "slug": "gemini-code-assist-shutdown-transit-tech-july-2026",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-tech-july-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "job": "article_writing",
+      "note": "Article agent has 0% success rate over 29 consecutive days. drafts/articles/ has never had a file produced. All retries remain active — agent diagnostic critically overdue."
+    }
+  ],
+  "skip_topics": [
+    "July 4 holiday transit demand (timeliness window closed)",
+    "Virginia SB 338 geolocation ban (queued 3 days, article agent unresponsive — pause pending agent diagnostic)",
+    "World Cup 2026 transit operations (queued 5+ weeks, never produced — pause pending agent diagnostic)",
+    "Claude Mythos AI vulnerability transit infrastructure (queued yesterday)",
+    "AAA record 72.2M July 4 travelers (queued yesterday, timeliness window closing)",
+    "Right to Local Intelligence AI municipal governance (queued yesterday)"
+  ],
+  "trend_signals": [
+    "NYC congestion pricing real-world transit ridership data — equity effects spatially uneven",
+    "LLM-native transit routing (ChatPlanner arXiv) — plain-language trip planning",
+    "GPT-5.5 Codex reasoning-token clustering causing degraded AI performance",
+    "Gemini Code Assist shutdown July 17 — transit tech migration deadline 12 days out",
+    "Foundation models + urban mobility data for socioeconomic understanding (arXiv)"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-05",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold_backlog_day_29",
+    "qc": "pending",
+    "publishing": "skipped_no_approved_items"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL DAY 29: approved.json empty since 2026-06-07. 29 consecutive days without a human approval. 5 QC-passed scripts ready: tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to system/approved.json.",
+    "ARTICLE AGENT UNRESPONSIVE: drafts/articles/ has never had a file successfully produced in 29 consecutive days across the entire site history. 0% article production rate. Manual diagnostic of article-writing agent is critically overdue.",
+    "BRT INFOGRAPHIC RETRIES REMAIN SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 remain suspended (suspended 2026-07-02). Manual diagnostic required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD: 5 QC-passed scripts and 5 needs-revision scripts in backlog. No new scripts until human approvals received via system/approved.json.",
+    "GOOGLE NEWS RSS FEED EMPTY: 8+ consecutive days of empty results from Google News Technology RSS. Persistent access/parsing issue -- manual check of feed URL and parsing logic required.",
+    "NEW TODAY (2026-07-05): arXiv paper on NYC congestion pricing transit ridership gains with spatially uneven demand -- Rank 1 long article queued.",
+    "NEW TODAY (2026-07-05): arXiv paper on socioeconomic-aware NYC fare policy simulation -- Rank 2 research brief queued.",
+    "NEW TODAY (2026-07-05): ChatPlanner LLM for personalized public transit routing (arXiv) -- Rank 3 explainer queued.",
+    "TIMELINESS: Gemini Code Assist shutdown July 17 -- 12 days remaining. Rank 5 explainer."
+  ]
+}

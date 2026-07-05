@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-04T06:00:00Z",
+  "last_updated": "2026-07-05T06:00:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -702,6 +702,36 @@
       "type": "research_infographic",
       "url": "docs/research-infographic-2026-07-03.svg",
       "topic": "Research Infographic 2026-07-03 (QC: 85 PASS)"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "news",
+      "url": "docs/2026-07-04.html",
+      "topic": "Daily Briefing 2026-07-04 (Independence Day / America 250th; Virginia SB 338 geolocation ban; Gemini Code Assist shutdown)"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "transit",
+      "url": "docs/transit-2026-07-04.html",
+      "topic": "SoCal Transit Brief 2026-07-04 — July 4 holiday operations, World Cup final transit demand, America 250th Bicentennial service"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "research",
+      "url": "docs/research-2026-07-04.html",
+      "topic": "Transit Research Digest 2026-07-04"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "infographic",
+      "url": "docs/infographic-2026-07-04.svg",
+      "topic": "Editorial Infographic 2026-07-04"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-07-04.svg",
+      "topic": "Research Infographic 2026-07-04"
     }
   ],
   "drafts_pending_approval": [
@@ -1085,7 +1115,13 @@
     "Right to Local Intelligence AI municipal governance transit",
     "CarPlay UX gap transit apps design",
     "Gemini Code Assist shutdown AI tools consolidation transit tech",
-    "July 4th holiday transit demand patterns capacity planning"
+    "July 4th holiday transit demand patterns capacity planning",
+    "NYC congestion pricing transit ridership gains spatially uneven demand",
+    "NYC transit fare policy simulation socioeconomic equity framework",
+    "ChatPlanner LLM personalized public transit routing",
+    "Gemini Code Assist shutdown July 17 transit tech migration",
+    "GPT-5.5 Codex reasoning-token clustering degraded AI performance",
+    "Foundation models urban mobility socioeconomic understanding arXiv"
   ],
   "failed_jobs": [
     {
@@ -1452,6 +1488,21 @@
       "date": "2026-07-03",
       "job": "infographic_writing",
       "reason": "Daily infographic-2026-07-03.svg QC score 62 (REVISE) due to text truncation on cards 3, 4, 6. July 4th transit demand infographic not produced -- QC agent flagged timeliness window missed for July 3 delivery."
+    },
+    {
+      "date": "2026-07-04",
+      "job": "publishing",
+      "reason": "approved.json still empty -- no human approvals received for 28th consecutive day (since 2026-06-07). 5 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking. Publishing skipped (Day 28)."
+    },
+    {
+      "date": "2026-07-04",
+      "job": "article_writing",
+      "reason": "drafts/articles/ has never had a file produced in 28 consecutive days. 0% article production rate. Virginia SB 338 article queued as Rank 1 but article agent remains unresponsive."
+    },
+    {
+      "date": "2026-07-04",
+      "job": "video_scripts",
+      "reason": "Video script production HOLD confirmed (Day 28 of approval freeze). No new scripts written. 5 QC-passed, 5 needs-revision scripts in backlog."
     }
   ],
   "content_gaps": [
@@ -1530,6 +1581,13 @@
     "NEW SIGNAL (2026-07-04): Claude Mythos AI discovers 6,200+ critical software vulnerabilities -- Rank 3 research brief queued on transit infrastructure security implications.",
     "NEW SIGNAL (2026-07-04): Record 72.2M July 4 travelers (AAA all-time record) -- Rank 4 research brief on transit mode-share queued.",
     "NEW SIGNAL (2026-07-04): Gemini Code Assist shutdown July 17 -- 13 days to deadline, Rank 5 explainer queued for transit tech teams.",
-    "TIMELINESS ALERT (2026-07-04): July 4 / America 250th holiday transit demand infographic is TODAY-ONLY for timeliness -- Rank 2 queue item."
+    "TIMELINESS ALERT (2026-07-04): July 4 / America 250th holiday transit demand infographic is TODAY-ONLY for timeliness -- Rank 2 queue item.",
+    "CRITICAL DAY 29 (2026-07-05): approved.json still empty since 2026-06-07. 29 consecutive days without a human approval. 5 QC-passed scripts ready: tesla-spacex-transit-empire, transit-app-dark-ux-2026, fare-evasion-economics, us-cities-transit-gap, dopamine-fracking. REQUIRES IMMEDIATE HUMAN ACTION -- add slugs to system/approved.json.",
+    "ARTICLE AGENT UNRESPONSIVE (2026-07-05): drafts/articles/ has never had a file successfully produced in 29 consecutive days. 0% article production rate across entire site history. Manual diagnostic of article-writing agent is critically overdue.",
+    "BRT INFOGRAPHIC RETRIES REMAIN SUSPENDED (2026-07-05): Automated retries for brt-vs-light-rail-cost-2026 remain suspended (suspended 2026-07-02). Manual diagnostic required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD (2026-07-05): 5 QC-passed, 5 needs-revision scripts in backlog. No new scripts until human approvals received.",
+    "GOOGLE NEWS RSS FEED EMPTY (2026-07-05): 8+ consecutive days of empty results. Persistent access/parsing issue -- manual check of feed URL and parsing logic required.",
+    "NEW SIGNALS (2026-07-05): arXiv papers on NYC congestion pricing transit gains, socioeconomic-aware fare policy simulation, ChatPlanner LLM transit routing -- all queued as today's top priorities.",
+    "TIMELINESS NOTE (2026-07-05): Gemini Code Assist shutdown July 17 -- 12 days remaining. Queued as Rank 5; genuine time-sensitivity."
   ]
 }
