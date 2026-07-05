@@ -1,0 +1,103 @@
+<svg viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Arial, sans-serif">
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- Header -->
+  <text x="400" y="40" text-anchor="middle" font-size="11" fill="#888888" letter-spacing="3" font-weight="600">DAILY BRIEFING</text>
+  <text x="400" y="82" text-anchor="middle" font-size="28" fill="#111111" font-weight="700">Open Source &amp; Scientific Revival</text>
+  <text x="400" y="108" text-anchor="middle" font-size="13" fill="#999999">July 5, 2026</text>
+  <line x1="40" y1="128" x2="760" y2="128" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 1: C&C Generals -->
+  <rect x="40" y="144" width="720" height="180" fill="#F7F7F5"/>
+  <text x="56" y="168" font-size="11" fill="#888888" font-weight="700">01</text>
+  <!-- Category pill: Tech -->
+  <rect x="80" y="154" width="40" height="18" rx="9" fill="#00897B"/>
+  <text x="100" y="167" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">TECH</text>
+  <text x="56" y="198" font-size="16" fill="#111111" font-weight="700">Classic RTS Generals Ported to iPhone</text>
+  <text x="56" y="218" font-size="12" fill="#555555">C&amp;C Generals open-sourced to macOS, iPhone, and iPad via Fable engine.</text>
+  <text x="56" y="234" font-size="12" fill="#555555">Community effort restores a 2003 classic to modern ARM devices.</text>
+  <!-- Impact bar -->
+  <text x="56" y="256" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="110" y="246" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="246" width="160" height="6" rx="3" fill="#00897B"/>
+  <text x="318" y="256" font-size="10" fill="#555555">8/10</text>
+  <line x1="40" y1="334" x2="760" y2="334" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 2: Jellyfish -->
+  <rect x="40" y="340" width="720" height="180" fill="#F7F7F5"/>
+  <text x="56" y="364" font-size="11" fill="#888888" font-weight="700">02</text>
+  <rect x="80" y="350" width="56" height="18" rx="9" fill="#0077CC"/>
+  <text x="108" y="363" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">SCIENCE</text>
+  <text x="56" y="394" font-size="16" fill="#111111" font-weight="700">Jellyfish Heal Wounds in Minutes: Scientists Study</text>
+  <text x="56" y="414" font-size="12" fill="#555555">MBL researchers find jellyfish close wounds in 5-10 minutes via rapid</text>
+  <text x="56" y="430" font-size="12" fill="#555555">cellular reorganization — potential keys for human wound therapy.</text>
+  <text x="56" y="452" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="110" y="442" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="442" width="180" height="6" rx="3" fill="#0077CC"/>
+  <text x="318" y="452" font-size="10" fill="#555555">9/10</text>
+  <line x1="40" y1="530" x2="760" y2="530" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 3: Shadcn/UI -->
+  <rect x="40" y="536" width="720" height="180" fill="#F7F7F5"/>
+  <text x="56" y="560" font-size="11" fill="#888888" font-weight="700">03</text>
+  <rect x="80" y="546" width="40" height="18" rx="9" fill="#00897B"/>
+  <text x="100" y="559" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">TECH</text>
+  <text x="56" y="590" font-size="16" fill="#111111" font-weight="700">Shadcn/UI Switches from Radix to Base UI</text>
+  <text x="56" y="610" font-size="12" fill="#555555">The 80,000-star React library shifts default headless UI to Base UI,</text>
+  <text x="56" y="626" font-size="12" fill="#555555">affecting millions of production applications in the React ecosystem.</text>
+  <text x="56" y="648" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="110" y="638" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="638" width="140" height="6" rx="3" fill="#00897B"/>
+  <text x="318" y="648" font-size="10" fill="#555555">7/10</text>
+  <line x1="40" y1="726" x2="760" y2="726" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 4: Cannabis/Heart -->
+  <rect x="40" y="732" width="720" height="180" fill="#F7F7F5"/>
+  <text x="56" y="756" font-size="11" fill="#888888" font-weight="700">04</text>
+  <rect x="80" y="742" width="56" height="18" rx="9" fill="#0077CC"/>
+  <text x="108" y="755" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">SCIENCE</text>
+  <text x="56" y="786" font-size="16" fill="#111111" font-weight="700">Cannabis Raises Heart Attack Risk Substantially</text>
+  <text x="56" y="806" font-size="12" fill="#555555">ACC study of 150,000+ participants links cannabis use to 20-30% higher</text>
+  <text x="56" y="822" font-size="12" fill="#555555">cardiovascular event rates, independent of tobacco use.</text>
+  <text x="56" y="844" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="110" y="834" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="834" width="160" height="6" rx="3" fill="#0077CC"/>
+  <text x="318" y="844" font-size="10" fill="#555555">8/10</text>
+  <line x1="40" y1="922" x2="760" y2="922" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 5: Sahel -->
+  <rect x="40" y="928" width="720" height="180" fill="#F7F7F5"/>
+  <text x="56" y="952" font-size="11" fill="#888888" font-weight="700">05</text>
+  <rect x="80" y="938" width="48" height="18" rx="9" fill="#E65100"/>
+  <text x="104" y="951" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">WORLD</text>
+  <text x="56" y="982" font-size="16" fill="#111111" font-weight="700">Medieval Fortifications Return to Africa's Sahel</text>
+  <text x="56" y="1002" font-size="12" fill="#555555">Sahel nations build earthwork berms and watchtowers against jihadist</text>
+  <text x="56" y="1018" font-size="12" fill="#555555">groups, echoing 1957 Morice Line strategy across hundreds of km.</text>
+  <text x="56" y="1040" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="110" y="1030" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="1030" width="160" height="6" rx="3" fill="#E65100"/>
+  <text x="318" y="1040" font-size="10" fill="#555555">8/10</text>
+  <line x1="40" y1="1118" x2="760" y2="1118" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- STORY 6: UI/UX -->
+  <rect x="40" y="1124" width="720" height="180" fill="#F7F7F5"/>
+  <text x="56" y="1148" font-size="11" fill="#888888" font-weight="700">06</text>
+  <rect x="80" y="1134" width="40" height="18" rx="9" fill="#00897B"/>
+  <text x="100" y="1147" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">TECH</text>
+  <text x="56" y="1178" font-size="16" fill="#111111" font-weight="700">UI Design: Buttons Must Behave as Buttons</text>
+  <text x="56" y="1198" font-size="12" fill="#555555">Viral essay argues modern UI breaks the fundamental contract of interactive</text>
+  <text x="56" y="1214" font-size="12" fill="#555555">elements — 387+ upvotes signal widespread developer frustration.</text>
+  <text x="56" y="1236" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="110" y="1226" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="1226" width="120" height="6" rx="3" fill="#00897B"/>
+  <text x="318" y="1236" font-size="10" fill="#555555">6/10</text>
+  <line x1="40" y1="1314" x2="760" y2="1314" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Footer -->
+  <text x="400" y="1345" text-anchor="middle" font-size="11" fill="#999999">Generated by AI · July 5, 2026 · Sources: Hacker News</text>
+  <text x="400" y="1365" text-anchor="middle" font-size="10" fill="#BBBBBB">twong6531.github.io/citation-site</text>
+  <!-- Bottom bar -->
+  <rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>
