@@ -1,0 +1,85 @@
+{
+  "date": "2026-07-06",
+  "generated_at": "2026-07-06T14:15:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Real-time rail network visualization: GB and France live maps go viral on Hacker News",
+      "angle": "Two interactive real-time rail maps (Great Britain and France) both hit HN top stories simultaneously with 249+ and 100+ points. Why does this captivate the internet? Deep dive into open transit data standards (GTFS-RT, Network Rail feeds, SNCF open data), why US transit still can't match this at scale, and what LA Metro and other US agencies would need to get there.",
+      "rationale": "Highest HN signal of the week directly in our niche. Two simultaneous viral rail-map stories is a once-a-season opportunity to ride organic interest in live transit data. Not yet covered. Time-sensitive — HN cycle is 24-48h.",
+      "target_length": "long",
+      "slug": "real-time-rail-maps-open-transit-data-2026",
+      "output_path": "drafts/articles/real-time-rail-maps-open-transit-data-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "How real-time transit data flows: from GPS transponder to rider's phone map",
+      "angle": "Visual explainer of the GTFS-Realtime pipeline — vehicle location beacon → agency feed server → GTFS-RT protobuf → aggregator/broker → consumer app → map tile. Show why GB works (Network Rail mandatory feeds) vs why US is fragmented (no federal mandate, 700+ agencies, 14 different AVL systems).",
+      "rationale": "Companion piece to Rank 1 article that stands alone as a shareable visual. Fresh topic — brt-vs-light-rail retries are suspended. First new infographic topic since 07-02.",
+      "target_length": "medium",
+      "slug": "gtfs-realtime-data-flow-infographic-2026",
+      "output_path": "drafts/infographics/gtfs-realtime-data-flow-infographic-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "video_script",
+      "topic": "Every train in Britain, live on your screen: the open data revolution in rail",
+      "angle": "Hook on the HN viral moment: 'This map shows every train moving in real time across Britain. Why can't we do this in America?' Walk through Network Rail's open data mandate, compare to Amtrak's scattered data, land on what it would take for a US equivalent.",
+      "rationale": "Viral hook + transit niche + replicable format. However: VIDEO SCRIPTS ARE ON HOLD until human reviews backlog and approves items via system/approved.json. Queued here for when hold lifts — do not write until approved.",
+      "target_length": "short",
+      "slug": "real-time-rail-maps-video-script-2026",
+      "output_path": "drafts/scripts/real-time-rail-maps-video-script-2026.md",
+      "hold": true,
+      "hold_reason": "Video script production on HOLD since 2026-06-18 pending human review of backlog. 5 needs-revision scripts remain unresolved."
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "AI marketing backlash and the transit tech credibility gap",
+      "angle": "HN story 'The AI Marketing Backlash: Why AI-First Brands Are Starting to Fall Flat' (43 pts) + Anthropic goodwill erosion story (63 pts). Angle for transit: agencies and mobility apps that slapped 'AI-powered' on basic rule-based features are now facing rider skepticism. What real AI in transit looks like vs. what was marketed.",
+      "rationale": "Ties two HN signals into our existing transit-app-dark-UX and AI coverage. Not yet covered from the backlash angle. Medium relevance to niche but strong cross-audience appeal.",
+      "target_length": "medium",
+      "slug": "ai-marketing-backlash-transit-tech-2026",
+      "output_path": "drafts/articles/ai-marketing-backlash-transit-tech-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "Gemini Code Assist shutdown: 11 days left for transit tech teams",
+      "angle": "Google kills Gemini Code Assist July 17. Transit agencies and mobility startups using it for code generation, API integration, and GTFS tooling need a migration path. Practical checklist: audit usage, evaluate GitHub Copilot / Cursor / Claude Code as alternatives, timeline for migration.",
+      "rationale": "Timeliness: 11 days until July 17 deadline. Ranked 5th because it has appeared in queue since 2026-07-03 without being written. Article agent unresponsive — flagging again.",
+      "target_length": "short",
+      "slug": "gemini-code-assist-shutdown-transit-tech-2026",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-tech-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "job": "article_writing",
+      "topic": "real-time-rail-maps-open-transit-data-2026",
+      "note": "Article agent has 0% production rate across 30 consecutive days. Retry #30+. This run queues the item — article agent must produce output or a diagnostic is required."
+    }
+  ],
+  "skip_topics": [
+    "NYC congestion pricing transit ridership (covered 2026-07-04/05)",
+    "ChatPlanner LLM transit routing (covered 2026-07-05)",
+    "Virginia SB 338 geolocation data ban (covered 2026-07-03/04/05)",
+    "July 4th holiday transit demand (covered 2026-07-04)",
+    "America 250th transit operations (covered 2026-07-04)",
+    "World Cup 2026 transit operations (covered extensively)",
+    "Tesla SpaceX transit empire (published 2026-07-05)",
+    "Transit app dark UX (published 2026-07-05)",
+    "Fare evasion economics (published 2026-07-05)",
+    "US cities transit gap (published 2026-07-05)",
+    "Dopamine fracking / attention extraction (published 2026-07-05)"
+  ],
+  "trend_signals": [
+    "Real-time map of Great Britain's rail network (249 pts HN — top transit signal this week)",
+    "Real-time map of France's rail network (HN top stories — paired with GB story)",
+    "GPT-5.6 Sol Ultra entering Codex (355 pts HN — AI tooling signal)",
+    "AI marketing backlash / AI-first brands failing (43 pts HN — relevant to transit tech)",
+    "Anthropic losing goodwill / model restrictions (63 pts HN — AI governance signal)"
+  ]
+}

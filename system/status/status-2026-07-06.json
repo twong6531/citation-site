@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-06",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold_backlog_day_30_no_new_scripts",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "PUBLISHING UNBLOCKED (2026-07-05): 5 QC-passed scripts were published yesterday. Publishing pipeline is no longer blocked for scripts. approved.json still lists the published slugs -- human should clear or update for next batch.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 30): drafts/articles/ has never had a file produced in 30 consecutive days. 0% article production rate across entire site history. Manual diagnostic is critically overdue.",
+    "BRT INFOGRAPHIC RETRIES SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 suspended since 2026-07-02. Manual diagnostic required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD: 5 needs-revision scripts remain in backlog (apple-gemini-2026, electric-axial-flux-motor, pokemon-go-drones, slime-mold-transit, transit-desert-pomdp). No new scripts until backlog resolved.",
+    "GOOGLE NEWS RSS FEED EMPTY: 9+ consecutive days of empty results. Manual check of feed URL required.",
+    "TOP SIGNAL TODAY (2026-07-06): Real-time GB rail map (249 pts HN) + France rail map (HN top) -- dual viral transit signal. Rank 1 article + Rank 2 infographic queued.",
+    "TIMELINESS: Gemini Code Assist shutdown July 17 -- 11 days remaining. Rank 5 explainer queued."
+  ],
+  "published_yesterday": 5,
+  "published_yesterday_slugs": [
+    "2026-06-13-script-tesla-spacex-transit-empire-script",
+    "2026-06-13-script-transit-app-dark-ux-2026-script",
+    "2026-06-14-script-fare-evasion-economics-script",
+    "2026-06-25-script-us-cities-transit-gap-script",
+    "2026-06-26-script-dopamine-fracking-script"
+  ]
+}
