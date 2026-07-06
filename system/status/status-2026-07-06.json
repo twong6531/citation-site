@@ -1,1 +1,31 @@
-ewogICJkYXRlIjogIjIwMjYtMDctMDYiLAogICJqb2JzIjogewogICAgImJyaWVmaW5nIjogImNvbXBsZXRlZCIsCiAgICAicmVzZWFyY2giOiAicGVuZGluZyIsCiAgICAiY29udGVudF9wbGFuIjogInBlbmRpbmciLAogICAgImFydGljbGVzIjogInBlbmRpbmciLAogICAgImluZm9ncmFwaGljcyI6ICJwZW5kaW5nIiwKICAgICJ2aWRlb19zY3JpcHRzIjogImhvbGRfYmFja2xvZ19kYXlfMzBfbm9fbmV3X3NjcmlwdHMiLAogICAgInFjIjogInBlbmRpbmciLAogICAgInB1Ymxpc2hpbmciOiAic2tpcHBlZF9ub19hcHByb3ZlZF9pdGVtcyIKICB9LAogICJxdWV1ZV9pdGVtcyI6IDUsCiAgImFsZXJ0cyI6IFsKICAgICJQVUJMSVNISU5HIFVOQkxPQ0tFRCAoMjAyNi0wNy0wNSk6IDUgUUMtcGFzc2VkIHNjcmlwdHMgd2VyZSBwdWJsaXNoZWQgeWVzdGVyZGF5LiBQdWJsaXNoaW5nIHBpcGVsaW5lIGlzIG5vIGxvbmdlciBibG9ja2VkIGZvciBzY3JpcHRzLiBhcHByb3ZlZC5qc29uIHN0aWxsIGxpc3RzIHRoZSBwdWJsaXNoZWQgc2x1Z3MgLS0gaHVtYW4gc2hvdWxkIGNsZWFyIG9yIHVwZGF0ZSBmb3IgbmV4dCBiYXRjaC4iLAogICAgIkFSVElDTEUgQUdFTlQgVU5SRVNQT05TSVZFIChEYXkgMzApOiBkcmFmdHMvYXJ0aWNsZXMvIGhhcyBuZXZlciBoYWQgYSBmaWxlIHByb2R1Y2VkIGluIDMwIGNvbnNlY3V0aXZlIGRheXMuIDAlIGFydGljbGUgcHJvZHVjdGlvbiByYXRlIGFjcm9zcyBlbnRpcmUgc2l0ZSBoaXN0b3J5LiBNYW51YWwgZGlhZ25vc3RpYyBpcyBjcml0aWNhbGx5IG92ZXJkdWUuIiwKICAgICJCUlQgSU5GT0dSQVBISUMgUkVUUklFUyBTVVNQRU5ERUQ6IEF1dG9tYXRlZCByZXRyaWVzIGZvciBicnQtdnMtbGlnaHQtcmFpbC1jb3N0LTIwMjYgc3VzcGVuZGVkIHNpbmNlIDIwMjYtMDctMDIuIE1hbnVhbCBkaWFnbm9zdGljIHJlcXVpcmVkIGJlZm9yZSByZS1xdWV1aW5nLiIsCiAgICAiVklERU8gU0NSSVBUUyBPTiBIT0xEOiA1IG5lZWRzLXJldmlzaW9uIHNjcmlwdHMgcmVtYWluIGluIGJhY2tsb2cgKGFwcGxlLWdlbWluaS0yMDI2LCBlbGVjdHJpYy1heGlhbC1mbHV4LW1vdG9yLCBwb2tlbW9uLWdvLWRyb25lcywgc2xpbWUtbW9sZC10cmFuc2l0LCB0cmFuc2l0LWRlc2VydC1wb21kcCkuIE5vIG5ldyBzY3JpcHRzIHVudGlsIGJhY2tsb2cgcmVzb2x2ZWQuIiwKICAgICJHT09HTEUgTkVXUyBSU1MgRkVFRCBFTVBUWTogOSsgY29uc2VjdXRpdmUgZGF5cyBvZiBlbXB0eSByZXN1bHRzLiBNYW51YWwgY2hlY2sgb2YgZmVlZCBVUkwgcmVxdWlyZWQuIiwKICAgICJUT1AgU0lHTkFMIFRPREFZICgyMDI2LTA3LTA2KTogUmVhbC10aW1lIEdCIHJhaWwgbWFwICgyNDkgcHRzIEhOKSArIEZyYW5jZSByYWlsIG1hcCAoSE4gdG9wKSAtLSBkdWFsIHZpcmFsIHRyYW5zaXQgc2lnbmFsLiBSYW5rIDEgYXJ0aWNsZSArIFJhbmsgMiBpbmZvZ3JhcGhpYyBxdWV1ZWQuIiwKICAgICJUSU1FTElORVNTOiBHZW1pbmkgQ29kZSBBc3Npc3Qgc2h1dGRvd24gSnVseSAxNyAtLSAxMSBkYXlzIHJlbWFpbmluZy4gUmFuayA1IGV4cGxhaW5lciBxdWV1ZWQuIgogIF0sCiAgInB1Ymxpc2hlZF95ZXN0ZXJkYXkiOiA1LAogICJwdWJsaXNoZWRfeWVzdGVyZGF5X3NsdWdzIjogWwogICAgIjIwMjYtMDYtMTMtc2NyaXB0LXRlc2xhLXNwYWNleC10cmFuc2l0LWVtcGlyZS1zY3JpcHQiLAogICAgIjIwMjYtMDYtMTMtc2NyaXB0LXRyYW5zaXQtYXBwLWRhcmstdXgtMjAyNi1zY3JpcHQiLAogICAgIjIwMjYtMDYtMTQtc2NyaXB0LWZhcmUtZXZhc2lvbi1lY29ub21pY3Mtc2NyaXB0IiwKICAgICIyMDI2LTA2LTI1LXNjcmlwdC11cy1jaXRpZXMtdHJhbnNpdC1nYXAtc2NyaXB0IiwKICAgICIyMDI2LTA2LTI2LXNjcmlwdC1kb3BhbWluZS1mcmFja2luZy1zY3JpcHQiCiAgXQp9Cg==
+{
+  "date": "2026-07-06",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold_backlog_day_30_no_new_scripts",
+    "qc": "completed",
+    "publishing": "skipped_no_approved_items"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "PUBLISHING UNBLOCKED (2026-07-05): 5 QC-passed scripts were published yesterday. Publishing pipeline is no longer blocked for scripts. approved.json still lists the published slugs -- human should clear or update for next batch.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 30): drafts/articles/ has never had a file produced in 30 consecutive days. 0% article production rate across entire site history. Manual diagnostic is critically overdue.",
+    "BRT INFOGRAPHIC RETRIES SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 suspended since 2026-07-02. Manual diagnostic required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD: 5 needs-revision scripts remain in backlog (apple-gemini-2026, electric-axial-flux-motor, pokemon-go-drones, slime-mold-transit, transit-desert-pomdp). No new scripts until backlog resolved.",
+    "GOOGLE NEWS RSS FEED EMPTY: 9+ consecutive days of empty results. Manual check of feed URL required.",
+    "TOP SIGNAL TODAY (2026-07-06): Real-time GB rail map (249 pts HN) + France rail map (HN top) -- dual viral transit signal. Rank 1 article + Rank 2 infographic queued.",
+    "TIMELINESS: Gemini Code Assist shutdown July 17 -- 11 days remaining. Rank 5 explainer queued."
+  ],
+  "published_yesterday": 5,
+  "published_yesterday_slugs": [
+    "2026-06-13-script-tesla-spacex-transit-empire-script",
+    "2026-06-13-script-transit-app-dark-ux-2026-script",
+    "2026-06-14-script-fare-evasion-economics-script",
+    "2026-06-25-script-us-cities-transit-gap-script",
+    "2026-06-26-script-dopamine-fracking-script"
+  ]
+}

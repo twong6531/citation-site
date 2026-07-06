@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-06",
+  "total_reviewed": 0,
+  "note": "No new content produced today (Day 30). Video script production on hold (Day 30 of approval freeze — hold reason: 5 needs-revision scripts unresolved in backlog). No articles produced (article agent unresponsive — 30 consecutive days, 0% production rate across entire site history). No infographics produced (BRT infographic retries suspended since 2026-07-02, no new infographics queued). Summary reflects current backlog QC state; all verdicts carry forward from prior QC runs.",
+  "backlog_total_reviewed": 10,
+  "passed": 5,
+  "revise": 5,
+  "failed": 0,
+  "ready_to_publish": [],
+  "note_on_published": "5 QC-passed scripts (tesla-spacex-transit-empire-script, transit-app-dark-ux-2026-script, fare-evasion-economics-script, us-cities-transit-gap-script, dopamine-fracking-script) were published on 2026-07-05. system/approved.json still lists these slugs and should be cleared before next batch.",
+  "needs_revision": [
+    {
+      "slug": "apple-gemini-2026-script",
+      "score": 65,
+      "revision_notes": "REEL: Cut voiceover to under 200 words (currently ~249). Trim Scene 2 — drop the 'Two years later Siri's reasoning is routed through Gemini 1.5 Pro...' expansion; keep just the contrast line. Tighten Scene 3 to 2 sentences max. Target: HOOK 25w, Scene 1 45w, Scene 2 35w, Scene 3 45w, CTA 25w = ~175w. YOUTUBE: Recount spoken words precisely; trim Section 3 regulatory discussion if over 1,200."
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "score": 58,
+      "revision_notes": "FACTUAL FIX (REQUIRED): Verify which hypercars actually use YASA axial flux motors before publish — McLaren Artura and Lamborghini Revuelto YASA sourcing must be confirmed. Replace Wikipedia citations with primary sources: Mercedes-Benz/YASA press release for June 2026 mass-production claim; YASA technical datasheets for 42 kW/kg spec; IEA or BloombergNEF for global EV bus fleet data. REEL: Trim Scene 3 to under 200 words total."
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "score": 62,
+      "revision_notes": "REEL FACTUAL FIX (REQUIRED): Hedge drone claim in Scene 3 — remove implication of confirmed data pipeline, add conditional framing. Fix 15M figure attribution to Ingress, not Pokemon Go AR scans. Replace Wikipedia citations with primary sources (Vice/Motherboard DHS/Venntel reporting 2020, EFF or ACLU on warrantless data purchases)."
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "score": 72,
+      "revision_notes": "REEL ONLY: Scene 3 runs ~87 words — cut to under 35. Compress equity point to one sentence. Drop the 'for anyone who's ever watched a bus drive past' sentence. Also trim Scene 2 closing. Target: under 180 words total. Content quality is high; sole issue is reel pacing."
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "score": 60,
+      "revision_notes": "REEL REQUIRES NEAR-COMPLETE REWRITE: Current reel is compressed YouTube script, not reel format. Rewrite to: HOOK (~20w): '55 million Americans have no functional transit. An AI just proved it can fix that.' Scene 1 (~35w): stat + Khoroshevskaya & Perukari 2026 source. Scene 2 (~50w): no-ridership-data advantage, breaks the catch-22. Scene 3 (~35w): 5-point improvement = hundreds of thousands of people. CTA (~20w). Total: ~160w. YouTube: verify word count within 600-1200 range."
+    }
+  ],
+  "blocked": [],
+  "timely_items_not_produced": [
+    {
+      "slug": "real-time-rail-maps-video-script-2026",
+      "rank": 3,
+      "reason": "Scripts on hold — backlog unresolved",
+      "freshness_note": "URGENT: Dual HN viral signal today — GB rail map (249 pts) + France rail map (HN top). Topic window is 24–48h from 2026-07-06. Signal will be cold by 2026-07-08."
+    },
+    {
+      "slug": "gemini-code-assist-shutdown-transit-tech-july-2026",
+      "rank": 5,
+      "reason": "Article agent unresponsive AND scripts on hold",
+      "freshness_note": "HARD DEADLINE: July 17 — only 11 days remain. Window permanently closes on deadline. Escalation: this is now past the 2-week production buffer that would allow safe publish before deadline."
+    },
+    {
+      "slug": "nyc-congestion-pricing-transit-ridership-equity-2026",
+      "rank": 1,
+      "reason": "Article agent unresponsive — 0% production rate across 30 days",
+      "freshness_note": "arXiv paper on NYC congestion pricing gains; freshness advantage fades within ~2 weeks"
+    }
+  ],
+  "system_alerts": [
+    "ARTICLE AGENT UNRESPONSIVE (Day 30): drafts/articles/ has never had a file produced in 30 consecutive days. 0% article production rate across entire site history. Manual diagnostic is critically overdue — automated QC cannot catch a production failure that has persisted this long.",
+    "APPROVED.JSON STALE: system/approved.json still lists 5 slugs published on 2026-07-05. Must be cleared before next publish batch can be processed.",
+    "VIDEO SCRIPTS ON HOLD (Day 30): 5 needs-revision scripts block new production. Revise any one to unblock the queue.",
+    "GEMINI SHUTDOWN DEADLINE: gemini-code-assist-shutdown-transit-tech-july-2026 has a hard deadline of July 17 (11 days). No automated agent will produce it under current hold/unresponsive conditions. Manual fast-track required.",
+    "HN RAIL MAPS SIGNAL EXPIRING: real-time-rail-maps signal is 24–48h window from today. If backlog hold is not lifted by 2026-07-07, topic window is lost.",
+    "INFOGRAPHIC AGENT SUSPENDED: BRT infographic retries remain suspended since 2026-07-02. Manual diagnostic required before re-queuing.",
+    "GOOGLE NEWS RSS FEED EMPTY: 9+ consecutive days of empty results. Feed access/parsing requires manual fix."
+  ]
+}
