@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="120" fill="#111111"/>
+  <text x="48" y="52" font-size="11" fill="#888888" letter-spacing="3" font-weight="400">
+    <tspan>TRANSIT RESEARCH DIGEST</tspan>
+  </text>
+  <text x="48" y="82" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">
+    <tspan>Urban Mobility Intelligence</tspan>
+  </text>
+  <text x="48" y="106" font-size="12" fill="#666666" letter-spacing="1">
+    <tspan>JULY 6, 2026  ·  10 PAPERS ANALYZED  ·  AUTONOMOUS RESEARCH SYSTEM</tspan>
+  </text>
+
+  <!-- Divider -->
+  <line x1="48" y1="140" x2="752" y2="140" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- KEY FINDINGS -->
+  <text x="48" y="175" font-size="10" fill="#888888" letter-spacing="3" font-weight="400">
+    <tspan>KEY FINDINGS</tspan>
+  </text>
+
+  <!-- Finding 1 -->
+  <rect x="48" y="192" width="32" height="32" fill="#111111"/>
+  <text x="64" y="213" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+    <tspan>1</tspan>
+  </text>
+  <text x="96" y="206" font-size="14" fill="#111111" font-weight="700">
+    <tspan>NYC Congestion Pricing Works</tspan>
+  </text>
+  <text x="96" y="224" font-size="12" fill="#555555" font-weight="400">
+    <tspan>Bus &amp; subway ridership rose significantly vs. counterfactual; transit gains</tspan>
+  </text>
+  <text x="96" y="240" font-size="12" fill="#555555" font-weight="400">
+    <tspan>extended beyond Manhattan's Congestion Relief Zone to outer boroughs.</tspan>
+  </text>
+
+  <!-- Finding 2 -->
+  <rect x="48" y="264" width="32" height="32" fill="#111111"/>
+  <text x="64" y="285" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+    <tspan>2</tspan>
+  </text>
+  <text x="96" y="278" font-size="14" fill="#111111" font-weight="700">
+    <tspan>Swarm Routing Beats Fixed Routes by Up to 101%</tspan>
+  </text>
+  <text x="96" y="296" font-size="12" fill="#555555" font-weight="400">
+    <tspan>Slime-mold-inspired distributed transit algorithm delivers more passengers</tspan>
+  </text>
+  <text x="96" y="312" font-size="12" fill="#555555" font-weight="400">
+    <tspan>with 75%+ less walking time — especially in low-density semi-rural areas.</tspan>
+  </text>
+
+  <!-- Finding 3 -->
+  <rect x="48" y="336" width="32" height="32" fill="#111111"/>
+  <text x="64" y="357" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+    <tspan>3</tspan>
+  </text>
+  <text x="96" y="350" font-size="14" fill="#111111" font-weight="700">
+    <tspan>Deprived Residents Already Bridge Mobility Gaps</tspan>
+  </text>
+  <text x="96" y="368" font-size="12" fill="#555555" font-weight="400">
+    <tspan>In 64 Indian &amp; Mexican cities, low-income residents travel to better-off areas</tspan>
+  </text>
+  <text x="96" y="384" font-size="12" fill="#555555" font-weight="400">
+    <tspan>far more than gravity models predict — a compensatory mobility pattern.</tspan>
+  </text>
+
+  <line x1="48" y1="408" x2="752" y2="408" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- PAPER OF THE DAY -->
+  <text x="48" y="436" font-size="10" fill="#888888" letter-spacing="3">
+    <tspan>PAPER OF THE DAY</tspan>
+  </text>
+  <rect x="48" y="448" width="704" height="108" fill="#111111"/>
+  <text x="72" y="476" font-size="15" fill="#FFFFFF" font-weight="700">
+    <tspan>Public transit gains and spatially uneven travel demand changes</tspan>
+  </text>
+  <text x="72" y="496" font-size="15" fill="#FFFFFF" font-weight="700">
+    <tspan>after NYC congestion pricing</tspan>
+  </text>
+  <text x="72" y="518" font-size="11" fill="#AAAAAA">
+    <tspan>Li, Zhuang, Li, Shen, Cao, Zheng, Wang, Zhao  ·  arXiv 2606.17530  ·  June 2026</tspan>
+  </text>
+  <text x="72" y="540" font-size="12" fill="#CCCCCC">
+    <tspan>First empirical study of the US's first cordon pricing program. Foundation model counterfactuals</tspan>
+  </text>
+  <text x="72" y="556" font-size="12" fill="#CCCCCC">
+    <tspan>reveal outer-borough transit gains that challenge both critics and boosters' spatial assumptions.</tspan>
+  </text>
+
+  <line x1="48" y1="576" x2="752" y2="576" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="48" y="604" font-size="10" fill="#888888" letter-spacing="3">
+    <tspan>EMERGING THEMES</tspan>
+  </text>
+
+  <rect x="48" y="620" width="4" height="96" fill="#111111"/>
+  <text x="64" y="638" font-size="12" fill="#111111" font-weight="700">
+    <tspan>AI-Native Planning</tspan>
+  </text>
+  <text x="64" y="656" font-size="11" fill="#555555"><tspan>LLMs, causal graphs, and</tspan></text>
+  <text x="64" y="672" font-size="11" fill="#555555"><tspan>swarm algorithms are</tspan></text>
+  <text x="64" y="688" font-size="11" fill="#555555"><tspan>becoming the connective</tspan></text>
+  <text x="64" y="704" font-size="11" fill="#555555"><tspan>tissue of transit decisions.</tspan></text>
+
+  <rect x="304" y="620" width="4" height="96" fill="#111111"/>
+  <text x="320" y="638" font-size="12" fill="#111111" font-weight="700"><tspan>Pricing as Catalyst</tspan></text>
+  <text x="320" y="656" font-size="11" fill="#555555"><tspan>NYC's cordon pricing is the</tspan></text>
+  <text x="320" y="672" font-size="11" fill="#555555"><tspan>first US empirical proof that</tspan></text>
+  <text x="320" y="688" font-size="11" fill="#555555"><tspan>bold policy drives riders to</tspan></text>
+  <text x="320" y="704" font-size="11" fill="#555555"><tspan>buses and subways.</tspan></text>
+
+  <rect x="560" y="620" width="4" height="96" fill="#111111"/>
+  <text x="576" y="638" font-size="12" fill="#111111" font-weight="700"><tspan>Equity First</tspan></text>
+  <text x="576" y="656" font-size="11" fill="#555555"><tspan>Pricing shocks, fare policy,</tspan></text>
+  <text x="576" y="672" font-size="11" fill="#555555"><tspan>and mobility deprivation</tspan></text>
+  <text x="576" y="688" font-size="11" fill="#555555"><tspan>produce heterogeneous</tspan></text>
+  <text x="576" y="704" font-size="11" fill="#555555"><tspan>neighborhood outcomes.</tspan></text>
+
+  <line x1="48" y1="736" x2="752" y2="736" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="48" y="764" font-size="10" fill="#888888" letter-spacing="3"><tspan>CONFIDENCE RATINGS  ·  10 PAPERS</tspan></text>
+  <text x="48" y="796" font-size="11" fill="#111111" font-weight="700"><tspan>HIGH</tspan></text>
+  <rect x="120" y="782" width="392" height="18" fill="#111111"/>
+  <text x="522" y="796" font-size="11" fill="#555555"><tspan>6 papers (60%)</tspan></text>
+  <text x="48" y="828" font-size="11" fill="#111111" font-weight="700"><tspan>MEDIUM</tspan></text>
+  <rect x="120" y="814" width="262" height="18" fill="#888888"/>
+  <text x="392" y="828" font-size="11" fill="#555555"><tspan>4 papers (40%)</tspan></text>
+  <text x="48" y="860" font-size="11" fill="#111111" font-weight="700"><tspan>LOW</tspan></text>
+  <text x="130" y="860" font-size="11" fill="#555555"><tspan>0 papers</tspan></text>
+
+  <line x1="48" y1="884" x2="752" y2="884" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="48" y="912" font-size="10" fill="#888888" letter-spacing="3"><tspan>ACTIONABLE TAKEAWAYS</tspan></text>
+  <rect x="48" y="928" width="8" height="8" fill="#111111"/>
+  <text x="68" y="937" font-size="12" fill="#111111"><tspan>Use time-series foundation model counterfactuals to evaluate pricing policy when control groups</tspan></text>
+  <text x="68" y="953" font-size="12" fill="#111111"><tspan>are unavailable — the NYC framework is now replicable.</tspan></text>
+  <rect x="48" y="972" width="8" height="8" fill="#111111"/>
+  <text x="68" y="981" font-size="12" fill="#111111"><tspan>Deploy causal (not correlational) demand models for micromobility hub siting, calibrated</tspan></text>
+  <text x="68" y="997" font-size="12" fill="#111111"><tspan>to local urban typology — one template does not fit all city types.</tspan></text>
+  <rect x="48" y="1016" width="8" height="8" fill="#111111"/>
+  <text x="68" y="1025" font-size="12" fill="#111111"><tspan>Evaluate T-REX for continental-scale journey planning: sub-10ms queries, 2-min precompute.</tspan></text>
+  <rect x="48" y="1044" width="8" height="8" fill="#111111"/>
+  <text x="68" y="1053" font-size="12" fill="#111111"><tspan>Fare-free bus pilots need explicit revenue subsidy plans alongside the ridership projections —</tspan></text>
+  <text x="68" y="1069" font-size="12" fill="#111111"><tspan>simulation shows large equity gains but real revenue gaps that require political preparation.</tspan></text>
+
+  <line x1="48" y1="1092" x2="752" y2="1092" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- PAPER LIST -->
+  <text x="48" y="1120" font-size="10" fill="#888888" letter-spacing="3"><tspan>ALL PAPERS  ·  JULY 2026</tspan></text>
+  <text x="48" y="1148" font-size="11" fill="#111111" font-weight="700"><tspan>01</tspan></text>
+  <text x="80" y="1148" font-size="11" fill="#111111"><tspan>NYC Congestion Pricing → Transit Gains (Li et al.)  ·  HIGH</tspan></text>
+  <text x="48" y="1168" font-size="11" fill="#111111" font-weight="700"><tspan>02</tspan></text>
+  <text x="80" y="1168" font-size="11" fill="#111111"><tspan>NYC Fare Policy Simulation, Socioeconomic-Aware (Wischhover et al.)  ·  HIGH</tspan></text>
+  <text x="48" y="1188" font-size="11" fill="#111111" font-weight="700"><tspan>03</tspan></text>
+  <text x="80" y="1188" font-size="11" fill="#111111"><tspan>ChatPlanner: LLM-Personalized Transit Routing (Yang, Xue, Chen)  ·  MEDIUM</tspan></text>
+  <text x="48" y="1208" font-size="11" fill="#111111" font-weight="700"><tspan>04</tspan></text>
+  <text x="80" y="1208" font-size="11" fill="#111111"><tspan>Slime-Mold Swarm Transit Routing, 28-101% Gain (Burke et al.)  ·  MEDIUM</tspan></text>
+  <text x="48" y="1228" font-size="11" fill="#111111" font-weight="700"><tspan>05</tspan></text>
+  <text x="80" y="1228" font-size="11" fill="#111111"><tspan>E-Scooter Hub Siting via Causal AI, 29 German Cities (Jin et al.)  ·  HIGH</tspan></text>
+  <text x="48" y="1248" font-size="11" fill="#111111" font-weight="700"><tspan>06</tspan></text>
+  <text x="80" y="1248" font-size="11" fill="#111111"><tspan>T-REX: Sub-10ms Journey Planning at Europe Scale (Sauer et al.)  ·  HIGH</tspan></text>
+  <text x="48" y="1268" font-size="11" fill="#111111" font-weight="700"><tspan>07</tspan></text>
+  <text x="80" y="1268" font-size="11" fill="#111111"><tspan>Mobility Bubble Breaking in Deprived Areas, India &amp; Mexico (Liao et al.)  ·  HIGH</tspan></text>
+  <text x="48" y="1288" font-size="11" fill="#111111" font-weight="700"><tspan>08</tspan></text>
+  <text x="80" y="1288" font-size="11" fill="#111111"><tspan>Foundation Models + Urban Mobility for Socioeconomic Prediction (Guo et al.)  ·  MEDIUM</tspan></text>
+  <text x="48" y="1308" font-size="11" fill="#111111" font-weight="700"><tspan>09</tspan></text>
+  <text x="80" y="1308" font-size="11" fill="#111111"><tspan>Recurring GTFS Schedule DayTypes: Stable Identification (Makarov, Taubkin)  ·  MEDIUM</tspan></text>
+  <text x="48" y="1328" font-size="11" fill="#111111" font-weight="700"><tspan>10</tspan></text>
+  <text x="80" y="1328" font-size="11" fill="#111111"><tspan>Mobility Network Centrality Predicts Urban Resilience (Chen et al.)  ·  HIGH</tspan></text>
+
+  <line x1="48" y1="1352" x2="752" y2="1352" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- FOOTER -->
+  <text x="48" y="1380" font-size="10" fill="#888888" letter-spacing="1"><tspan>TRANSIT RESEARCH DIGEST  ·  JULY 6, 2026  ·  AUTONOMOUS RESEARCH SYSTEM</tspan></text>
+  <text x="48" y="1400" font-size="10" fill="#AAAAAA"><tspan>Papers sourced from arXiv. Analysis performed by Claude. Not peer reviewed.</tspan></text>
+  <text x="48" y="1420" font-size="10" fill="#AAAAAA"><tspan>twong6531.github.io/citation-site</tspan></text>
+</svg>
