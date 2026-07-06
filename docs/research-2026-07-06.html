@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 6, 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0d0d;
+    --surface: #1a1a1a;
+    --surface2: #222222;
+    --border: #2e2e2e;
+    --accent: #e8ff70;
+    --accent2: #70d0ff;
+    --text: #e8e8e8;
+    --text2: #999999;
+    --text3: #666666;
+    --high: #4ade80;
+    --med: #facc15;
+    --low: #f87171;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* HEADER */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 32px 0 24px;
+    margin-bottom: 48px;
+  }
+  .site-header .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .site-header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .site-header .meta {
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: 1px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--text3);
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    border-radius: 2px;
+  }
+  .exec-summary h2 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .exec-summary p {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* THEMES */
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .theme-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 2px;
+  }
+  .theme-card .num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .theme-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .theme-card p {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  /* PAPER OF THE DAY */
+  .potd {
+    background: #fff;
+    color: #111;
+    padding: 32px;
+    margin-bottom: 48px;
+    border-radius: 2px;
+  }
+  .potd .potd-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .potd h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 12px;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+  }
+  .potd .potd-meta {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .potd p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  /* INFOGRAPHIC EMBED */
+  .infographic-section {
+    margin-bottom: 48px;
+  }
+  .infographic-wrapper {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: 2px;
+  }
+  .infographic-wrapper svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .infographic-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--border); color: var(--text); }
+
+  /* CONTRARIAN INSIGHTS */
+  .contrarian-list {
+    margin-bottom: 48px;
+  }
+  .contrarian-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contrarian-item:last-child { border-bottom: none; }
+  .contrarian-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--accent);
+  }
+  .contrarian-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* TAKEAWAYS */
+  .takeaway-list {
+    margin-bottom: 48px;
+  }
+  .takeaway-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+    border-radius: 2px;
+  }
+  .takeaway-dot {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 7px;
+  }
+  .takeaway-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* PAPER CARDS */
+  .papers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+  .paper-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .paper-card-header {
+    display: flex;
+    gap: 0;
+    cursor: pointer;
+    padding: 20px 24px;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .paper-card-header:hover { background: var(--surface2); }
+  .paper-num {
+    flex-shrink: 0;
+    font-size: 11px;
+    color: var(--text3);
+    font-weight: 700;
+    padding-top: 2px;
+    width: 24px;
+  }
+  .paper-info { flex: 1; }
+  .paper-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .paper-authors {
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 6px;
+  }
+  .paper-summary {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.55;
+  }
+  .paper-confidence {
+    flex-shrink: 0;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    height: fit-content;
+    margin-top: 2px;
+  }
+  .conf-high { background: rgba(74,222,128,0.12); color: var(--high); border: 1px solid rgba(74,222,128,0.2); }
+  .conf-medium { background: rgba(250,204,21,0.12); color: var(--med); border: 1px solid rgba(250,204,21,0.2); }
+  .conf-low { background: rgba(248,113,113,0.12); color: var(--low); border: 1px solid rgba(248,113,113,0.2); }
+
+  .paper-detail {
+    display: none;
+    padding: 0 24px 24px 64px;
+    border-top: 1px solid var(--border);
+  }
+  .paper-card.open .paper-detail { display: block; }
+
+  .paper-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .detail-section h4 {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .detail-section p, .detail-section ul {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.65;
+  }
+  .detail-section ul { padding-left: 16px; }
+  .detail-section ul li { margin-bottom: 4px; }
+  .detail-section.full { grid-column: 1 / -1; }
+
+  .paper-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--accent2);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  .paper-link:hover { text-decoration: underline; }
+
+  /* LONG TERM */
+  .long-term {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    border-radius: 2px;
+  }
+  .long-term h2 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .long-term p {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.75;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    margin-top: 48px;
+  }
+  .site-footer p {
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+  }
+  .site-footer a {
+    color: var(--text3);
+    text-decoration: none;
+  }
+  .site-footer a:hover { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .themes-grid { grid-template-columns: 1fr; }
+    .paper-detail-grid { grid-template-columns: 1fr; }
+    body { padding: 0 16px 60px; }
+    .site-header h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="label">Transit Research Digest</div>
+  <h1>Urban Mobility Intelligence</h1>
+  <div class="meta">JULY 6, 2026 &nbsp;·&nbsp; 10 PAPERS ANALYZED &nbsp;·&nbsp; AUTONOMOUS RESEARCH SYSTEM</div>
+  <a href="research.html" class="back-link">← ARCHIVE INDEX</a>
+</header>
+
+<!-- EXECUTIVE SUMMARY -->
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <p>Today's transit research coalesces around three intersecting forces reshaping urban mobility: (1) AI-native tools that optimize routing, demand forecasting, and infrastructure siting with unprecedented granularity; (2) natural experiments — especially NYC's landmark congestion pricing program — providing real-world evidence that bold policy can redirect commuters to transit; and (3) an emerging equity imperative, with researchers exposing how pricing shocks, fare structures, and mobility deprivation play out unevenly across income and neighborhood lines. Across 10 papers, a consistent signal emerges: cities that intelligently sequence pricing, network design, and data infrastructure unlock ridership gains while cities that simply add capacity without addressing equity risk deepening spatial inequality.</p>
+</div>
+
+<!-- EMERGING THEMES -->
+<div class="section-label">Emerging Themes</div>
+<div class="themes-grid">
+  <div class="theme-card">
+    <div class="num">01</div>
+    <h3>AI-Native Planning</h3>
+    <p>LLMs, causal graphs, and swarm algorithms are becoming the connective tissue of transit planning decisions — from personalized routing to city-scale hub siting.</p>
+  </div>
+  <div class="theme-card">
+    <div class="num">02</div>
+    <h3>Pricing as Catalyst</h3>
+    <p>NYC's cordon pricing is the first US empirical proof that bold policy drives riders to buses and subways — and the spillover reaches outer boroughs, not just Manhattan.</p>
+  </div>
+  <div class="theme-card">
+    <div class="num">03</div>
+    <h3>Equity as First Variable</h3>
+    <p>Pricing shocks, fare policy, and mobility deprivation produce heterogeneous outcomes across neighborhoods — equity analysis is moving from footnote to headline.</p>
+  </div>
+</div>
+
+<!-- PAPER OF THE DAY -->
+<div class="potd">
+  <div class="potd-label">⭐ Paper of the Day</div>
+  <h2>Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</h2>
+  <div class="potd-meta">Li, Zhuang, Li, Shen, Cao, Zheng, Wang, Zhao &nbsp;·&nbsp; arXiv 2606.17530 &nbsp;·&nbsp; June 2026</div>
+  <p>As the first empirical evaluation of the United States' first cordon-based congestion pricing program, this paper delivers the kind of real-world evidence that will shape transit policy for a generation. Using time-series foundation models to construct probabilistic counterfactuals — removing the need for a clean control group — it finds that bus and subway ridership rose significantly versus the no-policy scenario, while overall travel demand dropped modestly. Critically, the transit gains extend well beyond Manhattan's Congestion Relief Zone into outer-borough neighborhoods, challenging both critics and boosters to rethink their spatial assumptions. The equity analysis reveals that adaptation was far from uniform across income levels.</p>
+</div>
+
+<!-- SVG INFOGRAPHIC EMBED -->
+<div class="infographic-section">
+  <div class="section-label">Data Infographic</div>
+  <div class="infographic-wrapper">
+    <img src="research-infographic-2026-07-06.svg" alt="Transit Research Infographic — July 6, 2026" style="width:100%;display:block;">
+  </div>
+  <div class="infographic-actions">
+    <a href="research-infographic-2026-07-06.svg" download class="btn">Download SVG</a>
+  </div>
+</div>
+
+<!-- CONTRARIAN INSIGHTS -->
+<div class="section-label">Contrarian Insights</div>
+<div class="contrarian-list">
+  <div class="contrarian-item">
+    <div class="contrarian-icon">!</div>
+    <div class="contrarian-text">The NYC congestion pricing study reveals transit gains <strong>extend well beyond Manhattan's core</strong> — the policy reached outer-borough neighborhoods not in the official 'Congestion Relief Zone', suggesting spillover effects planners rarely model and critics rarely credit.</div>
+  </div>
+  <div class="contrarian-item">
+    <div class="contrarian-icon">!</div>
+    <div class="contrarian-text">Swarm-based transit routing inspired by <strong>slime mold biology</strong> outperforms fixed-route networks by 28–101% depending on density context — an unconventional algorithm family that mainstream transit agencies have largely ignored but which performs best in precisely the low-density areas where agencies struggle most.</div>
+  </div>
+  <div class="contrarian-item">
+    <div class="contrarian-icon">!</div>
+    <div class="contrarian-text">Deprivation research from India and Mexico shows residents already compensate for local amenity deficits through 'bubble breaking' cross-neighborhood travel — meaning <strong>improved local transit could actually reduce cross-city movement</strong>, not increase it, with surprising implications for network design.</div>
+  </div>
+</div>
+
+<!-- ACTIONABLE TAKEAWAYS -->
+<div class="section-label">Actionable Takeaways</div>
+<div class="takeaway-list">
+  <div class="takeaway-item">
+    <div class="takeaway-dot"></div>
+    <div class="takeaway-text"><strong>Adopt time-series foundation model counterfactuals</strong> (as demonstrated for NYC) to evaluate policy impacts when traditional control groups are unavailable — the methodology is now replicable by peer agencies.</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-dot"></div>
+    <div class="takeaway-text"><strong>Deploy causal (not correlational) demand models</strong> for micromobility hub siting, calibrated to local urban typology — one template does not fit large cities, university towns, and industrial zones equally.</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-dot"></div>
+    <div class="takeaway-text"><strong>Evaluate T-REX for continental-scale journey planning:</strong> sub-10ms queries on a Europe-wide network, 2-minute precompute, seconds for real-time update integration — the bar for routing infrastructure has moved.</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-dot"></div>
+    <div class="takeaway-text"><strong>Fare-free bus pilots require explicit revenue subsidy plans</strong> alongside the ridership projections — simulation shows substantial low-income benefit but real revenue gaps that need political preparation before announcement.</div>
+  </div>
+</div>
+
+<!-- ALL PAPERS -->
+<div class="section-label">All Papers — July 2026</div>
+<div class="papers-grid">
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">01</div>
+      <div class="paper-info">
+        <div class="paper-title">Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</div>
+        <div class="paper-authors">Li, Zhuang, Li, Shen, Cao, Zheng, Wang, Zhao — arXiv 2606.17530</div>
+        <div class="paper-summary">NYC's January 2025 cordon pricing program measurably boosted bus and subway ridership beyond the Manhattan core while modestly reducing overall travel demand.</div>
+      </div>
+      <div class="paper-confidence conf-high">High</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Bus and subway ridership increased significantly vs. counterfactual no-policy demand</li>
+            <li>Overall travel demand decreased modestly — program reduced VMT without crushing mobility</li>
+            <li>Transit gains extended beyond the Congestion Relief Zone to outer neighborhoods</li>
+            <li>Socio-demographic heterogeneity: adaptation differed substantially across income groups</li>
+            <li>Time-series foundation models enabled uncertainty-aware counterfactuals without clean control groups</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>Time-series foundation model counterfactual forecasting applied to bus, subway, and aggregate trip data; probabilistic uncertainty quantification; spatial and socio-demographic decomposition.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Transit agencies, urban planners, city council members, transport economists, equity advocates.</p>
+        </div>
+        <div class="detail-section full">
+          <h4>Limitations</h4>
+          <p>Limited to first months post-implementation; behavioral adaptation may continue; foundation model counterfactuals require validation against true controls where available.</p>
+          <a href="https://arxiv.org/abs/2606.17530" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">02</div>
+      <div class="paper-info">
+        <div class="paper-title">Simulating Public Transit Fare Policies in NYC: An Efficient, Socioeconomic-Aware Framework</div>
+        <div class="paper-authors">Wischhover, Amiri, Ha, Yoo, Li, Züfle, Kim — arXiv 2606.21897</div>
+        <div class="paper-summary">An agent-based simulation of NYC fare policy scenarios reveals fare-free buses strongly benefit low-income riders but create revenue gaps requiring subsidy planning.</div>
+      </div>
+      <div class="paper-confidence conf-high">High</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Fare changes modestly affect total ridership but significantly alter modal composition</li>
+            <li>Fare-free bus produces the largest benefit for lower-income riders by reducing fare burden</li>
+            <li>Distance-based pricing shifts some riders away from transit network edges</li>
+            <li>Sampling-based computation reduces cost while maintaining aggregate accuracy</li>
+            <li>Revenue implications of fare-free require explicit subsidy modeling</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>Synthetic population generation; agent-based simulation; multimodal travel-time estimation; fare-sensitive mode choice models; sampling optimization for scalability.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Transit agency CFOs, equity advocates, urban policy researchers, city budget offices.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2606.21897" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">03</div>
+      <div class="paper-info">
+        <div class="paper-title">ChatPlanner: A Large Language Model Framework for Personalized Public Transit Routing</div>
+        <div class="paper-authors">Yang, Xue, Chen — arXiv 2606.15315</div>
+        <div class="paper-summary">ChatPlanner combines fine-tuned LLMs with RAG to extract personalized rider preferences from natural language and integrate them into transit routing algorithms.</div>
+      </div>
+      <div class="paper-confidence conf-medium">Medium</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Fine-tuning enforces required output structure and learns general preference patterns</li>
+            <li>RAG provides query-specific context to resolve imprecise conversational language</li>
+            <li>Combined FT+RAG achieves highest accuracy in routing info extraction and preference interpretation</li>
+            <li>Framework identifies valuable route alternatives that standard planners miss</li>
+            <li>Validated across 8 personas and 5 contexts for diverse preference coverage</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>LLM fine-tuning + RAG; preference dataset construction with 8 personas × 5 contexts; integration with optimization-based transit routing algorithm.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Transit app developers, MaaS platforms, accessibility advocates, urban computing researchers.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2606.15315" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">04</div>
+      <div class="paper-info">
+        <div class="paper-title">A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework</div>
+        <div class="paper-authors">Burke, Comstock, Graham, Malenda, Garnier, Swissler — arXiv 2606.06189</div>
+        <div class="paper-summary">A distributed, slime-mold-inspired algorithm for demand-responsive transit routing increases passenger delivery rates by 28–101% vs. fixed-route networks.</div>
+      </div>
+      <div class="paper-confidence conf-medium">Medium</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Slime-mold physarum algorithm naturally optimizes network flow by reinforcing high-demand pathways</li>
+            <li>Dynamic transfers between vehicles enabled through cooperative bidding process</li>
+            <li>28% gain suburban, 49% urban, 101% semi-rural vs. fixed-route baseline</li>
+            <li>Over 75% reduction in passenger walking time across all scenarios</li>
+            <li>Fully distributed — no central scheduler required, improving resilience</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>Agent-based simulation on OpenStreetMap road networks; slime-mold-inspired routing algorithm; cooperative bidding for passenger allocation and dynamic transfers.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Small/mid-size transit operators, rural mobility planners, smart city technologists, operations research teams.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2606.06189" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">05</div>
+      <div class="paper-info">
+        <div class="paper-title">From Causal Discovery to Implementation: An Agentic AI Framework for E-Scooter Mobility Hub Planning Across 29 German Cities</div>
+        <div class="paper-authors">Jin, Handrich, Martinenz, Hoeser, Li — arXiv 2606.25484</div>
+        <div class="paper-summary">An LLM-orchestrated causal discovery pipeline from public GBFS data across 29 German cities reveals city-type-specific demand drivers for e-scooter hub placement, with two real sites now under construction.</div>
+      </div>
+      <div class="paper-confidence conf-high">High</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Core cluster demand driven by activity access and transit proximity</li>
+            <li>Peripheral demand driven by built form density — not the same drivers</li>
+            <li>City typology changes which features causally drive demand significantly</li>
+            <li>LLM orchestration adapts causal algorithm selection to local data conditions automatically</li>
+            <li>Two Heilbronn hub sites informed by the framework are currently under construction</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>Public GBFS data across 29 German cities; LLM-orchestrated causal discovery (57 city-cluster units); Causal Template Library construction; planning tool with demographic calibration.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Micromobility operators, city transportation departments, urban data scientists, multimodal planning teams.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2606.25484" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">06</div>
+      <div class="paper-info">
+        <div class="paper-title">T-REX: Fast and Dynamic Journey Planning for Continental-Scale Public Transit Networks</div>
+        <div class="paper-authors">Sauer, Steil, Witt — arXiv 2605.18778</div>
+        <div class="paper-summary">T-REX answers transit journey planning queries in under 10ms on a Europe-wide network — 20× faster than baseline and 80× faster than algorithms without preprocessing.</div>
+      </div>
+      <div class="paper-confidence conf-high">High</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Multi-level overlay approach applied to Trip-Based routing reduces irrelevant local transfer searches</li>
+            <li>Sub-10ms query time on full European transit network</li>
+            <li>Precomputation takes only 2 minutes — practical for operational deployment</li>
+            <li>Real-time schedule updates can be incorporated in seconds</li>
+            <li>Memory footprint remains moderate — feasible for server deployment</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Results</h4>
+          <p>20× speedup over Trip-Based baseline; 80× speedup over non-preprocessed algorithms; sub-10ms queries; 2-minute precomputation; seconds for real-time update integration.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Transit app developers, national rail/transit operators, Google/Apple Maps teams, routing algorithm researchers.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2605.18778" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">07</div>
+      <div class="paper-info">
+        <div class="paper-title">Urban mobility enables deprivation bubble breaking in Indian and Mexican cities</div>
+        <div class="paper-authors">Liao, Delussu, de Sojo, Alessandretti, Desiderio — arXiv 2603.29782</div>
+        <div class="paper-summary">Residents of deprived urban neighborhoods in India and Mexico systematically travel to better-off areas to meet daily needs — a compensatory mobility pattern that residence-based deprivation indices miss entirely.</div>
+      </div>
+      <div class="paper-confidence conf-high">High</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Deprived-area residents travel to better-off locations far more than gravity models predict</li>
+            <li>High local amenity diversity enables in-place need satisfaction; density drives cross-boundary travel</li>
+            <li>Residual bubble breaking reveals extent of local amenity deficits static metrics cannot capture</li>
+            <li>Pattern holds across 64 cities in two different national contexts</li>
+            <li>Mobile phone data reveals spatial inequality invisible to census-based methods</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>Mobile phone mobility networks; satellite-derived deprivation indices; gravity model benchmarking; residual mobility decomposition across 64 cities in India and Mexico.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Urban planners, equity researchers, international development organizations, mobility data companies.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2603.29782" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">08</div>
+      <div class="paper-info">
+        <div class="paper-title">Enhancing the Socioeconomic Understanding of Foundation Models with Urban Mobility</div>
+        <div class="paper-authors">Guo, Li, Hong, Sun, Huang, Prakash, Wang — arXiv 2606.01745</div>
+        <div class="paper-summary">Adding mobility network connectivity to foundation models significantly improves urban socioeconomic prediction tasks like income, population density, and crime estimation.</div>
+      </div>
+      <div class="paper-confidence conf-medium">Medium</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Static POI and imagery embeddings miss connectivity signals crucial for urban prediction</li>
+            <li>MobFusion improves socioeconomic prediction across three US metro areas</li>
+            <li>Three complementary designs: LLM prompting, graph connector, multimodal tokens</li>
+            <li>Mobility data elicits latent geospatial capabilities already present in pretrained models</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>MobFusion framework with three integration designs; evaluation on income, population density, and crime prediction in 3 US metro areas; comparison to baseline foundation models.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Smart city platforms, urban AI researchers, city data officers, real estate analytics companies.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2606.01745" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">09</div>
+      <div class="paper-info">
+        <div class="paper-title">Recurring Public Transit Schedules: Stable Identification from GTFS and Similarity Analysis</div>
+        <div class="paper-authors">Makarov, Taubkin — arXiv 2606.14713</div>
+        <div class="paper-summary">A GTFS-based framework formalizes recurring transit schedule patterns as DayTypes, enabling stable schedule comparison, compression (median 4× reduction), and downstream modeling across agencies.</div>
+      </div>
+      <div class="paper-confidence conf-medium">Medium</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>GTFS does not natively encode recurring schedule structures — DayTypes fills this gap</li>
+            <li>Median of 4 nonempty DayTypes per agency — substantial compression achievable</li>
+            <li>Hierarchical nesting between service classes confirmed empirically</li>
+            <li>Country-level differences in schedule persistence between Japanese and Canadian agencies</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>H3 route-pattern key hashing for stable GTFS extraction; exact, time-tolerant, and structural-comparability metrics; validation on Japanese and Canadian GTFS feeds.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Transit data engineers, GTFS tool developers, operations research teams, APTA/NTD analysts.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2606.14713" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card" onclick="this.classList.toggle('open')">
+    <div class="paper-card-header">
+      <div class="paper-num">10</div>
+      <div class="paper-info">
+        <div class="paper-title">Urban mobility network centrality predicts social resilience</div>
+        <div class="paper-authors">Chen, Xu, Moro, Hui, Li, Evans — arXiv 2602.18546</div>
+        <div class="paper-summary">Eigenvector centrality in urban mobility networks robustly predicts which venues maintain visitation and social diversity across urban shocks including the pandemic, hurricanes, and wildfires.</div>
+      </div>
+      <div class="paper-confidence conf-high">High</div>
+    </div>
+    <div class="paper-detail">
+      <div class="paper-detail-grid">
+        <div class="detail-section">
+          <h4>Key Insights</h4>
+          <ul>
+            <li>Eigenvector centrality elevates explanatory power by 80% vs. intuitive features</li>
+            <li>Core venues have shorter visit distances, broader neighborhood reach, steadier daily patterns</li>
+            <li>36–53% of venues show reduced segregation even during major urban shocks</li>
+            <li>Well-and-pool analogy: core venues sustain casual ties; peripheral venues support deeper communities</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h4>Methodology</h4>
+          <p>Large-scale mobility data from 15 US cities covering 103M+ residents; mobility network construction; eigenvector centrality computation; regression analysis across three shock types.</p>
+          <h4 style="margin-top:12px">Who Should Care</h4>
+          <p>Urban resilience planners, emergency managers, public health officials, retail and real estate planners.</p>
+        </div>
+        <div class="detail-section full">
+          <a href="https://arxiv.org/abs/2602.18546" target="_blank" class="paper-link">→ Read on arXiv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LONG TERM IMPLICATIONS -->
+<div class="long-term">
+  <h2>Long-Term Implications</h2>
+  <p>The convergence of AI planning tools, real-world congestion pricing evidence, and equity-aware simulation frameworks is setting the stage for a new generation of transit policy that is both data-driven and socially accountable. The NYC congestion pricing experience, if it holds at 12–24 months, will likely trigger similar proposals in Los Angeles, Chicago, London, and Singapore — each of which will need the counterfactual modeling and equity analysis frameworks being developed in today's papers. Meanwhile, the algorithmic innovations (swarm routing, causal hub planning, LLM-powered trip routing) suggest that within a decade, the fixed-route bus schedule may give way to demand-responsive hybrid networks optimized in real time.</p>
+</div>
+
+<footer class="site-footer">
+  <p>Transit Research Digest &nbsp;·&nbsp; July 6, 2026 &nbsp;·&nbsp; Autonomous Research System<br>
+  Papers sourced from arXiv. Analysis performed by Claude. Not peer reviewed.<br>
+  <a href="research.html">← Archive Index</a> &nbsp;·&nbsp; <a href="https://twong6531.github.io/citation-site" target="_blank">twong6531.github.io/citation-site</a></p>
+</footer>
+
+</body>
+</html>
