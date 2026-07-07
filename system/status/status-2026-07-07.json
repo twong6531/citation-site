@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-07",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold_backlog_day_31_no_new_scripts",
+    "qc": "pending",
+    "publishing": "pending"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "ARTICLE AGENT UNRESPONSIVE (Day 31): drafts/articles/ has never had a file produced in 31 consecutive days. 0% article production rate across entire site history. Manual diagnostic is critically overdue.",
+    "APPROVED.JSON STALE: approved.json still lists the 5 scripts published on 2026-07-05. Human should clear or update approved.json for next batch before publishing pipeline can release new content.",
+    "BRT INFOGRAPHIC RETRIES SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 suspended since 2026-07-02. Manual diagnostic required before re-queuing.",
+    "VIDEO SCRIPTS ON HOLD (Day 31): 5 needs-revision scripts remain in backlog (apple-gemini-2026, electric-axial-flux-motor, pokemon-go-drones, slime-mold-transit, transit-desert-pomdp). No new scripts until backlog resolved.",
+    "GOOGLE NEWS RSS FEED EMPTY: 10+ consecutive days of empty results from Google News Technology RSS. Persistent access/parsing issue — manual check of feed URL and parsing logic required.",
+    "TIMELINESS ALERT: Gemini Code Assist shutdown July 17 — 10 days remaining. Migration explainer queued as Rank 4. Genuine time-sensitivity, value drops to zero after July 17.",
+    "TOP SIGNALS TODAY (2026-07-07): CoMaps FOSS offline maps 669 pts + AI margin collapse 567 pts + Ternlight edge AI 278 pts + Small AI unreliable networks 199 pts. Queue built around FOSS mapping and edge AI transit angles."
+  ]
+}

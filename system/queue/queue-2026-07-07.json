@@ -1,0 +1,81 @@
+{
+  "date": "2026-07-07",
+  "generated_at": "2026-07-07T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "FOSS offline maps and transit app infrastructure dependency",
+      "angle": "CoMaps goes viral (669 HN pts) the same week transit agencies face Google Maps API cost pressure — unpack the dependency chain from transit apps to mapping providers and what the open-source alternative means for urban mobility software",
+      "rationale": "CoMaps (FOSS offline maps) hit 669 pts on HN today — the highest transit-adjacent signal. Transit apps like Transit, Citymapper, and Moovit all depend on map tile providers (Google, Mapbox, OSM-derived). StreetComplete also trended (95 pts), reinforcing OSM community momentum. No coverage of open mapping infrastructure in site history. Strong audience overlap with transit/tech readers.",
+      "target_length": "long",
+      "slug": "foss-maps-transit-dependency-2026",
+      "output_path": "drafts/articles/foss-maps-transit-dependency-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "Edge AI and small language models for transit operations in low-connectivity environments",
+      "angle": "Small AI models (7–200 MB) gaining traction in unreliable-network zones maps directly onto transit's hardest infrastructure problem — subway tunnels, rural routes, underground stations. Visual guide to where edge inference is already deployed and what model sizes make it feasible",
+      "rationale": "'Small AI Models Gain Traction in places with unreliable networks' hit 199 pts today. Ternlight (7MB WASM model, 278 pts) adds a parallel data point. Transit systems have always struggled with connectivity gaps in tunnels and rural segments. This is a natural explainer infographic — coverage gap in site history, strong evergreen value.",
+      "target_length": "medium",
+      "slug": "edge-ai-transit-low-connectivity-2026",
+      "output_path": "drafts/infographics/edge-ai-transit-low-connectivity-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "AI margin collapse and transit tech vendor pricing risk",
+      "angle": "GLM 5.2 analysis of coming AI price compression (567 pts, 349 comments) has direct implications for transit agencies locked into AI vendor contracts — unpack the cost curve, vendor lock-in risk, and what a pricing war means for transit tech procurement cycles",
+      "rationale": "Second-highest HN score today. Transit agencies are increasingly committing to AI contracts for demand forecasting, scheduling, passenger analytics. The 'margin collapse' argument is analytically compelling and underreported in transit press. New angle not previously covered on site.",
+      "target_length": "medium",
+      "slug": "ai-margin-collapse-transit-procurement-2026",
+      "output_path": "drafts/articles/ai-margin-collapse-transit-procurement-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "explainer",
+      "topic": "Gemini Code Assist shutdown July 17 — transit tech team migration guide",
+      "angle": "10 days to deadline. Transit agencies and transit-app developers using Gemini Code Assist need a concrete migration playbook — what to move to, at what cost, by when",
+      "rationale": "Genuine timeliness: shutdown is July 17, giving 10 days. This has been queued for several days without being produced. Rank elevated due to shrinking window. Transit tech teams are a core audience subset. Evergreen value drops to zero after July 17.",
+      "target_length": "short",
+      "slug": "gemini-code-assist-shutdown-transit-migration-2026",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-migration-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "article",
+      "topic": "Real-time rail network maps — the viral transit data visualization format",
+      "angle": "Britain and France real-time rail maps both went viral on HN last week. Why this format resonates, what data it requires, and how US transit agencies compare on public GTFS-RT feed availability",
+      "rationale": "Carried over from yesterday's Rank 1 — still fresh (HN story recency), not yet produced, and directly in niche. Good follow-on to prior transit data coverage.",
+      "target_length": "medium",
+      "slug": "realtime-rail-maps-viral-transit-data-visualization-2026",
+      "output_path": "drafts/articles/realtime-rail-maps-viral-transit-data-visualization-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "status": "suspended",
+      "note": "Automated retries suspended since 2026-07-02 after ~20 consecutive failures. Manual diagnostic of infographic-writing agent required before re-queuing."
+    }
+  ],
+  "video_scripts": "hold",
+  "video_scripts_note": "5 needs-revision scripts in backlog (apple-gemini-2026, electric-axial-flux-motor, pokemon-go-drones, slime-mold-transit, transit-desert-pomdp). Hold continues until human reviews and approves revisions.",
+  "skip_topics": [
+    "NYC congestion pricing transit gains (covered 2026-07-05)",
+    "ChatPlanner LLM transit routing (covered 2026-07-05)",
+    "Virginia SB 338 geolocation ban (covered 2026-07-04/05)",
+    "July 4th holiday transit demand (covered 2026-07-04)",
+    "World Cup transit operations (covered 2026-07-03/04)",
+    "AI deregulation Anthropic transit planning tools (covered 2026-07-01/02)",
+    "Foundation models urban mobility socioeconomic (covered 2026-07-05)"
+  ],
+  "trend_signals": [
+    "FOSS offline maps momentum: CoMaps 669 pts + StreetComplete 95 pts — open mapping infrastructure zeitgeist",
+    "AI margin collapse / price compression: GLM 5.2 analysis 567 pts, 349 comments — AI economics shift",
+    "Edge/small AI for unreliable networks: 199 pts signal + Ternlight 7MB WASM model 278 pts",
+    "European tech sovereignty: researchers leaving USA 155 pts, EU vendor dominance 101 pts",
+    "Privacy/tracking concerns: Microsoft Windows device ID tracking 191 pts, Meta $1.4T lawsuit 62 pts"
+  ]
+}
