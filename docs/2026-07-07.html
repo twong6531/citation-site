@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 7, 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0f0f11;
+    --surface: #1a1a1f;
+    --surface2: #222228;
+    --border: #2e2e38;
+    --text: #e8e8ec;
+    --muted: #7a7a8c;
+    --accent: #a78bfa;
+    --ai: #6C47FF;
+    --science: #0077CC;
+    --tech: #00897B;
+    --business: #2E7D32;
+    --world: #E65100;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .date-label { font-size: 11px; color: var(--muted); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; line-height: 1.15; color: #fff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 14px; color: var(--muted); }
+
+  .section-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 24px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .editorial-section {
+    max-width: 900px; margin: 0 auto; padding: 40px 40px 0;
+  }
+  .editorial-section h2 { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  .no-image-box {
+    background: var(--surface2); border: 1px dashed var(--border);
+    border-radius: 8px; padding: 48px; text-align: center; color: var(--muted);
+  }
+  .no-image-box .subject { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .no-image-box .context { font-size: 14px; line-height: 1.7; max-width: 600px; margin: 0 auto 16px; }
+  .no-image-box .note { font-size: 11px; color: var(--muted); }
+
+  .analysis-section {
+    max-width: 900px; margin: 0 auto; padding: 40px;
+  }
+  .story-grid { display: grid; gap: 20px; }
+  .story-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 28px; position: relative;
+    transition: border-color 0.2s;
+  }
+  .story-card:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .story-num { font-size: 11px; color: var(--muted); font-weight: 600; }
+  .category-pill {
+    font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .cat-ai { background: var(--ai); color: #fff; }
+  .cat-science { background: var(--science); color: #fff; }
+  .cat-tech { background: var(--tech); color: #fff; }
+  .cat-business { background: var(--business); color: #fff; }
+  .cat-world { background: var(--world); color: #fff; }
+  .story-emoji { font-size: 20px; }
+  .story-topic { font-size: 11px; color: var(--muted); font-style: italic; margin-left: auto; }
+  .story-headline { font-size: 18px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 10px; }
+  .story-summary { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+  .story-bullets { list-style: none; padding: 0; margin-bottom: 16px; }
+  .story-bullets li { font-size: 13px; color: var(--text); padding: 5px 0 5px 18px; position: relative; border-bottom: 1px solid var(--border); }
+  .story-bullets li:last-child { border-bottom: none; }
+  .story-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .impact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .impact-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+  .impact-track { flex: 1; height: 4px; background: var(--border); border-radius: 2px; }
+  .impact-fill { height: 100%; border-radius: 2px; }
+  .impact-score { font-size: 11px; font-weight: 700; white-space: nowrap; }
+  .why-matters { font-size: 12px; color: var(--muted); font-style: italic; padding: 10px 14px; background: var(--surface2); border-radius: 6px; border-left: 3px solid var(--accent); }
+
+  .infographic-block {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 24px; text-align: center; margin-top: 32px;
+  }
+  .infographic-block h3 { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+  .infographic-block a { display: inline-block; padding: 10px 24px; background: var(--accent); color: #fff; border-radius: 6px; font-weight: 700; font-size: 13px; }
+
+  footer {
+    max-width: 900px; margin: 0 auto; padding: 32px 40px;
+    border-top: 1px solid var(--border); text-align: center;
+    font-size: 12px; color: var(--muted);
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .hero, .editorial-section, .analysis-section { padding: 24px 20px; }
+    .story-card { padding: 20px; }
+    .story-headline { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="date-label">July 7, 2026 &nbsp;·&nbsp; Daily Briefing</div>
+  <h1>Decentralized Technology<br>&amp; Science</h1>
+  <p class="subtitle">6 stories · AI-curated from Hacker News &amp; Google News · Generated July 7, 2026</p>
+</div>
+
+<section class="editorial-section">
+  <h2>Today's Visual</h2>
+  <div class="no-image-box">
+    <div class="subject">Nanopore DNA Sequencing Flow Cell</div>
+    <div class="context">A compact USB-stick-sized plastic cartridge enclosing a silicon chip measuring 9.4mm × 1.6mm with an array of 512 individual protein nanopores embedded in a synthetic membrane. Under magnification, intricate gold metallic circuit traces run across dark silicon. A double-helix DNA strand threads through a single nanopore while ionic current changes are measured in real time — bridging advanced biotech and personal computing.</div>
+    <div class="note">Technical Editorial Illustration · Independently researched and rendered by AI from today's news<br><em>(Image generation unavailable — API quota reached)</em></div>
+  </div>
+</section>
+
+<section class="analysis-section">
+  <div class="section-label">News Analysis — 6 Stories</div>
+
+  <div class="story-grid">
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">01</span>
+        <span class="category-pill cat-tech">Tech</span>
+        <span class="story-emoji">🌐</span>
+        <span class="story-topic">Open Hardware</span>
+      </div>
+      <div class="story-headline">OpenWrt One: Community-Driven Open Hardware Router</div>
+      <div class="story-summary">The OpenWrt project introduces the "OpenWrt One," an open hardware router designed entirely by its community. It features fully open-source firmware and hardware specifications, empowering users with complete control over their network infrastructure.</div>
+      <ul class="story-bullets">
+        <li>HN score 745 — highest community interest of the day</li>
+        <li>Fully open hardware platform: firmware, PCB schematics, and specs all public</li>
+        <li>Designed as a reference platform for community-controlled home networking</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:90%;background:#00897B;"></div></div>
+        <span class="impact-score" style="color:#00897B;">9/10</span>
+      </div>
+      <div class="why-matters">Fosters transparency and user control over network infrastructure in an era of increasing closed-hardware reliance.</div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">02</span>
+        <span class="category-pill cat-tech">Tech</span>
+        <span class="story-emoji">🗺️</span>
+        <span class="story-topic">FOSS Maps</span>
+      </div>
+      <div class="story-headline">CoMaps: Privacy-Focused Offline Open Source Maps</div>
+      <div class="story-summary">CoMaps emerges as a free and open-source alternative to Google Maps, prioritizing user privacy. Comprehensive offline functionality makes it ideal for areas with limited or unreliable internet connectivity.</div>
+      <ul class="story-bullets">
+        <li>HN score 692 — strong second-place community endorsement</li>
+        <li>Supports 34+ languages and full offline operation</li>
+        <li>Zero telemetry, no account required, fully FOSS licensed</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:80%;background:#00897B;"></div></div>
+        <span class="impact-score" style="color:#00897B;">8/10</span>
+      </div>
+      <div class="why-matters">Provides a vital privacy-respecting navigation tool for millions who cannot or will not use Google's data-harvesting alternatives.</div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">03</span>
+        <span class="category-pill cat-science">Science</span>
+        <span class="story-emoji">🧬</span>
+        <span class="story-topic">Personal Genomics</span>
+      </div>
+      <div class="story-headline">DIY DNA Sequencing: At-Home Genomics Now Accessible</div>
+      <div class="story-summary">A detailed blog post walks through sequencing personal DNA at home using Oxford Nanopore's MinION device. This democratizes genomics, putting consumer-grade DNA analysis in the hands of curious individuals.</div>
+      <ul class="story-bullets">
+        <li>Oxford Nanopore MinION: 9.4mm silicon chip with 512 nanopores, ~$1,000 device</li>
+        <li>HN score 322 — top science story; generated widespread discussion</li>
+        <li>Long-read sequencing enables detection of structural variants invisible to short-read methods</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:100%;background:#0077CC;"></div></div>
+        <span class="impact-score" style="color:#0077CC;">10/10</span>
+      </div>
+      <div class="why-matters">Demystifies and democratizes genetic understanding, potentially transforming personal health decisions and citizen science.</div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">04</span>
+        <span class="category-pill cat-ai">AI</span>
+        <span class="story-emoji">🤖</span>
+        <span class="story-topic">On-Device AI</span>
+      </div>
+      <div class="story-headline">AMD Ryzen AI Halo: 40+ TOPS Local AI in Compact Form</div>
+      <div class="story-summary">AMD's new Ryzen AI Halo chip delivers massive on-device AI performance in an ultraportable form factor. With 40+ TOPS, it significantly boosts local AI capabilities, reducing dependence on cloud servers.</div>
+      <ul class="story-bullets">
+        <li>40+ TOPS (Tera Operations Per Second) — among the highest for edge AI chips</li>
+        <li>Ultraportable "pint-sized" form factor targeting laptops and compact PCs</li>
+        <li>Enables on-device LLM inference, image generation, and real-time AI features</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:90%;background:#6C47FF;"></div></div>
+        <span class="impact-score" style="color:#6C47FF;">9/10</span>
+      </div>
+      <div class="why-matters">Marks a tipping point where powerful, private, responsive AI becomes viable entirely on personal devices without cloud dependency.</div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">05</span>
+        <span class="category-pill cat-ai">AI</span>
+        <span class="story-emoji">📶</span>
+        <span class="story-topic">Accessible AI</span>
+      </div>
+      <div class="story-headline">Small AI Models Thrive in Remote, Unreliable Networks</div>
+      <div class="story-summary">Small language models are proving highly effective in pharmaceutical research and remote areas lacking robust internet. Their efficiency makes AI accessible precisely where large cloud-dependent models fail.</div>
+      <ul class="story-bullets">
+        <li>HN score 219; IEEE Spectrum highlights pharma as key use-case domain</li>
+        <li>SLMs can run on devices with &lt;4GB RAM, functional on 2G/3G connections</li>
+        <li>Deployment in clinical settings, field research, and rural health applications growing</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:80%;background:#6C47FF;"></div></div>
+        <span class="impact-score" style="color:#6C47FF;">8/10</span>
+      </div>
+      <div class="why-matters">Democratizes AI access in underserved regions and critical sectors, enabling applications that cloud AI cannot reach.</div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">06</span>
+        <span class="category-pill cat-world">World</span>
+        <span class="story-emoji">🌷</span>
+        <span class="story-topic">Science Migration</span>
+      </div>
+      <div class="story-headline">Scientists Flee US Cuts for Netherlands' Tulip Fund</div>
+      <div class="story-summary">Top researchers are departing the USA for the Netherlands, drawn by the country's Tulip Fund and more stable academic conditions. US funding cuts and increasing political pressure on academia are driving the exodus.</div>
+      <ul class="story-bullets">
+        <li>HN score 202; NWO (Netherlands Research Council) announcing first Tulip Fund arrivals</li>
+        <li>Netherlands offering 5-year research grants of up to €1.5M per scientist</li>
+        <li>Brain drain follows deep cuts to NIH, NSF, and university overhead funding in the US</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:90%;background:#E65100;"></div></div>
+        <span class="impact-score" style="color:#E65100;">9/10</span>
+      </div>
+      <div class="why-matters">Academic brain drain could shift global scientific leadership and innovation hubs away from the US for a generation.</div>
+    </div>
+
+  </div>
+
+  <div class="infographic-block">
+    <h3>Text Infographic</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Standalone typographic data visualization of today's stories</p>
+    <a href="infographic-2026-07-07.svg" download>Download SVG Infographic</a>
+  </div>
+
+</section>
+
+<footer>
+  <p>Generated by AI &nbsp;·&nbsp; <a href="index.html">← Back to all briefings</a> &nbsp;·&nbsp; July 7, 2026</p>
+  <p style="margin-top:8px;">Stories sourced from Hacker News &amp; Google News. Analysis by Gemini 2.5 Flash.</p>
+</footer>
+
+</body>
+</html>

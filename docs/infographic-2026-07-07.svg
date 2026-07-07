@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Arial, sans-serif">
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+  <text x="40" y="40" font-size="11" fill="#888888" font-weight="500" letter-spacing="3">DAILY BRIEFING</text>
+  <text x="40" y="80" font-size="30" fill="#111111" font-weight="700">Decentralized Technology</text>
+  <text x="40" y="112" font-size="30" fill="#111111" font-weight="700">&amp; Science</text>
+  <text x="40" y="138" font-size="12" fill="#999999">July 7, 2026</text>
+  <line x1="40" y1="152" x2="760" y2="152" stroke="#DDDDDD" stroke-width="1"/>
+  <rect x="0" y="164" width="4" height="170" fill="#111111"/>
+  <text x="56" y="190" font-size="11" fill="#888888" font-weight="600">01</text>
+  <rect x="80" y="178" width="38" height="18" rx="3" fill="#00897B"/>
+  <text x="89" y="191" font-size="10" fill="#FFFFFF" font-weight="700">TECH</text>
+  <text x="40" y="218" font-size="16" fill="#111111" font-weight="700">OpenWrt One: Community-Driven</text>
+  <text x="40" y="238" font-size="16" fill="#111111" font-weight="700">Open Hardware Router</text>
+  <text x="40" y="262" font-size="12" fill="#555555">Fully open-source firmware and hardware specs, empowering users</text>
+  <text x="40" y="278" font-size="12" fill="#555555">with complete network control. HN score: 745.</text>
+  <text x="40" y="302" font-size="10" fill="#999999">IMPACT</text>
+  <rect x="100" y="291" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="291" width="180" height="6" rx="3" fill="#00897B"/>
+  <text x="312" y="301" font-size="10" fill="#00897B" font-weight="700">9/10</text>
+  <line x1="40" y1="324" x2="760" y2="324" stroke="#EEEEEE" stroke-width="1"/>
+  <rect x="0" y="334" width="4" height="170" fill="#111111"/>
+  <text x="56" y="360" font-size="11" fill="#888888" font-weight="600">02</text>
+  <rect x="80" y="348" width="38" height="18" rx="3" fill="#00897B"/>
+  <text x="89" y="361" font-size="10" fill="#FFFFFF" font-weight="700">TECH</text>
+  <text x="40" y="388" font-size="16" fill="#111111" font-weight="700">CoMaps: Privacy-Focused</text>
+  <text x="40" y="408" font-size="16" fill="#111111" font-weight="700">Offline Open Source Maps</text>
+  <text x="40" y="432" font-size="12" fill="#555555">FOSS alternative to Google Maps with comprehensive offline</text>
+  <text x="40" y="448" font-size="12" fill="#555555">functionality. HN score: 692, strong community backing.</text>
+  <text x="40" y="472" font-size="10" fill="#999999">IMPACT</text>
+  <rect x="100" y="461" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="461" width="160" height="6" rx="3" fill="#00897B"/>
+  <text x="312" y="471" font-size="10" fill="#00897B" font-weight="700">8/10</text>
+  <line x1="40" y1="494" x2="760" y2="494" stroke="#EEEEEE" stroke-width="1"/>
+  <rect x="0" y="504" width="4" height="170" fill="#111111"/>
+  <text x="56" y="530" font-size="11" fill="#888888" font-weight="600">03</text>
+  <rect x="80" y="518" width="58" height="18" rx="3" fill="#0077CC"/>
+  <text x="89" y="531" font-size="10" fill="#FFFFFF" font-weight="700">SCIENCE</text>
+  <text x="40" y="558" font-size="16" fill="#111111" font-weight="700">DIY DNA Sequencing: At-Home</text>
+  <text x="40" y="578" font-size="16" fill="#111111" font-weight="700">Genomics Now Accessible</text>
+  <text x="40" y="602" font-size="12" fill="#555555">Oxford Nanopore MinION device enables personal genome sequencing</text>
+  <text x="40" y="618" font-size="12" fill="#555555">at home. HN score: 322, top science story of the day.</text>
+  <text x="40" y="642" font-size="10" fill="#999999">IMPACT</text>
+  <rect x="100" y="631" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="631" width="200" height="6" rx="3" fill="#0077CC"/>
+  <text x="312" y="641" font-size="10" fill="#0077CC" font-weight="700">10/10</text>
+  <line x1="40" y1="664" x2="760" y2="664" stroke="#EEEEEE" stroke-width="1"/>
+  <rect x="0" y="674" width="4" height="170" fill="#111111"/>
+  <text x="56" y="700" font-size="11" fill="#888888" font-weight="600">04</text>
+  <rect x="80" y="688" width="24" height="18" rx="3" fill="#6C47FF"/>
+  <text x="89" y="701" font-size="10" fill="#FFFFFF" font-weight="700">AI</text>
+  <text x="40" y="728" font-size="16" fill="#111111" font-weight="700">AMD Ryzen AI Halo: 40+ TOPS</text>
+  <text x="40" y="748" font-size="16" fill="#111111" font-weight="700">Local AI in Compact Form</text>
+  <text x="40" y="772" font-size="12" fill="#555555">Over 40 TOPS on-device AI performance in ultraportable hardware.</text>
+  <text x="40" y="788" font-size="12" fill="#555555">Reduces cloud reliance; shifts AI processing to the edge.</text>
+  <text x="40" y="812" font-size="10" fill="#999999">IMPACT</text>
+  <rect x="100" y="801" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="801" width="180" height="6" rx="3" fill="#6C47FF"/>
+  <text x="312" y="811" font-size="10" fill="#6C47FF" font-weight="700">9/10</text>
+  <line x1="40" y1="834" x2="760" y2="834" stroke="#EEEEEE" stroke-width="1"/>
+  <rect x="0" y="844" width="4" height="170" fill="#111111"/>
+  <text x="56" y="870" font-size="11" fill="#888888" font-weight="600">05</text>
+  <rect x="80" y="858" width="24" height="18" rx="3" fill="#6C47FF"/>
+  <text x="89" y="871" font-size="10" fill="#FFFFFF" font-weight="700">AI</text>
+  <text x="40" y="898" font-size="16" fill="#111111" font-weight="700">Small AI Models Thrive in</text>
+  <text x="40" y="918" font-size="16" fill="#111111" font-weight="700">Remote, Unreliable Networks</text>
+  <text x="40" y="942" font-size="12" fill="#555555">Lightweight LLMs serving pharma research &amp; remote areas where</text>
+  <text x="40" y="958" font-size="12" fill="#555555">large models fail. HN score: 219. Democratizes AI access.</text>
+  <text x="40" y="982" font-size="10" fill="#999999">IMPACT</text>
+  <rect x="100" y="971" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="971" width="160" height="6" rx="3" fill="#6C47FF"/>
+  <text x="312" y="981" font-size="10" fill="#6C47FF" font-weight="700">8/10</text>
+  <line x1="40" y1="1004" x2="760" y2="1004" stroke="#EEEEEE" stroke-width="1"/>
+  <rect x="0" y="1014" width="4" height="170" fill="#111111"/>
+  <text x="56" y="1040" font-size="11" fill="#888888" font-weight="600">06</text>
+  <rect x="80" y="1028" width="44" height="18" rx="3" fill="#E65100"/>
+  <text x="89" y="1041" font-size="10" fill="#FFFFFF" font-weight="700">WORLD</text>
+  <text x="40" y="1068" font-size="16" fill="#111111" font-weight="700">Scientists Flee US Cuts for</text>
+  <text x="40" y="1088" font-size="16" fill="#111111" font-weight="700">Netherlands Tulip Fund</text>
+  <text x="40" y="1112" font-size="12" fill="#555555">Top researchers leaving USA amid funding cuts &amp; political pressure.</text>
+  <text x="40" y="1128" font-size="12" fill="#555555">Netherlands Tulip Fund lures global talent. HN score: 202.</text>
+  <text x="40" y="1152" font-size="10" fill="#999999">IMPACT</text>
+  <rect x="100" y="1141" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="100" y="1141" width="180" height="6" rx="3" fill="#E65100"/>
+  <text x="312" y="1151" font-size="10" fill="#E65100" font-weight="700">9/10</text>
+  <line x1="40" y1="1174" x2="760" y2="1174" stroke="#EEEEEE" stroke-width="1"/>
+  <text x="40" y="1210" font-size="11" fill="#AAAAAA">Generated by AI · July 7, 2026 · twong6531.github.io/citation-site</text>
+  <rect x="0" y="1230" width="800" height="3" fill="#111111"/>
+</svg>
