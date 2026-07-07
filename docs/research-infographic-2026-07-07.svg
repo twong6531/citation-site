@@ -1,0 +1,181 @@
+<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="1600" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="120" fill="#1A1A1A"/>
+  <text x="40" y="42" font-size="11" fill="#999999" letter-spacing="3" font-weight="400">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="76" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="-0.5">JULY 7, 2026</text>
+  <text x="40" y="100" font-size="11" fill="#666666" letter-spacing="2">8 PAPERS — URBAN MOBILITY · TRANSIT EQUITY · RAIL SYSTEMS · MOBILITY DATA</text>
+
+  <line x1="40" y1="145" x2="760" y2="145" stroke="#CCCCCC" stroke-width="0.5"/>
+
+  <!-- KEY FINDINGS -->
+  <text x="40" y="175" font-size="10" fill="#999999" letter-spacing="3" font-weight="400">KEY FINDINGS</text>
+
+  <text x="40" y="215" font-size="52" fill="#E8E8E5" font-weight="700">01</text>
+  <text x="110" y="200" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Selective railway curtailment</tspan>
+    <tspan x="110" dy="20">achieves 1/30th the delay</tspan>
+  </text>
+  <text x="110" y="240" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">of static section-wide power limits while</tspan>
+    <tspan x="110" dy="16">fully restoring electrical feasibility.</tspan>
+  </text>
+
+  <line x1="40" y1="270" x2="760" y2="270" stroke="#E0E0DC" stroke-width="0.5"/>
+
+  <text x="40" y="322" font-size="52" fill="#E8E8E5" font-weight="700">02</text>
+  <text x="110" y="306" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Visitation entropy explains 90.7%</tspan>
+    <tspan x="110" dy="20">by sequence length alone</tspan>
+  </text>
+  <text x="110" y="346" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">Decades of group mobility comparisons may be</tspan>
+    <tspan x="110" dy="16">confounded — apparent gaps often reverse.</tspan>
+  </text>
+
+  <line x1="40" y1="375" x2="760" y2="375" stroke="#E0E0DC" stroke-width="0.5"/>
+
+  <text x="40" y="428" font-size="52" fill="#E8E8E5" font-weight="700">03</text>
+  <text x="110" y="411" font-size="14" fill="#1A1A1A" font-weight="700">
+    <tspan x="110" dy="0">Only 1.5% of road coverage needed</tspan>
+    <tspan x="110" dy="20">for wireless EV charging city-wide</tspan>
+  </text>
+  <text x="110" y="451" font-size="11" fill="#555555">
+    <tspan x="110" dy="0">Dynamic wireless charging at signalized intersections</tspan>
+    <tspan x="110" dy="16">can sustain continuous EV operation without plug-in.</tspan>
+  </text>
+
+  <line x1="40" y1="480" x2="760" y2="480" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- PAPER OF THE DAY -->
+  <rect x="40" y="498" width="720" height="130" fill="#1A1A1A"/>
+  <text x="60" y="523" font-size="9" fill="#888888" letter-spacing="3">PAPER OF THE DAY</text>
+  <text x="60" y="550" font-size="15" fill="#FFFFFF" font-weight="700">
+    <tspan x="60" dy="0">Risk-Aware Planning for Transit Desert</tspan>
+    <tspan x="60" dy="22">Remediation Under Demand Uncertainty</tspan>
+  </text>
+  <text x="60" y="594" font-size="11" fill="#AAAAAA">
+    <tspan x="60" dy="0">Khoroshevskaya &amp; Perukari · arXiv:2606.08371</tspan>
+  </text>
+  <text x="60" y="614" font-size="11" fill="#CCCCCC">
+    <tspan x="60" dy="0">POMDP + CVaR remediates 53.6% of transit-desert tracts across 25 cities</tspan>
+    <tspan x="60" dy="16">before a single rider is observed — solving the fundamental bootstrapping problem.</tspan>
+  </text>
+
+  <line x1="40" y1="648" x2="760" y2="648" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- EMERGING THEMES -->
+  <text x="40" y="675" font-size="10" fill="#999999" letter-spacing="3">EMERGING THEMES</text>
+
+  <rect x="40" y="690" width="220" height="3" fill="#1A1A1A"/>
+  <text x="40" y="712" font-size="12" fill="#1A1A1A" font-weight="700">Equity-First</text>
+  <text x="40" y="728" font-size="12" fill="#1A1A1A" font-weight="700">Planning</text>
+  <text x="40" y="750" font-size="10" fill="#555555">
+    <tspan x="40" dy="0">Transit deserts, participation</tspan>
+    <tspan x="40" dy="15">bias, and segregation research</tspan>
+    <tspan x="40" dy="15">all converge on fairness as a</tspan>
+    <tspan x="40" dy="15">first-class optimization target.</tspan>
+  </text>
+
+  <rect x="295" y="690" width="220" height="3" fill="#1A1A1A"/>
+  <text x="295" y="712" font-size="12" fill="#1A1A1A" font-weight="700">Real-Time</text>
+  <text x="295" y="728" font-size="12" fill="#1A1A1A" font-weight="700">Intelligence</text>
+  <text x="295" y="750" font-size="10" fill="#555555">
+    <tspan x="295" dy="0">Safety scores, railway power</tspan>
+    <tspan x="295" dy="15">controllers, and wireless EV</tspan>
+    <tspan x="295" dy="15">placement all require sub-minute</tspan>
+    <tspan x="295" dy="15">adaptive decision systems.</tspan>
+  </text>
+
+  <rect x="550" y="690" width="210" height="3" fill="#1A1A1A"/>
+  <text x="550" y="712" font-size="12" fill="#1A1A1A" font-weight="700">Data Quality</text>
+  <text x="550" y="728" font-size="12" fill="#1A1A1A" font-weight="700">as Justice</text>
+  <text x="550" y="750" font-size="10" fill="#555555">
+    <tspan x="550" dy="0">GPS bias and entropy limits</tspan>
+    <tspan x="550" dy="15">show that flawed analytics</tspan>
+    <tspan x="550" dy="15">tools encode systematic bias</tspan>
+    <tspan x="550" dy="15">against underserved groups.</tspan>
+  </text>
+
+  <line x1="40" y1="830" x2="760" y2="830" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- CONFIDENCE CHART -->
+  <text x="40" y="857" font-size="10" fill="#999999" letter-spacing="3">PAPER CONFIDENCE DISTRIBUTION</text>
+  <text x="40" y="885" font-size="10" fill="#555555">High</text>
+  <rect x="100" y="872" width="420" height="16" fill="#1A1A1A"/>
+  <text x="530" y="885" font-size="10" fill="#555555">6 papers</text>
+  <text x="40" y="916" font-size="10" fill="#555555">Medium</text>
+  <rect x="100" y="902" width="140" height="16" fill="#888888"/>
+  <text x="250" y="916" font-size="10" fill="#555555">2 papers</text>
+  <text x="40" y="946" font-size="10" fill="#555555">Low</text>
+  <rect x="100" y="932" width="0" height="16" fill="#CCCCCC"/>
+  <text x="110" y="946" font-size="10" fill="#AAAAAA">0 papers</text>
+
+  <line x1="40" y1="968" x2="760" y2="968" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="995" font-size="10" fill="#999999" letter-spacing="3">ACTIONABLE TAKEAWAYS</text>
+
+  <text x="40" y="1025" font-size="10" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">1 — Transit Agencies</tspan>
+    <tspan x="40" dy="18" fill="#555555">Adopt POMDP-based planning for transit deserts. Demographic</tspan>
+    <tspan x="40" dy="15" fill="#555555">and land-use priors are sufficient to start — ridership not needed.</tspan>
+  </text>
+
+  <text x="40" y="1090" font-size="10" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">2 — Mobility Researchers</tspan>
+    <tspan x="40" dy="18" fill="#555555">Stop using raw visitation entropy for group comparisons. Control</tspan>
+    <tspan x="40" dy="15" fill="#555555">for sequence length or switch to network structural measures.</tspan>
+  </text>
+
+  <text x="40" y="1155" font-size="10" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">3 — Urban Planners (GPS Data)</tspan>
+    <tspan x="40" dy="18" fill="#555555">Validate GPS data against census before planning decisions. Facebook</tspan>
+    <tspan x="40" dy="15" fill="#555555">and multi-app aggregators tell fundamentally different stories.</tspan>
+  </text>
+
+  <text x="40" y="1220" font-size="10" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">4 — Railway Network Operators</tspan>
+    <tspan x="40" dy="18" fill="#555555">Deploy selective, location-aware curtailment controllers. Static</tspan>
+    <tspan x="40" dy="15" fill="#555555">section limits impose 30x unnecessary delay on passengers.</tspan>
+  </text>
+
+  <text x="40" y="1285" font-size="10" fill="#1A1A1A">
+    <tspan x="40" dy="0" font-weight="700">5 — City Transportation Departments</tspan>
+    <tspan x="40" dy="18" fill="#555555">Integrate dynamic wireless charging into intersection upgrades.</tspan>
+    <tspan x="40" dy="15" fill="#555555">1.5% road coverage can sustain city-wide EV operation.</tspan>
+  </text>
+
+  <line x1="40" y1="1330" x2="760" y2="1330" stroke="#CCCCCC" stroke-width="1"/>
+
+  <!-- RESEARCH TOPICS -->
+  <text x="40" y="1357" font-size="10" fill="#999999" letter-spacing="3">RESEARCH TOPICS</text>
+  <text x="40" y="1385" font-size="9" fill="#555555">Transit Equity &amp; Planning</text>
+  <rect x="220" y="1373" width="120" height="12" fill="#1A1A1A"/>
+  <text x="348" y="1384" font-size="9" fill="#555555">3</text>
+  <text x="40" y="1410" font-size="9" fill="#555555">Mobility Data &amp; Analytics</text>
+  <rect x="220" y="1398" width="80" height="12" fill="#555555"/>
+  <text x="308" y="1409" font-size="9" fill="#555555">2</text>
+  <text x="40" y="1435" font-size="9" fill="#555555">Railway &amp; EV Infrastructure</text>
+  <rect x="220" y="1423" width="80" height="12" fill="#888888"/>
+  <text x="308" y="1434" font-size="9" fill="#555555">2</text>
+  <text x="40" y="1460" font-size="9" fill="#555555">Urban Safety Systems</text>
+  <rect x="220" y="1448" width="40" height="12" fill="#AAAAAA"/>
+  <text x="268" y="1459" font-size="9" fill="#555555">1</text>
+
+  <line x1="40" y1="1488" x2="760" y2="1488" stroke="#E0E0DC" stroke-width="0.5"/>
+
+  <!-- FOOTER -->
+  <text x="40" y="1510" font-size="9" fill="#AAAAAA">
+    <tspan x="40" dy="0">Generated July 7, 2026 · Transit Research Digest · 8 papers analyzed</tspan>
+  </text>
+  <text x="40" y="1528" font-size="9" fill="#AAAAAA">
+    <tspan x="40" dy="0">Sources: arXiv cs.CY · arXiv physics.soc-ph · arXiv eess.SY</tspan>
+  </text>
+  <text x="40" y="1546" font-size="9" fill="#CCCCCC">
+    <tspan x="40" dy="0">twong6531.github.io/citation-site/research.html</tspan>
+  </text>
+
+  <rect x="0" y="1580" width="800" height="20" fill="#1A1A1A"/>
+</svg>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 7, 2026</title>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface2: #242424;
+    --border: #2e2e2e;
+    --text: #e8e8e5;
+    --muted: #888888;
+    --accent: #c8f0a0;
+    --accent2: #a0d4f0;
+    --yellow: #f0d080;
+    --red: #f07060;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+  a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .site-header .logo { font-size: 13px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+  .site-header .back-link { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
+
+  .hero { padding: 60px 40px 40px; max-width: 900px; margin: 0 auto; }
+  .hero .date-label { font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 42px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 20px; }
+  .hero .tagline { font-size: 16px; color: var(--muted); max-width: 600px; line-height: 1.7; }
+  .hero .meta-row { margin-top: 24px; display: flex; gap: 32px; font-size: 12px; color: var(--muted); letter-spacing: 1px; }
+  .hero .meta-row span { display: flex; align-items: center; gap: 6px; }
+
+  .divider { height: 1px; background: var(--border); margin: 0 40px; }
+
+  .section { max-width: 900px; margin: 0 auto; padding: 48px 40px; }
+  .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 32px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+
+  .exec-summary { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 28px 32px; border-radius: 2px; font-size: 15px; line-height: 1.8; color: #cccccc; margin-bottom: 40px; }
+
+  .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+  .theme-card { background: var(--surface); border: 1px solid var(--border); padding: 24px; }
+  .theme-card h3 { font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; color: var(--accent); }
+  .theme-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  .contrarian-list { list-style: none; }
+  .contrarian-list li { padding: 20px 0; border-bottom: 1px solid var(--border); display: flex; gap: 20px; }
+  .contrarian-list li:last-child { border-bottom: none; }
+  .contrarian-num { font-size: 32px; font-weight: 700; color: var(--border); line-height: 1; flex-shrink: 0; width: 40px; }
+  .contrarian-text { font-size: 14px; line-height: 1.7; color: #cccccc; }
+  .contrarian-text strong { color: var(--yellow); font-weight: 600; }
+
+  .takeaways-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .takeaway-item { background: var(--surface2); border: 1px solid var(--border); padding: 20px 24px; display: flex; gap: 20px; align-items: flex-start; }
+  .takeaway-tag { font-size: 10px; letter-spacing: 2px; color: var(--accent); background: rgba(200,240,160,0.1); padding: 4px 10px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .takeaway-text { font-size: 13px; color: #cccccc; line-height: 1.6; }
+
+  .paper-grid { display: flex; flex-direction: column; gap: 32px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card.featured { border-left: 3px solid var(--yellow); }
+  .paper-meta { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 16px; }
+  .paper-source { font-size: 10px; letter-spacing: 2px; color: var(--muted); background: var(--surface2); padding: 4px 10px; white-space: nowrap; }
+  .paper-confidence { font-size: 10px; letter-spacing: 1px; padding: 4px 10px; }
+  .paper-confidence.high { color: var(--accent); background: rgba(200,240,160,0.1); }
+  .paper-confidence.medium { color: var(--yellow); background: rgba(240,208,128,0.1); }
+  .paper-confidence.low { color: var(--red); background: rgba(240,112,96,0.1); }
+  .paper-card h3 { font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .paper-card .authors { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .paper-card .paper-link { font-size: 11px; color: var(--accent2); }
+  .paper-card .one-liner { font-size: 14px; color: var(--accent); font-style: italic; margin-bottom: 16px; line-height: 1.6; border-left: 2px solid var(--accent); padding-left: 16px; }
+  .paper-card .why { font-size: 13px; color: #bbbbbb; margin-bottom: 16px; line-height: 1.7; }
+  .insights-list { margin: 16px 0; list-style: none; }
+  .insights-list li { font-size: 13px; color: #cccccc; padding: 6px 0 6px 20px; position: relative; line-height: 1.6; }
+  .insights-list li::before { content: '→'; position: absolute; left: 0; color: var(--muted); }
+  .paper-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .paper-detail-item { background: var(--surface2); padding: 14px 16px; }
+  .paper-detail-item .label { font-size: 9px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .paper-detail-item .value { font-size: 12px; color: #cccccc; line-height: 1.6; }
+
+  .infographic-section { max-width: 900px; margin: 0 auto; padding: 0 40px 48px; }
+  .infographic-section .section-label { font-size: 10px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .infographic-wrapper { background: var(--surface); border: 1px solid var(--border); padding: 24px; text-align: center; }
+  .infographic-wrapper img, .infographic-wrapper svg { max-width: 100%; height: auto; }
+  .infographic-actions { margin-top: 16px; display: flex; gap: 16px; justify-content: center; }
+  .btn { font-size: 11px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid var(--border); color: var(--muted); text-decoration: none; text-transform: uppercase; }
+  .btn:hover { color: var(--text); border-color: var(--text); text-decoration: none; }
+
+  .long-term { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent2); padding: 28px 32px; margin-bottom: 40px; }
+  .long-term p { font-size: 14px; color: #cccccc; line-height: 1.8; margin-bottom: 16px; }
+  .long-term p:last-child { margin-bottom: 0; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted); }
+  .footer-nav a { color: var(--muted); margin-left: 24px; }
+  .footer-nav a:hover { color: var(--text); }
+
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 28px; }
+    .themes-grid { grid-template-columns: 1fr; }
+    .paper-detail-grid { grid-template-columns: 1fr; }
+    .section, .hero, .infographic-section { padding-left: 20px; padding-right: 20px; }
+    .divider { margin: 0 20px; }
+    .site-header { padding: 16px 20px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Transit Research Digest</div>
+  <a class="back-link" href="research.html">← Archive</a>
+</header>
+
+<div class="hero">
+  <div class="date-label">July 7, 2026 · Vol. 2026-07-07</div>
+  <h1>Equity, Real-Time<br>Intelligence, and the<br>Limits of Mobility Data</h1>
+  <div class="tagline">This week's 8 papers converge on AI-augmented transit planning, selective railway power management, and a fundamental challenge to one of urban mobility's most-used metrics.</div>
+  <div class="meta-row">
+    <span>8 papers analyzed</span>
+    <span>6 high-confidence</span>
+    <span>arXiv cs.CY · physics.soc-ph · eess.SY</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Executive Summary</div>
+  <div class="exec-summary">
+    This week's transit and urban mobility research is unified by a single tension: the gap between what our data and models tell us about cities and what is actually true for the people who live in them. Two papers directly challenge standard analytical tools — visitation entropy and GPS mobility data — showing they systematically misrepresent underserved populations. Meanwhile, a trio of equity-centered papers (transit deserts, participation bias, urban segregation) demonstrates that rigorous optimization and machine learning can actively advance fairness when correctly framed. At the infrastructure layer, a railway power management paper delivers a striking result: selective location-aware curtailment reduces passenger delay to 1/30th of incumbent approaches, while a wireless EV charging study shows city-wide continuous charging needs only 1.5% road coverage. Together, the papers argue that transit research is entering an era of high-precision, real-time, equity-aware systems — and that the data quality underneath those systems requires urgent audit.
+  </div>
+
+  <div class="section-label" style="margin-top: 40px;">Emerging Themes</div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <h3>Equity-First Planning</h3>
+      <p>Transit deserts, participation bias, and exposure segregation research all treat fairness as a first-class optimization constraint rather than an afterthought. POMDP, CVaR, and multimodal ML are the tools of equity.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Real-Time Intelligence</h3>
+      <p>VTTSI (15-min safety scores), railway selective curtailment (~1.5s solve), and DWPT deployment models all require sub-minute adaptive systems. Static rule-based control is being displaced.</p>
+    </div>
+    <div class="theme-card">
+      <h3>Data Quality as Justice</h3>
+      <p>GPS coverage bias and entropy methodological failures are not technical trivialities — they encode systematic misrepresentation of lower-income, rural, and underserved communities in the data that drives policy.</p>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top: 40px;">Contrarian Insights</div>
+  <ul class="contrarian-list">
+    <li>
+      <div class="contrarian-num">01</div>
+      <div class="contrarian-text"><strong>Who attends public hearings barely matters.</strong> The AGORA study found that without structured deliberation, even perfectly representative hearing attendance produces zero variation in transit planning outcomes. Process design, not outreach, is the leverage point for participatory democracy.</div>
+    </li>
+    <li>
+      <div class="contrarian-num">02</div>
+      <div class="contrarian-text"><strong>Visitation entropy should be retired for group comparisons.</strong> The metric that anchors hundreds of mobility studies — used to compare genders, urban/rural residents, commuters — is 90.7% explained by sequence length and unique location count. Apparent gaps between demographic groups often reverse when these confounders are controlled.</div>
+    </li>
+    <li>
+      <div class="contrarian-num">03</div>
+      <div class="contrarian-text"><strong>Cities don't need charging stations — they need smarter intersections.</strong> Dynamic wireless charging at traffic signals could eliminate range anxiety with less than 3% of road network coverage, challenging the assumption that EV transition requires massive charging-station buildout.</div>
+    </li>
+  </ul>
+
+  <div class="section-label" style="margin-top: 40px;">Long-Term Implications</div>
+  <div class="long-term">
+    <p>Transit planning is entering an era where AI can both reveal and amplify systemic inequities simultaneously. The VISAGE segregation paper's finding that built environment features (fences, single-use zoning) predict social isolation with r=0.770 suggests that decades of urban design choices are literally encoded in satellite imagery — and can now be audited at scale.</p>
+    <p>The convergence of real-time safety monitoring (VTTSI), railway adaptive control, and dynamic EV charging optimization points toward a future where infrastructure operates as a continuously optimizing cyber-physical system rather than a set of static rules. The challenge is ensuring these systems are built on unbiased data — the GPS representativeness paper's warning that different platforms give fundamentally different pictures of the same city is especially urgent as AI-driven transit systems become dependent on mobility data feeds.</p>
+    <p>The transit desert POMDP paper is quietly significant: it proves that principled resource allocation to underserved areas is tractable even before any ridership data exists. If widely adopted, this could shift how transit agencies justify new service deployment from political advocacy to evidence-based sequential decision-making.</p>
+  </div>
+
+  <div class="section-label" style="margin-top: 40px;">Actionable Takeaways</div>
+  <ul class="takeaways-list">
+    <li class="takeaway-item">
+      <div class="takeaway-tag">TRANSIT AGENCIES</div>
+      <div class="takeaway-text">Adopt POMDP-based planning for transit deserts. Demographic and land-use priors are sufficient starting points — ridership data is not required before first service deployment.</div>
+    </li>
+    <li class="takeaway-item">
+      <div class="takeaway-tag">MOBILITY RESEARCHERS</div>
+      <div class="takeaway-text">Stop using raw visitation entropy to compare demographic groups. Control for sequence length and unique location count, or switch to structural network measures.</div>
+    </li>
+    <li class="takeaway-item">
+      <div class="takeaway-tag">URBAN DATA TEAMS</div>
+      <div class="takeaway-text">Validate GPS mobility data against census benchmarks before making planning decisions. Facebook and multi-app aggregator data tell structurally different stories.</div>
+    </li>
+    <li class="takeaway-item">
+      <div class="takeaway-tag">RAILWAY OPERATORS</div>
+      <div class="takeaway-text">Deploy location-aware selective curtailment during degraded feeding scenarios. Static section-wide limits impose 30× unnecessary journey-time costs.</div>
+    </li>
+    <li class="takeaway-item">
+      <div class="takeaway-tag">CITY PLANNERS</div>
+      <div class="takeaway-text">Integrate dynamic wireless charging into signalized intersection upgrade cycles. 1.5–2.9% road coverage can sustain continuous city-scale EV operation.</div>
+    </li>
+    <li class="takeaway-item">
+      <div class="takeaway-tag">PUBLIC ENGAGEMENT</div>
+      <div class="takeaway-text">Invest in structured deliberation quality, not just attendance diversity. AGORA shows deliberation is the mechanism through which who attends affects outcomes.</div>
+    </li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="infographic-section" style="padding-top: 48px;">
+  <div class="section-label">Data Infographic</div>
+  <div class="infographic-wrapper">
+    <img src="research-infographic-2026-07-07.svg" alt="Transit Research Infographic — July 7, 2026" style="max-width: 600px; width: 100%;">
+    <div class="infographic-actions">
+      <a class="btn" href="research-infographic-2026-07-07.svg" download>Download SVG</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Paper Analyses · 8 Papers</div>
+  <div class="paper-grid">
+
+    <div class="paper-card featured">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · cs.CY · 2606.08371</span>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <span style="font-size:10px;color:#f0d080;background:rgba(240,208,128,0.1);padding:4px 10px;">⭐ PAPER OF THE DAY</span>
+          <span class="paper-confidence high">HIGH CONFIDENCE</span>
+        </div>
+      </div>
+      <h3>Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</h3>
+      <div class="authors">Polina Khoroshevskaya, Ashish Kumar Perukari · <a class="paper-link" href="https://arxiv.org/abs/2606.08371" target="_blank">arxiv.org/abs/2606.08371</a></div>
+      <div class="one-liner">A POMDP with CVaR financial constraints remediates 53.6% of transit-desert tracts across 25 cities using only demographic and land-use priors — no ridership data needed.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Tens of millions of Americans and Latin Americans live in transit deserts — areas where demand exists but service doesn't. Planners face a bootstrapping problem: you can't observe ridership before deploying service. This paper gives transit agencies a principled framework to allocate limited budgets even in the absence of ridership data.</div>
+      <ul class="insights-list">
+        <li>Belief-aware myopic planner beats static optimization by 5.0 percentage points on average across 25 cities</li>
+        <li>Gains are largest at moderate budget levels (+9.9 percentage points at baseline budget)</li>
+        <li>Population density and existing transit density are dominant cost predictors (R²=0.41)</li>
+        <li>Results hold under 50% prior-demand miscalibration — robust to uncertainty about the uncertainty</li>
+        <li>Improves over static baseline in 16 of 25 cities tested</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">POMDP formulation with Conditional Value-at-Risk constraints; demographic and land-use Bayesian priors; unified financial model evaluated on 25 cities.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">Applicable only where ridership is unobservable; CVaR constraint may be overly conservative; geographic scope limited to Americas.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">Transit planners, Metropolitan Planning Organizations, federal transportation agencies, transit equity advocates.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Comparison to Prior Work</div>
+          <div class="value">Prior work uses static optimization or simple heuristics. This introduces sequential decision-making under uncertainty — a significant methodological leap.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · cs.CY · 2606.13696</span>
+        <span class="paper-confidence medium">MEDIUM CONFIDENCE</span>
+      </div>
+      <h3>AGORA: Can Deliberation and Governance Gates Absorb Participation Bias in Transit Planning?</h3>
+      <div class="authors">Jung-Hoon Cho, Cathy Wu · <a class="paper-link" href="https://arxiv.org/abs/2606.13696" target="_blank">arxiv.org/abs/2606.13696</a></div>
+      <div class="one-liner">Structured deliberation — not representative attendance — is the mechanism through which meeting composition affects transit planning outcomes.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Transit network decisions shape access for entire communities but are shaped by self-selected attendees who skew toward higher-income, car-owning households. This paper disentangles the relative importance of who attends versus how deliberation is structured.</div>
+      <ul class="insights-list">
+        <li>Without deliberation, changing meeting composition produces zero variation in outcomes</li>
+        <li>On aggregate metrics, composition changes little — but tail risk and fairness disparity are meaningfully affected</li>
+        <li>Governance gates compress cross-profile variance without shifting average outcomes</li>
+        <li>Gate thresholds require instance-specific calibration — universal thresholds fail on larger networks</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">Stakeholder agent simulations on Mandl and Mumford0 transit benchmark networks; controlled variation of meeting composition with structured deliberation phases.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">Synthetic benchmark networks; stakeholder agents are simplified behavioral models; governance gate calibration requires manual tuning per instance.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">Transit planners, city council members, urban democracy advocates, participatory planning researchers.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Practical Implications</div>
+          <div class="value">Transit agencies should invest in deliberation quality — facilitators, structured agendas — rather than focusing exclusively on outreach for diverse attendance.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · cs.CY · 2606.21154</span>
+        <span class="paper-confidence high">HIGH CONFIDENCE</span>
+      </div>
+      <h3>Virginia Tech Transportation Safety Index (VTTSI)</h3>
+      <div class="authors">Jason Cusati, Cheng-Shun Chuang · <a class="paper-link" href="https://arxiv.org/abs/2606.21154" target="_blank">arxiv.org/abs/2606.21154</a></div>
+      <div class="one-liner">A real-time intersection safety scoring system combining connected-vehicle telemetry, crash history, and multi-criteria decision-making updates every 15 minutes.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Traditional crash-based metrics are lagging indicators — crashes happen before interventions. VTTSI enables proactive, adaptive safety management that responds to current traffic behavior, not year-old crash records.</div>
+      <ul class="insights-list">
+        <li>Hybrid Bayesian model fuses Empirical Bayes crash stabilization with behavioral uplift factors from connected vehicles</li>
+        <li>15-minute update cycles capture meaningful diurnal patterns in safety risk</li>
+        <li>Three MCDM methods (SAW, EDAS, CODAS) produce consistent rankings</li>
+        <li>Safety scores robust to parameter perturbation (&lt;1 point on 0-100 scale)</li>
+        <li>Cloud-native stack (FastAPI, PostgreSQL, PostGIS, Streamlit) deployable by state DOTs</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">CRITIC-weighted MCDM on connected vehicle telemetry + VDOT crash records; exposure-adjusted scoring; validated across Virginia intersections.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">Requires connected-vehicle penetration; validated in Virginia only; may not generalize to low-connectivity contexts.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">State DOTs, traffic management centers, autonomous vehicle operators, road safety researchers, insurance industry.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Comparison to Prior Work</div>
+          <div class="value">First to combine real-time CVT data with Empirical Bayes stabilization and MCDM in a cloud-deployed operational system.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · physics.soc-ph · 2607.03443</span>
+        <span class="paper-confidence high">HIGH CONFIDENCE</span>
+      </div>
+      <h3>The Limits of Visitation Entropy as a Summary of Mobility Patterns</h3>
+      <div class="authors">Sílvia de Sojo, Sune Lehmann, Laura Alessandretti · <a class="paper-link" href="https://arxiv.org/abs/2607.03443" target="_blank">arxiv.org/abs/2607.03443</a></div>
+      <div class="one-liner">Visitation entropy — the ubiquitous mobility metric — is 90.7% explained by sequence length and unique location count, rendering most group comparisons methodologically invalid.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Hundreds of mobility studies compare demographic groups using entropy. If those comparisons are confounded, many published findings about mobility inequality may be wrong or reversed — with significant implications for transport policy.</div>
+      <ul class="insights-list">
+        <li>Unique locations + sequence length explain 90.7% of visitation entropy variance in empirical data</li>
+        <li>Shorter data sequences systematically underestimate entropy — finite-sample bias is pervasive</li>
+        <li>Apparent gender entropy gaps often reverse once sequence length is controlled</li>
+        <li>Urban/rural entropy differences diminish substantially after confounder correction</li>
+        <li>Network structural measures provide complementary information entropy cannot capture</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">Synthetic trajectory simulation and empirical GPS trajectory analysis; variance decomposition of entropy; controlled comparison across demographic groups.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">Focused on Shannon entropy of visit distributions; other entropy variants may behave differently.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">Urban mobility researchers, transport planners using big data analytics, epidemiologists using mobility proxies.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Comparison to Prior Work</div>
+          <div class="value">Directly challenges decades of mobility entropy literature; provides methodological corrections not yet applied in mobility research.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · physics.soc-ph · 2607.04585</span>
+        <span class="paper-confidence medium">MEDIUM CONFIDENCE</span>
+      </div>
+      <h3>Infinite Drive: Optimal Urban Location of Dynamic Wireless Charging at Signalized Intersections</h3>
+      <div class="authors">Yudai Honma, Daisuke Hasegawa, Katsuhiro Hata, Xuesong Zhou, Michael J. Kuby, Takashi Oguchi · <a class="paper-link" href="https://arxiv.org/abs/2607.04585" target="_blank">arxiv.org/abs/2607.04585</a></div>
+      <div class="one-liner">Electrifying just 1.5% of a city's road network with dynamic wireless charging at intersections sustains continuous urban EV operation without plug-in charging.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Range anxiety and charging infrastructure cost are the two biggest barriers to EV adoption. Embedding wireless charging in traffic intersections could solve both simultaneously using infrastructure cities are already building.</div>
+      <ul class="insights-list">
+        <li>Mixed-integer model accounts for signalized intersection dynamics: acceleration, deceleration, queue-position dwell time</li>
+        <li>1.5% road network coverage sufficient in baseline; 2.9% covers all tested assumptions</li>
+        <li>Monte Carlo simulations of ~600 km continuous trips confirm 100% completion in all runs</li>
+        <li>12 kWh optimized battery + DWPT avoids 1.7-3.0 tonnes CO2e vs. conventional 40 kWh urban EV</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">Mixed-integer programming with probabilistic signal patterns; Monte Carlo trip simulation; Kawagoe City, Japan case study.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">Single-city case study; assumes high DWPT efficiency; full deployment costs not explicitly modeled.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">Urban planners, city transportation departments, EV manufacturers, electric utilities, road infrastructure agencies.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Practical Implications</div>
+          <div class="value">Cities planning intersection reconstructions should evaluate DWPT integration — cost can be amortized alongside normal road improvement cycles.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · physics.soc-ph · 2606.21858</span>
+        <span class="paper-confidence high">HIGH CONFIDENCE</span>
+      </div>
+      <h3>Perceiving Exposure Segregation with Open Urban Imagery</h3>
+      <div class="authors">Yunke Zhang, Ruolong Ma, Xin Zhang, Yu Shang, Fengli Xu, Tong Xia, Yong Li · <a class="paper-link" href="https://arxiv.org/abs/2606.21858" target="_blank">arxiv.org/abs/2606.21858</a></div>
+      <div class="one-liner">Fences, gated enclosures, and monofunctional zoning predict socioeconomic segregation with r=0.770 across 31 U.S. cities using satellite and street-level imagery.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Urban segregation is perpetuated through physical design choices. This provides a scalable AI tool to audit built environments for segregation-predictive features and verify whether policy interventions actually alter the physical landscape.</div>
+      <ul class="insights-list">
+        <li>"Defensible" architectural forms (fences, gated enclosures) systematically predict higher social isolation</li>
+        <li>Mixed-use infrastructure — walkable streets, active frontages — fosters cross-income interaction</li>
+        <li>Inclusionary housing policies produce distinct visual signatures associated with higher social mixing</li>
+        <li>Pearson r=0.770 between VISAGE visual codebook and mobility-derived segregation patterns</li>
+        <li>Analysis spans 10,030 communities across 31 U.S. cities using open satellite + Street View imagery</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">VISAGE framework using large multimodal models; sociological theory-derived visual codebook; validated against mobility-derived segregation indices.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">U.S.-focused; visual features may not generalize globally; correlational, not causal.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">Urban planners, housing policy advocates, city officials, urban sociologists, inclusionary zoning evaluators.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Comparison to Prior Work</div>
+          <div class="value">First to operationalize cross-disciplinary segregation theory into an interpretable visual codebook at U.S. city scale.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · eess.SY · 2607.04406</span>
+        <span class="paper-confidence high">HIGH CONFIDENCE</span>
+      </div>
+      <h3>Real-Time Location-Aware Demand-Shaping for Power-Constrained AC Railway Corridors</h3>
+      <div class="authors">Marton Laszlo Ambrus, Xiao Liu, Stuart Hillmansen, Zhongbei Tian · <a class="paper-link" href="https://arxiv.org/abs/2607.04406" target="_blank">arxiv.org/abs/2607.04406</a></div>
+      <div class="one-liner">A location-aware railway controller restores electrical feasibility during degraded feeding by curtailing only the binding trains, reducing passenger delay to 1/30th of static section limits.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Railway power outages force blanket speed restrictions, cascading into widespread delays. This surgical approach targets only the trains creating the voltage problem — a 30× improvement in efficiency with identical safety guarantees.</div>
+      <ul class="insights-list">
+        <li>Static limits penalize all trains regardless of their contribution to the binding condition</li>
+        <li>Location-specific curtailment delivers 1/30th the journey-time cost of section-wide static limits</li>
+        <li>Solver-free surrogate estimates feasibility in ~1.5 seconds vs. offline optimizer's ~60 seconds</li>
+        <li>Solution quality matches offline genetic algorithm optimum despite 40× faster computation</li>
+        <li>Delivered via cloud-to-edge driver advisory system — no new trackside hardware required</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">Cloud-to-edge driver advisory; multi-conductor power flow solver validation; tested on GB 25kV corridor under outage feeding vs. uncontrolled, static limit, and GA optimum baselines.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">Single corridor study; specific-route deployment validation is future work; surrogate slightly optimistic at binding instants.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">Railway electrification engineers, network operations centers, UK Network Rail, European rail infrastructure managers.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Practical Implications</div>
+          <div class="value">UK and European rail networks could dramatically reduce delay minutes during power degradation. Implementation requires only software updates to existing driver advisory systems.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paper-card">
+      <div class="paper-meta">
+        <span class="paper-source">arXiv · physics.soc-ph · 2606.23616</span>
+        <span class="paper-confidence high">HIGH CONFIDENCE</span>
+      </div>
+      <h3>One Country, Multiple Portraits: Representativeness in GPS-Based Mobility Data is Source-Specific and Spatially Dependent</h3>
+      <div class="authors">Carmen Cabrera, Francisco Rowe, Miguel González-Leonardo, et al. · <a class="paper-link" href="https://arxiv.org/abs/2606.23616" target="_blank">arxiv.org/abs/2606.23616</a></div>
+      <div class="one-liner">GPS mobility data from Facebook and multi-app aggregators tell fundamentally different stories about the same country — coverage bias is source-specific, socioeconomically structured, and spatially clustered.</div>
+      <div class="why"><strong style="color:#e8e8e5;">Why it matters:</strong> Mobility data increasingly drives transit planning and public health decisions. If it systematically underrepresents lower-income and rural communities, the policies it informs will systematically disadvantage the most vulnerable.</div>
+      <ul class="insights-list">
+        <li>Facebook provides higher, more evenly distributed coverage across 2,478 Mexican municipalities</li>
+        <li>Multi-app aggregator (Veraset) concentrates users in larger, wealthier, digitally connected places</li>
+        <li>Digital access and material resources dominate multi-app bias; demographic structure dominates Facebook bias</li>
+        <li>Coverage bias is spatially autocorrelated — neighboring municipalities show similar over/under-coverage</li>
+        <li>XGBoost explainability reveals bias drivers differ fundamentally by data source</li>
+      </ul>
+      <div class="paper-detail-grid">
+        <div class="paper-detail-item">
+          <div class="label">Methodology</div>
+          <div class="value">Comparison of Facebook and Veraset GPS data against 2020 Mexican Census across 2,478 municipalities; XGBoost with SHAP explanations; spatial autocorrelation analysis.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Limitations</div>
+          <div class="value">Mexico-specific; bias dynamics may differ in other countries with different smartphone penetration patterns.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Who Should Care</div>
+          <div class="value">Urban planners using mobility data, public health researchers, disaster response coordinators, transit agencies in emerging economies.</div>
+        </div>
+        <div class="paper-detail-item">
+          <div class="label">Comparison to Prior Work</div>
+          <div class="value">First multi-source comparison of GPS bias with census validation at municipal level for a middle-income country.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div>Transit Research Digest · July 7, 2026 · 8 papers</div>
+  <div class="footer-nav">
+    <a href="research.html">Archive</a>
+    <a href="index.html">Home</a>
+  </div>
+</footer>
+
+</body>
+</html>
