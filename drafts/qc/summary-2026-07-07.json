@@ -1,0 +1,87 @@
+{
+  "date": "2026-07-07",
+  "reviewed_at": "2026-07-07T17:45:00Z",
+  "total_reviewed": 5,
+  "passed": 4,
+  "revise": 1,
+  "failed": 0,
+  "ready_to_publish": [
+    "transit-2026-07-07",
+    "research-2026-07-07",
+    "infographic-2026-07-07",
+    "research-infographic-2026-07-07"
+  ],
+  "needs_revision": [
+    {
+      "slug": "2026-07-07",
+      "file": "docs/2026-07-07.html",
+      "score": 70,
+      "verdict": "REVISE",
+      "revision_notes": "RECURRING DEFICIENCY (Day 4+): Add per-story source hyperlinks. Six stories present; zero external links. Add one clickable source per story card (HN thread URL or original publication). If unresolved on 2026-07-08, escalate to FAIL. Secondary: increase story depth by ~30-50 words each to reach ~900 words total."
+    }
+  ],
+  "blocked": [],
+  "queue_not_produced": [
+    {
+      "slug": "foss-maps-transit-dependency-2026",
+      "rank": 1,
+      "type": "article",
+      "reason": "Article agent unresponsive — Day 31. drafts/articles/ has never had a file produced in entire site history.",
+      "freshness": "CoMaps 669 HN pts from today — freshness window ~3-5 days"
+    },
+    {
+      "slug": "edge-ai-transit-low-connectivity-2026",
+      "rank": 2,
+      "type": "infographic",
+      "reason": "Infographic agent not assigned today's queue. BRT infographic retries suspended since 2026-07-02; no indication this new infographic was attempted.",
+      "freshness": "Ternlight 278 HN pts + SLM signal 199 pts — freshness window ~5-7 days"
+    },
+    {
+      "slug": "ai-margin-collapse-transit-procurement-2026",
+      "rank": 3,
+      "type": "research",
+      "reason": "Article/research agent unresponsive — Day 31.",
+      "freshness": "GLM 5.2 analysis 567 HN pts, 349 comments — freshness window ~3-5 days"
+    },
+    {
+      "slug": "gemini-code-assist-shutdown-transit-migration-2026",
+      "rank": 4,
+      "type": "explainer",
+      "reason": "Article agent unresponsive — Day 31. CRITICAL TIMELINESS: Gemini Code Assist shutdown is July 17. Only 10 days remain. Value drops to zero post-July 17. This is now the highest-urgency unproduced item in the queue.",
+      "freshness": "DEADLINE JULY 17 — 10 days remaining. No new carry-forward permissible after July 16."
+    },
+    {
+      "slug": "realtime-rail-maps-viral-transit-data-visualization-2026",
+      "rank": 5,
+      "type": "article",
+      "reason": "Article agent unresponsive — Day 31. Second day carried forward from yesterday's Rank 1.",
+      "freshness": "Britain/France rail map HN threads from last week — freshness window closing (2-3 days remaining)"
+    }
+  ],
+  "video_scripts": {
+    "status": "hold",
+    "day": 31,
+    "backlog_count": 5,
+    "backlog_slugs": [
+      "apple-gemini-2026-script",
+      "electric-axial-flux-motor-transit-explainer-script",
+      "pokemon-go-drones-urban-data-script",
+      "slime-mold-transit-script",
+      "transit-desert-pomdp-script"
+    ],
+    "note": "No new scripts. Hold continues pending human approval of backlog revisions."
+  },
+  "recurring_issues": [
+    "CRITICAL (Day 31): Article agent unresponsive. drafts/articles/ has never been populated. 5 queue items unproduced today including a time-sensitive explainer (Gemini Code Assist, due July 17).",
+    "RECURRING DEFICIENCY (Day 4+): Daily briefing (docs/YYYY-MM-DD.html) format lacks per-story external hyperlinks. Flagged in QC for 2026-07-03, 2026-07-02, now 2026-07-07. Will escalate to FAIL on next occurrence.",
+    "APPROVAL FREEZE (Day 31): system/approved.json still lists 5 scripts published 2026-07-05. No new approvals. Publishing pipeline blocked.",
+    "BRT INFOGRAPHIC SUSPENDED: brt-vs-light-rail-cost-2026 retries suspended since 2026-07-02. Manual diagnostic required.",
+    "GOOGLE NEWS RSS FEED: Empty for 10+ consecutive days. Manual fix required.",
+    "TIMELINESS ESCALATION: Gemini Code Assist shutdown July 17 = 10 days remaining. This is the most time-sensitive unproduced item in site history. Manual production or agent diagnostic required immediately."
+  ],
+  "system_alerts": [
+    "ALERT — TIMELINESS CRITICAL: gemini-code-assist-shutdown-transit-migration-2026 must be produced before July 16. 10 days remain. Article agent has been unresponsive for 31 consecutive days — manual production is the only reliable option now.",
+    "ALERT — DAILY BRIEFING SOURCE LINKS: Next occurrence of zero external links in docs/YYYY-MM-DD.html will trigger FAIL verdict, not REVISE.",
+    "ALERT — REALTIME RAIL MAPS FRESHNESS: realtime-rail-maps-viral-transit-data-visualization-2026 was yesterday's Rank 1 and is still unproduced. Freshness window closes in 2-3 days."
+  ]
+}

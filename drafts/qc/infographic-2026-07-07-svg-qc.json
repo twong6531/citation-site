@@ -1,0 +1,24 @@
+{
+  "file": "docs/infographic-2026-07-07.svg",
+  "type": "infographic",
+  "reviewed_at": "2026-07-07T17:45:00Z",
+  "verdict": "PASS",
+  "score": 88,
+  "checks_passed": [
+    "Valid SVG: file starts with <svg (confirmed)",
+    "Has viewBox attribute: viewBox='0 0 800 1400' (confirmed)",
+    "Meaningful text content: 192 extracted words covering 6 stories — OpenWrt One (HN 745, 9/10 impact), CoMaps offline maps (HN 692, 8/10), DIY DNA Sequencing via Nanopore MinION (HN 322, 10/10), Ternlight 7MB WASM edge inference (AI, 9/10), Small AI for unreliable networks (80% impact), Scientists flee US for Netherlands",
+    "No placeholder text detected",
+    "Visual structure: header block with date/category label, numbered story cards with category pills (TECH/SCIENCE/AI), impact bar charts per story, footer with date",
+    "Color-coded category system: TECH (#00897B green), SCIENCE (#0077CC blue), AI (#6C47FF purple), WORLD (#E65100 orange)",
+    "SVG-only fallback: no PNG companion exists, which is acceptable per QC criteria",
+    "File size: 7,592 bytes — reasonable for a text-based SVG infographic",
+    "All story HN scores and impact ratings match the content in docs/2026-07-07.html (internal consistency verified)"
+  ],
+  "checks_failed": [
+    "MINOR: Research infographic (research-infographic-2026-07-07.svg) is linked from the research digest but the editorial infographic is only linked via download anchor in 2026-07-07.html — not embedded inline. This is an existing site pattern, not a new defect."
+  ],
+  "revision_notes": "No required revisions. Minor note: consider embedding the SVG inline in the daily briefing page for better above-the-fold visibility rather than only providing a download link.",
+  "fail_reason": null,
+  "approved_for_publish": true
+}

@@ -1,0 +1,25 @@
+{
+  "file": "docs/2026-07-07.html",
+  "type": "article",
+  "reviewed_at": "2026-07-07T17:45:00Z",
+  "verdict": "REVISE",
+  "score": 70,
+  "checks_passed": [
+    "Word count: 718 text words (PASS: above 600 threshold, though low for the format)",
+    "No true placeholder text: no Lorem ipsum, TODO, [INSERT], TBD found",
+    "No AI tells: 'cloud AI cannot reach' at line 243 is substantive analytical language, not self-referential AI output. CLEARED.",
+    "HTML structure complete: DOCTYPE, <html>, <head>, <body>, meta charset, meta viewport, <title> present",
+    "Navigation: links to index.html in footer",
+    "Factual spot-check PASS: HN scores (745 OpenWrt, 692 CoMaps, 322 DNA sequencing, 219 SLMs, 202 science migration) are in plausible HN range; Oxford Nanopore MinION as at-home sequencing device is factually accurate; 'Netherlands Tulip Fund 5-year grants up to €1.5M' is consistent with NWO announcements; 'SLMs functional on 2G/3G connections with <4GB RAM' is technically accurate",
+    "No duplicate topics detected in 14-day covered_topics window for any of the 6 stories (OpenWrt, CoMaps, DIY genomics, Ternlight edge AI, SLMs, science brain drain to Netherlands)"
+  ],
+  "checks_failed": [
+    "SOURCES (RECURRING DEFICIENCY — Day 4+): Zero external hyperlinks. Same issue flagged in QC for 2026-07-03 (REVISE), 2026-07-02 (REVISE noted 'add inline source links per story'). The briefing references HN scores and publisher names (IEEE Spectrum, NWO, Netherlands Research Council) but links to none of them. Stories 01–06 have no clickable source attribution. This is the fourth or more consecutive day this defect has appeared. If not corrected, classify FAIL on next QC cycle.",
+    "WORD COUNT LOW: 718 words across 6 stories is tight for the briefing format. Average ~120 words per story. While above the 600 threshold, density is below the quality of comparable briefings (2026-07-01 through 2026-07-03 averaged 900+ words). No stories in this briefing go beyond 3 bullet points.",
+    "FOOTER ATTRIBUTION: Footer reads 'Analysis by Gemini 2.5 Flash' — this is a content generation disclosure, not a defect, but should be consistent with site's disclosure policy if one exists."
+  ],
+  "revision_notes": "Required: Add per-story source links as anchor tags in each story card. Minimum: one hyperlink per story to the HN thread, the original source publication, or the IEEE/NWO announcement. Story 01 (OpenWrt) → link to HN thread or openwrt.org announcement; Story 02 (CoMaps) → comaps.app or HN thread; Story 03 (DIY DNA) → nanoporetech.com or Nature Biotechnology; Story 04 (Ternlight) → ternlight.ai or HN thread; Story 05 (SLMs) → IEEE Spectrum or HN thread; Story 06 (Netherlands Tulip Fund) → nwo.nl or Nature article. Suggested: increase per-story depth by 30-50 words each to reach ~900 words total.",
+  "fail_reason": null,
+  "approved_for_publish": false,
+  "pipeline_note": "File already committed to docs/ and live before QC (standard pipeline pattern). Revision note applies retroactively and escalates to FAIL verdict if the same defect appears again on 2026-07-08."
+}

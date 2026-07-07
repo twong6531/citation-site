@@ -1,0 +1,26 @@
+{
+  "file": "docs/research-2026-07-07.html",
+  "type": "article",
+  "reviewed_at": "2026-07-07T17:45:00Z",
+  "verdict": "PASS",
+  "score": 90,
+  "checks_passed": [
+    "Word count: 2,469 text words (PASS: well above 600-word threshold)",
+    "Sources: 8 external links — all arxiv.org paper links (2606.08371, 2606.13696, 2606.21154, 2607.03443, 2607.04585, and 3 more) corresponding to each paper analyzed",
+    "No placeholder text: no Lorem ipsum, TODO, [INSERT], TBD found",
+    "No AI tells: no 'As an AI', 'I cannot', 'certainly', 'I'd be happy to' detected",
+    "HTML structure complete: DOCTYPE, <html lang>, <head>, <body>, meta charset, meta viewport, <title> present",
+    "Navigation: links to research.html (← Archive) and index.html in footer",
+    "Factual spot-check PASS: '53.6% of transit-desert tracts across 25 cities' — precise stat cited to arXiv:2606.08371; 'belief-aware planner beats static by 5.0 percentage points' — cited to same paper; 'visitation entropy explains 90.7% by sequence length' — cited to arXiv:2606.21154; '1/30th the delay' for selective railway curtailment — cited to 2607.03443; '1.5% road coverage for wireless EV' — cited to 2607.04585. All stats are specific, attributed, and internally consistent with paper-level abstracts.",
+    "Duplicate check: 'transit desert remediation POMDP' is in covered_topics but refers to the earlier video script (transit-desert-pomdp-script.md, a different format/treatment). The paper arXiv:2606.08371 is new June 2026 work. Not a duplicate.",
+    "Content completeness: Executive summary, emerging themes (3), contrarian insights (3), long-term implications (3 paragraphs), 6 actionable takeaways by audience, 8 full paper analyses with methodology/limitations/who-should-care/comparison grids",
+    "Research infographic embedded and linked (research-infographic-2026-07-07.svg)"
+  ],
+  "checks_failed": [
+    "MINOR: The 'back-link' in header goes to research.html (archive), not index.html. This is intentional for the research digest format but differs from the standard nav pattern. Not a defect — research archive is the correct parent page."
+  ],
+  "revision_notes": "No required revisions. One cosmetic navigation note: the header back-link correctly goes to research.html archive, which is appropriate for this format.",
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "pipeline_note": "File committed to docs/ before QC (standard pipeline). QC verdict post-publish; quality meets standard."
+}

@@ -1,0 +1,26 @@
+{
+  "file": "docs/transit-2026-07-07.html",
+  "type": "article",
+  "reviewed_at": "2026-07-07T17:45:00Z",
+  "verdict": "PASS",
+  "score": 92,
+  "checks_passed": [
+    "Word count: 3,234 text words (PASS: well above 600-word threshold)",
+    "Sources: 10 external links across 10 story cards — Smart Cities Dive x2, LA Metro Source blog x4, LA Times, LAist x2, Streetsblog LA, Planetizen",
+    "No placeholder text: no Lorem ipsum, TODO, [INSERT], TBD found",
+    "No AI tells: no 'As an AI', 'I cannot', 'certainly', 'I'd be happy to' in editorial content",
+    "HTML structure complete: DOCTYPE, <html lang>, <head>, <body>, meta charset, meta viewport, <title> all present",
+    "Navigation: links to index.html (Home) and transit.html (Archive) in nav",
+    "Factual spot-check PASS: $3.34B LAX SkyLink APM cost consistent with published LAWA figures; $231B CA HSR total consistent with 2026 authority estimates; $21B Brightline West cost consistent with Planetizen/FOX reporting; 196 buses wrapped is specific and sourced to LA Metro blog; 2,400+ DPS applicants sourced to Police1; 950 applications in 24 hours sourced to thesource.metro.net; D Line '6+ year ridership high' directly sourced from LA Metro blog; 3 new D Line stations (La Brea/Fairfax, Wilshire/La Cienega, Wilshire/Rodeo) is factually accurate",
+    "Duplicate check: 'Southern California transit systems' is in covered_topics but this is a recurring weekly format — expected and acceptable. No unique angle duplication.",
+    "Cross-topic connections: all 10 topics correctly link to related topics within the brief"
+  ],
+  "checks_failed": [
+    "MINOR: Topic 10 uses same image URL as Topic 5 (HSR Hanford Viaduct) for Brightline West — image mismatch (Brightline West is a different corridor). Cosmetic issue; onerror fallback is functional.",
+    "MINOR: LAX annual passenger count cited as '88 million' — this is the pre-COVID (2018-2019) record. FY2025 actual LAX figure is approximately 75-80M. The 88M is defensible as a 'handles' capacity benchmark but should be updated to 2025 actuals if available."
+  ],
+  "revision_notes": "Two minor issues only: (1) Replace Brightline West card image with a Brightline West-specific image rather than reusing the HSR Hanford Viaduct photo. (2) Verify LAX 2025 annual passenger figure and update from '88 million' if actuals differ significantly. Neither issue blocks publish.",
+  "fail_reason": null,
+  "approved_for_publish": true,
+  "pipeline_note": "File committed to docs/ and live before this QC review (standard pipeline behavior). QC verdict is post-publish but confirms quality meets standard."
+}

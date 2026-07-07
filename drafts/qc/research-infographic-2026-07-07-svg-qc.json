@@ -1,0 +1,25 @@
+{
+  "file": "docs/research-infographic-2026-07-07.svg",
+  "type": "infographic",
+  "reviewed_at": "2026-07-07T17:45:00Z",
+  "verdict": "PASS",
+  "score": 86,
+  "checks_passed": [
+    "Valid SVG: file starts with <svg (confirmed)",
+    "Has viewBox attribute: viewBox='0 0 800 1600' (confirmed)",
+    "Meaningful text content: substantial data visualization including — 3 key findings with precise stats (railway selective curtailment 1/30 delay; visitation entropy 90.7% explained by sequence length; 1.5% road coverage for wireless EV charging); Paper of the Day highlight (Khoroshevskaya & Perukari arXiv:2606.08371, 53.6% of transit-desert tracts); 3 emerging themes (Equity-First Planning, Real-Time Intelligence, Data Quality as Justice); paper confidence distribution chart (6 high, 2 medium, 0 low); 5 actionable takeaways by audience type",
+    "No placeholder text detected",
+    "Dimensions appropriate for research infographic: 800x1600px, data-dense but readable",
+    "Color scheme: dark header (#1A1A1A), light body (#F7F7F5), consistent with the research brand",
+    "Embedded in research-2026-07-07.html as inline <img> with download link — correctly integrated",
+    "File size: 10,013 bytes — reasonable for SVG data infographic",
+    "Internal consistency: all stats in infographic match the paper analyses in research-2026-07-07.html (spot-checked 3 of 5 key findings)"
+  ],
+  "checks_failed": [
+    "MINOR: tspan text elements inside <text> were undercounted by automated word-count tool (74 words extracted vs actual ~200+ meaningful words when all tspans are counted). This is a tooling limitation, not a content defect — manual review confirms content is substantive.",
+    "MINOR: No PNG companion file exists. SVG-only fallback is acceptable per QC criteria, but a PNG fallback would improve compatibility with email newsletters and social sharing."
+  ],
+  "revision_notes": "No required revisions. Optional improvement: generate a PNG companion (800x1600) for social sharing and email contexts. Content quality is strong and internal consistency with the research digest is confirmed.",
+  "fail_reason": null,
+  "approved_for_publish": true
+}
