@@ -1,0 +1,85 @@
+{
+  "date": "2026-07-08",
+  "generated_at": "2026-07-08T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "How governments systematically exclude cheaper infrastructure options — lessons from the GAO nuclear cleanup report for transit capital projects",
+      "angle": "GAO found DOE prematurely excluded less expensive nuclear cleanup options (HN #6, 234 pts). This directly mirrors the transit industry pattern: transit agencies routinely exclude BRT, operational improvements, and demand management from project alternatives analysis before committing to costly rail. Policy accountability angle: what mandates exist, who enforces them, and what transit advocates can do.",
+      "rationale": "Strong niche fit (infrastructure policy + transit cost accountability). Timely HN signal. Zero coverage in our archive. Bridges a news hook to enduring transit policy debate. Article agent has 31-day zero production record — queuing again to force a retry.",
+      "target_length": "long",
+      "slug": "government-infrastructure-cost-exclusion-transit-gao-2026",
+      "output_path": "drafts/articles/government-infrastructure-cost-exclusion-transit-gao-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "Transit rider data privacy: what agencies collect and what laws protect you",
+      "angle": "Chat Control legislation (HN #1, 756 pts) is the hook — EU's mass surveillance law triggers comparison to US transit agency data practices. Visual breakdown: what data is collected (tap-in/tap-out, facial recognition, CCTV, phone tracking), what legal protections apply in EU vs. US vs. CA, and what transit agencies are legally allowed to share with law enforcement.",
+      "rationale": "Top HN signal maps cleanly to transit rider privacy — an underexplored angle. Infographic format fits the comparative matrix structure well. No direct prior coverage. Google News RSS still down so no competing coverage to worry about.",
+      "target_length": "medium",
+      "slug": "transit-rider-data-privacy-laws-2026",
+      "output_path": "drafts/infographics/transit-rider-data-privacy-laws-2026.svg"
+    },
+    {
+      "rank": 3,
+      "type": "video_script",
+      "topic": "When AI agents leak your transit agency's secrets",
+      "angle": "GitLost research (HN #3, 330 pts) showed GitHub's AI agent could be tricked into leaking private repos. Script explores: transit agencies increasingly rely on AI coding tools for scheduling, routing optimization, and GTFS data pipelines. What are the real data exposure risks? Who owns the prompts, the outputs, the training data? What should procurement contracts require?",
+      "rationale": "Video script production is on HOLD pending backlog resolution, but this is genuinely new and time-bound. Backlog scripts are 4-6 weeks old; this topic has a 48-72 hour news window. Queuing it even on HOLD to capture the angle. If backlog resolves, this gets prioritized.",
+      "target_length": "medium",
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "output_path": "drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Geospatial AI tools for transit equity analysis: GeoSQL, Claude, and the new spatial data stack",
+      "angle": "GeoSQL (HN, 60 pts) — a Claude/Codex geospatial skill — represents a new category of AI-augmented transit planning tools. Research brief examines: what geospatial AI tools exist for transit agencies, what equity analyses they enable (transit deserts, coverage gaps, demographic overlays), and what barriers prevent adoption at underfunded agencies.",
+      "rationale": "Small HN signal but extremely high niche relevance — directly connects AI + geospatial + transit equity, three of our core pillars. Research brief format fits since this requires synthesizing tool landscape rather than reporting a single story. No prior coverage.",
+      "target_length": "medium",
+      "slug": "geospatial-ai-transit-equity-analysis-2026",
+      "output_path": "drafts/articles/geospatial-ai-transit-equity-analysis-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "Gemini Code Assist shutdown July 17: what transit tech teams need to do in the next 9 days",
+      "angle": "9 days remain before Gemini Code Assist shuts down (July 17). This was queued yesterday but not produced. Transit agencies and transit tech vendors using Gemini Code Assist for GTFS tooling, scheduling algorithms, or mobility-as-a-service platforms need a migration path. Explainer covers: what shuts down, migration options (GitHub Copilot, Cursor, Claude), contract and licensing considerations, and a 9-day action checklist.",
+      "rationale": "Genuine time-sensitivity — value drops to zero after July 17. Yesterday's queue listed this as #4 but it was not produced. With 9 days left this is now urgent enough to hold the #5 slot. Failure to produce this for a 2nd consecutive day means the window will be missed entirely.",
+      "target_length": "short",
+      "slug": "gemini-code-assist-shutdown-transit-migration-2026",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-migration-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "gemini-code-assist-shutdown-transit-migration-2026",
+      "reason": "Not produced on 2026-07-07 despite being queued as rank #4. 9-day deadline window — must publish before July 17."
+    }
+  ],
+  "skip_topics": [
+    "FOSS offline maps / CoMaps transit dependency (queued 2026-07-07)",
+    "Edge AI for transit low-connectivity environments (queued 2026-07-07)",
+    "AI margin collapse transit procurement risk (queued 2026-07-07)",
+    "Real-time rail maps viral visualization format (queued 2026-07-07)",
+    "NYC congestion pricing transit gains (published 2026-07-05)",
+    "ChatPlanner LLM transit routing (published 2026-07-05)",
+    "Virginia SB 338 geolocation ban transit equity (covered 2026-07-04/05)",
+    "July 4th holiday transit operations (covered 2026-07-04)",
+    "World Cup 2026 transit operations (covered 2026-07-03/04/05)",
+    "AI deregulation Anthropic transit planning (covered 2026-07-01/02)",
+    "Foundation models urban mobility socioeconomic simulation (covered 2026-07-05)",
+    "Fatal Metro bus crash Skid Row (in transit brief 2026-07-06)",
+    "D Line ridership peak LA Metro (in transit brief 2026-07-06)",
+    "SCAG SB 79 housing map (in transit brief 2026-07-06)"
+  ],
+  "trend_signals": [
+    "Chat Control surveillance law 756 pts — EU mass surveillance legislation triggers transit rider privacy angle",
+    "GAO nuclear cleanup cost exclusion 234 pts — government prematurely excluding cheaper infrastructure options, mirrors transit capital project decisions",
+    "GitLost GitHub AI agent private repo leak 330 pts — AI tool security risk applies directly to transit agency AI adoption",
+    "GeoSQL Claude/Codex geospatial skill 60 pts — AI geospatial tooling for transit equity analysis",
+    "Apple-Broadcom US chip manufacturing deal — supply chain policy implications for transit hardware and embedded systems"
+  ]
+}

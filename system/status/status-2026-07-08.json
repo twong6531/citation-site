@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-08",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "hold_backlog_day_32_no_new_scripts",
+    "qc": "pending",
+    "publishing": "blocked_approved_json_stale"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "ARTICLE AGENT UNRESPONSIVE (Day 32): drafts/articles/ has never had a file produced in 32 consecutive days. 0% article production rate across entire site history. Manual diagnostic is critically overdue.",
+    "APPROVED.JSON STALE (Day 32): approved.json still lists the 5 scripts published on 2026-07-05. Publishing pipeline is completely blocked. Human must update approved.json with new slugs before any content can be released.",
+    "GEMINI CODE ASSIST SHUTDOWN — 9 DAYS REMAINING: July 17 deadline. Explainer queued as Rank 5 for the second consecutive day. Value drops to zero after July 17. Must be produced today or tomorrow.",
+    "BRT INFOGRAPHIC RETRIES SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 suspended since 2026-07-02. Manual diagnostic of infographic-writing agent required.",
+    "VIDEO SCRIPTS ON HOLD (Day 32): 5 needs-revision scripts in backlog (apple-gemini-2026, electric-axial-flux-motor, pokemon-go-drones, slime-mold-transit, transit-desert-pomdp). New script queued today (ai-agents-transit-security-leak-risk) has 48-72h news window — backlog resolution is urgent.",
+    "GOOGLE NEWS RSS FEED EMPTY: 10+ consecutive days of empty results. Persistent access issue — HN used as primary trend signal.",
+    "TOP SIGNALS TODAY (2026-07-08): Chat Control surveillance law 756 pts + GitLost AI repo leak 330 pts + Tenda firmware backdoor 275 pts + GAO infrastructure cost exclusion 234 pts + GeoSQL geospatial AI 60 pts. Queue built around surveillance/privacy + infrastructure cost accountability + AI security angles."
+  ]
+}
