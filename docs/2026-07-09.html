@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 9, 2026</title>
+<style>
+  :root {
+    --bg: #0f0f13;
+    --surface: #1a1a24;
+    --surface2: #232330;
+    --border: #2e2e40;
+    --text: #e8e8f0;
+    --muted: #8888aa;
+    --accent: #7c6fff;
+    --green: #4caf50;
+    --blue: #29b6f6;
+    --orange: #ff7043;
+    --teal: #26c6a0;
+    --purple: #ab47bc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px 60px; }
+  
+  /* HEADER */
+  .site-header { border-bottom: 3px solid var(--accent); padding: 28px 0 20px; margin-bottom: 48px; }
+  .site-header .label { font-size: 11px; font-weight: 600; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
+  .site-header h1 { font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .site-header .date { font-size: 14px; color: var(--muted); }
+  .site-header .day-topic { display: inline-block; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 4px 12px; border-radius: 20px; margin-top: 12px; text-transform: uppercase; }
+
+  /* SECTION HEADS */
+  .section-head { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; padding: 0 0 14px; margin: 0 0 24px; border-bottom: 1px solid var(--border); }
+
+  /* EDITORIAL IMAGE SECTION */
+  .visual-section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 32px; margin-bottom: 48px; text-align: center; }
+  .visual-section .visual-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+  .visual-section h2 { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+  .no-image-placeholder { background: var(--surface2); border: 2px dashed var(--border); border-radius: 6px; padding: 60px 40px; margin: 0 auto 20px; max-width: 540px; }
+  .no-image-placeholder .icon { font-size: 48px; margin-bottom: 16px; }
+  .no-image-placeholder p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .visual-subject { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .visual-context { color: var(--muted); font-size: 13px; line-height: 1.7; max-width: 620px; margin: 0 auto 16px; }
+  .visual-caption { font-size: 12px; color: var(--muted); font-style: italic; }
+  .visual-note { font-size: 11px; color: var(--border); margin-top: 8px; }
+
+  /* STORY CARDS */
+  .stories-section { margin-bottom: 48px; }
+  .story-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 20px; transition: border-color 0.2s; }
+  .story-card:hover { border-color: var(--accent); }
+  .card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .card-num { font-size: 11px; font-weight: 700; color: var(--muted); width: 24px; }
+  .category-pill { font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; }
+  .cat-business { background: #1b5e20; color: #a5d6a7; }
+  .cat-world { background: #bf360c; color: #ffccbc; }
+  .cat-science { background: #0d47a1; color: #bbdefb; }
+  .cat-tech { background: #004d40; color: #b2dfdb; }
+  .cat-ai { background: #4527a0; color: #d1c4e9; }
+  .card-emoji { font-size: 18px; }
+  .card-topic { font-size: 10px; color: var(--muted); margin-left: auto; font-weight: 500; }
+  .story-headline { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.35; }
+  .story-summary { font-size: 13px; color: #aaaacc; margin-bottom: 14px; line-height: 1.65; }
+  .story-bullets { list-style: none; margin-bottom: 16px; }
+  .story-bullets li { font-size: 12px; color: var(--muted); padding: 3px 0 3px 16px; position: relative; }
+  .story-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 4px; }
+  .impact-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+  .impact-label { font-size: 10px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+  .impact-bar-bg { flex: 1; height: 4px; background: var(--border); border-radius: 2px; }
+  .impact-bar { height: 4px; border-radius: 2px; }
+  .why-matters { font-size: 11px; color: var(--muted); font-style: italic; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 12px; }
+
+  /* SVG DOWNLOAD */
+  .svg-link-block { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin-top: 8px; display: flex; align-items: center; gap: 14px; }
+  .svg-link-block a { color: var(--accent); font-weight: 600; font-size: 13px; text-decoration: none; }
+  .svg-link-block a:hover { text-decoration: underline; }
+  .svg-link-block .svg-desc { font-size: 12px; color: var(--muted); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="site-header">
+    <div class="label">Daily Briefing</div>
+    <h1>Today in Tech & World News</h1>
+    <div class="date">July 9, 2026</div>
+    <div class="day-topic">Repair Rights and Surveillance</div>
+  </header>
+
+  <!-- SECTION A: EDITORIAL IMAGE -->
+  <section class="visual-section">
+    <div class="visual-label">Today's Visual</div>
+    <h2>MQ-9 Reaper — Technical Editorial Illustration</h2>
+    
+    <div class="no-image-placeholder">
+      <div class="icon">✈️</div>
+      <p class="visual-subject">An MQ-9 Reaper Drone in Flight</p>
+      <p>The MQ-9 Reaper is a large unmanned aerial vehicle with a 66-foot wingspan, a bulbous electro-optical sensor turret under its nose, a V-tail, and Hellfire missile pylons under swept wings. Its matte-gray 36-foot fuselage ends in a rear-mounted Honeywell TPE331 turboprop engine. The US military lost 30+ of these $32M aircraft in the Iran conflict — prompting an urgent Pentagon pivot toward cheap, expendable drone swarms.</p>
+    </div>
+    
+    <p class="visual-caption">MQ-9 Reaper UAV — Technical Editorial Illustration</p>
+    <p class="visual-note">Independently researched and rendered by AI from today's news</p>
+  </section>
+
+  <!-- SECTION B: NEWS ANALYSIS -->
+  <section class="stories-section">
+    <div class="section-head">News Analysis — 6 Most Impactful Stories</div>
+
+    <!-- Story 1 -->
+    <div class="story-card">
+      <div class="card-meta">
+        <span class="card-num">01</span>
+        <span class="category-pill cat-business">Business</span>
+        <span class="card-emoji">🚜</span>
+        <span class="card-topic">Right to Repair</span>
+      </div>
+      <div class="story-headline">FTC Forces John Deere to Allow Farmer Repairs</div>
+      <div class="story-summary">The Federal Trade Commission has secured a landmark settlement with John Deere requiring the agricultural equipment giant to give farmers and independent repair shops full access to tools, software, and documentation. The deal ends years of legal battles that forced farmers to pay dealer rates for even basic equipment fixes.</div>
+      <ul class="story-bullets">
+        <li>Affects millions of US John Deere equipment owners</li>
+        <li>Farmers previously paid $100–$400/hr at authorized dealers</li>
+        <li>Ruling takes effect immediately and sets industry precedent</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT 9/10</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:90%;background:#4caf50;"></div></div>
+      </div>
+      <div class="why-matters">Sets a precedent that could force other major manufacturers to open repair ecosystems for consumers.</div>
+    </div>
+
+    <!-- Story 2 -->
+    <div class="story-card">
+      <div class="card-meta">
+        <span class="card-num">02</span>
+        <span class="category-pill cat-world">World</span>
+        <span class="card-emoji">🔍</span>
+        <span class="card-topic">Digital Surveillance</span>
+      </div>
+      <div class="story-headline">EU Greenlights Mass Scanning of Private Messages</div>
+      <div class="story-summary">The European Parliament allowed Chat Control 1.0 to pass despite a majority of voting MEPs opposing it — 314 against vs. 276 in favor — because the motion to reject failed to reach the required absolute majority of 361 votes. The regulation permits suspicionless scanning of all private communications until 2028.</div>
+      <ul class="story-bullets">
+        <li>314 MEPs opposed, 276 in favor — yet it passed on procedural grounds</li>
+        <li>Mass surveillance of private messages permitted until December 2028</li>
+        <li>Encrypted message services receive only a symbolic exemption</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT 9/10</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:90%;background:#ff7043;"></div></div>
+      </div>
+      <div class="why-matters">Normalizes state-level mass surveillance of private digital communications across the EU's 450 million citizens.</div>
+    </div>
+
+    <!-- Story 3 -->
+    <div class="story-card">
+      <div class="card-meta">
+        <span class="card-num">03</span>
+        <span class="category-pill cat-science">Science</span>
+        <span class="card-emoji">🐝</span>
+        <span class="card-topic">Bee Colony Crisis</span>
+      </div>
+      <div class="story-headline">Spider Venom Pesticide Protects Honeybee Colonies</div>
+      <div class="story-summary">Australian researchers have identified a compound from spider venom that kills varroa mites — the leading cause of global honeybee colony collapse — without any detectable harm to bees. The breakthrough offers a targeted biological alternative to broad-spectrum pesticides that often harm the very bees they aim to protect.</div>
+      <ul class="story-bullets">
+        <li>Varroa mites kill 30–50% of affected hive populations globally</li>
+        <li>Venom peptide targets mite nervous systems but not bee biology</li>
+        <li>Field trials showed near-100% mite mortality with zero bee casualties</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT 8/10</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:80%;background:#29b6f6;"></div></div>
+      </div>
+      <div class="why-matters">Could reverse declining pollinator populations that underpin roughly one-third of global food production.</div>
+    </div>
+
+    <!-- Story 4 -->
+    <div class="story-card">
+      <div class="card-meta">
+        <span class="card-num">04</span>
+        <span class="category-pill cat-tech">Tech</span>
+        <span class="card-emoji">💾</span>
+        <span class="card-topic">AI Infrastructure</span>
+      </div>
+      <div class="story-headline">Meta's Custom Chip Breathes Life Into Old RAM</div>
+      <div class="story-summary">Meta has deployed a custom CXL interface chip called Vistara that allows older DDR4 memory from decommissioned servers to be reused in newer AI training machines via a PCIe bus. The innovation addresses a critical bottleneck: 40% of Meta's millions of servers are memory-starved while the company holds a large surplus of legacy DIMMs.</div>
+      <ul class="story-bullets">
+        <li>40% of Meta's server fleet is limited by memory shortages</li>
+        <li>DDR4 chips last roughly 2× longer than the servers they ship in</li>
+        <li>Vistara CXL chip connects legacy RAM with minimal performance penalty</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT 7/10</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:70%;background:#26c6a0;"></div></div>
+      </div>
+      <div class="why-matters">Demonstrates how hyperscalers can cut hardware costs and e-waste amid soaring RAM prices for AI workloads.</div>
+    </div>
+
+    <!-- Story 5 -->
+    <div class="story-card">
+      <div class="card-meta">
+        <span class="card-num">05</span>
+        <span class="category-pill cat-world">World</span>
+        <span class="card-emoji">✈️</span>
+        <span class="card-topic">Military Drone Strategy</span>
+      </div>
+      <div class="story-headline">Pentagon Seeks Cheap Drones After $1B Iran Losses</div>
+      <div class="story-summary">The US military has lost over 30 MQ-9 Reaper drones — collectively worth more than $1 billion — during surveillance and strike missions over Iran, exposing the vulnerability of expensive precision UAVs in contested airspace. The Pentagon is now urgently soliciting designs for cheap, expendable drone swarms capable of similar missions at a fraction of the cost.</div>
+      <ul class="story-bullets">
+        <li>Each MQ-9 Reaper costs approximately $32 million per unit</li>
+        <li>Iran downed 30+ Reapers using layered air-defense systems</li>
+        <li>Pentagon seeks replacements costing under $1 million per unit</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT 8/10</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:80%;background:#ff7043;"></div></div>
+      </div>
+      <div class="why-matters">Signals a fundamental shift in US military doctrine toward attritable mass rather than expensive precision assets.</div>
+    </div>
+
+    <!-- Story 6 -->
+    <div class="story-card">
+      <div class="card-meta">
+        <span class="card-num">06</span>
+        <span class="category-pill cat-world">World</span>
+        <span class="card-emoji">🎵</span>
+        <span class="card-topic">Music &amp; Culture</span>
+      </div>
+      <div class="story-headline">Bonnie Tyler, Epic Ballad Icon, Dies at 75</div>
+      <div class="story-summary">Bonnie Tyler, the Welsh rock singer best known for the 1983 power ballad "Total Eclipse of the Heart," has died at age 75. The song reached number one in over a dozen countries and remains one of the best-selling singles in music history.</div>
+      <ul class="story-bullets">
+        <li>"Total Eclipse of the Heart" sold over 6 million copies worldwide</li>
+        <li>Tyler represented Wales at the 2013 Eurovision Song Contest</li>
+        <li>Career spanned more than five decades of international touring</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT 6/10</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:60%;background:#ff7043;"></div></div>
+      </div>
+      <div class="why-matters">Her voice defined a generation of theatrical rock ballads and influenced artists from power-pop to cinematic soundtracks.</div>
+    </div>
+
+    <div class="svg-link-block">
+      <span>📊</span>
+      <div>
+        <a href="infographic-2026-07-09.svg" download>Download SVG Infographic</a>
+        <div class="svg-desc">Vector typographic briefing — July 9, 2026 · Repair Rights and Surveillance</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Generated by AI · <a href="index.html">← Back to all briefings</a></p>
+    <p style="margin-top:8px;">Sources: Hacker News · AP News · Patrick Breyer MEP · Ars Technica · Network World</p>
+  </footer>
+</div>
+</body>
+</html>

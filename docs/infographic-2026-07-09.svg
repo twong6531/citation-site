@@ -1,0 +1,99 @@
+<svg viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+  
+  <!-- Top bar -->
+  <rect width="800" height="4" fill="#111111"/>
+  
+  <!-- HEADER -->
+  <text x="400" y="36" text-anchor="middle" fill="#888888" font-size="11" font-weight="500" letter-spacing="3">DAILY BRIEFING</text>
+  <text x="400" y="76" text-anchor="middle" fill="#111111" font-size="28" font-weight="700">Repair Rights and Surveillance</text>
+  <text x="400" y="104" text-anchor="middle" fill="#888888" font-size="13">July 9, 2026</text>
+  <line x1="40" y1="120" x2="760" y2="120" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 1: John Deere Right to Repair -->
+  <!-- Category pill -->
+  <rect x="40" y="136" width="72" height="20" rx="10" fill="#2E7D32"/>
+  <text x="76" y="150" text-anchor="middle" fill="white" font-size="10" font-weight="600">BUSINESS</text>
+  <text x="40" y="178" fill="#111111" font-size="16" font-weight="700">FTC Forces John Deere to Allow Farmer Repairs</text>
+  <text x="40" y="198" fill="#555555" font-size="12">FTC settlement requires John Deere to open repair</text>
+  <text x="40" y="213" fill="#555555" font-size="12">access — tools, software, manuals — to all owners.</text>
+  <!-- Bullets -->
+  <text x="40" y="233" fill="#333333" font-size="11">• Affects millions of US John Deere equipment owners</text>
+  <text x="40" y="248" fill="#333333" font-size="11">• Farmers previously paid $100–$400/hr dealer monopoly</text>
+  <text x="40" y="263" fill="#333333" font-size="11">• Impact score: 9/10</text>
+  <!-- Impact bar -->
+  <rect x="40" y="274" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="274" width="648" height="3" fill="#2E7D32" rx="1"/>
+  <!-- Divider -->
+  <line x1="40" y1="292" x2="760" y2="292" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 2: EU Chat Control -->
+  <rect x="40" y="302" width="58" height="20" rx="10" fill="#E65100"/>
+  <text x="69" y="316" text-anchor="middle" fill="white" font-size="10" font-weight="600">WORLD</text>
+  <text x="40" y="344" fill="#111111" font-size="16" font-weight="700">EU Greenlights Mass Scanning of Private Messages</text>
+  <text x="40" y="364" fill="#555555" font-size="12">Chat Control 1.0 passed despite majority opposition —</text>
+  <text x="40" y="379" fill="#555555" font-size="12">314 against, 276 for — on a procedural technicality.</text>
+  <text x="40" y="399" fill="#333333" font-size="11">• 314 MEPs opposed vs. 276 in favor — still passed</text>
+  <text x="40" y="414" fill="#333333" font-size="11">• Mass surveillance of private messages permitted until 2028</text>
+  <text x="40" y="429" fill="#333333" font-size="11">• Impact score: 9/10</text>
+  <rect x="40" y="440" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="440" width="648" height="3" fill="#E65100" rx="1"/>
+  <line x1="40" y1="458" x2="760" y2="458" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 3: Spider Venom Bees -->
+  <rect x="40" y="468" width="68" height="20" rx="10" fill="#0077CC"/>
+  <text x="74" y="482" text-anchor="middle" fill="white" font-size="10" font-weight="600">SCIENCE</text>
+  <text x="40" y="510" fill="#111111" font-size="16" font-weight="700">Spider Venom Pesticide Protects Honeybee Colonies</text>
+  <text x="40" y="530" fill="#555555" font-size="12">Compound from spider venom kills varroa mites with near-</text>
+  <text x="40" y="545" fill="#555555" font-size="12">100% efficacy — zero harm to bees in field trials.</text>
+  <text x="40" y="565" fill="#333333" font-size="11">• Varroa mites kill 30–50% of affected hive populations</text>
+  <text x="40" y="580" fill="#333333" font-size="11">• Targets mite nervous system; spares bee biology entirely</text>
+  <text x="40" y="595" fill="#333333" font-size="11">• Impact score: 8/10</text>
+  <rect x="40" y="606" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="606" width="576" height="3" fill="#0077CC" rx="1"/>
+  <line x1="40" y1="624" x2="760" y2="624" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 4: Meta CXL RAM -->
+  <rect x="40" y="634" width="40" height="20" rx="10" fill="#00897B"/>
+  <text x="60" y="648" text-anchor="middle" fill="white" font-size="10" font-weight="600">TECH</text>
+  <text x="40" y="676" fill="#111111" font-size="16" font-weight="700">Meta's Custom Chip Breathes Life Into Old RAM</text>
+  <text x="40" y="696" fill="#555555" font-size="12">Meta's "Vistara" CXL chip lets newer AI servers reuse</text>
+  <text x="40" y="711" fill="#555555" font-size="12">legacy DDR4 memory — slashing costs and e-waste.</text>
+  <text x="40" y="731" fill="#333333" font-size="11">• 40% of Meta's server fleet is memory-constrained</text>
+  <text x="40" y="746" fill="#333333" font-size="11">• DDR4 chips last 2× longer than the servers they ship in</text>
+  <text x="40" y="761" fill="#333333" font-size="11">• Impact score: 7/10</text>
+  <rect x="40" y="772" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="772" width="504" height="3" fill="#00897B" rx="1"/>
+  <line x1="40" y1="790" x2="760" y2="790" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 5: Drones -->
+  <rect x="40" y="800" width="58" height="20" rx="10" fill="#E65100"/>
+  <text x="69" y="814" text-anchor="middle" fill="white" font-size="10" font-weight="600">WORLD</text>
+  <text x="40" y="842" fill="#111111" font-size="16" font-weight="700">Pentagon Seeks Cheap Drones After $1B Iran Losses</text>
+  <text x="40" y="862" fill="#555555" font-size="12">US lost 30+ MQ-9 Reaper drones worth over $1B in Iran</text>
+  <text x="40" y="877" fill="#555555" font-size="12">conflict — Pentagon now wants sub-$1M replacements.</text>
+  <text x="40" y="897" fill="#333333" font-size="11">• Each MQ-9 Reaper costs approximately $32 million</text>
+  <text x="40" y="912" fill="#333333" font-size="11">• Iran downed 30+ using air-defense systems</text>
+  <text x="40" y="927" fill="#333333" font-size="11">• Impact score: 8/10</text>
+  <rect x="40" y="938" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="938" width="576" height="3" fill="#E65100" rx="1"/>
+  <line x1="40" y1="956" x2="760" y2="956" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STORY 6: Bonnie Tyler -->
+  <rect x="40" y="966" width="58" height="20" rx="10" fill="#E65100"/>
+  <text x="69" y="980" text-anchor="middle" fill="white" font-size="10" font-weight="600">WORLD</text>
+  <text x="40" y="1008" fill="#111111" font-size="16" font-weight="700">Bonnie Tyler, Epic Ballad Icon, Dies at 75</text>
+  <text x="40" y="1028" fill="#555555" font-size="12">Welsh rock singer behind "Total Eclipse of the Heart"</text>
+  <text x="40" y="1043" fill="#555555" font-size="12">dies at 75 after a five-decade career.</text>
+  <text x="40" y="1063" fill="#333333" font-size="11">• "Total Eclipse of the Heart" sold over 6 million copies</text>
+  <text x="40" y="1078" fill="#333333" font-size="11">• Represented Wales at Eurovision 2013</text>
+  <text x="40" y="1093" fill="#333333" font-size="11">• Impact score: 6/10</text>
+  <rect x="40" y="1104" width="720" height="3" fill="#EEEEEE" rx="1"/>
+  <rect x="40" y="1104" width="432" height="3" fill="#E65100" rx="1"/>
+  <line x1="40" y1="1122" x2="760" y2="1122" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- FOOTER -->
+  <text x="400" y="1160" text-anchor="middle" fill="#AAAAAA" font-size="11">Generated by AI · July 9, 2026</text>
+  <rect x="0" y="1394" width="800" height="6" fill="#111111"/>
+</svg>
