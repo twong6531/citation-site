@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-09",
+  "reviewed_at": "2026-07-09T17:43:11Z",
+  "total_reviewed": 6,
+  "passed": 0,
+  "revise": 6,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [
+    {
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "score": 67,
+      "priority_fix": "Reel over 200w (~226w — Scene 3 too long). YouTube over 1,200w (~1,540w — Sections 2 and 4 need trimming). Vague sources for 75%/38% AI-adoption stats (need named surveys).",
+      "days_in_revise": 0
+    },
+    {
+      "slug": "apple-gemini-2026-script",
+      "score": 65,
+      "priority_fix": "Reel over 200w (~249w). YouTube at or over 1,200w. Researcher headcount stat (4,000 DeepMind / 600 Apple) lacks named source. No revisions since 2026-06-11.",
+      "days_in_revise": 28
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "score": 72,
+      "priority_fix": "Reel only — Scene 3 runs ~87w in a 15-second window. Simple targeted cut (~22-word replacement). YouTube requires no changes. Closest to PASS of all scripts in queue. No revisions since 2026-06-11.",
+      "days_in_revise": 28
+    },
+    {
+      "slug": "transit-desert-pomdp-script",
+      "score": 60,
+      "priority_fix": "Reel requires near-complete rewrite (~324w vs 200w limit — 3× the allowable length). Specific replacement script provided in QC report and in prior QC from 2026-06-11. 28 days unrevised — ESCALATION REQUIRED.",
+      "days_in_revise": 28
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "score": 62,
+      "priority_fix": "Reel Scene 3 overstates drone-connection certainty as confirmed fact (YouTube version correctly hedges this — reel must match). Reel Scene 1 misattributes Ingress portal count (15M) to Pokémon Go AR scans. Factual corrections required before publish. No revisions since 2026-06-11.",
+      "days_in_revise": 28
+    },
+    {
+      "slug": "electric-axial-flux-motor-transit-explainer-script",
+      "score": 58,
+      "priority_fix": "Potential factual error: reel/YouTube hook claims McLaren Artura and Lamborghini Revuelto use YASA axial flux motors — this appears inaccurate (McLaren uses in-house motor; Lamborghini uses proprietary motors). Must verify and correct before publish. All sources are Wikipedia — needs primary sources for mass-production claim and motor specs. No revisions since 2026-06-11.",
+      "days_in_revise": 28
+    }
+  ],
+  "blocked": [],
+  "pipeline_alerts": [
+    "ZERO scripts approved for publish today (0 of 6 reviewed). No new scripts have been revised since the QC cycle of 2026-06-11 — 5 of 6 scripts have been in REVISE status for 28 consecutive days with no action from the script agent.",
+    "transit-desert-pomdp-script has been flagged for a near-complete reel rewrite for 28 days. The rewrite is a 15-20 minute editing task. This is the longest-outstanding single revision in the queue.",
+    "electric-axial-flux-motor: potential factual error about McLaren Artura and Lamborghini Revuelto motor suppliers has been outstanding for 28 days. Unverified factual claims cannot be published.",
+    "PUBLISHING REMAINS BLOCKED: approved.json issue (noted in status file) is separate from QC. Even if scripts pass QC, the approved.json stale-publish-list problem prevents release. Human intervention required on both tracks.",
+    "ARTICLE AGENT (33 days unresponsive): drafts/articles/ has produced zero files in the site's entire history. QC cannot review what is not produced. This is a structural upstream failure."
+  ],
+  "qc_notes": "The slime-mold-transit script is the best candidate for rapid publication — it requires only a targeted Scene 3 trim in the reel (~22-word substitution), with the YouTube version needing no changes. If the script agent can make this single edit, slime-mold-transit could pass QC on next review."
+}

@@ -1,27 +1,31 @@
 {
   "file": "apple-gemini-2026-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-11T17:36:55Z",
+  "reviewed_at": "2026-07-09T17:43:11Z",
   "verdict": "REVISE",
   "score": 65,
   "checks_passed": [
     "Reel script exists",
     "YouTube script exists",
-    "Hook in first 3 lines of reel — 'At WWDC 2026, Apple revealed...'",
+    "Hook in first 3 lines of reel — 'Apple just handed its AI brain to its biggest competitor.'",
     "Hook does not start with 'Did you know'",
     "No AI tells found",
     "CTA present in reel ('Link in bio')",
     "CTA present in YouTube ('Subscribe' + link below)",
     "Visual notes present throughout reel",
-    "Major claims sourced inline: WWDC 2026 keynote, Apple Intelligence 2024 docs, US v. Google LLC 2024, public researcher headcount",
-    "Sources are high-quality (reported deal terms, keynote, court case) — not Wikipedia-only"
+    "Major claims sourced inline: WWDC 2026 keynote, Apple Intelligence 2024 docs, US v. Google LLC 2024, reported deal terms",
+    "Sources are high-quality (keynote, court case, official documentation) — not Wikipedia-only",
+    "No placeholder text found",
+    "No AI tells found",
+    "No duplicate: topic not published in docs/ within 14 days"
   ],
   "checks_failed": [
-    "Reel word count OVER 200: estimated 249 spoken words (HOOK ~31w, Scene 1 ~58w, Scene 2 ~66w, Scene 3 ~68w, CTA ~33w). A 60-second reel at 150 wpm supports ~150 words; even at fast 175 wpm this is undeliverable in 60 seconds.",
-    "YouTube word count likely at or over 1,200-word ceiling: 7-8 minute target with HOOK + INTRO + 3 full sections + OUTRO. Estimated 1,200–1,400 spoken words; may breach upper bound.",
-    "Previously marked 'qc: passed' on 2026-06-09 but reel word count issue was missed in that review."
+    "Reel word count OVER 200: estimated 249 spoken words (Hook ~31w, Scene 1 ~58w, Scene 2 ~66w, Scene 3 ~68w, CTA ~33w). A 60-second reel at 150 wpm supports ~150 words; even at 175 wpm this is undeliverable in 60 seconds.",
+    "YouTube word count at or over 1,200-word ceiling: estimated 1,200-1,400 spoken words with HOOK + INTRO + 3 full sections + OUTRO. At upper bound or above limit.",
+    "Researcher headcount figures — Google DeepMind 4,000+ and Apple ~600 — cited only as '[Source: public hiring data; industry estimates]'. A named source is required (e.g., LinkedIn Talent Insights data, company earnings calls, or a specific industry report).",
+    "UNCHANGED SINCE PRIOR QC (2026-06-11): Script was flagged for these same issues and has not been revised. Revision notes from prior QC remain valid."
   ],
-  "revision_notes": "REEL: Cut voiceover to under 200 words. Trim Scene 2 — drop the 'Two years later Siri's reasoning is routed through Gemini 1.5 Pro...' expansion (on-screen text already carries this); keep just the contrast line (~25w). Tighten Scene 3 to 2 sentences max. Target: HOOK 25w, Scene 1 45w, Scene 2 35w, Scene 3 45w, CTA 25w = ~175w. YOUTUBE: Recount spoken words precisely. If over 1,200, trim Section 3 regulatory discussion (can cut from ~180w to ~100w without losing key points — keep DOJ pattern, drop detailed Samsung/Microsoft paragraph).",
+  "revision_notes": "REEL: Cut voiceover to under 200 words. Trim Scene 2 — drop the full 'Two years later Siri's reasoning is routed through Gemini 1.5 Pro...' expansion (on-screen text carries this); keep just the contrast line (~25w). Tighten Scene 3 to 2 sentences max. Target: HOOK 25w, Scene 1 45w, Scene 2 35w, Scene 3 45w, CTA 25w = ~175w. YOUTUBE: Recount spoken words precisely. If over 1,200, trim Section 3 — the Samsung/Microsoft competitive landscape paragraph and the Meta/Llama paragraph can each be cut to 1-2 sentences without losing the core argument. The regulatory section can also be tightened (DOJ pattern is the key point; drop the extended speculation about appellate timeline). SOURCE FIX: For researcher headcount, name the source explicitly — 'according to [report/outlet]' rather than 'public hiring data.'",
   "fail_reason": null,
   "approved_for_publish": false
 }

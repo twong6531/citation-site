@@ -1,7 +1,7 @@
 {
   "file": "slime-mold-transit-script.md",
   "type": "script",
-  "reviewed_at": "2026-06-11T17:36:55Z",
+  "reviewed_at": "2026-07-09T17:43:11Z",
   "verdict": "REVISE",
   "score": 72,
   "checks_passed": [
@@ -10,20 +10,23 @@
     "Hook in first 3 lines — 'A single-celled organism just solved the transit problem US cities have been failing at for 70 years.'",
     "Hook does not start with 'Did you know'",
     "No AI tells found",
-    "CTA present in reel ('Link in bio')",
+    "CTA present in reel ('Full breakdown...link in bio')",
     "CTA present in YouTube ('Subscribe for weekly transit and urban infrastructure analysis' + link)",
-    "Visual notes present in reel (time-lapse slime mold, animated simulation, US suburban map)",
-    "Source quality is STRONG: arXiv:2606.06189 (Burke et al. 2026) and arXiv:2606.07486 (Xiong et al. 2026) are primary academic sources. Also cites Tero et al. Science 2010 (the original slime mold / Tokyo paper) and APTA data.",
+    "Visual notes present and detailed in reel (time-lapse slime mold, animated simulation, US suburban map with red highlights)",
+    "Source quality is STRONG: arXiv:2606.06189 (Burke et al. 2026) and arXiv:2606.07486 (Xiong et al. 2026) are primary academic sources; also cites Tero et al. Science 2010 (original slime mold/Tokyo paper) and APTA data",
     "Claims sourced inline throughout both reel and YouTube",
-    "YouTube honestly covers real-world limitations (simulation only, regulatory barriers, passenger predictability)",
-    "Not a duplicate of published content: topic in covered_topics list but no matching published article found in docs/ within 14 days",
-    "YouTube word count appears within range: estimated 1,050–1,200 spoken words for 7-8 min script — within acceptable range"
+    "YouTube honestly covers real-world limitations (simulation only, regulatory barriers, ADA compliance requirements, passenger predictability concerns)",
+    "No duplicate: topic not published in docs/ within 14 days",
+    "No placeholder text found",
+    "Highest source quality of all scripts in today's batch — arXiv preprints, a peer-reviewed Science paper, and APTA institutional data"
   ],
   "checks_failed": [
-    "Reel word count OVER 200: estimated 245 spoken words (HOOK ~17w, Scene 1 ~44w, Scene 2 ~74w, Scene 3 ~87w, CTA ~23w). Scene 3 alone runs ~87 words — far too long for a 60-second reel segment (35-50s window is only 15 seconds of airtime).",
-    "Scene 3 of reel exceeds its time window: the 35-50s segment (15 seconds of airtime at ~40 wpm) contains ~87 words. Even at 175 wpm this would take ~30 seconds — double the allotted time."
+    "Reel word count OVER 200: estimated 245-261 spoken words (Hook ~17w, Scene 1 ~44w, Scene 2 ~74-88w, Scene 3 ~87w, CTA ~23w). Scene 3 alone runs ~87 words in the 35-50s window (15 seconds airtime at ~40 wpm). This reel would run approximately 1:40 at 150 wpm — nearly double the 60-second format.",
+    "Scene 3 of reel exceeds its time window: the 35-50s slot (15 seconds of airtime) contains ~87 words. Even at 175 wpm this segment runs ~30 seconds — double the allotted time.",
+    "On-screen text statistics in YouTube lack inline citations: 'US suburban density: 3-8 housing units/acre. Transit viability threshold: ~30' appears as on-screen text without a cited source. Though the viability threshold figure is common in urban planning literature, it needs attribution.",
+    "UNCHANGED SINCE PRIOR QC (2026-06-11): Script was flagged for the same reel word count issue and has not been revised. This is the script most ready for publication — only the reel needs a trim."
   ],
-  "revision_notes": "REEL: Scene 3 is the primary problem. Cut it from ~87 words to under 35 words. The equity point (wheelchair users, rural Americans) is powerful but must be compressed to one sentence: 'For car-dependent suburbs — and for wheelchair users who can't reach a fixed stop — this is the transit model that actually works.' Cut the 'for anyone who's ever watched a bus drive past with two people on it while 20 people need a ride on the next block' sentence entirely — it reads well in long-form but not at reel pace. Also trim Scene 2 slightly (drop the 'No central dispatcher. No fixed stops. Just buses talking to each other...' closing — the simulation visual carries this). Target total: under 180 words. NOTE: This is one of the strongest scripts in today's batch on content quality. The sole issue is reel pacing.",
+  "revision_notes": "REEL: Scene 3 is the only significant problem. Current Scene 3: ~87 words covering wheelchair users, rural Americans, density issues, and the research implications. Compress to: 'For car-dependent suburbs — and for wheelchair users who can't reach a fixed stop — this is the transit model that actually works.' (~22w) This preserves the equity angle in one sharp sentence. Also trim Scene 2 by ~15 words — cut 'No central dispatcher. No fixed stops. Just buses talking to each other, the way slime mold cells do.' from the voiceover (the simulation visual carries it). TARGET: HOOK 17w, Scene 1 40w, Scene 2 60w, Scene 3 25w, CTA 23w = ~165w total. NOTE: This is the strongest script in today's batch on content quality. The sole revision is reel pacing — the YouTube version requires no changes. Once the reel is trimmed, this script should PASS on next QC. SOURCE: Add citation for suburban density / transit viability threshold figure — cite APTA Transit Score methodology, or the Congress for New Urbanism transit threshold literature.",
   "fail_reason": null,
   "approved_for_publish": false
 }
