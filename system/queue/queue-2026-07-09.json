@@ -1,0 +1,89 @@
+{
+  "date": "2026-07-09",
+  "generated_at": "2026-07-09T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "video_script",
+      "topic": "Gemini Code Assist Shutdown: What Transit Tech Teams Need to Do Now",
+      "angle": "July 17 deadline is 8 days away — practical guide for transit agencies and mobility-tech startups relying on Gemini Code Assist. What breaks, what replaces it, and why vendor lock-in in AI tools is the new transit software risk.",
+      "rationale": "URGENT: July 17 deadline is 8 days out. Script has been at Rank 5 for 2 consecutive days with no production. Time value drops to zero after July 17. Window closes before any other queue item. Elevated to Rank 1.",
+      "target_length": "medium",
+      "slug": "gemini-code-assist-shutdown-transit-tech-script",
+      "output_path": "drafts/scripts/gemini-code-assist-shutdown-transit-tech-script.md"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "topic": "The Right-to-Repair Gap in Transit: Why Agencies Can't Fix Their Own Fare Gates",
+      "angle": "The John Deere FTC right-to-repair settlement (HN #1 today) opens the door to the larger story: transit agencies face the same vendor lock-in with fare collection systems, onboard diagnostics, and rolling stock electronics. WMATA, BART, and LA Metro all pay massive vendor fees to fix equipment their own technicians are locked out of servicing.",
+      "rationale": "Strong news hook from today's HN (John Deere FTC settlement trending). Zero prior coverage on this site. Ties hardware ownership policy directly to transit equity and operational cost. Long-form article format allows deep dive into vendor contracts, legislative landscape, and agency case studies.",
+      "target_length": "long",
+      "slug": "right-to-repair-transit-hardware-vendor-lock-in",
+      "output_path": "drafts/articles/right-to-repair-transit-hardware-vendor-lock-in.html"
+    },
+    {
+      "rank": 3,
+      "type": "infographic",
+      "topic": "EU Chat Control 1.0 and Transit Rider Privacy: What It Means for Anonymous Mobility",
+      "angle": "EU Parliament just passed Chat Control 1.0 (HN signal today). Visual explainer: how mass message scanning intersects with transit app data, anonymous tap-to-pay, and mobility pattern surveillance. Connects European digital rights debate to transit riders' real privacy exposure.",
+      "rationale": "Breaking news hook from today's HN (EU Chat Control greenlighted by Parliament — major digital rights story). Zero prior coverage on this site. Infographic format ideal for illustrating the data flow from phone → transit app → government surveillance pathway. High shareability on transit + privacy audiences.",
+      "target_length": "medium",
+      "slug": "eu-chat-control-transit-rider-privacy",
+      "output_path": "drafts/infographics/eu-chat-control-transit-rider-privacy.html"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "AI Agent Security Risks in Transit Management Systems: A Research Brief",
+      "angle": "Following yesterday's new script draft (ai-agents-transit-security-leak-risk), produce the companion research brief synthesizing academic literature on AI agent vulnerabilities in critical infrastructure, specifically transit SCADA systems, scheduling AI, and fleet management automation. Positions site as authoritative on both the policy and technical dimensions.",
+      "rationale": "Companion to yesterday's new video script (ai-agents-transit-security-leak-risk-script-2026.md, QC pending). Research brief provides academic grounding and citable sources. Today's HN shows sustained AI security interest. Fills the gap between transit-focused and AI-security-focused audiences.",
+      "target_length": "medium",
+      "slug": "ai-agent-security-transit-infrastructure-research",
+      "output_path": "drafts/articles/ai-agent-security-transit-infrastructure-research.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "What Happens When Transit Infrastructure Fails Systemically: Lessons from Military Logistics",
+      "angle": "HN's 'Glass Backbone' military logistics piece (Army supply chain vulnerabilities in next-generation warfare) maps directly to transit's own brittle infrastructure: aging signal systems, single-supplier critical parts, and no war-reserve equivalents. Explainer connecting infrastructure resilience research to transit policy.",
+      "rationale": "Interesting editorial angle bridging today's HN military logistics story to transit infrastructure resilience — a topic with strong academic backing but underexplored in transit media. Builds domain authority at the intersection of infrastructure policy and systems resilience. Low time pressure allows craft-first approach.",
+      "target_length": "medium",
+      "slug": "transit-infrastructure-resilience-systemic-failure",
+      "output_path": "drafts/articles/transit-infrastructure-resilience-systemic-failure.html"
+    }
+  ],
+  "retries": [
+    {
+      "job": "brt-vs-light-rail-cost-2026-infographic",
+      "status": "suspended",
+      "note": "Automated retries suspended since 2026-07-02. Not re-queued until infographic-writing agent receives manual diagnostic. Do not retry automatically."
+    }
+  ],
+  "skip_topics": [
+    "NYC congestion pricing transit ridership gains",
+    "ChatPlanner LLM personalized transit routing",
+    "Virginia geolocation data ban transit privacy",
+    "July 4th holiday transit demand capacity planning",
+    "World Cup 2026 transit host cities operations",
+    "foundation models urban mobility socioeconomic",
+    "edge AI small language models transit tunnels",
+    "real-time rail network maps viral visualization",
+    "FOSS offline maps CoMaps OSM transit",
+    "fare evasion economics enforcement",
+    "Tesla SpaceX transit empire",
+    "transit app dark UX patterns",
+    "US cities transit gap",
+    "California high-speed rail",
+    "transit-oriented development",
+    "AI deregulation Anthropic model restrictions",
+    "Gemini Code Assist shutdown July 17 (covered if script produced today)"
+  ],
+  "trend_signals": [
+    "EU Chat Control 1.0 passed by Parliament — mass message surveillance mandate",
+    "John Deere FTC right-to-repair settlement — hardware access rights precedent",
+    "US military hunter-killer drone procurement failures — infrastructure resilience signal",
+    "FableCut AI browser video editor — AI creative tools democratization",
+    "Army logistics Glass Backbone vulnerability — systemic infrastructure risk analysis"
+  ]
+}

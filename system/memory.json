@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-07T00:00:00Z",
+  "last_updated": "2026-07-09T00:00:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -810,6 +810,18 @@
       "type": "research_infographic",
       "url": "docs/research-infographic-2026-07-06.svg",
       "topic": "Research Infographic 2026-07-06"
+    },
+    {
+      "date": "2026-07-08",
+      "type": "transit",
+      "url": "docs/transit-2026-07-08.html",
+      "topic": "SoCal Transit Brief 2026-07-08"
+    },
+    {
+      "date": "2026-07-08",
+      "type": "video_script_draft",
+      "url": "drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md",
+      "topic": "AI Agents Transit Security Leak Risk (new draft, QC pending)"
     }
   ],
   "drafts_pending_approval": [
@@ -1570,6 +1582,21 @@
       "date": "2026-07-06",
       "job": "infographic_writing",
       "reason": "Daily editorial infographic not produced 2026-07-06 (no infographic-2026-07-06.svg). BRT infographic retries remain suspended."
+    },
+    {
+      "date": "2026-07-08",
+      "job": "publishing",
+      "reason": "approved.json stale \u2014 still lists 5 scripts published 2026-07-05. Day 33 publishing block. Human action required to update approved.json."
+    },
+    {
+      "date": "2026-07-08",
+      "job": "article_writing",
+      "reason": "drafts/articles/ empty \u2014 Day 33. 0% article production rate across entire site history. Structural pipeline failure persists."
+    },
+    {
+      "date": "2026-07-08",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 not produced \u2014 retries suspended since 2026-07-02. Manual diagnostic required."
     }
   ],
   "content_gaps": [

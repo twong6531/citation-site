@@ -1,0 +1,22 @@
+{
+  "date": "2026-07-09",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "blocked_approved_json_stale"
+  },
+  "queue_items": 5,
+  "alerts": [
+    "CRITICAL — GEMINI CODE ASSIST DEADLINE: July 17 is 8 days away. Script elevated to Rank 1 for third consecutive day with no production. Time value drops to zero after July 17. Immediate action required.",
+    "PUBLISHING BLOCKED (Day 33): approved.json still lists 5 scripts published on 2026-07-05. New content cannot release until a human updates approved.json with current approved slugs.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 33): drafts/articles/ has NEVER had a file produced in 33 consecutive days. 0% article production rate across entire site history. This is a structural pipeline failure requiring manual intervention.",
+    "BRT INFOGRAPHIC SUSPENDED: Automated retries for brt-vs-light-rail-cost-2026 suspended since 2026-07-02. Manual diagnostic of infographic-writing agent required before any retry.",
+    "VIDEO SCRIPTS BACKLOG: 5 needs-revision scripts pending (apple-gemini-2026, electric-axial-flux-motor, pokemon-go-drones, slime-mold-transit, transit-desert-pomdp). New ai-agents-transit-security script (produced 2026-07-08) awaits QC.",
+    "TREND SIGNALS TODAY: EU Chat Control 1.0 Parliament vote + John Deere FTC right-to-repair settlement + US military drone procurement failures + Army logistics resilience analysis. Queue built around repair rights + surveillance privacy + infrastructure resilience angles."
+  ]
+}
