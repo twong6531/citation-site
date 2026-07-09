@@ -5,512 +5,133 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transit Research Archive — Citation Site</title>
 <style>
-  :root {
-    --bg: #0D0D14;
-    --surface: #15151F;
-    --card: #1C1C2A;
-    --accent: #6B8CFF;
-    --accent2: #FF6B6B;
-    --accent3: #44BB88;
-    --accent4: #FFB300;
-    --text: #E8E8F0;
-    --text-dim: #9999BB;
-    --text-muted: #666688;
-    --border: #2A2A40;
-    --highlight: #22223A;
-  }
+  :root { --bg: #0D0D14; --surface: #15151F; --card: #1C1C2A; --accent: #6B8CFF; --accent2: #FF6B6B; --accent3: #44BB88; --accent4: #FFB300; --text: #E8E8F0; --text-dim: #9999BB; --text-muted: #666688; --border: #2A2A40; --highlight: #22223A; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 15px;
-  }
+  body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-
-  .site-header {
-    background: linear-gradient(135deg, #0A0A18 0%, #151530 100%);
-    border-bottom: 1px solid var(--border);
-    padding: 40px 0 32px;
-  }
+  .site-header { background: linear-gradient(135deg, #0A0A18 0%, #151530 100%); border-bottom: 1px solid var(--border); padding: 40px 0 32px; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  .header-eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: var(--accent);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .header-title {
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    line-height: 1.1;
-    margin-bottom: 14px;
-  }
+  .header-eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+  .header-title { font-size: clamp(32px, 5vw, 56px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; }
   .header-title span { color: var(--accent); }
-  .header-desc {
-    font-size: 15px;
-    color: var(--text-dim);
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-  }
-  .total-count {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    padding: 6px 16px;
-    border-radius: 20px;
-  }
-
-  .section-label {
-    font-size: 10px;
-    letter-spacing: 4px;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .header-desc { font-size: 15px; color: var(--text-dim); max-width: 600px; line-height: 1.6; margin-bottom: 24px; }
+  .total-count { display: inline-block; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 16px; border-radius: 20px; }
+  .section-label { font-size: 10px; letter-spacing: 4px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
   .featured-section { margin: 40px 0 32px; }
-  .featured-card {
-    background: linear-gradient(135deg, #1A1A35 0%, #151530 100%);
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    padding: 32px 36px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: start;
-    position: relative;
-    overflow: hidden;
-  }
-  .featured-badge {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    background: var(--accent);
-    color: #fff;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    padding: 3px 10px;
-    border-radius: 12px;
-  }
-  .featured-date {
-    font-size: 12px;
-    color: var(--accent);
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .featured-card h2 {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-    color: var(--text);
-  }
-  .featured-card .desc {
-    font-size: 14px;
-    color: var(--text-dim);
-    line-height: 1.65;
-    margin-bottom: 20px;
-    max-width: 620px;
-  }
+  .featured-card { background: linear-gradient(135deg, #1A1A35 0%, #151530 100%); border: 1px solid var(--accent); border-radius: 8px; padding: 32px 36px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; position: relative; overflow: hidden; }
+  .featured-badge { position: absolute; top: 16px; right: 20px; background: var(--accent); color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 3px; padding: 3px 10px; border-radius: 12px; }
+  .featured-date { font-size: 12px; color: var(--accent); letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+  .featured-card h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; color: var(--text); }
+  .featured-card .desc { font-size: 14px; color: var(--text-dim); line-height: 1.65; margin-bottom: 20px; max-width: 620px; }
   .featured-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-  .tag {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border: 1px solid;
-  }
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 10px; font-weight: 700; letter-spacing: 1px; border: 1px solid; }
   .tag-ai { color: var(--accent); border-color: rgba(107,140,255,0.4); background: rgba(107,140,255,0.1); }
   .tag-equity { color: var(--accent2); border-color: rgba(255,107,107,0.4); background: rgba(255,107,107,0.1); }
   .tag-data { color: var(--accent3); border-color: rgba(68,187,136,0.4); background: rgba(68,187,136,0.1); }
   .tag-policy { color: var(--accent4); border-color: rgba(255,179,0,0.4); background: rgba(255,179,0,0.1); }
-  .btn-primary {
-    display: inline-block;
-    padding: 12px 24px;
-    background: var(--accent);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-  }
+  .btn-primary { display: inline-block; padding: 12px 24px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; border-radius: 4px; letter-spacing: 0.5px; }
   .btn-primary:hover { background: #5577EE; text-decoration: none; }
-
-  .featured-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    min-width: 140px;
-  }
-  .fstat {
-    background: rgba(107,140,255,0.1);
-    border: 1px solid rgba(107,140,255,0.2);
-    border-radius: 6px;
-    padding: 14px 16px;
-    text-align: center;
-  }
+  .featured-stats { display: flex; flex-direction: column; gap: 16px; min-width: 140px; }
+  .fstat { background: rgba(107,140,255,0.1); border: 1px solid rgba(107,140,255,0.2); border-radius: 6px; padding: 14px 16px; text-align: center; }
   .fstat strong { display: block; font-size: 24px; color: var(--accent); font-weight: 800; }
   .fstat span { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
-
   .past-section { margin: 40px 0; }
-  .issues-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-  }
-  .issue-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px 22px;
-    transition: border-color 0.2s;
-  }
+  .issues-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .issue-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 20px 22px; transition: border-color 0.2s; }
   .issue-card:hover { border-color: var(--accent); }
-  .issue-date {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-  .issue-card h3 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text);
-  }
+  .issue-date { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; margin-bottom: 8px; font-weight: 600; }
+  .issue-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
   .issue-card h3 a { color: var(--text); }
   .issue-card h3 a:hover { color: var(--accent); }
-  .issue-desc {
-    font-size: 12.5px;
-    color: var(--text-muted);
-    line-height: 1.55;
-    margin-bottom: 12px;
-  }
+  .issue-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; margin-bottom: 12px; }
   .issue-meta { font-size: 11px; color: var(--text-muted); }
   .issue-meta span { color: var(--accent); }
-
-  footer {
-    background: #08080F;
-    border-top: 1px solid var(--border);
-    padding: 32px 0 20px;
-    margin-top: 60px;
-    text-align: center;
-  }
+  footer { background: #08080F; border-top: 1px solid var(--border); padding: 32px 0 20px; margin-top: 60px; text-align: center; }
   footer p { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
   footer a { color: var(--accent); }
-
-  @media (max-width: 680px) {
-    .featured-card { grid-template-columns: 1fr; }
-    .featured-stats { flex-direction: row; flex-wrap: wrap; }
-    .fstat { flex: 1; min-width: 100px; }
-  }
+  @media (max-width: 680px) { .featured-card { grid-template-columns: 1fr; } .featured-stats { flex-direction: row; flex-wrap: wrap; } .fstat { flex: 1; min-width: 100px; } }
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="container">
     <div class="header-eyebrow">Automated Transit Research · Daily Digest</div>
     <h1 class="header-title">Transit Research <span>Archive</span></h1>
     <p class="header-desc">Daily automated analysis of the latest academic research in public transit, urban mobility, bus rapid transit, light rail, TOD, walkability, and multimodal transportation systems.</p>
-    <div class="total-count">33 ISSUES PUBLISHED</div>
+    <div class="total-count">34 ISSUES PUBLISHED</div>
   </div>
 </header>
-
 <div class="container">
-
   <section class="featured-section">
-    <div class="section-label">Latest Issue — July 7, 2026</div>
+    <div class="section-label">Latest Issue — July 9, 2026</div>
     <div class="featured-card">
       <span class="featured-badge">TODAY</span>
       <div>
-        <div class="featured-date">JULY 7, 2026</div>
-        <h2>Equity, Real-Time Intelligence, and the Limits of Mobility Data</h2>
-        <p class="desc">Visitation entropy — a ubiquitous mobility metric — is 90.7% noise. Railway selective curtailment cuts delay 30x. Transit deserts across 25 cities remediatable with POMDP planning. Built environment predicts segregation with r=0.770. Only 1.5% road coverage needed for wireless EV city-charging.</p>
+        <div class="featured-date">JULY 9, 2026</div>
+        <h2>NYC Congestion Pricing, Transit Deserts, and the Equity Crisis in Mobility Data</h2>
+        <p class="desc">NYC's historic congestion pricing program empirically boosts transit ridership beyond the cordon zone. Risk-aware AI remediates 53.6% of transit deserts across 25 cities. Elderly mobility is systematically misrepresented in AI planning data. NetMob26 releases a 7.2M-transaction Brazilian bus dataset.</p>
         <div class="featured-tags">
+          <span class="tag tag-policy">NYC CONGESTION PRICING</span>
           <span class="tag tag-equity">TRANSIT DESERTS</span>
-          <span class="tag tag-data">ENTROPY LIMITS</span>
-          <span class="tag tag-ai">RAILWAY POWER AI</span>
-          <span class="tag tag-policy">PARTICIPATION BIAS</span>
-          <span class="tag tag-ai">WIRELESS EV CHARGING</span>
-          <span class="tag tag-data">GPS BIAS</span>
+          <span class="tag tag-data">MOBILITY DATA BIAS</span>
+          <span class="tag tag-data">NETMOB26 DATASET</span>
+          <span class="tag tag-ai">E-SCOOTER AI PLANNING</span>
+          <span class="tag tag-ai">REAL-TIME SAFETY</span>
         </div>
-        <a href="research-2026-07-07.html" class="btn-primary">Read Full Digest →</a>
+        <a href="research-2026-07-09.html" class="btn-primary">Read Full Digest →</a>
       </div>
       <div class="featured-stats">
-        <div class="fstat">
-          <strong>8</strong>
-          <span>Papers</span>
-        </div>
-        <div class="fstat">
-          <strong>75%</strong>
-          <span>High Conf.</span>
-        </div>
-        <div class="fstat">
-          <strong>3</strong>
-          <span>Themes</span>
-        </div>
+        <div class="fstat"><strong>10</strong><span>Papers</span></div>
+        <div class="fstat"><strong>50%</strong><span>High Conf.</span></div>
+        <div class="fstat"><strong>3</strong><span>Themes</span></div>
       </div>
     </div>
   </section>
-
   <section class="past-section">
-    <div class="section-label">Past Issues (32 editions)</div>
+    <div class="section-label">Past Issues (33 editions)</div>
     <div class="issues-grid">
-
-      <div class="issue-card">
-        <div class="issue-date">JULY 6, 2026</div>
-        <h3><a href="research-2026-07-06.html">Urban Mobility Intelligence</a></h3>
-        <p class="issue-desc">NYC congestion pricing empirically proved to boost outer-borough transit ridership. Slime-mold-inspired swarm routing beats fixed routes by up to 101%. Causal AI framework for e-scooter hub siting deployed in 29 German cities. T-REX achieves sub-10ms journey planning at Europe scale.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JULY 5, 2026</div>
-        <h3><a href="research-2026-07-05.html">Transit Research Digest</a></h3>
-        <p class="issue-desc">NYC congestion pricing boosts outer-borough transit. Cold-wave cascade failures in e-bus fleets. AI aggregators in V2G pose governance risks. Elderly mobility underrepresented in AI planning. GPS data bias excludes rural populations.</p>
-        <div class="issue-meta"><span>11 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JULY 4, 2026</div>
-        <h3><a href="research-2026-07-04.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">AI arrives at city-scale network design (AlphaTransit). NYC congestion pricing delivers measurable transit gains. Chicago sees +33% ridership from SAV-transit integration. Reliability overtakes frequency as the post-COVID ridership driver.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JULY 3, 2026</div>
-        <h3><a href="research-2026-07-03.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Multimodal network resilience, fare elasticity post-pandemic, automated demand forecasting, micromobility integration studies.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JULY 2, 2026</div>
-        <h3><a href="research-2026-07-02.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Electric bus fleet electrification, transit equity mapping, demand-responsive routing in low-density areas, BRT corridor design.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JULY 1, 2026</div>
-        <h3><a href="research-2026-07-01.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Transit-oriented development land values, real-time passenger information systems, autonomous shuttles in university campuses.</p>
-        <div class="issue-meta"><span>11 papers</span> · Mixed confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 30, 2026</div>
-        <h3><a href="research-2026-06-30.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Pedestrian safety at transit stops, first/last mile connectivity, mobile ticketing adoption, carbon emissions from transit investment.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 29, 2026</div>
-        <h3><a href="research-2026-06-29.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Shared mobility coordination, transit network redesign after COVID, ridesharing pooling algorithms, station area planning.</p>
-        <div class="issue-meta"><span>8 papers</span> · Medium confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 28, 2026</div>
-        <h3><a href="research-2026-06-28.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Deep learning for transit demand prediction, equity in fare-free transit programs, light rail extension cost-benefit analysis.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 27, 2026</div>
-        <h3><a href="research-2026-06-27.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Transit network vulnerability assessment, high-speed rail integration, modal shift incentives, smart card data analytics.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 26, 2026</div>
-        <h3><a href="research-2026-06-26.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Accessibility modeling for disabled riders, bus bunching mitigation, transfers in multimodal systems, parking policy and transit.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 25, 2026</div>
-        <h3><a href="research-2026-06-25.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Equity in urban bike-share deployment, fare integration across operators, transit frequency optimization, real-time disruption management.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 24, 2026</div>
-        <h3><a href="research-2026-06-24.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Autonomous vehicle regulation, transit-oriented development zoning, multimodal fare payment systems, electric bus range optimization.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 23, 2026</div>
-        <h3><a href="research-2026-06-23.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Rail station catchment areas, bus stop optimization, transit demand modeling, road diet effects on transit speed.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 22, 2026</div>
-        <h3><a href="research-2026-06-22.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Urban freight and transit conflicts, paratransit optimization, route deviation services, suburban transit redesign.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 21, 2026</div>
-        <h3><a href="research-2026-06-21.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Carbon reduction targets in transit, hydrogen bus pilots, transit worker safety, fare evasion prevention.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 20, 2026</div>
-        <h3><a href="research-2026-06-20.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Night transit networks, transit app UX research, multimodal journey planning AI, station security design.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 19, 2026</div>
-        <h3><a href="research-2026-06-19.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Transit fare elasticity across income groups, BRT vs light rail cost comparison, climate resilience in transit infrastructure.</p>
-        <div class="issue-meta"><span>11 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 18, 2026</div>
-        <h3><a href="research-2026-06-18.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Pedestrian plaza conversions, transit stop amenities, micromobility safety, urban highway removal and transit benefits.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 17, 2026</div>
-        <h3><a href="research-2026-06-17.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Transit investment and housing affordability, TOD displacement effects, autonomous mobility equity, real-time crowding data.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 16, 2026</div>
-        <h3><a href="research-2026-06-16.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Grid-connected electric bus depots, transit signal priority systems, commuter rail electrification, station access improvements.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 15, 2026</div>
-        <h3><a href="research-2026-06-15.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Mobility as a Service integration, transit network complexity metrics, school travel and transit use, disability access compliance.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 14, 2026</div>
-        <h3><a href="research-2026-06-14.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Demand-responsive transit in rural areas, ride-hailing and transit substitution, transit performance benchmarking, night buses.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 13, 2026</div>
-        <h3><a href="research-2026-06-13.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">AI transit scheduling, passenger sentiment analysis, transit crime and safety perception, multi-agency coordination.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 12, 2026</div>
-        <h3><a href="research-2026-06-12.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Vehicle electrification timelines, transit and land use co-planning, bus depot siting, fare-free pilot evaluations.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 11, 2026</div>
-        <h3><a href="research-2026-06-11.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Transit and public health outcomes, station environment design, urban heat and transit ridership, labor and transit worker conditions.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 10, 2026</div>
-        <h3><a href="research-2026-06-10.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">BRT corridor performance, light rail vs heavy rail modal choice, transit data standards and GTFS, first-mile-last-mile solutions.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 9, 2026</div>
-        <h3><a href="research-2026-06-09.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Transit funding models, congestion pricing revenues and transit investment, federal grants efficiency, local transit bond measures.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 8, 2026</div>
-        <h3><a href="research-2026-06-08.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Zero-emission transit fleets, vehicle maintenance AI, climate vulnerability assessments for transit infrastructure.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 7, 2026</div>
-        <h3><a href="research-2026-06-07.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Traveler information systems, real-time predictions, AI chatbots for transit queries, multimodal routing optimization.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 6, 2026</div>
-        <h3><a href="research-2026-06-06.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Urban freight consolidation, cargo bike programs, transit priority corridors, bus rapid transit implementation case studies.</p>
-        <div class="issue-meta"><span>9 papers</span> · High confidence</div>
-      </div>
-
-      <div class="issue-card">
-        <div class="issue-date">JUNE 5, 2026</div>
-        <h3><a href="research-2026-06-05.html">Urban Mobility Weekly</a></h3>
-        <p class="issue-desc">Walkability indices and transit access, pedestrian network completeness, TOD density targets, suburban retrofit for transit.</p>
-        <div class="issue-meta"><span>10 papers</span> · High confidence</div>
-      </div>
-
+      <div class="issue-card"><div class="issue-date">JULY 7, 2026</div><h3><a href="research-2026-07-07.html">Equity, Real-Time Intelligence, and the Limits of Mobility Data</a></h3><p class="issue-desc">Visitation entropy — a ubiquitous mobility metric — is 90.7% noise. Railway selective curtailment cuts delay 30x. Transit deserts across 25 cities remediatable with POMDP planning. Built environment predicts segregation with r=0.770.</p><div class="issue-meta"><span>8 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JULY 6, 2026</div><h3><a href="research-2026-07-06.html">Urban Mobility Intelligence</a></h3><p class="issue-desc">NYC congestion pricing empirically proved to boost outer-borough transit ridership. Slime-mold-inspired swarm routing beats fixed routes by up to 101%. Causal AI framework for e-scooter hub siting deployed in 29 German cities.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JULY 5, 2026</div><h3><a href="research-2026-07-05.html">Transit Research Digest</a></h3><p class="issue-desc">NYC congestion pricing boosts outer-borough transit. Cold-wave cascade failures in e-bus fleets. AI aggregators in V2G pose governance risks. Elderly mobility underrepresented in AI planning. GPS data bias excludes rural populations.</p><div class="issue-meta"><span>11 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JULY 4, 2026</div><h3><a href="research-2026-07-04.html">Urban Mobility Weekly</a></h3><p class="issue-desc">AI arrives at city-scale network design (AlphaTransit). NYC congestion pricing delivers measurable transit gains. Chicago sees +33% ridership from SAV-transit integration.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JULY 3, 2026</div><h3><a href="research-2026-07-03.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Multimodal network resilience, fare elasticity post-pandemic, automated demand forecasting, micromobility integration studies.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JULY 2, 2026</div><h3><a href="research-2026-07-02.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Electric bus fleet electrification, transit equity mapping, demand-responsive routing in low-density areas, BRT corridor design.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JULY 1, 2026</div><h3><a href="research-2026-07-01.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Transit-oriented development land values, real-time passenger information systems, autonomous shuttles in university campuses.</p><div class="issue-meta"><span>11 papers</span> · Mixed confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 30, 2026</div><h3><a href="research-2026-06-30.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Pedestrian safety at transit stops, first/last mile connectivity, mobile ticketing adoption, carbon emissions from transit investment.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 29, 2026</div><h3><a href="research-2026-06-29.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Shared mobility coordination, transit network redesign after COVID, ridesharing pooling algorithms, station area planning.</p><div class="issue-meta"><span>8 papers</span> · Medium confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 28, 2026</div><h3><a href="research-2026-06-28.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Deep learning for transit demand prediction, equity in fare-free transit programs, light rail extension cost-benefit analysis.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 27, 2026</div><h3><a href="research-2026-06-27.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Transit network vulnerability assessment, high-speed rail integration, modal shift incentives, smart card data analytics.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 26, 2026</div><h3><a href="research-2026-06-26.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Accessibility modeling for disabled riders, bus bunching mitigation, transfers in multimodal systems, parking policy and transit.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 25, 2026</div><h3><a href="research-2026-06-25.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Equity in urban bike-share deployment, fare integration across operators, transit frequency optimization, real-time disruption management.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 24, 2026</div><h3><a href="research-2026-06-24.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Autonomous vehicle regulation, transit-oriented development zoning, multimodal fare payment systems, electric bus range optimization.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 23, 2026</div><h3><a href="research-2026-06-23.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Rail station catchment areas, bus stop optimization, transit demand modeling, road diet effects on transit speed.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 22, 2026</div><h3><a href="research-2026-06-22.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Urban freight and transit conflicts, paratransit optimization, route deviation services, suburban transit redesign.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 21, 2026</div><h3><a href="research-2026-06-21.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Carbon reduction targets in transit, hydrogen bus pilots, transit worker safety, fare evasion prevention.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 20, 2026</div><h3><a href="research-2026-06-20.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Night transit networks, transit app UX research, multimodal journey planning AI, station security design.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 19, 2026</div><h3><a href="research-2026-06-19.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Transit fare elasticity across income groups, BRT vs light rail cost comparison, climate resilience in transit infrastructure.</p><div class="issue-meta"><span>11 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 18, 2026</div><h3><a href="research-2026-06-18.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Pedestrian plaza conversions, transit stop amenities, micromobility safety, urban highway removal and transit benefits.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 17, 2026</div><h3><a href="research-2026-06-17.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Transit investment and housing affordability, TOD displacement effects, autonomous mobility equity, real-time crowding data.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 16, 2026</div><h3><a href="research-2026-06-16.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Grid-connected electric bus depots, transit signal priority systems, commuter rail electrification, station access improvements.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 15, 2026</div><h3><a href="research-2026-06-15.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Mobility as a Service integration, transit network complexity metrics, school travel and transit use, disability access compliance.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 14, 2026</div><h3><a href="research-2026-06-14.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Demand-responsive transit in rural areas, ride-hailing and transit substitution, transit performance benchmarking, night buses.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 13, 2026</div><h3><a href="research-2026-06-13.html">Urban Mobility Weekly</a></h3><p class="issue-desc">AI transit scheduling, passenger sentiment analysis, transit crime and safety perception, multi-agency coordination.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 12, 2026</div><h3><a href="research-2026-06-12.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Vehicle electrification timelines, transit and land use co-planning, bus depot siting, fare-free pilot evaluations.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 11, 2026</div><h3><a href="research-2026-06-11.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Transit and public health outcomes, station environment design, urban heat and transit ridership, labor and transit worker conditions.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 10, 2026</div><h3><a href="research-2026-06-10.html">Urban Mobility Weekly</a></h3><p class="issue-desc">BRT corridor performance, light rail vs heavy rail modal choice, transit data standards and GTFS, first-mile-last-mile solutions.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 9, 2026</div><h3><a href="research-2026-06-09.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Transit funding models, congestion pricing revenues and transit investment, federal grants efficiency, local transit bond measures.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 8, 2026</div><h3><a href="research-2026-06-08.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Zero-emission transit fleets, vehicle maintenance AI, climate vulnerability assessments for transit infrastructure.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 7, 2026</div><h3><a href="research-2026-06-07.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Traveler information systems, real-time predictions, AI chatbots for transit queries, multimodal routing optimization.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 6, 2026</div><h3><a href="research-2026-06-06.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Urban freight consolidation, cargo bike programs, transit priority corridors, bus rapid transit implementation case studies.</p><div class="issue-meta"><span>9 papers</span> · High confidence</div></div>
+      <div class="issue-card"><div class="issue-date">JUNE 5, 2026</div><h3><a href="research-2026-06-05.html">Urban Mobility Weekly</a></h3><p class="issue-desc">Walkability indices and transit access, pedestrian network completeness, TOD density targets, suburban retrofit for transit.</p><div class="issue-meta"><span>10 papers</span> · High confidence</div></div>
     </div>
   </section>
-
 </div>
-
 <footer>
   <div class="container">
     <p>Transit Research Digest · Automated daily research analysis · <a href="index.html">Home</a></p>
-    <p style="margin-top:8px;">33 issues published · Live at twong6531.github.io/citation-site/research.html</p>
+    <p style="margin-top:8px;">34 issues published · Live at twong6531.github.io/citation-site/research.html</p>
   </div>
 </footer>
-
 </body>
 </html>

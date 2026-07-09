@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 9, 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0D0D14;
+    --surface: #161622;
+    --surface2: #1E1E2E;
+    --border: #2A2A3E;
+    --accent: #E63946;
+    --accent2: #457B9D;
+    --accent3: #2D6A4F;
+    --text: #E8E8F0;
+    --text-muted: #9090A8;
+    --white: #FFFFFF;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; min-height: 100vh; }
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(13,13,20,0.95); border-bottom: 1px solid var(--border); padding: 0 48px; display: flex; align-items: center; height: 52px; gap: 32px; }
+  .nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; }
+  .nav-brand { font-size: 13px; font-weight: 700; color: var(--accent) !important; letter-spacing: 2px; text-transform: uppercase; margin-right: auto; }
+  .hero { background: var(--surface); border-bottom: 4px solid var(--accent); padding: 64px 48px 48px; max-width: 1100px; margin: 0 auto; }
+  .hero-label { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+  .hero-title { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.1; letter-spacing: -1px; margin-bottom: 12px; }
+  .hero-sub { font-size: 16px; color: var(--text-muted); margin-bottom: 32px; }
+  .hero-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .hero-stat { display: flex; flex-direction: column; }
+  .hero-stat-num { font-size: 28px; font-weight: 800; color: var(--white); line-height: 1; }
+  .hero-stat-label { font-size: 12px; color: var(--text-muted); letter-spacing: 1px; margin-top: 4px; }
+  .main { max-width: 1100px; margin: 0 auto; padding: 0 48px 80px; }
+  .section-header { display: flex; align-items: baseline; gap: 16px; padding: 48px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: var(--text-muted); text-transform: uppercase; }
+  .exec-summary { background: var(--surface); border-left: 4px solid var(--accent); padding: 32px; margin-bottom: 48px; }
+  .exec-summary p { font-size: 17px; line-height: 1.75; }
+  .potd { background: linear-gradient(135deg, #1A1A2E 0%, #1E1E38 100%); border: 1px solid var(--accent); border-radius: 4px; padding: 40px; margin-bottom: 48px; position: relative; overflow: hidden; }
+  .potd::before { content: '★ PAPER OF THE DAY'; position: absolute; top: 0; left: 0; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 3px; padding: 6px 16px; }
+  .potd-title { font-size: 22px; font-weight: 700; color: var(--white); margin: 32px 0 8px; line-height: 1.3; }
+  .potd-authors { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+  .potd-reason { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 20px; }
+  .potd-link a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .themes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+  .theme-card { background: var(--surface); border-top: 3px solid var(--accent); padding: 24px; }
+  .theme-card:nth-child(2) { border-top-color: var(--accent2); }
+  .theme-card:nth-child(3) { border-top-color: var(--accent3); }
+  .theme-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+  .theme-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .contrarian { background: #1A1510; border-left: 4px solid #F4A261; padding: 32px; margin-bottom: 48px; }
+  .contrarian-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #F4A261; margin-bottom: 16px; text-transform: uppercase; }
+  .contrarian ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .contrarian li { font-size: 14px; color: var(--text); line-height: 1.6; padding-left: 20px; position: relative; }
+  .contrarian li::before { content: '↯'; position: absolute; left: 0; color: #F4A261; font-weight: 700; }
+  .papers-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; }
+  .paper-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 32px; }
+  .paper-card:hover { background: var(--surface2); border-color: var(--accent2); }
+  .paper-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 10px; }
+  .paper-title { font-size: 16px; font-weight: 700; color: var(--white); line-height: 1.35; flex: 1; }
+  .paper-confidence { font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .confidence-high { background: #1A2E1A; color: #4CAF50; }
+  .confidence-medium { background: #1A1E2E; color: #82B1FF; }
+  .paper-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+  .paper-summary { font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 16px; }
+  .paper-insights { margin-bottom: 16px; }
+  .paper-insights-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; }
+  .paper-insights ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .paper-insights li { font-size: 13px; color: var(--text); padding-left: 16px; position: relative; line-height: 1.5; }
+  .paper-insights li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); }
+  .paper-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .paper-detail-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
+  .paper-detail-text { font-size: 13px; color: var(--text); line-height: 1.55; }
+  .paper-link a { color: var(--accent2); text-decoration: none; font-size: 13px; font-weight: 600; }
+  .takeaways { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; }
+  .takeaway { background: var(--surface); border-left: 3px solid var(--accent); padding: 24px 28px; display: flex; gap: 20px; align-items: flex-start; }
+  .takeaway:nth-child(2) { border-left-color: var(--accent2); }
+  .takeaway:nth-child(3) { border-left-color: var(--accent3); }
+  .takeaway-num { font-size: 28px; font-weight: 800; color: var(--border); line-height: 1; flex-shrink: 0; min-width: 32px; }
+  .takeaway-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .takeaway-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+  .infographic-section { background: var(--surface); border: 1px solid var(--border); padding: 32px; margin-bottom: 48px; }
+  .infographic-download { margin-top: 16px; text-align: center; }
+  .infographic-download a { color: var(--accent2); text-decoration: none; font-size: 13px; font-weight: 600; }
+  .implications { background: var(--surface2); border: 1px solid var(--border); padding: 32px; margin-bottom: 48px; }
+  .implications p { font-size: 15px; line-height: 1.75; }
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 48px; text-align: center; }
+  footer p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 768px) { .hero, .main { padding-left: 24px; padding-right: 24px; } .nav { padding: 0 24px; } .hero-title { font-size: 28px; } .themes-grid { grid-template-columns: 1fr; } .paper-details-grid { grid-template-columns: 1fr; } footer { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Transit Research</a>
+  <a href="research.html">Archive</a>
+  <a href="#papers">Papers</a>
+  <a href="#infographic">Infographic</a>
+  <a href="#takeaways">Takeaways</a>
+</nav>
+<div class="hero">
+  <div class="hero-label">Transit Research Digest</div>
+  <h1 class="hero-title">July 9, 2026</h1>
+  <p class="hero-sub">Daily synthesis of transit, urban mobility, and transportation research from arXiv and Semantic Scholar</p>
+  <div class="hero-meta">
+    <div class="hero-stat"><span class="hero-stat-num">10</span><span class="hero-stat-label">Papers Reviewed</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">High Confidence</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Emerging Themes</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Actionable Takeaways</span></div>
+  </div>
+</div>
+<main class="main">
+  <div class="section-header"><span class="section-title">Executive Summary</span></div>
+  <div class="exec-summary"><p>Today's transit research reveals a field in transition: empirical evidence from NYC's landmark congestion pricing program confirms that bold pricing interventions can drive transit ridership upward while reducing overall vehicle demand. Simultaneously, AI-driven planning tools are enabling more equitable service deployment in transit deserts, and new high-fidelity datasets from Brazil and California are expanding the methodological frontier. A recurring theme is the tension between aggregate mobility improvements and spatially uneven distributional effects—particularly for elderly, low-income, and peripheral urban populations.</p></div>
+  <div class="section-header"><span class="section-title">Paper of the Day</span></div>
+  <div class="potd">
+    <div class="potd-title">Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</div>
+    <div class="potd-authors">Donghang Li, Dingyi Zhuang, Yunlin Li, Chenan Shen, Nina Cao, Yunhan Zheng, Shenhao Wang, Jinhua Zhao — 2026</div>
+    <div class="potd-reason">This paper provides the first rigorous empirical evaluation of the US's first cordon congestion pricing program. The combination of methodological innovation (time series foundation models for counterfactual estimation) and policy significance (historic first) makes it the standout paper of the day. Its finding that transit gains extend <strong>beyond the Congestion Relief Zone</strong> challenges conventional zone-centric policy evaluation and has immediate implications for any city designing a congestion pricing program.</div>
+    <div class="potd-link"><a href="https://arxiv.org/abs/2606.17530" target="_blank">→ Read on arXiv: 2606.17530</a></div>
+  </div>
+  <div class="section-header"><span class="section-title">Emerging Themes</span></div>
+  <div class="themes-grid">
+    <div class="theme-card"><div class="theme-title">Pricing as a Transit Lever</div><div class="theme-desc">Congestion pricing is now empirically validated as a dual-action tool that simultaneously reduces car travel and grows transit ridership. NYC's 2025 program is the first large-scale natural experiment in the US.</div></div>
+    <div class="theme-card"><div class="theme-title">AI Planning for Equity</div><div class="theme-desc">Machine learning and causal AI frameworks are being deployed to plan transit service in data-scarce, underserved areas where traditional demand signals don't yet exist. Risk-aware sequential optimization outperforms static planning.</div></div>
+    <div class="theme-card"><div class="theme-title">Representational Bias in Data</div><div class="theme-desc">GPS datasets and large mobility corpora systematically underrepresent elderly, low-income, and rural populations, distorting planning models in ways that compound existing inequities.</div></div>
+  </div>
+  <div class="section-header"><span class="section-title">Contrarian Insights</span></div>
+  <div class="contrarian">
+    <div class="contrarian-label">⚡ Counterintuitive findings from today's papers</div>
+    <ul>
+      <li>Larger AI models do <em>not</em> improve transit planning under data scarcity. A Qwen3-4B LLM performed no better than a simple first-order Markov chain for elderly trajectory generation when training data was limited.</li>
+      <li>NYC's congestion pricing transit gains extend <em>beyond</em> Manhattan's Congestion Relief Zone—suggesting that pricing policy has city-wide network effects that traditional zone-based analysis systematically misses.</li>
+      <li>Transit desert remediation performs best at <em>moderate</em> budget levels (+9.9pp at baseline), not maximum funding—risk-aware adaptive deployment outperforms full-budget static optimization.</li>
+    </ul>
+  </div>
+  <div class="section-header" id="infographic"><span class="section-title">Data Infographic</span></div>
+  <div class="infographic-section">
+    <img src="research-infographic-2026-07-09.svg" alt="Transit Research Infographic — July 9, 2026" style="width:100%;height:auto;display:block;">
+    <div class="infographic-download"><a href="research-infographic-2026-07-09.svg" download>↓ Download SVG Infographic</a></div>
+  </div>
+  <div class="section-header" id="papers"><span class="section-title">All Papers — July 9, 2026</span></div>
+  <div class="papers-list">
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">Public transit gains and spatially uneven travel demand changes after NYC congestion pricing</div><span class="paper-confidence confidence-high">HIGH</span></div>
+      <div class="paper-meta">Li, Zhuang, Li, Shen, Cao, Zheng, Wang, Zhao · arXiv econ.GN · 2606.17530 · 2026</div>
+      <div class="paper-summary">NYC's first-in-nation cordon congestion pricing program significantly increased bus and subway ridership while modestly reducing overall travel demand, with spatially heterogeneous effects and transit gains extending beyond Manhattan's Congestion Relief Zone.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>Bus and subway ridership increased significantly vs. no-policy counterfactual</li><li>Overall travel demand decreased modestly post-pricing</li><li>Transit gains extend beyond Manhattan's Congestion Relief Zone into outer boroughs</li><li>Socio-demographic analysis reveals uneven neighborhood-level adaptation</li><li>Time series foundation models enable credible counterfactual estimation without clean control groups</li></ul></div>
+      <div class="paper-details-grid">
+        <div><div class="paper-detail-label">Methodology</div><div class="paper-detail-text">Time series foundation models for probabilistic counterfactual demand forecasting applied to bus, subway, and aggregate trip volume data from NYC's January 2025 congestion pricing implementation.</div></div>
+        <div><div class="paper-detail-label">Practical Implications</div><div class="paper-detail-text">Provides a replicable evaluation framework for other cities; highlights need for equity monitoring by neighborhood; supports the case for congestion pricing as a transit-positive policy.</div></div>
+      </div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.17530" target="_blank">→ arxiv.org/abs/2606.17530</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">Risk-Aware Planning for Transit Desert Remediation Under Demand Uncertainty</div><span class="paper-confidence confidence-high">HIGH</span></div>
+      <div class="paper-meta">Khoroshevskaya, Perukari · arXiv cs.CY · 2606.08371 · 2026</div>
+      <div class="paper-summary">A POMDP framework with CVaR financial constraints for deploying transit service in underserved areas achieves 53.6% desert remediation across 25 cities, outperforming static optimization by 5pp—with best gains at moderate, not maximum, budget levels.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>Remediates median 53.6% of transit-desert tracts over 5 years across 25 US cities</li><li>Outperforms static optimization by 5.0pp on average; gains in 16 of 25 cities</li><li>Gains are LARGEST at moderate budget levels (+9.9pp at baseline)</li><li>Robust to 50% prior demand miscalibration</li><li>Population density and existing transit density are strongest cost predictors (R²=0.41)</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.08371" target="_blank">→ arxiv.org/abs/2606.08371</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">Towards Inclusive Mobility Modeling: Characterizing and Evaluating Elderly Trajectory Patterns in Urban Systems</div><span class="paper-confidence confidence-high">HIGH</span></div>
+      <div class="paper-meta">Wang, He, Zhou · arXiv cs.CY · 2606.31207 · 2026</div>
+      <div class="paper-summary">Elderly riders have 19.4% smaller activity spaces and 56% lower mobility entropy—but models trained on majority-population data systematically misrepresent these patterns, and larger LLMs provide no benefit under demographic data scarcity.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>Elderly activity spaces: 958m vs 1,189m for young riders (19.4% smaller)</li><li>Mobility entropy: 1.82 vs 4.15 (56% lower)</li><li>Majority-population models overestimate elderly step length by 4.5%</li><li>Qwen3-4B LLM performs no better than first-order Markov chain under data scarcity</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.31207" target="_blank">→ arxiv.org/abs/2606.31207</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">The NetMob26 Dataset: A High-Resolution Multi-Source View of Public Bus Mobility in Niterói</div><span class="paper-confidence confidence-high">HIGH</span></div>
+      <div class="paper-meta">Domingos, Marques-Neto, Pereira, Celes, Knoblauch · arXiv cs.CY · 2605.20263 · 2026</div>
+      <div class="paper-summary">A comprehensive March 2026 public bus dataset from Niterói, Brazil combines GPS telemetry, 7.2M ticketing transactions, weather, and sociodemographic data—a rare high-fidelity transit research resource from the Global South.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>7.2 million ticketing transactions provide precise stop-level demand measurement</li><li>GPS telemetry enables route-level service reliability analysis</li><li>Weather and sociodemographic overlays enable climate-mobility and equity modeling</li><li>Reproducible preprocessing and anonymization pipeline documented</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2605.20263" target="_blank">→ arxiv.org/abs/2605.20263</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">One Country, Multiple Portraits: Representativeness in GPS-Based Mobility Data Is Source-Specific and Spatially Dependent</div><span class="paper-confidence confidence-high">HIGH</span></div>
+      <div class="paper-meta">Cabrera, Rowe, González-Leonardo, Vilchis-García · arXiv cs.CY · 2606.23616 · 2026</div>
+      <div class="paper-summary">GPS mobility datasets systematically underrepresent rural and low-income Mexican municipalities with biases varying by platform—and multi-platform aggregation does not solve the problem, it only changes its shape.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>Coverage bias varies dramatically between Facebook and Veraset sources</li><li>Rural areas are consistently underrepresented across all platforms</li><li>National-level corrections cannot resolve local-level representational gaps</li><li>2,478 municipalities analyzed against 2020 Census</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.23616" target="_blank">→ arxiv.org/abs/2606.23616</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">From Causal Discovery to Implementation: An Agentic AI Framework for E-Scooter Mobility Hub Planning Across 29 German Cities</div><span class="paper-confidence confidence-medium">MEDIUM</span></div>
+      <div class="paper-meta">Jin, Handrich, Martinenz, Hoeser, Li · arXiv cs.CY · 2606.25484 · 2026</div>
+      <div class="paper-summary">An LLM-orchestrated causal discovery pipeline identifies city-type-specific drivers of e-scooter demand across 29 German cities, producing a Causal Template Library now influencing real infrastructure decisions—two hub sites under construction in Heilbronn.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>Core demand driven by activity access and transit proximity</li><li>Peripheral demand driven by built form—distinct from core patterns</li><li>City-type templates (large, university, industrial, hilly) require distinct approaches</li><li>Public GBFS data sufficient—no proprietary trip data required</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.25484" target="_blank">→ arxiv.org/abs/2606.25484</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">Distance-Based Subsidy Rate Design to Incentivize Ride-Hail Access to Advanced Air Mobility Hubs</div><span class="paper-confidence confidence-medium">MEDIUM</span></div>
+      <div class="paper-meta">Ji, Yang, Chow · arXiv cs.CY · 2606.21390 · 2026</div>
+      <div class="paper-summary">Air taxi operators need to subsidize ride-hailing trips to vertiports when air taxi costs exceed $12/mile, with NYC case study revealing spatial demand heterogeneity across candidate vertiport locations.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>AAM operators must subsidize ride-hail access at costs exceeding $12/mile</li><li>Distance-based subsidy outperforms flat-rate designs</li><li>Spatial demand heterogeneity drives vertiport location value significantly</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.21390" target="_blank">→ arxiv.org/abs/2606.21390</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">Virginia Tech Transportation Safety Index (VTTSI)</div><span class="paper-confidence confidence-medium">MEDIUM</span></div>
+      <div class="paper-meta">Cusati, Chuang · arXiv cs.CY · 2606.21154 · 2026</div>
+      <div class="paper-summary">A real-time, cloud-native intersection safety scoring framework fusing connected-vehicle telemetry with historical crash data produces interpretable 0–100 safety scores updated every 15 minutes.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>Safety scores updated every 15 minutes using connected-vehicle telemetry</li><li>CRITIC-weighted MCDM integrates SAW, EDAS, and CODAS for robustness</li><li>Robust to parameter perturbations—less than 1-point deviation on 0–100 scale</li><li>Open cloud architecture (FastAPI + PostGIS + Streamlit)</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.21154" target="_blank">→ arxiv.org/abs/2606.21154</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">SF-LIFE: A Large-Scale Simulated Movement Dataset for the San Francisco Bay Area</div><span class="paper-confidence confidence-medium">MEDIUM</span></div>
+      <div class="paper-meta">Algama, Anderson, de Arruda, Crooks · arXiv cs.CY · 2606.00430 · 2026</div>
+      <div class="paper-summary">Three trillion noise-free location records for 500,000 simulated agents over 70 days in the SF Bay Area provide an unprecedented benchmark dataset for transportation and mobility research without privacy constraints.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>3 trillion records at 1Hz frequency—unprecedented public dataset scale</li><li>500K agents with needs-driven daily agendas over 70 days</li><li>Multi-modal trajectories on OpenStreetMap; fully public and reproducible</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2606.00430" target="_blank">→ arxiv.org/abs/2606.00430</a></div>
+    </div>
+    <div class="paper-card">
+      <div class="paper-header"><div class="paper-title">From Mobile Data to Business Insights: An End-to-End Analytics Framework for Large-Scale Urban Mobility Analysis</div><span class="paper-confidence confidence-medium">MEDIUM</span></div>
+      <div class="paper-meta">Andrade, Tabassum, Silva, Dinis · arXiv cs.CY · 2607.03394 · 2026</div>
+      <div class="paper-summary">A mobile location data analytics framework addresses tourism planning, parking optimization, and bus route improvement—demonstrating end-to-end pipeline design from raw smartphone signal to operational transit intelligence.</div>
+      <div class="paper-insights"><div class="paper-insights-title">Key Insights</div><ul><li>Bus route optimization achievable from mobile data without on-board sensors</li><li>Parking and transit planning unifiable in a single analytics pipeline</li><li>Commercial and public-interest analytics served from same data infrastructure</li></ul></div>
+      <div class="paper-link" style="margin-top:16px;"><a href="https://arxiv.org/abs/2607.03394" target="_blank">→ arxiv.org/abs/2607.03394</a></div>
+    </div>
+  </div>
+  <div class="section-header" id="takeaways"><span class="section-title">Actionable Takeaways</span></div>
+  <div class="takeaways">
+    <div class="takeaway"><div class="takeaway-num">01</div><div class="takeaway-content"><div class="takeaway-title">Plan for spillover demand in peripheral neighborhoods</div><div class="takeaway-text">City planners considering congestion pricing should pre-position service capacity in peripheral neighborhoods to capture spillover demand that extends beyond the cordon zone. NYC's experience shows transit gains are a city-wide phenomenon.</div></div></div>
+    <div class="takeaway"><div class="takeaway-num">02</div><div class="takeaway-content"><div class="takeaway-title">Audit mobility datasets for demographic representation before deploying AI tools</div><div class="takeaway-text">Transit agencies should audit their mobility modeling datasets for demographic underrepresentation before deploying AI-driven planning tools. More capable AI models do not compensate for biased training data.</div></div></div>
+    <div class="takeaway"><div class="takeaway-num">03</div><div class="takeaway-content"><div class="takeaway-title">Use risk-aware (CVaR) deployment strategies for transit deserts</div><div class="takeaway-text">Transit desert planners should use risk-aware sequential deployment strategies rather than static optimization. A 5pp improvement over 5 years is achievable with POMDP + CVaR constraints—performance peaks at moderate, not maximum, budget levels.</div></div></div>
+  </div>
+  <div class="section-header"><span class="section-title">Long-Term Implications</span></div>
+  <div class="implications"><p>The convergence of behavioral pricing levers (congestion pricing), AI-assisted planning (transit deserts, e-scooter hubs), and high-resolution simulation datasets (SF-LIFE, NetMob26) is creating the technical infrastructure for a new era of data-driven urban mobility policy. The critical challenge remains: ensuring that AI-optimized systems do not inadvertently reproduce or deepen existing spatial and demographic inequities. The next frontier is integrating disaggregated demographic modeling into core transit planning pipelines—not as an afterthought, but as a foundational design requirement.</p></div>
+</main>
+<footer>
+  <p>Transit Research Digest · July 9, 2026 · Autonomous AI synthesis from arXiv and Semantic Scholar</p>
+  <p style="margin-top:8px;"><a href="research.html">← Back to Research Archive</a> · <a href="index.html">Home</a></p>
+</footer>
+</body>
+</html>
