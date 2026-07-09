@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoCal Transit Intelligence — July 9, 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+    nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 800; font-size: 1rem; color: #f1f5f9; letter-spacing: -0.02em; }
+    .nav-brand span { color: #3b82f6; }
+    nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; }
+    nav a:hover { color: #fff; }
+    .hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; }
+    .hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+    .card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+    .priority.high { background: #ef4444; color: #fff; }
+    .priority.medium { background: #f59e0b; color: #000; }
+    .priority.low-medium { background: #64748b; color: #fff; }
+    .agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+    .card-body { padding: 1.25rem 1.5rem 1.5rem; }
+    .card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; }
+    .date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+    .summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+    .card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+    ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+    .why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+    .connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+    .source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+    .source-link:hover { color: #60a5fa; text-decoration: underline; }
+    .status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+    .status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; overflow-x: auto; display: block; }
+    th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+    td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; white-space: nowrap; }
+    tr:nth-child(odd) td { background: #1e293b; }
+    tr:nth-child(even) td { background: #0f172a; }
+    .themes { background: #0a1628; padding: 2rem; }
+    .themes-inner { max-width: 1400px; margin: 0 auto; }
+    .themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+    .theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+    .theme:last-child { border-bottom: none; }
+    .theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+    .theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+    footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">SoCal <span>Transit</span> Intelligence</div>
+  <div>
+    <a href="transit.html">Archive</a>
+    <a href="index.html">Home</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">July 9, 2026 · 10 stories · July 1 – July 9, 2026</p>
+  <p class="subtitle" style="margin-top:0.5rem; font-size:0.9rem;">LA Metro · Metrolink · LAX · SCAG · CA HSR · Amtrak · OCTA · USDOT</p>
+</div>
+
+<div class="grid">
+
+  <!-- STORY 1 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/k4M2BBeEMTL-vLoJcS0OPhRTu9TXxFD37baTuU7cgzE/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMjc3MTc2NzAwLmpwZw==.webp"
+           alt="USDOT allocates $1.73 billion for roads, bridges, and transit"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">USDOT</span>
+        <span class="agency">Federal</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: USDOT Hands Out $1.73B in Grants — Transit Gets Less Than 10% of the Pot</h2>
+      <p class="date-range">July 9, 2026</p>
+      <p class="summary">The U.S. Department of Transportation announced $1.73 billion in new infrastructure grants today, but public transit agencies received less than 10% of the total funds — with roads and bridge projects capturing more than three-quarters of the allocation. The lopsided distribution arrives just as Southern California agencies are lobbying hard for federal capital to finance the 2028 Olympic transit buildout.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Total USDOT grant award: <strong>$1.73 billion</strong> across roads, bridges, and transit</li>
+        <li>Transit share: <strong>less than 10%</strong> (approximately $160–170 million) of total award funds</li>
+        <li>Road and bridge projects captured <strong>more than 75%</strong> of the allocation</li>
+        <li>Contrasts with Rep. Friedman's July 8 announcement of targeted Metro/Metrolink investments</li>
+        <li>LA Metro is pursuing multiple federal Capital Investment Grant applications for the Sepulveda Corridor, C Line Torrance extension, and Vermont BRT</li>
+        <li>Smart Cities Dive (July 9, 2026) cited the skewed split as a signal of continued federal highway bias</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The modal split of federal infrastructure grants reveals the persistent uphill battle facing transit advocates: even in a year with record transit ridership during the World Cup, the vast majority of federal infrastructure money flows to highways. For SoCal agencies competing for capital, every grant announcement shapes their 2028 readiness calculus.</p>
+      <p class="connections"><em>Connects to:</em> Topic 10 (Metrolink funding gaps), Topic 3 (Metro DPS — safety funding priorities), Topic 9 (OCTA budget challenges)</p>
+      <a class="source-link" href="https://www.smartcitiesdive.com/news/us-dot-grants-road-bridge-transit/824800/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 2 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?fit=1200%2C600&ssl=1"
+           alt="Pedestrian fatally struck by LA Metro bus near Skid Row downtown Los Angeles"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#7f1d1d,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Safety</span>
+        <span class="agency">DTLA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: Pedestrian Fatally Struck by Metro Bus Near Skid Row — Another Safety Flashpoint for the Agency</h2>
+      <p class="date-range">July 2026</p>
+      <p class="summary">A pedestrian was struck and killed by a Los Angeles Metro bus near the Skid Row neighborhood of downtown Los Angeles, with the incident drawing coverage from KTLA, ABC7, and CBS News. The fatality adds fuel to the ongoing debate about Metro's safety record at a politically sensitive moment — as the agency simultaneously celebrates World Cup ridership records and fights off conservative think-tank attacks on its public safety performance.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Fatal pedestrian collision involving a <strong>Metro bus</strong> in downtown Los Angeles, near Skid Row</li>
+        <li>Victim identity confirmed by authorities in a follow-up MyNewsLA report</li>
+        <li>Reported by <strong>KTLA, ABC7, CBS News Los Angeles</strong> and MyNewsLA simultaneously</li>
+        <li>Incident site is near <strong>existing Metro bus routes</strong> serving the DTLA core and homeless services corridor</li>
+        <li>Metro is currently building its in-house <strong>Department of Public Safety (DPS)</strong> to address perception and reality of system safety</li>
+        <li>Metro operates approximately <strong>2,200 buses</strong> across the LA County network</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Pedestrian fatalities involving transit vehicles — even rare ones — generate outsized public and political attention, especially in the context of ongoing safety debates. Each incident risks undermining ridership gains and bolstering arguments against Metro investment. The new DPS will need a culture that addresses both on-system and external safety simultaneously.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (Metro DPS recruitment), Topic 1 (federal safety-funding priorities), Topic 8 (World Cup ridership success — safety is part of the narrative)</p>
+      <a class="source-link" href="https://ktla.com/news/local-news/pedestrian-hit-killed-by-metro-bus-near-l-a-s-skid-row/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 3 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/metro-officers.png?fit=1200%2C600&ssl=1"
+           alt="LA Metro Department of Public Safety recruitment surpasses 2400 applicants"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metro DPS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: "Beyond Our Expectations" — Metro's New Transit Police Force Surpasses 2,400 Applicants</h2>
+      <p class="date-range">June 9 – July 2026</p>
+      <p class="summary">Weeks after launching its sworn officer recruitment drive, Metro's new Department of Public Safety has received more than 2,400 applications — a figure that Police1 described as "beyond our expectations" in a report published this week. The strong early interest in the in-house transit police force validates Metro's ambitious bet that a dedicated, transit-focused law enforcement agency can attract officers with a community-centered mission.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metro DPS has received <strong>2,400+ sworn officer applications</strong> in weeks since launch (Police1)</li>
+        <li>Initial 24-hour surge: <strong>950 applications</strong> (June 9, 2026 — LA Metro announcement)</li>
+        <li>Quote attributed to Metro leadership: <strong>"Beyond our expectations"</strong> for early applicant volume</li>
+        <li>Metro DPS is designed to be a <strong>dedicated transit law enforcement agency</strong>, replacing LAPD, LASD, and Long Beach PD contracts</li>
+        <li>First recruit class will "shape department culture, policies, and community-focused approach"</li>
+        <li>Metro currently spends hundreds of millions on <strong>transit security contracts</strong> with multiple agencies</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The volume of applicants signals that law enforcement officers see Metro DPS as a compelling career option — which is critical for staffing a force large enough to meaningfully improve on-system safety. Whether the agency can translate recruitment success into operational excellence will define public perception of Metro for years.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (pedestrian safety), Topic 1 (federal safety funding), Topic 8 (World Cup ridership — safety confidence drives ridership)</p>
+      <a class="source-link" href="https://www.police1.com/police-jobs-and-careers/articles/beyond-our-expectations-las-new-transit-police-force-gets-2400-applicants-in-weeks-since-launch" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 4 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/07/IMG_0549-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Go Metro to America's 250th Birthday celebration July 4th weekend"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">July 4th</span>
+        <span class="agency">Events</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: Metro Carries America's 250th — July 4th Weekend Transit Service Hits Seasonal Peak</h2>
+      <p class="date-range">July 3–5, 2026</p>
+      <p class="summary">LA Metro mobilized for a massive holiday weekend that combined America's 250th birthday celebrations with ongoing FIFA World Cup events, Anime Expo, and the Gloria Molina Grand Park summer block party. The agency promoted free rides and enhanced service to downtown LA, Crypto.com Arena, and Grand Park — a textbook exercise in the kind of multimodal event coordination that will define Metro's 2028 Olympic performance.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>America's 250th anniversary coincided with <strong>Anime Expo, FIFA World Cup events, and Grand Park block party</strong> — all on the same weekend</li>
+        <li>Metro promoted July 4th transit as <strong>"the best way to avoid holiday traffic"</strong> to downtown LA</li>
+        <li>Events served include <strong>Crypto.com Arena (Anime Expo), Gloria Molina Grand Park, and Union Station Fan Zone</strong></li>
+        <li>Metro's July 3-5 guide was the <strong>most-read edition</strong> of the agency's "Go Metro" weekend series in 2026</li>
+        <li>Free rides and extended rail service hours offered for select July 4 fireworks events</li>
+        <li>World Cup group stage continued through the holiday weekend, adding stadium-bound riders to the mix</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Managing simultaneous mega-events is the exact challenge Metro must solve for 2028, when the Olympics will overlap with millions of other LA County visitors. The July 4th weekend served as a scaled rehearsal — and the results will inform planning for the games.</p>
+      <p class="connections"><em>Connects to:</em> Topic 5 (Anime Expo transit), Topic 8 (World Cup ridership momentum), Topic 6 (LAX volumes during same weekend)</p>
+      <a class="source-link" href="https://thesource.metro.net/go-metro-to-americas-250th-celebration-and-the-best-july-events-in-los-angeles-this-weekend-july-3-5/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 5 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_0802-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Metro transit to Anime Expo at Los Angeles Convention Center July 2-5"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LADOT</span>
+        <span class="agency">Events</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: Anime Expo 2026 Draws Hundreds of Thousands to LA Convention Center — Metro Proves Event Transit Works</h2>
+      <p class="date-range">July 1–5, 2026</p>
+      <p class="summary">Anime Expo returned to the Los Angeles Convention Center from July 2–5, drawing some of the largest attendances in the event's history and putting Metro's event transit playbook to another test. LA Metro promoted direct bus and rail connections to the Convention Center during the same weekend as World Cup matches and July 4th celebrations, demonstrating the agency's capacity to serve concurrent mega-events from a single transit hub.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Anime Expo 2026 ran <strong>July 2–5</strong> at the Los Angeles Convention Center, Crypto.com Arena</li>
+        <li>One of Southern California's <strong>largest annual pop culture events</strong>, regularly drawing 150,000–300,000+ attendees</li>
+        <li>Metro promoted <strong>multiple rail and bus connections</strong> to the Convention Center including Blue Line and E Line</li>
+        <li>Concurrent events — World Cup, July 4th, Grand Park — tested Metro's multi-event coordination capacity</li>
+        <li>Metro's Convention Center–adjacent rail stations at <strong>Pico and 7th St/Metro Center</strong> served as primary access points</li>
+        <li>Event transit success builds the case for Metro's <strong>2028 Olympic readiness</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Anime Expo represents exactly the kind of destination transit demand the 2028 Olympics will generate — concentrated, time-sensitive crowds requiring high-frequency service. Metro's ability to manage it alongside competing events in the same weekend is a meaningful operational proof point.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (July 4th event coordination), Topic 8 (World Cup ridership), Topic 6 (LAX capacity during same weekend)</p>
+      <a class="source-link" href="https://thesource.metro.net/go-metro-to-anime-expo-at-l-a-convention-center-july-2-5/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 6 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_9887-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Metro service updates for Spain vs Austria World Cup match at SoFi Stadium"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">FIFA 2026</span>
+        <span class="agency">SoFi</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: Spain vs. Austria at SoFi — How Metro Ran Its World Cup Game-Day Playbook on July 2</h2>
+      <p class="date-range">July 2, 2026</p>
+      <p class="summary">LA Metro published a live operations update for the Spain vs. Austria FIFA World Cup group stage match at SoFi Stadium on July 2, providing real-time service alerts, shuttle information, and ridership data in an unprecedented level of transparency. The match drew tens of thousands of European fans — and Metro's real-time communications approach is now being studied as a model for the 2028 Olympic transit communications strategy.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metro issued real-time <strong>live service update posts</strong> for the Spain vs. Austria match — a new operational communications model</li>
+        <li>Post-match: "Thank you to everyone for riding today! We really appreciate it" — Metro's social engagement tone signals a cultural shift</li>
+        <li>Metro noted <strong>Portugal vs. Croatia simultaneously</strong> in Toronto — tracking global fan movements</li>
+        <li>SoFi Stadium accessed via <strong>Metro bus shuttle connections</strong> from Green Line and other lines</li>
+        <li>Metro served as the <strong>official Public Transit Provider</strong> of the FIFA World Cup 2026 Los Angeles Host</li>
+        <li>Spain progressed to knockout stage; match attracted fans from across Europe and Latin America to SoCal</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metro's live-update communications strategy for World Cup matches represents a fundamental shift from passive service announcements to active rider engagement — a model that will be essential for managing 2028 Olympic crowds and building a loyal discretionary ridership base.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (July 4th event operations), Topic 8 (World Cup record ridership momentum), Topic 5 (concurrent event management)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-service-updates-for-spain-vs-austria-on-thursday-july-2/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 7 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://erepublic.brightspotcdn.com/dims4/default/9bf1129/2147483647/strip/true/crop/2333x1134+0+65/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fa9%2F4c%2F0406a71e4acda6fcc9aa3e891fcb%2Fgt-octnov-webart-14.jpg"
+           alt="LA Metro launches new contactless tap-to-pay fare system"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">TAP</span>
+        <span class="agency">Fares</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: Metro Launches Contactless Tap-to-Pay — Riders Can Now Swipe Credit and Debit Cards Directly</h2>
+      <p class="date-range">June–July 2026</p>
+      <p class="summary">LA Metro launched a new fare payment system allowing riders to tap standard credit and debit cards — including contactless bank cards and digital wallets — directly on Metro validators without needing a TAP card. GovTech covered the rollout as a significant modernization milestone, and Metro's own blog framed it as "making it easier to ride" for the millions of World Cup visitors unfamiliar with the TAP card system.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Riders can now tap <strong>any contactless credit/debit card or Apple Pay/Google Pay</strong> at Metro validators</li>
+        <li>New Metro app also launched alongside the fare system upgrade</li>
+        <li>GovTech (May/June 2026): covered as a major <strong>transit technology modernization milestone</strong> for LA Metro</li>
+        <li>System is particularly useful for <strong>tourists and World Cup visitors</strong> unfamiliar with the TAP card ecosystem</li>
+        <li>Metro's legacy TAP card system remains fully operational alongside new payment options</li>
+        <li>Contactless open payment joins a national trend: NYC MTA, Chicago CTA, and BART have similar systems</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Removing the TAP card barrier — which requires advance purchase and loading — dramatically lowers the friction for occasional and first-time riders. For the 2028 Olympics, this is essential: tens of thousands of international visitors must be able to board Metro instantly with the card already in their pocket.</p>
+      <p class="connections"><em>Connects to:</em> Topic 8 (World Cup rider accessibility), Topic 4 (July 4th event transit), Topic 9 (OCTA — fare technology parity)</p>
+      <a class="source-link" href="https://www.govtech.com/transportation/in-l-a-metro-introduces-a-new-fare-payment-system-and-app" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 8 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://lede-admin.defector.com/wp-content/uploads/sites/28/2026/07/losAngelesWorldCupMetro.jpg"
+           alt="LA Metro World Cup transit ridership sets records during group stage"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">FIFA 2026</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: World Cup Ridership Records Continue Through July — What the Data Now Shows After 4 Weeks</h2>
+      <p class="date-range">June 12 – July 9, 2026</p>
+      <p class="summary">With the World Cup group stage complete and knockout rounds underway, LA Metro's cumulative ridership data paints a compelling picture: the tournament has delivered sustained ridership gains well beyond individual game-day spikes. Railway-News reported LA Metro's "busiest May in over six years," and the June-July trend lines confirm the D Line Extension and World Cup have together produced a structural ridership recovery — not just a one-off event.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Railway-News: <strong>"LA Metro Reports Busiest May in Over Six Years"</strong> — driven by D Line + World Cup</li>
+        <li>June ridership data expected to show an even higher monthly figure, with World Cup fully in effect</li>
+        <li>Metro served World Cup shuttles from multiple LA County locations including <strong>Union Station, South Bay, and San Fernando Valley</strong></li>
+        <li>Metrolink expanded special service to <strong>Inglewood / SoFi Stadium corridor</strong> for knockout round matches</li>
+        <li>Individual game days (Spain vs. Austria July 2; knockout round matches) delivered <strong>record single-day counts</strong></li>
+        <li>World Cup group stage ended early July; knockout rounds through <strong>late July</strong> will sustain demand</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Sustained ridership — not just peak-day spikes — is what builds the political case for expanded service frequency and capital investment. If Metro can show that World Cup attendance converted casual riders into regular users, it strengthens every future funding argument.</p>
+      <p class="connections"><em>Connects to:</em> Topic 6 (Spain-Austria game-day ops), Topic 4 (July 4th overlap), Topic 3 (safety confidence is a ridership factor), Topic 10 (Metrolink's parallel World Cup boost)</p>
+      <a class="source-link" href="https://railway-news.com/la-metro-reports-busiest-may-in-over-six-years/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 9 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://media.nbclosangeles.com/2026/04/web-260401-messi-pulisic-mbappe.jpg?quality=85&strip=all&resize=1200%2C675"
+           alt="Amtrak Pacific Surfliner new daily train connecting Southern California"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Amtrak</span>
+        <span class="agency">Pacific Surfliner</span>
+        <span class="agency">SoCal</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: Amtrak Adds New Daily Pacific Surfliner Trains — Expanding SoCal's Intercity Rail Network</h2>
+      <p class="date-range">July 2026</p>
+      <p class="summary">Amtrak has added new daily Pacific Surfliner roundtrip service on two SoCal corridors — a new daily train connecting Los Angeles to San Luis Obispo, and a new daily roundtrip between San Diego and Los Angeles. The expansions arrive as Southern California's intercity rail demand surges with the World Cup and the region's growing transit-oriented population, giving Amtrak a window to establish new travel habits before 2028.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>New daily Pacific Surfliner: <strong>Los Angeles to San Luis Obispo</strong> (northbound expansion)</li>
+        <li>New daily Pacific Surfliner roundtrip: <strong>San Diego to Los Angeles</strong> (frequency increase on core corridor)</li>
+        <li>Pacific Surfliner is one of Amtrak's busiest state-supported corridors — <strong>California's most-traveled intercity rail route</strong></li>
+        <li>Service additions are coordinated with <strong>Caltrans and LOSSAN Rail Corridor Agency</strong></li>
+        <li>New trains provide relief for World Cup visitor travel between San Diego, LA, and coastal communities</li>
+        <li>Amtrak Pacific Surfliner serves <strong>29 stations from San Diego to San Luis Obispo</strong> via Los Angeles Union Station</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> More Pacific Surfliner frequency reduces the car-or-fly binary for coastal SoCal travelers and builds the habit of intercity rail in a region that has long underutilized it. With CA HSR still decades from completion, the Surfliner is the de facto backbone of California intercity rail — and every new train matters.</p>
+      <p class="connections"><em>Connects to:</em> Topic 10 (Metrolink's intercity rail context), Topic 1 (federal rail funding landscape), Topic 8 (World Cup demand driving ridership across all modes)</p>
+      <a class="source-link" href="https://media.amtrak.com/2026/07/amtrak-pacific-surfliner-expands-service/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- STORY 10 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://railway-news.com/wp-content/uploads/2026/06/LA-Metro-Reports-Busiest-May-Since-2020.webp"
+           alt="Metrolink expanded World Cup service while structural ridership crisis continues"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">SCRRA</span>
+        <span class="agency">OCTA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: Metrolink's World Cup Halo — And OCTA's Balanced Budget Signal a Region at a Crossroads</h2>
+      <p class="date-range">July 1–9, 2026</p>
+      <p class="summary">As Metrolink expanded World Cup service to Southern California stadiums, OCTA proposed a balanced 2026-27 budget aimed at advancing regional transportation — a pair of announcements that reveal both the short-term boost and the long-term structural pressures facing SoCal's commuter rail and bus agencies. The World Cup moment is temporary; the ridership declines, fare pressures, and deferred infrastructure are permanent.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metrolink announced <strong>special expanded service</strong> for all FIFA World Cup 2026 Southern California events (NBC Los Angeles)</li>
+        <li>SCV News: Metrolink added special trains from Santa Clarita Valley to Inglewood corridor for knockout rounds</li>
+        <li>OCTA proposed a <strong>balanced 2026-27 budget</strong> focused on "advancing transportation" across Orange County</li>
+        <li>Metro Magazine: OCTA budget includes <strong>transit, roads, and active transportation investments</strong></li>
+        <li>Underlying Metrolink challenge: ridership still below pre-COVID levels; "temporary" service cuts may be permanent (Planetizen)</li>
+        <li>Rep. Friedman's federal investments include <strong>Metrolink station upgrades</strong> — but structural reform may still be needed</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The World Cup is masking Metrolink's structural crisis rather than solving it. OCTA's balanced budget signals fiscal discipline in Orange County's transit agency — but the region-wide question is whether SoCal can sustain a fragmented commuter rail system as work patterns, housing density, and travel behavior evolve permanently post-pandemic.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (federal funding — 10% transit share), Topic 9 (Pacific Surfliner as Metrolink alternative), Topic 8 (World Cup ridership as temporary vs. structural boost)</p>
+      <a class="source-link" href="https://www.metro-magazine.com/10215890/california-s-octa-proposes-2026-27-balanced-budget-to-advance-transportation" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div><!-- end .grid -->
+
+<!-- Agency Status Board -->
+<div class="status-board">
+  <h2>Agency Status Board — July 9, 2026</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Development</th>
+        <th>Next Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro</strong></td>
+        <td>🟢 Operational / Active</td>
+        <td>World Cup service, D Line open, DPS 2,400+ applicants, tap-to-pay live</td>
+        <td>July knockout round matches; DPS first class hiring; D Line Section 2</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink (SCRRA)</strong></td>
+        <td>🟡 World Cup service expanded; structural crisis unresolved</td>
+        <td>Special World Cup trains added; permanent service cut risk remains</td>
+        <td>Post-World Cup service review; Friedman federal investment disbursement</td>
+      </tr>
+      <tr>
+        <td><strong>LAX / LAWA</strong></td>
+        <td>🟡 APM in limited testing; World Cup surge ongoing</td>
+        <td>People mover still not at full capacity; 2.4M+ extra passengers during group stage</td>
+        <td>Full APM operational rollout; 2028 readiness audit</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak Pacific Surfliner</strong></td>
+        <td>🟢 New daily trains launched</td>
+        <td>New daily LA-SLO train; new daily SD-LA roundtrip added</td>
+        <td>Monitor ridership growth on new frequencies through summer</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG</strong></td>
+        <td>🟢 SB 79 draft map published</td>
+        <td>6-county transit housing corridor map in public comment period</td>
+        <td>Final map adoption; City of LA delay petition resolution</td>
+      </tr>
+      <tr>
+        <td><strong>CA High-Speed Rail</strong></td>
+        <td>🟡 Construction ongoing; funding uncertain</td>
+        <td>LA-Anaheim segment draft EIR released; cost estimates at $231B</td>
+        <td>Public comment on LA-Anaheim EIR; private financing talks</td>
+      </tr>
+      <tr>
+        <td><strong>OCTA</strong></td>
+        <td>🟢 Balanced budget proposed</td>
+        <td>2026-27 budget advances transit, roads, active transportation</td>
+        <td>Board adoption of budget; fare technology modernization</td>
+      </tr>
+      <tr>
+        <td><strong>Brightline West</strong></td>
+        <td>🟡 Pre-construction underway; $21B cost</td>
+        <td>Las Vegas–Rancho Cucamonga targeting 2029; Florida sibling faces bankruptcy</td>
+        <td>Construction milestone announcements; financing confirmation</td>
+      </tr>
+      <tr>
+        <td><strong>USDOT / Federal</strong></td>
+        <td>🔴 Transit-unfavorable grant mix</td>
+        <td>$1.73B allocated today — transit receives &lt;10%; roads/bridges get 75%+</td>
+        <td>Capital Investment Grant approvals; Olympic transit infrastructure commitments</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Emerging Themes -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes — Week of July 9, 2026</h2>
+
+    <div class="theme">
+      <h3>1. The World Cup as a 2028 Olympics Stress Test</h3>
+      <p>The 2026 FIFA World Cup is now more than a month into its Los Angeles run, and every game day provides operational data — ridership counts, service reliability metrics, crowd management lessons, communications protocols — that Metro, Metrolink, LAWA, and Amtrak are quietly cataloguing for 2028. The simultaneous Spain-Austria match, Anime Expo, and July 4th celebrations in a single weekend compressed two years of 2028 planning into 48 hours. The results are encouraging for rail; the LAX people mover's ongoing struggles remain the system's most visible vulnerability.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. Federal Dollars Still Flow Primarily to Roads — Transit Must Fight for Its Share</h3>
+      <p>Today's USDOT announcement that transit received less than 10% of $1.73 billion in new grants is a stark data point against the backdrop of Rep. Friedman's Metro/Metrolink investment package announced yesterday. The pattern is consistent: federal baseline infrastructure funding heavily favors roads, requiring special legislative effort — and political relationships — to redirect meaningful capital toward transit. As SoCal agencies file Capital Investment Grant applications for D Line extensions, the Vermont BRT, and Sepulveda Transit Corridor, the modal math remains structurally challenging.</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. Metro's Safety Paradox — Record Ridership and Ongoing Risk</h3>
+      <p>The pedestrian fatality near Skid Row arrives as Metro celebrates its highest rail ridership in six years and its DPS recruitment draws 2,400+ applicants. This is transit's perpetual safety paradox: more riders means more exposure to incidents, more public scrutiny, and more pressure on an agency already fighting narrative battles against think-tank critics. Metro's challenge is to simultaneously celebrate its World Cup success and maintain a sober, transparent posture on safety — using the DPS formation as a credible institutional response rather than a PR maneuver.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. Fare Technology Modernization as an Equity and Growth Tool</h3>
+      <p>Metro's new contactless tap-to-pay system closes a significant access gap: visitors, tourists, and occasional riders no longer need to pre-purchase a TAP card to board. Combined with the new Metro app, this modernization aligns LA Metro with global transit standards just in time for the World Cup's knockout rounds and the 2028 Olympics. The equity angle is equally important — unbanked and cash-dependent riders still need robust cash-reload infrastructure, and the new system's rollout must not inadvertently disadvantage the system's most transit-dependent users.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. Intercity Rail's Moment — Amtrak, Metrolink, and the Surfliner Fill the HSR Gap</h3>
+      <p>California High-Speed Rail remains at least 15 years from SoCal service. In the meantime, Amtrak's new Pacific Surfliner daily trains and Metrolink's World Cup service expansions represent the actual intercity rail infrastructure that SoCal residents and visitors are using today. The World Cup has revealed pent-up demand for intercity transit across the San Diego–LA–SLO corridor — demand that a properly funded Surfliner and Metrolink network could capture permanently, even without HSR. OCTA's balanced budget and Metrolink's structural challenges show the contrast between agencies managing their present vs. agencies trapped in it.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>SoCal Transit Intelligence · July 9, 2026 · Sources: Smart Cities Dive, LA Metro (The Source), Police1, KTLA, Railway-News, GovTech, NBC Los Angeles, SCV News, Metro Magazine, Defector, Amtrak Media · Compiled daily from LA Metro, Metrolink, SCAG, OCTA, LAX/LAWA, CA HSR, Amtrak Pacific Surfliner, and regional news feeds</p>
+</footer>
+
+</body>
+</html>
