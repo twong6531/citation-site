@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" font-family="Helvetica Neue, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- HEADER -->
+  <text x="400" y="36" font-size="11" fill="#999999" text-anchor="middle" letter-spacing="3" font-weight="600">DAILY BRIEFING</text>
+  <text x="400" y="76" font-size="28" fill="#111111" text-anchor="middle" font-weight="700">AI Proves Math Theorem</text>
+  <text x="400" y="100" font-size="13" fill="#AAAAAA" text-anchor="middle">July 10, 2026</text>
+  <line x1="40" y1="116" x2="760" y2="116" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- STORY 1: AI Math Proof -->
+  <text x="48" y="150" font-size="11" fill="#888888" font-weight="600">01</text>
+  <rect x="80" y="136" width="44" height="18" rx="3" fill="#6C47FF"/>
+  <text x="102" y="149" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">AI</text>
+  <text x="80" y="175" font-size="16" fill="#111111" font-weight="700" textLength="620" lengthAdjust="spacing">AI Solves Decades-Old Graph Theory Problem</text>
+  <text x="80" y="195" font-size="12" fill="#555555">OpenAI's GPT-5.6 Sol Ultra produced a formal proof of the Cycle Double Cover</text>
+  <text x="80" y="211" font-size="12" fill="#555555">Conjecture, a problem unsolved since the 1970s. AI now advances pure mathematics.</text>
+  <text x="80" y="232" font-size="11" fill="#777777">• GPT-5.6 Sol Ultra is OpenAI's most advanced reasoning model as of mid-2026</text>
+  <text x="80" y="248" font-size="11" fill="#777777">• Cycle Double Cover: every 2-edge-connected graph has a cycle double cover</text>
+  <text x="80" y="264" font-size="11" fill="#777777">• Proof published as verified PDF — 1st AI-authored conjecture proof in graph theory</text>
+  <!-- Impact bar -->
+  <text x="80" y="286" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="140" y="276" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="140" y="276" width="180" height="6" rx="3" fill="#6C47FF"/>
+  <text x="346" y="285" font-size="10" fill="#6C47FF" font-weight="700">10/10</text>
+  <line x1="40" y1="304" x2="760" y2="304" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- STORY 2: Apple sues OpenAI -->
+  <text x="48" y="332" font-size="11" fill="#888888" font-weight="600">02</text>
+  <rect x="80" y="318" width="68" height="18" rx="3" fill="#2E7D32"/>
+  <text x="114" y="331" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">BUSINESS</text>
+  <text x="80" y="357" font-size="16" fill="#111111" font-weight="700">Apple Sues OpenAI for AI Trade Secrets</text>
+  <text x="80" y="377" font-size="12" fill="#555555">Apple filed a lawsuit alleging former employees carried proprietary Siri and on-device</text>
+  <text x="80" y="393" font-size="12" fill="#555555">AI technology to OpenAI — a landmark IP dispute between Big Tech rivals.</text>
+  <text x="80" y="414" font-size="11" fill="#777777">• Lawsuit involves multiple ex-Apple engineers hired by OpenAI in 2025–2026</text>
+  <text x="80" y="430" font-size="11" fill="#777777">• Stolen tech allegedly covers Siri neural architecture and on-device inference</text>
+  <text x="80" y="446" font-size="11" fill="#777777">• Filed in federal court July 10, 2026 — OpenAI disputes all allegations</text>
+  <!-- Impact bar -->
+  <text x="80" y="468" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="140" y="458" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="140" y="458" width="162" height="6" rx="3" fill="#2E7D32"/>
+  <text x="346" y="467" font-size="10" fill="#2E7D32" font-weight="700">9/10</text>
+  <line x1="40" y1="486" x2="760" y2="486" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- STORY 3: NYC Subscription Ban -->
+  <text x="48" y="514" font-size="11" fill="#888888" font-weight="600">03</text>
+  <rect x="80" y="500" width="68" height="18" rx="3" fill="#2E7D32"/>
+  <text x="114" y="513" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">BUSINESS</text>
+  <text x="80" y="539" font-size="16" fill="#111111" font-weight="700">NYC Outlaws Dark Pattern Subscription Tricks</text>
+  <text x="80" y="559" font-size="12" fill="#555555">New York City passes legislation banning deceptive auto-renewal and cancellation</text>
+  <text x="80" y="575" font-size="12" fill="#555555">barriers — the largest US city to target subscription dark patterns by law.</text>
+  <text x="80" y="596" font-size="11" fill="#777777">• NYC is home to 8.3 million residents affected by deceptive subscription UX</text>
+  <text x="80" y="612" font-size="11" fill="#777777">• Dark patterns cost US consumers an estimated $10B+ in unwanted renewals/year</text>
+  <text x="80" y="628" font-size="11" fill="#777777">• Law requires 1-click cancellation and 30-day cancellation window for all services</text>
+  <!-- Impact bar -->
+  <text x="80" y="650" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="140" y="640" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="140" y="640" width="144" height="6" rx="3" fill="#2E7D32"/>
+  <text x="346" y="649" font-size="10" fill="#2E7D32" font-weight="700">8/10</text>
+  <line x1="40" y1="668" x2="760" y2="668" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- STORY 4: QuadRF -->
+  <text x="48" y="696" font-size="11" fill="#888888" font-weight="600">04</text>
+  <rect x="80" y="682" width="36" height="18" rx="3" fill="#00897B"/>
+  <text x="98" y="695" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">TECH</text>
+  <text x="80" y="721" font-size="16" fill="#111111" font-weight="700">Open-Source Radio Sees WiFi Through Walls</text>
+  <text x="80" y="741" font-size="12" fill="#555555">QuadRF, built on Raspberry Pi 5 + FPGA with picosecond timing, performs phased-array</text>
+  <text x="80" y="757" font-size="12" fill="#555555">beamforming to detect drones and decode WiFi signals through solid walls.</text>
+  <text x="80" y="778" font-size="11" fill="#777777">• Achieves up to 1.15 MW EIRP when chained as a Moon-scale antenna array</text>
+  <text x="80" y="794" font-size="11" fill="#777777">• Built by former SpaceX Starlink engineer Martin McCormick as open hardware</text>
+  <text x="80" y="810" font-size="11" fill="#777777">• Can stream and decode WiFi RF traffic from outside a building in real time</text>
+  <!-- Impact bar -->
+  <text x="80" y="832" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="140" y="822" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="140" y="822" width="144" height="6" rx="3" fill="#00897B"/>
+  <text x="346" y="831" font-size="10" fill="#00897B" font-weight="700">8/10</text>
+  <line x1="40" y1="850" x2="760" y2="850" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- STORY 5: Einstein Relativity Chemistry -->
+  <text x="48" y="878" font-size="11" fill="#888888" font-weight="600">05</text>
+  <rect x="80" y="864" width="60" height="18" rx="3" fill="#0077CC"/>
+  <text x="110" y="877" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">SCIENCE</text>
+  <text x="80" y="903" font-size="16" fill="#111111" font-weight="700">Relativity Shapes Gold and Mercury Chemistry</text>
+  <text x="80" y="923" font-size="12" fill="#555555">Brown University researchers confirmed that Einstein's special relativity governs</text>
+  <text x="80" y="939" font-size="12" fill="#555555">chemical bonding in heavy elements — explaining gold's color and mercury's liquidity.</text>
+  <text x="80" y="960" font-size="11" fill="#777777">• Relativistic orbital contraction is measurable in elements with atomic number &gt;70</text>
+  <text x="80" y="976" font-size="11" fill="#777777">• Gold's 6s orbital contracts by ~10% due to relativistic effects — causing yellow color</text>
+  <text x="80" y="992" font-size="11" fill="#777777">• Mercury's relativistic 6s contraction explains why it's liquid at room temperature (234K)</text>
+  <!-- Impact bar -->
+  <text x="80" y="1014" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="140" y="1004" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="140" y="1004" width="126" height="6" rx="3" fill="#0077CC"/>
+  <text x="346" y="1013" font-size="10" fill="#0077CC" font-weight="700">7/10</text>
+  <line x1="40" y1="1032" x2="760" y2="1032" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- STORY 6: Good Tools Are Invisible -->
+  <text x="48" y="1060" font-size="11" fill="#888888" font-weight="600">06</text>
+  <rect x="80" y="1046" width="36" height="18" rx="3" fill="#00897B"/>
+  <text x="98" y="1059" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">TECH</text>
+  <text x="80" y="1085" font-size="16" fill="#111111" font-weight="700">Best Software Tools Vanish Into the Workflow</text>
+  <text x="80" y="1105" font-size="12" fill="#555555">A widely-read essay argues effective tools become transparent extensions of thought,</text>
+  <text x="80" y="1121" font-size="12" fill="#555555">challenging the industry's habit of adding visible features as a proxy for value.</text>
+  <text x="80" y="1142" font-size="11" fill="#777777">• Essay gained 332 upvotes on Hacker News within 12 hours of posting</text>
+  <text x="80" y="1158" font-size="11" fill="#777777">• Argues cognitive load reduction is the primary metric of tool quality</text>
+  <text x="80" y="1174" font-size="11" fill="#777777">• Cites Unix pipes, Vim, and APL as examples of tools that become invisible</text>
+  <!-- Impact bar -->
+  <text x="80" y="1196" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="140" y="1186" width="200" height="6" rx="3" fill="#E8E8E8"/>
+  <rect x="140" y="1186" width="108" height="6" rx="3" fill="#00897B"/>
+  <text x="346" y="1195" font-size="10" fill="#00897B" font-weight="700">6/10</text>
+  <line x1="40" y1="1214" x2="760" y2="1214" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- FOOTER -->
+  <text x="400" y="1246" font-size="11" fill="#AAAAAA" text-anchor="middle">Generated by AI · July 10, 2026 · Sources: Hacker News, Google News</text>
+  <text x="400" y="1264" font-size="11" fill="#CCCCCC" text-anchor="middle">twong6531.github.io/citation-site</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="1396" width="800" height="4" fill="#111111"/>
+</svg>

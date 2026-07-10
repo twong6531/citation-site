@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 10, 2026</title>
+<style>
+  :root {
+    --bg: #0e0e0f;
+    --surface: #18181b;
+    --surface2: #1f1f24;
+    --border: #2a2a32;
+    --text: #e8e8ee;
+    --muted: #888896;
+    --accent-ai: #8b5cf6;
+    --accent-science: #3b82f6;
+    --accent-tech: #10b981;
+    --accent-business: #22c55e;
+    --accent-world: #f97316;
+    --accent-bar: #6C47FF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+
+  /* HEADER */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .site-header a { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .site-header a:hover { color: var(--text); }
+  .nav-links { display: flex; gap: 20px; }
+
+  /* HERO */
+  .hero {
+    padding: 56px 24px 40px;
+    max-width: 900px; margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-label { font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
+  .hero-topic { font-size: 40px; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .hero-date { font-size: 14px; color: var(--muted); }
+
+  /* SECTION HEADERS */
+  .section-header {
+    max-width: 900px; margin: 0 auto;
+    padding: 36px 24px 20px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-divider { flex: 1; height: 1px; background: var(--border); }
+
+  /* VISUAL SECTION */
+  .visual-section {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+  .visual-placeholder {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .visual-placeholder .icon { font-size: 48px; margin-bottom: 16px; opacity: 0.4; }
+  .visual-placeholder h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .visual-placeholder p { font-size: 14px; color: var(--muted); max-width: 480px; margin: 0 auto; }
+  .visual-subject { font-size: 13px; color: var(--muted); margin-top: 20px; font-style: italic; }
+  .visual-note { font-size: 11px; color: #444455; margin-top: 8px; }
+
+  /* STORY CARDS */
+  .stories-grid {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 640px) { .stories-grid { grid-template-columns: 1fr; } }
+
+  .story-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.15s;
+  }
+  .story-card:hover { border-color: #3a3a48; }
+
+  .card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .card-num { font-size: 11px; color: #444455; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .category-pill {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 4px;
+  }
+  .cat-ai { background: rgba(108, 71, 255, 0.2); color: #a78bfa; }
+  .cat-science { background: rgba(0, 119, 204, 0.2); color: #60a5fa; }
+  .cat-tech { background: rgba(0, 137, 123, 0.2); color: #34d399; }
+  .cat-business { background: rgba(46, 125, 50, 0.2); color: #4ade80; }
+  .cat-world { background: rgba(230, 81, 0, 0.2); color: #fb923c; }
+
+  .emoji-badge { font-size: 18px; margin-left: auto; }
+
+  .card-headline { font-size: 15px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .card-summary { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+  .card-bullets { list-style: none; margin-bottom: 14px; }
+  .card-bullets li {
+    font-size: 12px; color: #666678;
+    padding: 3px 0 3px 14px;
+    position: relative;
+    border-bottom: 1px solid #1c1c22;
+  }
+  .card-bullets li:last-child { border-bottom: none; }
+  .card-bullets li::before { content: '·'; position: absolute; left: 0; color: #444455; }
+
+  .card-footer { margin-top: 12px; }
+  .impact-row { display: flex; align-items: center; gap: 8px; }
+  .impact-label { font-size: 10px; color: #444455; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+  .impact-track { flex: 1; height: 4px; background: #222230; border-radius: 2px; overflow: hidden; }
+  .impact-fill { height: 100%; border-radius: 2px; }
+  .impact-score { font-size: 10px; font-weight: 700; white-space: nowrap; }
+  .why-matters { font-size: 11px; color: #555565; margin-top: 8px; font-style: italic; line-height: 1.4; }
+
+  /* INFOGRAPHIC SECTION */
+  .infographic-section {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 48px;
+  }
+  .infographic-link {
+    display: flex; align-items: center; gap: 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    transition: border-color 0.15s;
+  }
+  .infographic-link:hover { border-color: #3a3a48; }
+  .dl-icon { font-size: 28px; }
+  .dl-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .dl-info p { font-size: 12px; color: var(--muted); }
+  .dl-badge {
+    margin-left: auto;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px;
+    background: rgba(108, 71, 255, 0.15); color: #a78bfa;
+    white-space: nowrap;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 12px; color: #444455;
+  }
+  footer a { color: #666678; }
+  footer a:hover { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html">← Daily Briefing</a>
+  <nav class="nav-links">
+    <a href="california-hsr.html">CA High-Speed Rail</a>
+    <a href="transit-oriented-development.html">Transit &amp; Development</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Daily Briefing</div>
+  <div class="hero-topic">AI Proves Math Theorem</div>
+  <div class="hero-date">Thursday, July 10, 2026</div>
+</section>
+
+<!-- SECTION A: EDITORIAL IMAGE -->
+<div class="section-header">
+  <span class="section-label">Today's Visual</span>
+  <div class="section-divider"></div>
+</div>
+
+<div class="visual-section">
+  <div class="visual-placeholder">
+    <div class="icon">📡</div>
+    <h3>QuadRF Phased Array — Technical Editorial Illustration</h3>
+    <p>An open-source phased-array radio system built on Raspberry Pi 5 and FPGA, capable of detecting drones and decoding WiFi signals through walls via beamforming. Designed by former SpaceX engineer Martin McCormick.</p>
+    <div class="visual-subject">Visual subject: phased-array radio antenna board with FPGA module and Raspberry Pi</div>
+    <div class="visual-note">Independently researched and rendered by AI from today's news · Image generation unavailable today</div>
+  </div>
+</div>
+
+<!-- SECTION B: NEWS ANALYSIS -->
+<div class="section-header">
+  <span class="section-label">News Analysis — July 10, 2026</span>
+  <div class="section-divider"></div>
+</div>
+
+<div class="stories-grid">
+
+  <!-- STORY 1 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">01</span>
+      <span class="category-pill cat-ai">AI</span>
+      <span class="emoji-badge">🧮</span>
+    </div>
+    <div class="card-headline">AI Solves Decades-Old Graph Theory Problem</div>
+    <div class="card-summary">OpenAI's GPT-5.6 Sol Ultra produced a formal mathematical proof of the Cycle Double Cover Conjecture, a problem unsolved since the 1970s. This marks the first time AI has independently resolved an open conjecture in pure graph theory.</div>
+    <ul class="card-bullets">
+      <li>GPT-5.6 Sol Ultra is OpenAI's most advanced reasoning model as of mid-2026</li>
+      <li>Cycle Double Cover Conjecture: every 2-edge-connected graph has a cycle double cover</li>
+      <li>Formal proof released as verified PDF — 1st AI-authored conjecture proof in graph theory</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:100%;background:#6C47FF"></div></div>
+        <span class="impact-score" style="color:#a78bfa">10/10</span>
+      </div>
+      <div class="why-matters">AI is now capable of solving unsolved mathematical conjectures independently — a new frontier for computational mathematics.</div>
+    </div>
+  </div>
+
+  <!-- STORY 2 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">02</span>
+      <span class="category-pill cat-business">BUSINESS</span>
+      <span class="emoji-badge">⚖️</span>
+    </div>
+    <div class="card-headline">Apple Sues OpenAI for AI Trade Secrets</div>
+    <div class="card-summary">Apple filed a federal lawsuit alleging former employees carried proprietary Siri and on-device AI technology to OpenAI — one of the first major IP disputes between Big Tech rivals in the AI era. OpenAI disputes all allegations.</div>
+    <ul class="card-bullets">
+      <li>Lawsuit involves multiple ex-Apple engineers hired by OpenAI in 2025–2026</li>
+      <li>Stolen tech allegedly covers Siri neural architecture and on-device inference pipelines</li>
+      <li>Filed in federal court July 10, 2026 — parallels Waymo v. Uber self-driving IP suit</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:90%;background:#22c55e"></div></div>
+        <span class="impact-score" style="color:#4ade80">9/10</span>
+      </div>
+      <div class="why-matters">Sets a legal precedent for AI intellectual property disputes that could reshape hiring and trade-secret law across the industry.</div>
+    </div>
+  </div>
+
+  <!-- STORY 3 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">03</span>
+      <span class="category-pill cat-business">BUSINESS</span>
+      <span class="emoji-badge">🔒</span>
+    </div>
+    <div class="card-headline">NYC Outlaws Dark Pattern Subscription Tricks</div>
+    <div class="card-summary">New York City passed legislation banning deceptive auto-renewals and subscription cancellation barriers, targeting dark patterns that have cost consumers billions. NYC is the largest US city to pass such consumer protection law.</div>
+    <ul class="card-bullets">
+      <li>NYC's 8.3 million residents are directly protected by the new law effective immediately</li>
+      <li>Dark patterns cost US consumers an estimated $10B+ in unwanted renewals per year</li>
+      <li>Law mandates 1-click cancellation and 30-day refund window for all subscription services</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:80%;background:#22c55e"></div></div>
+        <span class="impact-score" style="color:#4ade80">8/10</span>
+      </div>
+      <div class="why-matters">Could become a model for national legislation targeting tech companies' predatory subscription dark patterns.</div>
+    </div>
+  </div>
+
+  <!-- STORY 4 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">04</span>
+      <span class="category-pill cat-tech">TECH</span>
+      <span class="emoji-badge">📡</span>
+    </div>
+    <div class="card-headline">Open-Source Radio Sees WiFi Through Walls</div>
+    <div class="card-summary">QuadRF, built on Raspberry Pi 5 and FPGA with picosecond timing, performs phased-array beamforming to detect drones and decode WiFi signals through solid walls. The handheld device was created by former SpaceX Starlink engineer Martin McCormick.</div>
+    <ul class="card-bullets">
+      <li>Achieves up to 1.15 MW EIRP when chained into a Moon-scale antenna array</li>
+      <li>Former SpaceX engineer who built Dishy (Starlink terminal) designed it as open hardware</li>
+      <li>Can stream and decode WiFi RF traffic from outside a building in real time</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:80%;background:#10b981"></div></div>
+        <span class="impact-score" style="color:#34d399">8/10</span>
+      </div>
+      <div class="why-matters">Democratizes signal intelligence technology previously available only to governments and intelligence agencies.</div>
+    </div>
+  </div>
+
+  <!-- STORY 5 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">05</span>
+      <span class="category-pill cat-science">SCIENCE</span>
+      <span class="emoji-badge">⚗️</span>
+    </div>
+    <div class="card-headline">Relativity Shapes Gold and Mercury Chemistry</div>
+    <div class="card-summary">Brown University researchers confirmed that Einstein's special relativity governs chemical bonding in heavy elements — explaining why gold is yellow and mercury is liquid at room temperature. The study links fundamental physics to materials chemistry.</div>
+    <ul class="card-bullets">
+      <li>Relativistic orbital contraction measurable in elements with atomic number above 70</li>
+      <li>Gold's 6s orbital contracts ~10% due to relativistic effects — causing its yellow color</li>
+      <li>Mercury's 6s contraction lowers its melting point to 234 K (–39°C), making it room-temp liquid</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:70%;background:#3b82f6"></div></div>
+        <span class="impact-score" style="color:#60a5fa">7/10</span>
+      </div>
+      <div class="why-matters">Bridges fundamental physics and chemistry, with implications for designing new heavy-element compounds and materials.</div>
+    </div>
+  </div>
+
+  <!-- STORY 6 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">06</span>
+      <span class="category-pill cat-tech">TECH</span>
+      <span class="emoji-badge">🛠️</span>
+    </div>
+    <div class="card-headline">Best Software Tools Vanish Into the Workflow</div>
+    <div class="card-summary">A widely-read essay argues that effective software tools become transparent extensions of thought, functioning invisibly to reduce cognitive load. The piece challenges the industry's habit of adding visible features as a proxy for value.</div>
+    <ul class="card-bullets">
+      <li>Essay gained 332 upvotes on Hacker News within 12 hours of publication July 10, 2026</li>
+      <li>Cites Unix pipes, Vim, and APL as historical examples of tools that become invisible</li>
+      <li>Argues cognitive load reduction — not feature count — is the primary metric of tool quality</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:60%;background:#10b981"></div></div>
+        <span class="impact-score" style="color:#34d399">6/10</span>
+      </div>
+      <div class="why-matters">Reframes software quality debates away from feature additions toward invisible, friction-free user experience.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- INFOGRAPHIC DOWNLOAD -->
+<div class="section-header">
+  <span class="section-label">Visual Data</span>
+  <div class="section-divider"></div>
+</div>
+
+<div class="infographic-section">
+  <a href="infographic-2026-07-10.svg" class="infographic-link" target="_blank">
+    <span class="dl-icon">📊</span>
+    <div class="dl-info">
+      <h4>Daily Briefing — Typographic Infographic</h4>
+      <p>6-story visual summary · July 10, 2026 · AI Proves Math Theorem</p>
+    </div>
+    <span class="dl-badge">SVG Download</span>
+  </a>
+</div>
+
+<footer>
+  <p>Generated by AI · Sources: Hacker News, Google News · <a href="index.html">← All Briefings</a></p>
+  <p style="margin-top:6px"><a href="https://twong6531.github.io/citation-site/">twong6531.github.io/citation-site</a></p>
+</footer>
+
+</body>
+</html>
