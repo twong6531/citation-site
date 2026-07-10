@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1800" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Arial, Helvetica, sans-serif">
+
+  <!-- Background -->
+  <rect width="800" height="1800" fill="#F7F7F5"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="800" height="120" fill="#1A1A1A"/>
+  <text x="40" y="46" fill="#FFFFFF" font-size="11" font-weight="400" letter-spacing="3">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="78" fill="#FFFFFF" font-size="32" font-weight="700" letter-spacing="-1">URBAN MOBILITY</text>
+  <text x="40" y="100" fill="#9E9E9E" font-size="11" font-weight="400" letter-spacing="2">JULY 10, 2026  ·  VOL. 12</text>
+  <text x="760" y="70" fill="#555555" font-size="10" text-anchor="end">AUTOMATED ANALYSIS</text>
+
+  <!-- Divider -->
+  <rect x="0" y="120" width="800" height="3" fill="#E53935"/>
+
+  <!-- SECTION: KEY FINDINGS -->
+  <text x="40" y="165" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">KEY FINDINGS</text>
+  <line x1="40" y1="175" x2="760" y2="175" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- Finding 1 -->
+  <rect x="40" y="192" width="36" height="36" fill="#1A1A1A"/>
+  <text x="58" y="216" fill="#FFFFFF" font-size="20" font-weight="700" text-anchor="middle">1</text>
+  <text x="90" y="207" fill="#1A1A1A" font-size="14" font-weight="700">U.S. Transit Ridership Hits Post-Pandemic Peak</text>
+  <text x="90" y="226" fill="#555555" font-size="12">7.7 billion trips in 2024 — 85% of pre-COVID levels. Bus leads</text>
+  <text x="90" y="242" fill="#555555" font-size="12">recovery at 86%; rail at 72%. Every mode grew year-over-year.</text>
+
+  <!-- Finding 2 -->
+  <rect x="40" y="266" width="36" height="36" fill="#E53935"/>
+  <text x="58" y="290" fill="#FFFFFF" font-size="20" font-weight="700" text-anchor="middle">2</text>
+  <text x="90" y="281" fill="#1A1A1A" font-size="14" font-weight="700">Transit Electrification Accelerates Globally</text>
+  <text x="90" y="300" fill="#555555" font-size="12">Chile reached 68% electric bus fleet by March 2026. US studies</text>
+  <text x="90" y="316" fill="#555555" font-size="12">show 33–65% GHG reduction potential from full electrification.</text>
+
+  <!-- Finding 3 -->
+  <rect x="40" y="340" width="36" height="36" fill="#424242"/>
+  <text x="58" y="364" fill="#FFFFFF" font-size="20" font-weight="700" text-anchor="middle">3</text>
+  <text x="90" y="355" fill="#1A1A1A" font-size="14" font-weight="700">TOD Paradigm Shifts from 3-Ds to 3-Es</text>
+  <text x="90" y="374" fill="#555555" font-size="12">New framework replaces Density/Diversity/Design with</text>
+  <text x="90" y="390" fill="#555555" font-size="12">Efficiency/Equity/Ecology — network-scale over node-scale.</text>
+
+  <line x1="40" y1="415" x2="760" y2="415" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- SECTION: PAPER OF THE DAY -->
+  <text x="40" y="452" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">PAPER OF THE DAY</text>
+  <rect x="40" y="462" width="720" height="110" fill="#1A1A1A"/>
+  <rect x="40" y="462" width="4" height="110" fill="#E53935"/>
+  <text x="60" y="487" fill="#FFFFFF" font-size="14" font-weight="700">Next-Gen TOD: Transforming Transit-Oriented Development</text>
+  <text x="60" y="504" fill="#FFFFFF" font-size="14" font-weight="700">to Embrace New Challenges and Opportunities</text>
+  <text x="60" y="526" fill="#9E9E9E" font-size="11">Urban Rail Transit · Springer Nature · 2026</text>
+  <text x="60" y="547" fill="#CCCCCC" font-size="12">Proposes corridor- and network-scale TOD replacing single-node</text>
+  <text x="60" y="563" fill="#CCCCCC" font-size="12">models, integrating equity and ecology as first-class planning goals.</text>
+
+  <line x1="40" y1="590" x2="760" y2="590" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- SECTION: EMERGING THEMES (3 cols) -->
+  <text x="40" y="628" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">EMERGING THEMES</text>
+
+  <!-- Theme col 1 -->
+  <rect x="40" y="640" width="226" height="3" fill="#E53935"/>
+  <text x="40" y="662" fill="#1A1A1A" font-size="12" font-weight="700">SAV INTEGRATION</text>
+  <text x="40" y="680" fill="#555555" font-size="11">Shared autonomous vehicles</text>
+  <text x="40" y="696" fill="#555555" font-size="11">are entering microtransit</text>
+  <text x="40" y="712" fill="#555555" font-size="11">pilots. Atlanta case studies</text>
+  <text x="40" y="728" fill="#555555" font-size="11">show measurable gains in</text>
+  <text x="40" y="744" fill="#555555" font-size="11">on-time performance and</text>
+  <text x="40" y="760" fill="#555555" font-size="11">user satisfaction vs. human-</text>
+  <text x="40" y="776" fill="#555555" font-size="11">driven on-demand fleets.</text>
+
+  <!-- Theme col 2 -->
+  <rect x="294" y="640" width="226" height="3" fill="#1A1A1A"/>
+  <text x="294" y="662" fill="#1A1A1A" font-size="12" font-weight="700">AI-DRIVEN PLANNING</text>
+  <text x="294" y="680" fill="#555555" font-size="11">Diffusion models and graph</text>
+  <text x="294" y="696" fill="#555555" font-size="11">transformers now generate</text>
+  <text x="294" y="712" fill="#555555" font-size="11">synthetic mobility datasets</text>
+  <text x="294" y="728" fill="#555555" font-size="11">and forecast micro-mobility</text>
+  <text x="294" y="744" fill="#555555" font-size="11">demand. MobiDiff and</text>
+  <text x="294" y="760" fill="#555555" font-size="11">STAGformer represent a</text>
+  <text x="294" y="776" fill="#555555" font-size="11">new ML-planning interface.</text>
+
+  <!-- Theme col 3 -->
+  <rect x="548" y="640" width="212" height="3" fill="#424242"/>
+  <text x="548" y="662" fill="#1A1A1A" font-size="12" font-weight="700">EQUITY IMPERATIVE</text>
+  <text x="548" y="680" fill="#555555" font-size="11">Node-Place-People models</text>
+  <text x="548" y="696" fill="#555555" font-size="11">formalize equity as a TOD</text>
+  <text x="548" y="712" fill="#555555" font-size="11">metric. FTA's $28.5M 2026</text>
+  <text x="548" y="728" fill="#555555" font-size="11">TOD pilot funding signals</text>
+  <text x="548" y="744" fill="#555555" font-size="11">federal alignment. Research</text>
+  <text x="548" y="760" fill="#555555" font-size="11">links equitable TOD to</text>
+  <text x="548" y="776" fill="#555555" font-size="11">long-term ridership gains.</text>
+
+  <line x1="40" y1="800" x2="760" y2="800" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- SECTION: CONFIDENCE CHART -->
+  <text x="40" y="838" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">EVIDENCE CONFIDENCE BY TOPIC</text>
+
+  <!-- Bars -->
+  <!-- Ridership Recovery -->
+  <text x="40" y="862" fill="#555555" font-size="11">Ridership Recovery</text>
+  <rect x="220" y="848" width="420" height="16" fill="#E8E8E6" rx="2"/>
+  <rect x="220" y="848" width="378" height="16" fill="#1A1A1A" rx="2"/>
+  <text x="606" y="862" fill="#555555" font-size="11">HIGH  90%</text>
+
+  <!-- Electrification Impact -->
+  <text x="40" y="890" fill="#555555" font-size="11">Transit Electrification</text>
+  <rect x="220" y="876" width="420" height="16" fill="#E8E8E6" rx="2"/>
+  <rect x="220" y="876" width="336" height="16" fill="#E53935" rx="2"/>
+  <text x="606" y="890" fill="#555555" font-size="11">HIGH  80%</text>
+
+  <!-- SAV Potential -->
+  <text x="40" y="918" fill="#555555" font-size="11">SAV Transit Integration</text>
+  <rect x="220" y="904" width="420" height="16" fill="#E8E8E6" rx="2"/>
+  <rect x="220" y="904" width="252" height="16" fill="#424242" rx="2"/>
+  <text x="606" y="918" fill="#555555" font-size="11">MED  60%</text>
+
+  <!-- LRT vs BRT -->
+  <text x="40" y="946" fill="#555555" font-size="11">LRT vs. BRT Performance</text>
+  <rect x="220" y="932" width="420" height="16" fill="#E8E8E6" rx="2"/>
+  <rect x="220" y="932" width="294" height="16" fill="#757575" rx="2"/>
+  <text x="606" y="946" fill="#555555" font-size="11">MED  70%</text>
+
+  <!-- Next-Gen TOD -->
+  <text x="40" y="974" fill="#555555" font-size="11">Next-Gen TOD Framework</text>
+  <rect x="220" y="960" width="420" height="16" fill="#E8E8E6" rx="2"/>
+  <rect x="220" y="960" width="210" height="16" fill="#9E9E9E" rx="2"/>
+  <text x="606" y="974" fill="#555555" font-size="11">MED  50%</text>
+
+  <line x1="40" y1="998" x2="760" y2="998" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- SECTION: ACTIONABLE TAKEAWAYS -->
+  <text x="40" y="1036" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">ACTIONABLE TAKEAWAYS</text>
+
+  <rect x="40" y="1048" width="720" height="1" fill="#1A1A1A"/>
+
+  <text x="40" y="1072" fill="#E53935" font-size="22" font-weight="700">→</text>
+  <text x="70" y="1072" fill="#1A1A1A" font-size="13" font-weight="700">Planners: </text>
+  <text x="140" y="1072" fill="#555555" font-size="13">Adopt corridor-based TOD models; single-node analysis underestimates network synergies.</text>
+
+  <text x="40" y="1104" fill="#E53935" font-size="22" font-weight="700">→</text>
+  <text x="70" y="1104" fill="#1A1A1A" font-size="13" font-weight="700">Agencies: </text>
+  <text x="148" y="1104" fill="#555555" font-size="13">Accelerate fleet electrification. 34% have infrastructure plans; 66% face readiness gap.</text>
+
+  <text x="40" y="1136" fill="#E53935" font-size="22" font-weight="700">→</text>
+  <text x="70" y="1136" fill="#1A1A1A" font-size="13" font-weight="700">Researchers: </text>
+  <text x="165" y="1136" fill="#555555" font-size="13">SAV microtransit pilots need longitudinal equity tracking, not just efficiency metrics.</text>
+
+  <text x="40" y="1168" fill="#E53935" font-size="22" font-weight="700">→</text>
+  <text x="70" y="1168" fill="#1A1A1A" font-size="13" font-weight="700">Policy: </text>
+  <text x="124" y="1168" fill="#555555" font-size="13">BRT vs. LRT selection should factor in corridor density, not just capital cost differentials.</text>
+
+  <line x1="40" y1="1195" x2="760" y2="1195" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- SECTION: CONTRARIAN INSIGHT -->
+  <text x="40" y="1233" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">CONTRARIAN INSIGHT</text>
+  <rect x="40" y="1244" width="720" height="90" fill="#F0EFE9"/>
+  <rect x="40" y="1244" width="4" height="90" fill="#E53935"/>
+  <text x="56" y="1268" fill="#1A1A1A" font-size="13" font-weight="700">"Bus recovery outpaces rail — but that may be a planning failure, not a success."</text>
+  <text x="56" y="1290" fill="#555555" font-size="12">Bus at 86% recovery vs. rail at 72% looks like a bus win. But bus ridership tracks</text>
+  <text x="56" y="1307" fill="#555555" font-size="12">captive riders (low-income, car-free) while rail serves choice riders who haven't</text>
+  <text x="56" y="1323" fill="#555555" font-size="12">returned. The gap reveals which systems serve people vs. which attract them.</text>
+
+  <line x1="40" y1="1352" x2="760" y2="1352" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- STATS ROW -->
+  <text x="40" y="1390" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">BY THE NUMBERS</text>
+
+  <!-- Stat 1 -->
+  <text x="40" y="1430" fill="#1A1A1A" font-size="42" font-weight="700">7.7B</text>
+  <text x="40" y="1452" fill="#555555" font-size="11">US trips, 2024</text>
+
+  <!-- Stat 2 -->
+  <text x="220" y="1430" fill="#E53935" font-size="42" font-weight="700">68%</text>
+  <text x="220" y="1452" fill="#555555" font-size="11">Chile e-bus fleet</text>
+
+  <!-- Stat 3 -->
+  <text x="390" y="1430" fill="#1A1A1A" font-size="42" font-weight="700">65%</text>
+  <text x="390" y="1452" fill="#555555" font-size="11">Max GHG cut, electrified</text>
+
+  <!-- Stat 4 -->
+  <text x="565" y="1430" fill="#424242" font-size="42" font-weight="700">$28M</text>
+  <text x="565" y="1452" fill="#555555" font-size="11">FTA TOD pilot fund</text>
+
+  <line x1="40" y1="1475" x2="760" y2="1475" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <text x="40" y="1513" fill="#1A1A1A" font-size="11" font-weight="700" letter-spacing="3">LONG-TERM IMPLICATIONS</text>
+  <text x="40" y="1537" fill="#555555" font-size="12">Transit systems that electrify, adopt SAV feeders, and redesign corridors as TOD networks</text>
+  <text x="40" y="1555" fill="#555555" font-size="12">by 2030 will be positioned for the highest ridership recovery and climate compliance. Those</text>
+  <text x="40" y="1573" fill="#555555" font-size="12">that delay face compounding infrastructure debt and equity liability as urban density grows.</text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="1618" width="800" height="182" fill="#1A1A1A"/>
+  <text x="40" y="1648" fill="#FFFFFF" font-size="14" font-weight="700">TRANSIT RESEARCH DIGEST</text>
+  <text x="40" y="1668" fill="#9E9E9E" font-size="11">Automated analysis · July 10, 2026</text>
+  <text x="40" y="1690" fill="#555555" font-size="11">Sources: APTA 2026 Fact Book · Urban Rail Transit (Springer) · ScienceDirect · arXiv · MDPI FutureTransp</text>
+  <text x="40" y="1710" fill="#555555" font-size="11">Semantic Scholar · Journal of Urban Mobility · FTA.dot.gov</text>
+  <text x="40" y="1740" fill="#9E9E9E" font-size="10">Generated autonomously · Self-analysis mode (Gemini API unavailable)</text>
+  <line x1="40" y1="1754" x2="760" y2="1754" stroke="#333333" stroke-width="1"/>
+  <text x="40" y="1772" fill="#555555" font-size="10">twong6531.github.io/citation-site/research.html</text>
+
+</svg>

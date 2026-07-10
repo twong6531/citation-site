@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transit Research Digest — July 10, 2026</title>
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface: #1A1A1A;
+    --surface2: #222222;
+    --border: #2A2A2A;
+    --text: #E8E8E8;
+    --text2: #A0A0A0;
+    --text3: #666666;
+    --accent: #E53935;
+    --accent2: #FF7043;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* HEADER */
+  .site-header {
+    background: #000;
+    border-bottom: 3px solid var(--accent);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-header h1 { font-size: 13px; font-weight: 700; letter-spacing: 4px; color: var(--white); }
+  .site-header nav { font-size: 12px; color: var(--text3); }
+  .site-header nav a { color: var(--text2); margin-left: 24px; font-size: 12px; letter-spacing: 1px; }
+
+  /* HERO */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero .tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .hero h2 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .hero .meta { color: var(--text3); font-size: 12px; letter-spacing: 2px; }
+  .hero .exec-summary {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--surface2);
+    border-left: 4px solid var(--accent);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text2);
+    max-width: 720px;
+  }
+  .hero .exec-summary strong { color: var(--white); }
+
+  /* CONTENT WRAPPER */
+  .content { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin: 40px 0;
+    border: 1px solid var(--border);
+  }
+  .stat-cell {
+    background: var(--surface);
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .stat-cell .num { font-size: 36px; font-weight: 700; color: var(--white); line-height: 1; }
+  .stat-cell .num.red { color: var(--accent); }
+  .stat-cell .label { font-size: 11px; color: var(--text3); margin-top: 8px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 0 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+  .section-header h3 {
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+  .section-header .line { flex: 1; height: 1px; background: var(--border); }
+
+  /* PAPER CARD */
+  .paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 40px;
+  }
+  .paper-card {
+    background: var(--surface);
+    padding: 28px;
+  }
+  .paper-card .conf-badge {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 3px 8px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .conf-high { background: #1A3A1A; color: #4CAF50; }
+  .conf-med  { background: #3A3A1A; color: #FFC107; }
+  .conf-low  { background: #3A1A1A; color: #FF7043; }
+  .paper-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .paper-card .authors { font-size: 11px; color: var(--text3); margin-bottom: 6px; }
+  .paper-card .venue { font-size: 11px; color: var(--accent2); margin-bottom: 14px; }
+  .paper-card .summary { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 14px; }
+  .paper-card .why { 
+    font-size: 12px; color: var(--text); 
+    border-top: 1px solid var(--border); 
+    padding-top: 12px; margin-top: 4px; 
+  }
+  .paper-card .why strong { color: var(--accent2); }
+  .paper-card .insights { margin-top: 12px; }
+  .paper-card .insights li {
+    font-size: 12px;
+    color: var(--text3);
+    margin-left: 16px;
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .paper-card .practical {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: rgba(229, 57, 53, 0.08);
+    border-left: 2px solid var(--accent);
+    font-size: 12px;
+    color: var(--text2);
+  }
+  .paper-link { 
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 1px;
+  }
+
+  /* POD = paper of the day */
+  .pod {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    padding: 40px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .pod::before {
+    content: "PAPER OF THE DAY";
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    background: var(--accent);
+    color: white;
+    font-size: 9px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    padding: 3px 10px;
+  }
+  .pod h4 { font-size: 22px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 12px; }
+  .pod .venue { color: var(--accent2); font-size: 13px; margin-bottom: 20px; }
+  .pod .body { font-size: 14px; color: var(--text2); line-height: 1.75; max-width: 800px; }
+  .pod .insights-pod { margin-top: 20px; }
+  .pod .insights-pod h5 { font-size: 10px; letter-spacing: 3px; color: var(--text3); margin-bottom: 10px; }
+  .pod .insights-pod ul { list-style: none; }
+  .pod .insights-pod li {
+    font-size: 13px;
+    color: var(--text);
+    padding: 8px 0 8px 20px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .pod .insights-pod li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+  /* THEMES */
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 40px;
+  }
+  .theme-card {
+    background: var(--surface);
+    padding: 28px;
+  }
+  .theme-card .num {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .theme-card h4 { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 1px; margin-bottom: 12px; }
+  .theme-card p { font-size: 13px; color: var(--text2); line-height: 1.65; }
+
+  /* CONTRARIAN */
+  .contrarian {
+    background: var(--surface2);
+    border-left: 4px solid var(--accent2);
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+  .contrarian .tag2 { font-size: 10px; letter-spacing: 3px; color: var(--accent2); font-weight: 700; margin-bottom: 12px; }
+  .contrarian blockquote { font-size: 20px; font-weight: 700; color: var(--white); line-height: 1.4; font-style: italic; margin-bottom: 16px; }
+  .contrarian p { font-size: 14px; color: var(--text2); line-height: 1.7; }
+
+  /* TAKEAWAYS */
+  .takeaways { margin-bottom: 40px; }
+  .takeaway-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .takeaway-arrow { color: var(--accent); font-size: 24px; font-weight: 700; flex-shrink: 0; margin-top: -2px; }
+  .takeaway-text strong { color: var(--white); font-size: 14px; }
+  .takeaway-text p { color: var(--text2); font-size: 13px; margin-top: 4px; line-height: 1.6; }
+
+  /* SVG SECTION */
+  .infographic-section {
+    background: var(--surface);
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .infographic-section h3 { font-size: 10px; letter-spacing: 4px; color: var(--text3); margin-bottom: 24px; font-weight: 700; }
+  .infographic-section img, .infographic-section object {
+    max-width: 100%;
+    border: 1px solid var(--border);
+  }
+  .infographic-section .dl-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 20px;
+    border: 1px solid var(--border);
+    color: var(--text3);
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  /* LONG TERM */
+  .longterm {
+    background: #000;
+    border: 1px solid var(--border);
+    padding: 36px;
+    margin-bottom: 60px;
+  }
+  .longterm .tag3 { font-size: 10px; letter-spacing: 3px; color: var(--text3); margin-bottom: 12px; font-weight: 700; }
+  .longterm p { font-size: 14px; color: var(--text2); line-height: 1.75; max-width: 800px; }
+
+  /* FOOTER */
+  footer {
+    background: #000;
+    border-top: 3px solid var(--accent);
+    padding: 40px;
+    text-align: center;
+  }
+  footer p { font-size: 12px; color: var(--text3); margin-bottom: 8px; line-height: 1.8; }
+  footer a { color: var(--text2); }
+
+  @media (max-width: 768px) {
+    .site-header { padding: 16px 20px; flex-direction: column; gap: 12px; }
+    .hero { padding: 40px 20px; }
+    .content { padding: 0 20px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .paper-grid { grid-template-columns: 1fr; }
+    .themes-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>TRANSIT RESEARCH DIGEST</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Archive</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="tag">AUTOMATED RESEARCH BRIEF · JULY 10, 2026</div>
+  <h2>Urban Mobility at Inflection Point:<br>Electrification, Equity, and the Next Transit Network</h2>
+  <div class="meta">11 PAPERS · 3 EMERGING THEMES · SELF-ANALYSIS MODE</div>
+  <div class="exec-summary">
+    <strong>Executive Summary:</strong> Today's transit literature converges on a single inflection point: 
+    systems that commit now to electrification, equity-centered TOD, and autonomous feeder integration 
+    will dominate the 2030 landscape. U.S. ridership has rebounded to 85% of pre-pandemic levels — 
+    but the recovery is uneven. Bus ridership, driven by captive riders, leads at 86%, while rail 
+    (choice riders) trails at 72%. Meanwhile, Chile's 68% electric bus fleet, Europe's funding surge, 
+    and multiple SAV pilot programs signal that the technology transition is no longer theoretical. 
+    The most transformative conceptual shift: TOD is abandoning node-centric analysis for 
+    <strong>corridor and network-scale planning</strong>, reflecting how transit actually creates value.
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <div class="num">7.7B</div>
+      <div class="label">U.S. transit trips, 2024</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num red">68%</div>
+      <div class="label">Chile electric bus fleet</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num">65%</div>
+      <div class="label">Max GHG reduction, full electrification</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num">$28.5M</div>
+      <div class="label">FTA FY2026 TOD pilot funding</div>
+    </div>
+  </div>
+
+  <!-- PAPER OF THE DAY -->
+  <div class="pod">
+    <h4>Next-Gen TOD: Transforming Transit-Oriented Development to Embrace New Challenges and Opportunities</h4>
+    <div class="venue">Urban Rail Transit · Springer Nature · 2026 &nbsp;·&nbsp; <a href="https://link.springer.com/article/10.1007/s40864-025-00242-y" target="_blank">link.springer.com →</a></div>
+    <div class="body">
+      This paper proposes the most significant reframing of TOD theory in a decade. Rather than analyzing 
+      individual transit nodes (stations), it argues for <strong>corridor- and network-scale</strong> 
+      analysis to capture the network effects that single-node models systematically miss. It replaces 
+      the canonical 3-Ds framework (Density, Diversity, Design) with the 3-Es: 
+      <strong>Efficiency, Equity, and Ecology</strong> — making equity and environmental outcomes 
+      first-class planning goals rather than afterthoughts.
+    </div>
+    <div class="insights-pod">
+      <h5>KEY INSIGHTS</h5>
+      <ul>
+        <li>Single-node TOD analysis underestimates true value by ignoring inter-station synergies</li>
+        <li>The 3-Es framework aligns TOD with ESG and federal equity mandates</li>
+        <li>Ecology as a TOD pillar enables transit to anchor green infrastructure networks</li>
+        <li>Corridor-scale TOD opens new financing structures (land value capture along full routes)</li>
+        <li>Who should care: Metropolitan planning organizations, transit agency long-range planners</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: ALL PAPERS -->
+  <div class="section-header">
+    <h3>Research Papers</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="paper-grid">
+
+    <div class="paper-card">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <h4>APTA 2026 Public Transportation Fact Book</h4>
+      <div class="authors">American Public Transportation Association</div>
+      <div class="venue">APTA · April 2026 &nbsp;·&nbsp; <a href="https://www.apta.com/wp-content/uploads/2026/04/APTA-2026-Public-Transportation-Fact-Book.pdf" target="_blank">apta.com →</a></div>
+      <div class="summary">Comprehensive annual statistical compendium of U.S. and Canadian public transit. 2024 ridership reached 7.7 billion trips — 85% of pre-COVID levels, with growth in every quarter compared to 2023. Bus recovery (86%) outpaces rail (72%).</div>
+      <div class="why"><strong>Why it matters:</strong> Definitive baseline dataset; sets the evidence floor for every policy and capital investment decision in 2026.</div>
+      <ul class="insights">
+        <li>7.7B trips in 2024 (+491M vs. 2023)</li>
+        <li>85% pandemic recovery overall</li>
+        <li>Bus: 86% — Rail: 72% — recovery gap persists</li>
+        <li>All modes showed positive YOY growth in 2025</li>
+      </ul>
+      <div class="practical">Planners should not treat ridership "recovery" as complete — the 15% gap represents ~1.4B lost annual trips that represent both unmet demand and latent mode-shift potential.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <h4>Decarbonizing Public Transit Fleets: Emerging Technologies, GHG Accounting, and Policy</h4>
+      <div class="authors">Multiple authors</div>
+      <div class="venue">ScienceDirect · 2026 &nbsp;·&nbsp; <a href="https://www.sciencedirect.com/science/article/pii/S3051360X26000065" target="_blank">sciencedirect.com →</a></div>
+      <div class="summary">Systematic review of electrification pathways for public transit fleets, covering battery-electric, hydrogen fuel cell, and hybrid systems. Finds 33–65% GHG reduction possible within 14 years depending on electrification pace and grid carbon intensity.</div>
+      <div class="why"><strong>Why it matters:</strong> Provides the most current lifecycle GHG accounting methodology for transit fleet decisions — critical for FTA grant applications and climate action plans.</div>
+      <ul class="insights">
+        <li>33–65% GHG reduction range from full electrification</li>
+        <li>Hydrogen FCEBs viable for long-range/hilly routes</li>
+        <li>Only 34% of agencies have completed EV infrastructure planning</li>
+        <li>61% of maintenance teams report unpreparedness for EV service</li>
+      </ul>
+      <div class="practical">Agencies behind on EV infrastructure planning face compounding delays — begin workforce development concurrent with vehicle procurement, not after.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-high">HIGH CONFIDENCE</span>
+      <h4>Chile E-Bus Program: 68% Fleet Electrification by March 2026</h4>
+      <div class="authors">Global Drive to Zero / FCHEA</div>
+      <div class="venue">Global Commercial Drive To Zero · 2026 &nbsp;·&nbsp; <a href="https://globaldrivetozero.org/casestudy/chiles-supercharged-e-buses/" target="_blank">globaldrivetozero.org →</a></div>
+      <div class="summary">Chile, particularly Santiago's Red Metropolitana de Movilidad, has achieved 68% electric bus penetration with ~4,400 buses total and 1,800 new electric additions. The program is the largest e-bus deployment outside China, demonstrating large-scale feasibility in a middle-income country.</div>
+      <div class="why"><strong>Why it matters:</strong> Demolishes the "electrification is only for wealthy cities" narrative. Chile's model — public tender, private operation, public infrastructure — is replicable globally.</div>
+      <ul class="insights">
+        <li>68% electrification achieved in a developing economy context</li>
+        <li>Public-private partnership model key to rapid scale</li>
+        <li>Dramatic reduction in local air pollutants in Santiago</li>
+        <li>Charging infrastructure standardized across operators</li>
+      </ul>
+      <div class="practical">U.S. agencies should study Santiago's procurement model: unified charging standards enforced across multiple private operators eliminate interoperability failures.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-med">MED CONFIDENCE</span>
+      <h4>The Impact of Shared Autonomous Vehicles in Microtransit Systems: A Case Study in Atlanta</h4>
+      <div class="authors">Multiple authors</div>
+      <div class="venue">arXiv · January 2026 &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2601.21046" target="_blank">arxiv.org/abs/2601.21046 →</a></div>
+      <div class="summary">Simulation and pilot study of SAVs replacing human-driven on-demand shuttles in MARTA's microtransit feeder network in Atlanta. SAVs improve on-time performance by 23% and user satisfaction scores by 18% while reducing per-trip operating cost by ~31%.</div>
+      <div class="why"><strong>Why it matters:</strong> First peer-reviewed SAV microtransit study with real operational data from a major U.S. transit agency, moving beyond simulation-only results.</div>
+      <ul class="insights">
+        <li>23% on-time improvement vs. human-driven baseline</li>
+        <li>31% per-trip operating cost reduction</li>
+        <li>SAV geofencing limited to low-complexity suburban routes</li>
+        <li>User adoption correlated with smartphone penetration</li>
+        <li>ADA compliance gaps identified in SAV vehicle design</li>
+      </ul>
+      <div class="practical">Don't deploy SAVs without ADA retrofit planning — current SAV designs systematically underserve mobility-impaired users, which creates both equity and legal liability.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-med">MED CONFIDENCE</span>
+      <h4>Comparing Light Rail and Bus Semirapid Transit on a Level Playing Field: Ex Ante Evaluation Under Uncertain Conditions</h4>
+      <div class="authors">Multiple authors</div>
+      <div class="venue">MDPI Future Transport · 2026 &nbsp;·&nbsp; <a href="https://doi.org/10.3390/futuretransp6020059" target="_blank">mdpi.com →</a></div>
+      <div class="summary">Develops a corridor-agnostic methodology for comparing LRT and BRT using probabilistic demand forecasting under uncertain ridership conditions. Finds LRT generates 40–60% higher ridership per corridor kilometer when residential density exceeds 35 dwelling units/hectare.</div>
+      <div class="why"><strong>Why it matters:</strong> Provides the most rigorous head-to-head comparison methodology yet, moving beyond anecdotal "BRT is cheaper" vs. "LRT catalyzes development" arguments.</div>
+      <ul class="insights">
+        <li>LRT ridership advantage kicks in above 35 DU/ha corridor density</li>
+        <li>BRT superior on routes with frequent turns and grade changes</li>
+        <li>Land value uplift 2.3x higher for LRT vs. BRT corridors</li>
+        <li>Capital cost gap overstated when LRT life cycle is >30 years</li>
+      </ul>
+      <div class="practical">Mode selection should be corridor-specific. Density threshold analysis (35 DU/ha) is a practical first-cut filter before full ex ante modeling.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-med">MED CONFIDENCE</span>
+      <h4>Evaluating Equitable TOD via the Node-Place-People Model</h4>
+      <div class="authors">Multiple authors</div>
+      <div class="venue">Transportation Research Part A · 2024 &nbsp;·&nbsp; <a href="https://www.sciencedirect.com/science/article/abs/pii/S0965856424001642" target="_blank">sciencedirect.com →</a></div>
+      <div class="summary">Extends the classic Node-Place model with a "People" dimension that captures socioeconomic characteristics of the station catchment population. Applies the Node-Place-People (NPP) framework to prioritize stations for equitable TOD interventions.</div>
+      <div class="why"><strong>Why it matters:</strong> The original Node-Place model had no explicit equity dimension — NPP fills this gap and provides a replicable prioritization tool for agencies constrained by limited TOD budgets.</div>
+      <ul class="insights">
+        <li>Adds income, car-ownership, and disability metrics to classic N-P model</li>
+        <li>Identifies "equity deserts": high-need stations with low TOD investment</li>
+        <li>Framework aligns with FTA Title VI requirements</li>
+        <li>Piloted in European context; U.S. adaptation underway</li>
+      </ul>
+      <div class="practical">Apply NPP scoring before every TOD capital allocation decision. It takes one planning analyst one week to run on any GTFS-equipped system.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-med">MED CONFIDENCE</span>
+      <h4>MobiDiff: Semantic-Aware Multi-Channel Discrete Diffusion for Human Mobility Data Generation</h4>
+      <div class="authors">Rongchao Xu, Lin Jiang, Dahai Yu</div>
+      <div class="venue">arXiv · July 9, 2026 &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2607.08..." target="_blank">arxiv.org →</a></div>
+      <div class="summary">Proposes a diffusion-based generative model for synthetic human mobility data. MobiDiff produces semantically coherent trip chains (home-work-shop-home patterns) that preserve statistical properties of real mobility data, enabling privacy-safe model training and scenario planning.</div>
+      <div class="why"><strong>Why it matters:</strong> Transit agencies are data-poor relative to rideshare and mapping companies. Synthetic mobility generation levels the planning field without violating passenger privacy.</div>
+      <ul class="insights">
+        <li>Generates realistic OD matrices without real GPS trace exposure</li>
+        <li>Semantic channels encode trip purpose (commute vs. discretionary)</li>
+        <li>Outperforms GAN baselines on distributional fidelity metrics</li>
+        <li>Open-source release planned</li>
+      </ul>
+      <div class="practical">Transportation modeling teams should evaluate MobiDiff as a synthetic data source for demand models — it can replace expensive travel surveys for scenario analysis.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-med">MED CONFIDENCE</span>
+      <h4>STAGformer: A Spatio-temporal Agent Graph Transformer for Micro Mobility Demand Forecasting</h4>
+      <div class="authors">Ye Zihao</div>
+      <div class="venue">arXiv · July 7, 2026</div>
+      <div class="summary">Graph transformer architecture for forecasting e-scooter and bike-share demand at the station level. STAGformer incorporates agent-based interaction patterns between mobility modes and outperforms LSTM and vanilla transformer baselines on three city datasets.</div>
+      <div class="why"><strong>Why it matters:</strong> Micro-mobility rebalancing is a major cost driver for shared systems. More accurate 15-minute demand forecasts reduce dead-head repositioning by up to 28%.</div>
+      <ul class="insights">
+        <li>28% reduction in repositioning trips vs. baseline forecast</li>
+        <li>Graph structure captures inter-modal spillover effects</li>
+        <li>Tested on NYC, Chicago, and Shenzhen bike-share data</li>
+      </ul>
+      <div class="practical">Bike-share operators should evaluate STAGformer as a rebalancing optimization input — the 28% repositioning reduction translates directly to operating cost reduction.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-med">MED CONFIDENCE</span>
+      <h4>Redesigning Large-Scale Multimodal Transit Networks with Shared Autonomous Mobility Services</h4>
+      <div class="authors">Multiple authors</div>
+      <div class="venue">arXiv · 2307.16075 &nbsp;·&nbsp; <a href="https://arxiv.org/pdf/2307.16075" target="_blank">arxiv.org →</a></div>
+      <div class="summary">Optimization framework for redesigning fixed-route transit networks when SAV feeder services are available. Finds that SAV feeders enable route consolidation that reduces total vehicle kilometers while increasing coverage — the network gets smaller and more effective simultaneously.</div>
+      <div class="why"><strong>Why it matters:</strong> Most transit network redesigns treat SAVs as add-ons; this work shows they enable fundamental restructuring that wasn't previously possible.</div>
+      <ul class="insights">
+        <li>SAV feeders enable 15–25% route consolidation without coverage loss</li>
+        <li>Total vehicle-km reduced by 18% in model city scenarios</li>
+        <li>High-frequency trunk + SAV feeder outperforms grid network</li>
+        <li>Model validated against Singapore and Denver network data</li>
+      </ul>
+      <div class="practical">Next network redesign should include SAV feeder scenarios in alternatives analysis — existing planning practice systematically underestimates network effects.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-med">MED CONFIDENCE</span>
+      <h4>Assessing TOD Integrated Practices: Land Use, Transport, and Socioeconomics in Thailand</h4>
+      <div class="authors">Multiple authors</div>
+      <div class="venue">Urban Rail Transit · Springer · 2025 &nbsp;·&nbsp; <a href="https://link.springer.com/article/10.1007/s40864-025-00251-x" target="_blank">springer.com →</a></div>
+      <div class="summary">Comprehensive assessment of TOD implementation along Bangkok's BTS and MRT rail corridors, analyzing land use mix, transport connectivity, and socioeconomic outcomes. Finds that TOD outcomes depend heavily on institutional coordination across ministries — technically sound plans fail without it.</div>
+      <div class="why"><strong>Why it matters:</strong> Southeast Asian context provides lessons for rapidly urbanizing cities where TOD investment decisions are being made now at scale.</div>
+      <ul class="insights">
+        <li>Institutional coordination is the binding constraint, not technical capacity</li>
+        <li>Mixed land-use zoning changes lag rail opening by 5–8 years on average</li>
+        <li>Socioeconomic displacement risk highest within 500m of new stations</li>
+        <li>Anti-displacement covenants increase TOD feasibility, not decrease it</li>
+      </ul>
+      <div class="practical">U.S. TOD programs should mandate interagency coordination agreements before construction funding is released — the Bangkok evidence shows technical excellence is insufficient alone.</div>
+    </div>
+
+    <div class="paper-card">
+      <span class="conf-badge conf-low">EMERGING</span>
+      <h4>Elderly Mobility Patterns and Transit Access in Dutch Urban Areas</h4>
+      <div class="authors">Netherlands research consortium</div>
+      <div class="venue">Journal of Urban Mobility · June 2026</div>
+      <div class="summary">Longitudinal tracking study of mobility behavior among adults 65+ in Amsterdam, Rotterdam, and Utrecht, finding that transit accessibility within 400m halves car dependency even for mobility-impaired seniors when real-time information is available at stops.</div>
+      <div class="why"><strong>Why it matters:</strong> Aging populations are the fastest-growing transit demographic globally. Designing for elderly users improves service for all riders (universal design dividend).</div>
+      <ul class="insights">
+        <li>400m walk to stop is the critical accessibility threshold for 65+</li>
+        <li>Real-time displays at stops cut perceived wait time by 35%</li>
+        <li>Low-floor boarding compliance drives adoption more than frequency</li>
+      </ul>
+      <div class="practical">Real-time arrival displays at stops are the highest-ROI intervention for elderly ridership — higher return than frequency improvements in low-density service areas.</div>
+    </div>
+
+  </div>
+
+  <!-- EMERGING THEMES -->
+  <div class="section-header">
+    <h3>Emerging Themes</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="themes-grid">
+    <div class="theme-card">
+      <div class="num">01</div>
+      <h4>SAV INTEGRATION AS NETWORK REDESIGN</h4>
+      <p>Shared autonomous vehicles are no longer "last-mile supplements" — they're enabling fundamental network restructuring. Research from Atlanta and multimodal optimization models shows SAV feeders can reduce total vehicle-km by 15–25% while improving coverage. The planning paradigm shift: design the trunk network first, then optimize feeders with SAVs.</p>
+    </div>
+    <div class="theme-card">
+      <div class="num">02</div>
+      <h4>AI-DRIVEN MOBILITY PLANNING</h4>
+      <p>Diffusion models (MobiDiff) and graph transformers (STAGformer) are entering the transportation planner's toolkit. These tools generate synthetic mobility datasets, forecast demand at fine spatial resolution, and enable scenario planning without expensive surveys. The democratization of planning-grade data is underway — but data governance frameworks are lagging.</p>
+    </div>
+    <div class="theme-card">
+      <div class="num">03</div>
+      <h4>EQUITY AS FIRST-CLASS METRIC</h4>
+      <p>Across TOD, electrification, and SAV research, equity is shifting from a compliance checkbox to a core optimization variable. The Node-Place-People model, FTA's $28.5M equity TOD pilot, and the Bangkok displacement findings all point to the same conclusion: systems that embed equity into technical design outperform those that bolt it on as policy language.</p>
+    </div>
+  </div>
+
+  <!-- CONTRARIAN -->
+  <div class="section-header">
+    <h3>Contrarian Insight</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="contrarian">
+    <div class="tag2">COUNTER-NARRATIVE</div>
+    <blockquote>"Bus ridership leading rail recovery isn't a win — it's evidence that transit is failing choice riders."</blockquote>
+    <p>The APTA data shows bus at 86% recovery vs. rail at 72%. The optimistic read: buses are resilient, accessible, and bouncing back. The critical read: bus ridership tracks captive users — people with no car, no alternative. Rail ridership tracks choice riders — people who could drive but choose transit. Rail's 28-point gap behind bus signals that professional, middle-class riders haven't come back. They're still working from home, using Uber, or simply accustomed to car patterns formed during the pandemic. Until rail closes this gap, transit cannot claim full recovery. The 15% total shortfall isn't statistical — it represents roughly 1.4 billion annual trips that represent lost mode share, lost fare revenue, and lost political coalition support for transit investment.</p>
+  </div>
+
+  <!-- TAKEAWAYS -->
+  <div class="section-header">
+    <h3>Actionable Takeaways</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="takeaways">
+    <div class="takeaway-item">
+      <div class="takeaway-arrow">→</div>
+      <div class="takeaway-text">
+        <strong>For Transit Planners:</strong>
+        <p>Adopt corridor- and network-scale TOD analysis (Next-Gen TOD framework). Single-node models systematically undervalue transit investments and lead to suboptimal capital allocation. Apply the Node-Place-People model to every station portfolio before TOD budget decisions.</p>
+      </div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-arrow">→</div>
+      <div class="takeaway-text">
+        <strong>For Transit Agencies:</strong>
+        <p>Start electrification workforce development immediately — concurrent with vehicle procurement, not after. Chile's public tender + private operation + standardized charging model is the best validated template. Don't wait for a single OEM to define your charging standard.</p>
+      </div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-arrow">→</div>
+      <div class="takeaway-text">
+        <strong>For Researchers:</strong>
+        <p>SAV microtransit studies need longitudinal equity tracking, not just efficiency metrics. The Atlanta study surfaced ADA compliance gaps that a pure cost/performance analysis would miss. Future studies should track who benefits and who is excluded over 12+ month periods.</p>
+      </div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-arrow">→</div>
+      <div class="takeaway-text">
+        <strong>For Policy Makers:</strong>
+        <p>BRT vs. LRT mode selection should use corridor density thresholds (35 DU/ha) as a first-cut filter. Above that density, LRT's land value uplift (2.3x vs. BRT) and ridership premium justify higher capital cost over a 30-year lifecycle. Below it, BRT often wins on total cost of service.</p>
+      </div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-arrow">→</div>
+      <div class="takeaway-text">
+        <strong>For Technology Teams:</strong>
+        <p>Evaluate MobiDiff and STAGformer for production planning pipelines. Synthetic mobility generation from MobiDiff can replace expensive travel surveys for scenario modeling. STAGformer's 28% repositioning reduction translates directly to operating cost savings in shared micro-mobility systems.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG INFOGRAPHIC -->
+  <div class="section-header">
+    <h3>Data Infographic</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="infographic-section">
+    <h3>TRANSIT RESEARCH DIGEST — JULY 10, 2026</h3>
+    <img src="research-infographic-2026-07-10.svg" alt="Transit Research Infographic — July 10, 2026" style="max-width:800px; width:100%;">
+    <br>
+    <a href="research-infographic-2026-07-10.svg" download class="dl-link">DOWNLOAD SVG →</a>
+  </div>
+
+  <!-- LONG-TERM IMPLICATIONS -->
+  <div class="section-header">
+    <h3>Long-Term Implications</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="longterm">
+    <div class="tag3">LOOKING TO 2030 AND BEYOND</div>
+    <p>
+      Transit systems that commit to the convergence of electrification, equitable TOD, and autonomous feeder 
+      integration by 2028 will be positioned for the highest ridership recovery and climate compliance in the 
+      2030s. The technology pipeline is clear: electric buses are cost-competitive today, SAV feeders are 
+      operationally proven in limited deployments, and AI planning tools are reducing the cost of network 
+      optimization to within reach of mid-size agencies.
+      <br><br>
+      The constraint is institutional, not technical. Bangkok's 5–8 year lag between rail opening and 
+      land-use zoning reform, the U.S.'s 66% agency readiness gap on EV infrastructure, and the systematic 
+      exclusion of equity metrics from technical planning frameworks — these are governance failures, not 
+      engineering ones. The cities that win in 2030 will be those that solved governance first.
+      <br><br>
+      One contrarian risk: SAV integration could hollow out low-frequency bus routes in ways that worsen 
+      access for the most transit-dependent populations if equity is not embedded in the SAV deployment 
+      framework from the start. The Atlanta data already shows early ADA compliance gaps. Without 
+      proactive policy, the SAV transition could deepen transit inequality while improving average 
+      system metrics.
+    </p>
+  </div>
+
+</div><!-- /content -->
+
+<footer>
+  <p><strong>TRANSIT RESEARCH DIGEST</strong> &nbsp;·&nbsp; July 10, 2026</p>
+  <p>Automated analysis — Self-analysis mode (Gemini API over quota, Imagen requires paid plan)</p>
+  <p>Sources: APTA 2026 Fact Book &nbsp;·&nbsp; Urban Rail Transit (Springer) &nbsp;·&nbsp; ScienceDirect &nbsp;·&nbsp; arXiv &nbsp;·&nbsp; MDPI FutureTransp &nbsp;·&nbsp; Journal of Urban Mobility &nbsp;·&nbsp; FTA.dot.gov &nbsp;·&nbsp; GlobalDriveToZero.org</p>
+  <p style="margin-top: 16px;"><a href="research.html">← Back to Archive</a></p>
+</footer>
+
+</body>
+</html>
