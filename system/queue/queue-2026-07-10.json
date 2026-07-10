@@ -1,0 +1,90 @@
+{
+  "date": "2026-07-10",
+  "generated_at": "2026-07-10T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Gemini Code Assist shutdown — July 17 deadline for transit tech teams",
+      "angle": "Practical migration guide for transit agencies and vendors using Gemini Code Assist: what breaks, what replaces it, and why AI tool consolidation is accelerating in transit infrastructure software",
+      "rationale": "July 17 is 7 days away. This has been queued as Rank 1–5 for 7+ consecutive days without production due to article-agent failure. Time value drops to ZERO after July 17. This is now the highest-urgency uncovered topic in the pipeline. Even a short 600-word explainer beats nothing.",
+      "target_length": "short",
+      "slug": "gemini-code-assist-shutdown-transit-tech-2026",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-tech-2026.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "SAV microtransit vs. traditional fixed-route: ridership recovery divergence",
+      "angle": "Visual explainer on how shared autonomous vehicle (SAV) on-demand services are reshaping the first/last mile problem — drawn from today's 11-paper research digest covering ridership recovery, electrification, and SAV microtransit",
+      "rationale": "Today's research digest (published this morning) analyzed 11 papers including SAV microtransit and ridership recovery. An editorial infographic synthesizing those findings into a single visual hits while the research is fresh. No editorial infographic was produced today — fills today's missing content slot.",
+      "target_length": "medium",
+      "slug": "infographic-2026-07-10",
+      "output_path": "docs/infographic-2026-07-10.svg"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Autonomous vehicle sharing economy on transit systems — arXiv",
+      "angle": "Deep read of today's arXiv paper on AV on-demand mobility sharing economy: privately-owned autonomous vehicles as shared fleets, and what that means for public transit ridership, equity, and municipal planning",
+      "rationale": "Fresh arXiv paper (July 10) on AV sharing economy is directly on-niche. Complements today's published research digest without duplicating it — this would be a focused deep-dive brief rather than multi-paper sweep.",
+      "target_length": "medium",
+      "slug": "av-sharing-economy-transit-arxiv-2026-07-10",
+      "output_path": "drafts/articles/av-sharing-economy-transit-arxiv-2026-07-10.html"
+    },
+    {
+      "rank": 4,
+      "type": "video_script",
+      "topic": "QC: ai-agents-transit-security-leak-risk-script-2026",
+      "angle": "Run QC on the existing draft at drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md. Script was produced 2026-07-08, QC is pending. Score against standard rubric (factual accuracy, reel word count <180w, source quality, hook strength).",
+      "rationale": "Script was drafted 2026-07-08 and has been awaiting QC since then. Clearing the QC backlog is the only path to unblocking new video script production from the HOLD status. This is a QC task, not a new writing task.",
+      "target_length": "short",
+      "slug": "qc-ai-agents-transit-security-2026-07-10",
+      "output_path": "system/qc/qc-ai-agents-transit-security-2026-07-10.md"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "Real-time rail network maps: what the UK and France built, and what the US is missing",
+      "angle": "Both the Great Britain rail network map and the France rail network map went viral on HN July 6 (249+ pts). Editorial explainer on the open-data and infrastructure prerequisites for real-time transit visualization — and why US rail can't replicate this yet",
+      "rationale": "Viral HN signal from July 6 is still recent enough to drive search traffic. US-specific angle is uncovered. Ties neatly to existing transit-data and open-data editorial threads on this site.",
+      "target_length": "medium",
+      "slug": "real-time-rail-maps-uk-france-vs-us-2026",
+      "output_path": "drafts/articles/real-time-rail-maps-uk-france-vs-us-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "brt-vs-light-rail-cost-2026",
+      "type": "infographic",
+      "output_path": "docs/infographic-brt-vs-light-rail-cost-2026.svg",
+      "status": "SUSPENDED — automated retries suspended since 2026-07-02 after ~20 consecutive failures. Manual diagnostic of infographic-writing agent required before re-queuing.",
+      "days_failed": 33
+    }
+  ],
+  "skip_topics": [
+    "World Cup 2026 transit operations (covered daily through July 10)",
+    "NYC congestion pricing ridership gains (covered 2026-07-05)",
+    "Virginia SB 338 geolocation data ban (covered 2026-07-04)",
+    "July 4th holiday transit demand (covered 2026-07-04)",
+    "ChatPlanner LLM transit routing (covered 2026-07-05)",
+    "AI deregulation Anthropic restrictions (covered 2026-07-01)",
+    "Real-time rail maps UK/France (published 2026-07-06 research brief — explainer angle is distinct and not yet covered)"
+  ],
+  "trend_signals": [
+    "Autonomous vehicle sharing economy — arXiv paper on SAV on-demand mobility (July 10)",
+    "Gemini Code Assist shutdown July 17 — 7 days remaining, transit tech migration urgency at peak",
+    "QuadRF drone/WiFi detection through walls — RF sensing in transit stations is an emerging security topic (HN 116pts)",
+    "SAV microtransit + ridership recovery divergence — from today's 11-paper research digest",
+    "Real-time rail network maps virality (UK/France HN July 6) — US open-data gap still uncovered"
+  ],
+  "already_published_today": [
+    "docs/research-2026-07-10.html",
+    "docs/research-infographic-2026-07-10.svg",
+    "docs/transit-2026-07-10.html"
+  ],
+  "missing_today": [
+    "docs/2026-07-10.html (daily news briefing — not yet produced)",
+    "docs/infographic-2026-07-10.svg (editorial infographic — not yet produced)"
+  ]
+}

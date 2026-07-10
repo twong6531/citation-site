@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-09T00:00:00Z",
+  "last_updated": "2026-07-10T00:00:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -822,6 +822,24 @@
       "type": "video_script_draft",
       "url": "drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md",
       "topic": "AI Agents Transit Security Leak Risk (new draft, QC pending)"
+    },
+    {
+      "date": "2026-07-10",
+      "type": "research",
+      "url": "docs/research-2026-07-10.html",
+      "topic": "Transit Research Digest 2026-07-10 \u2014 11 papers: ridership recovery, transit electrification, Next-Gen TOD, SAV microtransit, AI mobility planning, equity (self-analysis, Gemini API over quota)"
+    },
+    {
+      "date": "2026-07-10",
+      "type": "research_infographic",
+      "url": "docs/research-infographic-2026-07-10.svg",
+      "topic": "Research Infographic 2026-07-10"
+    },
+    {
+      "date": "2026-07-10",
+      "type": "transit",
+      "url": "docs/transit-2026-07-10.html",
+      "topic": "SoCal Transit Brief 2026-07-10 \u2014 Spain vs Belgium quarterfinal ops, Venice Beach Fan Zone weekend, Metro sues Burbank over rail permits, Vermont Ave BRT court win, June ridership surge, Union Station Fan Zone sold out, 196 World Cup bus wraps, Metrolink special service, Brightline bankruptcy warning, Metro Art at LACMA"
     }
   ],
   "drafts_pending_approval": [
@@ -1215,7 +1233,12 @@
     "FOSS offline maps transit dependency CoMaps OSM",
     "edge AI small language models transit low-connectivity tunnels",
     "AI margin collapse transit tech vendor procurement 2026",
-    "real-time rail network maps viral transit data visualization"
+    "real-time rail network maps viral transit data visualization",
+    "SAV microtransit on-demand ridership recovery 2026",
+    "transit electrification ridership divergence SAV",
+    "Brightline West bankruptcy warning 2026",
+    "Metro LA sues Burbank rail permits 2026",
+    "Vermont Ave BRT court victory Los Angeles"
   ],
   "failed_jobs": [
     {
@@ -1597,6 +1620,26 @@
       "date": "2026-07-08",
       "job": "infographic_writing",
       "reason": "brt-vs-light-rail-cost-2026 not produced \u2014 retries suspended since 2026-07-02. Manual diagnostic required."
+    },
+    {
+      "date": "2026-07-10",
+      "job": "publishing",
+      "reason": "approved.json stale \u2014 still lists 5 scripts published 2026-07-05. Day 35 publishing block. Human action required to update approved.json with new approved slugs."
+    },
+    {
+      "date": "2026-07-10",
+      "job": "article_writing",
+      "reason": "drafts/articles/ empty \u2014 Day 34. 0% article production rate across entire site history. Gemini Code Assist shutdown on July 17 (7 days away) is the most time-sensitive uncovered topic. Structural pipeline failure persists."
+    },
+    {
+      "date": "2026-07-10",
+      "job": "infographic_writing",
+      "reason": "brt-vs-light-rail-cost-2026 infographic retries remain suspended since 2026-07-02. Editorial infographic-2026-07-10.svg not yet produced at time of briefing."
+    },
+    {
+      "date": "2026-07-10",
+      "job": "daily_news_briefing",
+      "reason": "docs/2026-07-10.html (daily news briefing) not produced at time of briefing \u2014 missing from today output."
     }
   ],
   "content_gaps": [

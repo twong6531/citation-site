@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-10",
+  "jobs": {
+    "briefing": "completed",
+    "research": "completed",
+    "transit_brief": "completed",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "blocked_approved_json_stale"
+  },
+  "queue_items": 5,
+  "published_today": [
+    "docs/research-2026-07-10.html",
+    "docs/research-infographic-2026-07-10.svg",
+    "docs/transit-2026-07-10.html"
+  ],
+  "missing_today": [
+    "docs/2026-07-10.html",
+    "docs/infographic-2026-07-10.svg"
+  ],
+  "alerts": [
+    "CRITICAL — GEMINI CODE ASSIST DEADLINE: July 17 is NOW 7 days away. Article still unproduced due to article-agent structural failure (Day 34). Time value drops to ZERO after July 17. This is the most urgent uncovered story in pipeline history.",
+    "PUBLISHING BLOCKED (Day 35): approved.json still lists 5 scripts published 2026-07-05. No new content can release until a human updates approved.json with current approved slugs.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 34): drafts/articles/ has NEVER had a file produced in 34 consecutive days. 0% article production rate across entire site history. Structural pipeline failure requiring manual intervention.",
+    "VIDEO SCRIPTS QC PENDING: ai-agents-transit-security-leak-risk-script-2026.md produced 2026-07-08, QC not yet run. 5 scripts remain in needs_revision backlog (apple-gemini-2026, electric-axial-flux-motor, pokemon-go-drones, slime-mold-transit, transit-desert-pomdp).",
+    "DAILY NEWS BRIEFING MISSING: docs/2026-07-10.html not produced at time of this briefing.",
+    "EDITORIAL INFOGRAPHIC MISSING: docs/infographic-2026-07-10.svg not produced at time of this briefing.",
+    "TREND SIGNALS TODAY: AV sharing economy arXiv paper (SAV on-demand vs public transit), Gemini Code Assist 7-day deadline, QuadRF drone/WiFi detection (transit security angle), SAV microtransit ridership divergence from today's research digest."
+  ]
+}
