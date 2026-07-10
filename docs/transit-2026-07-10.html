@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoCal Transit Intelligence — July 10, 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; }
+    nav { background: #0f172a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 800; font-size: 1rem; color: #f1f5f9; letter-spacing: -0.02em; }
+    .nav-brand span { color: #3b82f6; }
+    nav a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; }
+    nav a:hover { color: #fff; }
+    .hero { position: relative; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #1e293b; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; }
+    .hero .subtitle { color: #94a3b8; margin-top: 0.5rem; font-size: 1.1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+    .card { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-badges { position: absolute; bottom: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .priority { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+    .priority.high { background: #ef4444; color: #fff; }
+    .priority.medium { background: #f59e0b; color: #000; }
+    .priority.low-medium { background: #64748b; color: #fff; }
+    .agency { background: rgba(15,23,42,0.85); color: #94a3b8; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.65rem; backdrop-filter: blur(4px); }
+    .card-body { padding: 1.25rem 1.5rem 1.5rem; }
+    .card-body h2 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.3rem; }
+    .date-range { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+    .summary { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+    .card-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.5rem; }
+    ul { padding-left: 1.25rem; color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+    .why-it-matters { color: #7dd3fc; font-size: 0.88rem; border-left: 3px solid #3b82f6; padding-left: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
+    .connections { color: #64748b; font-size: 0.8rem; margin-bottom: 0.75rem; }
+    .source-link { display: inline-block; color: #3b82f6; font-size: 0.8rem; text-decoration: none; }
+    .source-link:hover { color: #60a5fa; text-decoration: underline; }
+    .status-board { max-width: 1400px; margin: 0 auto; padding: 0 2rem 2rem; }
+    .status-board h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #f1f5f9; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; overflow-x: auto; display: block; }
+    th { background: #334155; color: #94a3b8; padding: 0.75rem 1rem; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+    td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; color: #cbd5e1; white-space: nowrap; }
+    tr:nth-child(odd) td { background: #1e293b; }
+    tr:nth-child(even) td { background: #0f172a; }
+    .themes { background: #0a1628; padding: 2rem; }
+    .themes-inner { max-width: 1400px; margin: 0 auto; }
+    .themes h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: #f1f5f9; }
+    .theme { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1e293b; }
+    .theme:last-child { border-bottom: none; }
+    .theme h3 { color: #7dd3fc; font-size: 1rem; margin-bottom: 0.5rem; }
+    .theme p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+    footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; padding: 1rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">SoCal <span>Transit</span> Intelligence</div>
+  <div>
+    <a href="transit.html">Archive</a>
+    <a href="index.html">Home</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>SoCal Transit Intelligence</h1>
+  <p class="subtitle">July 10, 2026 · 10 stories · Covering June 22 – July 10, 2026</p>
+  <p class="subtitle" style="margin-top:0.3rem;color:#7dd3fc;">LA Metro · Metrolink · LADOT · LAWA · CA HSR · Amtrak · SCAG · OCTA</p>
+</div>
+
+<div class="grid">
+
+  <!-- TOPIC 1 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/07/Image-scaled.jpeg?fit=1200%2C900&ssl=1"
+           alt="Spain vs Belgium World Cup Quarterfinal Metro service"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Metrolink</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 1: Spain vs. Belgium Quarterfinal — Metro & Metrolink Live Today</h2>
+      <p class="date-range">July 10, 2026 (today)</p>
+      <p class="summary">With Spain facing Belgium in a FIFA World Cup 2026 quarterfinal at SoFi Stadium, LA Metro is running surge transit service with extended post-match operations for two full hours. Temperatures are forecast in the mid-80s by evening, with Metro reminding riders to hydrate and return to their original drop-off points to board their bus home.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>2 hours</strong> of post-match extended bus and rail service at SoFi</li>
+        <li>Metro is the <strong>official Public Transit Provider</strong> of LA World Cup 2026</li>
+        <li><strong>Mid-80s°F</strong> expected by evening — heat warnings in effect for fans</li>
+        <li>Riders advised to return to <strong>original drop-off location</strong> for return bus</li>
+        <li>QF is the <strong>highest-stakes game</strong> yet at SoFi; Spain is a Group A favorite</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Today's quarterfinal is the biggest transit logistics test LA Metro has faced in the knockout stage. Each round sees higher attendance pressure and more out-of-town visitors unfamiliar with the system — a live dress rehearsal for the 2028 Olympics.</p>
+      <p class="connections"><em>Connects to:</em> Topic 2 (Venice Beach Fan Zone), Topic 6 (Union Station sold out), Topic 8 (Metrolink World Cup service)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-service-updates-for-spain-vs-belgium-quarterfinal-on-friday-july-10/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 2 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/07/IMG_0549-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Venice Beach World Fan Zone July 10-12 weekend transit guide"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LADOT</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 2: Venice Beach World Fan Zone Weekend — July 10–12 Transit Access</h2>
+      <p class="date-range">July 10–12, 2026</p>
+      <p class="summary">The FIFA World Cup celebrations expand to the beach this weekend, with a World Fan Zone set up at Venice Beach running July 10–12. Metro is promoting bus and rail connections to the beachside event alongside the first-ever French Fry Festival at the Autry Museum, creating a multi-destination transit weekend across LA County.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Venice Beach World Fan Zone runs <strong>July 10–12</strong> alongside the quarterfinal</li>
+        <li>Metro bus lines serve Venice Beach from multiple transit hubs</li>
+        <li><strong>First-ever French Fry Festival</strong> at Autry Museum also draws Metro riders this weekend</li>
+        <li>Multiple cultural events clustered — Metro marketing multiple stops in one trip</li>
+        <li>Weekend service operates on regular schedule with game-day surge overlays</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The beach extension of the World Cup fan experience tests whether Metro can serve dispersed coastal events — not just SoFi Stadium — as a unified transit network, a critical capability for the 2028 Olympics beach events.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (quarterfinal ops), Topic 6 (Union Station Fan Zone), Topic 7 (World Cup bus branding)</p>
+      <a class="source-link" href="https://thesource.metro.net/go-metro-to-venice-beach-world-fan-zone-and-the-best-july-events-in-los-angeles-this-weekend-july-10-12/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 3 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/DSC_3090-Enhanced-NR-Edit-scaled.jpg?fit=1200%2C800&ssl=1"
+           alt="LA Metro sues Burbank over regional transit construction permits"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">Burbank</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 3: LA Metro Sues Burbank Over Regional Rail Construction Permits</h2>
+      <p class="date-range">May 21, 2026</p>
+      <p class="summary">LA Metro has filed a lawsuit against the City of Burbank over construction permits related to a regional transit project, escalating a standoff between the regional transit authority and a municipality that has been slow to authorize work within its boundaries. The lawsuit is an aggressive move by Metro to break through local permitting delays that have become a recurring obstacle for multi-city transit projects.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metro filed suit against Burbank specifically over <strong>construction permit delays</strong></li>
+        <li>The project involves a <strong>regional transit corridor</strong> that passes through Burbank's jurisdiction</li>
+        <li>LA Metro increasingly asserting legal authority to override local permitting slowdowns</li>
+        <li>Pattern emerging: Metro has had <strong>permitting conflicts with multiple cities</strong> along rail corridors</li>
+        <li>Case could set precedent for how transit agencies handle <strong>uncooperative municipalities</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Local permitting bottlenecks are one of the least-discussed but most damaging causes of transit project delays in California. Metro going to court signals a willingness to use legal tools to protect Measure M timelines, which is critical as 2028 Olympic deadlines loom.</p>
+      <p class="connections"><em>Connects to:</em> Topic 4 (Vermont Ave court win), Topic 5 (Metro ridership growth justifying expansion)</p>
+      <a class="source-link" href="https://laist.com/news/transportation/la-metro-is-suing-burbank-over-construction-permits-for-a-regional-transit-project" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 4 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/IMG_9887-scaled.jpg?fit=1200%2C900&ssl=1"
+           alt="Vermont Avenue BRT court ruling moves forward without bike lanes"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LADOT</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 4: Vermont Avenue BRT Clears Court — Moves Forward Without Bike Lanes</h2>
+      <p class="date-range">June 25, 2026</p>
+      <p class="summary">A judge has ruled that LA Metro's Vermont Avenue bus rapid transit project can proceed, at least for now, without the bike lanes that were originally part of the design. The ruling resolves a legal challenge that threatened to halt one of Metro's highest-ridership surface transit corridors, though it effectively decouples two modes that transit advocates had hoped to build together.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Court ruled the BRT project can <strong>proceed without the originally-planned bike lanes</strong></li>
+        <li>Vermont Avenue is one of Metro's <strong>highest-ridership bus corridors</strong> in LA</li>
+        <li>BRT improvements include <strong>dedicated bus lanes, signal priority, and station upgrades</strong></li>
+        <li>Metro had been exploring a <strong>private partnership</strong> to accelerate construction (per earlier LAist reporting)</li>
+        <li>Bike lane removal was contested by cycling advocates; case could be appealed</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Vermont Avenue carries tens of thousands of daily riders, many of them low-income transit-dependent commuters. A court-cleared BRT build — even without bike lanes — accelerates meaningful service improvements for one of LA's most essential corridors.</p>
+      <p class="connections"><em>Connects to:</em> Topic 3 (Metro legal strategy), Topic 5 (ridership recovery on bus network)</p>
+      <a class="source-link" href="https://laist.com/news/transportation/judge-rules-vermont-avenue-bus-project-will-move-ahead-for-now-without-bike-lanes" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 5 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/DSC_3090-Enhanced-NR-Edit-scaled.jpg?fit=1200%2C800&ssl=1"
+           alt="Metro June ridership surge post D Line extension"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority high">HIGH</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 5: Metro Ridership Holds Strong in June — D Line and World Cup Drive Recovery</h2>
+      <p class="date-range">June 16–28, 2026</p>
+      <p class="summary">LA Metro reported a significant ridership uptick in June 2026, as confirmed by both internal ridership data and LAist coverage. The gains were fueled by the twin engines of the D Line Extension opening (Miracle Mile, Fairfax, Beverly Hills) and the start of FIFA World Cup matches at SoFi Stadium. Metro's rail ridership hit its highest level since before the COVID-19 pandemic.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metro rail ridership reached its <strong>highest level in 6+ years</strong> in May/June 2026</li>
+        <li><strong>Three new D Line stations</strong> opened: Fairfax, La Brea, and Wilshire/Rodeo</li>
+        <li>New stations serve the <strong>Miracle Mile, Fairfax District, and Beverly Hills-adjacent</strong> neighborhoods</li>
+        <li>World Cup match days brought <strong>surge ridership</strong> on Metro rail and rapid bus</li>
+        <li>LAist confirmed ridership trend is <strong>holding and growing</strong> as of late June</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Sustained ridership growth — not just a one-day spike — is what proves transit investment works. The D Line data suggests the new stations are generating new regular riders, not just event day commuters, which validates the Measure M expansion program.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (World Cup transit demand), Topic 4 (Vermont Ave BRT ridership base), Topic 3 (Metro expansion legal battles)</p>
+      <a class="source-link" href="https://thesource.metro.net/new-d-line-stations-help-drive-strongest-rail-ridership-in-more-than-six-years-world-cup-service-starts-strong/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 6 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-2.33.35-PM-scaled.png?fit=1200%2C502&ssl=1"
+           alt="Union Station World Cup Fan Zone sold out all four days"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">FIFA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 6: Union Station World Cup Fan Zone Sells Out All Four Days</h2>
+      <p class="date-range">June 22, 2026</p>
+      <p class="summary">LA Union Station's official World Cup Fan Zone — dubbed "Heart of the City" — sold out all four days of operation, drawing fans from around the world to watch matches live on big screens, meet soccer legends, and experience live entertainment. The sellout confirmed that Union Station's role as a transit hub can extend into a major public events destination.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Fan Zone at Union Station <strong>sold out all 4 days</strong> of programming</li>
+        <li>Designated as an <strong>official FIFA World Cup Fan Zone</strong> — one of few in the US</li>
+        <li>Featured <strong>soccer legends appearances</strong> and live entertainment alongside match viewing</li>
+        <li>Union Station served as the <strong>central transit hub</strong> feeding fans to and from the event</li>
+        <li>Capacity limits forced early sellout — demand significantly <strong>exceeded supply</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> A sold-out fan zone at a transit hub proves that rail-accessible public events can generate demand well beyond the stadium. For 2028 planners, this is proof of concept that Union Station can anchor a major Olympic venue activation without any parking.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (live quarterfinal ops today), Topic 2 (Venice Beach Fan Zone), Topic 7 (Metro brand campaign)</p>
+      <a class="source-link" href="https://thesource.metro.net/watch-world-cup-matches-meet-soccer-legends-and-enjoy-live-entertainment-at-union-stations-fan-zone/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 7 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/4-1.jpeg?fit=1200%2C801&ssl=1"
+           alt="Metro 196 World Cup wrapped buses rolling through Los Angeles"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">LA Metro</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 7: Metro's 196-Bus World Cup Wrap Campaign — Transit as Moving Billboard</h2>
+      <p class="date-range">June 22, 2026</p>
+      <p class="summary">LA Metro transformed 196 buses with vivid World Cup-themed vinyl wraps, turning the agency's familiar orange fleet into rolling celebrations visible across every corner of Los Angeles County. As the official Public Transit Provider of FIFA World Cup 2026, the campaign is Metro's largest-ever exterior branding effort, designed to build public familiarity with transit ahead of the 2028 Olympics.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li><strong>196 buses</strong> wrapped in FIFA World Cup 2026 designs</li>
+        <li>Metro is the <strong>official Public Transit Provider</strong> of the LA World Cup 2026 Host</li>
+        <li>Campaign designed to build <strong>brand recognition</strong> for transit beyond existing riders</li>
+        <li>Wraps visible across all Metro bus routes — <strong>county-wide saturation</strong></li>
+        <li>Strategy mirrors how sports teams use buses as mobile advertising to casual audiences</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> Metro's bus wrap campaign is a bet that mass visual presence converts non-riders into trial users. If even a fraction of people who see the buses during the World Cup try transit for the first time, it seeds the habit formation needed for sustained ridership growth into the Olympics.</p>
+      <p class="connections"><em>Connects to:</em> Topic 5 (ridership surge), Topic 6 (Union Station brand activation), Topic 1 (game-day riders)</p>
+      <a class="source-link" href="https://thesource.metro.net/how-metro-transformed-nearly-200-buses-into-rolling-celebrations-for-the-world-cup/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 8 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://scvnews.com/wp-content/uploads/2023/09/metrolink-service.jpg"
+           alt="Metrolink commuter rail World Cup special service"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Metrolink</span>
+        <span class="agency">OCTA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 8: Metrolink's World Cup Knockout-Round Express — A Rare Full-House Moment</h2>
+      <p class="date-range">May–July 2026</p>
+      <p class="summary">Metrolink has deployed special service additions for FIFA World Cup 2026 events at SoFi Stadium and across Southern California, including dedicated game-day trains on multiple lines. The service expansion is providing a rare revenue and ridership high-water mark for a commuter rail system that has otherwise been grappling with chronic ridership declines and service cuts on non-event days.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Metrolink added <strong>special game-day trains</strong> on multiple lines serving SoFi Stadium area</li>
+        <li>Service operates on <strong>all World Cup match days</strong> at Los Angeles Stadium</li>
+        <li>Connecting routes serve fans from <strong>Orange County, San Bernardino, Riverside, and Ventura</strong></li>
+        <li>World Cup provides a <strong>rare full-load ridership moment</strong> for a system facing chronic underuse</li>
+        <li>Metrolink also offered <strong>free fares on select days</strong> during the World Cup period</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The World Cup is giving Metrolink a window to prove its regional value to a new audience. But the contrast between packed game-day trains and chronically half-empty weekday services will intensify post-tournament pressure to either reform the network or accept a reduced commuter rail future.</p>
+      <p class="connections"><em>Connects to:</em> Topic 1 (game-day transit operations), Topic 9 (Metrolink structural challenges), Topic 5 (ridership trends)</p>
+      <a class="source-link" href="https://scvnews.com/2026/05/14/metrolink-announces-special-service-for-fifa-world-cup-2026-events/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 9 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://imgproxy.divecdn.com/LEtJ6AjVj88Um9v5819o-fEDzb_41OWyIY22FzEkmr4/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9taWFtaWNlbnRyYWwtc3RhdGlvbi0xLmpwZw==.webp"
+           alt="Brightline Florida bankruptcy warns of private rail risk"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority medium">MEDIUM</span>
+        <span class="agency">Brightline West</span>
+        <span class="agency">CA HSR</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 9: Brightline Florida's Bankruptcy Shadow Looms Over Brightline West</h2>
+      <p class="date-range">July 8, 2026</p>
+      <p class="summary">Brightline Florida — the Miami-Orlando private rail operator with strong ridership but $5.5 billion in debt — is facing potential bankruptcy, raising urgent questions about the viability of private rail financing models. Meanwhile, Brightline West's Las Vegas-to-California high-speed rail project has seen costs rise to $21 billion and is now beginning pre-construction work in California, targeting a 2029 opening.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>Brightline Florida carries <strong>strong ridership</strong> but faces <strong>$5.5B in debt</strong></li>
+        <li>Brightline West (Las Vegas–California) costs now at <strong>$21 billion</strong>, up significantly</li>
+        <li>Pre-construction work has begun on the California end of Brightline West</li>
+        <li>Brightline West targeting a <strong>2029 completion date</strong> — in time for LA Olympics</li>
+        <li>California High-Speed Rail also revised total cost to over <strong>$231 billion</strong></li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> The Brightline Florida crisis is a cautionary tale: strong ridership does not guarantee private rail financial viability at high debt loads. California planners banking on Brightline West to carry Olympic visitors from Las Vegas should note the structural financing risks in the broader Brightline family.</p>
+      <p class="connections"><em>Connects to:</em> Topic 10 (CA HSR EIR), Topic 8 (commuter rail viability)</p>
+      <a class="source-link" href="https://www.smartcitiesdive.com/news/brightline-florida-debt-possible-bankruptcy/824677/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+  <!-- TOPIC 10 -->
+  <article class="card">
+    <div class="card-image">
+      <img src="https://i0.wp.com/thesource.metro.net/wp-content/uploads/2026/06/MAB-1x1-1.png?fit=1080%2C1080&ssl=1"
+           alt="Metro Art LACMA Block Party Wilshire Boulevard transit culture"
+           loading="lazy"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#1e3a5f,#0f172a)';this.style.display='none'">
+      <div class="card-badges">
+        <span class="priority low-medium">LOW-MEDIUM</span>
+        <span class="agency">LA Metro</span>
+        <span class="agency">LACMA</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h2>TOPIC 10: Metro Art at LACMA's Block Party — Transit as Cultural Infrastructure</h2>
+      <p class="date-range">June 18, 2026</p>
+      <p class="summary">Metro Art joined LACMA's grand opening Block Party and Art Parade on Wilshire Boulevard, participating in an event that transformed nearly a mile of the street into a public arts celebration. The collaboration signals Metro's growing use of cultural programming and station art as rider engagement tools — a soft strategy to deepen the emotional connection between Angelenos and their transit system.</p>
+      <h3>Key Facts</h3>
+      <ul>
+        <li>LACMA's Block Party activated <strong>nearly a mile of Wilshire Boulevard</strong> as public art space</li>
+        <li>Metro Art participated with <strong>performances, activations, and community art</strong></li>
+        <li>The event coincided with opening of LACMA's new <strong>David Geffen Galleries</strong></li>
+        <li>D Line now serves the Wilshire corridor with stations within walking distance of LACMA</li>
+        <li>Metro Art has a long history of <strong>station-based public art installations</strong> across the system</li>
+      </ul>
+      <p class="why-it-matters"><em>Why it matters:</em> As Metro faces the challenge of converting World Cup and event-day riders into regular commuters, cultural programming at transit hubs and on surrounding streets builds the neighborhood identity that makes people want to use transit as part of daily life, not just for big events.</p>
+      <p class="connections"><em>Connects to:</em> Topic 5 (ridership recovery), Topic 7 (Metro brand building), Topic 6 (transit as events platform)</p>
+      <a class="source-link" href="https://thesource.metro.net/metro-art-joins-lacmas-block-party-and-art-parade-this-weekend/" target="_blank">Read source →</a>
+    </div>
+  </article>
+
+</div>
+
+<!-- AGENCY STATUS BOARD -->
+<div class="status-board">
+  <h2>Agency Status Board — July 10, 2026</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Agency</th>
+        <th>Status</th>
+        <th>Key Story</th>
+        <th>Key Metric / Milestone</th>
+        <th>Next Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LA Metro</strong></td>
+        <td>🟢 Active / Surging</td>
+        <td>Spain vs. Belgium quarterfinal ops live today</td>
+        <td>Rail ridership at 6-year high (post-D Line + World Cup)</td>
+        <td>World Cup semifinal and final; Vermont Ave BRT groundbreaking</td>
+      </tr>
+      <tr>
+        <td><strong>Metrolink</strong></td>
+        <td>🟡 Mixed — Event High / Chronic Low</td>
+        <td>World Cup special service in knockout rounds</td>
+        <td>Game-day trains full; off-peak ridership still declining</td>
+        <td>Post-World Cup structural reform decision</td>
+      </tr>
+      <tr>
+        <td><strong>LADOT</strong></td>
+        <td>🟢 Active</td>
+        <td>Vermont Avenue BRT cleared for construction</td>
+        <td>Court ruling clears path; bike lane fight may continue</td>
+        <td>Vermont Ave BRT construction timeline announcement</td>
+      </tr>
+      <tr>
+        <td><strong>LAWA / LAX</strong></td>
+        <td>🟡 Stabilizing</td>
+        <td>LAX SkyLink APM delays during World Cup surge</td>
+        <td>$3.34B people mover under stress; testing ongoing</td>
+        <td>Revenue service launch date confirmation</td>
+      </tr>
+      <tr>
+        <td><strong>Amtrak / Pacific Surfliner</strong></td>
+        <td>🟢 Expanding</td>
+        <td>New daily roundtrip trains added on SoCal corridors</td>
+        <td>New SD–LA daily + LA–SLO daily service added in 2026</td>
+        <td>Ridership data on new trains</td>
+      </tr>
+      <tr>
+        <td><strong>CA High-Speed Rail</strong></td>
+        <td>🟠 Challenged</td>
+        <td>LA-Anaheim EIR released; cost at $231B+</td>
+        <td>Draft EIR public comment period open for LA-Anaheim segment</td>
+        <td>Public comment deadline; CEO situation resolved?</td>
+      </tr>
+      <tr>
+        <td><strong>Brightline West</strong></td>
+        <td>🟡 Building / Watched</td>
+        <td>Pre-construction started in CA; Brightline FL warns</td>
+        <td>Costs at $21B; 2029 Olympics-targeted opening</td>
+        <td>California construction milestone announcements</td>
+      </tr>
+      <tr>
+        <td><strong>OCTA</strong></td>
+        <td>🟢 Stable</td>
+        <td>2026-27 balanced budget approved</td>
+        <td>Bus service maintained; capital projects advancing</td>
+        <td>FY26-27 budget implementation</td>
+      </tr>
+      <tr>
+        <td><strong>SCAG</strong></td>
+        <td>🔵 Planning</td>
+        <td>SB 79 transit corridor mapping released</td>
+        <td>Draft map shows 9-story housing near transit corridors</td>
+        <td>City and county comment period on SB 79 map</td>
+      </tr>
+      <tr>
+        <td><strong>FIFA / World Cup</strong></td>
+        <td>🔴 Quarterfinals NOW</td>
+        <td>Spain vs. Belgium today; semifinals next week</td>
+        <td>16 matches played at SoFi; knockout stage underway</td>
+        <td>Semifinal and Final at SoFi — biggest transit test yet</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- EMERGING THEMES -->
+<div class="themes">
+  <div class="themes-inner">
+    <h2>Emerging Themes — July 10, 2026</h2>
+
+    <div class="theme">
+      <h3>1. The World Cup as the Olympics Dress Rehearsal</h3>
+      <p>LA Metro is running what is effectively a two-month Olympic dress rehearsal right now. From 196 bus wraps to sold-out Union Station fan zones to Venice Beach access to quarterfinal game-day operations, every element of the World Cup transit playbook will be amplified for 2028. Today's Spain vs. Belgium quarterfinal is the highest-pressure test yet — knockout-round crowds, unfamiliar visitors, evening heat, and extended post-match service windows. Metro's performance today will be studied and iterated before semifinal and final matches.</p>
+    </div>
+
+    <div class="theme">
+      <h3>2. Metro's Legal Moment: Suing Its Way to Progress</h3>
+      <p>LA Metro's lawsuit against Burbank over construction permits is a remarkable escalation that signals a new posture: transit deadlines will be defended in court, not just in negotiating rooms. Coming alongside the Vermont Avenue BRT court win, a pattern is forming where legal action — not just community outreach or intergovernmental negotiation — is becoming a primary tool for breaking infrastructure logjams. With Measure M project deadlines tied to the 2028 Games, Metro cannot afford multi-year permitting delays from any city along its corridors.</p>
+    </div>
+
+    <div class="theme">
+      <h3>3. Two Transit Systems Diverging: Metro Up, Metrolink Struggling</h3>
+      <p>Within the same region, LA Metro is posting six-year ridership highs while Metrolink is mired in permanent service cuts and declining weekday use. The divergence is instructive: Metro is investing in urban extensions, cultural programming, transit branding, and network density, while Metrolink's commuter-rail model remains dependent on CBD-centric peak-hour demand that hasn't recovered to pre-pandemic levels. The World Cup is giving Metrolink a temporary injection of purpose, but the structural questions will return the moment the tournament ends.</p>
+    </div>
+
+    <div class="theme">
+      <h3>4. Private Rail at the Crossroads: Brightline's Warning</h3>
+      <p>Brightline Florida's potential bankruptcy — despite strong ridership — is a warning that private rail financing at scale is uniquely fragile. For Southern California, this matters because both Brightline West (Vegas–CA, $21B) and California High-Speed Rail (Central Valley–LA, $231B+) rely on assumptions about ridership-driven revenue that have yet to be proven at American scale. The Brightline case suggests that even "successful" private rail lines can fail on debt service. Public agencies and investors banking on Olympics-era demand should model the downside scenarios carefully.</p>
+    </div>
+
+    <div class="theme">
+      <h3>5. The Cultural Infrastructure Argument for Transit</h3>
+      <p>Metro Art's presence at LACMA's Block Party, the sold-out Union Station fan zone, the Venice Beach World Fan Zone accessible by bus — together they make a coherent argument that transit is cultural infrastructure, not just commuting infrastructure. The World Cup has accelerated this narrative in real time: millions of Angelenos are taking Metro not to get to work, but to get to experiences. If Metro can sustain this association between transit and cultural life beyond the tournament, it will have expanded its rider base in the most durable way possible.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Sources: LA Metro – The Source, LAist, Smart Cities Dive, SCV News, Streetsblog LA, NBC Los Angeles, Amtrak Media, Governing, OC Register, CA.gov<br>
+  Compiled July 10, 2026 · SoCal Transit Intelligence · <a href="transit.html" style="color:#3b82f6;">Archive</a>
+</footer>
+
+</body>
+</html>
