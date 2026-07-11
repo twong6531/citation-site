@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" width="800" height="1400">
+<rect width="800" height="1400" fill="#F7F7F5"/>
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+<text x="40" y="38" font-size="11" fill="#999999" font-weight="600" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="3">DAILY BRIEFING</text>
+<text x="40" y="76" font-size="28" fill="#111111" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif">AI Trade Secret Battles</text>
+<text x="40" y="102" font-size="13" fill="#888888" font-family="Helvetica Neue, Arial, sans-serif">July 11, 2026</text>
+<line x1="40" y1="118" x2="760" y2="118" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="156" font-size="11" fill="#BBBBBB" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">01</text>
+<rect x="68" y="142" width="80" height="18" rx="9" fill="#2E7D32"/>
+<text x="108" y="154" font-size="10" fill="#FFFFFF" font-weight="600" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">BUSINESS</text>
+<text x="164" y="156" font-size="16" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif">⚖️</text>
+<text x="760" y="154" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="end" letter-spacing="1">AI LEGAL WAR</text>
+<text x="40" y="179" font-size="16" fill="#111111" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">Apple Sues OpenAI for Trade Secret Theft</tspan></text>
+<text x="40" y="208" font-size="11.5" fill="#555555" font-weight="normal" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">Apple filed a major lawsuit against OpenAI alleging ex-employees stole confidential data</tspan><tspan x="40" dy="15.525">on unreleased technologies. The suit escalates the AI industry's talent war between big</tspan><tspan x="40" dy="15.525">tech firms.</tspan></text>
+<text x="40" y="272" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">IMPACT</text>
+<rect x="96" y="261" width="200" height="6" rx="3" fill="#E5E5E5"/>
+<rect x="96" y="261" width="198" height="6" rx="3" fill="#2E7D32"/>
+<text x="304" y="269" font-size="10" fill="#2E7D32" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif">9/10</text>
+<line x1="40" y1="289" x2="760" y2="289" stroke="#EEEEEE" stroke-width="1"/>
+<text x="40" y="346" font-size="11" fill="#BBBBBB" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">02</text>
+<rect x="68" y="332" width="80" height="18" rx="9" fill="#00897B"/>
+<text x="108" y="344" font-size="10" fill="#FFFFFF" font-weight="600" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">TECH</text>
+<text x="164" y="346" font-size="16" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif">📡</text>
+<text x="760" y="344" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="end" letter-spacing="1">OPEN-SOURCE SDR</text>
+<text x="40" y="369" font-size="16" fill="#111111" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">Open-Source Board Spots Drones, Sees Through Walls</tspan></text>
+<text x="40" y="398" font-size="11.5" fill="#555555" font-weight="normal" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">The QuadRF phased-array radio on a Raspberry Pi 5 and FPGA can detect WiFi through walls</tspan><tspan x="40" dy="15.525">and track drones. Capabilities once exclusive to government SIGINT are now open-source</tspan><tspan x="40" dy="15.525">hardware.</tspan></text>
+<text x="40" y="462" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">IMPACT</text>
+<rect x="96" y="451" width="200" height="6" rx="3" fill="#E5E5E5"/>
+<rect x="96" y="451" width="176" height="6" rx="3" fill="#00897B"/>
+<text x="304" y="459" font-size="10" fill="#00897B" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif">8/10</text>
+<line x1="40" y1="479" x2="760" y2="479" stroke="#EEEEEE" stroke-width="1"/>
+<text x="40" y="536" font-size="11" fill="#BBBBBB" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">03</text>
+<rect x="68" y="522" width="80" height="18" rx="9" fill="#00897B"/>
+<text x="108" y="534" font-size="10" fill="#FFFFFF" font-weight="600" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">TECH</text>
+<text x="164" y="536" font-size="16" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif">🛰️</text>
+<text x="760" y="534" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="end" letter-spacing="1">SATELLITE INTERNET</text>
+<text x="40" y="559" font-size="16" fill="#111111" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">SpaceX Seeks 100,000 More Starlink Satellites</tspan></text>
+<text x="40" y="588" font-size="11.5" fill="#555555" font-weight="normal" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">SpaceX filed regulatory plans to add 100,000 satellites to Starlink, promising 100x</tspan><tspan x="40" dy="15.525">current bandwidth. The expansion would dwarf all other constellations combined.</tspan></text>
+<text x="40" y="652" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">IMPACT</text>
+<rect x="96" y="641" width="200" height="6" rx="3" fill="#E5E5E5"/>
+<rect x="96" y="641" width="176" height="6" rx="3" fill="#00897B"/>
+<text x="304" y="649" font-size="10" fill="#00897B" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif">8/10</text>
+<line x1="40" y1="669" x2="760" y2="669" stroke="#EEEEEE" stroke-width="1"/>
+<text x="40" y="726" font-size="11" fill="#BBBBBB" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">04</text>
+<rect x="68" y="712" width="80" height="18" rx="9" fill="#0077CC"/>
+<text x="108" y="724" font-size="10" fill="#FFFFFF" font-weight="600" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">SCIENCE</text>
+<text x="164" y="726" font-size="16" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif">⚛️</text>
+<text x="760" y="724" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="end" letter-spacing="1">RELATIVISTIC CHEMISTRY</text>
+<text x="40" y="749" font-size="16" fill="#111111" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">Relativity Explains Gold's Color and Mercury's</tspan><tspan x="40" dy="21.6">Liquid State</tspan></text>
+<text x="40" y="778" font-size="11.5" fill="#555555" font-weight="normal" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">Brown University research confirms relativistic effects govern heavy-element chemical</tspan><tspan x="40" dy="15.525">bonds. Gold appears yellow and mercury stays liquid because electrons travel at 58% of</tspan><tspan x="40" dy="15.525">light speed.</tspan></text>
+<text x="40" y="842" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">IMPACT</text>
+<rect x="96" y="831" width="200" height="6" rx="3" fill="#E5E5E5"/>
+<rect x="96" y="831" width="176" height="6" rx="3" fill="#0077CC"/>
+<text x="304" y="839" font-size="10" fill="#0077CC" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif">8/10</text>
+<line x1="40" y1="859" x2="760" y2="859" stroke="#EEEEEE" stroke-width="1"/>
+<text x="40" y="916" font-size="11" fill="#BBBBBB" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">05</text>
+<rect x="68" y="902" width="80" height="18" rx="9" fill="#00897B"/>
+<text x="108" y="914" font-size="10" fill="#FFFFFF" font-weight="600" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">TECH</text>
+<text x="164" y="916" font-size="16" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif">🔧</text>
+<text x="760" y="914" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="end" letter-spacing="1">DEV TOOL DESIGN</text>
+<text x="40" y="939" font-size="16" fill="#111111" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">Good Tools Vanish: The Invisibility Design Principle</tspan></text>
+<text x="40" y="968" font-size="11.5" fill="#555555" font-weight="normal" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">A widely-shared essay argues that exceptional software tools disappear from conscious</tspan><tspan x="40" dy="15.525">awareness. Friction, discoverability, and cognitive load determine whether a tool feels</tspan><tspan x="40" dy="15.525">invisible or intrusive.</tspan></text>
+<text x="40" y="1032" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">IMPACT</text>
+<rect x="96" y="1021" width="200" height="6" rx="3" fill="#E5E5E5"/>
+<rect x="96" y="1021" width="154" height="6" rx="3" fill="#00897B"/>
+<text x="304" y="1029" font-size="10" fill="#00897B" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif">7/10</text>
+<line x1="40" y1="1049" x2="760" y2="1049" stroke="#EEEEEE" stroke-width="1"/>
+<text x="40" y="1106" font-size="11" fill="#BBBBBB" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">06</text>
+<rect x="68" y="1092" width="80" height="18" rx="9" fill="#00897B"/>
+<text x="108" y="1104" font-size="10" fill="#FFFFFF" font-weight="600" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">TECH</text>
+<text x="164" y="1106" font-size="16" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif">🌐</text>
+<text x="760" y="1104" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="end" letter-spacing="1">WEB SCRAPING WAR</text>
+<text x="40" y="1129" font-size="16" fill="#111111" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">Residential Proxies Break Anti-Scraping Defenses</tspan></text>
+<text x="40" y="1158" font-size="11.5" fill="#555555" font-weight="normal" font-family="Helvetica Neue, Arial, sans-serif"><tspan x="40" dy="0">LWN reports scrapers route through residential IPs from proxy brokers, making bots</tspan><tspan x="40" dy="15.525">indistinguishable from real users. IP-based defenses including rate limits and CAPTCHAs</tspan><tspan x="40" dy="15.525">are largely defeated.</tspan></text>
+<text x="40" y="1222" font-size="10" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="1">IMPACT</text>
+<rect x="96" y="1211" width="200" height="6" rx="3" fill="#E5E5E5"/>
+<rect x="96" y="1211" width="154" height="6" rx="3" fill="#00897B"/>
+<text x="304" y="1219" font-size="10" fill="#00897B" font-weight="700" font-family="Helvetica Neue, Arial, sans-serif">7/10</text>
+<line x1="40" y1="1284" x2="760" y2="1284" stroke="#DDDDDD" stroke-width="1"/>
+<text x="40" y="1306" font-size="11" fill="#AAAAAA" font-family="Helvetica Neue, Arial, sans-serif">Generated by AI · July 11, 2026 · Sources: Hacker News, Web</text>
+<rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>

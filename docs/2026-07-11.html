@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 11, 2026</title>
+<style>
+  :root {
+    --bg: #0e0e0f;
+    --surface: #18181b;
+    --surface2: #1f1f24;
+    --border: #2a2a32;
+    --text: #e8e8ee;
+    --muted: #888896;
+    --accent-ai: #8b5cf6;
+    --accent-science: #3b82f6;
+    --accent-tech: #10b981;
+    --accent-business: #22c55e;
+    --accent-world: #f97316;
+    --accent-bar: #6C47FF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+
+  /* HEADER */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .site-header a { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .site-header a:hover { color: var(--text); }
+  .nav-links { display: flex; gap: 20px; }
+
+  /* HERO */
+  .hero {
+    padding: 56px 24px 40px;
+    max-width: 900px; margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-label { font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
+  .hero-topic { font-size: 40px; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .hero-date { font-size: 14px; color: var(--muted); }
+
+  /* SECTION HEADERS */
+  .section-header {
+    max-width: 900px; margin: 0 auto;
+    padding: 36px 24px 20px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-divider { flex: 1; height: 1px; background: var(--border); }
+
+  /* VISUAL SECTION */
+  .visual-section {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+  .visual-placeholder {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .visual-placeholder .icon { font-size: 48px; margin-bottom: 16px; opacity: 0.4; }
+  .visual-placeholder h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .visual-placeholder p { font-size: 14px; color: var(--muted); max-width: 480px; margin: 0 auto; }
+  .visual-subject { font-size: 13px; color: var(--muted); margin-top: 20px; font-style: italic; }
+  .visual-note { font-size: 11px; color: #444455; margin-top: 8px; }
+
+  /* STORY CARDS */
+  .stories-grid {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 640px) { .stories-grid { grid-template-columns: 1fr; } }
+
+  .story-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.15s;
+  }
+  .story-card:hover { border-color: #3a3a48; }
+
+  .card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .card-num { font-size: 11px; color: #444455; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .category-pill {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 4px;
+  }
+  .cat-ai { background: rgba(108, 71, 255, 0.2); color: #a78bfa; }
+  .cat-science { background: rgba(0, 119, 204, 0.2); color: #60a5fa; }
+  .cat-tech { background: rgba(0, 137, 123, 0.2); color: #34d399; }
+  .cat-business { background: rgba(46, 125, 50, 0.2); color: #4ade80; }
+  .cat-world { background: rgba(230, 81, 0, 0.2); color: #fb923c; }
+
+  .emoji-badge { font-size: 18px; margin-left: auto; }
+
+  .card-headline { font-size: 15px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .card-summary { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+  .card-bullets { list-style: none; margin-bottom: 14px; }
+  .card-bullets li {
+    font-size: 12px; color: #666678;
+    padding: 3px 0 3px 14px;
+    position: relative;
+    border-bottom: 1px solid #1c1c22;
+  }
+  .card-bullets li:last-child { border-bottom: none; }
+  .card-bullets li::before { content: '·'; position: absolute; left: 0; color: #444455; }
+
+  .card-footer { margin-top: 12px; }
+  .impact-row { display: flex; align-items: center; gap: 8px; }
+  .impact-label { font-size: 10px; color: #444455; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+  .impact-track { flex: 1; height: 4px; background: #222230; border-radius: 2px; overflow: hidden; }
+  .impact-fill { height: 100%; border-radius: 2px; }
+  .impact-score { font-size: 10px; font-weight: 700; white-space: nowrap; }
+  .why-matters { font-size: 11px; color: #555565; margin-top: 8px; font-style: italic; line-height: 1.4; }
+
+  /* INFOGRAPHIC SECTION */
+  .infographic-section {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 48px;
+  }
+  .infographic-link {
+    display: flex; align-items: center; gap: 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    transition: border-color 0.15s;
+  }
+  .infographic-link:hover { border-color: #3a3a48; }
+  .dl-icon { font-size: 28px; }
+  .dl-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .dl-info p { font-size: 12px; color: var(--muted); }
+  .dl-badge {
+    margin-left: auto;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px;
+    background: rgba(108, 71, 255, 0.15); color: #a78bfa;
+    white-space: nowrap;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 12px; color: #444455;
+  }
+  footer a { color: #666678; }
+  footer a:hover { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html">← Daily Briefing</a>
+  <nav class="nav-links">
+    <a href="california-hsr.html">CA High-Speed Rail</a>
+    <a href="transit-oriented-development.html">Transit &amp; Development</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Daily Briefing</div>
+  <div class="hero-topic">AI Trade Secret Battles</div>
+  <div class="hero-date">Saturday, July 11, 2026</div>
+</section>
+
+<!-- SECTION A: EDITORIAL IMAGE -->
+<div class="section-header">
+  <span class="section-label">Today's Visual</span>
+  <div class="section-divider"></div>
+</div>
+
+<div class="visual-section">
+  <div class="visual-placeholder">
+    <div class="icon">📡</div>
+    <h3>Phased-Array Antenna Circuit Board — Technical Editorial Illustration</h3>
+    <p>A palm-sized PCB with 32 patch antenna elements in a 4×8 grid, driven by a Xilinx FPGA with picosecond timing. Capable of electronic beamforming — steering invisible RF signals to detect drones and decode WiFi packets through solid walls — without moving parts.</p>
+    <div class="visual-subject">Visual subject: phased-array antenna FPGA board (QuadRF) with Raspberry Pi 5 interface</div>
+    <div class="visual-note">Independently researched and rendered by AI from today's news · Image generation unavailable today</div>
+  </div>
+</div>
+
+<!-- SECTION B: NEWS ANALYSIS -->
+<div class="section-header">
+  <span class="section-label">News Analysis — July 11, 2026</span>
+  <div class="section-divider"></div>
+</div>
+
+<div class="stories-grid">
+
+  <!-- STORY 1 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">01</span>
+      <span class="category-pill cat-business">BUSINESS</span>
+      <span class="emoji-badge">⚖️</span>
+    </div>
+    <div class="card-headline">Apple Sues OpenAI for Trade Secret Theft</div>
+    <div class="card-summary">Apple filed a federal lawsuit against OpenAI alleging former employees stole confidential data about unreleased technologies, processes, and products. The case marks the AI industry's most high-profile IP dispute to date.</div>
+    <ul class="card-bullets">
+      <li>Lawsuit filed July 10, 2026 — Apple accuses multiple ex-employees of carrying secrets to OpenAI</li>
+      <li>Stolen material allegedly covers unreleased on-device AI architecture and inference pipelines</li>
+      <li>Hacker News score of 1,308 — highest-upvoted story on the platform this week</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:90%;background:#22c55e"></div></div>
+        <span class="impact-score" style="color:#4ade80">9/10</span>
+      </div>
+      <div class="why-matters">Sets a legal precedent that could chill talent mobility and reshape trade-secret law across the entire AI industry.</div>
+    </div>
+  </div>
+
+  <!-- STORY 2 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">02</span>
+      <span class="category-pill cat-tech">TECH</span>
+      <span class="emoji-badge">📡</span>
+    </div>
+    <div class="card-headline">Open-Source Board Spots Drones, Sees Through Walls</div>
+    <div class="card-summary">QuadRF is a handheld phased-array radio built on a Raspberry Pi 5 and FPGA that performs electronic beamforming to detect drones and decode WiFi packets through solid walls. The open-source device brings signals intelligence capabilities once limited to governments into hobbyist hardware.</div>
+    <ul class="card-bullets">
+      <li>FPGA runs picosecond-precision timing across 32 antenna elements for coherent beamforming</li>
+      <li>Up to 1.15 MW EIRP when chained — enough for Earth-Moon-Earth radio astronomy experiments</li>
+      <li>Designer previously built SpaceX's original Dishy Starlink phased-array terminal</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:80%;background:#10b981"></div></div>
+        <span class="impact-score" style="color:#34d399">8/10</span>
+      </div>
+      <div class="why-matters">Democratizes RF signals intelligence hardware, raising both security research possibilities and privacy implications for Wi-Fi users.</div>
+    </div>
+  </div>
+
+  <!-- STORY 3 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">03</span>
+      <span class="category-pill cat-tech">TECH</span>
+      <span class="emoji-badge">🛰️</span>
+    </div>
+    <div class="card-headline">SpaceX Files for 100,000 More Starlink Satellites</div>
+    <div class="card-summary">SpaceX submitted regulatory filings to add 100,000 new satellites to its Starlink constellation, promising to deliver 100 times the current global bandwidth capacity. The expansion would outnumber all other satellite constellations in history combined.</div>
+    <ul class="card-bullets">
+      <li>Current Starlink fleet has ~6,000 active satellites; this expansion multiplies it 17-fold</li>
+      <li>100× bandwidth target implies hundreds of gigabits per second per beam at peak capacity</li>
+      <li>FCC and ITU spectrum and orbital slot filings required across multiple altitude shells</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:80%;background:#10b981"></div></div>
+        <span class="impact-score" style="color:#34d399">8/10</span>
+      </div>
+      <div class="why-matters">Would fundamentally reshape global broadband access while intensifying concerns about orbital congestion and astronomical light pollution.</div>
+    </div>
+  </div>
+
+  <!-- STORY 4 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">04</span>
+      <span class="category-pill cat-science">SCIENCE</span>
+      <span class="emoji-badge">⚛️</span>
+    </div>
+    <div class="card-headline">Relativity Explains Gold's Color and Mercury's Liquid State</div>
+    <div class="card-summary">New Brown University research confirms Einstein's special relativity governs chemical bonding in heavy elements, explaining everyday mysteries like why gold appears yellow and why mercury remains liquid at room temperature. The findings offer the most precise experimental validation yet of relativistic effects in chemistry.</div>
+    <ul class="card-bullets">
+      <li>Gold's outer 6s electrons travel at 58% of light speed — orbital contraction shifts absorbed light to blue</li>
+      <li>Mercury's relativistic 6s contraction weakens metallic bonds, lowering melting point to −39°C</li>
+      <li>Quantum calculations in the paper match spectroscopic measurements to within experimental precision</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:80%;background:#3b82f6"></div></div>
+        <span class="impact-score" style="color:#60a5fa">8/10</span>
+      </div>
+      <div class="why-matters">Validates relativistic quantum mechanics as an essential framework for designing future heavy-element materials and catalysts.</div>
+    </div>
+  </div>
+
+  <!-- STORY 5 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">05</span>
+      <span class="category-pill cat-tech">TECH</span>
+      <span class="emoji-badge">🔧</span>
+    </div>
+    <div class="card-headline">Good Tools Vanish: The Invisibility Design Principle</div>
+    <div class="card-summary">A widely-shared essay argues that truly excellent software tools disappear from conscious awareness, becoming a frictionless extension of the developer's intent. The piece challenges the industry habit of treating visible features as a proxy for tool quality.</div>
+    <ul class="card-bullets">
+      <li>494 upvotes on Hacker News — one of the top-voted opinion pieces of the week</li>
+      <li>Author draws on Unix pipes, Vim, and physical craft tools as examples of designed-for-invisibility</li>
+      <li>Argues cognitive load reduction — not feature count — is the primary metric of tool quality</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:70%;background:#10b981"></div></div>
+        <span class="impact-score" style="color:#34d399">7/10</span>
+      </div>
+      <div class="why-matters">Offers developer-tool builders a clear design philosophy focused on frictionless flow rather than feature accumulation.</div>
+    </div>
+  </div>
+
+  <!-- STORY 6 -->
+  <div class="story-card">
+    <div class="card-top">
+      <span class="card-num">06</span>
+      <span class="category-pill cat-tech">TECH</span>
+      <span class="emoji-badge">🌐</span>
+    </div>
+    <div class="card-headline">Residential Proxies Are Defeating Anti-Scraping Defenses</div>
+    <div class="card-summary">LWN reports that scrapers now route traffic through residential ISP IPs purchased from proxy brokers, making bots look identical to legitimate home users. Rate limiting, CAPTCHAs, and IP blacklists are largely ineffective against this technique.</div>
+    <ul class="card-bullets">
+      <li>Residential proxy networks sell access to millions of real home IPs for $1–3 per gigabyte</li>
+      <li>Many proxy IPs come from users who unknowingly installed SDK-embedded mobile apps</li>
+      <li>Blocking residential proxies risks banning legitimate users sharing the same ISP address pools</li>
+    </ul>
+    <div class="card-footer">
+      <div class="impact-row">
+        <span class="impact-label">Impact</span>
+        <div class="impact-track"><div class="impact-fill" style="width:70%;background:#10b981"></div></div>
+        <span class="impact-score" style="color:#34d399">7/10</span>
+      </div>
+      <div class="why-matters">Forces a rethink of web data access policies with direct implications for AI training data collection and news aggregation.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- INFOGRAPHIC DOWNLOAD -->
+<div class="section-header">
+  <span class="section-label">Visual Data</span>
+  <div class="section-divider"></div>
+</div>
+
+<div class="infographic-section">
+  <a href="infographic-2026-07-11.svg" class="infographic-link" target="_blank">
+    <span class="dl-icon">📊</span>
+    <div class="dl-info">
+      <h4>Daily Briefing — Typographic Infographic</h4>
+      <p>6-story visual summary · July 11, 2026 · AI Trade Secret Battles</p>
+    </div>
+    <span class="dl-badge">SVG Download</span>
+  </a>
+</div>
+
+<footer>
+  <p>Generated by AI · Sources: Hacker News, Web · <a href="index.html">← All Briefings</a></p>
+  <p style="margin-top:6px"><a href="https://twong6531.github.io/citation-site/">twong6531.github.io/citation-site</a></p>
+</footer>
+
+</body>
+</html>
