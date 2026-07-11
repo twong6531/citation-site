@@ -1,9 +1,9 @@
 {
   "file": "ai-agents-transit-security-leak-risk-script-2026.md",
   "type": "script",
-  "reviewed_at": "2026-07-09T17:43:11Z",
+  "reviewed_at": "2026-07-11T21:10:00Z",
   "verdict": "REVISE",
-  "score": 67,
+  "score": 65,
   "checks_passed": [
     "Reel script exists",
     "YouTube script exists",
@@ -11,21 +11,21 @@
     "Hook does not start with 'Did you know'",
     "No AI tells found ('As an AI', 'certainly', 'I'd be happy to' — none present)",
     "No placeholder text (no Lorem ipsum, TODO, [INSERT], TBD)",
-    "CTA present in reel: 'We break down exactly what transit tech teams should demand in every AI procurement contract — and what your riders' data is already exposed to. Full article linked.'",
+    "CTA present in reel: 'We break down exactly what transit tech teams should demand in every AI procurement contract — full article linked.'",
     "CTA present in YouTube: 'Subscribe if you want more coverage' + 'full written breakdown...linked in the description below'",
-    "Visual notes present throughout reel (specific B-roll and on-screen text descriptions for all 4 scenes)",
-    "Strong primary sourcing for main factual claims: GitLost/HN 2026, UK NCSC 2025, Wikipedia/GitHub Copilot, Wikipedia/GTFS",
-    "Factual spot-check: UK NCSC no-surefire-mitigations claim is publicly documented; GTFS 55+ countries figure is consistent with known data; GitHub Copilot data-transmission and output-verbatim-copy characterizations match published reports",
-    "No duplicate: topic not published in docs/ within 14 days; ai-agents-transit-security angle is new",
-    "Five-point procurement framework in YouTube Section 4 is concrete, actionable, and accurate to standard enterprise IT practice",
-    "YouTube honestly acknowledges limits: no federal guidance, no disclosure requirement — epistemic honesty present"
+    "Visual notes present throughout reel (B-roll and on-screen text for all 4 scenes)",
+    "Strong primary sourcing for core factual claims: GitLost/HN 2026, UK NCSC 2025, Wikipedia/GitHub Copilot, Wikipedia/GTFS",
+    "UK NCSC no-surefire-mitigations claim is publicly documented; GTFS 55+ countries figure is consistent with known data",
+    "No duplicate: topic not published in docs/ within 14 days",
+    "Five-point procurement framework is concrete and actionable",
+    "YouTube acknowledges limits: no federal guidance, no disclosure requirement — epistemic honesty present"
   ],
   "checks_failed": [
-    "Reel word count OVER 200: estimated 226 spoken words (Hook ~20w, Scene 1 ~39w, Scene 2 ~59w, Scene 3 ~77w, CTA ~31w). Scene 3 alone runs ~77 words in the 35-50s window (15 seconds of airtime). At 150 wpm this reel would take ~90 seconds — 50% over the 60-second format.",
-    "YouTube word count significantly OVER 1,200: estimated 1,500-1,540 spoken words (Hook ~95w, Intro ~135w, Section 1 ~200w, Section 2 ~365w, Section 3 ~280w, Section 4 ~330w, Outro ~135w). This runs approximately 10-11 minutes, exceeding the 5-8 minute target. Section 4 (five procurement requirements) and Section 2 (four risk categories) are each too long and could be trimmed without losing substance.",
-    "Source vagueness for two key supporting statistics used in both reel and YouTube: '75% of business employees are using generative AI [Source: multiple industry surveys, 2024]' and 'only 38% of organizations are actually addressing the risks [Source: Cybersecurity industry benchmarks, 2024]'. These are cited only as generic 'industry surveys' with no named survey, publication, or methodology. These stats appear in both the reel and YouTube — they need specific named sources (e.g., Microsoft Work Trend Index, IBM Institute for Business Value, Gartner survey, or similar named publication) before publication."
+    "Reel word count OVER 200: measured at 202 spoken words. Format requires strictly under 200. Reel runs ~81 seconds at average speaking pace — 35% over the 60-second target. Same issue flagged in prior QC (2026-07-09) — revision NOT applied.",
+    "YouTube word count significantly OVER 1,200: estimated 1,500-1,540 spoken words (~10-11 minutes). Format requires 600-1,200 words (5-8 minutes). Section 2 (four risk categories) and Section 4 (five procurement requirements) remain uncut. Same issue flagged in prior QC (2026-07-09) — revision NOT applied.",
+    "Source vagueness for two key statistics in both reel and YouTube: '75% of business employees are using generative AI [Source: multiple industry surveys, 2024]' and 'only 38% of organizations are actually addressing the risks [Source: Cybersecurity industry benchmarks, 2024]'. No named survey, publication, or methodology provided. Same issue flagged in prior QC (2026-07-09) — revision NOT applied. This is the third QC cycle this file has gone through without source resolution."
   ],
-  "revision_notes": "REEL: Scene 3 is the main problem — cut from ~77w to ~35w. Suggested rewrite: 'Here's what's different from a normal breach: transit agencies don't know what they agreed to when they adopted these tools. The UK's own cybersecurity agency says there are no foolproof mitigations for prompt injection. And if an attack occurs, your agency would never know it happened.' (~50w after tightening). Trim Scene 2 by removing the 75%/38% stats from the reel (vague sources weaken the reel's credibility; the transit-angle content carries it without them). Target total: under 185 words. YOUTUBE: Trim Section 2 (four risk categories) — compress GTFS, scheduling, fare system, and vendor/contract subsections from ~365w total to ~200w by cutting the explanatory scaffolding around each (the transit reader knows what GTFS is; the general reader doesn't need a paragraph). Trim Section 4 (five procurement requirements) — each requirement has a 2-3 sentence explanation; cut each to 1 sentence. Target: Section 2 ~200w, Section 4 ~180w. This brings total YouTube into ~1,100-1,200 range. SOURCES: For the 75%/38% stats, replace generic citations with a named primary source. The Microsoft 2024 Work Trend Index reported ~75% of knowledge workers using AI; the IBM 'AI in Action' report or Gartner AI adoption surveys provide the 38% risk-management figure. Use one named survey for each claim.",
+  "revision_notes": "PRIORITY: All three issues below were flagged in the 2026-07-09 QC and remain unaddressed. This is a second REVISE — if still unresolved at next review, consider escalating to FAIL. (1) REEL TRIM: Scene 3 (35-50s) is the main offender at ~68 words. Cut to ~35-40w: 'Here's what's different from a normal breach — transit agencies don't know what they agreed to. The UK's own cybersecurity agency says there are no foolproof mitigations for prompt injection. And if an attack occurs, your agency would never know it happened.' Also cut the 75%/38% stats from the reel entirely — vague citations weaken reel credibility; the transit-angle copy carries it without them. Target: under 185 words. (2) YOUTUBE TRIM: Section 2 (four risk categories): compress from ~365w to ~200w by cutting explanatory scaffolding — the transit reader knows what GTFS is. Section 4 (five procurement requirements): cut each requirement from 2-3 sentences to 1 sentence. Target: Section 2 ~200w, Section 4 ~180w. Total YouTube target: 1,100-1,200w. (3) SOURCES: Replace vague stat citations with named primary sources. Microsoft 2024 Work Trend Index reported ~75% knowledge worker AI usage. IBM 'AI in Action' 2024 or Gartner annual AI survey covers the 38% risk-management figure. Use one named survey per claim. Update both the inline citations and the Sources block at bottom of file.",
   "fail_reason": null,
   "approved_for_publish": false
 }

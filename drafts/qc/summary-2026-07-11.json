@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-11",
+  "total_reviewed": 1,
+  "passed": 0,
+  "revise": 1,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [
+    {
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "issues": [
+        "Reel word count 202 (over 200 limit)",
+        "YouTube word count ~1,500 (over 1,200 limit)",
+        "75%/38% stats cite only vague 'industry surveys' — no named publication"
+      ],
+      "note": "Second REVISE cycle — prior QC on 2026-07-09 gave same verdict. Revisions not applied. Escalate to FAIL if unresolved at next review."
+    }
+  ],
+  "blocked": [],
+  "context": {
+    "articles_today": 0,
+    "infographics_today": 0,
+    "scripts_today": 1,
+    "articles_status": "pending — drafts/articles/ has 0 files produced in 35+ consecutive days (persistent article agent failure)",
+    "infographics_status": "pending — no infographic produced today",
+    "publishing_status": "blocked — approved.json still stale with 2026-07-05 slugs; human action required"
+  }
+}
