@@ -1,0 +1,85 @@
+{
+  "date": "2026-07-11",
+  "generated_at": "2026-07-11T14:30:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "Apple sues OpenAI over trade secret theft by former employees",
+      "angle": "What the lawsuit reveals about the AI talent war: non-competes, IP ownership of training data and model weights, and what it means for startups poaching Big Tech engineers — with a transit-tech sidebar on AI tool procurement risk",
+      "rationale": "#1 on Hacker News today with 1261 points. Apple–OpenAI legal battle over ex-employee trade secrets is the day's biggest tech story. Directly links to our AI policy beat and the risks transit agencies face when adopting AI tools built by companies in legal flux. First-mover advantage if published today.",
+      "target_length": "long",
+      "slug": "apple-sues-openai-trade-secret-ai-talent-war",
+      "output_path": "drafts/articles/apple-sues-openai-trade-secret-ai-talent-war.html"
+    },
+    {
+      "rank": 2,
+      "type": "video_script",
+      "topic": "QC pass and finalize: ai-agents-transit-security-leak-risk-script-2026",
+      "angle": "QC agent should score the existing draft at drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md and either pass it or return a revision checklist. QuadRF drone/WiFi sensing story (246pts HN today) gives fresh relevance — script should reference if applicable.",
+      "rationale": "This draft has been sitting since 2026-07-08 with QC pending. QuadRF WiFi-through-wall tech trending today directly amplifies the transit infrastructure security angle of this script. Time-sensitive: run QC now while the supporting news is hot.",
+      "target_length": "medium",
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "output_path": "drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md"
+    },
+    {
+      "rank": 3,
+      "type": "infographic",
+      "topic": "World Cup 2026 semifinal transit demand: LA Metro surge forecast vs. capacity",
+      "angle": "Semifinals July 13–14 are 2–3 days away. Visualize expected ridership spike on D Line / Silver Line to SoFi Stadium, compare to Fourth of July peak and June D Line 6-year record high, overlay historical World Cup host city transit data",
+      "rationale": "Semifinals at SoFi Stadium expected July 13–14; final July 18–19. Real-time relevance window closes fast. Yesterday's transit brief showed ridership at 6-year high. An infographic gives a shareable, time-sensitive visual the daily brief cannot. Avoids repeating the brt-vs-light-rail retry pattern that has failed 8+ times.",
+      "target_length": "medium",
+      "slug": "world-cup-2026-semifinal-transit-surge-infographic",
+      "output_path": "drafts/infographics/world-cup-2026-semifinal-transit-surge-infographic.svg"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Autonomous vehicle sharing economy and its impact on public transit ridership — arXiv evidence review",
+      "angle": "Synthesize the new arXiv paper ('Sharing economy in the era of full automation: Evidence from autonomous vehicle on-demand mobility services') alongside yesterday's SAV microtransit findings. Core question: do AVs complement or cannibalize fixed-route transit?",
+      "rationale": "Paper appeared in today's ArXiv transit query. Directly extends the SAV microtransit research published in yesterday's digest. Building a follow-up research brief within 24h creates a coherent series on the AV–transit nexus, a niche we've been developing since early July.",
+      "target_length": "medium",
+      "slug": "av-sharing-economy-transit-impact-2026",
+      "output_path": "drafts/articles/av-sharing-economy-transit-impact-2026.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "Gemini Code Assist shuts down July 17 — what transit tech teams need to do this week",
+      "angle": "6 days until Gemini Code Assist goes dark. Practical migration guide: which tools to replace it with, how AI coding assistants are used in transit agency software teams, and the broader story of Google consolidating its AI developer portfolio",
+      "rationale": "July 17 deadline is now 6 days out. This has been ranked #1 in two consecutive queues (07-09, 07-10) and never produced. Urgency escalates daily. Time value drops to zero after July 17 — this is the last full week to publish a useful piece. Must be produced today or tomorrow.",
+      "target_length": "medium",
+      "slug": "gemini-code-assist-shutdown-july-17-transit-tech",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-july-17-transit-tech.html"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "gemini-code-assist-shutdown-july-17-transit-tech",
+      "reason": "Ranked #1 in two prior queues (07-09, 07-10); article agent has not produced it. Retry #3. Deadline July 17 — 6 days remaining.",
+      "original_queue_date": "2026-07-09"
+    },
+    {
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "reason": "Draft produced 2026-07-08; QC has been pending for 3 days.",
+      "original_queue_date": "2026-07-10"
+    }
+  ],
+  "skip_topics": [
+    "SoCal transit brief (published yesterday — daily cadence satisfied)",
+    "Transit research digest (published yesterday — daily cadence satisfied)",
+    "Research infographic (published yesterday)",
+    "NYC congestion pricing (covered 2026-07-05)",
+    "ChatPlanner LLM routing (covered 2026-07-05 and 07-06)",
+    "Vermont Ave BRT court win (covered in transit brief 2026-07-10)",
+    "Metro sues Burbank (covered 2026-07-10)",
+    "Brightline bankruptcy warning (covered in transit brief 2026-07-10 — needs standalone article but deprioritized vs. time-sensitive items today)"
+  ],
+  "trend_signals": [
+    "Apple sues OpenAI for trade secret theft by ex-employees (1261pts HN — top story today)",
+    "QuadRF: RF sensing for drone detection + WiFi through walls (246pts HN — transit infrastructure security angle)",
+    "AV sharing economy arXiv paper: autonomous on-demand mobility vs. public transit ridership evidence",
+    "World Cup 2026 semifinals July 13–14 — LA Metro SoFi Stadium surge imminent",
+    "Gemini Code Assist shutdown July 17 — 6-day countdown for transit tech migration"
+  ]
+}

@@ -1,12 +1,27 @@
 {
   "date": "2026-07-11",
-  "briefing": "skipped_no_queue",
-  "research": "skipped_no_queue",
-  "content_plan": "skipped_no_queue",
-  "article": "skipped_no_queue",
-  "infographic": "skipped_no_queue",
-  "video_script": "skipped_no_queue",
-  "qc": "skipped_no_new_drafts",
-  "publishing": "skipped_already_published",
-  "notes": "All 5 items in approved.json were already published on 2026-07-05. No new drafts exist for today. No QC summary for 2026-07-11."
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "transit_brief": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "blocked_approved_json_stale"
+  },
+  "queue_items": 5,
+  "published_today": [],
+  "missing_today": [],
+  "alerts": [
+    "BREAKING: Apple sues OpenAI for trade secret theft by ex-employees (1261pts HN) — Rank 1 article queued, 24-48h first-mover window.",
+    "GEMINI CODE ASSIST DEADLINE T-6 DAYS: July 17 cutoff is 6 days away. Article queued (retry #3). Time value drops to zero July 17.",
+    "PUBLISHING BLOCKED (Day 36): approved.json still lists 5 scripts published 2026-07-05. Human must update approved.json with new slugs.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 35+): drafts/articles/ has NEVER produced a file in 35+ consecutive days. 0% article production rate across entire site history.",
+    "VIDEO SCRIPT QC PENDING (Day 3): ai-agents-transit-security-leak-risk-script-2026.md produced 2026-07-08, QC not yet run. QuadRF WiFi-sensing (246pts HN today) amplifies its transit-security angle.",
+    "WORLD CUP SEMIFINAL URGENCY: Semis expected July 13-14 at SoFi. Transit infographic queued as Rank 3. Window closes July 13.",
+    "GOOGLE NEWS RSS FEED EMPTY: 10+ consecutive days. Persistent access issue — manual check required.",
+    "TREND SIGNALS TODAY: Apple sues OpenAI (1261pts HN), QuadRF drone/WiFi sensing (246pts HN), AV sharing economy arXiv paper, World Cup semifinals imminent, Gemini Code Assist 6-day countdown."
+  ]
 }
