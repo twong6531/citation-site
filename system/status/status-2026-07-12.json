@@ -9,7 +9,7 @@
     "infographics": "pending",
     "video_scripts": "pending",
     "qc": "pending",
-    "publishing": "blocked_approved_json_stale"
+    "publishing": "skipped_no_approved_items"
   },
   "queue_items": 5,
   "published_today": [],
