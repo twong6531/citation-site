@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1378" width="800" height="1378" font-family="'Helvetica Neue', Arial, sans-serif">
+<rect width="800" height="1378" fill="#F7F7F5"/>
+
+<!-- Top bar -->
+<rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+<!-- Header area -->
+<text x="400" y="36" text-anchor="middle" font-size="11" fill="#888888" letter-spacing="3" font-weight="600">DAILY BRIEFING</text>
+<text x="400" y="78" text-anchor="middle" font-size="30" fill="#111111" font-weight="700">AI RESHAPING HUMAN KNOWLEDGE</text>
+<text x="400" y="106" text-anchor="middle" font-size="13" fill="#888888">July 12, 2026</text>
+<line x1="40" y1="124" x2="760" y2="124" stroke="#DDDDDD" stroke-width="1"/>
+
+<text x="40" y="160" font-size="11" fill="#AAAAAA" font-weight="700">01</text>
+<rect x="64" y="144" width="64" height="20" rx="3" fill="#6C47FF"/>
+<text x="96" y="158" text-anchor="middle" font-size="10" fill="white" font-weight="700">AI</text>
+<text x="144" y="158" font-size="14" fill="#333333">  🧲</text>
+<text x="40" y="186" font-size="17" fill="#111111" font-weight="700">Math Legend Tao Embraces AI Coding Agents</text>
+<text x="40" y="236" font-size="12" fill="#555555">Fields Medal winner Terence Tao published a blog post exploring his use of modern AI</text>
+<text x="40" y="253" font-size="12" fill="#555555">coding agents to build and update mathematical applications, describing the</text>
+<text x="40" y="280" font-size="10" fill="#888888" letter-spacing="1">IMPACT</text>
+<text x="100" y="280" font-size="10" fill="#6C47FF" font-weight="700">9/10</text>
+<rect x="140" y="270" width="200" height="6" rx="3" fill="#E8E8E8"/>
+<rect x="140" y="270" width="180" height="6" rx="3" fill="#6C47FF"/>
+<text x="40" y="300" font-size="11" fill="#777777" font-style="italic">▸ When a Fields Medal winner publicly endorses AI coding agents for mathematical</text>
+<line x1="40" y1="313" x2="760" y2="313" stroke="#E8E8E8" stroke-width="1"/>
+<text x="40" y="355" font-size="11" fill="#AAAAAA" font-weight="700">02</text>
+<rect x="64" y="339" width="64" height="20" rx="3" fill="#00897B"/>
+<text x="96" y="353" text-anchor="middle" font-size="10" fill="white" font-weight="700">TECH</text>
+<text x="144" y="353" font-size="14" fill="#333333">  🌐</text>
+<text x="40" y="381" font-size="17" fill="#111111" font-weight="700">Internet Pioneer Vint Cerf Retires from Google</text>
+<text x="40" y="431" font-size="12" fill="#555555">Vint Cerf, who co-designed the TCP/IP protocol suite in 1974 that the modern internet</text>
+<text x="40" y="448" font-size="12" fill="#555555">runs on, has retired from Google after 18 years as its Chief Internet Evangelist.</text>
+<text x="40" y="475" font-size="10" fill="#888888" letter-spacing="1">IMPACT</text>
+<text x="100" y="475" font-size="10" fill="#00897B" font-weight="700">8/10</text>
+<rect x="140" y="465" width="200" height="6" rx="3" fill="#E8E8E8"/>
+<rect x="140" y="465" width="160" height="6" rx="3" fill="#00897B"/>
+<text x="40" y="495" font-size="11" fill="#777777" font-style="italic">▸ The retirement of one of the last living architects of the internet's core</text>
+<line x1="40" y1="508" x2="760" y2="508" stroke="#E8E8E8" stroke-width="1"/>
+<text x="40" y="550" font-size="11" fill="#AAAAAA" font-weight="700">03</text>
+<rect x="64" y="534" width="64" height="20" rx="3" fill="#0077CC"/>
+<text x="96" y="548" text-anchor="middle" font-size="10" fill="white" font-weight="700">SCIENCE</text>
+<text x="144" y="548" font-size="14" fill="#333333">  🔬</text>
+<text x="40" y="576" font-size="17" fill="#111111" font-weight="700">AI Tools Speed Science but Kill Idea Diversity</text>
+<text x="40" y="626" font-size="12" fill="#555555">A new IEEE Spectrum analysis finds that AI research tools dramatically boost</text>
+<text x="40" y="643" font-size="12" fill="#555555">individual career output but simultaneously narrow the range of scientific ideas</text>
+<text x="40" y="670" font-size="10" fill="#888888" letter-spacing="1">IMPACT</text>
+<text x="100" y="670" font-size="10" fill="#0077CC" font-weight="700">9/10</text>
+<rect x="140" y="660" width="200" height="6" rx="3" fill="#E8E8E8"/>
+<rect x="140" y="660" width="180" height="6" rx="3" fill="#0077CC"/>
+<text x="40" y="690" font-size="11" fill="#777777" font-style="italic">▸ Trading the breadth of scientific exploration for speed of output could hollow out</text>
+<line x1="40" y1="703" x2="760" y2="703" stroke="#E8E8E8" stroke-width="1"/>
+<text x="40" y="745" font-size="11" fill="#AAAAAA" font-weight="700">04</text>
+<rect x="64" y="729" width="64" height="20" rx="3" fill="#00897B"/>
+<text x="96" y="743" text-anchor="middle" font-size="10" fill="white" font-weight="700">TECH</text>
+<text x="144" y="743" font-size="14" fill="#333333">  🔓</text>
+<text x="40" y="771" font-size="17" fill="#111111" font-weight="700">Critical Auth Bypass Lets Hackers Flash Motorola</text>
+<text x="40" y="793" font-size="17" fill="#111111" font-weight="700">Routers</text>
+<text x="40" y="821" font-size="12" fill="#555555">A security researcher disclosed an unauthenticated remote code execution</text>
+<text x="40" y="838" font-size="12" fill="#555555">vulnerability in Motorola's MR2600 Wi-Fi 5 router, allowing any attacker on the LAN</text>
+<text x="40" y="865" font-size="10" fill="#888888" letter-spacing="1">IMPACT</text>
+<text x="100" y="865" font-size="10" fill="#00897B" font-weight="700">8/10</text>
+<rect x="140" y="855" width="200" height="6" rx="3" fill="#E8E8E8"/>
+<rect x="140" y="855" width="160" height="6" rx="3" fill="#00897B"/>
+<text x="40" y="885" font-size="11" fill="#777777" font-style="italic">▸ Home routers are the gateway to every device on a network, and a firmware-level</text>
+<line x1="40" y1="898" x2="760" y2="898" stroke="#E8E8E8" stroke-width="1"/>
+<text x="40" y="940" font-size="11" fill="#AAAAAA" font-weight="700">05</text>
+<rect x="64" y="924" width="64" height="20" rx="3" fill="#6C47FF"/>
+<text x="96" y="938" text-anchor="middle" font-size="10" fill="white" font-weight="700">AI</text>
+<text x="144" y="938" font-size="14" fill="#333333">  📐</text>
+<text x="40" y="966" font-size="17" fill="#111111" font-weight="700">AI Proves Theorem as U.S. Cuts Math Funding</text>
+<text x="40" y="1016" font-size="12" fill="#555555">An arXiv essay argues the U.S.</text>
+<text x="40" y="1060" font-size="10" fill="#888888" letter-spacing="1">IMPACT</text>
+<text x="100" y="1060" font-size="10" fill="#6C47FF" font-weight="700">9/10</text>
+<rect x="140" y="1050" width="200" height="6" rx="3" fill="#E8E8E8"/>
+<rect x="140" y="1050" width="180" height="6" rx="3" fill="#6C47FF"/>
+<text x="40" y="1080" font-size="11" fill="#777777" font-style="italic">▸ If humans lose the capacity to verify or challenge AI mathematical reasoning,</text>
+<line x1="40" y1="1093" x2="760" y2="1093" stroke="#E8E8E8" stroke-width="1"/>
+<text x="40" y="1135" font-size="11" fill="#AAAAAA" font-weight="700">06</text>
+<rect x="64" y="1119" width="64" height="20" rx="3" fill="#00897B"/>
+<text x="96" y="1133" text-anchor="middle" font-size="10" fill="white" font-weight="700">TECH</text>
+<text x="144" y="1133" font-size="14" fill="#333333">  💻</text>
+<text x="40" y="1161" font-size="17" fill="#111111" font-weight="700">Ghostty Terminal Now Runs Inside Emacs</text>
+<text x="40" y="1211" font-size="12" fill="#555555">A new Emacs package called Ghostel.el embeds the Ghostty terminal emulator's</text>
+<text x="40" y="1228" font-size="12" fill="#555555">GPU-accelerated rendering engine (libghostty) directly inside Emacs, offering</text>
+<text x="40" y="1255" font-size="10" fill="#888888" letter-spacing="1">IMPACT</text>
+<text x="100" y="1255" font-size="10" fill="#00897B" font-weight="700">6/10</text>
+<rect x="140" y="1245" width="200" height="6" rx="3" fill="#E8E8E8"/>
+<rect x="140" y="1245" width="120" height="6" rx="3" fill="#00897B"/>
+<text x="40" y="1275" font-size="11" fill="#777777" font-style="italic">▸ Embedding high-performance terminal emulation in editors like Emacs bridges the gap</text>
+<line x1="40" y1="1288" x2="760" y2="1288" stroke="#E8E8E8" stroke-width="1"/>
+<text x="400" y="1318" text-anchor="middle" font-size="11" fill="#AAAAAA">Generated by AI · July 12, 2026</text>
+<text x="400" y="1336" text-anchor="middle" font-size="10" fill="#BBBBBB">Sources: Hacker News · IEEE Spectrum · arXiv · TechCrunch</text>
+<rect x="0" y="1375" width="800" height="3" fill="#111111"/>
+</svg>

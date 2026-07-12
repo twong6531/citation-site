@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Briefing — July 12, 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a22;
+      --surface2: #22222e;
+      --border: #2e2e3e;
+      --text: #e8e8f0;
+      --text-dim: #8888aa;
+      --accent: #7C6AFF;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .top-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #7C6AFF, #26A69A, #FF7043);
+    }
+    .site-header {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header a { color: var(--text-dim); text-decoration: none; font-size: 13px; }
+    .site-header a:hover { color: var(--accent); }
+    .main-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .page-hero {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-date {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .hero-topic {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-topic span { color: var(--accent); }
+    
+    /* SECTION A — Visual */
+    .visual-section {
+      padding: 40px 0;
+    }
+    .no-image .visual-context-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 20px;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .visual-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .imagen-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .imagen-img {
+      width: 100%;
+      display: block;
+    }
+    .imagen-caption {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .imagen-note {
+      font-size: 12px;
+      color: #555577;
+      font-style: italic;
+      margin-top: 8px;
+    }
+    .visual-context-text {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    
+    /* SECTION B — Stories */
+    .stories-header {
+      margin-bottom: 32px;
+    }
+    .stories-header h2 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .story-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .story-card:hover { border-color: #4e4e6e; }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .card-num {
+      font-size: 12px;
+      color: #444466;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .cat-pill {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 3px;
+      color: white;
+    }
+    .impact-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+    .impact-label strong { color: var(--text); }
+    .impact-bar-bg {
+      width: 80px;
+      height: 5px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .impact-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+    .story-headline {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .story-summary {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .story-bullets {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+    .story-bullets li {
+      font-size: 13px;
+      color: #9999bb;
+      padding: 6px 0 6px 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .story-bullets li:last-child { border-bottom: none; }
+    .story-bullets li::before {
+      content: "·";
+      position: absolute;
+      left: 6px;
+      color: var(--accent);
+      font-weight: 900;
+    }
+    .why-matters {
+      font-size: 13px;
+      color: #7777aa;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .why-matters em {
+      font-style: normal;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .main-topic {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+      border: 1px solid currentColor;
+      opacity: 0.7;
+    }
+    
+    /* SVG Download */
+    .infographic-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 20px;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 13px;
+      margin: 32px 0;
+      transition: all 0.2s;
+    }
+    .infographic-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    /* Footer */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0 0;
+      margin-top: 40px;
+    }
+    .page-footer p {
+      font-size: 12px;
+      color: #444466;
+      margin-bottom: 6px;
+    }
+    .page-footer a {
+      color: #555577;
+      text-decoration: none;
+    }
+    .page-footer a:hover { color: var(--accent); }
+    .bottom-bar {
+      height: 3px;
+      background: #1a1a22;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      .hero-topic { font-size: 26px; }
+      .story-headline { font-size: 17px; }
+      .card-header { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+<div class="top-bar"></div>
+
+<header class="site-header">
+  <a href="index.html">← Back to Archive</a>
+</header>
+
+<main class="main-container">
+  <div class="page-hero">
+    <div class="hero-label">Daily Briefing</div>
+    <div class="hero-date">July 12, 2026</div>
+    <h1 class="hero-topic"><span>Today:</span> AI Reshaping Human Knowledge</h1>
+  </div>
+
+  
+  <section class="visual-section no-image">
+    <div class="section-label">TODAY'S VISUAL SUBJECT</div>
+    <h2 class="visual-title">Fiber Optic Cable Bundle Cross-Section</h2>
+    <div class="visual-context-box">
+      <p class="visual-context-text">A transverse cross-section of a fiber optic trunk cable cut cleanly to expose hundreds of individual glass fibers in color-coded sub-bundles. Each fiber is roughly 125 micrometers in diameter with a protective acrylate coating over the pure silica core and cladding. The bundles are wrapped in Kevlar tensile reinforcement and an outer polyethylene jacket. The cut ends glow with internal light against a pure white background, revealing geometric concentric rings of fiber groupings — a physical visualization of the internet's nervous system that Vint Cerf's TCP/IP protocols animate.</p>
+      <p class="imagen-note">Editorial illustration generation unavailable today</p>
+    </div>
+  </section>
+  <hr class="section-divider"/>
+
+  <div class="stories-header">
+    <div class="section-label">News Analysis</div>
+    <h2>Today's 6 Most Impactful Stories</h2>
+  </div>
+
+  
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">01</span>
+        <span class="cat-pill" style="background:#7C6AFF">AI</span>
+        <span class="impact-label">Impact <strong>9/10</strong></span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%;background:#7C6AFF"></div></div>
+      </div>
+      <h2 class="story-headline">🧲 Math Legend Tao Embraces AI Coding Agents</h2>
+      <p class="story-summary">Fields Medal winner Terence Tao published a blog post exploring his use of modern AI coding agents to build and update mathematical applications, describing the experience as transformative. His post — which garnered 322 HN points — signals that even elite mathematicians are integrating AI tools into core research workflows.</p>
+      <ul class="story-bullets"><li>Tao is widely considered the greatest living mathematician, with a Fields Medal and Breakthrough Prize</li>
+<li>AI coding agents enabled non-expert coding tasks in days that would have taken weeks manually</li>
+<li>The post prompted 200+ HN comments debating AI's role in scientific discovery and reproducibility</li></ul>
+      <p class="why-matters"><em>Why it matters:</em> When a Fields Medal winner publicly endorses AI coding agents for mathematical research, it accelerates mainstream adoption across the sciences.</p>
+      <div class="main-topic" style="border-color:#7C6AFF;color:#7C6AFF">AI in Research</div>
+    </div>
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">02</span>
+        <span class="cat-pill" style="background:#26A69A">Tech</span>
+        <span class="impact-label">Impact <strong>8/10</strong></span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%;background:#26A69A"></div></div>
+      </div>
+      <h2 class="story-headline">🌐 Internet Pioneer Vint Cerf Retires from Google</h2>
+      <p class="story-summary">Vint Cerf, who co-designed the TCP/IP protocol suite in 1974 that the modern internet runs on, has retired from Google after 18 years as its Chief Internet Evangelist. At 83, Cerf's departure marks the end of an era for the generation that physically built the internet's foundations.</p>
+      <ul class="story-bullets"><li>Cerf co-invented TCP/IP with Bob Kahn in 1974, earning them both the ACM Turing Award in 2004</li>
+<li>He served as Google's Chief Internet Evangelist from 2005 to 2026 — nearly two decades</li>
+<li>TCP/IP carries over 5 exabytes of data daily across a global network of 5 billion users</li></ul>
+      <p class="why-matters"><em>Why it matters:</em> The retirement of one of the last living architects of the internet's core protocols closes a historic chapter in how humanity connected itself.</p>
+      <div class="main-topic" style="border-color:#26A69A;color:#26A69A">Internet Legacy</div>
+    </div>
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">03</span>
+        <span class="cat-pill" style="background:#2299EE">Science</span>
+        <span class="impact-label">Impact <strong>9/10</strong></span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%;background:#2299EE"></div></div>
+      </div>
+      <h2 class="story-headline">🔬 AI Tools Speed Science but Kill Idea Diversity</h2>
+      <p class="story-summary">A new IEEE Spectrum analysis finds that AI research tools dramatically boost individual career output but simultaneously narrow the range of scientific ideas being explored across entire fields. Studies across biology, chemistry, and materials science show AI-assisted researchers converge on similar hypotheses, reducing the breadth of discovery.</p>
+      <ul class="story-bullets"><li>AI-assisted literature review and hypothesis generation showed 2–4x speed improvements in studied cohorts</li>
+<li>Diversity of research directions measurably declined as more labs adopted AI suggestion tools</li>
+<li>The pattern echoes filter-bubble effects: individual productivity rises while collective exploration shrinks</li></ul>
+      <p class="why-matters"><em>Why it matters:</em> Trading the breadth of scientific exploration for speed of output could hollow out the long-term innovation pipeline that powers medicine, materials, and technology.</p>
+      <div class="main-topic" style="border-color:#2299EE;color:#2299EE">AI Research Impact</div>
+    </div>
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">04</span>
+        <span class="cat-pill" style="background:#26A69A">Tech</span>
+        <span class="impact-label">Impact <strong>8/10</strong></span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%;background:#26A69A"></div></div>
+      </div>
+      <h2 class="story-headline">🔓 Critical Auth Bypass Lets Hackers Flash Motorola Routers</h2>
+      <p class="story-summary">A security researcher disclosed an unauthenticated remote code execution vulnerability in Motorola's MR2600 Wi-Fi 5 router, allowing any attacker on the LAN to flash arbitrary firmware without credentials. The flaw stems from a logic error: the router checks allowlisted paths with substring matching but checks denylisted paths with exact equality, making the bypass trivial.</p>
+      <ul class="story-bullets"><li>Motorola MR2600 firmware upload and flash endpoints both lack proper authentication due to URI comparison bug</li>
+<li>No cryptographic signing is required — any valid SEAMA-format firmware image can be flashed</li>
+<li>Attack appends '?Login.html' to bypass auth: substring check passes, exact-match block never fires</li></ul>
+      <p class="why-matters"><em>Why it matters:</em> Home routers are the gateway to every device on a network, and a firmware-level takeover gives attackers persistent, undetectable control of all traffic.</p>
+      <div class="main-topic" style="border-color:#26A69A;color:#26A69A">Router Security</div>
+    </div>
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">05</span>
+        <span class="cat-pill" style="background:#7C6AFF">AI</span>
+        <span class="impact-label">Impact <strong>9/10</strong></span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%;background:#7C6AFF"></div></div>
+      </div>
+      <h2 class="story-headline">📐 AI Proves Theorem as U.S. Cuts Math Funding</h2>
+      <p class="story-summary">An arXiv essay argues the U.S. is making a generational strategic error by defunding mathematical education at the same moment AI systems are producing research-level mathematics, including a May 2026 disproof of a longstanding Erdős conjecture on the planar unit distance problem. The paper calls for treating mathematical human capacity as strategic infrastructure on par with semiconductor capability.</p>
+      <ul class="story-bullets"><li>An AI system disproved Paul Erdős's planar unit distance conjecture in May 2026, a problem open for decades</li>
+<li>Recent U.S. policy changes have disrupted federal support for mathematical sciences institutions</li>
+<li>The paper proposes AI systems expose decision-critical reasoning in machine-checkable formal proof format</li></ul>
+      <p class="why-matters"><em>Why it matters:</em> If humans lose the capacity to verify or challenge AI mathematical reasoning, consequential decisions resting on that reasoning become effectively unauditable.</p>
+      <div class="main-topic" style="border-color:#7C6AFF;color:#7C6AFF">AI vs Human Expertise</div>
+    </div>
+    <div class="story-card">
+      <div class="card-header">
+        <span class="card-num">06</span>
+        <span class="cat-pill" style="background:#26A69A">Tech</span>
+        <span class="impact-label">Impact <strong>6/10</strong></span>
+        <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:60%;background:#26A69A"></div></div>
+      </div>
+      <h2 class="story-headline">💻 Ghostty Terminal Now Runs Inside Emacs</h2>
+      <p class="story-summary">A new Emacs package called Ghostel.el embeds the Ghostty terminal emulator's GPU-accelerated rendering engine (libghostty) directly inside Emacs, offering performance that traditional Emacs terminal modes like term-mode and vterm cannot match. The project drew 195 HN points from the Emacs community.</p>
+      <ul class="story-bullets"><li>Ghostty is a GPU-accelerated terminal written in Zig, released in 2024 and gaining rapid adoption</li>
+<li>libghostty exposes Ghostty's rendering engine as an embeddable library for third-party applications</li>
+<li>Ghostel.el is the first major application of libghostty outside the Ghostty project itself</li></ul>
+      <p class="why-matters"><em>Why it matters:</em> Embedding high-performance terminal emulation in editors like Emacs bridges the gap between dedicated terminal apps and integrated development environments.</p>
+      <div class="main-topic" style="border-color:#26A69A;color:#26A69A">Terminal Innovation</div>
+    </div>
+
+  <a href="infographic-2026-07-12.svg" download class="infographic-link">
+    ↓ Download Text Infographic (SVG)
+  </a>
+
+  <div class="page-footer">
+    <p>Sources: Hacker News · IEEE Spectrum · arXiv · TechCrunch · Google News</p>
+    <p>Generated autonomously by AI · July 12, 2026</p>
+    <p><a href="index.html">← All Daily Briefings</a></p>
+  </div>
+</main>
+<div class="bottom-bar"></div>
+</body>
+</html>
