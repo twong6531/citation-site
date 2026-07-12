@@ -1,0 +1,103 @@
+{
+  "date": "2026-07-12",
+  "generated_at": "2026-07-12T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "infographic",
+      "topic": "World Cup 2026 Los Angeles Semifinals Transit Operations",
+      "angle": "How LA Metro is moving 100,000+ fans to SoFi Stadium for the July 13-14 semifinals — route maps, headway changes, fan zone connections, and ridership surge vs. normal ops",
+      "rationale": "DEADLINE TODAY — Semifinals are July 13-14 at SoFi. Publishing by tonight is the last viable window for this infographic to be relevant. Already queued and missed twice. Transit-World Cup intersection is this site's niche sweet spot.",
+      "target_length": "medium",
+      "slug": "world-cup-2026-la-semifinals-transit-infographic",
+      "output_path": "docs/infographic-2026-07-12.svg"
+    },
+    {
+      "rank": 2,
+      "type": "research",
+      "topic": "Resilience-as-a-Service framework for urban transit disruptions",
+      "angle": "New arXiv paper proposes RaaS decision-support framework for coordinated disruption response in interdependent urban transit systems — contrast with LA Metro's real-world July 4/World Cup stress tests",
+      "rationale": "Fresh arXiv signal from today's scan. Directly niche-relevant: transit resilience + AI framework + real-world ops. No overlap with covered topics. Strong research-brief candidate.",
+      "target_length": "medium",
+      "slug": "transit-resilience-as-a-service-framework-2026",
+      "output_path": "drafts/articles/transit-resilience-as-a-service-framework-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "explainer",
+      "topic": "Gemini Code Assist is Shutting Down July 17 — What Transit Tech Teams Must Do Now",
+      "angle": "Five-day countdown: which transit agencies use Gemini Code Assist for operations, what the migration path looks like, and what the consolidation of AI dev tools means for public-sector transit tech",
+      "rationale": "T-5 days to July 17 deadline. Has been queued every day since July 3 and never produced. Today is one of the last viable windows before it becomes a retrospective instead of an actionable alert. Article agent failure needs manual override — briefing agent can produce this as HTML directly.",
+      "target_length": "medium",
+      "slug": "gemini-code-assist-shutdown-transit-tech-2026",
+      "output_path": "drafts/articles/gemini-code-assist-shutdown-transit-tech-2026.html"
+    },
+    {
+      "rank": 4,
+      "type": "video_script",
+      "topic": "QC: ai-agents-transit-security-leak-risk-script-2026.md",
+      "angle": "Run QC on the existing draft at drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md — pending since 2026-07-08 (Day 4). QuadRF WiFi-sensing story (246pts HN July 11) amplifies the transit-security angle.",
+      "rationale": "This is an action item, not new production. Script has been waiting for QC for 4 days. QuadRF news hook still fresh. Must be QC'd before it can be published.",
+      "target_length": "short",
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "output_path": "drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md"
+    },
+    {
+      "rank": 5,
+      "type": "article",
+      "topic": "Apple vs OpenAI Trade Secret Lawsuit — Implications for Transit AI Teams",
+      "angle": "Breakdown of Apple's suit against ex-employees who joined OpenAI, what AI talent poaching means for transit tech vendors, and how agencies vetting AI procurement should think about IP risk",
+      "rationale": "Was 1261pts on HN July 11 (yesterday). 24-48h first-mover window is now closing but story is still hot. Transit angle: AI talent war directly affects the vendors transit agencies procure from. Retry from yesterday's queue — article agent must produce this today or story loses timeliness.",
+      "target_length": "long",
+      "slug": "apple-openai-lawsuit-transit-ai-teams-2026",
+      "output_path": "drafts/articles/apple-openai-lawsuit-transit-ai-teams-2026.html"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "world-cup-2026-la-semifinals-transit-infographic",
+      "retry_number": 3,
+      "original_date": "2026-07-11",
+      "note": "Must produce TODAY — window closes after July 12"
+    },
+    {
+      "slug": "apple-openai-lawsuit-transit-ai-teams-2026",
+      "retry_number": 2,
+      "original_date": "2026-07-11",
+      "note": "24-48h window expiring today"
+    },
+    {
+      "slug": "gemini-code-assist-shutdown-transit-tech-2026",
+      "retry_number": 10,
+      "original_date": "2026-07-03",
+      "note": "T-5 days to July 17 deadline"
+    }
+  ],
+  "skip_topics": [
+    "NYC congestion pricing ridership gains (covered 2026-07-05, 2026-07-10)",
+    "ChatPlanner LLM routing (covered 2026-07-05, 2026-07-10)",
+    "QuadRF drone WiFi sensing (covered 2026-07-10, 2026-07-11)",
+    "Brightline West bankruptcy (covered 2026-07-10)",
+    "Metro LA vs Burbank lawsuit (covered 2026-07-10)",
+    "Vermont Ave BRT court win (covered 2026-07-10)",
+    "Apple sues OpenAI trade secret — framing carried forward but reuse angle must be transit-specific",
+    "AV sharing economy arXiv (covered 2026-07-10)",
+    "Slime mold transit optimization (covered 2026-06-09)",
+    "Virginia geolocation data ban (covered 2026-07-04)"
+  ],
+  "trend_signals": [
+    "Mesh LLM distributed AI computing on iroh (293pts HN) — decentralized AI inference signal; transit edge-compute angle possible",
+    "Nvidia/CoreWeave/Nebius circular GPU financing (307pts HN) — AI infrastructure economics; transit tech vendor GPU dependency angle",
+    "arXiv: Resilience-as-a-Service framework for coordinated disruption response in interdependent urban transit systems — direct transit research signal",
+    "arXiv: Hierarchical Forecast Reconciliation for Urban Rail Transit Demand Prediction under Operational Disruptions — direct transit research signal",
+    "arXiv: Implementation-Based Incentive Design for Autonomous Mobility-on-Demand and Transit Systems — AMoD/transit competition angle"
+  ],
+  "pipeline_alerts": [
+    "CRITICAL DAY 37: publishing blocked — approved.json stale (lists 5 scripts published 2026-07-05, no new approvals added). Human must update approved.json.",
+    "CRITICAL DAY 36+: article agent has NEVER produced a file in drafts/articles/ across entire site history. 0% article production rate. Manual diagnostic required.",
+    "QC PENDING DAY 4: ai-agents-transit-security-leak-risk-script-2026.md — QC must run today.",
+    "DEADLINE ALERT: Gemini Code Assist shutdown July 17 — T-5 days. Article must publish by July 16 to remain actionable.",
+    "TIMELINESS DEADLINE: World Cup LA semis July 13-14 — infographic must publish TODAY or miss window entirely.",
+    "GOOGLE NEWS RSS FEED EMPTY: 11+ consecutive days. Persistent access issue — manual check of feed URL required."
+  ]
+}

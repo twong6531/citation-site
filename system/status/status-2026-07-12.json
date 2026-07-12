@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-12",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "transit_brief": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "blocked_approved_json_stale"
+  },
+  "queue_items": 5,
+  "published_today": [],
+  "missing_today": [],
+  "alerts": [
+    "DEADLINE CRITICAL: World Cup LA semifinals July 13-14 at SoFi — infographic must publish TODAY or window closes permanently. Ranked #1 in queue.",
+    "GEMINI CODE ASSIST T-5 DAYS: July 17 shutdown deadline. Explainer must publish by July 16. Ranked #3 in queue.",
+    "PUBLISHING BLOCKED (Day 37): approved.json lists 5 scripts published 2026-07-05 with no new additions. Human must update approved.json to unblock publishing pipeline.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 36+): drafts/articles/ has NEVER produced a file in 36+ consecutive days. 0% article production rate across entire site history. Structural pipeline failure.",
+    "VIDEO SCRIPT QC PENDING (Day 4): ai-agents-transit-security-leak-risk-script-2026.md produced 2026-07-08, QC still not run. Ranked #4 today.",
+    "TRANSIT BRIEF MISSED (2026-07-11): docs/transit-2026-07-11.html not found in docs/ — transit brief not produced yesterday. Pattern break.",
+    "GOOGLE NEWS RSS FEED EMPTY (11+ days): Persistent access/parsing failure. Manual check of feed URL required.",
+    "NEW ARXIV SIGNALS: Resilience-as-a-Service urban transit disruption framework + Hierarchical forecast reconciliation for urban rail demand — both queued for research brief.",
+    "TREND SIGNALS TODAY: Mesh LLM distributed AI (293pts HN), Nvidia GPU circular financing (307pts HN), arXiv transit resilience RaaS, arXiv urban rail demand forecasting, arXiv AMoD/transit incentive design."
+  ]
+}
