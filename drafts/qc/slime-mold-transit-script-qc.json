@@ -1,32 +1,31 @@
 {
   "file": "slime-mold-transit-script.md",
   "type": "script",
-  "reviewed_at": "2026-07-09T17:43:11Z",
+  "reviewed_at": "2026-07-13T17:55:00Z",
   "verdict": "REVISE",
-  "score": 72,
+  "score": 70,
   "checks_passed": [
-    "Reel script exists",
-    "YouTube script exists",
-    "Hook in first 3 lines — 'A single-celled organism just solved the transit problem US cities have been failing at for 70 years.'",
+    "Reel script exists AND is under 200 words: 165 words measured (down from 245–261 in prior QC). REVISION SUCCESSFULLY APPLIED (commit b4077a8).",
+    "Scene 3 time window fixed: now 21 words in the 35–50s slot. Prior QC flagged 87 words in same slot. REVISION SUCCESSFULLY APPLIED.",
+    "YouTube script exists AND is within 600–1,200 words: estimated 1,180–1,200 spoken words (~7:50 min runtime). Acceptable.",
+    "Hook in first 3 lines — 'A single-celled organism just solved the transit problem US cities have been failing at for 70 years.' Strong, concrete, no 'Did you know'.",
     "Hook does not start with 'Did you know'",
     "No AI tells found",
     "CTA present in reel ('Full breakdown...link in bio')",
     "CTA present in YouTube ('Subscribe for weekly transit and urban infrastructure analysis' + link)",
-    "Visual notes present and detailed in reel (time-lapse slime mold, animated simulation, US suburban map with red highlights)",
-    "Source quality is STRONG: arXiv:2606.06189 (Burke et al. 2026) and arXiv:2606.07486 (Xiong et al. 2026) are primary academic sources; also cites Tero et al. Science 2010 (original slime mold/Tokyo paper) and APTA data",
-    "Claims sourced inline throughout both reel and YouTube",
-    "YouTube honestly covers real-world limitations (simulation only, regulatory barriers, ADA compliance requirements, passenger predictability concerns)",
-    "No duplicate: topic not published in docs/ within 14 days",
-    "No placeholder text found",
-    "Highest source quality of all scripts in today's batch — arXiv preprints, a peer-reviewed Science paper, and APTA institutional data"
+    "Visual notes present and detailed in reel (time-lapse slime mold, animated simulation, US suburban map with red highlights, side-by-side comparison)",
+    "Source quality is strong: arXiv:2606.06189 (Burke et al. 2026), arXiv:2606.07486 (Xiong et al. 2026), Tero et al. Science 2010, APTA data",
+    "Major claims sourced inline throughout both reel and YouTube",
+    "Suburban density / transit viability threshold stat now has inline source attribution: '[Source: APTA Transit Score methodology / Congress for New Urbanism transit threshold research]'. REVISION SUCCESSFULLY APPLIED.",
+    "YouTube honestly covers real-world constraints (simulation limitations, regulatory friction, ADA compliance requirements, passenger predictability concerns)",
+    "No duplicate: topic not published in docs/ within 14 days"
   ],
   "checks_failed": [
-    "Reel word count OVER 200: estimated 245-261 spoken words (Hook ~17w, Scene 1 ~44w, Scene 2 ~74-88w, Scene 3 ~87w, CTA ~23w). Scene 3 alone runs ~87 words in the 35-50s window (15 seconds airtime at ~40 wpm). This reel would run approximately 1:40 at 150 wpm — nearly double the 60-second format.",
-    "Scene 3 of reel exceeds its time window: the 35-50s slot (15 seconds of airtime) contains ~87 words. Even at 175 wpm this segment runs ~30 seconds — double the allotted time.",
-    "On-screen text statistics in YouTube lack inline citations: 'US suburban density: 3-8 housing units/acre. Transit viability threshold: ~30' appears as on-screen text without a cited source. Though the viability threshold figure is common in urban planning literature, it needs attribution.",
-    "UNCHANGED SINCE PRIOR QC (2026-06-11): Script was flagged for the same reel word count issue and has not been revised. This is the script most ready for publication — only the reel needs a trim."
+    "PLACEHOLDER TEXT — '[site URL]' on YouTube outro line 175: 'ON SCREEN TEXT: \"[site URL] — Full paper breakdown + source links\"'. This is a production placeholder. Script cannot publish with this unresolved.",
+    "STALE TIMELINESS LANGUAGE — 'published this week on arXiv' appears 4 times in the script (reel Scene 2 line 31; YouTube intro line 83; OPENPATH reference line 149; YouTube description line 197). The arXiv paper (arXiv:2606.06189) was published approximately June 6–8, 2026. Today is July 13, 2026 — the paper is 38 days old. Publishing 'published this week' is factually incorrect and would undermine credibility with an audience that can verify publication dates.",
+    "UNSOURCED STATISTIC — 'The result is 230 million people who need a car to function in daily life' in the YouTube outro has no inline source. The figure may be estimable from Census/FHWA data but is not cited. Low severity but should be addressed."
   ],
-  "revision_notes": "REEL: Scene 3 is the only significant problem. Current Scene 3: ~87 words covering wheelchair users, rural Americans, density issues, and the research implications. Compress to: 'For car-dependent suburbs — and for wheelchair users who can't reach a fixed stop — this is the transit model that actually works.' (~22w) This preserves the equity angle in one sharp sentence. Also trim Scene 2 by ~15 words — cut 'No central dispatcher. No fixed stops. Just buses talking to each other, the way slime mold cells do.' from the voiceover (the simulation visual carries it). TARGET: HOOK 17w, Scene 1 40w, Scene 2 60w, Scene 3 25w, CTA 23w = ~165w total. NOTE: This is the strongest script in today's batch on content quality. The sole revision is reel pacing — the YouTube version requires no changes. Once the reel is trimmed, this script should PASS on next QC. SOURCE: Add citation for suburban density / transit viability threshold figure — cite APTA Transit Score methodology, or the Congress for New Urbanism transit threshold literature.",
+  "revision_notes": "Script is the strongest in the backlog on content quality. Two revisions are required before publish: (1) PLACEHOLDER: Replace '[site URL]' on line 175 with the actual site URL or channel URL. This is a one-word fix. (2) TIMELINESS: Replace all instances of 'published this week on arXiv' with 'published on arXiv in June 2026' or 'released on arXiv this summer'. Four occurrences: reel Scene 2 VO, YouTube intro, OPENPATH paragraph, YouTube description. Each is a 4-word swap. Also update 'A new paper published this week on arXiv built a bus transit system...' in the description to 'A June 2026 paper on arXiv built a bus transit system...'. (3) MINOR SOURCE: Add source for '230 million people who need a car' — US Census ACS commuting data, or FHWA vehicle availability data. Once these three items are addressed (estimated 10 minutes of editing), this script should PASS QC. The YouTube script is otherwise complete and publication-ready on content.",
   "fail_reason": null,
   "approved_for_publish": false
 }

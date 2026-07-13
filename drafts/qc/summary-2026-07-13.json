@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-13",
+  "total_reviewed": 2,
+  "passed": 0,
+  "revise": 2,
+  "failed": 0,
+  "ready_to_publish": [],
+  "needs_revision": [
+    {
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "score": 52,
+      "critical_note": "FOURTH CYCLE NO REVISION: reel 208w (over 200), YouTube ~1,540w (over 1,200), vague stat sources. Escalation issued — next cycle scores below 50 = FAIL if unresolved.",
+      "revision_effort": "~30–45 minutes"
+    },
+    {
+      "slug": "slime-mold-transit-script",
+      "score": 70,
+      "critical_note": "Partial revisions applied today (reel trimmed to 165w, citation added). Remaining: replace '[site URL]' placeholder, update 4x 'published this week' to 'June 2026'. Minor: source for 230M stat.",
+      "revision_effort": "~10–15 minutes"
+    }
+  ],
+  "blocked": [],
+  "context": {
+    "articles_reviewed": 0,
+    "articles_note": "No drafts/articles/ directory exists. Article pipeline has produced 0 files in 37+ consecutive days per status alerts.",
+    "infographics_reviewed": 0,
+    "infographics_note": "No drafts/infographics/ directory exists.",
+    "scripts_reviewed": 2,
+    "scripts_note": "Only files modified today (Jul 13) reviewed: ai-agents and slime-mold. 9 older scripts in drafts/scripts/ have existing QC reports from prior cycles and were not re-reviewed today.",
+    "pipeline_health": "Publishing is blocked on approved.json not being updated (last updated 2026-06-26). QC completion alone does not unblock publishing — human must add approved slugs."
+  }
+}
