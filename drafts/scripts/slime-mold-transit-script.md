@@ -29,8 +29,7 @@
 **[15–35s] SCENE 2 — The Data Point**  
 **VISUAL:** Animated simulation — dots representing buses moving fluidly in response to passenger locations, self-organizing into efficient pickup clusters, compared to a fixed-route bus missing clusters of waiting passengers.  
 **VOICEOVER:** The study — published this week on arXiv — built a bus system where vehicles cooperatively bid for passengers in real time, forming routes through emergent behavior rather than a central schedule. [Source: arXiv:2606.06189, Burke et al., 2026]  
-Tested across urban, suburban, and semi-rural environments — everywhere that fixed-route transit fails — it delivered 28 to 101% more passengers per run than conventional bus service.  
-No central dispatcher. No fixed stops. Just buses talking to each other, the way slime mold cells do.
+Tested across urban, suburban, and semi-rural environments — everywhere that fixed-route transit fails — it delivered 28 to 101% more passengers per run than conventional bus service.
 
 **ON SCREEN TEXT:** "Results: 28–101% improvement. Every environment tested."
 
@@ -38,8 +37,7 @@ No central dispatcher. No fixed stops. Just buses talking to each other, the way
 
 **[35–50s] SCENE 3 — Why It Matters**  
 **VISUAL:** Map of US suburban sprawl — vast areas with no transit coverage highlighted in red. Counter-cut: the slime mold network filling those same areas with dynamic routes.  
-**VOICEOVER:** The US has a transit coverage problem that fixed routes can't solve. Most suburbs were built at densities too low for scheduled service to be financially viable. Swarm transit changes that math — because it doesn't need the density. It routes to wherever the demand actually is, right now.  
-For wheelchair users, for rural Americans, for anyone who's ever watched a bus drive past with two people on it while 20 people need a ride on the next block — this is the research that changes what's possible.
+**VOICEOVER:** For car-dependent suburbs — and for wheelchair users who can't reach a fixed stop — this is the transit model that actually works.
 
 **ON SCREEN TEXT:** "The problem: suburbs built too sparse for scheduled transit. The fix: transit that routes like a living organism."
 
@@ -84,7 +82,7 @@ But American suburbs — where most Americans live — were built at densities t
 
 The slime mold paper, published this week on arXiv, attacks that specific problem. Not with more money, not with bigger buses — with a fundamentally different architecture.
 
-**ON SCREEN TEXT:** "US suburban density: 3–8 housing units/acre. Transit viability threshold: ~30. The math has never worked."
+**ON SCREEN TEXT:** "US suburban density: 3–8 housing units/acre. Transit viability threshold: ~30. [Source: APTA Transit Score methodology / Congress for New Urbanism transit threshold research]"
 
 ---
 
