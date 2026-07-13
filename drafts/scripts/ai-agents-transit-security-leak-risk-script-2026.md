@@ -34,7 +34,7 @@
 - "Fare system integrations"  
 - "All written with AI assist. All potentially exposed."  
 
-**VOICEOVER:** Transit agencies are now using AI coding tools to build and maintain everything — GTFS feed processors, automated scheduling, mobility-as-a-service APIs. But 75% of business employees are using generative AI [Source: multiple industry surveys, 2024], and only 38% of organizations are actually addressing the risks. [Source: Cybersecurity industry benchmarks, 2024] Your agency's infrastructure code is sitting inside tools that stream your keystrokes to cloud servers.
+**VOICEOVER:** Transit agencies are now using AI coding tools to build and maintain everything — GTFS feed processors, automated scheduling, mobility-as-a-service APIs. Your agency's infrastructure code is sitting inside tools that stream your keystrokes to cloud servers.
 
 **B-ROLL SUGGESTION:** Animated graphic of a subway map network with data packets flowing outward — some highlighted red.
 
@@ -42,7 +42,7 @@
 
 **[35–50s] SCENE 3 — The Real Implication**  
 **ON SCREEN TEXT:** "No procurement contract covers this. No law requires disclosure."  
-**VOICEOVER:** Here's what makes this different from a normal data breach: transit agencies don't know what they agreed to when they adopted these tools. The UK's National Cyber Security Centre has stated — on record — that there are *no foolproof mitigations* for prompt injection attacks. [Source: UK NCSC, 2025] So who owns the prompts? Who owns the AI's outputs? And if an attacker extracts your routing algorithm, does your agency even know it happened?
+**VOICEOVER:** Here's what's different from a normal breach — transit agencies don't know what they agreed to. The UK's own cybersecurity agency says there are no foolproof mitigations for prompt injection. And if an attack occurs, your agency would never know it happened.
 
 **VISUAL NOTE:** Graphic — contract document with key clauses crossed out, replaced with "?"
 
@@ -137,23 +137,17 @@ This is a fundamental architectural vulnerability in every current AI coding too
 **VISUAL:** Breakdown graphic — four risk categories with icons.
 
 **VOICEOVER:**  
-So what's actually at risk when a transit agency uses these tools? Let's get specific.
+So what's actually at risk? Four things.
 
-**First: GTFS data pipelines.**  
-The General Transit Feed Specification is the open format that powers virtually every transit app in the world — 55+ countries, hundreds of agencies. [Source: Wikipedia / GTFS] Transit developers write and maintain code that processes these feeds, which contain stop locations, schedules, route geometries, and fare rules. When that code is written inside an AI tool, the tool has access to the codebase. If that codebase connects to internal APIs or databases with live operational data, an attacker who can manipulate the AI's behavior gains a window into real-time system operations.
+**GTFS data pipelines** — the open feed format powering transit apps in 55+ countries. [Source: Wikipedia / GTFS] If the code processing these feeds connects to internal APIs with live operational data, a manipulated AI tool becomes a window into real-time system operations.
 
-**VISUAL:** Animated subway map — data nodes highlighted and then flagged in red.
+**Scheduling and dispatch algorithms** — often an agency's most valuable technical asset, and exactly the kind of complex code developers reach for AI help with. Running it through an AI tool's cloud backend means a third party is processing it under terms procurement teams rarely review.
 
-**Second: scheduling and dispatch algorithms.**  
-Transit scheduling software is often the crown jewel of an agency's technical stack — years of operational tuning, demand modeling, and integration with external vendors. It's also exactly the kind of complex, specialized code that developers reach for AI assistance to maintain. When that code passes through an AI tool's cloud backend, it is — at minimum — being processed by a third party under terms that most transit procurement teams have never reviewed.
+**Fare system integrations** — code bridging transit infrastructure to financial networks often contains API credentials and business logic. Even partial exposure is a high-value target.
 
-**Third: fare system integrations.**  
-Payment systems connect transit infrastructure to financial networks. The code bridging those systems often contains API credentials, endpoint configurations, and business logic that defines what a rider can do. Exposure of this code — even partial exposure — is a high-value target.
+**Vendor and contract data** — AI tools are increasingly used for documentation and contract drafting, so procurement and vendor data may be flowing through these systems too.
 
-**Fourth: vendor and contract data.**  
-AI tools are increasingly used for documentation, policy review, and contract drafting. That means sensitive procurement data, vendor relationships, and internal communications may be flowing through these systems.
-
-Here's the uncomfortable statistic: 75% of business employees now use generative AI [Source: industry surveys, 2024], but only 38% of organizations are actively addressing accuracy and security risks from these tools. [Source: cybersecurity benchmarks, 2024] Transit agencies — which are often years behind private sector tech adoption on *both* adoption and security maturity — are likely at the lower end of that 38%.
+Here's the gap: Microsoft's 2024 Work Trend Index found roughly 75% of knowledge workers now use generative AI at work. [Source: Microsoft 2024 Work Trend Index] But Gartner's 2024 AI risk research found only about 38% of organizations have implemented programs to manage those risks. [Source: Gartner, 2024] Transit agencies, typically years behind private-sector security maturity, are likely at the low end of that 38%.
 
 **VISUAL:** Bar chart — AI adoption vs. security readiness. A significant gap.
 
@@ -183,24 +177,19 @@ And if an AI-assisted data leak *does* occur — if a prompt injection attack ca
 **VISUAL:** Checklist — green checkmarks appearing one by one.
 
 **VOICEOVER:**  
-So what should transit tech teams and procurement officers actually demand? Here's a minimum viable framework:
+So what should transit tech teams actually demand? Five things.
 
-**One: Data processing agreements.**  
-Any AI tool handling agency source code should come with a signed DPA specifying what data is transmitted, how long it's retained, whether it's used for model training, and what happens to it in the event of a breach. This is standard practice in enterprise software contracts. It is *not* standard in AI tool procurement.
+**One: data processing agreements** specifying what's transmitted, how long it's retained, and whether it trains the vendor's models — standard in enterprise software, not yet standard in AI procurement.
 
-**Two: Prompt injection risk disclosure.**  
-Vendors should be required to document known prompt injection vulnerabilities in their tools and their current mitigation approach. "We're working on it" is not an acceptable answer for a public agency managing critical infrastructure.
+**Two: prompt injection risk disclosure** — vendors document known vulnerabilities and their mitigation approach; "we're working on it" isn't acceptable for critical infrastructure.
 
-**Three: Code isolation options.**  
-Agencies should require that AI tools offer a configuration where source code is *not* transmitted to remote servers — a local or on-premise inference option. Several tools offer this. Most agencies haven't asked for it.
+**Three: code isolation options** — a local or on-premise inference configuration so source code never leaves agency servers.
 
-**Four: Incident notification clauses.**  
-If an AI tool vendor detects that agency data was accessed, exfiltrated, or potentially exposed — through any mechanism including prompt injection — the contract should require notification within 72 hours, mirroring standard data breach disclosure timelines.
+**Four: incident notification clauses** — 72-hour breach disclosure if agency data is accessed or exposed, matching standard data breach timelines.
 
-**Five: Output ownership clarity.**  
-Contracts should explicitly state that the agency owns all AI-generated outputs created using agency data, and that the vendor waives any training rights over that output.
+**Five: output ownership clarity** — the agency owns AI-generated outputs, and the vendor waives training rights over them.
 
-None of these requirements are radical. They're the basic due diligence that any enterprise IT team would apply to a cloud vendor. The transit sector just hasn't applied them yet to AI tools — because the procurement standards don't require it, and the tools arrived faster than the policy did.
+None of this is radical. It's the due diligence any enterprise IT team already applies to cloud vendors — the transit sector just hasn't caught up yet.
 
 ---
 
@@ -227,7 +216,7 @@ This video breaks down what prompt injection is, why it's structurally unsolvabl
 
 We cover: what data is at risk in transit systems, the procurement and legal blind spots that leave agencies unprotected, and the five contract requirements every transit IT team should demand before adopting any AI coding tool.
 
-No federal guidance exists. No disclosure requirements apply. And only 38% of organizations are actively managing AI security risks.
+No federal guidance exists. No disclosure requirements apply. And per Gartner's 2024 research, only about 38% of organizations have implemented programs to manage AI security risks.
 
 The full written breakdown with contract clause checklist is linked below.
 
@@ -239,4 +228,5 @@ The full written breakdown with contract clause checklist is linked below.
 - GitLost research, Hacker News discussion, 2026  
 - UK National Cyber Security Centre, Prompt Injection guidance, 2025  
 - Wikipedia: Prompt injection, GitHub Copilot, General Transit Feed Specification  
-- Industry AI adoption surveys, 2024 (75% adoption, 38% security readiness figures)
+- Microsoft 2024 Work Trend Index (generative AI adoption figure)
+- Gartner, 2024 (AI risk management program adoption figure)
