@@ -1,0 +1,92 @@
+{
+  "date": "2026-07-13",
+  "generated_at": "2026-07-13T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 LA: How LA Metro is Moving 70,000 Fans to SoFi Stadium Semifinals",
+      "angle": "TODAY is the final window — semifinals at SoFi are July 13-14. Real-time ops breakdown: K Line surge, express shuttles, fare integration, crowd management protocols. What transit agencies do for once-in-a-decade events.",
+      "rationale": "HARD DEADLINE: World Cup LA semifinals at SoFi Stadium are July 13-14. Ranked #1 every day this week. Today is literally the last viable publish window before the event ends. After July 14 this story loses all news value permanently.",
+      "target_length": "long",
+      "slug": "world-cup-2026-la-metro-sofi-transit-operations",
+      "output_path": "drafts/articles/world-cup-2026-la-metro-sofi-transit-operations.html"
+    },
+    {
+      "rank": 2,
+      "type": "infographic",
+      "topic": "AI Agents and Your Transit Data: What Gets Uploaded, Where, and Why",
+      "angle": "Grok CLI uploaded users' home directories to xAI servers (breaking HN story today, 50-85pts). Transit apps are AI-powered. Visual: what data transit apps collect, what AI features process it, and where it could go. Privacy audit infographic.",
+      "rationale": "Grok/xAI data exfiltration incident is today's HN breakout story (2 separate items, combined ~85pts). Direct bridge to transit apps (Citymapper, Transit, Moovit all use AI). Timely hook for our AI-meets-transit-policy niche.",
+      "target_length": "medium",
+      "slug": "ai-transit-app-data-privacy-infographic-2026-07-13",
+      "output_path": "docs/research-infographic-2026-07-13.svg"
+    },
+    {
+      "rank": 3,
+      "type": "video_script",
+      "topic": "Why Your Transit App Is Watching You (And Who's Buying the Data)",
+      "angle": "Hook: Grok just uploaded someone's home folder to AI servers. Transit apps do this quietly every day. Script covers: AI feature creep in transit apps, data broker ecosystem, regulatory gap, what riders can do. 8-10 min YouTube format.",
+      "rationale": "No video scripts have shipped in 30+ days. The Grok incident today (HN trending) gives a perfect viral hook for the 'transit-app-dark-ux' angle that's been sitting in approved.json since June 13. Fresh news peg revives a stale approved asset.",
+      "target_length": "long",
+      "slug": "transit-app-ai-data-surveillance-script-2026-07-13",
+      "output_path": "drafts/scripts/transit-app-ai-data-surveillance-script-2026-07-13.md"
+    },
+    {
+      "rank": 4,
+      "type": "research",
+      "topic": "Lessons from Mega-Event Transit: Super Bowl, Olympics, and World Cup Case Studies",
+      "angle": "Research brief compiling how transit agencies have handled Super Bowl LVI (SoFi 2022), Paris 2024 Olympics, and now World Cup 2026. What strategies worked, what failed, ridership numbers, cost vs. benefit.",
+      "rationale": "Supports the #1 priority article with sourced research. Can publish independently as a companion piece. Evergreen transit infrastructure policy content with timely World Cup peg.",
+      "target_length": "medium",
+      "slug": "mega-event-transit-case-studies-research-2026-07-13",
+      "output_path": "drafts/articles/mega-event-transit-case-studies-research-2026-07-13.html"
+    },
+    {
+      "rank": 5,
+      "type": "explainer",
+      "topic": "What Is a Transit Surge Plan? How Agencies Prepare for Sudden Demand",
+      "angle": "Evergreen explainer: the operational playbook agencies use for events, disasters, and service disruptions. Covers: extra service windows, operator scheduling, signal priority, real-time comms. Timely hook from World Cup.",
+      "rationale": "Fills the long-standing article pipeline gap. Evergreen content with a timely hook. Short-to-medium length so Article Agent can actually complete it. Addresses the 36+ day article production drought.",
+      "target_length": "short",
+      "slug": "what-is-a-transit-surge-plan-explainer",
+      "output_path": "drafts/articles/what-is-a-transit-surge-plan-explainer.html"
+    }
+  ],
+  "retries": [
+    {
+      "item": "ai-agents-transit-security-leak-risk-script-2026.md",
+      "issue": "QC pending since 2026-07-08 (Day 5). Run QC Agent on this script.",
+      "action": "QC_REQUIRED"
+    },
+    {
+      "item": "Publishing Agent",
+      "issue": "BLOCKED Day 37+. approved.json has only June 2026 approvals. Human must update approved.json with new slugs to unblock.",
+      "action": "HUMAN_ACTION_REQUIRED"
+    }
+  ],
+  "skip_topics": [
+    "transit deserts",
+    "transit funding equity",
+    "transit worker safety",
+    "transit-oriented development",
+    "value capture financing",
+    "headway metrics",
+    "on-time performance",
+    "subway tunnel construction",
+    "service change analysis",
+    "transit and job access",
+    "homeless transit access",
+    "fare evasion economics",
+    "slime mold transit routing",
+    "tesla spacex transit",
+    "dopamine urban design"
+  ],
+  "trend_signals": [
+    "Grok/xAI home directory data exfiltration incident (HN dual-story trending, ~85pts combined)",
+    "World Cup 2026 LA semifinals at SoFi Stadium July 13-14 — transit surge active TODAY",
+    "Ask HN: AI-generated article flag debate (826pts — highest HN item today, major AI/media story)",
+    "GhostLock Linux stack-UAF vulnerability 15 years old across all distros (339pts HN)",
+    "Vint Cerf 'father of the Internet' retiring (337pts HN — tech culture milestone)"
+  ]
+}

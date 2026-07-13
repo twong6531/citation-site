@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-13",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "transit_brief": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "blocked_awaiting_human_approval"
+  },
+  "queue_items": 5,
+  "published_today": [],
+  "missing_today": [],
+  "alerts": [
+    "DEADLINE FINAL WINDOW: World Cup LA semifinals TODAY July 13 at SoFi — article must publish TODAY or window closes permanently. Ranked #1 for 4 consecutive days with zero output.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 37+): drafts/articles/ has NEVER produced a file in 37+ consecutive days. 0% article production rate. Structural pipeline failure.",
+    "PUBLISHING BLOCKED (Day 37+): approved.json last updated 2026-06-26. Human must add new item slugs to approved.json to unblock pipeline.",
+    "VIDEO SCRIPT QC PENDING (Day 5): ai-agents-transit-security-leak-risk-script-2026.md produced 2026-07-08, QC still pending. Run QC Agent.",
+    "GOOGLE NEWS RSS FEED EMPTY (12+ days): Persistent access/parsing failure. Likely geo-blocked or rate-limited.",
+    "TREND SIGNAL: Grok/xAI home directory data exfiltration is today's breaking HN story — direct hook for transit app data privacy content.",
+    "TREND SIGNAL: AI-generated article flag debate (826pts HN) — highest-traffic HN item today, relevant to AI/content niche.",
+    "TREND SIGNAL: World Cup 2026 LA semifinals at SoFi Stadium TODAY — last viable window for transit operations article."
+  ]
+}
