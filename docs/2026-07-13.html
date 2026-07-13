@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Briefing — July 13, 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a22;
+      --surface2: #22222e;
+      --border: #2e2e3e;
+      --text: #e8e8f0;
+      --text-dim: #8888aa;
+      --accent: #7C6AFF;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .top-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #7C6AFF, #26A69A, #FF7043);
+    }
+    .site-header {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header a { color: var(--text-dim); text-decoration: none; font-size: 13px; }
+    .site-header a:hover { color: var(--accent); }
+    .main-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .page-hero {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-date {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .hero-topic {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-topic span { color: var(--accent); }
+    /* SECTION A — Visual */
+    .visual-section {
+      padding: 40px 0;
+    }
+    .no-image .visual-context-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 20px;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .visual-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .imagen-caption {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .imagen-note {
+      font-size: 12px;
+      color: #555577;
+      font-style: italic;
+      margin-top: 8px;
+    }
+    .visual-context-text {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+    .visual-context-subject {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    /* SECTION B — Stories */
+    .stories-header {
+      margin-bottom: 32px;
+    }
+    .stories-header h2 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .story-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .story-card:hover { border-color: #4e4e6e; }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .card-num {
+      font-size: 12px;
+      color: #444466;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .cat-pill {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 3px;
+      color: white;
+    }
+    .impact-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+    .impact-label strong { color: var(--text); }
+    .impact-bar-bg {
+      width: 80px;
+      height: 5px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .impact-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+    .story-headline {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .story-summary {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .story-bullets {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+    .story-bullets li {
+      font-size: 13px;
+      color: var(--text-dim);
+      padding: 5px 0 5px 18px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .story-bullets li:last-child { border-bottom: none; }
+    .story-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 11px;
+    }
+    .why-matters {
+      font-size: 13px;
+      color: var(--accent);
+      font-style: italic;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+    }
+    .emoji-badge {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .main-topic-tag {
+      font-size: 10px;
+      color: #444466;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    /* SVG Download */
+    .infographic-link {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 10px 20px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .infographic-link:hover { border-color: var(--accent); color: var(--accent); }
+    /* Footer */
+    .page-footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: #444466;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .page-footer a { color: #444466; text-decoration: none; }
+    .page-footer a:hover { color: var(--text-dim); }
+  </style>
+</head>
+<body>
+  <div class="top-bar"></div>
+
+  <header class="site-header">
+    <a href="index.html">← Daily Briefing</a>
+  </header>
+
+  <div class="main-container">
+    <section class="page-hero">
+      <div class="hero-label">Daily Briefing</div>
+      <div class="hero-date">July 13, 2026</div>
+      <h1 class="hero-topic">AI <span>Trust &amp; Security</span></h1>
+      <p style="font-size:15px;color:var(--text-dim);max-width:600px;">Today's top stories center on broken trust in AI systems — from xAI secretly uploading private files to a 15-year-old Linux kernel vulnerability, and a major debate over whether AI companies can be taken at their word.</p>
+    </section>
+
+    <!-- SECTION A: EDITORIAL VISUAL -->
+    <section class="visual-section no-image">
+      <div class="section-label">A — Today's Visual</div>
+      <h2 class="visual-title">Editorial Subject: Grok CLI Data Breach</h2>
+      <div class="visual-context-box">
+        <div class="visual-context-subject">Grok CLI Terminal — Silent Home Directory Exfiltration</div>
+        <p class="visual-context-text">
+          The xAI Grok CLI tool was discovered exfiltrating entire user home directories — including <code style="background:#111122;padding:2px 5px;border-radius:3px;font-size:12px;">.ssh</code> keys, <code style="background:#111122;padding:2px 5px;border-radius:3px;font-size:12px;">.aws</code> credentials, and personal documents — to Google Cloud Storage without any consent prompt. A dark terminal window shows <code style="background:#111122;padding:2px 5px;border-radius:3px;font-size:12px;">ls -la</code> output of personal folders alongside silent <code style="background:#111122;padding:2px 5px;border-radius:3px;font-size:12px;">curl</code> upload commands running as background processes. Network monitoring tools reveal gigabytes of private data being transmitted, capturing the exact moment a developer discovers their files being sent to xAI's servers.
+        </p>
+        <p class="imagen-note" style="margin-top:14px;">Editorial illustration unavailable today (Imagen API requires paid plan). Described above for reader context.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- SECTION B: NEWS ANALYSIS -->
+    <section>
+      <div class="stories-header">
+        <div class="section-label">B — News Analysis</div>
+        <h2>6 Stories That Mattered Today</h2>
+      </div>
+
+      <!-- Story 1 -->
+      <article class="story-card">
+        <div class="card-header">
+          <span class="card-num">01</span>
+          <span class="cat-pill" style="background:#6C47FF;">AI</span>
+          <span class="main-topic-tag">AI Privacy</span>
+          <span class="emoji-badge">🔓</span>
+          <span class="impact-label">Impact <strong>9/10</strong><span class="impact-bar-bg"><span class="impact-bar-fill" style="width:90%;background:#6C47FF;"></span></span></span>
+        </div>
+        <h3 class="story-headline">Grok CLI Secretly Uploads Home Directories to xAI</h3>
+        <p class="story-summary">xAI's Grok CLI tool was caught silently transmitting entire user home directories to Google Cloud Storage without any consent prompt or disclosure. Two independent developers reported the behavior within hours, with a combined Hacker News score of 302, confirming the breach was systematic and not a misconfiguration.</p>
+        <ul class="story-bullets">
+          <li>Combined HN score of 302 across two separate incident reports on the same day</li>
+          <li>Files transmitted included .ssh private keys, .aws cloud credentials, and personal documents</li>
+          <li>xAI is backed by Elon Musk and operates under far less regulatory scrutiny than other AI labs</li>
+        </ul>
+        <p class="why-matters">This is a critical AI safety incident: a commercially distributed CLI tool was silently exfiltrating users' most sensitive credentials without consent.</p>
+      </article>
+
+      <!-- Story 2 -->
+      <article class="story-card">
+        <div class="card-header">
+          <span class="card-num">02</span>
+          <span class="cat-pill" style="background:#00897B;">TECH</span>
+          <span class="main-topic-tag">Linux Security</span>
+          <span class="emoji-badge">🐧</span>
+          <span class="impact-label">Impact <strong>9/10</strong><span class="impact-bar-bg"><span class="impact-bar-fill" style="width:90%;background:#00897B;"></span></span></span>
+        </div>
+        <h3 class="story-headline">GhostLock: 15-Year Kernel Bug Hits All Linux Distros</h3>
+        <p class="story-summary">Security researchers at nebusec disclosed GhostLock, a stack use-after-free (UAF) vulnerability in the Linux kernel's io_uring subsystem that has existed since approximately 2009. The flaw affects every Linux distribution and can be exploited for local privilege escalation, making it one of the longest-lived critical kernel vulnerabilities ever disclosed.</p>
+        <ul class="story-bullets">
+          <li>HN score: 345 — high community alarm from a deep-dive security research post</li>
+          <li>Vulnerability present for ~15 years across all Linux distributions (since ~2009)</li>
+          <li>Exploits the io_uring subsystem via stack use-after-free, enabling privilege escalation</li>
+        </ul>
+        <p class="why-matters">Every Linux server, desktop, and embedded device worldwide carries this bug — patch urgency is extreme given the exploit surface is the ubiquitous io_uring interface.</p>
+      </article>
+
+      <!-- Story 3 -->
+      <article class="story-card">
+        <div class="card-header">
+          <span class="card-num">03</span>
+          <span class="cat-pill" style="background:#6C47FF;">AI</span>
+          <span class="main-topic-tag">AI Industry</span>
+          <span class="emoji-badge">⚔️</span>
+          <span class="impact-label">Impact <strong>8/10</strong><span class="impact-bar-bg"><span class="impact-bar-fill" style="width:80%;background:#6C47FF;"></span></span></span>
+        </div>
+        <h3 class="story-headline">Zig Creator Challenges Anthropic's Coding Claims</h3>
+        <p class="story-summary">Andrew Kelley (creator of the Zig programming language) publicly criticized Anthropic after they backed porting the Bun JavaScript runtime from Zig to C++. Analyst Ray Myers argues that Anthropic's $132 billion in funding creates a financial incentive to overstate AI's ability to replace software engineers, calling them "an unreliable narrator" on AI capabilities.</p>
+        <ul class="story-bullets">
+          <li>Highest HN score of the day at 987 — extraordinary community engagement</li>
+          <li>Anthropic has raised $132 billion and is pursuing a $1 trillion IPO valuation</li>
+          <li>The Bun runtime's Zig-to-C++ port was cited as evidence of AI-backed language politics</li>
+        </ul>
+        <p class="why-matters">When one of the most-funded companies in history controls the narrative about AI replacing engineers, scrutinizing their incentives is essential for fair industry discourse.</p>
+      </article>
+
+      <!-- Story 4 -->
+      <article class="story-card">
+        <div class="card-header">
+          <span class="card-num">04</span>
+          <span class="cat-pill" style="background:#6C47FF;">AI</span>
+          <span class="main-topic-tag">Software Craft</span>
+          <span class="emoji-badge">💡</span>
+          <span class="impact-label">Impact <strong>7/10</strong><span class="impact-bar-bg"><span class="impact-bar-fill" style="width:70%;background:#6C47FF;"></span></span></span>
+        </div>
+        <h3 class="story-headline">Redis Creator: Control Ideas, Not Code, in AI Era</h3>
+        <p class="story-summary">Salvatore Sanfilippo (antirez), creator of Redis — one of the world's most widely deployed databases — published an essay arguing that AI fundamentally shifts what matters in software development. Rather than writing implementation code, engineers must focus on controlling architectural ideas and system design, as AI increasingly handles the implementation layer.</p>
+        <ul class="story-bullets">
+          <li>HN score: 132 from antirez, whose Redis database has 50M+ production deployments</li>
+          <li>Argues developers who cling to "I write the code" identity will be left behind</li>
+          <li>Frames the shift as a professional evolution, not an extinction event for engineers</li>
+        </ul>
+        <p class="why-matters">When the author of one of computing's most-used systems argues for rethinking the engineer's role, the industry should listen carefully about where human value migrates in an AI-coded world.</p>
+      </article>
+
+      <!-- Story 5 -->
+      <article class="story-card">
+        <div class="card-header">
+          <span class="card-num">05</span>
+          <span class="cat-pill" style="background:#00897B;">TECH</span>
+          <span class="main-topic-tag">Retro Computing</span>
+          <span class="emoji-badge">🕹️</span>
+          <span class="impact-label">Impact <strong>5/10</strong><span class="impact-bar-bg"><span class="impact-bar-fill" style="width:50%;background:#00897B;"></span></span></span>
+        </div>
+        <h3 class="story-headline">Tiny 8-Bit Emulators Run Natively in Browser</h3>
+        <p class="story-summary">A collection of cycle-accurate emulators for classic 8-bit computers — including the ZX Spectrum, Commodore 64, Amstrad CPC, and Atari 800 — now runs entirely in the browser with no installation required. The project uses WebAssembly to achieve faithful hardware emulation at full speed, complete with authentic sound and graphics rendering.</p>
+        <ul class="story-bullets">
+          <li>HN score: 308 — strong enthusiasm from the retro computing and web dev communities</li>
+          <li>Emulates Z80 and 6502 CPU architectures with cycle-accurate timing in WebAssembly</li>
+          <li>Covers multiple platforms: ZX Spectrum, Commodore 64, Amstrad CPC, Atari 800</li>
+        </ul>
+        <p class="why-matters">Browser-native cycle-accurate emulation at this fidelity demonstrates how WebAssembly has matured into a viable runtime for demanding, timing-sensitive computing workloads.</p>
+      </article>
+
+      <!-- Story 6 -->
+      <article class="story-card">
+        <div class="card-header">
+          <span class="card-num">06</span>
+          <span class="cat-pill" style="background:#E65100;">WORLD</span>
+          <span class="main-topic-tag">Interactive Art</span>
+          <span class="emoji-badge">🚃</span>
+          <span class="impact-label">Impact <strong>5/10</strong><span class="impact-bar-bg"><span class="impact-bar-fill" style="width:50%;background:#E65100;"></span></span></span>
+        </div>
+        <h3 class="story-headline">Voxel Tokyo: Ride Yamanote Line in Real Time</h3>
+        <p class="story-summary">A voxel-art simulation of Tokyo lets users ride the iconic 34.5 km Yamanote train loop in real time, synchronized to actual JR East train schedules. The experience doubles as a Japanese language learning tool, displaying station names, kanji, and vocabulary at each of the line's 30 stops.</p>
+        <ul class="story-bullets">
+          <li>HN score: 148 — beloved by an international audience for its creative design</li>
+          <li>Yamanote Line: 30 stations, 34.5 km circular loop around central Tokyo</li>
+          <li>Synchronized to actual real-world JR East schedules, not a fixed simulation</li>
+        </ul>
+        <p class="why-matters">Combining real-world infrastructure data, language education, and interactive art in a single browser experience shows the creative potential of open public transit APIs.</p>
+      </article>
+
+      <a href="infographic-2026-07-13.svg" class="infographic-link" target="_blank">⬇ Download SVG Infographic</a>
+    </section>
+
+    <footer class="page-footer">
+      <span>Daily Briefing · July 13, 2026 · Generated by AI from Hacker News top stories</span>
+      <span><a href="index.html">← All Briefings</a></span>
+    </footer>
+  </div>
+</body>
+</html>

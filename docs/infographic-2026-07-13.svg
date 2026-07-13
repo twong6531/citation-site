@@ -1,0 +1,122 @@
+<svg viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="4" fill="#111111"/>
+
+  <!-- Header -->
+  <text x="40" y="40" font-size="11" fill="#888888" letter-spacing="3" font-weight="600">DAILY BRIEFING</text>
+  <text x="40" y="80" font-size="30" fill="#111111" font-weight="700">AI Trust &amp; Security</text>
+  <text x="40" y="108" font-size="13" fill="#888888">July 13, 2026</text>
+  <line x1="40" y1="124" x2="760" y2="124" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- Story 1: Grok/xAI Privacy -->
+  <rect x="40" y="140" width="720" height="185" fill="#F7F7F5"/>
+  <text x="40" y="162" font-size="11" fill="#888888" font-weight="600">01</text>
+  <!-- Category pill: AI -->
+  <rect x="64" y="148" width="32" height="18" rx="9" fill="#6C47FF"/>
+  <text x="80" y="161" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">AI</text>
+  <text x="105" y="162" font-size="11" fill="#6C47FF" font-weight="600">AI PRIVACY</text>
+  <text x="40" y="188" font-size="16" fill="#111111" font-weight="700">Grok CLI Secretly Uploads Home Directories</text>
+  <text x="40" y="208" font-size="12" fill="#555555">xAI's Grok CLI tool was caught silently transmitting entire user home directories to Google Cloud Storage without consent. The breach exposed .ssh keys, .aws credentials, and personal documents from developers worldwide.</text>
+  <text x="40" y="235" font-size="11" fill="#333333">• Combined HN score: 302 across two independent reports</text>
+  <text x="40" y="252" font-size="11" fill="#333333">• Files including .ssh keys and cloud credentials were uploaded</text>
+  <text x="40" y="269" font-size="11" fill="#333333">• xAI's Grok has raised billions; data sent to Google Cloud Storage</text>
+  <!-- Impact bar -->
+  <text x="40" y="295" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="90" y="283" width="200" height="8" rx="4" fill="#EEEEEE"/>
+  <rect x="90" y="283" width="180" height="8" rx="4" fill="#6C47FF"/>
+  <text x="298" y="292" font-size="10" fill="#6C47FF" font-weight="700">9/10</text>
+  <line x1="40" y1="315" x2="760" y2="315" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 2: GhostLock Linux Vuln -->
+  <rect x="40" y="325" width="720" height="185" fill="#F7F7F5"/>
+  <text x="40" y="347" font-size="11" fill="#888888" font-weight="600">02</text>
+  <rect x="64" y="333" width="40" height="18" rx="9" fill="#00897B"/>
+  <text x="84" y="346" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">TECH</text>
+  <text x="113" y="347" font-size="11" fill="#00897B" font-weight="600">LINUX SECURITY</text>
+  <text x="40" y="373" font-size="16" fill="#111111" font-weight="700">GhostLock: 15-Year Kernel Bug in All Distros</text>
+  <text x="40" y="393" font-size="12" fill="#555555">Security researchers at nebusec discovered a stack use-after-free vulnerability lurking in the Linux kernel for 15 years, affecting every Linux distribution. The bug, dubbed GhostLock, enables privilege escalation through the io_uring subsystem.</text>
+  <text x="40" y="420" font-size="11" fill="#333333">• HN score: 345 — high community alarm</text>
+  <text x="40" y="437" font-size="11" fill="#333333">• Vulnerability present since ~2009, 15 years undetected</text>
+  <text x="40" y="454" font-size="11" fill="#333333">• Affects all Linux distributions via io_uring stack UAF exploit</text>
+  <text x="40" y="480" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="90" y="468" width="200" height="8" rx="4" fill="#EEEEEE"/>
+  <rect x="90" y="468" width="180" height="8" rx="4" fill="#00897B"/>
+  <text x="298" y="477" font-size="10" fill="#00897B" font-weight="700">9/10</text>
+  <line x1="40" y1="500" x2="760" y2="500" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 3: Zig/Anthropic -->
+  <rect x="40" y="510" width="720" height="185" fill="#F7F7F5"/>
+  <text x="40" y="532" font-size="11" fill="#888888" font-weight="600">03</text>
+  <rect x="64" y="518" width="32" height="18" rx="9" fill="#6C47FF"/>
+  <text x="80" y="531" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">AI</text>
+  <text x="105" y="532" font-size="11" fill="#6C47FF" font-weight="600">AI INDUSTRY</text>
+  <text x="40" y="558" font-size="16" fill="#111111" font-weight="700">Zig Creator Challenges Anthropic's AI Claims</text>
+  <text x="40" y="578" font-size="12" fill="#555555">Andrew Kelley (Zig language creator) publicly criticized Anthropic after they backed porting Bun runtime from Zig to C++. Analyst Ray Myers argues Anthropic's $132B funding requires overstating AI's ability to replace software engineers.</text>
+  <text x="40" y="605" font-size="11" fill="#333333">• Highest HN score of the day: 987 — extraordinary community engagement</text>
+  <text x="40" y="622" font-size="11" fill="#333333">• Anthropic raised $132 billion, pursuing $1 trillion IPO valuation</text>
+  <text x="40" y="639" font-size="11" fill="#333333">• Bun runtime porting from Zig to C++ backed by Anthropic resources</text>
+  <text x="40" y="665" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="90" y="653" width="200" height="8" rx="4" fill="#EEEEEE"/>
+  <rect x="90" y="653" width="160" height="8" rx="4" fill="#6C47FF"/>
+  <text x="298" y="662" font-size="10" fill="#6C47FF" font-weight="700">8/10</text>
+  <line x1="40" y1="685" x2="760" y2="685" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 4: antirez -->
+  <rect x="40" y="695" width="720" height="185" fill="#F7F7F5"/>
+  <text x="40" y="717" font-size="11" fill="#888888" font-weight="600">04</text>
+  <rect x="64" y="703" width="32" height="18" rx="9" fill="#6C47FF"/>
+  <text x="80" y="716" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">AI</text>
+  <text x="105" y="717" font-size="11" fill="#6C47FF" font-weight="600">SOFTWARE CRAFT</text>
+  <text x="40" y="743" font-size="16" fill="#111111" font-weight="700">Redis Creator: Ideas Trump Code in AI Era</text>
+  <text x="40" y="763" font-size="12" fill="#555555">Salvatore Sanfilippo (antirez), creator of Redis, argues that AI fundamentally changes software development: controlling system ideas and architecture matters far more than writing implementation code. Developers must evolve their identity.</text>
+  <text x="40" y="790" font-size="11" fill="#333333">• HN score: 132 from antirez, creator of Redis (50M+ deployments)</text>
+  <text x="40" y="807" font-size="11" fill="#333333">• Argues AI will write implementation; humans must own the ideas</text>
+  <text x="40" y="824" font-size="11" fill="#333333">• Complements Zig/Anthropic debate on role of human engineers</text>
+  <text x="40" y="850" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="90" y="838" width="200" height="8" rx="4" fill="#EEEEEE"/>
+  <rect x="90" y="838" width="140" height="8" rx="4" fill="#6C47FF"/>
+  <text x="298" y="847" font-size="10" fill="#6C47FF" font-weight="700">7/10</text>
+  <line x1="40" y1="870" x2="760" y2="870" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 5: Tiny Emulators -->
+  <rect x="40" y="880" width="720" height="185" fill="#F7F7F5"/>
+  <text x="40" y="902" font-size="11" fill="#888888" font-weight="600">05</text>
+  <rect x="64" y="888" width="40" height="18" rx="9" fill="#00897B"/>
+  <text x="84" y="901" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">TECH</text>
+  <text x="113" y="902" font-size="11" fill="#00897B" font-weight="600">RETRO COMPUTING</text>
+  <text x="40" y="928" font-size="16" fill="#111111" font-weight="700">Tiny 8-Bit Emulators Run in Browser</text>
+  <text x="40" y="948" font-size="12" fill="#555555">A collection of tiny, accurate emulators for classic 8-bit computers runs entirely in the browser with no installation. The project faithfully recreates vintage hardware including Z80 and 6502-based machines with cycle-accurate timing.</text>
+  <text x="40" y="975" font-size="11" fill="#333333">• HN score: 308 — strong community enthusiasm</text>
+  <text x="40" y="992" font-size="11" fill="#333333">• Emulates multiple platforms: ZX Spectrum, C64, Amstrad, Atari 800</text>
+  <text x="40" y="1009" font-size="11" fill="#333333">• Cycle-accurate 8-bit CPU emulation running at full speed in WebAssembly</text>
+  <text x="40" y="1035" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="90" y="1023" width="200" height="8" rx="4" fill="#EEEEEE"/>
+  <rect x="90" y="1023" width="100" height="8" rx="4" fill="#00897B"/>
+  <text x="298" y="1032" font-size="10" fill="#00897B" font-weight="700">5/10</text>
+  <line x1="40" y1="1055" x2="760" y2="1055" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Story 6: Voxel Tokyo -->
+  <rect x="40" y="1065" width="720" height="185" fill="#F7F7F5"/>
+  <text x="40" y="1087" font-size="11" fill="#888888" font-weight="600">06</text>
+  <rect x="64" y="1073" width="50" height="18" rx="9" fill="#E65100"/>
+  <text x="89" y="1086" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">WORLD</text>
+  <text x="123" y="1087" font-size="11" fill="#E65100" font-weight="600">INTERACTIVE ART</text>
+  <text x="40" y="1113" font-size="16" fill="#111111" font-weight="700">Voxel Tokyo: Ride Yamanote Line in Real-Time</text>
+  <text x="40" y="1133" font-size="12" fill="#555555">A voxel-art simulation of Tokyo lets users ride the iconic Yamanote train loop synced to actual real-world train schedules. The experience doubles as a Japanese language learning tool, displaying station names and vocabulary at each stop.</text>
+  <text x="40" y="1160" font-size="11" fill="#333333">• HN score: 148 — beloved by global community</text>
+  <text x="40" y="1177" font-size="11" fill="#333333">• Yamanote Line: 30 stations, 34.5km circular loop around central Tokyo</text>
+  <text x="40" y="1194" font-size="11" fill="#333333">• Real-time sync means the simulation matches actual JR East schedules</text>
+  <text x="40" y="1220" font-size="10" fill="#888888">IMPACT</text>
+  <rect x="90" y="1208" width="200" height="8" rx="4" fill="#EEEEEE"/>
+  <rect x="90" y="1208" width="100" height="8" rx="4" fill="#E65100"/>
+  <text x="298" y="1217" font-size="10" fill="#E65100" font-weight="700">5/10</text>
+  <line x1="40" y1="1240" x2="760" y2="1240" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Footer -->
+  <text x="40" y="1275" font-size="11" fill="#888888">Generated by AI · Daily Briefing · July 13, 2026</text>
+  <text x="760" y="1275" font-size="11" fill="#888888" text-anchor="end">hacker-news.firebaseio.com</text>
+  <rect x="0" y="1397" width="800" height="3" fill="#111111"/>
+</svg>
