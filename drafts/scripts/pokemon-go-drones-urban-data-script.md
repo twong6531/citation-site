@@ -15,7 +15,7 @@
 
 **Scene 1 — Hook + Context (0–15s)**
 
-SCRIPT: "Pokémon Go players have submitted over fifteen million real-world location scans. Niantic — the company behind the game — used those scans to build a 3D model of Earth's surface. It acquired three separate 3D-scanning companies to do it. That data doesn't stay in a game."
+SCRIPT: "Niantic's games have logged over fifteen million real-world location submissions — the foundation for a crowd-sourced 3D map of Earth. It acquired three separate 3D-scanning companies to build on top of it. That data doesn't stay in a game."
 
 VISUAL NOTES:
 - B-roll: Pokémon Go AR camera footage scanning a street corner
@@ -30,14 +30,14 @@ SCRIPT: "Here's the pipeline. Consumer apps collect scans. Scans flow to mapping
 
 VISUAL NOTES:
 - Animated flow diagram: [Phone Camera] → [App Company] → [Data Broker] → [Government / Defense]
-- On-screen text: "No warrant required — commercially obtained data" [Source: Wikipedia / Data broker article]
-- Quick stat card: "DHS confirmed purchasing cell data from commercial brokers" [Source: Wikipedia / Data broker article]
+- On-screen text: "No warrant required — commercially obtained data" [Source: Vice/Motherboard, February 2020 — DHS purchased location data from Venntel without a warrant]
+- Quick stat card: "DHS confirmed purchasing cell data from commercial brokers" [Source: Vice/Motherboard, February 2020 — DHS purchased location data from Venntel without a warrant]
 
 ---
 
 **Scene 3 — The Implication (35–50s)**
 
-SCRIPT: "SLAM — the navigation technology used in military drones — runs better when it already has a pre-built 3D map of its environment. Your Pokémon scan is exactly that kind of map. And transit riders face the same exposure. Every time you tap in and tap out, an agency holds a timestamped record of where you were, when, and how often. Most have no policy on who they sell it to."
+SCRIPT: "SLAM navigation in military drones runs better with pre-built urban maps. Niantic has built exactly that. Under current law, selling it requires no warrant. And transit riders face the same exposure. Every time you tap in and tap out, an agency holds a timestamped record of where you were, when, and how often. Most have no policy on who they sell it to."
 
 VISUAL NOTES:
 - Graphic: animated drone overlay on a city street scan
@@ -125,7 +125,7 @@ VISUAL NOTES:
 
 SCRIPT: "Here's where it gets uncomfortable. Niantic's terms of service permit data licensing. Their privacy policy, like most consumer apps, is written to allow substantial sharing with third parties under broad 'business purposes' language. That's standard. But the downstream buyer is where this gets unusual.
 
-Under U.S. law, if data is commercially available — meaning it was collected by a private company and sold through normal market channels — government agencies do not need a warrant to purchase it. That principle was established in the third-party doctrine, and it has been applied aggressively in the data broker era. The Department of Homeland Security has confirmed it purchases cell phone location data from commercial brokers to track individuals for immigration enforcement. The FBI purchased data from a company called Venntel — a broker that aggregates location pings from consumer apps. No warrants. No court orders. Just a purchase order. [Source: Wikipedia / Data broker article]
+Under U.S. law, if data is commercially available — meaning it was collected by a private company and sold through normal market channels — government agencies do not need a warrant to purchase it. That principle rests on the third-party doctrine. The Supreme Court narrowed it in Carpenter v. United States (2018) for cell-site location records — but did not eliminate it for data a company voluntarily sells on the open market, which is exactly the Venntel/data-broker pathway. The Department of Homeland Security has confirmed it purchases cell phone location data from commercial brokers to track individuals for immigration enforcement, and the FBI purchased data from Venntel, a broker that aggregates location pings from consumer apps. No warrants. No court orders. Just a purchase order. [Source: Vice/Motherboard, February 2020 — DHS purchased location data from Venntel without a warrant; Carpenter v. United States, 2018]
 
 Defense contractors sit in the same market. Companies building navigation systems for autonomous vehicles, drones, and guided systems regularly license mapping data from commercial providers. High-resolution 3D urban geometry — the kind Niantic has been crowd-sourcing for years — is exactly the input those systems need.
 
@@ -149,7 +149,7 @@ Most transit agencies have no binding policy prohibiting data sale to third part
 
 The parallel to the Pokémon Go case is exact. In both cases, users implicitly understood they were sharing some data to use a service. In both cases, the downstream reach of that data — into commercial databases, into broker pipelines, into defense and law enforcement hands — was never disclosed in any meaningful way. In both cases, the legal framework actively permits the transfer with zero notification to the person whose data it is.
 
-What cities and transit agencies should do — and what a small number are beginning to do — is adopt data minimization policies: collect only what's needed for operations, retain it only as long as operationally necessary, and prohibit any commercial or government sale without explicit rider authorization. That's a policy position, not a technical obstacle. The obstacle is political will. [Source: Transit data privacy analysis, urban policy literature]
+What agencies should do: adopt data minimization — collect only what's needed, retain it briefly, and prohibit sale without explicit rider consent. That's a policy choice, not a technical obstacle.
 
 The Pokémon Go story is useful precisely because it makes visible a system that was designed to be invisible. When the data subject is a commuter tapping a card, or a teenager catching monsters in a park, the outcome is the same: someone, somewhere, built a detailed map of your life. And they didn't need your permission to sell it."
 
@@ -201,7 +201,7 @@ Covered in this video:
 - What transit agencies collect and what policies (don't) protect that data
 - Concrete policy fixes: data minimization, retention limits, and prohibition on third-party sale
 
-Sources: Wikipedia (Niantic), Wikipedia (Ingress), Wikipedia (SLAM), Wikipedia (Data broker / third-party doctrine)
+Sources: Wikipedia (Niantic), Wikipedia (Ingress), Wikipedia (SLAM), Vice/Motherboard (Feb. 2020, DHS/Venntel purchase), Carpenter v. United States (2018)
 
 Full written analysis with citations: [link]
 
