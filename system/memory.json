@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-12T00:00:00Z",
+  "last_updated": "2026-07-14T00:00:00Z",
   "published": [
     {
       "date": "2026-06-22",
@@ -864,6 +864,60 @@
       "type": "infographic",
       "url": "docs/infographic-2026-07-11.svg",
       "topic": "Editorial Infographic 2026-07-11"
+    },
+    {
+      "date": "2026-07-12",
+      "type": "transit",
+      "url": "docs/transit-2026-07-12.html",
+      "topic": "SoCal Transit Brief 2026-07-12"
+    },
+    {
+      "date": "2026-07-12",
+      "type": "news",
+      "url": "docs/2026-07-12.html",
+      "topic": "Daily Briefing 2026-07-12"
+    },
+    {
+      "date": "2026-07-12",
+      "type": "infographic",
+      "url": "docs/infographic-2026-07-12.svg",
+      "topic": "Editorial Infographic 2026-07-12"
+    },
+    {
+      "date": "2026-07-13",
+      "type": "news",
+      "url": "docs/2026-07-13.html",
+      "topic": "Daily Briefing 2026-07-13 — World Cup semifinal day, Grok/xAI data exfiltration, AI-generated article flag debate"
+    },
+    {
+      "date": "2026-07-13",
+      "type": "transit",
+      "url": "docs/transit-2026-07-13.html",
+      "topic": "SoCal Transit Brief 2026-07-13 — World Cup semifinal at SoFi, Metro operations"
+    },
+    {
+      "date": "2026-07-13",
+      "type": "infographic",
+      "url": "docs/infographic-2026-07-13.svg",
+      "topic": "Editorial Infographic 2026-07-13"
+    },
+    {
+      "date": "2026-07-13",
+      "type": "video_script_revision",
+      "url": "drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md",
+      "topic": "AI Agents Transit Security Leak Risk — revision cycle 4: word trims + named sources (QC cycle 5 pending)"
+    },
+    {
+      "date": "2026-07-13",
+      "type": "video_script_revision",
+      "url": "drafts/scripts/slime-mold-transit-script.md",
+      "topic": "Slime Mold Transit Script — partial revision: reel trimmed, citation added. 2 fixes remain ([site URL], 'this week' staleness)"
+    },
+    {
+      "date": "2026-07-13",
+      "type": "video_script_revision",
+      "url": "drafts/scripts/pokemon-go-drones-urban-data-script.md",
+      "topic": "Pokemon Go Drones Urban Data Script — factual fixes + sourcing applied. Ready for QC cycle 2."
     }
   ],
   "drafts_pending_approval": [
@@ -1271,7 +1325,10 @@
     "Mesh LLM distributed AI inference iroh decentralized computing 2026",
     "GPU financing circular economics Nvidia CoreWeave Nebius AI infrastructure 2026",
     "Resilience-as-a-Service urban transit disruption response coordination arXiv 2026",
-    "Hierarchical forecast reconciliation urban rail transit demand arXiv 2026"
+    "Hierarchical forecast reconciliation urban rail transit demand arXiv 2026",
+    "World Cup 2026 semifinal LA Metro SoFi Stadium July 13 transit operations",
+    "Grok xAI home directory data exfiltration AI app data privacy",
+    "AI-generated article flag debate content authenticity labeling"
   ],
   "failed_jobs": [
     {
@@ -1693,6 +1750,26 @@
       "date": "2026-07-12",
       "job": "transit_brief",
       "reason": "transit-2026-07-11.html not produced \u2014 transit brief missed for July 11 (not found in docs/). Pattern may indicate pipeline gap on July 11."
+    },
+    {
+      "date": "2026-07-13",
+      "job": "research_brief",
+      "reason": "research-2026-07-13.html not produced \u2014 research digest missing for July 13. Research briefs have been missing since 07-11 (4-day gap). Self-analysis fallback not triggered."
+    },
+    {
+      "date": "2026-07-13",
+      "job": "research_infographic",
+      "reason": "research-infographic-2026-07-13.svg not produced \u2014 paired gap with research brief. 4-day gap in research infographic series (07-11 through 07-14)."
+    },
+    {
+      "date": "2026-07-13",
+      "job": "world_cup_article",
+      "reason": "World Cup semifinal article (SoFi, July 13) was Rank 1 priority for 5+ consecutive days. Semifinal window at SoFi is now July 14 (second semifinal). FINAL viable window is today July 14."
+    },
+    {
+      "date": "2026-07-13",
+      "job": "publishing",
+      "reason": "Publishing blocked Day 37+. approved.json still lists 5 scripts published 2026-07-05 (stale). No new slugs added by human. Pipeline cannot publish new content without human updating approved.json."
     }
   ],
   "content_gaps": [

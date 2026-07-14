@@ -1,0 +1,87 @@
+{
+  "date": "2026-07-14",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "priorities": [
+    {
+      "rank": 1,
+      "type": "article",
+      "topic": "World Cup 2026 LA Semifinal #2: How Metro Is Moving 100,000 Fans to SoFi Stadium",
+      "angle": "Operational deep-dive on LA Metro's real-time surge capacity for today's World Cup semifinal at SoFi Stadium — headway compression, express bus deployment, fare suspension windows, crowd dispersal protocols. TODAY-ONLY timeliness window.",
+      "rationale": "World Cup semifinal #2 at SoFi is today (July 14). Yesterday's status file flagged this as the final window and it expired without output. This is the last viable transit-operations story from the 2026 World Cup before it permanently closes. First-mover value: 0 competing articles from this pipeline despite being queued 5+ days.",
+      "target_length": "long",
+      "slug": "world-cup-2026-la-semifinal-metro-operations-july14",
+      "output_path": "drafts/articles/world-cup-2026-la-semifinal-metro-operations-july14.html"
+    },
+    {
+      "rank": 2,
+      "type": "research",
+      "topic": "Japan's 90% Lithium Recovery Breakthrough and What It Means for Transit Fleet Electrification",
+      "angle": "Japan's new method recovers up to 90% of lithium from used EV batteries (639pts on HN today). Angle: battery refresh cost is the hidden barrier to full transit fleet electrification in the US — this breakthrough changes the economics. Frame around LA Metro's 2030 zero-emission bus mandate.",
+      "rationale": "#1 HN story today by score (639pts). Direct niche fit: transit electrification cost curves. New development not previously covered. High search/share potential for transit-focused audience.",
+      "target_length": "medium",
+      "slug": "japan-lithium-recovery-transit-electrification-2026",
+      "output_path": "drafts/articles/japan-lithium-recovery-transit-electrification-2026.html"
+    },
+    {
+      "rank": 3,
+      "type": "research",
+      "topic": "Transit Research Digest 2026-07-14",
+      "angle": "Catch-up research brief: research briefs have been missing since 2026-07-11 (4-day gap). Cover recent arXiv transit papers. Focus on electrification, AI routing, and demand recovery themes. Self-analyze if Gemini API over quota.",
+      "rationale": "Research digest is a daily deliverable that has been missing 4 consecutive days (07-11, 07-12, 07-13, 07-14). Gap needs to close. Also serves as the research-infographic source for today's infographic slot.",
+      "target_length": "medium",
+      "slug": "research-2026-07-14",
+      "output_path": "docs/research-2026-07-14.html"
+    },
+    {
+      "rank": 4,
+      "type": "infographic",
+      "topic": "Research Infographic 2026-07-14",
+      "angle": "Visual summary of today's research digest — lithium recovery breakthrough + EV bus economics as the anchor visual. SVG format consistent with existing series.",
+      "rationale": "Research infographics have been missing since 07-11 (4-day gap). Paired with research digest at rank 3. Produces research-infographic-2026-07-14.svg.",
+      "target_length": "short",
+      "slug": "research-infographic-2026-07-14",
+      "output_path": "docs/research-infographic-2026-07-14.svg"
+    },
+    {
+      "rank": 5,
+      "type": "video_script",
+      "topic": "QC Cycle 5: ai-agents-transit-security-leak-risk-script-2026",
+      "angle": "Revisions were applied yesterday (2026-07-13 commit 3e33dcf: word trims + named sources). Run QC cycle 5 on the revised script. Codex AI agent encryption news (243pts HN today) provides a timely hook if the script needs updated framing. If QC passes, add slug to approved.json.",
+      "rationale": "This script has been through 4 QC cycles. Yesterday's revision targeted the specific issues (word count, unnamed sources). New Codex security news directly amplifies the transit-AI-security angle. If it passes today, it can enter the publishing queue and break the stale approved.json deadlock.",
+      "target_length": "short",
+      "slug": "ai-agents-transit-security-leak-risk-script-2026",
+      "output_path": "drafts/scripts/ai-agents-transit-security-leak-risk-script-2026.md"
+    }
+  ],
+  "retries": [
+    {
+      "slug": "slime-mold-transit-script",
+      "type": "video_script_fix",
+      "note": "2 minor fixes remain after yesterday's partial revision: replace [site URL] placeholder and fix 'this week' staleness. Apply fixes, then QC cycle 3.",
+      "output_path": "drafts/scripts/slime-mold-transit-script.md"
+    },
+    {
+      "slug": "pokemon-go-drones-urban-data-script",
+      "type": "video_script_qc",
+      "note": "Factual fixes + sourcing applied yesterday (commit de50164). Ready for QC cycle 2. If passes, add to approved.json.",
+      "output_path": "drafts/scripts/pokemon-go-drones-urban-data-script.md"
+    }
+  ],
+  "skip_topics": [
+    "Apple vs OpenAI trade secret lawsuit (covered 2026-07-10/11)",
+    "QuadRF drone WiFi sensing (covered 2026-07-10/11)",
+    "NYC congestion pricing transit gains (covered 2026-07-05/06)",
+    "ChatPlanner LLM transit routing (covered 2026-07-05)",
+    "Gemini Code Assist shutdown (covered 2026-07-10/11 - deadline now passed or imminent)",
+    "Virginia geolocation data ban (covered 2026-07-04/05)",
+    "World Cup group stage transit operations (covered multiple times through 07-10)",
+    "SAV microtransit ridership recovery (covered 2026-07-10)"
+  ],
+  "trend_signals": [
+    "Japan 90% lithium EV battery recovery method (639pts HN — highest today)",
+    "World Cup 2026 LA semifinal at SoFi Stadium — today, July 14",
+    "Codex AI sub-agent prompt encryption (243pts HN — AI security hook)",
+    "Australian free daytime electricity 3-hour mandate (170pts HN — energy/transit electrification)",
+    "Germany restricting Freedom of Information Act (109pts HN — public-data/transparency angle)"
+  ]
+}

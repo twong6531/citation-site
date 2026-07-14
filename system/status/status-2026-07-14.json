@@ -1,0 +1,30 @@
+{
+  "date": "2026-07-14",
+  "jobs": {
+    "briefing": "completed",
+    "research": "pending",
+    "transit_brief": "pending",
+    "content_plan": "pending",
+    "articles": "pending",
+    "infographics": "pending",
+    "video_scripts": "pending",
+    "qc": "pending",
+    "publishing": "blocked_awaiting_human_approval"
+  },
+  "queue_items": 5,
+  "published_today": [],
+  "missing_today": [],
+  "alerts": [
+    "FINAL WORLD CUP WINDOW: Second semifinal at SoFi Stadium is TODAY July 14. World Cup transit article has been queued Rank 1 for 6+ consecutive days with 0 output. After today the entire World Cup transit ops story window permanently closes.",
+    "ARTICLE AGENT UNRESPONSIVE (Day 38+): drafts/articles/ has NEVER produced a file in 38+ consecutive days. 0% article production rate across entire site history. Structural pipeline failure — manual diagnostic critically overdue.",
+    "RESEARCH BRIEF GAP (4 days): research-2026-07-11.html through research-2026-07-14.html all missing. Research digest pipeline appears to have stopped after 07-10. Queued as Rank 3 today.",
+    "RESEARCH INFOGRAPHIC GAP (4 days): research-infographic-2026-07-11.svg through today all missing. Queued as Rank 4 today.",
+    "PUBLISHING BLOCKED (Day 38+): approved.json lists 5 slugs all published on 2026-07-05. Stale — human must update approved.json with new item slugs to re-enable publishing. ai-agents script may qualify for approval after today's QC cycle 5.",
+    "TRANSIT BRIEF STREAK: transit-2026-07-11.html confirmed missing. transit-2026-07-12.html and transit-2026-07-13.html recovered. Streak is back on track.",
+    "GOOGLE NEWS RSS FEED EMPTY (13+ days): Persistent access/parsing failure confirmed — geo-block or rate limit. Using HN API and arXiv as primary news sources instead.",
+    "SCRIPT BACKLOG STATUS: ai-agents (rev cycle 4 done — QC cycle 5 today), slime-mold (2 minor fixes remain), pokemon-go (rev done — QC cycle 2 today), apple-gemini (needs ~75w cut), transit-desert-pomdp (near-rewrite needed), electric-axial-flux (factual error fix needed).",
+    "TREND SIGNAL: Japan 90% lithium EV battery recovery (639pts HN) — highest-score item today. Major transit electrification economics story. Queued Rank 2.",
+    "TREND SIGNAL: Codex AI sub-agent prompt encryption (243pts HN) — hooks into ai-agents-transit-security script. Good framing update for QC cycle 5.",
+    "TREND SIGNAL: Australian free daytime electricity 3-hour mandate (170pts HN) — energy policy adjacent to transit electrification. Secondary story."
+  ]
+}
