@@ -1,0 +1,119 @@
+<svg viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1400" fill="#F7F7F5"/>
+
+  <!-- Top bar -->
+  <rect width="800" height="4" fill="#111111"/>
+
+  <!-- Header -->
+  <text x="400" y="38" text-anchor="middle" font-size="11" fill="#888888" letter-spacing="3" font-weight="500">DAILY BRIEFING</text>
+  <text x="400" y="76" text-anchor="middle" font-size="28" fill="#111111" font-weight="700">EV Battery Recycling Breakthrough</text>
+  <text x="400" y="102" text-anchor="middle" font-size="12" fill="#AAAAAA" letter-spacing="1">JULY 14, 2026</text>
+  <line x1="40" y1="118" x2="760" y2="118" stroke="#DDDDDD" stroke-width="1"/>
+
+  <!-- CARD 1: Japan Lithium Recovery -->
+  <rect x="40" y="134" width="720" height="185" fill="#FFFFFF" rx="2"/>
+  <text x="60" y="162" font-size="11" fill="#888888" font-weight="600" letter-spacing="1">01</text>
+  <rect x="88" y="148" width="62" height="20" rx="10" fill="#0077CC"/>
+  <text x="119" y="162" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">SCIENCE</text>
+  <text x="60" y="196" font-size="16" fill="#111111" font-weight="700">Japan Recovers 90% Lithium From Spent EV Batteries</text>
+  <text x="60" y="216" font-size="12" fill="#555555">Japanese researchers developed a hydrometallurgical process to recover up to 90% of lithium</text>
+  <text x="60" y="232" font-size="12" fill="#555555">from used EV batteries using selective electrodialysis on cathode oxide materials.</text>
+  <text x="60" y="256" font-size="11" fill="#444444">⚡ Recovery rate: up to 90% of lithium extracted from cathode materials</text>
+  <text x="60" y="272" font-size="11" fill="#444444">⚡ Global EV battery demand projected to reach 4.7 TWh by 2030</text>
+  <text x="60" y="288" font-size="11" fill="#444444">⚡ Lithium prices up 400% since 2020 due to supply chain pressure</text>
+  <text x="60" y="308" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="110" y="298" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="298" width="180" height="6" rx="3" fill="#0077CC"/>
+  <text x="318" y="307" font-size="10" fill="#0077CC" font-weight="700">9/10</text>
+  <line x1="40" y1="322" x2="760" y2="322" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- CARD 2: Codex Encrypts Sub-Agent Prompts -->
+  <rect x="40" y="328" width="720" height="185" fill="#FFFFFF" rx="2"/>
+  <text x="60" y="356" font-size="11" fill="#888888" font-weight="600" letter-spacing="1">02</text>
+  <rect x="88" y="342" width="28" height="20" rx="10" fill="#6C47FF"/>
+  <text x="102" y="356" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">AI</text>
+  <text x="60" y="390" font-size="16" fill="#111111" font-weight="700">OpenAI Codex Encrypts AI Sub-Agent Prompt Chains</text>
+  <text x="60" y="410" font-size="12" fill="#555555">OpenAI's Codex coding assistant began encrypting prompts passed between orchestrating</text>
+  <text x="60" y="426" font-size="12" fill="#555555">and sub-agents, shielding internal AI reasoning chains from external inspection.</text>
+  <text x="60" y="450" font-size="11" fill="#444444">🔐 332+ community votes elevated this to a top-priority OpenAI issue</text>
+  <text x="60" y="466" font-size="11" fill="#444444">🔐 Encryption prevents cross-agent prompt injection attacks</text>
+  <text x="60" y="482" font-size="11" fill="#444444">🔐 Multi-agent AI deployments grew ~40% in 2025 across enterprise</text>
+  <text x="60" y="502" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="110" y="492" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="492" width="160" height="6" rx="3" fill="#6C47FF"/>
+  <text x="318" y="501" font-size="10" fill="#6C47FF" font-weight="700">8/10</text>
+  <line x1="40" y1="516" x2="760" y2="516" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- CARD 3: India Brainstem Atlas -->
+  <rect x="40" y="522" width="720" height="185" fill="#FFFFFF" rx="2"/>
+  <text x="60" y="550" font-size="11" fill="#888888" font-weight="600" letter-spacing="1">03</text>
+  <rect x="88" y="536" width="62" height="20" rx="10" fill="#0077CC"/>
+  <text x="119" y="550" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">SCIENCE</text>
+  <text x="60" y="584" font-size="16" fill="#111111" font-weight="700">India Creates Most Detailed Human Brainstem Atlas</text>
+  <text x="60" y="604" font-size="12" fill="#555555">Indian scientists produced the most comprehensive 3D atlas of the human brainstem ever,</text>
+  <text x="60" y="620" font-size="12" fill="#555555">mapping previously unknown neural structures at cellular resolution using 7T MRI.</text>
+  <text x="60" y="644" font-size="11" fill="#444444">🧠 Atlas maps 200+ distinct neural nuclei across the entire brainstem</text>
+  <text x="60" y="660" font-size="11" fill="#444444">🧠 Brainstem controls heart rate, breathing, and consciousness</text>
+  <text x="60" y="676" font-size="11" fill="#444444">🧠 Combined 7-Tesla MRI with histological sectioning for cell-level accuracy</text>
+  <text x="60" y="696" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="110" y="686" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="686" width="160" height="6" rx="3" fill="#0077CC"/>
+  <text x="318" y="695" font-size="10" fill="#0077CC" font-weight="700">8/10</text>
+  <line x1="40" y1="710" x2="760" y2="710" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- CARD 4: Australia Free Electricity -->
+  <rect x="40" y="716" width="720" height="185" fill="#FFFFFF" rx="2"/>
+  <text x="60" y="744" font-size="11" fill="#888888" font-weight="600" letter-spacing="1">04</text>
+  <rect x="88" y="730" width="72" height="20" rx="10" fill="#2E7D32"/>
+  <text x="124" y="744" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">BUSINESS</text>
+  <text x="60" y="778" font-size="16" fill="#111111" font-weight="700">Australia Mandates Three Free Hours of Solar Electricity</text>
+  <text x="60" y="798" font-size="12" fill="#555555">Australian energy regulators now require retailers to give customers 3 free daytime hours</text>
+  <text x="60" y="814" font-size="12" fill="#555555">to absorb record midday solar surpluses pushing wholesale prices negative.</text>
+  <text x="60" y="838" font-size="11" fill="#444444">☀️ 1 in 3 Australian homes have rooftop solar — 30+ GW total capacity</text>
+  <text x="60" y="854" font-size="11" fill="#444444">☀️ Wholesale prices went negative 15% of the time in 2025</text>
+  <text x="60" y="870" font-size="11" fill="#444444">☀️ Free window runs approximately 11am–2pm local time daily</text>
+  <text x="60" y="890" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="110" y="880" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="880" width="140" height="6" rx="3" fill="#2E7D32"/>
+  <text x="318" y="889" font-size="10" fill="#2E7D32" font-weight="700">7/10</text>
+  <line x1="40" y1="904" x2="760" y2="904" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- CARD 5: Germany FOIA Rollback -->
+  <rect x="40" y="910" width="720" height="185" fill="#FFFFFF" rx="2"/>
+  <text x="60" y="938" font-size="11" fill="#888888" font-weight="600" letter-spacing="1">05</text>
+  <rect x="88" y="924" width="52" height="20" rx="10" fill="#E65100"/>
+  <text x="114" y="938" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">WORLD</text>
+  <text x="60" y="972" font-size="16" fill="#111111" font-weight="700">Germany Moves to Restrict Freedom of Information Act</text>
+  <text x="60" y="992" font-size="12" fill="#555555">The German government is preparing legislation to narrow its FOIA, limiting public access</text>
+  <text x="60" y="1008" font-size="12" fill="#555555">to documents on ongoing negotiations — a major blow to democratic transparency.</text>
+  <text x="60" y="1032" font-size="11" fill="#444444">📜 German FOIA handles ~100,000 public records requests per year</text>
+  <text x="60" y="1048" font-size="11" fill="#444444">📜 New law blocks access to documents tied to government negotiations</text>
+  <text x="60" y="1064" font-size="11" fill="#444444">📜 Follows similar transparency rollbacks in Hungary and Poland</text>
+  <text x="60" y="1084" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="110" y="1074" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="1074" width="140" height="6" rx="3" fill="#E65100"/>
+  <text x="318" y="1083" font-size="10" fill="#E65100" font-weight="700">7/10</text>
+  <line x1="40" y1="1098" x2="760" y2="1098" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- CARD 6: AI Discovers Fields Medal Leak -->
+  <rect x="40" y="1104" width="720" height="185" fill="#FFFFFF" rx="2"/>
+  <text x="60" y="1132" font-size="11" fill="#888888" font-weight="600" letter-spacing="1">06</text>
+  <rect x="88" y="1118" width="28" height="20" rx="10" fill="#6C47FF"/>
+  <text x="102" y="1132" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="600">AI</text>
+  <text x="60" y="1166" font-size="16" fill="#111111" font-weight="700">AI Agent Accidentally Discovers Fields Medal Leak</text>
+  <text x="60" y="1186" font-size="12" fill="#555555">OpenAI's Codex autonomously scraped the ICM website and surfaced a prematurely published</text>
+  <text x="60" y="1202" font-size="12" fill="#555555">list of 2026 Fields Medal winners — including two Peking University alumni.</text>
+  <text x="60" y="1226" font-size="11" fill="#444444">🏅 Fields Medal: math's highest honor, awarded every 4 years to ≤4 mathematicians</text>
+  <text x="60" y="1242" font-size="11" fill="#444444">🏅 2026 list includes two Peking University alumni — a historic first</text>
+  <text x="60" y="1258" font-size="11" fill="#444444">🏅 Discovery was incidental — AI was not explicitly tasked to find it</text>
+  <text x="60" y="1278" font-size="10" fill="#AAAAAA">IMPACT</text>
+  <rect x="110" y="1268" width="200" height="6" rx="3" fill="#EEEEEE"/>
+  <rect x="110" y="1268" width="140" height="6" rx="3" fill="#6C47FF"/>
+  <text x="318" y="1277" font-size="10" fill="#6C47FF" font-weight="700">7/10</text>
+  <line x1="40" y1="1292" x2="760" y2="1292" stroke="#EEEEEE" stroke-width="1"/>
+
+  <!-- Footer -->
+  <text x="400" y="1340" text-anchor="middle" font-size="11" fill="#AAAAAA">Generated by AI · July 14, 2026 · twong6531.github.io/citation-site</text>
+  <rect y="1396" width="800" height="4" fill="#111111"/>
+</svg>

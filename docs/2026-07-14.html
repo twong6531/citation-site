@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Briefing — July 14, 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0f0f11;
+    --card: #18181c;
+    --border: #2a2a30;
+    --text: #e8e8ec;
+    --muted: #888894;
+    --accent: #6C47FF;
+    --ai: #6C47FF;
+    --science: #0077CC;
+    --tech: #00897B;
+    --business: #2E7D32;
+    --world: #E65100;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+
+  /* ===== HEADER ===== */
+  .site-header { border-bottom: 1px solid var(--border); padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .site-header a { color: var(--muted); text-decoration: none; font-size: 13px; }
+  .site-header a:hover { color: var(--text); }
+  .header-brand { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: var(--muted); }
+
+  /* ===== HERO ===== */
+  .hero { padding: 56px 32px 40px; max-width: 960px; margin: 0 auto; }
+  .hero-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
+  .hero-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+  .hero-date { font-size: 14px; color: var(--muted); }
+
+  /* ===== SECTIONS ===== */
+  .section { max-width: 960px; margin: 0 auto; padding: 0 32px 64px; }
+  .section-heading { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+
+  /* ===== EDITORIAL IMAGE SECTION ===== */
+  .visual-section { background: #0a0a0c; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 32px; margin-bottom: 56px; }
+  .visual-inner { max-width: 960px; margin: 0 auto; }
+  .visual-header { margin-bottom: 28px; }
+  .visual-kicker { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .visual-title { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+  .visual-subtitle { font-size: 14px; color: var(--muted); }
+  .visual-image-wrap { width: 100%; background: #fff; border-radius: 6px; overflow: hidden; margin-bottom: 16px; }
+  .visual-image-wrap img, .visual-image-wrap svg, .visual-image-wrap object { width: 100%; display: block; }
+  .visual-caption { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .visual-caption strong { color: var(--text); }
+  .visual-note { margin-top: 10px; font-size: 11px; color: #555; font-style: italic; }
+
+  /* ===== STORY GRID ===== */
+  .stories-grid { display: flex; flex-direction: column; gap: 2px; }
+  .story-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 28px 32px; transition: border-color .2s; }
+  .story-card:hover { border-color: #444450; }
+  .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .story-num { font-size: 11px; color: var(--muted); font-weight: 700; letter-spacing: 1px; }
+  .cat-pill { font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; }
+  .cat-AI    { background: rgba(108,71,255,.18); color: #9c7fff; }
+  .cat-Science { background: rgba(0,119,204,.15); color: #5ab0ff; }
+  .cat-Tech  { background: rgba(0,137,123,.15); color: #4dd0c4; }
+  .cat-Business { background: rgba(46,125,50,.15); color: #66bb6a; }
+  .cat-World { background: rgba(230,81,0,.15); color: #ff8a40; }
+  .impact-badge { margin-left: auto; font-size: 11px; font-weight: 700; color: var(--muted); }
+  .story-headline { font-size: 20px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+  .story-summary { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+  .story-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+  .story-bullets li { font-size: 13px; color: #aaa; padding-left: 18px; position: relative; }
+  .story-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+  .impact-row { display: flex; align-items: center; gap: 10px; }
+  .impact-label { font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: 1px; }
+  .impact-bar-bg { flex: 1; max-width: 180px; height: 4px; background: var(--border); border-radius: 2px; }
+  .impact-bar { height: 4px; border-radius: 2px; }
+  .why-matters { font-size: 12px; color: #666; font-style: italic; margin-left: 8px; }
+
+  /* ===== INFOGRAPHIC LINK ===== */
+  .download-row { margin-top: 40px; padding: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; gap: 16px; }
+  .download-row a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .download-row a:hover { text-decoration: underline; }
+  .download-desc { font-size: 13px; color: var(--muted); }
+
+  /* ===== FOOTER ===== */
+  footer { border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .hero, .section, .visual-section { padding-left: 20px; padding-right: 20px; }
+    .story-card { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="header-brand">DAILY BRIEFING</span>
+  <a href="index.html">← All Editions</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Today's Theme</div>
+  <h1 class="hero-title">EV Battery Recycling Breakthrough</h1>
+  <p class="hero-date">July 14, 2026 &nbsp;·&nbsp; AI-curated from Hacker News &amp; tech press</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION A: EDITORIAL VISUAL                                  -->
+<!-- ============================================================ -->
+<div class="visual-section">
+  <div class="visual-inner">
+    <div class="visual-header">
+      <div class="visual-kicker">Today's Visual</div>
+      <h2 class="visual-title">Lithium Battery Cell — Technical Editorial Illustration</h2>
+      <p class="visual-subtitle">July 14, 2026</p>
+    </div>
+    <div class="visual-image-wrap">
+      <img src="imagen-2026-07-14.svg" alt="Lithium battery cell cross-section technical illustration showing jelly-roll electrode layers and AIST recycling process flow diagram" loading="lazy"/>
+    </div>
+    <p class="visual-caption">
+      <strong>Lithium Battery Cell Cross-Section</strong> — Technical Editorial Illustration<br>
+      Annotated engineering study of an 18650-format lithium-ion cell, showing cathode (LiCoO₂), graphite anode, polyethylene separator layers, and Japan's AIST electrodialysis recovery process achieving 90% lithium extraction efficiency.
+    </p>
+    <p class="visual-note">Independently researched and rendered by AI from today's news · Not to scale</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION B: NEWS ANALYSIS                                     -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2 class="section-heading">News Analysis · 6 Most Impactful Stories</h2>
+
+  <div class="stories-grid">
+
+    <!-- Story 1 -->
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">01</span>
+        <span class="cat-pill cat-Science">Science</span>
+        <span class="impact-badge">9/10</span>
+      </div>
+      <h3 class="story-headline">Japan Recovers 90% of Lithium From Spent EV Batteries</h3>
+      <p class="story-summary">Japanese researchers at AIST have developed a breakthrough hydrometallurgical process to recover up to 90% of lithium from used electric vehicle batteries. The technique uses selective electrodialysis on cathode oxide materials, potentially transforming the economics of EV battery recycling globally.</p>
+      <ul class="story-bullets">
+        <li>Up to 90% lithium recovery rate from spent LiCoO₂ cathode materials</li>
+        <li>Global EV battery demand projected to reach 4.7 TWh by 2030</li>
+        <li>Lithium prices surged 400% since 2020 due to supply chain pressure</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:90%;background:#0077CC"></div></div>
+        <span class="why-matters">Could close the battery supply chain loop, reducing dependence on raw lithium mining.</span>
+      </div>
+    </div>
+
+    <!-- Story 2 -->
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">02</span>
+        <span class="cat-pill cat-AI">AI</span>
+        <span class="impact-badge">8/10</span>
+      </div>
+      <h3 class="story-headline">OpenAI Codex Starts Encrypting AI Sub-Agent Prompt Chains</h3>
+      <p class="story-summary">OpenAI's Codex coding assistant has begun encrypting prompts passed between orchestrating and sub-agents in multi-agent workflows, shielding internal AI reasoning from inspection. This marks a new era of AI-to-AI communication privacy, raising questions about oversight and transparency.</p>
+      <ul class="story-bullets">
+        <li>332+ community upvotes elevated encryption to a top-priority OpenAI issue</li>
+        <li>Encryption prevents cross-agent prompt injection attacks in multi-step pipelines</li>
+        <li>Multi-agent AI deployments grew ~40% across enterprise in 2025</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:80%;background:#6C47FF"></div></div>
+        <span class="why-matters">Sets a privacy precedent for autonomous AI agent systems, potentially shaping future regulation.</span>
+      </div>
+    </div>
+
+    <!-- Story 3 -->
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">03</span>
+        <span class="cat-pill cat-Science">Science</span>
+        <span class="impact-badge">8/10</span>
+      </div>
+      <h3 class="story-headline">India Creates Most Detailed 3D Atlas of the Human Brainstem</h3>
+      <p class="story-summary">Indian scientists have produced the most comprehensive three-dimensional atlas of the human brainstem ever created, mapping previously unknown neural structures at cellular resolution using 7-Tesla MRI combined with histological sectioning. The atlas provides an unprecedented tool for understanding this critical and poorly-studied brain region.</p>
+      <ul class="story-bullets">
+        <li>Atlas maps 200+ distinct neural nuclei across the entire brainstem in 3D</li>
+        <li>Brainstem controls heart rate, breathing, and consciousness — yet remains least-mapped brain region</li>
+        <li>Used 7-Tesla MRI field strength combined with histology for cell-level accuracy</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:80%;background:#0077CC"></div></div>
+        <span class="why-matters">Could revolutionize neurosurgical planning and treatment of brainstem disorders with few current therapies.</span>
+      </div>
+    </div>
+
+    <!-- Story 4 -->
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">04</span>
+        <span class="cat-pill cat-Business">Business</span>
+        <span class="impact-badge">7/10</span>
+      </div>
+      <h3 class="story-headline">Australia Mandates Three Free Hours of Daytime Solar Electricity</h3>
+      <p class="story-summary">Australian energy regulators have announced that retailers must provide customers three hours of free daytime electricity to absorb record solar generation surpluses. The policy directly addresses grid instability caused by midday renewable energy gluts, when wholesale prices sometimes go negative.</p>
+      <ul class="story-bullets">
+        <li>1 in 3 Australian homes have rooftop solar — over 30 GW total installed capacity</li>
+        <li>Wholesale electricity prices went negative 15% of the time in 2025</li>
+        <li>Free window runs approximately 11am–2pm daily, shifting demand to match supply</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:70%;background:#2E7D32"></div></div>
+        <span class="why-matters">Offers a replicable market model for managing renewable energy abundance rather than scarcity.</span>
+      </div>
+    </div>
+
+    <!-- Story 5 -->
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">05</span>
+        <span class="cat-pill cat-World">World</span>
+        <span class="impact-badge">7/10</span>
+      </div>
+      <h3 class="story-headline">Germany Moves to Restrict Its Freedom of Information Act</h3>
+      <p class="story-summary">The German government is preparing legislation to significantly narrow the scope of its Freedom of Information Act, limiting public access to documents related to ongoing government negotiations. Critics warn the move represents a major blow to democratic transparency in the EU's largest economy.</p>
+      <ul class="story-bullets">
+        <li>German FOIA (enacted 2006) handles ~100,000 public records requests per year</li>
+        <li>New law would block access to documents tied to active government negotiations</li>
+        <li>Follows transparency rollbacks in Hungary and Poland in recent years</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:70%;background:#E65100"></div></div>
+        <span class="why-matters">Germany weakening FOIA tools could embolden other EU nations as authoritarian trends spread.</span>
+      </div>
+    </div>
+
+    <!-- Story 6 -->
+    <div class="story-card">
+      <div class="story-meta">
+        <span class="story-num">06</span>
+        <span class="cat-pill cat-AI">AI</span>
+        <span class="impact-badge">7/10</span>
+      </div>
+      <h3 class="story-headline">AI Agent Accidentally Uncovers Leaked Fields Medal Winner List</h3>
+      <p class="story-summary">OpenAI's Codex autonomously scraped the International Congress of Mathematicians website and inadvertently discovered a prematurely published list of 2026 Fields Medal winners — including two Peking University alumni. The incident highlights the unintended intelligence-gathering power of autonomous AI agents.</p>
+      <ul class="story-bullets">
+        <li>Fields Medal awarded to ≤4 mathematicians every 4 years — math's highest honor</li>
+        <li>Leaked 2026 list includes two Peking University alumni — a historic milestone for Chinese mathematics</li>
+        <li>AI surfaced the sensitive data as a byproduct of an unrelated task, without being asked</li>
+      </ul>
+      <div class="impact-row">
+        <span class="impact-label">IMPACT</span>
+        <div class="impact-bar-bg"><div class="impact-bar" style="width:70%;background:#6C47FF"></div></div>
+        <span class="why-matters">Demonstrates AI agents can surface sensitive information incidentally, creating new information security risks.</span>
+      </div>
+    </div>
+
+  </div><!-- /stories-grid -->
+
+  <!-- Infographic download -->
+  <div class="download-row">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="2" stroke="#6C47FF" stroke-width="1.5"/><line x1="7" y1="7" x2="13" y2="7" stroke="#6C47FF" stroke-width="1.5"/><line x1="7" y1="10" x2="13" y2="10" stroke="#6C47FF" stroke-width="1.5"/><line x1="7" y1="13" x2="11" y2="13" stroke="#6C47FF" stroke-width="1.5"/></svg>
+    <div>
+      <a href="infographic-2026-07-14.svg" target="_blank">Download SVG Infographic — July 14, 2026</a>
+      <p class="download-desc">Typographic data infographic · 800×1400 · All 6 stories summarized</p>
+    </div>
+  </div>
+
+</div><!-- /section -->
+
+<footer>
+  <p>Daily Briefing · <a href="index.html">All Editions</a> · <a href="transit.html">Transit Encyclopedia</a></p>
+  <p style="margin-top:8px;">Generated by AI · July 14, 2026 · <a href="https://twong6531.github.io/citation-site/">twong6531.github.io/citation-site</a></p>
+</footer>
+
+</body>
+</html>
